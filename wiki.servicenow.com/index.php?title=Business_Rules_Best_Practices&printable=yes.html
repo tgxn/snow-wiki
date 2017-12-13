@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Business Rules Best Practices - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Business_Rules_Best_Practices","wgTitle":"Business Rules Best Practices","wgCurRevisionId":250058,"wgRevisionId":250058,"wgArticleId":18016,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Development Best Practices"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Business_Rules_Best_Practices","wgRelevantArticleId":18016,"wgRequestId":"fee22cf6e081324ce3251530","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.embedVideo%252Cpygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.sty.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170811210213"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Business_Rules_Best_Practices"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Business Rules Best Practices"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Development Best Practices"/>
+<meta name="category" content="Development Best Practices"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Business_Rules_Best_Practices.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Business Rules Best Practices"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170811210213"/>
+
+	<meta property="article:published_time" content="20170811210213"/>
+
+	<meta property="article:modified_time" content="20170811210213"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Development Best Practices"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Business_Rules_Best_Practices"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Business_Rules_Best_Practices rootpage-Business_Rules_Best_Practices skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Business+Rules+Best+Practices.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Business+Rules+Best+Practices&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Business Rules Best Practices</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Development Best Practices</a> &gt; Business Rules Best Practices</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a>
+</th></tr>
+<tr>
+<td> <div style="width:260px;">
+<div class='dtree' id='5a2125440202et'></div><script type="text/javascript">window.tamOnload_tam5a2125440202et=[];tree = new dTree('tam5a2125440202et');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2125440202et = tree;
+                                               tam5a2125440202et.add(1, 0, 'Planning');
+
+tam5a2125440202et.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Planning_for_Development_Best_Practices\&quot;" title=\"Planning for Development Best Practices\">Planning for Development Best Practices</a>');
+tam5a2125440202et.add(3, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Documenting_a_Migration_Procedure\&quot;" title=\"Documenting a Migration Procedure\">Documenting a Migration Procedure</a>');
+tam5a2125440202et.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Application_Design\&quot;" title=\"Modifying the Application Design\">Modifying the Application Design</a>');
+tam5a2125440202et.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understand_the_Requirements\&quot;" title=\"Understand the Requirements\">Requirements Best Practices</a>');
+tam5a2125440202et.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_UI_Appearance\&quot;" title=\"Customizing the UI Appearance\">Customizing the UI Appearance</a>');
+tam5a2125440202et.add(7, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Best_Practices\&quot;" title=\"Security Best Practices\">Security Best Practices</a>');
+tam5a2125440202et.add(8, 0, 'Development');
+tam5a2125440202et.add(9, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Script_Best_Practices\&quot;" title=\"Client Script Best Practices\">Client Script Best Practices</a>');
+tam5a2125440202et.add(10, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Coding_Best_Practices\&quot;" title=\"Coding Best Practices\">Coding Best Practices</a>');
+tam5a2125440202et.add(11, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Commenting_Your_Work\&quot;" title=\"Commenting Your Work\">Commenting Your Work</a>');
+tam5a2125440202et.add(12, 8, ' <strong class=\"selflink\">Business Rules Best Practices</strong>');
+tam5a2125440202et.add(13, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Update_Sets_Best_Practices\&quot;" title=\"Update Sets Best Practices\">Update Sets Best Practices</a>');
+tam5a2125440202et.add(14, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_and_Importing_XML_Files\&quot;" title=\"Exporting and Importing XML Files\">Exporting and Importing XML Files</a>');
+tam5a2125440202et.add(15, 0, 'Maintenance');
+tam5a2125440202et.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Debugging_Tools_Best_Practices\&quot;" title=\"Debugging Tools Best Practices\">Debugging Tools Best Practices</a>');
+tam5a2125440202et.add(17, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Properties_Best_Practices\&quot;" title=\"System Properties Best Practices\">System Properties Best Practices</a>');
+tam5a2125440202et.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Logs_and_Queues_Best_Practices\&quot;" title=\"Logs and Queues Best Practices\">Logs and Queues Best Practices</a>');
+tam5a2125440202et.add(19, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrades_Best_Practices\&quot;" title=\"Upgrades Best Practices\">Upgrades Best Practices</a>');
+tam5a2125440202et.add(20, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Patches_Best_Practices\&quot;" title=\"Patches Best Practices\">Patches Best Practices</a>');
+tam5a2125440202et.add(21, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Performance_Best_Practices\&quot;" title=\"System Performance Best Practices\">System Performance Best Practices</a>');
+tam5a2125440202et.add(22, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_Performance_Best_Practices\&quot;" title=\"Import Set Performance Best Practices\">Import Set Performance Best Practices</a>');
+
+tam5a2125440202et.add(23, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a></div>');
+                                               document.getElementById('5a2125440202et').innerHTML = tam5a2125440202et.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2125440202et) { window.tamOnload_tam5a2125440202et[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/business-rules/concept/c_BusinessRules.html">How Business Rules Work</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The Wiki page is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Video_Tutorials"><span class="tocnumber">2</span> <span class="toctext">Video Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Know_When_to_Run_Business_Rules"><span class="tocnumber">3</span> <span class="toctext">Know When to Run Business Rules</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Prevent_Recursive_Business_Rules"><span class="tocnumber">4</span> <span class="toctext">Prevent Recursive Business Rules</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Enclose_Code_in_Functions"><span class="tocnumber">5</span> <span class="toctext">Enclose Code in Functions</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Use_Script_Includes_Instead_of_Global_Business_Rules"><span class="tocnumber">6</span> <span class="toctext">Use Script Includes Instead of Global Business Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Global_Business_Rules_with_Multiple_Functions"><span class="tocnumber">6.1</span> <span class="toctext">Global Business Rules with Multiple Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Multi-function_Global_Business_Rule_Option_1"><span class="tocnumber">6.1.1</span> <span class="toctext">Multi-function Global Business Rule Option 1</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Multi-function_Global_Business_Rule_Option_2"><span class="tocnumber">6.1.2</span> <span class="toctext">Multi-function Global Business Rule Option 2</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Write_Small.2C_Specific_Business_Rules"><span class="tocnumber">7</span> <span class="toctext">Write Small, Specific Business Rules</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Use_Conditions"><span class="tocnumber">8</span> <span class="toctext">Use Conditions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Check_for_empty_values"><span class="tocnumber">8.1</span> <span class="toctext">Check for empty values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html#Use_Business_Rules_to_Double-Check_Critical_Input"><span class="tocnumber">9</span> <span class="toctext">Use Business Rules to Double-Check Critical Input</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>A <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rule</a> is a piece of JavaScript that runs when records are displayed, inserted, updated, or deleted, or when a table is queried. Follow these guidelines to ensure that business rules work efficiently and to prevent unpredictable results and performance issues.
+</p><p>The Business Rules form was modified in the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a> to allow administrators to accomplish tasks like setting field values without needing to write a script. The form also provides a simplified default view and an advanced view.
+</p>
+<h1><span class="mw-headline" id="Video_Tutorials"><span class="mw-headline-number">2</span> Video Tutorials</span></h1>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<th> When to Run Business Rules
+</th>
+<th> More Tips for Optimal Performance
+</th></tr>
+<tr>
+<td> <div class='embedvideo ' style='width: 400px;'><iframe src="http://www.youtube.com/embed/X_sxELzpOjw?" width="400" height="225" frameborder="0" allowfullscreen="true"></iframe></div>
+</td>
+<td> <div class='embedvideo ' style='width: 400px;'><iframe src="http://www.youtube.com/embed/BB-gdqlvMBg?" width="400" height="225" frameborder="0" allowfullscreen="true"></iframe></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="Know_When_to_Run_Business_Rules"><span class="mw-headline-number">3</span> Know When to Run Business Rules</span></h1>
+<p>The <b>When</b> field on the <a href="index.php%3Ftitle=Business_Rules.html#Creating_a_Business_Rule" title="Business Rules">Business Rule form</a> indicates whether the business rule script runs before or after the <tt>current</tt> object is saved to the database. The most commonly used business rules are <i>before</i> and <i>after</i> rules.  
+</p><p>You can use an <i>async</i> business rule in place of an <i>after</i> business rule. <i>Async</i> business rules are similar to <i>after</i> rules in that they run after the database commits a change. Unlike <i>after</i> rules, <i>async</i> rules run in the background simultaneously with other processes. <i>Async</i> business rules allow the system to return control to the user sooner but may take longer to update related objects.
+</p><p>Follow these guidelines to determine which value to choose for the <b>When</b> field.
+</p>
+<table class="standard">
+
+<tr>
+<th> Value
+</th>
+<th> Use Case
+</th></tr>
+<tr>
+<td> display
+</td>
+<td> Use to provide client scripts access to server-side objects. For more information, see <a href="index.php%3Ftitle=Scripting_in_Business_Rules.html#Scripting_with_Display_Business_Rules" title="Scripting in Business Rules">Scripting with Display Business Rules</a>.
+</td></tr>
+<tr>
+<td> before
+</td>
+<td> Use to update information on the current object. For example, a business rule containing <tt>current.state=3;</tt> would set the <b>State</b> field on the current record to the state with a <b>Value</b> of <b>3</b>.
+</td></tr>
+<tr>
+<td> after
+</td>
+<td> Use to update information on related objects that need to be displayed immediately, such as GlideRecord queries.
+</td></tr>
+<tr>
+<td> async
+</td>
+<td> Use to update information on related objects that do not need to be displayed immediately, such as calculating metrics and SLAs.
+</td></tr></table>
+<h1><span class="mw-headline" id="Prevent_Recursive_Business_Rules"><span class="mw-headline-number">4</span> Prevent Recursive Business Rules</span></h1>
+<p>Avoid using <tt>current.update()</tt> in a business rule script. The <tt>update()</tt> method triggers business rules to run on the same table for insert and update operations, leading to a business rule calling itself over and over. Changes made in <i>before</i> business rules are automatically saved when all <i>before</i> business rules are complete, and <i>after</i> business rules are best used for updating related, not current, objects. When a recursive business rule is detected, the system stops it and logs the error in the system log. However, <tt>current.update()</tt> causes system performance issues and is never necessary.
+</p><p>You can prevent recursive business rules by using the <tt><a href="index.php%3Ftitle=GlideRecord.html#setWorkflow" title="GlideRecord">setWorkflow()</a></tt> method with the false parameter. The combination of the <tt>update()</tt> and <tt>setWorkflow()</tt> methods is only recommended in special circumstances where the normal before and after guidelines mentioned above do not meet your requirements.
+</p>
+<h1><span class="mw-headline" id="Enclose_Code_in_Functions"><span class="mw-headline-number">5</span> Enclose Code in Functions</span></h1>
+<p>Enclose the code in a business rule script inside a function, then call the function to limit the visibility, or <i>scope</i>, of objects. When code is not enclosed in a function, variables and other objects are available to all other server-side scripts. This availability can lead to unexpected consequences that are difficult to troubleshoot. Consider this example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+   <span class="c1">// do some processing here</span>
+<span class="p">}</span>
+</pre></div>
+<p>Because the <tt>gr</tt> object is not enclosed in a function, all server-side scripts, including script includes and other business rules, have access to it. Other scripts may also use the common GlideRecord variable name <tt>gr</tt>. The duplicate names can conflict and lead to unexpected results. These issues are very difficult to isolate and resolve because typical debugging methods identify the business rule giving erroneous results rather than the business rule containing global variables. To avoid this issue, create a function with the same code snippet and call the function in the business rule script:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">processActiveIncidents</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">processActiveIncidents</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// do some processing here</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>This solution is much safer because the scope of the variable <tt>gr</tt> is limited to the <tt>processActiveIncidents()</tt> function. Therefore, the <tt>gr</tt> variable does not conflict with <tt>gr</tt> variables in other server-side scripts.
+</p><p>In this example, although the <tt>gr</tt> variable is local to the <tt>processActiveIncidents()</tt> function, the <tt>processActiveIncidents()</tt> function is considered global. Use meaningful function names, for example, <tt>processActiveIncidents()</tt> instead of <tt>doStuff()</tt> to make the purpose of the function clear to other users.
+</p>
+<h1><span class="mw-headline" id="Use_Script_Includes_Instead_of_Global_Business_Rules"><span class="mw-headline-number">6</span> Use Script Includes Instead of Global Business Rules</span></h1>
+<p>A global business rule is any business rule where the selected <b>Table</b> is <b>Global</b>. Any other script can call global business rules. Global business rules have no condition or table restrictions and load on every page in the system. Most functions defined in global business rules are fairly specific, such as an advanced <a href="index.php%3Ftitle=Reference_Qualifiers.html" title="Reference Qualifiers">reference qualifier</a> on one field of one form. There is no benefit to loading this kind of script on every page.
+</p><p><a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes">Script includes</a> only load when called. If you have already written a global business rule, move the function definition to a script include. The name of the script include must match the name of the function for the script include to work properly. There is no need to modify any calls to the named function.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Do not convert base system global business rules to script includes. If ServiceNow updates these business rules in the future, upgrades will skip any that have been customized.</i>
+</td></tr></table>
+<p><br />
+Consider this global business rule: 
+</p><p><a href="index.php%3Ftitle=File:Global-Business-Rule-u_ciRefQual.png.html" class="image" title="Global-Business-Rule-u_ciRefQual.png"><img alt="Global-Business-Rule-u_ciRefQual.png" src="images/b/be/Global-Business-Rule-u_ciRefQual.png" width="461" height="242" class="thumbborder" /></a>
+</p><p>This script include is a better alternative:
+</p><p><a href="index.php%3Ftitle=File:Script-Include-u_ciRefQual.png.html" class="image" title="Script-Include-u_ciRefQual.png"><img alt="Script-Include-u_ciRefQual.png" src="images/2/2d/Script-Include-u_ciRefQual.png" width="678" height="301" class="thumbborder" /></a>
+</p><p>To call the function, use a script like this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">u_ciRefQual</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">location</span><span class="p">);</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i> To call a script include function from a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Filters+and+Breadcrumbs&amp;oldid=0.html#Scripted_Filters" title="Using Filters and Breadcrumbs">list filter</a> or report, select the <b>Client callable</b> check box on the <a href="index.php%3Ftitle=Script_Includes.html#Script_Include_Form" title="Script Includes">Script Include form</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Global_Business_Rules_with_Multiple_Functions"><span class="mw-headline-number">6.1</span> Global Business Rules with Multiple Functions</span></h2>
+<p>If your global business rule contains multiple functions such as the following example, you have two options to convert it to one or more script includes:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">activeOnly</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="s2">&quot;active=true&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">inActiveOnly</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;active=false&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">openState</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;state=1&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Multi-function_Global_Business_Rule_Option_1"><span class="mw-headline-number">6.1.1</span> Multi-function Global Business Rule Option 1</span></h3>
+<p>Put each function in it's own script include. This is easier in the short term by quickly converting a global business rule to a script include, however it may be more difficult to maintain since these could be related functions and be in separate records.
+</p>
+<h3><span class="mw-headline" id="Multi-function_Global_Business_Rule_Option_2"><span class="mw-headline-number">6.1.2</span> Multi-function Global Business Rule Option 2</span></h3>
+<p>Put all functions in a script include that defines a class (with no prototype) as in the example below.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">MyUtil</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+
+<span class="nx">MyUtil</span><span class="p">.</span><span class="nx">activeOnly</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="s2">&quot;active=true&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">MyUtil</span><span class="p">.</span><span class="nx">inActiveOnly</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;active=false&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">MyUtil</span><span class="p">.</span><span class="nx">openState</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;state=1&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>This method keeps the related functions together for easier management, however requires you identify each field or script that calls the functions and update it. For example, a reference qualifier field which previously said <tt>javascript:activeOnly()</tt> would become <tt>javascript:MyUtil.activeOnly()</tt>.
+</p>
+<h1><span class="mw-headline" id="Write_Small.2C_Specific_Business_Rules"><span class="mw-headline-number">7</span> Write Small, Specific Business Rules</span></h1>
+<p>Small, specific business rules are easier to debug and maintain than large, complex ones. Rather than creating one business rule that checks and acts upon numerous conditions, create separate business rules for each condition. These individual business rules make it much easier to maintain each conditional statement and the corresponding logic.
+</p><p>For example, if you've written a single business rule that triggers an event when the priority is 1 and calculates the fields for a report when the state changes to closed, consider these as two different results to two different conditions and create two separate business rules. One that triggers an event when the priority is 1 and one that calculates the fields for a report when the state changes to closed.
+</p>
+<h1><span class="mw-headline" id="Use_Conditions"><span class="mw-headline-number">8</span> Use Conditions</span></h1>
+<p>The <b>Condition</b> field on the Business Rule form allows you to create a JavaScript statement for a condition under which the business rule should execute. If you add a condition statement to this field, ServiceNow evaluates the condition separately and parses the script only if the condition is true, thus improving performance. It is easier to <a href="index.php%3Ftitle=Debugging_Tools_Best_Practices.html#Debug_Business_Rule" title="Debugging Tools Best Practices">debug business rules</a> when you can see which one meet a particular condition and which do not.
+</p><p><a href="index.php%3Ftitle=File:BR-No-Condition.jpg.html" class="image" title="BR-No-Condition.jpg"><img alt="BR-No-Condition.jpg" src="images/c/c3/BR-No-Condition.jpg" width="794" height="369" class="thumbborder" /></a>
+</p><p>While the business rule shown here runs fine, the system loads and evaluates it after every insert or update, regardless of incident priority or other conditions. There is a single <tt>if</tt> statement, <tt>current.getValue('priority') == '1'</tt>, that determines whether or not the rest of the script should run. Place this statement in the <b>Condition</b> field, as shown below, to prevent ServiceNow from parsing the script if the condition is not met.
+</p><p><a href="index.php%3Ftitle=File:BR-Condition.jpg.html" class="image" title="BR-Condition.jpg"><img alt="BR-Condition.jpg" src="images/thumb/c/ca/BR-Condition.jpg/750px-BR-Condition.jpg.png" width="750" height="316" class="thumbborder" srcset="/images/c/ca/BR-Condition.jpg 1.5x, /images/c/ca/BR-Condition.jpg 2x" /></a>
+</p>
+<h2><span class="mw-headline" id="Check_for_empty_values"><span class="mw-headline-number">8.1</span> Check for empty values</span></h2>
+<p>To ensure your business rules only run when expected include conditions that check for empty values. Such checks are particularly important when your business rule trigger is the <i>absence</i> of a particular field value.
+</p>
+<ul><li> With the condition builder, use the [is not empty] operator.</li></ul>
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:CheckForEmptyFieldValues.png.html" class="image"><img alt="" src="images/thumb/0/0b/CheckForEmptyFieldValues.png/800px-CheckForEmptyFieldValues.png" width="800" height="409" class="thumbimage" srcset="/images/0/0b/CheckForEmptyFieldValues.png 1.5x, /images/0/0b/CheckForEmptyFieldValues.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:CheckForEmptyFieldValues.png.html" class="internal" title="Enlarge"></a></div>Checking for empty field values with the condition builder</div></div></div> <br clear="all" /></dd></dl>
+<ul><li> With script-based conditions, use the <tt>nil()</tt> or <tt>!=</tt> evaluations.</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="o">!</span><span class="nx">current</span><span class="p">.</span><span class="nx">special_instructions</span><span class="p">.</span><span class="nx">nil</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">current</span><span class="p">.</span><span class="nx">special_instructions</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;xxx&#39;</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span>
+</pre></div></dd></dl>
+<h1><span class="mw-headline" id="Use_Business_Rules_to_Double-Check_Critical_Input"><span class="mw-headline-number">9</span> Use Business Rules to Double-Check Critical Input</span></h1>
+<p>If you use a client script to <a href="index.php%3Ftitle=Client_Script_Best_Practice.html#Use_Client_Scripts_to_Validate_Data" title="Client Script Best Practice" class="mw-redirect">validate data</a> or a reference qualifier to present a filtered list, data may change between the time the user fills in the fields and the time the user submits the form. This mismatch can cause a conflict or error. Business rules are an effective way to double-check critical input.
+</p><p>For example, a request allows users to reserve items. When users fill out the request form, they can only select currently available items. If two people fill out a particular form at once and select the same item, the item appears to be available to both people because neither of them has submitted the form yet. If there is no business rule to double-check availability, ServiceNow assigns the same item to both requests. By using a business rule to re-verify item availability when the form is submitted, the second person receives a warning or other notification indicating the item has already been taken.
+</p><p><br />
+<b>Condition:</b> current.cmdb_ci.changes()<br />
+<b>Script:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cm">/************************</span>
+<span class="cm"> *</span>
+<span class="cm"> * Double-check to ensure that no one else has selected and</span>
+<span class="cm"> * submitted a request for the same configuration item (CI)</span>
+<span class="cm"> *</span>
+<span class="cm"> ************************/</span>
+<span class="nx">doubleCheckCiAvailability</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">doubleCheckCiAvailability</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">lu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoanerUtils</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">lu</span><span class="p">.</span><span class="nx">isAvailable</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">start_date</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">end_date</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">addErrorMessage</span><span class="p">(</span><span class="nx">gs</span><span class="p">.</span><span class="nx">getMessage</span><span class="p">(</span><span class="s1">&#39;Sorry, that item has already been allocated&#39;</span><span class="p">));</span>
+        <span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span> <span class="o">=</span> <span class="s1">&#39;NULL&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201094750
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.240 seconds
+Real time usage: 2.229 seconds
+Preprocessor visited node count: 152/1000000
+Preprocessor generated node count: 478/1000000
+Post‐expand include size: 3123/2097152 bytes
+Template argument size: 845/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  948.912      1 - -total
+  5.69%   53.999      1 - Template:Technical_Best_Practices
+  5.07%   48.114      1 - Template:Topic
+  0.79%    7.455      3 - Template:Note
+  0.56%    5.329      1 - Embedded:Technical_Best_Practices
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:18016-0!*!0!1!en!5!* and timestamp 20171201094747 and revision id 250058
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;oldid=250058.html">http://wiki.servicenow.com/index.php?title=Business_Rules_Best_Practices&amp;oldid=250058</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Technical+Best+Practices.html" title="Category:Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_18016"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="18016" data-vote-the-vote="5" data-vote-id="18016" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_18016_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="18016" data-vote-the-vote="1" data-vote-id="18016" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_18016_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Business_Rules_Best_Practices.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Business+Rules+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Business+Rules+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Business_Rules_Best_Practices.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Business+Rules+Best+Practices.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Business+Rules+Best+Practices&amp;returnto=Business+Rules+Best+Practices&amp;oldid=250058&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FBusiness_Rules_Best_Practices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Business_Rules_Best_Practices" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;oldid=250058.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Business_Rules_Best_Practices&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 21:02, 11 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1157});});</script></body></html>

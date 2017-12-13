@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Survey Example - Create a Triggered Survey - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Survey_Example_-_Create_a_Triggered_Survey","wgTitle":"Survey Example - Create a Triggered Survey","wgCurRevisionId":250923,"wgRevisionId":250923,"wgArticleId":22267,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Survey Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Survey_Example_-_Create_a_Triggered_Survey","wgRelevantArticleId":22267,"wgRequestId":"2aee14cf1f70a490c8af6783","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170911205805"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Survey_Example_-_Create_a_Triggered_Survey"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Survey Example - Create a Triggered Survey"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Survey Administration"/>
+<meta name="category" content="Survey Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Survey Example - Create a Triggered Survey"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170911205805"/>
+
+	<meta property="article:published_time" content="20170911205805"/>
+
+	<meta property="article:modified_time" content="20170911205805"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Survey Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Survey_Example_-_Create_a_Triggered_Survey"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Survey_Example_-_Create_a_Triggered_Survey rootpage-Survey_Example_-_Create_a_Triggered_Survey skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Survey+Example+-+Create+a+Triggered+Survey.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Survey+Example+-+Create+a+Triggered+Survey&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Survey Example - Create a Triggered Survey</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Service_Administration.html" title="Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Survey_Management.html" title="Survey Management">Survey Administration</a> &gt; Survey Example - Create a Triggered Survey</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/survey-administration/concept/c_TriggerConditions.html">Survey Trigger Conditions</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="index.php%3Ftitle=Survey_Management.html" title="Survey Management">Survey Management</a>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a234c2ec8778t'></div><script type="text/javascript">window.tamOnload_tam5a234c2ec8778t=[];tree = new dTree('tam5a234c2ec8778t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a234c2ec8778t = tree;
+                                               tam5a234c2ec8778t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Migrating_Surveys\&quot;" title=\"Migrating Surveys\">Migrating</a>');
+
+tam5a234c2ec8778t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Completing_Survey_Questionnaires\&quot;" title=\"Completing Survey Questionnaires\">Completing Surveys</a>');
+tam5a234c2ec8778t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Assessments\&quot;" title=\"Installed with Assessments\">Installed Components</a>');
+tam5a234c2ec8778t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Designer\&quot;" title=\"Survey Designer\">Survey Designer</a>');
+tam5a234c2ec8778t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Eureka_Survey_Creator\&quot;" title=\"Using the Eureka Survey Creator\">Eureka Survey Creator</a>');
+tam5a234c2ec8778t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Definitions\&quot;" title=\"Survey Definitions\">Survey Definitions</a>');
+tam5a234c2ec8778t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Categories_and_Questions\&quot;" title=\"Survey Categories and Questions\">Categories and Questions</a>');
+tam5a234c2ec8778t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Users_and_Groups\&quot;" title=\"Survey Users and Groups\">Survey Users and Groups</a>');
+tam5a234c2ec8778t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Trigger_Conditions\&quot;" title=\"Survey Trigger Conditions\">Trigger Conditions</a>');
+tam5a234c2ec8778t.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sharing_Surveys\&quot;" title=\"Sharing Surveys\">Sharing Surveys</a>');
+tam5a234c2ec8778t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assessment_and_Survey_Properties\&quot;" title=\"Assessment and Survey Properties\">Properties</a>');
+tam5a234c2ec8778t.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Viewing_Survey_Responses\&quot;" title=\"Viewing Survey Responses\">Viewing Responses</a>');
+tam5a234c2ec8778t.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Scorecards\&quot;" title=\"Survey Scorecards\">Scorecards</a>');
+tam5a234c2ec8778t.add(14, 0, 'Examples');
+tam5a234c2ec8778t.add(15, 14, '<strong class=\"selflink\">Triggered Survey</strong>');
+tam5a234c2ec8778t.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Example_-_Create_a_Scheduled_Survey_for_Selected_Users\&quot;" title=\"Survey Example - Create a Scheduled Survey for Selected Users\">Scheduled Survey</a>');
+
+                                               document.getElementById('5a234c2ec8778t').innerHTML = tam5a234c2ec8778t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a234c2ec8778t) { window.tamOnload_tam5a234c2ec8778t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a234c2ed3d82t'></div><script type="text/javascript">window.tamOnload_tam5a234c2ed3d82t=[];tree = new dTree('tam5a234c2ed3d82t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a234c2ed3d82t = tree;
+                                               tam5a234c2ed3d82t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assessments\&quot;" title=\"Assessments\">Assessments</a>');
+
+tam5a234c2ed3d82t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Attestations\&quot;" title=\"Attestations\">Attestations</a>');
+tam5a234c2ed3d82t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Quizzes\&quot;" title=\"Quizzes\">Quizzes</a>');
+tam5a234c2ed3d82t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAssessmentCreation_API_Reference\&quot;" title=\"GlideAssessmentCreation API Reference\">API Reference</a>');
+tam5a234c2ed3d82t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Survey_Wizards\&quot;" title=\"Survey Wizards\">Survey Wizards</a>');
+tam5a234c2ed3d82t.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Survey_Wizard_(Demo)\&quot;" title=\"Creating a Survey Wizard (Demo)\">Creating a Survey Wizard (Demo)</a>');
+
+                                               document.getElementById('5a234c2ed3d82t').innerHTML = tam5a234c2ed3d82t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a234c2ed3d82t) { window.tamOnload_tam5a234c2ed3d82t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:Survey_Management.html" title="Book:Survey Management"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Survey_Management.html" title="Book:Survey Management">Survey Management</a>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Create_the_Survey"><span class="tocnumber">2</span> <span class="toctext">Create the Survey</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Create_the_Trigger_Condition"><span class="tocnumber">3</span> <span class="toctext">Create the Trigger Condition</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Add_an_Introduction_and_End_Note_to_the_Survey"><span class="tocnumber">4</span> <span class="toctext">Add an Introduction and End Note to the Survey</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Update_the_Survey_Questions"><span class="tocnumber">5</span> <span class="toctext">Update the Survey Questions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Add_Conditional_Questions"><span class="tocnumber">5.1</span> <span class="toctext">Add Conditional Questions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Primary_Reason_Not_Satisfied"><span class="tocnumber">5.1.1</span> <span class="toctext">Primary Reason Not Satisfied</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Email_Address"><span class="tocnumber">5.1.2</span> <span class="toctext">Email Address</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Update_Question_Order"><span class="tocnumber">5.2</span> <span class="toctext">Update Question Order</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Make_a_Question_Mandatory"><span class="tocnumber">5.3</span> <span class="toctext">Make a Question Mandatory</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Publish_the_Survey"><span class="tocnumber">6</span> <span class="toctext">Publish the Survey</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Test_the_Trigger_Condition"><span class="tocnumber">7</span> <span class="toctext">Test the Trigger Condition</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Complete_the_Survey"><span class="tocnumber">8</span> <span class="toctext">Complete the Survey</span></a></li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>In this example, assume that your company wants to collect user feedback about your incident process. As the survey administrator, you will create a triggered survey that the system sends to incident callers when their incidents are resolved. After you create the basic survey, you will add <i>conditional questions</i> and make other modifications to the questions. You will test the <i>trigger condition</i> that sends the survey and complete the survey yourself.
+</p><p>The survey_admin role is required to complete this example.
+</p>
+<h1><span class="mw-headline" id="Create_the_Survey"><span class="mw-headline-number">2</span> Create the Survey</span></h1>
+<p>Use the survey creator to build the basic survey. For more information, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+the+Survey+Creator&amp;oldid=0.html" title="Using the Survey Creator" class="mw-redirect">Using the Survey Creator</a>.
+</p>
+<ol><li> Navigate to <b>Survey Management &gt; Create Survey</b>.</li>
+<li> Fill in the following fields:
+<ul><li> <b>Name:</b> <i>Incident Resolution Survey</i></li>
+<li> <b>Description:</b> <i>Survey to collect information about user experience related to the incident process</i></li></ul></li>
+<li> In the <b>Survey Questions</b> section, add the questions (see table).</li>
+<li> [Optional] Click <b>Preview</b> to see what the survey will look like. Click <b>Close</b> when you are finished.</li>
+<li> In the <b>Survey User Access</b> section, select <b>Certain users can take this survey, based on conditions</b>.</li>
+<li> At the bottom of the survey creator, click <b>Save as Draft</b>.
+<dl><dd> You will make additional changes before publishing the survey.</dd></dl></li></ol>
+<p><br />
+</p>
+<table class="standard">
+
+<tr>
+<th> Question
+</th>
+<th> Answer Data Type
+</th>
+<th> Additional Fields
+</th></tr>
+<tr>
+<td> Incident number (i.e. INC000001)
+</td>
+<td> String
+</td>
+<td> <b>String option:</b> <i>Single line</i>
+</td></tr>
+<tr>
+<td> When did you open the incident?
+</td>
+<td> Date/Time
+</td>
+<td> None
+</td></tr>
+<tr>
+<td> How did you open the incident?
+</td>
+<td> Choice
+</td>
+<td> Enter the following answer options:
+<ol><li> <i>Self-service portal</i></li>
+<li> <i>Phone call or email to the help desk</i></li>
+<li> <i>Other</i></li></ol>
+</td></tr>
+<tr>
+<td> Was the technician able to resolve your issue in the first response?
+</td>
+<td> Yes/No
+</td>
+<td> None
+</td></tr>
+<tr>
+<td> Approximately what percent of the time are your incidents resolved in a week or less?
+</td>
+<td> Percentage
+</td>
+<td> <b>Min:</b> <i>0</i>
+<p><b>Max:</b> <i>100</i>
+</p>
+</td></tr>
+<tr>
+<td> How satisfied are you with your overall service experience?
+</td>
+<td> Likert Scale
+</td>
+<td> Enter the following answer options:
+<ol><li> <i>Extremely dissatisfied</i></li>
+<li> <i>Dissatisfied</i></li>
+<li> <i>Neutral</i></li>
+<li> <i>Satisfied</i></li>
+<li> <i>Extremely satisfied</i></li></ol>
+</td></tr>
+<tr>
+<td> Please provide any additional feedback.
+</td>
+<td> String
+</td>
+<td> <b>String option:</b> <i>Multiline</i>
+</td></tr>
+<tr>
+<td> Contact me with future feedback opportunities.
+</td>
+<td> Checkbox
+</td>
+<td> None
+</td></tr></table>
+<h1><span class="mw-headline" id="Create_the_Trigger_Condition"><span class="mw-headline-number">3</span> Create the Trigger Condition</span></h1>
+<p>The trigger condition tells the system who to send the survey to and when, based on specific conditions. You will create a trigger condition that sends your survey to incident callers when incidents are resolved. For more information, see <a href="index.php%3Ftitle=Survey_Trigger_Conditions.html" title="Survey Trigger Conditions">Survey Trigger Conditions</a>.
+</p><p>The Trigger Condition form opens automatically because of the survey user access option you selected on the survey creator. Complete the form as follows.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td> Assessment
+</td>
+<td> Incident Resolution Survey
+</td></tr>
+<tr>
+<td> Table
+</td>
+<td> Incident [incident]
+</td></tr>
+<tr>
+<td> User field
+</td>
+<td> Caller
+</td></tr>
+<tr>
+<td> Repeat Interval
+</td>
+<td> 30 days
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Selected
+</td></tr>
+<tr>
+<td> Trigger randomly
+</td>
+<td> Cleared
+</td></tr>
+<tr>
+<td> Related&#160;Field&#160;1&#160;&#8211;
+<p>Related Field 4
+</p>
+</td>
+<td> -- None --
+</td></tr>
+<tr>
+<td> Description
+</td>
+<td> Send the Incident Resolution Survey to incident callers when incidents are closed, no more frequently than every 30 days
+</td></tr>
+<tr>
+<td> Condition
+</td>
+<td> [State] [is] [Resolved]
+</td></tr></table>
+<h1><span class="mw-headline" id="Add_an_Introduction_and_End_Note_to_the_Survey"><span class="mw-headline-number">4</span> Add an Introduction and End Note to the Survey</span></h1>
+<p>Introductions and end notes allow you to personalize surveys and provide helpful information to survey recipients. 
+</p>
+<ol><li> Navigate to <b>Survey Management &gt; View Surveys</b>.
+<dl><dd> The list displays all <i><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Survey+Definitions&amp;oldid=0.html" title="Survey Definitions">survey definitions</a></i>. The system created a survey definition for the survey automatically when you used the survey creator.</dd></dl></li>
+<li> Open the <b>Incident Resolution Survey</b> survey definition.</li>
+<li> Fill in the following fields and apply any HTML formatting desired:
+<ul><li> <b>Introduction:</b> <i>Please answer the following questions about your recently closed incident.</i></li>
+<li> <b>End note:</b> <i>Thank you for providing your feedback! You have completed this survey.</i></li></ul></li>
+<li> Right-click the form header and select <b>Save</b>.</li></ol>
+<h1><span class="mw-headline" id="Update_the_Survey_Questions"><span class="mw-headline-number">5</span> Update the Survey Questions</span></h1>
+<p>Make the following adjustments to the survey questions:
+</p>
+<ul><li> <a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Add_Conditional_Questions">Add conditional questions</a>.</li>
+<li> <a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Update_Question_Order">Update the question order</a>.</li>
+<li> <a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html#Make_a_Question_Mandatory">Make a question mandatory</a>.</li></ul>
+<h2><span class="mw-headline" id="Add_Conditional_Questions"><span class="mw-headline-number">5.1</span> Add Conditional Questions</span></h2>
+<p>A conditional question is visible only when a user answers another question a certain way. You will add two conditional questions to your survey. For more information about survey questions in general, see <a href="index.php%3Ftitle=Survey_Categories_and_Questions.html#Survey_Questions" title="Survey Categories and Questions">Survey Questions</a>.
+</p>
+<h3><span class="mw-headline" id="Primary_Reason_Not_Satisfied"><span class="mw-headline-number">5.1.1</span> Primary Reason Not Satisfied</span></h3>
+<p>The first conditional question will appear only when users indicate they had an unsatisfactory service experience. The question will gather more information about why the user was not satisfied.
+</p>
+<ol><li> In the <b>Metric Categories</b> related list on the Survey Definition form, click <b>Incident Resolution Survey</b>.
+<dl><dd> The system automatically created a <a href="index.php%3Ftitle=Survey_Categories_and_Questions.html#Survey_Categories" title="Survey Categories and Questions"><i>survey category</i></a> for your survey questions when you used the survey creator.</dd></dl></li>
+<li> In the <b>Assessment Metrics</b> related list on the Survey Category form, click <b>New</b>.</li>
+<li> Fill in the following fields:
+<ul><li> <b>Name:</b> <i>Primary reason not satisfied</i></li>
+<li> <b>Question:</b> <i>What is the primary reason you are not satisfied with your experience?</i></li>
+<li> <b>Data type:</b> <i>Choice</i></li>
+<li> <b>Scale definition:</b> <i>Low</i></li>
+<li> <b>Randomize answers:</b> Cleared</li>
+<li> <b>Allow not applicable:</b> Cleared</li>
+<li> <b>Depends on:</b> <i>How satisfied are you with your overall service experience?</i></li>
+<li> <b>Displayed when:</b> <i>Extremely dissatisfied, Dissatisfied</i></li></ul></li>
+<li> Right-click the form header and select <b>Save</b>.</li>
+<li> In the <b>Assessment Metric Definitions</b> related list, create the following answer options (see table). Fill in the <b>Display</b> and <b>Value</b> fields for each answer option. For more information, see <a href="index.php%3Ftitle=Survey_Categories_and_Questions.html#Creating_Answer_Options" title="Survey Categories and Questions">Creating Answer Options</a>.</li></ol>
+<dl><dd><dl><dd><table class="standard">
+
+<tr>
+<th> Display
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td> Technician was not satisfactory
+</td>
+<td> 2
+</td></tr>
+<tr>
+<td> Issue was not resolved quickly
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> Other
+</td>
+<td> 0
+</td></tr></table></dd></dl></dd></dl>
+<h3><span class="mw-headline" id="Email_Address"><span class="mw-headline-number">5.1.2</span> Email Address</span></h3>
+<p>The second conditional question will appear when users indicate they are interested in future feedback opportunities. The question will provide a field for an email address.
+</p>
+<ol><li> On the Survey Category form, in the <b>Assessment Metrics</b> related list, click <b>New</b>.</li>
+<li> Fill in the following fields:
+<ul><li> <b>Name:</b> <i>Email</i></li>
+<li> <b>Question:</b> <i>Email address</i></li>
+<li> <b>Data type:</b> <i>String</i></li>
+<li> <b>String option:</b> <i>Single line</i></li>
+<li> <b>Mandatory:</b> Cleared</li>
+<li> <b>Depends on:</b> <i>Contact me with future feedback opportunities.</i></li>
+<li> <b>Displayed when:</b> <i>Checked</i></li></ul></li>
+<li> Click <b>Submit</b>.</li></ol>
+<h2><span class="mw-headline" id="Update_Question_Order"><span class="mw-headline-number">5.2</span> Update Question Order</span></h2>
+<p>When you added conditional questions, the system automatically assigned both of them the default question order, <b>100</b>. The conditional questions should appear after the questions they depend on, so you need to update the order values.
+</p><p>On the Survey Category form, in the <b>Assessment Metrics</b> related list, edit the <b>Order</b> values of the following questions to match the following table.
+</p>
+<table class="standard">
+<tr>
+<th> Question
+</th>
+<th> Order
+</th></tr>
+<tr>
+<td> Incident number (i.e. INC0000001)
+</td>
+<td> 101
+</td></tr>
+<tr>
+<td> When did you open the incident?
+</td>
+<td> 102
+</td></tr>
+<tr>
+<td> How did you open the incident?
+</td>
+<td> 103
+</td></tr>
+<tr>
+<td> Was the technician able to resolve your...
+</td>
+<td> 104
+</td></tr>
+<tr>
+<td> Approximately what percent of the time a...
+</td>
+<td> 105
+</td></tr>
+<tr>
+<td> How satisfied are you with your overall...
+</td>
+<td> 106
+</td></tr>
+<tr>
+<td> What is the primary reason you are not s...
+</td>
+<td> 107
+</td></tr>
+<tr>
+<td> Please provide any additional feedback.
+</td>
+<td> 108
+</td></tr>
+<tr>
+<td> Contact me with future feedback opportun...
+</td>
+<td> 109
+</td></tr>
+<tr>
+<td> Email address
+</td>
+<td> 110
+</td></tr></table>
+<p><a href="index.php%3Ftitle=File:Survey_example_-_question_order.png.html" class="image"><img alt="Survey example - question order.png" src="images/1/1c/Survey_example_-_question_order.png" width="743" height="333" /></a>
+</p>
+<h2><span class="mw-headline" id="Make_a_Question_Mandatory"><span class="mw-headline-number">5.3</span> Make a Question Mandatory</span></h2>
+<p>To better interpret your survey results, it is important to know which incident each survey recipient is evaluating. You can require users to provide the incident number.
+</p>
+<ol><li> Open the following question: <b>Incident number (i.e. INC000001)</b></li>
+<li> Select the <b>Mandatory</b> check box.</li>
+<li> Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Publish_the_Survey"><span class="mw-headline-number">6</span> Publish the Survey</span></h1>
+<p>The survey is now ready to be published. 
+</p>
+<ol><li> Navigate to <b>Survey Management &gt; View Surveys</b>.</li>
+<li> Open the <b>Incident Resolution Survey</b> survey definition.</li>
+<li> Click <b>Publish</b>.</li></ol>
+<h1><span class="mw-headline" id="Test_the_Trigger_Condition"><span class="mw-headline-number">7</span> Test the Trigger Condition</span></h1>
+<p>To ensure that the trigger condition you created is functioning properly, create and resolve an incident.
+</p>
+<ol><li> Navigate to <b>Self-Service &gt; Incidents</b>.</li>
+<li> Click <b>New</b>.</li>
+<li> Fill in the fields, if desired, and click <b>Submit</b>.</li>
+<li> On the Incident form, copy the <b>Number</b> so you can provide it when you complete the survey.</li>
+<li> Enter a comment in the <b>Additional comments</b> field.</li>
+<li> Click <b>Resolve Incident</b>.</li>
+<li> Navigate to <b>Self-Service &gt; My Assessments &amp; Surveys</b>.
+<dl><dd> A survey instance card labeled <b>Incident Resolution Survey</b> should appear in your assessment and survey queue.</dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i> To verify that the trigger condition repeat interval of 30 days is enforced, repeat this procedure after you complete the survey. The system will not generate another survey instance assigned to you until 30 days after you received the first survey instance. </i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Complete_the_Survey"><span class="mw-headline-number">8</span> Complete the Survey</span></h1>
+<p>Complete the survey to test your customizations. For more information, see <a href="index.php%3Ftitle=Completing_Survey_Questionnaires.html" title="Completing Survey Questionnaires">Completing Survey Questionnaires</a>.
+</p>
+<ol><li> In your assessment and survey queue, on the survey instance card labeled <b>Incident Resolution Survey</b>, click <b>Take Survey</b>.</li>
+<li> Answer all the survey questions except for <b>Incident number (i.e. INC000001)</b>.</li>
+<li> Test the conditional questions.</li>
+<li> Click <b>Submit</b>.
+<dl><dd> Note that you cannot submit the survey until you answer the mandatory incident number question.</dd></dl></li>
+<li> Enter the incident number.</li>
+<li> Click <b>Submit</b>.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203005823
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.256 seconds
+Real time usage: 0.347 seconds
+Preprocessor visited node count: 109/1000000
+Preprocessor generated node count: 320/1000000
+Post‐expand include size: 2382/2097152 bytes
+Template argument size: 1130/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   93.531      1 - -total
+ 84.91%   79.418      1 - Template:Survey_Management
+ 75.31%   70.434      1 - Template:Topic
+  6.21%    5.807      1 - Template:LimitedTOC
+  6.04%    5.652      4 - Template:T
+  5.87%    5.488      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22267-0!*!0!1!en!5!* and timestamp 20171203005822 and revision id 250923
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;oldid=250923.html">http://wiki.servicenow.com/index.php?title=Survey_Example_-_Create_a_Triggered_Survey&amp;oldid=250923</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Survey+Administration.html" title="Category:Survey Administration">Survey Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Survey+Administration.html" title="Category:Survey Administration">Survey Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22267"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22267" data-vote-the-vote="5" data-vote-id="22267" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22267_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22267" data-vote-the-vote="1" data-vote-id="22267" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22267_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Survey+Example+-+Create+a+Triggered+Survey&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Survey+Example+-+Create+a+Triggered+Survey&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Survey_Example_-_Create_a_Triggered_Survey.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Survey+Example+-+Create+a+Triggered+Survey.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Survey+Example+-+Create+a+Triggered+Survey&amp;returnto=Survey+Example+-+Create+a+Triggered+Survey&amp;oldid=250923&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSurvey_Example_-_Create_a_Triggered_Survey.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Survey_Example_-_Create_a_Triggered_Survey" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;oldid=250923.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Survey_Example_-_Create_a_Triggered_Survey&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:58, 11 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1219});});</script></body></html>

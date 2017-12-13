@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>JDBCProbe - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"JDBCProbe","wgTitle":"JDBCProbe","wgCurRevisionId":250316,"wgRevisionId":250316,"wgArticleId":6623,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Other Integrations"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"JDBCProbe","wgRelevantArticleId":6623,"wgRequestId":"905bd449d7e3bd267a758021","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170823151322"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=JDBCProbe"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="JDBCProbe"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Other Integrations"/>
+<meta name="category" content="Other Integrations"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=JDBCProbe.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:JDBCProbe"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170823151322"/>
+
+	<meta property="article:published_time" content="20170823151322"/>
+
+	<meta property="article:modified_time" content="20170823151322"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Other Integrations"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=JDBCProbe"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-JDBCProbe rootpage-JDBCProbe skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=JDBCProbe.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=JDBCProbe&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">JDBCProbe</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+JDBCProbe</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#column-one">navigation</a>, <a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/inbound-other-web-services/task/t_JDBCProbe.html">JDBCProbe</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> Other Integrations
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Borland_Starteam_Integration.html" title="Borland Starteam Integration">Borland Starteam Integration</a> </li>
+<li><a href="index.php%3Ftitle=Building_a_Search_Provider_for_your_Instance.html" title="Building a Search Provider for your Instance">Building a Search Provider for your Instance</a> </li>
+<li><a href="index.php%3Ftitle=Integrating_ServiceNow_with_your_Intranet.html" title="Integrating ServiceNow with your Intranet">Integrating ServiceNow with your Intranet</a> </li>
+<li><strong class="selflink">Integrating Databases using JDBCProbe</strong> </li>
+<li><a href="index.php%3Ftitle=Syslog_Probe.html" title="Syslog Probe">Integrating Syslog Servers with Syslog Probe</a></li>
+<li><a href="index.php%3Ftitle=Change_Management_Integration_with_Outlook.html" title="Change Management Integration with Outlook">Change Management Integration with Outlook</a> </li>
+<li><a href="index.php%3Ftitle=Computer_Telephony_Integration_(CTI).html" title="Computer Telephony Integration (CTI)" class="mw-redirect">Computer Telephony Integration (CTI)</a> </li>
+<li><a href="index.php%3Ftitle=HDI_Survey_Integration.html" title="HDI Survey Integration">HDI Survey</a> </li>
+<li><a href="index.php%3Ftitle=Sendmail_Support.html" title="Sendmail Support">Integrating with Sendmail</a></li>
+<li><a href="index.php%3Ftitle=MDSL_Integration.html" title="MDSL Integration">MDSL Telecom Expense Management</a></li></ul>
+</td></tr></table>
+</div> 
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#JDBC_Probe"><span class="tocnumber">1</span> <span class="toctext">JDBC Probe</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Activating_the_Plugin"><span class="tocnumber">2</span> <span class="toctext">Activating the Plugin</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Direct_JDBC_Probe"><span class="tocnumber">3</span> <span class="toctext">Direct JDBC Probe</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#XML_Structure"><span class="tocnumber">3.1</span> <span class="toctext">XML Structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Parameters"><span class="tocnumber">3.2</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Using_the_Work_Element"><span class="tocnumber">3.2.1</span> <span class="toctext">Using the Work Element</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#SELECT"><span class="tocnumber">3.2.1.1</span> <span class="toctext">SELECT</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#UPDATE"><span class="tocnumber">3.2.1.2</span> <span class="toctext">UPDATE</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#INSERT"><span class="tocnumber">3.2.1.3</span> <span class="toctext">INSERT</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#DELETE"><span class="tocnumber">3.2.1.4</span> <span class="toctext">DELETE</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Select_.2A_JDBC_Probe_short_cut"><span class="tocnumber">3.2.2</span> <span class="toctext">Select * JDBC Probe short cut</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#Counting_Rows"><span class="tocnumber">3.2.3</span> <span class="toctext">Counting Rows</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html#JDBC_Probes_via_Data_Source"><span class="tocnumber">3.3</span> <span class="toctext">JDBC Probes via Data Source</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+ 
+<h1><span class="mw-headline" id="JDBC_Probe"><span class="mw-headline-number">1</span> JDBC Probe</span></h1>
+<p>A JDBC probe runs on the <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> to query an external database via [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a>] and returns results to ServiceNow. Probes interact with the <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> via the <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a>, therefore the response of a JDBC probe returns as an XML payload in an "input" ECC Queue record. By default, each response payload will contain up to 200 returned rows, this value can be modified by setting the probe parameter <b>jdbcprobe_result_set_rows</b> to the desired number.
+</p>
+<h1><span class="mw-headline" id="Activating_the_Plugin"><span class="mw-headline-number">2</span> Activating the Plugin</span></h1>
+<p>Contact Customer Support to activate the <b>Integration - JDBC</b> (com.snc.integration.jdbc) plugin.
+</p>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand instructions for activating a plugin.</b>
+</th></tr>
+<tr>
+<td>
+<p>If you have the admin role, use the following steps to activate the plugin.
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Plugins</b>.</li>
+<li>Right-click the plugin name on the list and select <b>Activate/Upgrade</b>.
+<dl><dd>If the plugin depends on other plugins, these plugins are listed along with their activation status.</dd>
+<dd></dd></dl></li>
+<li>[Optional] If available, select the <b>Load demo data</b> check box.
+<dl><dd> Some plugins include demo data&#8212;sample records that are designed to illustrate plugin features for common use cases. Loading demo data is a good policy when you first activate the plugin on a development or test instance. You can load demo data after the plugin is activated by repeating this process and selecting the check box.</dd></dl></li>
+<li>Click <b>Activate</b>.</li></ol>
+</td></tr></table>
+<h1><span class="mw-headline" id="Direct_JDBC_Probe"><span class="mw-headline-number">3</span> Direct JDBC Probe</span></h1>
+<p>A direct JDBC probe specifies all the parameters necessary in the outbound <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a> XML payload. It is a standalone probe that is decoupled from a <a href="index.php%3Ftitle=Data_Sources.html#JDBC_Types" title="Data Sources">JDBC Data Source</a> and does not insert into an <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">import set</a>. The required field in the <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a> record for a direct JDBC probe is <b>Topic</b> and it must equal <b>JDBCProbe</b>. The <b>Source</b> field is reserved for the <b><a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_id</a></b> of the data source record in the case of a <a href="index.php%3Ftitle=JDBCProbe.html#JDBC_Probes_via_Data_Source" title="JDBCProbe">JDBC data source</a> 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you have ServiceNow <a href="index.php%3Ftitle=Discovery.html" title="Discovery">Discovery</a> enabled on your platform, add the <b>skip_sensor</b> parameter to the probe to avoid the discovery sensors from processing the probe and resulting in an "No sensors defined" error</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="XML_Structure"><span class="mw-headline-number">3.1</span> XML Structure</span></h2>
+<p>A direct JDBC probe has the following XML payload structure 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;parameters&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;skip_sensor&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;parameter_name&quot;</span> <span class="na">value=</span><span class="s">&quot;parameter_value&quot;</span><span class="nt">/&gt;</span>
+  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="err">...</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/select&gt;</span>
+  <span class="nt">&lt;/parameter&gt;</span>
+<span class="nt">&lt;/parameters&gt;</span>
+</pre></div> 
+<h2><span class="mw-headline" id="Parameters"><span class="mw-headline-number">3.2</span> Parameters</span></h2>
+<p>The following parameters are available in a direct JDBC probe.
+</p>
+<table class="standard">
+
+<tr>
+<th> Parameter Name
+</th>
+<th> Description
+</th>
+<th> Example
+</th>
+<th> Required?
+</th></tr>
+<tr>
+<td> jdbc_driver
+</td>
+<td> The Java class name for the JDBC driver to use, the currently supported drivers are
+<ul><li>Oracle - oracle.jdbc.OracleDriver </li>
+<li>Microsoft SQL Server - com.microsoft.sqlserver.jdbc.SQLServerDriver </li>
+<li>MySQL - com.mysql.jdbc.Driver </li>
+<li>Sybase - com.sybase.jdbc3.jdbc.SybDriver </li>
+<li>IBM DB2 Universal - com.ibm.db2.jcc.DB2Driver</li></ul>
+</td>
+<td> com.microsoft.sqlserver.jdbc.SQLServerDriver
+</td>
+<td> Y
+</td></tr>
+<tr>
+<td> connection_string
+</td>
+<td> The JDBC connection string/URL for defining the connection, usually contains information about the database server and name, the user id and password for conenctiong to the database. The syntax is vendor specific, refer to the following links for reference
+<ul><li>Oracle - [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.oracle.com/technology/tech/java/sqlj_jdbc/htdocs/jdbc_faq.html#05_03">jdbc:oracle:thin:&lt;username/password&gt;@&lt;database&gt;</a>] </li>
+<li>Microsoft SQL Server - [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://msdn.microsoft.com/en-us/library/ms378428(SQL.90).aspx">jdbc:sqlserver://localhost;user=MyUserName;password=*****;</a>] </li>
+<li>MySQL - [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://dev.mysql.com/doc/refman/5.0/en/connector-j-reference-configuration-properties.html">jdbc:mysql://localhost/database?user=username%26password=passwd</a>] </li>
+<li>Sybase - [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.sybase.com/detail?id=1009876#sec2q2">jdbc:sybase:Tds:10.10.11.162:4100/NCOMS?user=yyy%26password=xxx</a>] </li>
+<li>DB2 Universal - [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://publib.boulder.ibm.com/infocenter/db2luw/v8/index.jsp?topic=/com.ibm.db2.udb.doc/ad/tjvjcccn.htm">jdbc:db2://sysmvs1.stl.ibm.com:5021/san_jose:user=db2adm;password=db2adm</a>]</li></ul>
+</td>
+<td> jdbc:sqlserver://xxx.service-now.com;databaseName=SMS;user=sms_user;password=sms_password
+</td>
+<td> Y
+</td></tr>
+<tr>
+<td> work
+</td>
+<td> A parent element of an XML fragment describing the SQL command to execute
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">table=</span><span class="s">&quot;System_DATA&quot;</span> <span class="na">where=</span><span class="s">&quot;InstanceKey=692&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;MachineID/&gt;</span>
+      <span class="nt">&lt;SMSID0/&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+  <span class="nt">&lt;/parameter&gt;</span>
+  ...
+</pre></div>
+</td>
+<td> Y (if not using the <b>table_name</b> parameter short cut)
+</td></tr>
+<tr>
+<td> query_timeout
+</td>
+<td> Specify the number of seconds the JDBC driver will wait for a query (SELECT) to complete. Zero means no timeout. If timeout is exceeded, the integration considers the JDBC result inaccessible and places it in an error state.
+</td>
+<td> 60
+</td>
+<td> N (optional during SELECT)
+</td></tr>
+<tr>
+<td> table_name
+</td>
+<td> An alternate way of executing a <i>select *</i> query, instead of using the <b>work</b> element. Equivalent to executing "select * from &lt;table_name&gt;"
+</td>
+<td> System_DATA
+</td>
+<td> N (required during count_rows == true)
+</td></tr>
+<tr>
+<td> count_rows
+</td>
+<td> Indicate the a <i>select count(*)</i> query should be executed returning the number of rows. The result of the count will be returned as a <b>row_count</b> element in the <b>result</b> element.
+</td>
+<td> true
+</td>
+<td> N
+</td></tr>
+<tr>
+<td> query
+</td>
+<td> Indicate the type of query. If the query type is "Specific SQL", the sql_statement will be required to specify the SQL statement. <br />
+</td>
+<td> The possible choices are "All Rows from Table" or "Specific SQL".<br />
+</td>
+<td> N
+</td></tr>
+<tr>
+<td> sql_statement
+</td>
+<td> Use a specific SQL query. The presence of this element will execute a direct query specified in the value attribute.
+</td>
+<td> select * from any_table where id = 123
+</td>
+<td> N
+</td></tr>
+<tr>
+<td> skip_sensor
+</td>
+<td> Determines if <a href="index.php%3Ftitle=Discovery.html" title="Discovery">Discovery</a> will attempt to process the ECC input from the JDBCProbe. This parameter defaults to true.
+</td>
+<td> true
+</td>
+<td> N
+</td></tr></table>
+<p>For example, to query a table using a direct JDBC probe, requires the following parameters 
+</p>
+<ul><li>JDBC driver class name </li>
+<li>JDBC connection string 
+<ul><li>Database server </li>
+<li>Database name </li>
+<li>User name </li>
+<li>User password </li></ul></li>
+<li>The table name</li></ul>
+<p><a href="index.php%3Ftitle=File:Direct_jdbc_query.png.html" class="image" title="Image:direct_jdbc_query.png"><img alt="Image:direct_jdbc_query.png" src="images/c/c1/Direct_jdbc_query.png" width="728" height="340" /></a> 
+</p>
+<h3><span class="mw-headline" id="Using_the_Work_Element"><span class="mw-headline-number">3.2.1</span> Using the Work Element</span></h3>
+<p>The <b>work</b> element encodes SQL statements to be executed by the probe. The following are the valid <b>work</b> child elements. 
+</p>
+<ul><li>select </li>
+<li>update </li>
+<li>insert </li>
+<li>delete</li></ul>
+<h4><span class="mw-headline" id="SELECT"><span class="mw-headline-number">3.2.1.1</span> SELECT</span></h4>
+<p>Retrieve rows from the specified table in the database specified by the JDBC connection string. The simplest <b>select</b> work just specifies the table name and will retrieve all fields in a row, for example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">table=</span><span class="s">&quot;System_DATA&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/parameter&gt;</span>
+  ...
+</pre></div>
+<p>To specify a search criteria, specify the <b>where</b> attribute on the <b>select</b> element, for example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">table=</span><span class="s">&quot;System_DATA&quot;</span> <span class="na">where=</span><span class="s">&quot;InstanceKey=692&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/parameter&gt;</span>
+  ...
+</pre></div> 
+<p>To specify the fields you want returned, embed the fields as child elements of the <b>select</b> element, for example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">table=</span><span class="s">&quot;System_DATA&quot;</span> <span class="na">where=</span><span class="s">&quot;InstanceKey=692&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;MachineID/&gt;</span>
+      <span class="nt">&lt;SMSID0/&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+  <span class="nt">&lt;/parameter&gt;</span>
+  ...
+</pre></div>
+<p>To use a direct SQL statement, specify it in the <b>query</b> parameter 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  ...
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;query&quot;</span> <span class="na">value=</span><span class="s">&quot;Specific SQL&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;sql_statement&quot;</span> <span class="na">value=</span><span class="s">&quot;select * from any_table where value=&#39;test&#39;&quot;</span><span class="nt">/&gt;</span>
+  ...
+</pre></div>
+<h4><span class="mw-headline" id="UPDATE"><span class="mw-headline-number">3.2.1.2</span> UPDATE</span></h4>
+<p>An <b>update</b> SQL can be executed by specifying the <b>table</b>, optional <b>where</b> clause and required child elements for the fields and their values to update. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>...
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;update</span> <span class="na">table=</span><span class="s">&quot;alerts.status&quot;</span> <span class="na">where=</span><span class="s">&quot;ServerName %= &#39;NCOMS&#39; AND ServerSerial=3935&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Agent&gt;</span>ServiceNow - INC10020<span class="nt">&lt;/Agent&gt;</span>
+    <span class="nt">&lt;URL&gt;</span>http://Macintosh-9.local:8080/glide/incident.do?sys_id=17a31f380a0a0bae0048ca875c8891d0<span class="nt">&lt;/URL&gt;</span>
+    <span class="nt">&lt;Severity</span> <span class="na">quoted=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/Severity&gt;</span>
+    <span class="nt">&lt;Acknowledged</span> <span class="na">quoted=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/Acknowledged&gt;</span>
+  <span class="nt">&lt;/update&gt;</span>
+<span class="nt">&lt;/parameter&gt;</span>
+...
+</pre></div> 
+<h4><span class="mw-headline" id="INSERT"><span class="mw-headline-number">3.2.1.3</span> INSERT</span></h4>
+<p>An <b>insert</b> SQL can be executed by specifying the <b>table</b>, and required child elements for the fields and their values to insert. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>...
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;insert</span> <span class="na">table=</span><span class="s">&quot;alerts.status&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Agent&gt;</span>ServiceNow - INC10020<span class="nt">&lt;/Agent&gt;</span>
+    <span class="nt">&lt;URL&gt;</span>http://Macintosh-9.local:8080/glide/incident.do?sys_id=17a31f380a0a0bae0048ca875c8891d0<span class="nt">&lt;/URL&gt;</span>
+    <span class="nt">&lt;Severity</span> <span class="na">quoted=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/Severity&gt;</span>
+    <span class="nt">&lt;Acknowledged</span> <span class="na">quoted=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/Acknowledged&gt;</span>
+  <span class="nt">&lt;/insert&gt;</span>
+<span class="nt">&lt;/parameter&gt;</span>
+...
+</pre></div> 
+<h4><span class="mw-headline" id="DELETE"><span class="mw-headline-number">3.2.1.4</span> DELETE</span></h4>
+<p>A <b>delete</b> SQL can be executed by specifying the <b>table</b>, and optional <b>where</b> clause. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>...
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;delete</span> <span class="na">table=</span><span class="s">&quot;alerts.status&quot;</span> <span class="na">where=</span><span class="s">&quot;ServerName %= &#39;NCOMS&#39; AND ServerSerial=3935&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/parameter&gt;</span>
+...
+</pre></div>
+<h3><span class="mw-headline" id="Select_.2A_JDBC_Probe_short_cut"><span class="mw-headline-number">3.2.2</span> Select * JDBC Probe short cut</span></h3>
+<p>Alternatively, you may specify a <b>table_name</b> parameter instead of a <b>work</b> element and the following query could be executed 
+</p>
+<pre>select * from &lt;table_name&gt;</pre> 
+<p>For example, using the following XML payload 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;parameters&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;jdbc_driver&quot;</span> <span class="na">value=</span><span class="s">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;connection_string&quot;</span> <span class="na">value=</span><span class="s">&quot;jdbc:sqlserver://xxx.service-now.com;databaseName=SMS_CRICKET;user=sms;password=sms&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;table_name&quot;</span> <span class="na">value=</span><span class="s">&quot;System_DATA&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/parameters&gt;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Counting_Rows"><span class="mw-headline-number">3.2.3</span> Counting Rows</span></h3>
+<p>To count the number of rows in a table, you can indicate a <i>select count(*)</i> type query by including the <b>count_rows</b> parameter with a value of <b>true</b>. 
+</p><p>For example
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;parameters&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;jdbc_driver&quot;</span> <span class="na">value=</span><span class="s">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;connection_string&quot;</span> <span class="na">value=</span><span class="s">&quot;jdbc:sqlserver://xxx.service-now.com;databaseName=SMS;user=sms;password=sms&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;count_rows&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;table_name&quot;</span> <span class="na">value=</span><span class="s">&quot;System_DATA&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/parameters&gt;</span>
+</pre></div>
+<p>The resulting response XML payload 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;parameters&gt;</span>
+  ...
+  <span class="nt">&lt;result</span> <span class="na">query=</span><span class="s">&quot;SELECT count(*) as row_count FROM System_DATA&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;row</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;row_count</span> <span class="na">class=</span><span class="s">&quot;java.lang.Integer&quot;</span> <span class="na">length=</span><span class="s">&quot;11&quot;</span> <span class="na">type=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>2312<span class="nt">&lt;/row_count&gt;</span>
+    <span class="nt">&lt;/row&gt;</span>
+  <span class="nt">&lt;/result&gt;</span>
+  ...
+<span class="nt">&lt;/parameters&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="JDBC_Probes_via_Data_Source"><span class="mw-headline-number">3.3</span> JDBC Probes via Data Source</span></h2>
+<p>JDBC probes are executed via a JDBC data source when an import is running against the data source. A JDBC data source JDBC probe is described by the JDBCProbe <b>Topic</b> and the <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_id</a> of the data source in the <b>Source</b> field of the <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a> output record. 
+</p><p>The data source record would look like this 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Jdbc_data_source.png.html" class="image"><img alt="" src="images/thumb/c/ce/Jdbc_data_source.png/600px-Jdbc_data_source.png" width="600" height="410" class="thumbimage" srcset="/images/c/ce/Jdbc_data_source.png 1.5x, /images/c/ce/Jdbc_data_source.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Jdbc_data_source.png.html" class="internal" title="Enlarge"></a></div>Sample JDBC data source</div></div></div><br style="clear:both;" />
+<p>The following <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a> output probe will be created when you <i>load</i> from the data source. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Jdbc_data_source_probe.png.html" class="image"><img alt="" src="images/thumb/d/d3/Jdbc_data_source_probe.png/600px-Jdbc_data_source_probe.png" width="600" height="218" class="thumbimage" srcset="/images/d/d3/Jdbc_data_source_probe.png 1.5x, /images/d/d3/Jdbc_data_source_probe.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Jdbc_data_source_probe.png.html" class="internal" title="Enlarge"></a></div>Sample output probe</div></div></div><br style="clear:both;" />
+
+<!-- 
+NewPP limit report
+Cached time: 20171201135402
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.232 seconds
+Real time usage: 3.689 seconds
+Preprocessor visited node count: 201/1000000
+Preprocessor generated node count: 554/1000000
+Post‐expand include size: 3434/2097152 bytes
+Template argument size: 1277/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   19.944      1 - -total
+ 51.95%   10.361      1 - Template:Other_Integration
+ 33.40%    6.661      1 - Template:Topic
+ 21.15%    4.218      1 - Template:Activating_the_Plugin
+ 21.08%    4.205      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6623-0!*!0!1!en!5!* and timestamp 20171201135358 and revision id 250316
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html">http://wiki.servicenow.com/index.php?title=JDBCProbe&amp;oldid=250316</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Other+Integrations.html" title="Category:Other Integrations">Other Integrations</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Other+Integrations.html" title="Category:Other Integrations">Other Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6623"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6623" data-vote-the-vote="5" data-vote-id="6623" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6623_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6623" data-vote-the-vote="1" data-vote-id="6623" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6623_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=JDBCProbe.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=JDBCProbe&amp;returntoquery=oldid%3D250316" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=JDBCProbe&amp;returntoquery=oldid%3D250316" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=JDBCProbe.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=JDBCProbe&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=JDBCProbe.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=JDBCProbe&amp;returnto=JDBCProbe&amp;oldid=250316&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=JDBCProbe&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FJDBCProbe.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/JDBCProbe" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=JDBCProbe&amp;oldid=250316.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=JDBCProbe&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:13, 23 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1312});});</script></body></html>

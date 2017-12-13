@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Turning on Auditing (History) for a Table - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Turning_on_Auditing_(History)_for_a_Table","wgTitle":"Turning on Auditing (History) for a Table","wgCurRevisionId":250959,"wgRevisionId":250959,"wgArticleId":1533,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auditing and System Logs","Table Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Turning_on_Auditing_(History)_for_a_Table","wgRelevantArticleId":1533,"wgRequestId":"d384072379c9cf140a965db1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170912175438"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Turning_on_Auditing_(History)_for_a_Table"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Turning on Auditing (History) for a Table"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Table Administration"/>
+<meta name="category" content="Table Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Turning on Auditing (History) for a Table"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170912175438"/>
+
+	<meta property="article:published_time" content="20170912175438"/>
+
+	<meta property="article:modified_time" content="20170912175438"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Table Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Turning_on_Auditing_(History)_for_a_Table"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Turning_on_Auditing_History_for_a_Table rootpage-Turning_on_Auditing_History_for_a_Table skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Turning on Auditing (History) for a Table</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Turning on Auditing (History) for a Table</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/time/concept/audited-tables-2.html">Auditing</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Table_Administration.html" title="Table Administration">Table Administration</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Creating_a_Custom_Table.html" title="Creating a Custom Table">Creating a Custom Table</a> </li>
+<li><a href="index.php%3Ftitle=Tables_and_Classes.html" title="Tables and Classes">Tables and Classes</a> </li>
+<li><a href="index.php%3Ftitle=Schema_Map_for_Tables.html" title="Schema Map for Tables">Schema Map for Tables</a></li>
+<li><a href="index.php%3Ftitle=Tables_and_Columns_Module.html" title="Tables and Columns Module">Tables &amp; Columns Module</a></li>
+<li><a href="index.php%3Ftitle=Deleting_a_Table.html" title="Deleting a Table">Deleting a Table</a> </li>
+<li><a href="index.php%3Ftitle=Deleting_a_Table%2527s_Records.html" title="Deleting a Table's Records" class="mw-redirect">Deleting a Table's Records</a> </li>
+<li><strong class="selflink">Turning on Auditing (History) for a Table</strong> 
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Understanding+the+sys+audit+Table&amp;oldid=0.html" title="Understanding the sys audit Table">Understanding the sys_audit Table</a> </li>
+<li><a href="index.php%3Ftitle=Viewing_a_Record%2527s_Change_History.html" title="Viewing a Record's Change History">Viewing a Record's Change History</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=History+Sets&amp;oldid=0.html" title="History Sets">History Sets</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Unique_Index.html" title="Unique Index">Unique Index</a></li>
+<li><a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">Unique Record Identifier</a></li>
+<li><a href="index.php%3Ftitle=Restoring_Deleted_Records.html" title="Restoring Deleted Records">Restoring Deleted Records</a></li>
+<li><a href="index.php%3Ftitle=Restoring_Deleted_Records_and_References.html" title="Restoring Deleted Records and References" class="mw-redirect">Restoring Deleted Records and References</a></li>
+<li><a href="index.php%3Ftitle=Creating_a_Many-to-Many_Relationship.html" title="Creating a Many-to-Many Relationship">Creating a Many-to-Many Relationship</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Auditing_a_Table"><span class="tocnumber">2</span> <span class="toctext">Auditing a Table</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Auditing_Parent_and_Child_Tables"><span class="tocnumber">2.1</span> <span class="toctext">Auditing Parent and Child Tables</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Auditing_deletions_from_a_form_or_list"><span class="tocnumber">2.2</span> <span class="toctext">Auditing deletions from a form or list</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Information_Audited"><span class="tocnumber">3</span> <span class="toctext">Information Audited</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Information_Exempted_from_the_Audit_History"><span class="tocnumber">3.1</span> <span class="toctext">Information Exempted from the Audit History</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html#Excluding_an_Individual_Field_from_Auditing"><span class="tocnumber">4</span> <span class="toctext">Excluding an Individual Field from Auditing</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>ServiceNow tracks incident, change, and problem history in the sys_audit table. Enabling auditing tracks the creation, update, and deletion of audited records. In addition, auditing activates the History context menu entry. It is not possible to audit individual fields without auditing the entire table. It is possible, however, to hide certain fields from the audit using a dictionary attribute. Auditing certain system tables that receive a large amount of traffic, such as Workflow Contexts [wf_context], can impact performance and is not recommended.
+</p>
+<h1><span class="mw-headline" id="Auditing_a_Table"><span class="mw-headline-number">2</span> Auditing a Table</span></h1>
+<p>To enable auditing for a table:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Dictionary</b>. </li>
+<li>Select the table to audit. For example, <tt>cmdb_ci_computer</tt>. </li>
+<li>Select the dictionary entry for the table. The table name always has an empty column name and the type of collection. </li>
+<li>Check the <b>Audit </b>check box.</li>
+<li>Click <b>Update</b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>By default, the system does not audit records from system tables. To audit a system table, add it to the list of tables in the glide.ui.audit_deleted_tables property list.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Auditing_Parent_and_Child_Tables"><span class="mw-headline-number">2.1</span> Auditing Parent and Child Tables</span></h2>
+<p>Tables do not inherit the audit flags from parent or child audited tables. For example, if you enable auditing for the <b>cmdb_ci</b> table, only CI's which are stored in that base table will be audited. Likewise, if you enable auditing for the <b>cmdb_ci_computer</b> table, only the computer CI records will be audited, including any fields on the <b>cmdb_ci_computer</b> table that are inherited from <b>cmdb_ci</b> table.
+</p>
+<h2><span class="mw-headline" id="Auditing_deletions_from_a_form_or_list"><span class="mw-headline-number">2.2</span> Auditing deletions from a form or list</span></h2>
+<p>Deletion of an individual record from a form is audited by default. To prevent auditing, set the table's dictionary attribute "no_audit_delete".
+</p><p>Deletes from a list are audited when "audit" is checked on the table dictionary and the table is not listed in the property  glide.db.audit.ignore.
+</p>
+<h1><span class="mw-headline" id="Information_Audited"><span class="mw-headline-number">3</span> Information Audited</span></h1>
+<p>Auditing tracks the following record changes.
+</p>
+<ul><li> The <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">Unique Record Identifier</a> (sys_id) of the record that changed</li>
+<li> The field that changed</li>
+<li> The new field value</li>
+<li> The old field value</li>
+<li> The number of times this record and field have been updated</li>
+<li> The date and time when the change occurred</li>
+<li> The user who made the change</li>
+<li> The reason for the change (if any reason is associated with the change)</li>
+<li> The record's internal checkpoint ID (if the record has multiple versions)</li></ul>
+<p>See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Understanding+the+sys+audit+Table&amp;oldid=0.html" title="Understanding the sys audit Table">Understanding the sys_audit Table</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Information_Exempted_from_the_Audit_History"><span class="mw-headline-number">3.1</span> Information Exempted from the Audit History</span></h2>
+<p>Some updates are not audited despite enabling auditing on a table. This is why you may see 132 updates in a record's history, but only seven audited ones. Auditing excludes the following information: 
+</p>
+<ul><li> Any updates made by an upgrade.</li>
+<li> Any updates made through import sets.</li>
+<li> Any records in parent or child tables.</li>
+<li> Any field with the <b>no_audit</b> dictionary attribute.</li>
+<li> Any system tables not listed in the <tt>glide.ui.audit_deleted_tables</tt> property list.</li>
+<li> Any field that begins with the sys_ prefix (system fields) except the <b>sys_class_name</b> and <b>sys_domain_id</b> columns.</li>
+<li> Any time an inactivity monitor touches a record (this prevents you seeing possibly hundreds of updates listed against an incident, with the noise drowning out the useful data). </li></ul>
+<h1><span class="mw-headline" id="Excluding_an_Individual_Field_from_Auditing"><span class="mw-headline-number">4</span> Excluding an Individual Field from Auditing</span></h1>
+<p>To prevent a field from being audit, add the <b>no_audit</b> dictionary attribute.
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Dictionary</b>. </li>
+<li>Select the table containing the field you want to exclude from auditing. For example, <tt>cmdb_ci_computer</tt>. </li>
+<li>Select the dictionary entry for the field you want to exclude from auditing. For example, <tt>hardware_status</tt>. </li>
+<li>In the <b>Attributes</b> field, enter <b>no_audit</b>.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130144210
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.163 seconds
+Real time usage: 0.419 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 232/1000000
+Post‐expand include size: 3240/2097152 bytes
+Template argument size: 1267/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.767      1 - -total
+ 85.66%   52.910      1 - Template:Table_Admin
+ 70.60%   43.609      1 - Template:Topic
+ 26.66%   16.470      1 - Embedded:Table_Admin
+ 11.44%    7.064      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:1533-0!*!0!1!en!5!* and timestamp 20171130144210 and revision id 250959
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html">http://wiki.servicenow.com/index.php?title=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Auditing+and+System+Logs.html" title="Category:Auditing and System Logs">Auditing and System Logs</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Table+Administration.html" title="Category:Table Administration">Table Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Table+Administration.html" title="Category:Table Administration">Table Administration</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security.html" title="Category:Security">Security</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Auditing+and+System+Logs.html" title="Category:Auditing and System Logs">Auditing and System Logs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_1533"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="1533" data-vote-the-vote="5" data-vote-id="1533" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_1533_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="1533" data-vote-the-vote="1" data-vote-id="1533" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_1533_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Turning+on+Auditing+%28History%29+for+a+Table&amp;returntoquery=oldid%3D250959" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Turning+on+Auditing+%28History%29+for+a+Table&amp;returntoquery=oldid%3D250959" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Turning_on_Auditing_(History)_for_a_Table.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Turning+on+Auditing+%2528History%2529+for+a+Table.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Turning+on+Auditing+%2528History%2529+for+a+Table&amp;returnto=Turning+on+Auditing+%2528History%2529+for+a+Table&amp;oldid=250959&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FTurning_on_Auditing_(History)_for_a_Table.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FTurning_on_Auditing_(History)_for_a_Table.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;oldid=250959.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:54, 12 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1178});});</script></body></html>

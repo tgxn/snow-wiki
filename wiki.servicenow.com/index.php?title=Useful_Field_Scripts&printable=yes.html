@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Useful Field Scripts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Useful_Field_Scripts","wgTitle":"Useful Field Scripts","wgCurRevisionId":250392,"wgRevisionId":250392,"wgArticleId":6122,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Useful Scripts","Field Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Useful_Field_Scripts","wgRelevantArticleId":6122,"wgRequestId":"7b0832fbc6255fc9280ea84b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170825161024"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Useful_Field_Scripts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Useful Field Scripts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Field Scripts"/>
+<meta name="category" content="Field Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Useful_Field_Scripts.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Useful Field Scripts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170825161024"/>
+
+	<meta property="article:published_time" content="20170825161024"/>
+
+	<meta property="article:modified_time" content="20170825161024"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Field Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Useful_Field_Scripts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Useful_Field_Scripts rootpage-Useful_Field_Scripts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Useful+Field+Scripts.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Useful+Field+Scripts&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Useful Field Scripts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Useful_Scripts_Portal.html" title="Useful Scripts Portal">Useful Scripts</a> &gt; Useful Field Scripts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Useful_Field_Scripts&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Useful_Field_Scripts&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/reference/r_UsefulFieldScripts.html">Useful Field Scripts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p>This is a searchable version of the Useful Field Customization Scripts. For an easy-to-navigate version, visit the <a href="index.php%3Ftitle=Useful_Scripts_portal.html" title="Useful Scripts portal" class="mw-redirect">Useful Scripts portal</a>. 
+</p>
+<hr />
+<h2><span class="mw-headline" id="AKA_Incident_Template.2C_Auto_Assignments.2C_Quick_Calls.2C_Call_Script.2C_Auto_Populate"><span class="mw-headline-number">1</span> AKA Incident Template, Auto Assignments, Quick Calls, Call Script, Auto Populate</span></h2>
+<p>Let's say you want to auto-fill your Short Description based on the Subcategory selected. First, create a lookup table, then populate the key field, in this case Subcategory and the auto-filled field, Short Description. So let's say your table had a record with Subcategory = Password and Short Description = Password Reset. When the user selects the Subcategory of Password on the Incident form a Client Script looks up the matching record and sets Short Description equal to Password Reset. 
+</p><p>Client Script settings... Type = onChange, Table name = incident, Field name = Subcategory 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">newrec</span> <span class="o">=</span> <span class="nx">gel</span><span class="p">(</span><span class="s1">&#39;sys_row&#39;</span><span class="p">);</span>  <span class="c1">//Check if new record</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">newrec</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+      <span class="kd">var</span> <span class="nx">lookup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;u_short_desc_lookup&#39;</span><span class="p">);</span> 
+      <span class="nx">lookup</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;u_subcategory&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;subcategory&#39;</span><span class="p">));</span>
+      <span class="nx">lookup</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+      <span class="kd">var</span> <span class="nx">temp</span><span class="p">;</span>  <span class="c1">//temp var - reusable </span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">lookup</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">temp</span> <span class="o">=</span> <span class="nx">lookup</span><span class="p">.</span><span class="nx">u_short_description</span><span class="p">;</span>
+          <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="nx">temp</span><span class="p">){</span>   <span class="c1">//Set the form value from lookup if there is a lookup value</span>
+            <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;short_description&#39;</span><span class="p">,</span> <span class="nx">temp</span><span class="p">);</span>
+          <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;short_description&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+          <span class="p">}</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="c1">//If a lookup record does not exist based on lookup.addQuery</span>
+        <span class="c1">//Then set to UNDEFINED or NULL depending on type</span>
+        <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;short_description&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+ 
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p><p>You could populate many fields or even pull in Call Script questions into the Comments field so call center personnel gather good information to pass on to a technician. There are already Assignment Rule, Templates and Wizards built in that perform similiar functions. 
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Disable HTML Tags in Descriptions 
+</p><p><b>Type:</b>  
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> This code disables HTML tags in descriptions and short descriptions by substituting the tags with harmless versions that won't execute. 
+</p><p><b>Parameters:</b> 
+</p>
+<b>Script:</b> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre> <span class="nx">doit</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">doit</span><span class="p">()</span> <span class="p">{</span> 
+
+ <span class="kd">var</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">shdesc</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">short_description</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">shdesc</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">desc</span> <span class="o">=</span> <span class="nx">desc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;script&gt;/g</span><span class="p">,</span> <span class="s2">&quot;(script)&quot;</span><span class="p">);</span>
+  <span class="nx">current</span><span class="p">.</span><span class="nx">description</span> <span class="o">=</span> <span class="nx">desc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;\/script&gt;/g</span><span class="p">,</span> <span class="s2">&quot;(\/script)&quot;</span><span class="p">);</span>
+  <span class="nx">shdesc</span> <span class="o">=</span> <span class="nx">shdesc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;script&gt;/g</span><span class="p">,</span> <span class="s2">&quot;(script)&quot;</span><span class="p">);</span>
+  <span class="nx">current</span><span class="p">.</span><span class="nx">short_description</span> <span class="o">=</span> <span class="nx">shdesc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;\/script&gt;/g</span><span class="p">,</span> <span class="s2">&quot;(\/script)&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div> 
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Eliminate Leading and Trailing Spaces in Fields 
+</p><p><b>Type:</b>  
+</p><p><b>Table:</b> sys_user
+</p><p><b>Description:</b> This example of the script trims trailing and leading spaces in the FirstName and LastName fields of sys_user. 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">doit</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">doit</span><span class="p">()</span> <span class="p">{</span> 
+
+  <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user&#39;</span><span class="p">);</span>
+ <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+ <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">((</span><span class="nx">gr</span><span class="p">.</span><span class="nx">first_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span> <span class="o">!=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">first_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">last_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span> <span class="o">!=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">last_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span><span class="p">))</span> <span class="p">{</span>
+     <span class="nx">gr</span><span class="p">.</span><span class="nx">first_name</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">first_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
+     <span class="nx">gr</span><span class="p">.</span><span class="nx">last_name</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">last_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
+     <span class="nx">gr</span><span class="p">.</span><span class="nx">autoSysFields</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+     <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div> 
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Make a Field Label Flash 
+</p><p><b>Type:</b> Client Script 
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> The following example is for the number field on incident. The label will flash for 2 seconds: 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">g_form</span><span class="p">.</span><span class="nx">flash</span><span class="p">(</span><span class="s2">&quot;incident.number&quot;</span><span class="p">,</span> <span class="s2">&quot;#FFFACD&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+<p>The arguments for the flash method are as follows: arg1: tablename.fieldname arg2: RGB color or acceptable CSS color like "blue" or "tomato" arg3: integer that determines how long the label will flash. 
+</p>
+<ul><li>Use 2 for a 1-second flash </li>
+<li>Use 0 for a 2-second flash </li>
+<li>Use -2 for a 3-second flash </li>
+<li>Use -4 for a 4-second flash</li></ul>
+<p>Do not provide this argument if you want the field label simply colored the specified color 
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Make Field Label Bold 
+</p><p><b>Type:</b> Client Script 
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> This script makes the label of a particular field (in this case, Short Description on the Incident Table) bold. 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onLoad</span><span class="p">()</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getLabel</span><span class="p">(</span><span class="s1">&#39;incident.short_description&#39;</span><span class="p">);</span>
+
+<span class="nx">l</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontWeight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">;</span> <span class="p">}</span>
+</pre></div> 
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/reference/r_UsefulFieldScripts.html">Useful Field Scripts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Make Fields Read-Only 
+</p><p><b>Type:</b> Client Script 
+</p><p><b>Table:</b> incident
+</p><p><b>Description:</b> This onLoad client script makes fields read-only. For this example, the script makes the following fields on the Incident table read-only: Incident state, Impact, Urgency, Priority, Configuration item, and Assigned to. It also removes the magnifying glass for the read-only Reference Fields (Configuration item and Assigned to). 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onLoad</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">incidentState</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;incident_state&#39;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">incidentState</span>  <span class="o">==</span> <span class="s1">&#39;6&#39;</span> <span class="o">||</span> <span class="nx">incidentState</span>  <span class="o">==</span> <span class="s1">&#39;7&#39;</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;incident_state&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;impact&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;urgency&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+     <span class="nx">g_form</span><span class="p">.</span><span class="nx">setReadonly</span><span class="p">(</span><span class="s1">&#39;assigned_to&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/time/reference/r_UseDateAndTimeFields.html">Data and Time Fields</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Set Current Date/Time In Field 
+</p><p><b>Type:</b> Client Script 
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> You can use the following two lines to set the current date and time in a date/time field. This bypasses the problem of getting the value into the proper format and proper timezone: 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> For more information on running Server Side Script with the client please refer to <a href="index.php%3Ftitle=GlideAjax.html" title="GlideAjax">GlideAjax</a>. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">ajax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;MyDateTimeAjax&#39;</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;nowDateTime&#39;</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;put your field name here&#39;</span><span class="p">,</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">getAnswer</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+<h3><span class="mw-headline" id="System_Script_Include"><span class="mw-headline-number">1.1</span> System Script Include</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Be sure the &quot;Client callable&quot; checkbox is checked</span>
+ 
+<span class="kd">var</span> <span class="nx">MyDateTimeAjax</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="nx">MyDateTimeAjax</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extendsObject</span><span class="p">(</span><span class="nx">AbstractAjaxProcessor</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">nowDateTime</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">nowDateTime</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div> 
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(210, 105, 30); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Role.gif.html" class="image" title="Role required"><img alt="Role required" src="images/7/7e/Role.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Admin</b> role.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<p><b>Name:</b> Toggle Timer Field by Field Name 
+</p><p><b>Type:</b> Client Script 
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> Toggles the timer field based on a particular field name. 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">toggleTimerByFieldName</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">)</span> <span class="p">{</span>
+ <span class="c1">//Step 1: Find the timer object</span>
+
+ <span class="c1">//timeObjectName: the timer objects name as it would normally be referenced</span>
+ <span class="c1">//timeObjectHidden: the hidden input node in the field td</span>
+ <span class="c1">//timeObjectParent: the parent td node containing the field and it&#39;s constituent nodes</span>
+ <span class="c1">//timeObjectFields: anchor tag with onclick to stop timer</span>
+
+ <span class="kd">var</span> <span class="nx">timeObjectName</span> <span class="o">=</span> <span class="nx">fieldName</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">timeObjectHidden</span> <span class="o">=</span> <span class="nx">gel</span><span class="p">(</span><span class="nx">timeObjectName</span><span class="p">);</span>
+
+  <span class="c1">//Step 2: simulate click on stop button</span>
+  <span class="kd">var</span> <span class="nx">timeObjectParent</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">timeObjectFields</span><span class="p">;</span>
+  
+  <span class="c1">//verify that we got the correct object</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">timeObjectHidden</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&quot;hidden&quot;</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//Get Parent td node</span>
+    <span class="nx">timeObjectParent</span> <span class="o">=</span> <span class="nx">timeObjectHidden</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+
+    <span class="c1">//Get input fields</span>
+    <span class="nx">timeObjectFields</span> <span class="o">=</span> <span class="nx">timeObjectParent</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+
+    <span class="c1">//simulate click of stop button</span>
+    <span class="kd">var</span> <span class="nx">timerTestString</span> <span class="o">=</span> <span class="s2">&quot;paused&quot;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">timerImg</span><span class="p">;</span>
+    
+    <span class="c1">//loop through input objects looking for the pause timer object</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">elIt</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">elIt</span> <span class="o">&lt;</span> <span class="nx">timeObjectFields</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">elIt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">timeObjectFields</span><span class="p">[</span><span class="nx">elIt</span><span class="p">].</span><span class="nx">id</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">timerTestString</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">timeObjectFields</span><span class="p">[</span><span class="nx">elIt</span><span class="p">].</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;false&quot;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">timeObjectFields</span><span class="p">[</span><span class="nx">elIt</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span>
+          <span class="nx">timerImg</span> <span class="o">=</span> <span class="nx">timeObjectParent</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+          <span class="nx">timerImg</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&quot;images/timer_start.gifx&quot;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">timeObjectFields</span><span class="p">[</span><span class="nx">elIt</span><span class="p">].</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">timeObjectFields</span><span class="p">[</span><span class="nx">elIt</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span><span class="p">;</span>
+          <span class="nx">timerImg</span> <span class="o">=</span> <span class="nx">timeObjectParent</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+          <span class="nx">timerImg</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&quot;images/timer_stop.gifx&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div> 
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/reference/r_ModifyAGlideDateTimeFieldValue.html">Modify a GlideDateTime Field Value</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+<b>Name:</b> Modify GlideDateTime field value 
+</p><p><b>Type:</b> A server side script that accesses a GlideDateTime field. 
+</p><p><b>Table:</b> n/a
+</p><p><b>Description:</b> Given a GlideDateTime field or script object, show a variety of ways to easily modify value. The same concept also applies to the GlideDate object. 
+</p><p><b>Parameters:</b> n/a
+</p><p><b>Script:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//You first need a GlideDateTime object</span>
+<span class="c1">//this can be from instantiating a new object &quot;var gdt = new GlideDateTime()&quot;</span>
+<span class="c1">//or getting the object from a GlideDateTime field</span>
+<span class="c1">//getting the field value (for example: var gdt = current.start_date) only returns the string value, not the object</span>
+<span class="c1">//to get the object use var gdt = current.start_date.getGlideObject();</span>
+<span class="c1">//now gdt is a GlideDateTime object</span>
+<span class="kd">var</span> <span class="nx">gdt</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">start_date</span><span class="p">.</span><span class="nx">getGlideObject</span><span class="p">();</span>
+
+<span class="c1">//All methods can use negative values to subtract intervals</span>
+
+<span class="c1">//add 1 hour (60 mins * 60 secs)</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addSecondsLocalTime</span><span class="p">(</span><span class="mi">3600</span><span class="p">);</span>
+
+<span class="c1">//add 1 day</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addDaysLocalTime</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">//subtract 1 day</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addDaysLocalTime</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">//add 3 weeks</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addWeeksLocalTime</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="c1">//subtract 6 months.</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addMonthsLocalTime</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
+
+<span class="c1">//add 1 year, representing the date and time using the UTC timezone instead of the local user&#39;s timezone.</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addYearsUTC</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202225553
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.372 seconds
+Real time usage: 3.430 seconds
+Preprocessor visited node count: 259/1000000
+Preprocessor generated node count: 718/1000000
+Post‐expand include size: 24278/2097152 bytes
+Template argument size: 3134/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 3184.448      1 - -total
+ 13.05%  415.531      1 - Add_Autofill_Functionality
+ 12.84%  408.728      1 - Toggle_Timer_Field_by_Field_Name
+ 12.35%  393.318      1 - Disable_HTML_Tags_in_Descriptions
+ 12.24%  389.816      1 - Set_Current_DateTime_In_Field
+ 10.78%  343.204      1 - Modify_a_GlideDateTime_field_value
+ 10.39%  330.930      1 - Make_Fields_Read-Only_Script
+ 10.07%  320.747      1 - Make_a_Field_Label_Flash
+  9.93%  316.287      1 - Make_Field_Label_Bold
+  7.92%  252.182      1 - Eliminate_Leading_and_Trailing_Spaces_in_Fields
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6122-0!*!0!1!*!5!* and timestamp 20171202225550 and revision id 250392
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Useful_Field_Scripts&amp;oldid=250392.html">http://wiki.servicenow.com/index.php?title=Useful_Field_Scripts&amp;oldid=250392</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Scripts.html" title="Category:Field Scripts">Field Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Scripts.html" title="Category:Field Scripts">Field Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6122"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6122" data-vote-the-vote="5" data-vote-id="6122" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6122_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6122" data-vote-the-vote="1" data-vote-id="6122" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6122_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Useful_Field_Scripts.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Useful+Field+Scripts&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Useful+Field+Scripts&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Useful_Field_Scripts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Useful_Field_Scripts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Useful+Field+Scripts.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Useful+Field+Scripts&amp;returnto=Useful+Field+Scripts&amp;oldid=250392&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUseful_Field_Scripts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Useful_Field_Scripts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Useful_Field_Scripts&amp;oldid=250392.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Useful_Field_Scripts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:10, 25 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":917});});</script></body></html>

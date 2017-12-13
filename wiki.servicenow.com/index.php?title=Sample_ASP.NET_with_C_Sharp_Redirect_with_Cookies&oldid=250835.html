@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Sample ASP.NET with C Sharp Redirect with Cookies - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies","wgTitle":"Sample ASP.NET with C Sharp Redirect with Cookies","wgCurRevisionId":250835,"wgRevisionId":250835,"wgArticleId":3652,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Unencrypted HTTP","Server Scripting","Security Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies","wgRelevantArticleId":3652,"wgRequestId":"4f888b1ce0520c16ee5519ea","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170908172846"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Sample ASP.NET with C Sharp Redirect with Cookies"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Security Scripts"/>
+<meta name="category" content="Security Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Sample ASP.NET with C Sharp Redirect with Cookies"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170908172846"/>
+
+	<meta property="article:published_time" content="20170908172846"/>
+
+	<meta property="article:modified_time" content="20170908172846"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Security Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Sample_ASP_NET_with_C_Sharp_Redirect_with_Cookies rootpage-Sample_ASP_NET_with_C_Sharp_Redirect_with_Cookies skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Sample ASP.NET with C Sharp Redirect with Cookies</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Sample ASP.NET with C Sharp Redirect with Cookies</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;oldid=250835.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;oldid=250835.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/reference/r_ASPNETCSharpRdrctCks.html">Sample ASP.NET with C Sharp Redirect with Cookies</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Authentication.html" title="Authentication">Authentication</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a220779b66a8t'></div><script type="text/javascript">window.tamOnload_tam5a220779b66a8t=[];tree = new dTree('tam5a220779b66a8t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a220779b66a8t = tree;
+                                               tam5a220779b66a8t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Digest_Token_Authentication\&quot;" title=\"Digest Token Authentication\">Digest Token Authentication</a> ');
+
+tam5a220779b66a8t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_Java_Digest_Algorithm_for_Encryption\&quot;" title=\"Sample Java Digest Algorithm for Encryption\">Sample Java Digest Algorithm for Encryption</a> ');
+tam5a220779b66a8t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_C\&quot;" title=\"Sample C\">Sample C</a>');
+tam5a220779b66a8t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multiple_Provider_Single_Sign-On\&quot;" title=\"Multiple Provider Single Sign-On\">Multi-Provider Single Sign-On</a>');
+tam5a220779b66a8t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Web_Browser_SSO_Profile\&quot;" title=\"SAML 2.0 Web Browser SSO Profile\">SAML 2.0 Web Browser SSO Profile</a>');
+tam5a220779b66a8t.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Setup\&quot;" title=\"SAML 2.0 Setup\">SAML 2.0 Setup</a>');
+tam5a220779b66a8t.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_ADFS_3.0_to_Communicate_with_SAML_2.0\&quot;" title=\"Configuring ADFS 3.0 to Communicate with SAML 2.0\">Configuring ADFS 3.0 to Communicate with SAML 2.0</a>');
+tam5a220779b66a8t.add(8, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Troubleshooting\&quot;" title=\"SAML 2.0 Troubleshooting\">Troubleshooting SAML 2.0</a>');
+tam5a220779b66a8t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Applications\&quot;" title=\"OAuth Applications\">OAuth</a>');
+tam5a220779b66a8t.add(10, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Setup\&quot;" title=\"OAuth Setup\">OAuth Setup</a>');
+tam5a220779b66a8t.add(11, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_OAuth_Tokens\&quot;" title=\"Generating OAuth Tokens\">Generating OAuth Tokens</a>');
+tam5a220779b66a8t.add(12, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Client_API_Reference\&quot;" title=\"OAuth Client API Reference\">OAuth Client API Reference</a>');
+tam5a220779b66a8t.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OKTA_SSO_Integration\&quot;" title=\"OKTA SSO Integration\">Okta SSO Integration</a>');
+
+                                               document.getElementById('5a220779b66a8t').innerHTML = tam5a220779b66a8t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a220779b66a8t) { window.tamOnload_tam5a220779b66a8t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Legacy
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a220779c4658t'></div><script type="text/javascript">window.tamOnload_tam5a220779c4658t=[];tree = new dTree('tam5a220779c4658t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a220779c4658t = tree;
+                                               tam5a220779c4658t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Unencrypted_HTTP_Header\&quot;" title=\"Unencrypted HTTP Header\">Unencrypted HTTP Header </a>');
+
+tam5a220779c4658t.add(2, 1, '<strong class=\"selflink\">Sample ASP.NET with C Sharp Redirect with Cookies</strong> ');
+tam5a220779c4658t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP_Script_for_Unencrypted_Single_Sign-On\&quot;" title=\"Sample ASP Script for Unencrypted Single Sign-On\">Sample ASP Script for Unencrypted Single Sign-On</a> ');
+tam5a220779c4658t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_1.1_Browser_POST_Profile\&quot;" title=\"SAML 1.1 Browser POST Profile\">SAML 1.1 Browser POST Profile</a>');
+tam5a220779c4658t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OpenID\&quot;" title=\"OpenID\">Stateless OpenID with signature verification</a>');
+
+                                               document.getElementById('5a220779c4658t').innerHTML = tam5a220779c4658t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a220779c4658t) { window.tamOnload_tam5a220779c4658t[i](); }</script>
+
+
+</td></tr></table>
+</div>
+<p>This sample ASP .NET code creates a simple authentication portal and passes an unencrypted HTTP header as a cookie. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Cookies are domain specific and cannot be used across different network domains. The only domain that can read a cookie is the domain that sets it. It does not matter what domain name you set. If you do not have an option of your SSO portal being in the same network domain as your ServiceNow instance (for example, in an on-premisis deployment, an alternative is to pass the SSO token using URL GET or POST parameters.</i>
+</td></tr></table>
+<p><br />
+This sample assumes:
+</p>
+<ul><li> The web server supports ASP .NET and C#</li>
+<li> The target ServiceNow instance is https://&lt;instance name&gt;.service-now.com/</li>
+<li> SiteMinder or another single sign-on application has pre-authenticated the user</li>
+<li> The target ServiceNow instance expects an HTTP header of SM_USER</li></ul>
+<p>Change the ASP code to redirect users to the proper ServiceNow instance.
+</p><p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portal Page Login<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>%--    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0;url=https://&lt;instance name&gt;.service-now.com/&quot;</span><span class="p">&gt;</span>--%&gt;
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span> Portal Page Login <span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">hr</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label2&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;21px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span>
+            <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Instance URL:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;urlBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;17px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span> <span class="na">Text</span><span class="o">=</span><span class="s">&quot;User Id:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;userNameBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;</span>
+         
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">asp:Button</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Button1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;39px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span> <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Ok&quot;</span>
+            <span class="na">Width</span><span class="o">=</span><span class="s">&quot;88px&quot;</span> <span class="na">OnClick</span><span class="o">=</span><span class="s">&quot;Button1_click&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">asp</span><span class="p">&gt;</span>
+</pre></div>
+<p><br />
+<a href="index.php%3Ftitle=File:Designer.jpg.html" class="image"><img alt="Designer.jpg" src="images/7/71/Designer.jpg" width="594" height="359" /></a> 
+<br />
+</p><p>The following C# code handles the OnClick button event for the form. The code:
+</p>
+<ul><li> Creates the cookie "SM_USER"</li>
+<li> Performs a redirect to the URL specified on the ASP form.</li></ul>
+<p>Change the C# code to create the proper cookie name.
+<br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Configuration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.Security</span><span class="p">;</span>
+ 
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">_Default</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Page</span> 
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+ 
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Button1_click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="n">HttpCookie</span> <span class="n">myCookie</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HttpCookie</span><span class="p">(</span><span class="s">&quot;SM_USER&quot;</span><span class="p">);</span>
+            <span class="n">myCookie</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">userNameBox</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">myCookie</span><span class="p">);</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Redirect</span><span class="p">(</span><span class="n">urlBox</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+ 
+        <span class="p">}</span><span class="k">catch</span> <span class="p">{}</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202015258
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.245 seconds
+Real time usage: 1.160 seconds
+Preprocessor visited node count: 42/1000000
+Preprocessor generated node count: 258/1000000
+Post‐expand include size: 1682/2097152 bytes
+Template argument size: 953/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   95.874      1 - -total
+ 90.90%   87.146      1 - Template:Authentication
+ 83.18%   79.751      1 - Template:Topic
+  7.77%    7.445      2 - Template:Note
+  5.84%    5.601      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:3652-0!*!0!*!*!5!* and timestamp 20171202015257 and revision id 250835
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;oldid=250835.html">http://wiki.servicenow.com/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;oldid=250835</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Unencrypted+HTTP.html" title="Category:Unencrypted HTTP">Unencrypted HTTP</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security+Scripts.html" title="Category:Security Scripts">Security Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Unencrypted+HTTP.html" title="Category:Unencrypted HTTP">Unencrypted HTTP</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security+Scripts.html" title="Category:Security Scripts">Security Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_3652"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="3652" data-vote-the-vote="5" data-vote-id="3652" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3652_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="3652" data-vote-the-vote="1" data-vote-id="3652" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3652_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies&amp;returntoquery=oldid%3D250835" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies&amp;returntoquery=oldid%3D250835" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies&amp;returnto=Sample+ASP.NET+with+C+Sharp+Redirect+with+Cookies&amp;oldid=250835&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FSample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;oldid=250835.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:28, 8 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":976});});</script></body></html>

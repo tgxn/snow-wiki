@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Legacy:Using the CI Script Action - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Legacy:Using_the_CI_Script_Action","wgTitle":"Legacy:Using the CI Script Action","wgCurRevisionId":100833,"wgRevisionId":100833,"wgArticleId":4236,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Using_the_CI_Script_Action","wgRelevantArticleId":4236,"wgRequestId":"ae22c454c8da25694c1d60b8","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20120116204451"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Legacy:Using_the_CI_Script_Action"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Legacy:Using the CI Script Action"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Legacy:Using the CI Script Action"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20120116204451"/>
+
+	<meta property="article:published_time" content="20120116204451"/>
+
+	<meta property="article:modified_time" content="20120116204451"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Legacy:Using_the_CI_Script_Action"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Legacy_Using_the_CI_Script_Action rootpage-Legacy_Using_the_CI_Script_Action skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%253AUsing+the+CI+Script+Action.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Legacy%253AUsing+the+CI+Script+Action&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Using the CI Script Action</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Legacy:Using the CI Script Action</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;oldid=100833.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;oldid=100833.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <b><a href="index.php%3Ftitle=Discovery_CI_Consolidation_Plugin.html" title="Discovery CI Consolidation Plugin" class="mw-redirect">Discovery CI Consolidation Plugin</a></b>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Using_Discovery_CI_Consolidation.html" title="Using Discovery CI Consolidation" class="mw-redirect">Using Discovery CI Consolidation</a> </li>
+<li><a href="index.php%3Ftitle=Using_Duplicate_CI_Finders.html" title="Using Duplicate CI Finders" class="mw-redirect">Using Duplicate CI Finders</a> </li>
+<li><a href="index.php%3Ftitle=Using_a_Configuration_Item_(CI)_Delete_Action.html" title="Using a Configuration Item (CI) Delete Action" class="mw-redirect">Using a Configuration Item (CI) Delete Action</a> </li>
+<li><a href="index.php%3Ftitle=Merging_Configuration_Items_(CI).html" title="Merging Configuration Items (CI)" class="mw-redirect">Merging Configuration Items (CI)</a> </li>
+<li><a href="index.php%3Ftitle=Using_the_CI_Script_Action.html" title="Using the CI Script Action" class="mw-redirect">Using the CI Script Action</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_Agentless_Discovery.html" title="Getting Started with Agentless Discovery">Discovery</a></li>
+<li><a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a></li>
+<li><a href="index.php%3Ftitle=Database_Catalogs.html" title="Database Catalogs">Database Catalogs</a></li></ul>
+</td></tr></table>
+</div>
+<p><br /> 
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(68, 68, 68); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(230, 230, 230);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Obsolete.gif.html" class="image" title="Obsolete"><img alt="Obsolete" src="images/d/d9/Obsolete.gif" width="20" height="20" /></a></div>
+</td>
+<td width="100%"> Functionality described here is obsolete since the <a href="index.php%3Ftitle=Winter_2010_Release_Notes.html" title="Winter 2010 Release Notes"><b>Winter 2010</b></a> release and has been replaced by <a href="index.php%3Ftitle=Discovery_Identifiers.html" title="Discovery Identifiers">Discovery Identifiers</a>.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Do not install this plugin. It interferes with the current functionality.
+</td></tr></table>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Script actions enable you to perform a wide range of tasks, such as modify a configuration item (CI), change which data is being merged into a CI, or abort a consolidation.
+</p>
+<h1><span class="mw-headline" id="Creating_or_Modifying_Delete_Actions"><span class="mw-headline-number">2</span> Creating or Modifying Delete Actions</span></h1>
+<p>To create or modify a delete action, such as aborting a consolidator, the script action looks like this:
+</p><p><br /> 
+</p><p><a href="index.php%3Ftitle=File:DCICScriptAction2.png.html" class="image"><img alt="DCICScriptAction2.png" src="images/8/88/DCICScriptAction2.png" width="769" height="509" /></a> 
+</p><p><br />
+</p><p>The fields on this form: 
+</p>
+<ul><li><b>Summary</b>. Unique title for the action. The script action does not use the value in this field.&#160; This summary title appears in the list of actions on the consolidator page.</li>
+<li><b>Order</b>. An integer value that controls the order in which consolidator actions run.&#160; Actions with smaller order values run earlier, actions with larger order values run later. </li>
+<li><b>Active</b>. If checked, this script action will run when the consolidator runs.&#160; If not checked, the script action will <i>not</i> run. </li>
+<li><b>Description</b>.&#160; Brief description of this script action. This description is not used anywhere else.<br /></li>
+<li><b>Script</b>.&#160; The JavaScript code that implements your script action.&#160; You must use an anonymous function with exactly the signature shown, but what happens inside that function is entirely up to you.&#160; This function does not return any value.</li></ul>
+<h1><span class="mw-headline" id="Understanding_the_Script_Action_Script"><span class="mw-headline-number">3</span> Understanding the Script Action Script</span></h1>
+<p>The script action shown above, as well as in the other sample script actions supplied with this plug-in, serve as working examples of how to build a script action.&#160; The first thing to understand are the function parameters: 
+</p>
+<ul><li><b>source</b>: A hashmap (in other words, a JavaScript object) of the just-discovered CI's record. For fields in the CI's form (as opposed to a related list record), you can get the value simply by writing <span style="font-style: italic; font-family: courier,sans;">source.name</span>, where “name” is the name of any field. The value returned is always a string. The example script uses this twice: once to get the <i>sys_id</i> value, and again to get the <i>serial_number</i> value. Records from any related list specified in <b>Discovery Definition → CI Related Lists</b> are also available, though the syntax is a little more complicated. For example, suppose your finder needed to get access to all the serial numbers captured for a computer. If you've specified the serial number related list in <i>CI Related Lists</i>, you'll see that its related list name is <i>cmdb_serial_number:cmdb_ci</i>. This becomes a field name on the source object, so you can write <i>source.cmdb_serial_number</i> in your script, which will return an instance of <i>CIRelatedList</i> for that list.That class has several properties and methods (see <b>Discovery Definition → Script Includes</b>, under CI Consolidation, for details). One example: in your script, you could write <i>source.cmdb_serial_number:cmdb_ci.records</i>, which would return an array of hashmaps, each of which represents one record in the serial number table. </li>
+<li><b>target</b>. A string containing the <i>sys_id</i> of the target (the duplicate CI found by a finder). </li>
+<li><b>results</b>. This is another hashmap, but this time it's for your own use. At minimum it will contain one property: “finder”, which contains the name of the finder that located the target CI. If your finders stored other properties in this hashmap, those properties will be present as well. </li>
+<li><b>consolidator</b>. This contains an instance of <i>CIConsolidator</i>, which has some useful methods and properties (see the code in <b>Discovery Definition → Script Includes</b> for details). Probably the most useful method is <i>abort()</i>, which aborts the consolidator at the point when it was invoked. This method is used in the example above. </li>
+<li><b>log</b>. This is an object that allows you to write messages to the CI Consolidation log (see <b>Discovery Definition → CI Consolidation Log</b>). This object has three methods (<i>info</i>, <i>warn</i>, and <i>error</i>), each of which has a single parameter for the message. You can see this object in use in the example script, on the line just above the <i>return</i> statement. </li>
+<li><b>action</b>. This is an instance of <i>CICScriptAction</i> that represents this action. It has several methods and properties (see the Script Includes to see its code), but probably the most useful one is <i>debug</i>. This method allows you to write code like <span style="font-style: italic;">action</span><i>.debug("my debugging message")</i>, which will messages to the CI Consolidation log only if the <i>CI Consolidation Debugging</i> property is active (see <b>Discovery Definition → Properties</b>).</li></ul>
+<p>The rest of what happens inside your script action is entirely up to you. The example above was used during testing, to abort the consolidator before it ran the delete action (note that it is inactive now). A more interesting example of a script action might be arranged to run just before a merge action to modify the source data before the merge. For example, suppose you needed to merge the source to the target, but you wanted to retain whatever name the target already had. You could do this with a script action that ran just before the merge, by reading the target's record, grabbing the name field, then storing that value in the source. The subsequent merge would leave the target's name value unchanged.<br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202045551
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.087 seconds
+Real time usage: 0.126 seconds
+Preprocessor visited node count: 61/1000000
+Preprocessor generated node count: 286/1000000
+Post‐expand include size: 2700/2097152 bytes
+Template argument size: 917/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   31.950      1 - -total
+ 74.94%   23.944      1 - Template:CI_Consolidation
+ 62.92%   20.102      1 - Template:Topic
+ 16.94%    5.413      2 - Template:T
+ 13.49%    4.309      1 - Embedded:CI_Consolidation
+ 12.59%    4.024      1 - Template:Obsolete
+ 10.86%    3.471      1 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:4236-0!*!0!1!*!5!* and timestamp 20171202045551 and revision id 100833
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;oldid=100833.html">http://wiki.servicenow.com/index.php?title=Legacy:Using_the_CI_Script_Action&amp;oldid=100833</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_4236"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="4236" data-vote-the-vote="5" data-vote-id="4236" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4236_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="4236" data-vote-the-vote="1" data-vote-id="4236" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4236_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Legacy%3AUsing+the+CI+Script+Action&amp;returntoquery=oldid%3D100833" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Legacy%3AUsing+the+CI+Script+Action&amp;returntoquery=oldid%3D100833" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Legacy:Using_the_CI_Script_Action.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%253AUsing+the+CI+Script+Action.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Legacy%253AUsing+the+CI+Script+Action&amp;returnto=Legacy%253AUsing+the+CI+Script+Action&amp;oldid=100833&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FLegacy:Using_the_CI_Script_Action.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Legacy:Using_the_CI_Script_Action" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;oldid=100833.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Legacy:Using_the_CI_Script_Action&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:44, 16 January 2012.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":944});});</script></body></html>

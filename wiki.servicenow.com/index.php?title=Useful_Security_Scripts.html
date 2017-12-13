@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Useful Security Scripts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Useful_Security_Scripts","wgTitle":"Useful Security Scripts","wgCurRevisionId":250976,"wgRevisionId":250976,"wgArticleId":6125,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Useful Scripts","General Security","Unencrypted HTTP","Server Scripting","Security Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Useful_Security_Scripts","wgRelevantArticleId":6125,"wgRequestId":"96ec0fcc680f61b45dd33c03","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170912190227"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Useful_Security_Scripts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Useful Security Scripts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Security Scripts"/>
+<meta name="category" content="Security Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Useful_Security_Scripts.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Useful Security Scripts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170912190227"/>
+
+	<meta property="article:published_time" content="20170912190227"/>
+
+	<meta property="article:modified_time" content="20170912190227"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Security Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Useful_Security_Scripts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Useful_Security_Scripts rootpage-Useful_Security_Scripts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Useful+Security+Scripts.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Useful+Security+Scripts&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Useful Security Scripts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Useful_Scripts_Portal.html" title="Useful Scripts Portal">Useful Scripts</a> &gt; Useful Security Scripts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Useful_Security_Scripts.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Useful_Security_Scripts.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/topic/p_UsefulScripts.html">Useful Scripts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Sample_ASP_Script_for_Unencrypted_Single_Sign-On"><span class="tocnumber">2</span> <span class="toctext">Sample ASP Script for Unencrypted Single Sign-On</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies"><span class="tocnumber">3</span> <span class="toctext">Sample ASP.NET with C Sharp Redirect with Cookies</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Sample_Java_BouncyCastle_Algorithm_for_Encryption"><span class="tocnumber">4</span> <span class="toctext">Sample Java BouncyCastle Algorithm for Encryption</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Serialize_Using_a_Lock_.28Mutex.29"><span class="tocnumber">5</span> <span class="toctext">Serialize Using a Lock (Mutex)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Useful_Security_Scripts.html#Set_Write_Role_for_All_Catalog_Variables"><span class="tocnumber">6</span> <span class="toctext">Set Write Role for All Catalog Variables</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>This is a searchable version of the Useful Security Scripts. For an easy-to-navigate version, visit the <a href="index.php%3Ftitle=Useful_Scripts_portal.html" title="Useful Scripts portal" class="mw-redirect">Useful Scripts portal</a>. 
+</p>
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Sample_ASP_Script_for_Unencrypted_Single_Sign-On"><span class="mw-headline-number">2</span> Sample ASP Script for Unencrypted Single Sign-On</span></h1>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Authentication.html" title="Authentication">Authentication</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a204d2c81f0dt'></div><script type="text/javascript">window.tamOnload_tam5a204d2c81f0dt=[];tree = new dTree('tam5a204d2c81f0dt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a204d2c81f0dt = tree;
+                                               tam5a204d2c81f0dt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Digest_Token_Authentication\&quot;" title=\"Digest Token Authentication\">Digest Token Authentication</a> ');
+
+tam5a204d2c81f0dt.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_Java_Digest_Algorithm_for_Encryption\&quot;" title=\"Sample Java Digest Algorithm for Encryption\">Sample Java Digest Algorithm for Encryption</a> ');
+tam5a204d2c81f0dt.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_C\&quot;" title=\"Sample C\">Sample C</a>');
+tam5a204d2c81f0dt.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multiple_Provider_Single_Sign-On\&quot;" title=\"Multiple Provider Single Sign-On\">Multi-Provider Single Sign-On</a>');
+tam5a204d2c81f0dt.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Web_Browser_SSO_Profile\&quot;" title=\"SAML 2.0 Web Browser SSO Profile\">SAML 2.0 Web Browser SSO Profile</a>');
+tam5a204d2c81f0dt.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Setup\&quot;" title=\"SAML 2.0 Setup\">SAML 2.0 Setup</a>');
+tam5a204d2c81f0dt.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_ADFS_3.0_to_Communicate_with_SAML_2.0\&quot;" title=\"Configuring ADFS 3.0 to Communicate with SAML 2.0\">Configuring ADFS 3.0 to Communicate with SAML 2.0</a>');
+tam5a204d2c81f0dt.add(8, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Troubleshooting\&quot;" title=\"SAML 2.0 Troubleshooting\">Troubleshooting SAML 2.0</a>');
+tam5a204d2c81f0dt.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Applications\&quot;" title=\"OAuth Applications\">OAuth</a>');
+tam5a204d2c81f0dt.add(10, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Setup\&quot;" title=\"OAuth Setup\">OAuth Setup</a>');
+tam5a204d2c81f0dt.add(11, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_OAuth_Tokens\&quot;" title=\"Generating OAuth Tokens\">Generating OAuth Tokens</a>');
+tam5a204d2c81f0dt.add(12, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Client_API_Reference\&quot;" title=\"OAuth Client API Reference\">OAuth Client API Reference</a>');
+tam5a204d2c81f0dt.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OKTA_SSO_Integration\&quot;" title=\"OKTA SSO Integration\">Okta SSO Integration</a>');
+
+                                               document.getElementById('5a204d2c81f0dt').innerHTML = tam5a204d2c81f0dt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a204d2c81f0dt) { window.tamOnload_tam5a204d2c81f0dt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Legacy
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a204d2c9078bt'></div><script type="text/javascript">window.tamOnload_tam5a204d2c9078bt=[];tree = new dTree('tam5a204d2c9078bt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a204d2c9078bt = tree;
+                                               tam5a204d2c9078bt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Unencrypted_HTTP_Header\&quot;" title=\"Unencrypted HTTP Header\">Unencrypted HTTP Header </a>');
+
+tam5a204d2c9078bt.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies\&quot;" title=\"Sample ASP.NET with C Sharp Redirect with Cookies\">Sample ASP.NET with C Sharp Redirect with Cookies</a> ');
+tam5a204d2c9078bt.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP_Script_for_Unencrypted_Single_Sign-On\&quot;" title=\"Sample ASP Script for Unencrypted Single Sign-On\">Sample ASP Script for Unencrypted Single Sign-On</a> ');
+tam5a204d2c9078bt.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_1.1_Browser_POST_Profile\&quot;" title=\"SAML 1.1 Browser POST Profile\">SAML 1.1 Browser POST Profile</a>');
+tam5a204d2c9078bt.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OpenID\&quot;" title=\"OpenID\">Stateless OpenID with signature verification</a>');
+
+                                               document.getElementById('5a204d2c9078bt').innerHTML = tam5a204d2c9078bt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a204d2c9078bt) { window.tamOnload_tam5a204d2c9078bt[i](); }</script>
+
+
+</td></tr></table>
+</div>
+<p>This sample ASP .NET code creates a simple authentication portal and passes an unencrypted HTTP header as a URL parameter. This sample assumes:
+</p>
+<ul><li> The web server supports ASP .NET</li>
+<li> The target ServiceNow instance is https://&lt;instance name&gt;.service-now.com/</li>
+<li> SiteMinder or another single sign-on application has pre-authenticated the user</li>
+<li> The target ServiceNow instance expects an HTTP header of SM_USER</li></ul>
+<p>Change the ASP code to redirect users to the proper ServiceNow instance and create the proper HTTP header.
+</p><p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">head</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portal Page Login<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+ <span class="err">&lt;</span>%--    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0;url=https://&lt;instance name&gt;.service-now.com/&quot;</span><span class="p">&gt;</span>--%&gt;
+ 
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+ 
+        <span class="kr">public</span> <span class="k">void</span> <span class="nx">go_to</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">////Send URL parameters</span>
+            <span class="nb">String</span> <span class="nx">URL</span> <span class="o">=</span> <span class="nx">urlBox</span><span class="p">.</span><span class="nx">Text</span> <span class="o">+</span> <span class="s2">&quot;?SM_USER=&quot;</span> <span class="o">+</span> <span class="nx">userNameBox</span><span class="p">.</span><span class="nx">Text</span><span class="p">;</span>
+            <span class="nx">Response</span><span class="p">.</span><span class="nx">Redirect</span><span class="p">(</span><span class="nx">URL</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>  
+ 
+ <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span> Portal Page Login <span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">hr</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span> 
+         <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label2&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;21px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span>
+            <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Instance URL:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;urlBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;17px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span>
+          <span class="na">Text</span><span class="o">=</span><span class="s">&quot;User Id:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;userNameBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">asp:Button</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Button1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;39px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span> <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Ok&quot;</span>
+            <span class="na">Width</span><span class="o">=</span><span class="s">&quot;88px&quot;</span> <span class="na">OnClick</span><span class="o">=</span><span class="s">&quot;go_to&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+<p><br />
+<a href="index.php%3Ftitle=File:Designer.jpg.html" class="image"><img alt="Designer.jpg" src="images/7/71/Designer.jpg" width="594" height="359" /></a> 
+<br /> 
+</p>
+<h1><span class="mw-headline" id="Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies"><span class="mw-headline-number">3</span> Sample ASP.NET with C Sharp Redirect with Cookies</span></h1>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/useful-scripts/reference/r_ASPNETCSharpRdrctCks.html">Sample ASP.NET with C Sharp Redirect with Cookies</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Authentication.html" title="Authentication">Authentication</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a204d2d2a4cbt'></div><script type="text/javascript">window.tamOnload_tam5a204d2d2a4cbt=[];tree = new dTree('tam5a204d2d2a4cbt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a204d2d2a4cbt = tree;
+                                               tam5a204d2d2a4cbt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Digest_Token_Authentication\&quot;" title=\"Digest Token Authentication\">Digest Token Authentication</a> ');
+
+tam5a204d2d2a4cbt.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_Java_Digest_Algorithm_for_Encryption\&quot;" title=\"Sample Java Digest Algorithm for Encryption\">Sample Java Digest Algorithm for Encryption</a> ');
+tam5a204d2d2a4cbt.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_C\&quot;" title=\"Sample C\">Sample C</a>');
+tam5a204d2d2a4cbt.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multiple_Provider_Single_Sign-On\&quot;" title=\"Multiple Provider Single Sign-On\">Multi-Provider Single Sign-On</a>');
+tam5a204d2d2a4cbt.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Web_Browser_SSO_Profile\&quot;" title=\"SAML 2.0 Web Browser SSO Profile\">SAML 2.0 Web Browser SSO Profile</a>');
+tam5a204d2d2a4cbt.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Setup\&quot;" title=\"SAML 2.0 Setup\">SAML 2.0 Setup</a>');
+tam5a204d2d2a4cbt.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_ADFS_3.0_to_Communicate_with_SAML_2.0\&quot;" title=\"Configuring ADFS 3.0 to Communicate with SAML 2.0\">Configuring ADFS 3.0 to Communicate with SAML 2.0</a>');
+tam5a204d2d2a4cbt.add(8, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Troubleshooting\&quot;" title=\"SAML 2.0 Troubleshooting\">Troubleshooting SAML 2.0</a>');
+tam5a204d2d2a4cbt.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Applications\&quot;" title=\"OAuth Applications\">OAuth</a>');
+tam5a204d2d2a4cbt.add(10, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Setup\&quot;" title=\"OAuth Setup\">OAuth Setup</a>');
+tam5a204d2d2a4cbt.add(11, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_OAuth_Tokens\&quot;" title=\"Generating OAuth Tokens\">Generating OAuth Tokens</a>');
+tam5a204d2d2a4cbt.add(12, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Client_API_Reference\&quot;" title=\"OAuth Client API Reference\">OAuth Client API Reference</a>');
+tam5a204d2d2a4cbt.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OKTA_SSO_Integration\&quot;" title=\"OKTA SSO Integration\">Okta SSO Integration</a>');
+
+                                               document.getElementById('5a204d2d2a4cbt').innerHTML = tam5a204d2d2a4cbt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a204d2d2a4cbt) { window.tamOnload_tam5a204d2d2a4cbt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Legacy
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a204d2d2e143t'></div><script type="text/javascript">window.tamOnload_tam5a204d2d2e143t=[];tree = new dTree('tam5a204d2d2e143t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a204d2d2e143t = tree;
+                                               tam5a204d2d2e143t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Unencrypted_HTTP_Header\&quot;" title=\"Unencrypted HTTP Header\">Unencrypted HTTP Header </a>');
+
+tam5a204d2d2e143t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies\&quot;" title=\"Sample ASP.NET with C Sharp Redirect with Cookies\">Sample ASP.NET with C Sharp Redirect with Cookies</a> ');
+tam5a204d2d2e143t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP_Script_for_Unencrypted_Single_Sign-On\&quot;" title=\"Sample ASP Script for Unencrypted Single Sign-On\">Sample ASP Script for Unencrypted Single Sign-On</a> ');
+tam5a204d2d2e143t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_1.1_Browser_POST_Profile\&quot;" title=\"SAML 1.1 Browser POST Profile\">SAML 1.1 Browser POST Profile</a>');
+tam5a204d2d2e143t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OpenID\&quot;" title=\"OpenID\">Stateless OpenID with signature verification</a>');
+
+                                               document.getElementById('5a204d2d2e143t').innerHTML = tam5a204d2d2e143t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a204d2d2e143t) { window.tamOnload_tam5a204d2d2e143t[i](); }</script>
+
+
+</td></tr></table>
+</div>
+<p>This sample ASP .NET code creates a simple authentication portal and passes an unencrypted HTTP header as a cookie. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Cookies are domain specific and cannot be used across different network domains. The only domain that can read a cookie is the domain that sets it. It does not matter what domain name you set. If you do not have an option of your SSO portal being in the same network domain as your ServiceNow instance (for example, in an on-premisis deployment, an alternative is to pass the SSO token using URL GET or POST parameters.</i>
+</td></tr></table>
+<p><br />
+This sample assumes:
+</p>
+<ul><li> The web server supports ASP .NET and C#</li>
+<li> The target ServiceNow instance is https://&lt;instance name&gt;.service-now.com/</li>
+<li> SiteMinder or another single sign-on application has pre-authenticated the user</li>
+<li> The target ServiceNow instance expects an HTTP header of SM_USER</li></ul>
+<p>Change the ASP code to redirect users to the proper ServiceNow instance.
+</p><p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portal Page Login<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>%--    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;REFRESH&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0;url=https://&lt;instance name&gt;.service-now.com/&quot;</span><span class="p">&gt;</span>--%&gt;
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span> Portal Page Login <span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">hr</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label2&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;21px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span>
+            <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Instance URL:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;urlBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+         <span class="p">&lt;</span><span class="nt">asp:Label</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Label1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Larger&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;17px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span> <span class="na">Text</span><span class="o">=</span><span class="s">&quot;User Id:&quot;</span> <span class="na">Width</span><span class="o">=</span><span class="s">&quot;113px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:Label</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">asp:TextBox</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;userNameBox&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Font-Size</span><span class="o">=</span><span class="s">&quot;Large&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">asp:TextBox</span><span class="p">&gt;</span>
+         
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">asp:Button</span> <span class="na">ID</span><span class="o">=</span><span class="s">&quot;Button1&quot;</span> <span class="na">runat</span><span class="o">=</span><span class="s">&quot;server&quot;</span> <span class="na">Height</span><span class="o">=</span><span class="s">&quot;39px&quot;</span> <span class="na">Style</span><span class="o">=</span><span class="s">&quot;position: static;&quot;</span> <span class="na">Text</span><span class="o">=</span><span class="s">&quot;Ok&quot;</span>
+            <span class="na">Width</span><span class="o">=</span><span class="s">&quot;88px&quot;</span> <span class="na">OnClick</span><span class="o">=</span><span class="s">&quot;Button1_click&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">asp</span><span class="p">&gt;</span>
+</pre></div>
+<p><br />
+<a href="index.php%3Ftitle=File:Designer.jpg.html" class="image"><img alt="Designer.jpg" src="images/7/71/Designer.jpg" width="594" height="359" /></a> 
+<br />
+</p><p>The following C# code handles the OnClick button event for the form. The code:
+</p>
+<ul><li> Creates the cookie "SM_USER"</li>
+<li> Performs a redirect to the URL specified on the ASP form.</li></ul>
+<p>Change the C# code to create the proper cookie name.
+<br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Configuration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.Security</span><span class="p">;</span>
+ 
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">_Default</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Page</span> 
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+ 
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Button1_click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="n">HttpCookie</span> <span class="n">myCookie</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HttpCookie</span><span class="p">(</span><span class="s">&quot;SM_USER&quot;</span><span class="p">);</span>
+            <span class="n">myCookie</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">userNameBox</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">myCookie</span><span class="p">);</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Redirect</span><span class="p">(</span><span class="n">urlBox</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+ 
+        <span class="p">}</span><span class="k">catch</span> <span class="p">{}</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> 
+<h1><span class="mw-headline" id="Sample_Java_BouncyCastle_Algorithm_for_Encryption"><span class="mw-headline-number">4</span> Sample Java BouncyCastle Algorithm for Encryption</span></h1>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Java imports</span>
+ <span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">BufferedReader</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">ByteArrayOutputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">ByteArrayInputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">DataOutputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">File</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">FileInputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">FileOutputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">FileReader</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">IOException</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">InputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">OutputStream</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">security</span><span class="p">.</span><span class="nx">NoSuchProviderException</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">security</span><span class="p">.</span><span class="nx">SecureRandom</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">security</span><span class="p">.</span><span class="nx">Security</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Iterator</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nb">sun</span><span class="p">.</span><span class="nx">misc</span><span class="p">.</span><span class="nx">BASE64Encoder</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nb">sun</span><span class="p">.</span><span class="nx">misc</span><span class="p">.</span><span class="nx">BASE64Decoder</span><span class="p">;</span>
+<span class="c1">// Bouncy castle imports</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">jce</span><span class="p">.</span><span class="nx">provider</span><span class="p">.</span><span class="nx">BouncyCastleProvider</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPCompressedData</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPCompressedDataGenerator</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPEncryptedDataGenerator</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPEncryptedDataList</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPException</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPLiteralData</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPObjectFactory</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPOnePassSignatureList</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPPrivateKey</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPPublicKey</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPPublicKeyEncryptedData</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPPublicKeyRing</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPPublicKeyRingCollection</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPSecretKey</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPSecretKeyRingCollection</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">org</span><span class="p">.</span><span class="nx">bouncycastle</span><span class="p">.</span><span class="nx">openpgp</span><span class="p">.</span><span class="nx">PGPUtil</span><span class="p">;</span>
+<span class="c1">//</span>
+<span class="kr">public</span> <span class="kr">class</span> <span class="nx">SingleSignOnTest</span> <span class="p">{</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nx">File</span> <span class="nx">publicKeyFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="s2">&quot;/Development/Java/Single Sign On with Encryption(PGP)/PGP1D0.pkr&quot;</span><span class="p">);</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nx">File</span> <span class="nx">privateKeyFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="s2">&quot;/Development/Java/Single Sign On with Encryption(PGP)/PGP1D0.skr&quot;</span><span class="p">);</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nb">String</span> <span class="nx">privateKeyPassword</span> <span class="o">=</span> <span class="s2">&quot;passphrase&quot;</span><span class="p">;</span>
+
+       <span class="c1">//</span>
+      <span class="c1">// Public class method decrypt</span>
+      <span class="c1">//</span>
+      <span class="kr">public</span> <span class="kr">static</span> <span class="nb">String</span> <span class="nx">decrypt</span><span class="p">(</span><span class="kr">byte</span><span class="p">[]</span> <span class="nx">encdata</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;decrypt(): data length=&quot;</span> <span class="o">+</span> <span class="nx">encdata</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+              <span class="c1">// ----- Decrypt the file</span>
+              <span class="k">try</span> <span class="p">{</span>
+                      <span class="nx">ByteArrayInputStream</span> <span class="nx">bais</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ByteArrayInputStream</span><span class="p">(</span><span class="nx">encdata</span><span class="p">);</span>
+                      <span class="nx">FileInputStream</span> <span class="nx">privKey</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileInputStream</span><span class="p">(</span><span class="nx">privateKeyFile</span><span class="p">);</span>
+                      <span class="k">return</span> <span class="nx">_decrypt</span><span class="p">(</span><span class="nx">bais</span><span class="p">,</span> <span class="nx">privKey</span><span class="p">,</span> <span class="nx">privateKeyPassword</span><span class="p">.</span><span class="nx">toCharArray</span><span class="p">());</span>
+              <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">getMessage</span><span class="p">());</span>
+                      <span class="nx">e</span><span class="p">.</span><span class="nx">printStackTrace</span><span class="p">();</span>
+              <span class="p">}</span>
+              <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Public class method encrypt</span>
+      <span class="c1">//</span>
+      <span class="kr">public</span> <span class="kr">static</span> <span class="kr">byte</span><span class="p">[]</span> <span class="nx">encrypt</span><span class="p">(</span><span class="kr">byte</span><span class="p">[]</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">try</span>
+              <span class="p">{</span>
+                      <span class="c1">// ----- Read in the public key</span>
+                      <span class="nx">PGPPublicKey</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">readPublicKeyFromCol</span><span class="p">(</span><span class="k">new</span> <span class="nx">FileInputStream</span><span class="p">(</span><span class="nx">publicKeyFile</span><span class="p">));</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Creating a temp file...&quot;</span><span class="p">);</span>
+                      <span class="c1">// create a file and write the string to it</span>
+                      <span class="nx">File</span> <span class="nx">tempfile</span> <span class="o">=</span> <span class="nx">File</span><span class="p">.</span><span class="nx">createTempFile</span><span class="p">(</span><span class="s2">&quot;pgp&quot;</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+                      <span class="nx">FileOutputStream</span> <span class="nx">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileOutputStream</span><span class="p">(</span><span class="nx">tempfile</span><span class="p">);</span>
+                      <span class="nx">fos</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+                      <span class="nx">fos</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Temp file created at &quot;</span><span class="p">);</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">tempfile</span><span class="p">.</span><span class="nx">getAbsolutePath</span><span class="p">());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Reading the temp file to make sure that the bits were written\n--------------&quot;</span><span class="p">);</span>
+                      <span class="nx">BufferedReader</span> <span class="nx">isr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="nx">FileReader</span><span class="p">(</span><span class="nx">tempfile</span><span class="p">));</span>
+                      <span class="nb">String</span> <span class="nx">line</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+                      <span class="k">while</span> <span class="p">(</span> <span class="p">(</span><span class="nx">line</span> <span class="o">=</span> <span class="nx">isr</span><span class="p">.</span><span class="nx">readLine</span><span class="p">())</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">!=</span> <span class="kc">null</span> <span class="p">)</span>
+                      <span class="p">{</span>
+                              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">line</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span><span class="p">);</span>
+                      <span class="p">}</span>
+                      <span class="c1">// find out a little about the keys in the public key ring</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Key Strength = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">getBitStrength</span><span class="p">());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Algorithm = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">getAlgorithm</span><span class="p">());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Bit strength = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">getBitStrength</span><span class="p">());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Version = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">getVersion</span><span class="p">());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Encryption key = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">isEncryptionKey</span><span class="p">()</span><span class="o">+</span> <span class="s2">&quot;, Master key = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">isMasterKey</span><span class="p">());</span>
+                      <span class="kr">int</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                      <span class="k">for</span> <span class="p">(</span> <span class="nx">java</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Iterator</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">key</span><span class="p">.</span><span class="nx">getUserIDs</span><span class="p">();</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">();</span> <span class="p">)</span>
+                      <span class="p">{</span>
+                              <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+                              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">((</span><span class="nb">String</span><span class="p">)</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+                      <span class="p">}</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Key Count = &quot;</span> <span class="o">+</span> <span class="nx">count</span><span class="p">);</span>
+                      <span class="c1">// create an armored ascii file</span>
+                      <span class="c1">// FileOutputStream out = new FileOutputStream(outputfile);</span>
+                      <span class="c1">// encrypt the file</span>
+                      <span class="c1">// encryptFile(tempfile.getAbsolutePath(), out, key);</span>
+                      <span class="c1">// Encrypt the data</span>
+                      <span class="nx">ByteArrayOutputStream</span> <span class="nx">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ByteArrayOutputStream</span><span class="p">();</span>
+                      <span class="nx">_encrypt</span><span class="p">(</span><span class="nx">tempfile</span><span class="p">.</span><span class="nx">getAbsolutePath</span><span class="p">(),</span> <span class="nx">baos</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;encrypted text length=&quot;</span> <span class="o">+</span> <span class="nx">baos</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>			
+                      <span class="nx">tempfile</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
+                      <span class="k">return</span> <span class="nx">baos</span><span class="p">.</span><span class="nx">toByteArray</span><span class="p">();</span>
+              <span class="p">}</span>
+              <span class="k">catch</span> <span class="p">(</span><span class="nx">PGPException</span> <span class="nx">e</span><span class="p">)</span>
+              <span class="p">{</span>
+                      <span class="c1">// System.out.println(e.toString());</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">getUnderlyingException</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span>
+                      <span class="nx">e</span><span class="p">.</span><span class="nx">printStackTrace</span><span class="p">();</span>
+              <span class="p">}</span>
+              <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">e</span><span class="p">)</span>
+              <span class="p">{</span>
+                      <span class="nx">e</span><span class="p">.</span><span class="nx">printStackTrace</span><span class="p">();</span>
+              <span class="p">}</span>
+              <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Private class method readPublicKeyFromCol</span>
+      <span class="c1">//</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nx">PGPPublicKey</span> <span class="nx">readPublicKeyFromCol</span><span class="p">(</span><span class="nx">InputStream</span> <span class="k">in</span><span class="p">)</span>
+                     <span class="kr">throws</span> <span class="nx">Exception</span> <span class="p">{</span>
+              <span class="nx">PGPPublicKeyRing</span> <span class="nx">pkRing</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+              <span class="nx">PGPPublicKeyRingCollection</span> <span class="nx">pkCol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPPublicKeyRingCollection</span><span class="p">(</span><span class="k">in</span><span class="p">);</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;key ring size=&quot;</span> <span class="o">+</span> <span class="nx">pkCol</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
+              <span class="nx">Iterator</span> <span class="nx">it</span> <span class="o">=</span> <span class="nx">pkCol</span><span class="p">.</span><span class="nx">getKeyRings</span><span class="p">();</span>
+              <span class="k">while</span> <span class="p">(</span><span class="nx">it</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span>
+                      <span class="nx">pkRing</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPPublicKeyRing</span><span class="p">)</span> <span class="nx">it</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+                      <span class="nx">Iterator</span> <span class="nx">pkIt</span> <span class="o">=</span> <span class="nx">pkRing</span><span class="p">.</span><span class="nx">getPublicKeys</span><span class="p">();</span>
+                      <span class="k">while</span> <span class="p">(</span><span class="nx">pkIt</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span>
+                              <span class="nx">PGPPublicKey</span> <span class="nx">key</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPPublicKey</span><span class="p">)</span> <span class="nx">pkIt</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+                              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Encryption key = &quot;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">.</span><span class="nx">isEncryptionKey</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;, Master key = &quot;</span> <span class="o">+</span> 
+                                                 <span class="nx">key</span><span class="p">.</span><span class="nx">isMasterKey</span><span class="p">());</span>
+                              <span class="k">if</span> <span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">isEncryptionKey</span><span class="p">())</span>
+                                      <span class="k">return</span> <span class="nx">key</span><span class="p">;</span>
+                      <span class="p">}</span>
+              <span class="p">}</span>
+              <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Private class method _encrypt</span>
+      <span class="c1">//</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="k">void</span> <span class="nx">_encrypt</span><span class="p">(</span><span class="nb">String</span> <span class="nx">fileName</span><span class="p">,</span> <span class="nx">OutputStream</span> <span class="nx">out</span><span class="p">,</span> <span class="nx">PGPPublicKey</span> <span class="nx">encKey</span><span class="p">)</span>
+                          <span class="kr">throws</span> <span class="nx">IOException</span><span class="p">,</span> <span class="nx">NoSuchProviderException</span><span class="p">,</span> <span class="nx">PGPException</span>
+      <span class="p">{</span>
+              <span class="nx">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataOutputStream</span><span class="p">(</span><span class="nx">out</span><span class="p">);</span>
+              <span class="nx">ByteArrayOutputStream</span> <span class="nx">bOut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ByteArrayOutputStream</span><span class="p">();</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;creating comData...&quot;</span><span class="p">);</span>
+              <span class="c1">// get the data from the original file</span>
+              <span class="nx">PGPCompressedDataGenerator</span> <span class="nx">comData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPCompressedDataGenerator</span><span class="p">(</span><span class="nx">PGPCompressedDataGenerator</span><span class="p">.</span><span class="nx">ZIP</span><span class="p">);</span>
+              <span class="nx">PGPUtil</span><span class="p">.</span><span class="nx">writeFileToLiteralData</span><span class="p">(</span><span class="nx">comData</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">bOut</span><span class="p">),</span> <span class="nx">PGPLiteralData</span><span class="p">.</span><span class="nx">BINARY</span><span class="p">,</span> <span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="nx">fileName</span><span class="p">));</span>
+              <span class="nx">comData</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;comData created...&quot;</span><span class="p">);</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;using PGPEncryptedDataGenerator...&quot;</span><span class="p">);</span>
+              <span class="c1">// object that encrypts the data</span>
+              <span class="nx">PGPEncryptedDataGenerator</span> <span class="nx">cPk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPEncryptedDataGenerator</span><span class="p">(</span><span class="nx">PGPEncryptedDataGenerator</span><span class="p">.</span><span class="nx">CAST5</span><span class="p">,</span> 
+                                              <span class="k">new</span> <span class="nx">SecureRandom</span><span class="p">(),</span> <span class="s2">&quot;BC&quot;</span><span class="p">);</span>
+              <span class="nx">cPk</span><span class="p">.</span><span class="nx">addMethod</span><span class="p">(</span><span class="nx">encKey</span><span class="p">);</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;used PGPEncryptedDataGenerator...&quot;</span><span class="p">);</span>
+              <span class="c1">// take the outputstream of the original file and turn it into a byte</span>
+              <span class="c1">// array</span>
+              <span class="kr">byte</span><span class="p">[]</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">bOut</span><span class="p">.</span><span class="nx">toByteArray</span><span class="p">();</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;wrote bOut to byte array...&quot;</span><span class="p">);</span>
+              <span class="c1">// write the plain text bytes to the armored outputstream</span>
+              <span class="nx">OutputStream</span> <span class="nx">cOut</span> <span class="o">=</span> <span class="nx">cPk</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+              <span class="nx">cOut</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">bytes</span><span class="p">);</span>
+              <span class="nx">cPk</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+              <span class="nx">out</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Private class method _decrypt</span>
+      <span class="c1">//</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nb">String</span> <span class="nx">_decrypt</span><span class="p">(</span><span class="nx">InputStream</span> <span class="k">in</span><span class="p">,</span> <span class="nx">InputStream</span> <span class="nx">keyIn</span><span class="p">,</span>
+                      <span class="kr">char</span><span class="p">[]</span> <span class="nx">passwd</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">Exception</span> <span class="p">{</span>
+              <span class="k">in</span> <span class="o">=</span> <span class="nx">PGPUtil</span><span class="p">.</span><span class="nx">getDecoderStream</span><span class="p">(</span><span class="k">in</span><span class="p">);</span>
+              <span class="k">try</span> <span class="p">{</span>
+                      <span class="nx">PGPObjectFactory</span> <span class="nx">pgpF</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPObjectFactory</span><span class="p">(</span><span class="k">in</span><span class="p">);</span>
+                      <span class="nx">PGPEncryptedDataList</span> <span class="nx">enc</span><span class="p">;</span>
+                      <span class="nb">Object</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">pgpF</span><span class="p">.</span><span class="nx">nextObject</span><span class="p">();</span>
+                      <span class="c1">//</span>
+                      <span class="c1">// the first object might be a PGP marker packet.</span>
+                      <span class="c1">//</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">o</span> <span class="k">instanceof</span> <span class="nx">PGPEncryptedDataList</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="nx">enc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPEncryptedDataList</span><span class="p">)</span> <span class="nx">o</span><span class="p">;</span>
+                      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                              <span class="nx">enc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPEncryptedDataList</span><span class="p">)</span> <span class="nx">pgpF</span><span class="p">.</span><span class="nx">nextObject</span><span class="p">();</span>
+                      <span class="p">}</span>
+                      <span class="c1">//</span>
+                      <span class="c1">// find the secret key</span>
+                      <span class="c1">//</span>
+                      <span class="nx">Iterator</span> <span class="nx">it</span> <span class="o">=</span> <span class="nx">enc</span><span class="p">.</span><span class="nx">getEncryptedDataObjects</span><span class="p">();</span>
+                      <span class="nx">PGPPrivateKey</span> <span class="nx">sKey</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                      <span class="nx">PGPPublicKeyEncryptedData</span> <span class="nx">pbe</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                      <span class="k">while</span> <span class="p">(</span><span class="nx">sKey</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">it</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span>
+                              <span class="nx">pbe</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPPublicKeyEncryptedData</span><span class="p">)</span> <span class="nx">it</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+                              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;pbe id=&quot;</span> <span class="o">+</span> <span class="nx">pbe</span><span class="p">.</span><span class="nx">getKeyID</span><span class="p">());</span>
+                              <span class="nx">sKey</span> <span class="o">=</span> <span class="nx">findSecretKey</span><span class="p">(</span><span class="nx">keyIn</span><span class="p">,</span> <span class="nx">pbe</span><span class="p">.</span><span class="nx">getKeyID</span><span class="p">(),</span> <span class="nx">passwd</span><span class="p">);</span>
+                      <span class="p">}</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">sKey</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                             <span class="k">throw</span> <span class="k">new</span> <span class="nx">IllegalArgumentException</span><span class="p">(</span><span class="s2">&quot;secret key for message not found.&quot;</span><span class="p">);</span>
+                      <span class="p">}</span>
+                      <span class="nx">InputStream</span> <span class="nx">clear</span> <span class="o">=</span> <span class="nx">pbe</span><span class="p">.</span><span class="nx">getDataStream</span><span class="p">(</span><span class="nx">sKey</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">);</span>
+                      <span class="nx">PGPObjectFactory</span> <span class="nx">plainFact</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPObjectFactory</span><span class="p">(</span><span class="nx">clear</span><span class="p">);</span>
+                      <span class="nb">Object</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">plainFact</span><span class="p">.</span><span class="nx">nextObject</span><span class="p">();</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">message</span> <span class="k">instanceof</span> <span class="nx">PGPCompressedData</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="nx">PGPCompressedData</span> <span class="nx">cData</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPCompressedData</span><span class="p">)</span> <span class="nx">message</span><span class="p">;</span>
+                              <span class="nx">PGPObjectFactory</span> <span class="nx">pgpFact</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPObjectFactory</span><span class="p">(</span><span class="nx">cData</span><span class="p">.</span><span class="nx">getDataStream</span><span class="p">());</span>
+                              <span class="nx">message</span> <span class="o">=</span> <span class="nx">pgpFact</span><span class="p">.</span><span class="nx">nextObject</span><span class="p">();</span>
+                      <span class="p">}</span>
+                      <span class="nx">ByteArrayOutputStream</span> <span class="nx">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ByteArrayOutputStream</span><span class="p">();</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">message</span> <span class="k">instanceof</span> <span class="nx">PGPLiteralData</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="nx">PGPLiteralData</span> <span class="nx">ld</span> <span class="o">=</span> <span class="p">(</span><span class="nx">PGPLiteralData</span><span class="p">)</span> <span class="nx">message</span><span class="p">;</span>
+                              <span class="nx">InputStream</span> <span class="nx">unc</span> <span class="o">=</span> <span class="nx">ld</span><span class="p">.</span><span class="nx">getInputStream</span><span class="p">();</span>
+                              <span class="kr">int</span> <span class="nx">ch</span><span class="p">;</span>
+                              <span class="k">while</span> <span class="p">((</span><span class="nx">ch</span> <span class="o">=</span> <span class="nx">unc</span><span class="p">.</span><span class="nx">read</span><span class="p">())</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                                      <span class="nx">baos</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">ch</span><span class="p">);</span>
+                              <span class="p">}</span>
+                      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">message</span> <span class="k">instanceof</span> <span class="nx">PGPOnePassSignatureList</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="k">throw</span> <span class="k">new</span> <span class="nx">PGPException</span><span class="p">(</span><span class="s2">&quot;encrypted message contains a signed message - not literal data.&quot;</span><span class="p">);</span>
+                      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                              <span class="k">throw</span> <span class="k">new</span> <span class="nx">PGPException</span><span class="p">(</span><span class="s2">&quot;message is not a simple encrypted file - type unknown.&quot;</span><span class="p">);</span>
+                      <span class="p">}</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">pbe</span><span class="p">.</span><span class="nx">isIntegrityProtected</span><span class="p">())</span> <span class="p">{</span>
+                              <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pbe</span><span class="p">.</span><span class="nx">verify</span><span class="p">())</span> <span class="p">{</span>
+                                      <span class="nx">System</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;message failed integrity check&quot;</span><span class="p">);</span>
+                              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                                      <span class="nx">System</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;message integrity check passed&quot;</span><span class="p">);</span>
+                              <span class="p">}</span>
+                      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                              <span class="nx">System</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;no message integrity check&quot;</span><span class="p">);</span>
+                      <span class="p">}</span>
+                      <span class="k">return</span> <span class="nx">baos</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+              <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PGPException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">err</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                      <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">getUnderlyingException</span><span class="p">()</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="nx">e</span><span class="p">.</span><span class="nx">getUnderlyingException</span><span class="p">().</span><span class="nx">printStackTrace</span><span class="p">();</span>
+                      <span class="p">}</span>
+              <span class="p">}</span>
+              <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Private class method findSecretKey</span>
+      <span class="c1">//</span>
+      <span class="kr">private</span> <span class="kr">static</span> <span class="nx">PGPPrivateKey</span> <span class="nx">findSecretKey</span><span class="p">(</span><span class="nx">InputStream</span> <span class="nx">keyIn</span><span class="p">,</span> <span class="kr">long</span> <span class="nx">keyID</span><span class="p">,</span>
+                      <span class="kr">char</span><span class="p">[]</span> <span class="nx">pass</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">IOException</span><span class="p">,</span> <span class="nx">PGPException</span><span class="p">,</span>
+                      <span class="nx">NoSuchProviderException</span> <span class="p">{</span>
+              <span class="nx">PGPSecretKeyRingCollection</span> <span class="nx">pgpSec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PGPSecretKeyRingCollection</span><span class="p">(</span><span class="nx">PGPUtil</span><span class="p">.</span><span class="nx">getDecoderStream</span><span class="p">(</span><span class="nx">keyIn</span><span class="p">));</span>
+              <span class="nx">PGPSecretKey</span> <span class="nx">pgpSecKey</span> <span class="o">=</span> <span class="nx">pgpSec</span><span class="p">.</span><span class="nx">getSecretKey</span><span class="p">(</span><span class="nx">keyID</span><span class="p">);</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">pgpSecKey</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+              <span class="p">}</span>
+              <span class="k">return</span> <span class="nx">pgpSecKey</span><span class="p">.</span><span class="nx">extractPrivateKey</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Public class method readFile</span>
+      <span class="c1">//</span>
+      <span class="kr">public</span> <span class="kr">byte</span><span class="p">[]</span> <span class="nx">readFile</span><span class="p">(</span><span class="nx">File</span> <span class="nx">file</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">IOException</span> <span class="p">{</span>
+              <span class="nx">FileInputStream</span> <span class="nx">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileInputStream</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+              <span class="kr">byte</span><span class="p">[]</span> <span class="nx">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kr">byte</span><span class="p">[</span><span class="mi">4096</span><span class="p">];</span>
+              <span class="kr">int</span> <span class="nx">numRead</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+              <span class="nx">ByteArrayOutputStream</span> <span class="nx">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ByteArrayOutputStream</span><span class="p">();</span>
+              <span class="k">while</span> <span class="p">((</span><span class="nx">numRead</span> <span class="o">=</span> <span class="nx">fis</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">buf</span><span class="p">))</span> <span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="nx">baos</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">numRead</span><span class="p">);</span>
+              <span class="p">}</span>
+              <span class="nx">fis</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+              <span class="kr">byte</span><span class="p">[]</span> <span class="nx">returnVal</span> <span class="o">=</span> <span class="nx">baos</span><span class="p">.</span><span class="nx">toByteArray</span><span class="p">();</span>
+              <span class="nx">baos</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+              <span class="k">return</span> <span class="nx">returnVal</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">//</span>
+      <span class="c1">// Public main method</span>
+      <span class="c1">//</span>
+      <span class="kr">public</span> <span class="kr">static</span> <span class="k">void</span> <span class="nx">main</span><span class="p">(</span><span class="nb">String</span><span class="p">[]</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">Security</span><span class="p">.</span><span class="nx">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">BouncyCastleProvider</span><span class="p">());</span>
+              <span class="nb">String</span> <span class="nx">TOKEN</span> <span class="o">=</span> <span class="s2">&quot;aamine&quot;</span><span class="p">;</span>
+              <span class="c1">// ----- Encrypt the message to a file</span>
+              <span class="c1">// them</span>
+              <span class="kr">byte</span><span class="p">[]</span> <span class="nx">encdata</span> <span class="o">=</span> <span class="nx">encrypt</span><span class="p">(</span><span class="nx">TOKEN</span><span class="p">.</span><span class="nx">getBytes</span><span class="p">());</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Encrypted: &quot;</span> <span class="o">+</span> <span class="nx">encdata</span><span class="p">);</span>
+              <span class="c1">// Encode the byte array to a string</span>
+              <span class="nx">BASE64Encoder</span> <span class="nx">en</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BASE64Encoder</span><span class="p">();</span>		
+              <span class="nb">String</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">en</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">encdata</span><span class="p">);</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Temp: &quot;</span> <span class="o">+</span> <span class="nx">temp</span><span class="p">);</span>
+              <span class="c1">// us</span>
+              <span class="kr">byte</span><span class="p">[]</span> <span class="nx">newB</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>		
+              <span class="nx">BASE64Decoder</span> <span class="nx">en1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BASE64Decoder</span><span class="p">();</span>
+              <span class="k">try</span> <span class="p">{</span>
+                      <span class="nx">newB</span> <span class="o">=</span> <span class="nx">en1</span><span class="p">.</span><span class="nx">decodeBuffer</span><span class="p">(</span><span class="nx">temp</span><span class="p">);</span>
+              <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Exception: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
+              <span class="p">}</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;byte array&quot;</span> <span class="o">+</span> <span class="nx">newB</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+              <span class="c1">// ----- Decrypt the token that</span>
+              <span class="nb">String</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">decrypt</span><span class="p">(</span><span class="nx">newB</span><span class="p">);</span>
+              <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Decrypted: &quot;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> 
+<h1><span class="mw-headline" id="Serialize_Using_a_Lock_.28Mutex.29"><span class="mw-headline-number">5</span> Serialize Using a Lock (Mutex)</span></h1>
+<p><b>Name:</b> Serialize Using a Lock (Mutex) 
+</p><p><b>Type:</b>  
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> Serializes using a Mutex lock. 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This API call changed in the Calgary release:</i>
+<ul><li><i>GlideMutex</i> replaces <i>Packages.com.glide.sys.lock.Mutex</i> </li></ul>
+<p>The new script object calls apply to the Calgary release and beyond. For releases prior to Calgary, substitute the packages call as described above. Packages calls are not valid beginning with the Calgary release. For more information, see <a href="index.php%3Ftitle=Scripting_API_Changes.html" title="Scripting API Changes">Scripting API Changes</a>.
+</p>
+</td></tr></table>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">lock_name</span> <span class="o">=</span> <span class="s2">&quot;my_lock&quot;</span><span class="p">;</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;getting lock&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideMutex</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">lock_name</span><span class="p">);</span> 
+    <span class="c1">//.get(lock_name) gets an exclusive lock; replace with .getNonExclusive(lock_name) for a non-exclusive lock)</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">lock</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;&#39;</span> <span class="o">==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span><span class="s1">&#39;&#39;</span>
+   <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;waiting for lock: &quot;</span> <span class="o">+</span> <span class="nx">lock_name</span><span class="p">);</span>
+   <span class="nx">gs</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// sleep for 1000 milliseconds</span>
+   <span class="nx">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideMutex</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">lock_name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;got lock for &quot;</span> <span class="o">+</span> <span class="nx">lock</span><span class="p">.</span><span class="nx">getName</span><span class="p">());</span>
+<span class="c1">//***************************************</span>
+<span class="c1">// do your activity requiring a lock here </span>
+<span class="c1">//***************************************</span>
+<span class="nx">lock</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;released lock&quot;</span><span class="p">);</span>
+</pre></div> 
+<h1><span class="mw-headline" id="Set_Write_Role_for_All_Catalog_Variables"><span class="mw-headline-number">6</span> Set Write Role for All Catalog Variables</span></h1>
+<p><b>Name:</b> Set Write Role for All Catalog Variables 
+</p><p><b>Type:</b>  
+</p><p><b>Table:</b> 
+</p><p><b>Description:</b> This script sets a write role of Admin for all catalog variables in the system. 
+</p><p><b>Parameters:</b> 
+</p><p><b>Script:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">pat</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">pat</span><span class="p">()</span> <span class="p">{</span> 
+
+   <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;item_option_new&#39;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="nx">gr</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;write_roles&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">);</span>
+      <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+      <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;UPDATED ROLE # &quot;</span> <span class="o">+</span> <span class="nx">count</span><span class="p">);</span>
+  <span class="p">}</span>    
+
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130182551
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.329 seconds
+Real time usage: 3.237 seconds
+Preprocessor visited node count: 172/1000000
+Preprocessor generated node count: 534/1000000
+Post‐expand include size: 9149/2097152 bytes
+Template argument size: 2062/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 3038.684      1 - -total
+ 38.44% 1168.120      1 - Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies
+ 21.42%  651.021      1 - Sample_ASP_Script_for_Unencrypted_Single_Sign-On
+ 17.20%  522.605      1 - Sample_Java_BouncyCastle_Algorithm_for_Encryption
+ 14.42%  438.276      1 - Serialize_Using_a_Lock_(Mutex)
+  7.60%  230.930      1 - Set_Write_Role_for_All_Catalog_Variables
+  3.90%  118.411      2 - Template:Authentication
+  3.59%  109.038      2 - Template:Topic
+  0.49%   14.885      1 - Template:Calgary_API_single
+  0.42%   12.847      4 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6125-0!*!0!1!en!5!* and timestamp 20171130182548 and revision id 250976
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Useful_Security_Scripts&amp;oldid=250976.html">http://wiki.servicenow.com/index.php?title=Useful_Security_Scripts&amp;oldid=250976</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=General+Security.html" title="Category:General Security">General Security</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Unencrypted+HTTP.html" title="Category:Unencrypted HTTP">Unencrypted HTTP</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security+Scripts.html" title="Category:Security Scripts">Security Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security.html" title="Category:Security">Security</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=General+Security.html" title="Category:General Security">General Security</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Unencrypted+HTTP.html" title="Category:Unencrypted HTTP">Unencrypted HTTP</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security+Scripts.html" title="Category:Security Scripts">Security Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6125"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6125" data-vote-the-vote="5" data-vote-id="6125" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6125_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6125" data-vote-the-vote="1" data-vote-id="6125" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6125_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Useful_Security_Scripts.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Useful+Security+Scripts.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Useful+Security+Scripts.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Useful_Security_Scripts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Useful_Security_Scripts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Useful+Security+Scripts.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Useful+Security+Scripts&amp;returnto=Useful+Security+Scripts&amp;oldid=250976&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Useful_Security_Scripts&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUseful_Security_Scripts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FUseful_Security_Scripts.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Useful_Security_Scripts&amp;oldid=250976.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Useful_Security_Scripts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:02, 12 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1358});});</script></body></html>

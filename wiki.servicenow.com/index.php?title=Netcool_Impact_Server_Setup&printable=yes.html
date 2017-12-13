@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Netcool Impact Server Setup - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Netcool_Impact_Server_Setup","wgTitle":"Netcool Impact Server Setup","wgCurRevisionId":245786,"wgRevisionId":245786,"wgArticleId":23921,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Event Integrations","Incident Integrations"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Netcool_Impact_Server_Setup","wgRelevantArticleId":23921,"wgRequestId":"b614a6317aac4a37bfe84292","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150409153207"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Netcool_Impact_Server_Setup"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Netcool Impact Server Setup"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Incident Integrations"/>
+<meta name="category" content="Incident Integrations"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Netcool_Impact_Server_Setup.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Netcool Impact Server Setup"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150409153207"/>
+
+	<meta property="article:published_time" content="20150409153207"/>
+
+	<meta property="article:modified_time" content="20150409153207"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Incident Integrations"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Netcool_Impact_Server_Setup"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Netcool_Impact_Server_Setup rootpage-Netcool_Impact_Server_Setup skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Netcool+Impact+Server+Setup.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Netcool+Impact+Server+Setup&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Netcool Impact Server Setup</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=List_of_Available_Integrations.html" title="List of Available Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Incident_Ticketing_Integrations.html" title="Incident Ticketing Integrations">Incident</a> &gt; Netcool Impact Server Setup</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Netcool_Integration.html" title="Netcool Integration">IBM Tivoli Netcool/OMNIbus Integration</a>
+</th></tr>
+<tr>
+<td>
+<div class='dtree' id='5a23f924275c0t'></div><script type="text/javascript">window.tamOnload_tam5a23f924275c0t=[];tree = new dTree('tam5a23f924275c0t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a23f924275c0t = tree;
+                                               tam5a23f924275c0t.add(1, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Netcool_Integration_Setup\&quot;" title=\"Netcool Integration Setup\">Netcool Integration Setup</a>');
+
+tam5a23f924275c0t.add(2, 0, ' <strong class=\"selflink\">Netcool Impact Server Setup</strong>');
+tam5a23f924275c0t.add(3, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Netcool_Integration_Administration\&quot;" title=\"Netcool Integration Administration\">Netcool Integration Administration</a>');
+tam5a23f924275c0t.add(4, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Custom_Fields_to_the_Netcool_Integration\&quot;" title=\"Adding Custom Fields to the Netcool Integration\">Adding Custom Fields to the Netcool Integration</a>');
+
+                                               document.getElementById('5a23f924275c0t').innerHTML = tam5a23f924275c0t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a23f924275c0t) { window.tamOnload_tam5a23f924275c0t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Netcool_Integration.html" title="Netcool Integration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Netcool_Integration.html" title="Book:Netcool Integration">IBM Tivoli Netcool/OMNIbus Integration</a>
+</td></tr>
+<tr>
+<th> <a href="index.php%3Ftitle=Integrating_Event_Management_Systems.html" title="Integrating Event Management Systems">Event Management Integrations</a>
+</th></tr>
+<tr>
+<td>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Integration_Setup"><span class="tocnumber">2</span> <span class="toctext">Integration Setup</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Creating_an_ObjectServer_Data_Source_and_Data_Type"><span class="tocnumber">3</span> <span class="toctext">Creating an ObjectServer Data Source and Data Type</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Creating_a_Web_Service_Client"><span class="tocnumber">4</span> <span class="toctext">Creating a Web Service Client</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Web_Service_Parameters"><span class="tocnumber">4.1</span> <span class="toctext">Web Service Parameters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Create_an_EventReader_Service"><span class="tocnumber">5</span> <span class="toctext">Create an EventReader Service</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Netcool integration can import events from a Netcool Impact server rather than directly from an ObjectServer starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. When using an Impact server as an event source, you must create an Impact server web service client to consume your instance's Netcool Alert Status web service.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The following sections illustrate procedures using Netcool Impact version 6.1. The UI may differ in later versions.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Integration_Setup"><span class="mw-headline-number">2</span> Integration Setup</span></h1>
+<p>These steps enable the transfer of events between a Netcool Impact server and a ServiceNow instance.
+</p>
+<ol><li><a href="index.php%3Ftitle=Netcool_Integration.html#Activating_the_Netcool_Integration" title="Netcool Integration">Activate</a> the <b>Integration - IBM Netcool/OMNIbus</b> plugin on the ServiceNow instance.</li>
+<li>Create an <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Creating_an_ObjectServer_Data_Source_and_Data_Type">ObjectServer data source and data type</a> on the Impact server.</li>
+<li>Create a <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Creating_a_Web_Service_Client">web service client</a> on the Impact server.</li>
+<li>Create an <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Create_an_EventReader_Service">EventReader service</a> on the Impact server.</li></ol>
+<h1><span class="mw-headline" id="Creating_an_ObjectServer_Data_Source_and_Data_Type"><span class="mw-headline-number">3</span> Creating an ObjectServer Data Source and Data Type</span></h1>
+<p>The Netcool Impact server needs to define the ObjectServer as a data source and the alerts.status table as a data type.
+</p>
+<ol><li>Log in to the Tivoli Integrated Portal (TIP) at <b>https://&lt;hostname&gt;:16311/ibm/console.</b></li>
+<li>Navigate to <b>System Configuration &gt; Event Automation &gt; Data Model</b>.</li>
+<li>Create a new ObjectServer data source.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:410px;"><a href="index.php%3Ftitle=File:Impact_data_source.png.html" class="image"><img alt="" src="images/9/94/Impact_data_source.png" width="408" height="524" class="thumbimage" /></a>  <div class="thumbcaption">Sample Impact Server Data Source</div></div></div> <br clear="all" /></dd></dl>
+<ul><li>For <b>Data Source Name</b>, enter a unique data source name. For example, ObjectServer1.</li>
+<li>For <b>Username</b> and <b>Password</b>, provide the credentials for the ObjectServer.</li>
+<li>For primary and backup source <b>Hostname</b> and <b>Port</b>, provide the connection details for the ObjectServer.</li></ul></li>
+<li>Save the data source.</li>
+<li>Right-click the new data source and create a new data type.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:961px;"><a href="index.php%3Ftitle=File:Impact_data_type.jpg.html" class="image"><img alt="" src="images/b/b3/Impact_data_type.jpg" width="959" height="522" class="thumbimage" /></a>  <div class="thumbcaption">Sample Impact Server Data Type</div></div></div> <br clear="all" /></dd></dl>
+<ul><li>For <b>Data Type Name</b>, enter a unique data type. For example. event_source.</li>
+<li>For <b>Data Source Name</b>, select the data source you created for ObjectServer events.</li>
+<li>For <b>State</b>, select <b>Enabled</b>.</li>
+<li>For <b>Base Table</b>, enter <tt>alerts.status</tt>.</li></ul></li>
+<li>Save the data type.</li></ol>
+<h1><span class="mw-headline" id="Creating_a_Web_Service_Client"><span class="mw-headline-number">4</span> Creating a Web Service Client</span></h1>
+<p>The integration can use a web service client to insert events into a ServiceNow instance. These instructions assume you want to insert events into either the event or incident table.
+</p>
+<ol><li>From a web browser, navigate to the endpoint URL of the target ServiceNow table.
+<ul><li>For the event table navigate to <b>http://&lt;instance_name&gt;/em_event.do?WSDL</b></li>
+<li>For the incident table navigate to <b>http://&lt;instance_name&gt;/imp_netcool_alerts_status.do?WSDL</b></li></ul></li>
+<li>View the page source.</li>
+<li>Save the XML as a file on the Impact server system. For example, <i>C:\wsdl\event.xml</i>.</li>
+<li>Log in to the Tivoli Integrated Portal (TIP) at <b>https://&lt;hostname&gt;:16311/ibm/console.</b></li>
+<li>Navigate to <b>System Configuration &gt; Event Automation &gt; Policies</b>.</li>
+<li>Click <b>New &gt; Use Wizard &gt; Web Services</b>.</li>
+<li>Enter a name for the web service and click <b>Next</b>.</li>
+<li>Enter the path to WSDL. For example, <i>C:\wsdl\event.xml</i>.</li>
+<li>Enter a package name for the new client stub.</li>
+<li>Select <b>Insert</b> as the <b>Web Service Method</b> and leave the insert parameters blank for now.</li>
+<li>Enable web service security and provide user credentials for the ServiceNow instance.</li>
+<li>Double-click the created web service to bring up the editor. Edit the web service to add the <a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html#Web_Service_Parameters">web service parameters</a>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:702px;"><a href="index.php%3Ftitle=File:Impact_web_service.jpg.html" class="image"><img alt="" src="images/a/af/Impact_web_service.jpg" width="700" height="524" class="thumbimage" /></a>  <div class="thumbcaption">Edited Web Service</div></div></div> <br clear="all" /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Web_Service_Parameters"><span class="mw-headline-number">4.1</span> Web Service Parameters</span></h2>
+<p>Add the following parameters to the <b>//Specify parameters</b> section of the web service.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">_Source</span> <span class="o">=</span> <span class="s1">&#39;Netcool/impact&#39;</span><span class="p">;</span>
+<span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Source&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="nx">_Source</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="err">@</span><span class="nx">Severity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Sev</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">-</span> <span class="err">@</span><span class="nx">Severity</span><span class="p">;</span>
+  <span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Severity&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">Sev</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Severity&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Description&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="err">@</span><span class="nx">Summary</span><span class="p">;</span>
+<span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="err">@</span><span class="nx">Node</span><span class="p">;</span>
+<span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="err">@</span><span class="nx">AlertGroup</span><span class="p">;</span>
+<span class="nx">_Insert</span><span class="p">(</span><span class="s1">&#39;TimeOfEvent&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">LocalTime</span><span class="p">(</span><span class="err">@</span><span class="nx">LastOccurrence</span><span class="p">,</span> <span class="s2">&quot;yyy-MM-dd HH:mm:ss&quot;</span><span class="p">));</span>
+</pre></div>
+<p>The @ character specifies a field in the Netcool event table. Task records use different numeric values for severity and must be calculated as 6 minus the Netcool event severity, except for severity 0 events.
+</p>
+<h1><span class="mw-headline" id="Create_an_EventReader_Service"><span class="mw-headline-number">5</span> Create an EventReader Service</span></h1>
+<p>The Impact server must have an EventReader service to periodically poll the ObjectServer for new events.
+</p>
+<ol><li>Log in to the Tivoli Integrated Portal (TIP) at <b>https://&lt;hostname&gt;:16311/ibm/console.</b></li>
+<li>Navigate to <b>System Configuration &gt; Event Automation &gt; New &gt; OMNIbusEventReader</b>.</li>
+<li>Select the <b>General Settings</b> tab.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:611px;"><a href="index.php%3Ftitle=File:Impact_event_reader.jpg.html" class="image"><img alt="" src="images/3/31/Impact_event_reader.jpg" width="609" height="315" class="thumbimage" /></a>  <div class="thumbcaption">Sample EventReader service</div></div></div> <br clear="all" /></dd></dl>
+<ul><li>For <b>Service Name</b>, enter a unique name for the service.</li>
+<li>For <b>Data Source</b>, select the data source you created for ObjectServer events.</li></ul></li>
+<li>Select the <b>Event Mapping</b> tab.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:538px;"><a href="index.php%3Ftitle=File:Impact_event_mapping.jpg.html" class="image"><img alt="" src="images/a/a6/Impact_event_mapping.jpg" width="536" height="411" class="thumbimage" /></a>  <div class="thumbcaption">Sample event mapping</div></div></div> <br clear="all" /></dd></dl>
+<ul><li>For <b>Event Matching</b>, select <b>Stop testing after first match</b>.</li>
+<li>For <b>Actions</b>, select <b>Get Status Events</b>.</li>
+<li>For the event_management policy, select the <b>Active</b> check box.</li></ul></li>
+<li>Start the EventReader service.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203131620
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.207 seconds
+Real time usage: 0.641 seconds
+Preprocessor visited node count: 119/1000000
+Preprocessor generated node count: 361/1000000
+Post‐expand include size: 1690/2097152 bytes
+Template argument size: 610/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   65.437      1 - -total
+ 90.22%   59.040      1 - Template:Netcool_Integration_topics
+ 80.91%   52.946      1 - Template:Topic
+ 12.10%    7.920      4 - Template:T
+  8.64%    5.653      1 - Template:Note
+  6.81%    4.458      1 - Embedded:Netcool_Integration_topics
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23921-0!*!0!1!en!5!* and timestamp 20171203131620 and revision id 245786
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;oldid=245786.html">http://wiki.servicenow.com/index.php?title=Netcool_Impact_Server_Setup&amp;oldid=245786</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23921"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23921" data-vote-the-vote="5" data-vote-id="23921" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23921_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23921" data-vote-the-vote="1" data-vote-id="23921" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23921_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Netcool+Impact+Server+Setup&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Netcool+Impact+Server+Setup&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Netcool_Impact_Server_Setup.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Netcool+Impact+Server+Setup.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Netcool+Impact+Server+Setup&amp;returnto=Netcool+Impact+Server+Setup&amp;oldid=245786&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FNetcool_Impact_Server_Setup.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Netcool_Impact_Server_Setup" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;oldid=245786.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Netcool_Impact_Server_Setup&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:32, 9 April 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1200});});</script></body></html>

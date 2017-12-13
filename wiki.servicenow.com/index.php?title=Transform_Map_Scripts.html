@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Transform Map Scripts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Transform_Map_Scripts","wgTitle":"Transform Map Scripts","wgCurRevisionId":250956,"wgRevisionId":250956,"wgArticleId":2927,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Server Scripting","Import Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Transform_Map_Scripts","wgRelevantArticleId":2927,"wgRequestId":"10e7da014099e538b22616cc","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170912175041"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Transform_Map_Scripts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Transform Map Scripts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Import Sets"/>
+<meta name="category" content="Import Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Transform_Map_Scripts.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Transform Map Scripts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170912175041"/>
+
+	<meta property="article:published_time" content="20170912175041"/>
+
+	<meta property="article:modified_time" content="20170912175041"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Import Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Transform_Map_Scripts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Transform_Map_Scripts rootpage-Transform_Map_Scripts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Transform Map Scripts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Server_Scripting.html" title="Server Scripting">Server Scripting</a> &gt; Transform Map Scripts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Transform_Map_Scripts.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Transform_Map_Scripts.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/server-scripting/concept/c_TransformMapScripts.html">Transform Map Scripts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">Import Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets.html" title="Importing Data Using Import Sets">Importing Data Using Import Sets</a> </li>
+<li><a href="index.php%3Ftitle=Using_the_Coalesce_Field.html" title="Using the Coalesce Field">Using the Coalesce Field</a> </li>
+<li><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="Importing from Another ServiceNow Instance">Importing from Another ServiceNow Instance</a> </li>
+<li><a href="index.php%3Ftitle=Data_Sources.html" title="Data Sources">Data Sources</a>
+<ul><li><a href="index.php%3Ftitle=Adding_JDBC_Drivers_for_Data_Sources_not_Supported_in_Out-of-Box_Systems.html" title="Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems" class="mw-redirect">Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SQL_Server_Integrated_Authentication_for_Windows.html" title="SQL Server Integrated Authentication for Windows">SQL Server Integrated Authentication for Windows</a> </li>
+<li><a href="index.php%3Ftitle=Viewing_the_Import_Log.html" title="Viewing the Import Log">Viewing the Import Log</a></li>
+<li><a href="index.php%3Ftitle=Import_Run_History.html" title="Import Run History">Import Run History</a> </li>
+<li><a href="index.php%3Ftitle=Scheduling_Data_Imports.html" title="Scheduling Data Imports">Scheduling Data Imports</a> </li>
+<li><a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Creating New Transform Maps</a></li>
+<li><strong class="selflink">Transform Map Scripts</strong></li>
+<li><a href="index.php%3Ftitle=Import_Set_Scheduled_Cleanup.html" title="Import Set Scheduled Cleanup">Import Set Scheduled Cleanup</a></li>
+<li><a href="index.php%3Ftitle=Troubleshooting_Import_Set_Performance.html" title="Troubleshooting Import Set Performance">Troubleshooting Import Set Performance</a></li>
+<li><a href="index.php%3Ftitle=Easy_Import.html" title="Easy Import">Easy Import</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Mapping_with_Explicit_Transform_Map_Scripts"><span class="tocnumber">2</span> <span class="toctext">Mapping with Explicit Transform Map Scripts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Transformation_script_variables"><span class="tocnumber">2.1</span> <span class="toctext">Transformation script variables</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Examples_of_Explicit_Transform_Map_Scripts"><span class="tocnumber">2.2</span> <span class="toctext">Examples of Explicit Transform Map Scripts</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Example_1:_Populating_Child_Tables_by_Setting_Class_Names_in_an_Import_to_the_CMDB"><span class="tocnumber">2.2.1</span> <span class="toctext">Example 1: Populating Child Tables by Setting Class Names in an Import to the CMDB</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Example_2:_CMDB_Software_Import_Facilitated_by_Explicit_Mapping_Script"><span class="tocnumber">2.2.2</span> <span class="toctext">Example 2: CMDB Software Import Facilitated by Explicit Mapping Script</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Example_3:_User_Import_Data_Sanitation"><span class="tocnumber">2.2.3</span> <span class="toctext">Example 3: User Import Data Sanitation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Mapping_with_Transformation_Event_Scripts"><span class="tocnumber">3</span> <span class="toctext">Mapping with Transformation Event Scripts</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Enhancements"><span class="tocnumber">4</span> <span class="toctext">Enhancements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Transform_Map_Scripts.html#Dublin"><span class="tocnumber">4.1</span> <span class="toctext">Dublin</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Transform Map scripts allow you to customize import operations using a robust programming interface to introduce advanced logic. A transform map script executes as events occur while an import set is being transformed onto a ServiceNow table. Transform Map scripting is fully integrated into the ServiceNow scripting environment. There are two types of Transform Map scripts:
+</p>
+<ul><li>Explicit Transform Map scripts, which explicitly define mapping relationships </li>
+<li>Transformation Event scripts, which modify the processing of events at different stages of a transformation</li></ul>
+<h1><span class="mw-headline" id="Mapping_with_Explicit_Transform_Map_Scripts"><span class="mw-headline-number">2</span> Mapping with Explicit Transform Map Scripts</span></h1>
+<p>An explicit Transform Map script explicitly defines mapping relationships in the Transform Map record itself.  It runs in the context of "after" the source field values have been copied over to the target record, and before they are written to the database.
+</p>
+<h2><span class="mw-headline" id="Transformation_script_variables"><span class="mw-headline-number">2.1</span> Transformation script variables</span></h2>
+<p>The following is a table of the variables that can be utilized to define explicit mapping relationships in a script: 
+</p>
+<table class="standard">
+
+<tr>
+<th> Variable name
+</th>
+<th width="15%"> Type
+</th>
+<th> Description
+</th>
+<th> Usage Example
+</th></tr>
+<tr>
+<td> source
+</td>
+<td> Reference
+</td>
+<td> A JavaScript variable available during Import Set scripting that can be used to reference a field's value in the source row being processed.
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">incident_state</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> target
+</td>
+<td> Assignment
+</td>
+<td> A JavaScript variable available during Import Set scripting that can be used to assign a field's value to the current target row being processed.
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">target</span><span class="p">.</span><span class="nx">incident_state</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> map
+</td>
+<td> Reference
+</td>
+<td> Read-only information about the current transform map record. This variable supports querying the following columns from the sys_transform_map table (<a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>):
+<ul><li> name</li>
+<li> sys_id</li>
+<li> source_table</li>
+<li> target_table</li>
+<li> order</li></ul>
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">order</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> log
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info( STRING ), log.warn( STRING ), log.error( STRING ).
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;An error has occurred&quot;</span><span class="p">);</span> 
+<span class="nx">log</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;An error has occurred&quot;</span><span class="p">);</span>
+<span class="nx">log</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;An error has occurred&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> action
+</td>
+<td> Function
+</td>
+<td> Returns a value of either "insert" or "update" indicating whether the current target row is about to be created or updated.
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="s2">&quot;insert&quot;</span><span class="p">)</span>
+    <span class="nx">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> ignore
+</td>
+<td> Flag
+</td>
+<td> A boolean variable ("true" or "false") where true in onStart scripts will cause the entire transformation process to be skipped.  Setting it to true in onBefore scripts will cause the current row transformation to be skipped, and will continue to process the remaining rows. Default is "false".
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="nx">u_user_name</span><span class="p">.</span><span class="nx">nil</span><span class="p">()){</span>
+   <span class="nx">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> error
+</td>
+<td> Flag
+</td>
+<td> A boolean variable ("true" or "false") where true causes the current import row to stop processing at any stage in processing and registers an error in the Import Set Log. Default is "false".
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">&quot;no_tranform&quot;</span><span class="p">)</span>
+  <span class="nx">error</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> error_message
+</td>
+<td> String (output message)
+</td>
+<td> When an error occurs, setting this value to a customized string value will cause the SOAP response to contain an optional <b>error_message</b> field to be returned.
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">error_message</span> <span class="o">=</span> <span class="s2">&quot;ignore this error&quot;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> status_message
+</td>
+<td> String (output message)
+</td>
+<td> Setting this value to a customized string value will cause the SOAP response to contain an optional <b>status_message</b> field to be returned.
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">status_message</span> <span class="o">=</span> <span class="s2">&quot;web service processed&quot;</span>
+</pre></div>
+</td></tr></table>
+<h2><span class="mw-headline" id="Examples_of_Explicit_Transform_Map_Scripts"><span class="mw-headline-number">2.2</span> Examples of Explicit Transform Map Scripts</span></h2>
+<h3><span class="mw-headline" id="Example_1:_Populating_Child_Tables_by_Setting_Class_Names_in_an_Import_to_the_CMDB"><span class="mw-headline-number">2.2.1</span> Example 1: Populating Child Tables by Setting Class Names in an Import to the CMDB</span></h3>
+<p>This example imports servers into the configuration management database in ServiceNow. The destination table for the import is "cmdb_ci_servers".
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">operating_system</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_operating_system</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+
+
+<span class="c1">//This if statement uses JavaScript regular expressions to search the operating system</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nx">operating_system</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/linux/i</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="p">){</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">sys_class_name</span><span class="o">=</span><span class="s2">&quot;cmdb_ci_linux_server&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="nx">operating_system</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/win/i</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="p">){</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">sys_class_name</span><span class="o">=</span><span class="s2">&quot;cmdb_ci_win_server&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<h3><span class="mw-headline" id="Example_2:_CMDB_Software_Import_Facilitated_by_Explicit_Mapping_Script"><span class="mw-headline-number">2.2.2</span> Example 2: CMDB Software Import Facilitated by Explicit Mapping Script</span></h3>
+<p>This example shows how explicit map scripting can be used to facilitate an import of software instances to the CMDB where it is necessary to have the count in the software packages table reflect the number of instances. In the CMDB there exist tables for software packages and software instances. A software package refers to a one individual software title, such as "Mozilla Firefox". A software instance refers to an individual instance of a software title such as "Mozilla Firefox" on "Jared_T60_Laptop". In more technical terms a software instance is a many-to-many relationship with a software package and a configuration item. This script imports software instances. In doing so it checks to see if a software package for the instance exists. If the software package doesn't exist then it is created and the sys_id for the newly created package is associated with the instance via the instance record's "software" field.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//First we will initialize some temporary variables, referencing values from the Import Set table source that will be used to </span>
+<span class="c1">//reference software package records and create them if necessary. </span>
+
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_name</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">version</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_version</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">sid</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> 
+
+<span class="c1">//Next we will perform a glide query on the software package table (Note: The target table </span>
+<span class="c1">//for the import is software instances) </span>
+<span class="kd">var</span> <span class="nx">sgr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;cmdb_ci_spkg&quot;</span><span class="p">);</span>
+
+<span class="c1">//Here we are building our query to search for software packages where the name and version of the package</span>
+<span class="c1">//matches the name and version of the instance being imported </span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="nx">version</span><span class="p">);</span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="c1">//Now if a software package with the correct name and version are found then we record the sys_id of the package record</span>
+<span class="c1">//otherwise we create the package and then record the sys_id</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">sgr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+<span class="nx">sid</span> <span class="o">=</span> <span class="nx">sgr</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="c1">// create it</span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="nx">sgr</span><span class="p">.</span><span class="nx">version</span> <span class="o">=</span> <span class="nx">version</span><span class="p">;</span>
+<span class="nx">sid</span> <span class="o">=</span> <span class="nx">sgr</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+
+<span class="c1">//Here we make an entry in System Import Set Log saying that we had to create a software package</span>
+<span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Created new spkg: &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">version</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//Finally we set the reference field on our software instance record to the sys_id we have recorded for the software package.</span>
+<span class="c1">//In doing so we are also relating the software package with the instance and so the count, which keeps track of</span>
+<span class="c1">//the number of instances associated with a package, will automatically be incremented.</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">software</span> <span class="o">=</span> <span class="nx">sid</span><span class="p">;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Example_3:_User_Import_Data_Sanitation"><span class="mw-headline-number">2.2.3</span> Example 3: User Import Data Sanitation</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Note: The field names referenced from an import set are prefixed with an &quot;u_&quot;, also note that it is </span>
+<span class="c1">//necessary  to use the java method toString to so that we can use JavaScript functions to </span>
+<span class="c1">//manipulate the data.</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+
+<span class="c1">//Use native JavaScript function split to create an array for each word in the name &quot;splitting&quot; it </span>
+<span class="c1">//anywhere that there is a space</span>
+<span class="kd">var</span> <span class="nx">split_names</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">split</span> <span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
+
+<span class="c1">//Find the number of of names (i.e., first and last name only, or first middle and last name, etc.)</span>
+<span class="kd">var</span> <span class="nx">num_names</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+<span class="c1">// If there is only one name then map it to the last name field in the user table</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">num_names</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">last_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">//if there are two names then map the first one to first name and the last one to last name</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">num_names</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">first_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">last_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">//if there are more than 3 names then all middle names get combined into one middle name this is done </span>
+<span class="c1">//by  shifting off the first name (array element 0 ) and mapping to first name and popping off the last</span>
+<span class="c1">// name and returning it to the last name field</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">num_names</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">first_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">last_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">middle_name</span> <span class="o">=</span> <span class="nx">split_names</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Mapping_with_Transformation_Event_Scripts"><span class="mw-headline-number">3</span> Mapping with Transformation Event Scripts</span></h1>
+<p>Transformation events occur during the process of transforming an import set table onto a ServiceNow table. These events modify the transformation behavior from any type of mapping specification. Transformation Event scripts modify the processing of the events at various stages of the transformation. For example, the processing of a mapping operation defined using the <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html#Mapping_Assist_Utility" title="Creating New Transform Maps">Mapping Assist Utility</a> can be manipulated using the event scripts. There are a number of import set JavaScript objects that are accessible during these events. These objects represent tables or portions of tables. It is important to note that what these objects refer to varies depending on the context of the event in which they are referenced.
+</p><p>The following is a table of all of the transform events and their contextual variables: 
+</p>
+<table class="standard">
+
+<tr>
+<th> Event name
+</th>
+<th> Event Parameters
+</th></tr>
+<tr>
+<td> <b>onStart</b>
+</td>
+<td> <b>When:</b> The onStart event script is processed at the start of an import run, before any data rows are read. <br />
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onStart event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onStart import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The first row of the source table, there is no data yet since the row has not been read.
+</td></tr>
+<tr>
+<td> <b>import_set</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The import set that is currently being transformed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>ignore</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, the entire transformation will be stopped and no further processing will occur.
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, has the same effect as the ignore flag of stopping the entire transformation, with an error message.
+</td></tr></table>
+<p><b>Example:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">info</span> <span class="o">=</span> <span class="s2">&quot;Starting Import Set Transformation Mapping operation using Data source, &quot;</span> 
+<span class="o">+</span> <span class="nx">map</span><span class="p">.</span><span class="nx">table_source</span> <span class="o">+</span> <span class="s2">&quot; and Transform Map &quot;</span> <span class="o">+</span> <span class="nx">map</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; on import set &quot;</span> <span class="o">+</span> <span class="nx">import_set</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+<span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span> <span class="nx">info</span> <span class="p">);</span> 
+
+<span class="c1">// create an event for notfying on start</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td> <b>onComplete</b>
+</td>
+<td> <b>When:</b> The onComplete event script is processed at the end of an import run, after all data rows are read and transformed.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onComplete event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onComplete import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The last row of the source import set table.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The last row of target table.
+</td></tr>
+<tr>
+<td> <b>import_set</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The import set that is currently being transformed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, will mark the current import set status to error after it completes.
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p><p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This API call changed in the Calgary release:</i>
+<ul><li><i>GlideEvent</i> replaces <i>Packages.com.glide.policy.Event</i> </li></ul>
+<p>The new script object calls apply to the Calgary release and beyond. For releases prior to Calgary, substitute the packages call as described above. Packages calls are not valid beginning with the Calgary release. For more information, see <a href="index.php%3Ftitle=Scripting_API_Changes.html" title="Scripting API Changes">Scripting API Changes</a>.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Create a myimport_completed event that can be reacted by an email notification or script action</span>
+<span class="c1">// (there is already an import.finished event that the system will create at the end of an import)</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideEvent</span><span class="p">(</span><span class="s2">&quot;myimport_completed&quot;</span><span class="p">,</span> <span class="nx">import_set</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">,</span> <span class="nx">map</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+
+<span class="c1">// delete inserted import set rows</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> <b>onBefore</b>
+</td>
+<td> <b>When:</b> The onBefore event script is processed at the start of a row transformation, before the source row is transformed into the target row.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onBefore event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onBefore import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the source table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the target table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>import_set</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The import set that is currently being transformed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>action</b>
+</td>
+<td> String
+</td>
+<td> Action returns a value of either "insert" or "update" indicating whether the current target row is about to be created or updated.<br />
+</td></tr>
+<tr>
+<td> <b>ignore</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, the current row transformation will be skipped and the remaining rows will be processed.
+<p>If you have defined an <tt>onAfter</tt> script, the <tt>onAfter</tt> script runs for the current row even if the ignore flag is set to true.
+</p>
+</td></tr>
+<tr>
+<td> <b>status_message</b>
+</td>
+<td> String
+</td>
+<td> Defines a custom message to be sent in the &lt;status_message&gt; XML response.
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, will halt the entire transformation for the current import set, with an error message.
+</td></tr>
+<tr>
+<td> <b>error_message</b>
+</td>
+<td> String
+</td>
+<td> Defines a custom message to be sent in the &lt;error_message&gt; XML response.
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_name</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">info</span> <span class="o">=</span> <span class="s2">&quot;Before the row is transformed, &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+<span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span> <span class="nx">info</span> <span class="p">);</span> 
+
+<span class="c1">// Make sure a company name has been provided</span>
+<span class="kd">var</span> <span class="nx">company</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">u_company</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">company</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">){</span>
+	<span class="nx">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="nx">info</span> <span class="o">=</span><span class="s2">&quot;No company name, row ignored! &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+	<span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span> <span class="nx">info</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td> <b>onAfter</b>
+</td>
+<td> <b>When:</b> The onAfter event script is processed at the end of a row transformation, after the source row has been transformed into the target row and saved.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onAfter event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onAfter import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the source table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the target table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>import_set</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The import set that is currently being transformed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>action</b>
+</td>
+<td> String
+</td>
+<td> Action returns a value of either "insert" or "update" indicating whether the current target row was created or updated.<br />
+</td></tr>
+<tr>
+<td> <b>status_message</b>
+</td>
+<td> String
+</td>
+<td> Defines a custom message to be sent in the &lt;status_message&gt; XML response.
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, will halt the entire transformation for the current import set, with an error message.
+</td></tr>
+<tr>
+<td> <b>error_message</b>
+</td>
+<td> String
+</td>
+<td> Defines a custom message to be sent in the &lt;error_message&gt; XML response.
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="k">new</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s1">&#39;Cart&#39;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sc_cat_item&#39;</span><span class="p">);</span>
+  <span class="nx">bundle</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;CONTAINS&#39;</span><span class="p">,</span><span class="s1">&#39;comp&#39;</span><span class="p">);</span>
+  <span class="nx">bundle</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">bundle</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">new_comp_cart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cart</span> <span class="p">()</span>
+    <span class="kd">var</span> <span class="nx">cart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cart</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">cart</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">bundle</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">rc</span> <span class="o">=</span> <span class="nx">cart</span><span class="p">.</span><span class="nx">placeOrder</span><span class="p">();</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">rc</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> <b>onForeignInsert</b>
+</td>
+<td> <b>When:</b> The onForeignInsert event script is processed at the start of the creation of a related, referenced record, before the record is created.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onForeignInsert event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onForeignInsert import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the source table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the target table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>action</b>
+</td>
+<td> String
+</td>
+<td> Action returns a value of either "insert" or "update" indicating whether the current target row is about to be created or updated.
+</td></tr>
+<tr>
+<td> <b>name</b>
+</td>
+<td> String
+</td>
+<td> Evaluates to the field name of the target record for which a foreign record that is about to be created.
+</td></tr>
+<tr>
+<td> <b>value</b>
+</td>
+<td> String
+</td>
+<td> Evaluates to the display value from the source record for which a foreign record is about to be created.
+</td></tr>
+<tr>
+<td> <b>ignore</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, ignores the creation of a new foreign or related record.
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, rejects the entire transformation row, no data is saved for this row.
+</td></tr></table>
+<p><b>Example:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Create an event.</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideEvent</span><span class="p">(</span><span class="s2">&quot;myimport_ForeignInsert&quot;</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td> <b>onChoiceCreate</b>
+</td>
+<td> <b>When:</b> The onChoiceCreate event script is processed at the start of a choice value creation, before the new choice value is created.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onChoiceCreate event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onChoiceCreate import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the source table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the target table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr>
+<tr>
+<td> <b>action</b>
+</td>
+<td> String
+</td>
+<td> Action returns a value of either "insert" or "update" indicating whether the current target row is about to be created or updated.
+</td></tr>
+<tr>
+<td> <b>name</b>
+</td>
+<td> String
+</td>
+<td> Evaluates to the field name of the target record for which a choice value is about to be created.
+</td></tr>
+<tr>
+<td> <b>value</b>
+</td>
+<td> String
+</td>
+<td> Evaluates to the display value from the source record for which a choice is about to be created.
+</td></tr>
+<tr>
+<td> <b>ignore</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, ignores the creation of a choice value.
+</td></tr>
+<tr>
+<td> <b>error</b>
+</td>
+<td> Boolean Flag
+</td>
+<td> When set to true, rejects the entire transformation row, no data is saved for this row.
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Create an event</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideEvent</span><span class="p">(</span><span class="s2">&quot;myimport_ChoiceCreate&quot;</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> <b>onReject</b>
+</td>
+<td> <b>When:</b> The onReject event script is processed during the occurrence of a foreign record or choice creation, and the foreign record or choice is rejected, the entire transformation row is not saved.
+<table cellspacing="1" cellpadding="1" border="1" width="100%">
+<caption> <b>Import Set JS objects available to be referenced and their context in the onError event:</b>
+</caption>
+<tr>
+<td> <u><b>Import Set JS object</b></u>
+</td>
+<td> <u><b>Type</b></u>
+</td>
+<td> <u><b>Context in the onError import set event</b></u>
+</td></tr>
+<tr>
+<td> <b>source</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the source table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>target</b>
+</td>
+<td> GlideRecord
+</td>
+<td> The row of the target table that is currently being processed.
+</td></tr>
+<tr>
+<td> <b>map</b>
+</td>
+<td> GlideTransformMap
+</td>
+<td> Read-only information about the current transform map record.
+</td></tr>
+<tr>
+<td> <b>action</b>
+</td>
+<td> String
+</td>
+<td> Action returns a value of either "insert" or "update" indicating whether the current target row is about to be created or updated.
+</td></tr>
+<tr>
+<td> <b>log</b>
+</td>
+<td> Function
+</td>
+<td> The log object for the current import run. For example, log.info(...), log.warn(...), log.error(...).
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Create an event</span>
+<span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideEvent</span><span class="p">(</span><span class="s2">&quot;myimport_onReject&quot;</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="Enhancements"><span class="mw-headline-number">4</span> Enhancements</span></h1>
+<h2><span class="mw-headline" id="Dublin"><span class="mw-headline-number">4.1</span> Dublin</span></h2>
+<p>The following enhancement is available as of the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>.
+</p>
+<ul><li> The <tt>map</tt> variable is restricted to read-only information about the current transform map. See <a href="index.php%3Ftitle=Transform_Map_Scripts.html#Transformation_script_variables">Transformation script variables</a>.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201110647
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.389 seconds
+Real time usage: 6.849 seconds
+Preprocessor visited node count: 241/1000000
+Preprocessor generated node count: 645/1000000
+Post‐expand include size: 4505/2097152 bytes
+Template argument size: 1712/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 4327.633      1 - -total
+  0.49%   21.116      1 - Template:Import_Sets
+  0.39%   17.012      1 - Template:Topic
+  0.22%    9.442      1 - Template:Calgary_API_single
+  0.14%    5.931      2 - Template:Note
+  0.10%    4.169      1 - Embedded:Import_Sets
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2927-0!*!0!1!en!5!* and timestamp 20171201110640 and revision id 250956
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Transform_Map_Scripts&amp;oldid=250956.html">http://wiki.servicenow.com/index.php?title=Transform_Map_Scripts&amp;oldid=250956</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2927"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2927" data-vote-the-vote="5" data-vote-id="2927" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2927_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2927" data-vote-the-vote="1" data-vote-id="2927" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2927_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Transform_Map_Scripts.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Transform+Map+Scripts.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Transform+Map+Scripts.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Transform_Map_Scripts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Transform_Map_Scripts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Transform+Map+Scripts.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Transform+Map+Scripts&amp;returnto=Transform+Map+Scripts&amp;oldid=250956&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Transform_Map_Scripts&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FTransform_Map_Scripts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Transform_Map_Scripts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Transform_Map_Scripts&amp;oldid=250956.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Transform_Map_Scripts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:50, 12 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1074});});</script></body></html>

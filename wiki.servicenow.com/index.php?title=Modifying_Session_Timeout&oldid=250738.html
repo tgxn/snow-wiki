@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Modifying Session Timeout - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Modifying_Session_Timeout","wgTitle":"Modifying Session Timeout","wgCurRevisionId":250738,"wgRevisionId":250738,"wgArticleId":2103,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["User Sessions"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Modifying_Session_Timeout","wgRelevantArticleId":2103,"wgRequestId":"021b7d4013a081d745dfdf4a","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170905165933"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Modifying_Session_Timeout"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Modifying Session Timeout"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="User Sessions"/>
+<meta name="category" content="User Sessions"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Modifying_Session_Timeout.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Modifying Session Timeout"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170905165933"/>
+
+	<meta property="article:published_time" content="20170905165933"/>
+
+	<meta property="article:modified_time" content="20170905165933"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="User Sessions"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Modifying_Session_Timeout"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Modifying_Session_Timeout rootpage-Modifying_Session_Timeout skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Modifying Session Timeout</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Modifying Session Timeout</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Modifying_Session_Timeout&amp;oldid=250738.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Modifying_Session_Timeout&amp;oldid=250738.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=User_Administration.html" title="User Administration">User Administration</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20026621ea9t'></div><script type="text/javascript">window.tamOnload_tam5a20026621ea9t=[];tree = new dTree('tam5a20026621ea9t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20026621ea9t = tree;
+                                               tam5a20026621ea9t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Users_and_Associating_to_a_Group\&quot;" title=\"Creating Users and Associating to a Group\">Creating Users and Associating to a Group</a>');
+
+tam5a20026621ea9t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Groups\&quot;" title=\"Creating Groups\">Creating Groups</a>');
+tam5a20026621ea9t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Group_Types_for_Assignment_Groups\&quot;" title=\"Configuring Group Types for Assignment Groups\">Using Assignment Group Types</a>');
+tam5a20026621ea9t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Hiding_Groups\&quot;" title=\"Hiding Groups\">Hiding Groups</a>');
+tam5a20026621ea9t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Non-Interactive_Sessions\&quot;" title=\"Non-Interactive Sessions\">Non-Interactive Sessions</a>');
+tam5a20026621ea9t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=User_Self-Registration\&quot;" title=\"User Self-Registration\">User Self-Registration</a>');
+tam5a20026621ea9t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Group_On-Call_Rotation_-_Versions_Prior_to_Eureka\&quot;" title=\"Group On-Call Rotation - Versions Prior to Eureka\">Group On-Call Rotation</a>');
+tam5a20026621ea9t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_New_Roster_-_Versions_Prior_to_Eureka\&quot;" title=\"Creating a New Roster - Versions Prior to Eureka\">Creating a New Roster</a>');
+tam5a20026621ea9t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Editing_an_Existing_Rotation_-_Versions_Prior_to_Eureka\&quot;" title=\"Editing an Existing Rotation - Versions Prior to Eureka\">Editing an Existing Rotation</a>');
+tam5a20026621ea9t.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_of_On-Call_Rotations_-_Versions_Prior_to_Eureka\&quot;" title=\"Scripting of On-Call Rotations - Versions Prior to Eureka\">Scripting of On-Call Rotations</a> ');
+tam5a20026621ea9t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Skills_Management\&quot;" title=\"Skills Management\">Skills Management</a>');
+tam5a20026621ea9t.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Roles\&quot;" title=\"Creating Roles\">Creating Roles</a>');
+tam5a20026621ea9t.add(13, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Role_Delegation\&quot;" title=\"Role Delegation\">Role Delegation</a>');
+tam5a20026621ea9t.add(14, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Base_System_Roles\&quot;" title=\"Base System Roles\">Base System Roles</a>');
+tam5a20026621ea9t.add(15, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ServiceNow_Read_Only_Role\&quot;" title=\"ServiceNow Read Only Role\">ServiceNow Read Only Role</a>');
+tam5a20026621ea9t.add(16, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Access_Control_Rules\&quot;" title=\"Using Access Control Rules\">Using Access Control Rules</a>');
+tam5a20026621ea9t.add(17, 16, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Jump_Start_-_ACL_Rules\&quot;" title=\"Security Jump Start - ACL Rules\">Security Jump Start - ACL Rules</a> ');
+tam5a20026621ea9t.add(18, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_a_New_Department\&quot;" title=\"Adding a New Department\">Adding a New Department</a>');
+tam5a20026621ea9t.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_a_New_Company\&quot;" title=\"Adding a New Company\">Adding a New Company</a>');
+tam5a20026621ea9t.add(20, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multi_Tenancy_and_Domain_Separation_Options\&quot;" title=\"Multi Tenancy and Domain Separation Options\">Separation</a>');
+tam5a20026621ea9t.add(21, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Filters_and_Breadcrumbs\&quot;" title=\"Using Filters and Breadcrumbs\">Filters</a>');
+tam5a20026621ea9t.add(22, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_Application_Menus_and_Modules\&quot;" title=\"Administering Application Menus and Modules\">Role-based Access to Applications and Modules</a>');
+tam5a20026621ea9t.add(23, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Domain_Separation_Support\&quot;" title=\"Domain Separation Support\" class=\"mw-redirect\">Domain Separation Support</a>');
+tam5a20026621ea9t.add(24, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Company_Separation\&quot;" title=\"Company Separation\" class=\"mw-redirect\">Company Separation</a>');
+tam5a20026621ea9t.add(25, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Impersonating_a_User\&quot;" title=\"Impersonating a User\">Impersonating a User</a>');
+tam5a20026621ea9t.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_User_Sessions\&quot;" title=\"Managing User Sessions\">Managing User Sessions</a>');
+tam5a20026621ea9t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cancelling_a_Transaction\&quot;" title=\"Cancelling a Transaction\">Cancelling a Transaction</a> ');
+tam5a20026621ea9t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Viewing_and_Killing_Active_Transactions\&quot;" title=\"Viewing and Killing Active Transactions\">Viewing and Killing Active Transactions</a>');
+tam5a20026621ea9t.add(29, 26, '<strong class=\"selflink\">Modifying Session Timeout</strong>');
+tam5a20026621ea9t.add(30, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Counting_Licensed_Users\&quot;" title=\"Counting Licensed Users\">Counting Licensed Users</a>');
+
+                                               document.getElementById('5a20026621ea9t').innerHTML = tam5a20026621ea9t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20026621ea9t) { window.tamOnload_tam5a20026621ea9t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The base system uses the default Apache session timeout of 30 minutes. After 30 minutes of inactivity in the application, the platform logs the user out automatically, unless the <b>Remember Me</b> check box in the login screen is selected. Making the interval longer can lead to the unnecessary maintenance of inactive sessions in memory. It is recommended to adjust this timeout setting to no more than a few hours, although up to 24 hours is workable.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/user-sessions/concept/c_ManageUserSessions.html">Manage User Sessions</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Creating_and_Setting_the_Property"><span class="mw-headline-number">2</span> Creating and Setting the Property</span></h1>
+<p>To set the session timeout manually:
+</p>
+<ol><li>Clear the <b>Remember Me</b> check box in the login screen.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property"><b>Add a new property</b></a> using the following values:
+<ul><li><b>Name</b>: <i>glide.ui.session_timeout</i></li>
+<li><b>Description</b>: Type a brief description. In this case, enter something like <i>Override the default session timeout (30). This value is in minutes</i>.</li>
+<li><b>Type</b>: Select the appropriate data type. In this case, select <b>Integer</b>.</li>
+<li><b>Value</b>: Change the default value from 30 minutes to a value of your choice.</li></ul>
+<dl><dd><a href="index.php%3Ftitle=File:Systemproperty.png.html" class="image" title="systemproperty.png"><img alt="systemproperty.png" src="images/thumb/8/87/Systemproperty.png/600px-Systemproperty.png" width="600" height="424" srcset="/images/8/87/Systemproperty.png 1.5x, /images/8/87/Systemproperty.png 2x" /></a></dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The session timeout can also be set through <a href="index.php%3Ftitle=Installation_Exits.html#Customizing_Login_for_Selective_Session_Timeout" title="Installation Exits">installation exit customizations</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Notes_and_Limitations"><span class="mw-headline-number">3</span> Notes and Limitations</span></h1>
+<ul><li>Ajax calls to the server keep the session alive (such as Labels and Refreshing homepages).</li>
+<li>Polling keeps the session alive when the chat desktop is open (requires the <a href="index.php%3Ftitle=Chat.html" title="Chat">Chat plugin</a>).</li>
+<li>Administrators can add the following properties to the System Properties table (<a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">starting with the Dublin release</a>):
+<ul><li><b><tt>glide.security.csrf.handle.ajax.timeout</tt>:</b> Handles errors for timed out Ajax requests when set to <b>true</b>. </li>
+<li><b><tt>glide.security.auto.resubmit.ajax</tt>:</b> Automatically resubmits timed-out Ajax requests when set to <b>true</b> and the <a href="index.php%3Ftitle=Logging_In.html#Logging_In" title="Logging In"><b>Remember Me</b></a> checkbox is selected or <a href="index.php%3Ftitle=Changing_Settings_for_the_%2527Remember_Me%2527_Checkbox_and_Cookie.html" title="Changing Settings for the 'Remember Me' Checkbox and Cookie">automatically set</a>. A popup appears to users asking them to continue. </li>
+<li><b><tt>glide.ui.auto_req.extend.session</tt>:</b> When set to <b>true</b>, the system automatically extends a user's session by the value the user selects for the <a href="index.php%3Ftitle=Customizing_Homepages.html#Refreshing_the_Homepage" title="Customizing Homepages">homepage refresh time</a>. If there is no homepage refresh time, the standard timeout value applies. Tablet and mobile devices do not support this property. When set to <b>false</b>, user sessions will timeout if the <b>Remember me</b> checkbox is clear. The timeout is based on whether there is a homepage refresh time. When there is no homepage refresh time, the standard timeout value applies. When there is a homepage refresh time, the user session times out after the timeout value plus one interval of the homepage refresh time. For example, if a user selects to refresh interval of 5 minutes, then user sessions expires after the timeout value plus five minutes.</li></ul></li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Users who select  the <b>Remember me</b> checkbox will never timeout and are unaffected by session timeout properties.</i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130130646
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.232 seconds
+Real time usage: 0.358 seconds
+Preprocessor visited node count: 42/1000000
+Preprocessor generated node count: 238/1000000
+Post‐expand include size: 2942/2097152 bytes
+Template argument size: 707/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  110.555      1 - -total
+ 82.70%   91.432      1 - Template:User
+ 74.84%   82.734      1 - Template:Topic
+ 12.62%   13.950      3 - Template:Note
+  7.17%    7.930      1 - Embedded:User
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2103-0!*!0!1!*!5!* and timestamp 20171130130646 and revision id 250738
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Modifying_Session_Timeout&amp;oldid=250738.html">http://wiki.servicenow.com/index.php?title=Modifying_Session_Timeout&amp;oldid=250738</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=User+Sessions.html" title="Category:User Sessions">User Sessions</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=User+Administration.html" title="Category:User Administration">User Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=User+Sessions.html" title="Category:User Sessions">User Sessions</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2103"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2103" data-vote-the-vote="5" data-vote-id="2103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2103_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2103" data-vote-the-vote="1" data-vote-id="2103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2103_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Modifying_Session_Timeout.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Modifying+Session+Timeout&amp;returntoquery=oldid%3D250738" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Modifying+Session+Timeout&amp;returntoquery=oldid%3D250738" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Modifying_Session_Timeout.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Modifying_Session_Timeout&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Modifying+Session+Timeout.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Modifying+Session+Timeout&amp;returnto=Modifying+Session+Timeout&amp;oldid=250738&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Modifying_Session_Timeout&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FModifying_Session_Timeout.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Modifying_Session_Timeout" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Modifying_Session_Timeout&amp;oldid=250738.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Modifying_Session_Timeout&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:59, 5 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":518});});</script></body></html>

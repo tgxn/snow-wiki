@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Update Sets - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Update_Sets","wgTitle":"Using Update Sets","wgCurRevisionId":251036,"wgRevisionId":251036,"wgArticleId":4463,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["System Update Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Update_Sets","wgRelevantArticleId":4463,"wgRequestId":"506e7a47fcfccc0f8fa6b1b9","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170913192639"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Update_Sets"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Update Sets"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="System Update Sets"/>
+<meta name="category" content="System Update Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Update Sets"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170913192639"/>
+
+	<meta property="article:published_time" content="20170913192639"/>
+
+	<meta property="article:modified_time" content="20170913192639"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="System Update Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Update_Sets"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Update_Sets rootpage-Using_Update_Sets skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Update+Sets.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Update Sets</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Using Update Sets</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-application-development/page/build/system-update-sets/concept/update-set-procedures.html">Update Set Use</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">System Update Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" title="Getting Started with Update Sets">Getting Started</a></li>
+<li><a href="index.php%3Ftitle=Administering_Update_Sets.html" title="Administering Update Sets">Administering Update Sets</a></li>
+<li><strong class="selflink">Using Update Sets</strong> </li>
+<li><a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="Transferring Update Sets">Transferring Update Sets</a> </li>
+<li><a href="index.php%3Ftitle=Saving_Customizations_in_a_Single_XML_File.html" title="Saving Customizations in a Single XML File">Saving Customizations in a Single XML File</a></li>
+<li><a href="index.php%3Ftitle=Update_Sets_Best_Practices.html" title="Update Sets Best Practices"> Update Sets Best Practices</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="Importing from Another ServiceNow Instance">Importing from Another ServiceNow Instance</a></li>
+<li> <a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets.html" title="Moving Workflows with Update Sets">Moving Workflows with Update Sets</a></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a></li></ul>
+<center><b><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Creating_Update_Sets"><span class="tocnumber">2</span> <span class="toctext">Creating Update Sets</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Select_an_Update_Set"><span class="tocnumber">3</span> <span class="toctext">Select an Update Set</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Viewing_Changes_in_an_Update_Set"><span class="tocnumber">3.1</span> <span class="toctext">Viewing Changes in an Update Set</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Viewing_Customer_Update_Records"><span class="tocnumber">3.2</span> <span class="toctext">Viewing Customer Update Records</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Navigating_Updated_Records"><span class="tocnumber">3.3</span> <span class="toctext">Navigating Updated Records</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Reporting_on_Updates"><span class="tocnumber">4</span> <span class="toctext">Reporting on Updates</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Merging_Update_Sets"><span class="tocnumber">5</span> <span class="toctext">Merging Update Sets</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Comparing_Local_Update_Sets"><span class="tocnumber">6</span> <span class="toctext">Comparing Local Update Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Understanding_Collisions"><span class="tocnumber">6.1</span> <span class="toctext">Understanding Collisions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Coalesce_Strategies"><span class="tocnumber">6.1.1</span> <span class="toctext">Coalesce Strategies</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Matching_Customer_Update_Record_Names_for_Collisions"><span class="tocnumber">6.1.2</span> <span class="toctext">Matching Customer Update Record Names for Collisions</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Preventing_Duplicate_Records"><span class="tocnumber">6.1.3</span> <span class="toctext">Preventing Duplicate Records</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html#Mark_an_Update_Set_as_Complete"><span class="tocnumber">7</span> <span class="toctext">Mark an Update Set as Complete</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>An update set is a group of customizations that can be moved from one instance to another. For example, a set of enhancements to incident management can be grouped in an update set called <b>Incident Management 2.0</b>. While <b>Incident Management 2.0</b> is marked as the current update set, all changes are tracked in it.
+</p><p>Before using update sets, review the <a href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" title="Getting Started with Update Sets">Getting Started with Update Sets</a> page to learn when to use and when not to use update sets, and how to plan the update process and avoid common pitfalls. Then, create an update set and use it to make changes on a development instance. You can report on updates, merge update sets, and compare update sets to ensure the desired changes are ready to move.
+</p><p>When the update set is completed, you can transfer the update set to another instance according to your test process. See <a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="Transferring Update Sets">Transferring Update Sets</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Properties that are tagged as Private are excluded from update sets. Keeping system properties private prevents settings in one instance from overwriting values in another instance. For example, you may not want a system property in a production instance to use a particular value from a development instance.  See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Adding a Property</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Creating_Update_Sets"><span class="mw-headline-number">2</span> Creating Update Sets</span></h1>
+<p>To create a new update set:
+</p>
+<ol><li>Navigate to <b>System Update Sets &gt; Local Update Sets</b> and click <b>New</b>. </li>
+<li>Enter update set details (see table). For more information, see <a href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" title="Getting Started with Update Sets">Getting Started with Update Sets</a> and <a href="index.php%3Ftitle=Update_Sets_Best_Practices.html" title="Update Sets Best Practices">Update Sets Best Practices</a>.</li>
+<li>Click <b>Submit</b> to create the update set.  Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>: if the picker is enabled and the update set is in the <b>In progress</b> state, click <b>Submit and Make Current</b> to:
+<ul><li>Create the update set</li>
+<li>Select the new update set in the <a href="index.php%3Ftitle=Administering_Update_Sets.html#Granting_Access_to_the_Update_Set_Picker" title="Administering Update Sets">Update Set picker</a></li>
+<li>Add customizations to the new update set.</li></ul></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:703px;"><a href="index.php%3Ftitle=File:Us3.png.html" class="image"><img alt="" src="images/d/d1/Us3.png" width="701" height="217" class="thumbimage" /></a>  <div class="thumbcaption"><b>Update set record</b></div></div></div> <br style="clear:both;" />
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  Enter a unique name for the update set. You can use naming conventions to organize update sets. For example, add the problem number to the name of the update that fixes it, identify the application scope, or use sequence numbers to keep track of the order in which update sets need to be committed.
+</td></tr>
+<tr>
+<td>  State
+</td>
+<td>  Select <b>In progress</b> for a new update set. Selecting an <b>In progress</b> update set tracks customizations in the update set. The <a href="index.php%3Ftitle=Administering_Update_Sets.html#Granting_Access_to_the_Update_Set_Picker" title="Administering Update Sets">Update Set picker</a> only displays <b>In progress</b> update sets.
+<p>Select <b>Completed</b> only when you are certain that the update set is complete. After it is marked <b>Completed</b>, do not set it back to <b>In progress</b>. Instead, create a new update set with further customizations, and make sure to commit the update sets in the order that they were marked <b>Completed</b>. Use <b>Completed</b> update sets to transfer changes from one instance to another.
+</p><p>Select <b>Ignore</b> when you are no longer working on an update set but do not want it to be transferred to another instance. You should always set <b>Completed</b> update sets on the production instance to <b>Ignore</b>. This state ensures the update set is not committed again when cloning the instance.
+</p>
+</td></tr>
+<tr>
+<td>  Created By
+</td>
+<td> Populates your user name when you submit a new update set record.
+</td></tr>
+<tr>
+<td>  Created
+</td>
+<td>  Populates the timestamp when you submit a new update set record.
+</td></tr>
+<tr>
+<td>  Release Date
+</td>
+<td>  Enter the date on which you plan to release the update set.
+</td></tr>
+<tr>
+<td>  Application (starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>)
+</td>
+<td>  Populates the application scope that is currently selected in the Application picker. All changes in the update set apply only to the current scope.
+</td></tr>
+<tr>
+<td>My Current Set (prior to the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>)
+</td>
+<td>Select the check box to add your customizations to the current update set. Selecting this check box selects the current update set from the Update Set picker if the picker is enabled and the update set is in the In Progress state.
+</td></tr>
+<tr>
+<td>  Description
+</td>
+<td>  Enter a description of the update set.
+</td></tr></table>
+<h1><span class="mw-headline" id="Select_an_Update_Set"><span class="mw-headline-number">3</span> Select an Update Set</span></h1>
+<p>Update sets track changes as you develop. Follow this procedure to specify the update set that should collect the updates that you make:
+</p>
+<ol><li>Open the <b>Settings</b> panel.</li>
+<li>Select the desired update set from the <a href="index.php%3Ftitle=Administering_Update_Sets.html#Granting_Access_to_the_Update_Set_Picker" title="Administering Update Sets">Update Set picker</a>. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>, only update sets that are appropriate for the current application scope appear in the selection list and the associated application is displayed in square brackets. 
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:396px;"><a href="index.php%3Ftitle=File:Update_set_picker.png.html" class="image"><img alt="" src="images/2/2d/Update_set_picker.png" width="394" height="611" class="thumbimage" /></a>  <div class="thumbcaption"><b>Update Set picker</b></div></div></div> <br style="clear:both;" /></dd></dl></li></ol>
+<p>Now, any customization that you perform on a tracked table is recorded by the update set. For example:
+</p>
+<ul><li>An update record is added or updated in the current update set.</li>
+<li>A new version record is created with the current update set as the source.</li>
+<li>You can <a href="index.php%3Ftitle=Versions.html#Comparing_Versions" title="Versions">compare versions</a> of any customized object, and you can <a href="index.php%3Ftitle=Versions.html#Reverting_Versions" title="Versions">revert changes</a> to an older version.</li></ul>
+<h2><span class="mw-headline" id="Viewing_Changes_in_an_Update_Set"><span class="mw-headline-number">3.1</span> Viewing Changes in an Update Set</span></h2>
+<p>Follow this procedure to see the customizations that make up an update set:
+</p>
+<ol><li> Navigate to <b>System Update Sets &gt; Local Update Sets</b>.</li>
+<li> Select the update set name.</li>
+<li> View the <b>Customer Updates</b> related list.
+<dl><dd> You can compare any update to the current version. Right-click the update record and select <b>Compare to Current</b>.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:853px;"><a href="index.php%3Ftitle=File:UpdateSetRecord.png.html" class="image"><img alt="" src="images/c/c3/UpdateSetRecord.png" width="851" height="605" class="thumbimage" /></a>  <div class="thumbcaption"><b>Update set with addition of the 'Incident Table' table</b></div></div></div> <br style="clear:both;" /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Viewing_Customer_Update_Records"><span class="mw-headline-number">3.2</span> Viewing Customer Update Records</span></h2>
+<p>The Customer Update [sys_update_xml] table contains one record per customized object. From the Customer Update record you can determine:
+</p>
+<ul><li> The update set containing the customized object</li>
+<li> The type of action applied to the customized object
+<ul><li> INSERT</li>
+<li> INSERT_OR_UPDATE</li>
+<li> UPDATE</li>
+<li> DELETE</li></ul></li>
+<li> The type of object customized</li>
+<li> The target object of the update</li>
+<li> The <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">Sys ID</a> of the customized object (if it is a change to a particular record)</li>
+<li> The user who customized the object</li>
+<li> The date and time the object was customized</li></ul>
+<h2><span class="mw-headline" id="Navigating_Updated_Records"><span class="mw-headline-number">3.3</span> Navigating Updated Records</span></h2>
+<p>You can navigate between a customer update record and the customized object or the application file for the object (starting with the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>).
+</p><p>Navigate from an update record to:
+</p>
+<ul><li>The customized object, such as the application menu record, by clicking the <b>Show Related Record</b> related link.</li>
+<li>The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Application+Files&amp;oldid=0.html" title="Application Files">application file record</a> for the object by clicking the <b>Show Application File</b> related link.</li></ul>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:ShowRecord.png.html" class="image"><img alt="" src="images/thumb/5/55/ShowRecord.png/500px-ShowRecord.png" width="500" height="363" class="thumbimage" srcset="/images/5/55/ShowRecord.png 1.5x, /images/5/55/ShowRecord.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:ShowRecord.png.html" class="internal" title="Enlarge"></a></div>Show Related Record</div></div></div><br style="clear:both;" />
+<p>Navigate from a customized object or an application file to the current customer update record by right-clicking the form header and selecting <b>Show Latest Update</b>.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:437px;"><a href="index.php%3Ftitle=File:ShowUpdate.png.html" class="image"><img alt="" src="images/8/8f/ShowUpdate.png" width="435" height="225" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:ShowUpdate.png.html" class="internal" title="Enlarge"></a></div>Show Latest Update</div></div></div><br style="clear:both;" />
+<h1><span class="mw-headline" id="Reporting_on_Updates"><span class="mw-headline-number">4</span> Reporting on Updates</span></h1>
+<p>Run a report to view the customizations and configuration changes for an instance.
+</p><p>To view update set reports:
+</p>
+<ol><li> Navigate to <b>Reports &gt; View / Run</b> and locate the <b>Customer Update</b> section.</li>
+<li> Run any of the available reports or <a href="index.php%3Ftitle=Creating_Reports.html" title="Creating Reports" class="mw-redirect">create a new report</a>. The following reports are available:
+<ul><li> <b>Application Changes (Incident)</b>: Displays all changes made to the Incident table. Select a different table and run the report again to view all changes to another application.</li>
+<li> <b>My Changes</b>: Displays all changes created or updated by the current user, grouped by table name.</li></ul></li></ol>
+<h1><span class="mw-headline" id="Merging_Update_Sets"><span class="mw-headline-number">5</span> Merging Update Sets</span></h1>
+<p>You can merge multiple update sets into one update set to simplify the transfer process. To merge update sets:
+</p>
+<ol><li> Navigate to <b>System Update Sets &gt; Merge Update Sets</b>. By default, the list is filtered to show only update sets that are in progress.
+<dl><dd>Alternatively, navigate to <b>System Update Sets &gt; Merge Completed Sets</b>. By default, the list is filtered to show only update sets that are in the <b>Complete</b> state. For example, you may want to use this filter after pushing changes or transferring update sets from a development to a test instance.</dd></dl></li>
+<li> Filter the list to show only the update sets that you want to merge. 
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:633px;"><a href="index.php%3Ftitle=File:MergeUpdateSets.png.html" class="image"><img alt="" src="images/0/03/MergeUpdateSets.png" width="631" height="300" class="thumbimage" /></a>  <div class="thumbcaption"><b>Merge update sets</b></div></div></div><br style="clear:both;" /></dd></dl></li>
+<li> Enter a <b>Name</b> for the new update set. Updates are added to this set when the original sets are merged.</li>
+<li>[Optional] Enter a <b>Description</b> for the update set.</li>
+<li> Click <b>Merge</b>.</li>
+<li>In the confirmation dialog box, click <b>OK</b>.
+<ul><li> The new update set is created.</li>
+<li> The most recent change for each object is moved from the original sets to the new set. Only changes that are not merged into the new set remain in the original sets. A message indicates how many updates were moved and how many were skipped. For example, if both update sets modify the Incident form, only the most recent change is moved to the new update set. The other modification remains in its original update set to provide a record of the changes that were not moved.</li></ul></li>
+<li>[Recommended] Verify that the correct changes were moved to the new set by scrolling down to the <b>Merged Update Sets</b> related list and opening the old update set records.</li>
+<li>[Recommended] Delete or empty the original update sets to avoid committing an older change by mistake. The system does not remove updates that were not merged into the new set.</li></ol>
+<h1><span class="mw-headline" id="Comparing_Local_Update_Sets"><span class="mw-headline-number">6</span> Comparing Local Update Sets</span></h1>
+<p>Administrators can preview local and remote (retrieved) update sets and compare these sets with one another to resolve conflicting changes. Compare local update sets to identify collisions and ensure that the proper changes are being committed. Resolve all conflicts before moving an update set between instances. 
+</p>
+<ol><li>Navigate to <b>System Update Sets &gt; Local Update Sets</b>. </li>
+<li>Select the check boxes beside the update sets to compare. </li>
+<li>In the <b>Action</b> choice list, select <b>Compare Update Sets</b>.
+<dl><dd>The progress screen appears as ServiceNow generates the collision report.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Update_Sets_Collision_Report1.png.html" class="image" title="Update_Sets_Collision_Report1.png‎"><img alt="Update_Sets_Collision_Report1.png‎" src="images/thumb/7/75/Update_Sets_Collision_Report1.png/800px-Update_Sets_Collision_Report1.png" width="800" height="190" srcset="/images/7/75/Update_Sets_Collision_Report1.png 1.5x, /images/7/75/Update_Sets_Collision_Report1.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Go to the Collision Report</b> when the report is complete.
+<dl><dd>The Update Set Collisions list appears, showing all the changes in the selected sets. </dd></dl></li>
+<li>Inspect the list for collisions by locating duplicate <b>Collision Numbers</b> that show the same change in separate update sets. 
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Update_Set_Collisions.png.html" class="image" title="Update_Set_Collisions.png"><img alt="Update_Set_Collisions.png" src="images/thumb/4/41/Update_Set_Collisions.png/950px-Update_Set_Collisions.png" width="950" height="159" srcset="/images/4/41/Update_Set_Collisions.png 1.5x, /images/4/41/Update_Set_Collisions.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Resolve the collision by deleting the unwanted update record from one of the update sets. 
+<dl><dd>a. Click the link in the <b>Sys update</b> column for the unwanted update (<tt>sys_ui_list_incident_null</tt> in the example).</dd>
+<dd>b. Click <b>Delete</b>. 
+<dl><dd><b>Note:</b> You must open the update record to delete the record. You cannot delete the update by selecting the check box beside the entry in the Update Set Collisions list and using the <b>Delete</b> action. When you delete the update record, the customization is <i>not</i> backed out of the instance. Only the record of the customization is deleted.</dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Update_Record.gif.html" class="image" title="Update_Record.gif"><img alt="Update_Record.gif" src="images/thumb/5/52/Update_Record.gif/850px-Update_Record.gif" width="850" height="464" srcset="/images/5/52/Update_Record.gif 1.5x, /images/5/52/Update_Record.gif 2x" /></a> </dd></dl></dd></dl></li>
+<li>Run the comparison again to make sure all the collisions have been resolved.</li></ol>
+<h2><span class="mw-headline" id="Understanding_Collisions"><span class="mw-headline-number">6.1</span> Understanding Collisions</span></h2>
+<p>A collision is an update that has a newer local update. ServiceNow detects collisions by comparing the values in the <b>Name</b> and <b>Updated</b> fields of the Customer Update record from each update set. If the name matches but there are different update date values, then there is a collision. 
+</p>
+<h3><span class="mw-headline" id="Coalesce_Strategies"><span class="mw-headline-number">6.1.1</span> Coalesce Strategies</span></h3>
+<p>Update sets can detect collisions between identical records that you independently create on separate instances. To detect such collisions, the record must have a coalesce strategy based on coalescing columns. Because collision detection depends on uniqueness of tables, the tables must be unique when the coalescing columns are combined. Records that are not listed here will not collide if the same record is created separately on different instances.  
+</p>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<th> Type
+</th>
+<th> Coalescing Columns
+</th></tr>
+<tr>
+<td>sys_db_object
+</td>
+<td>name
+</td></tr>
+<tr>
+<td>sys_dictionary
+</td>
+<td>name, element
+</td></tr>
+<tr>
+<td>sys_choice_set
+</td>
+<td>name, element, language
+</td></tr>
+<tr>
+<td>sys_documentation
+</td>
+<td>name, element, language
+</td></tr>
+<tr>
+<td>sys_properties
+</td>
+<td>name
+</td></tr>
+<tr>
+<td>sys_report_chart_color
+</td>
+<td>name, element, value
+</td></tr>
+<tr>
+<td>sys_ui_form
+<p>Starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>
+</p>
+</td>
+<td>name, view, sys_domain
+</td></tr>
+<tr>
+<td>sys_ui_message
+</td>
+<td>documentkey, language
+</td></tr>
+<tr>
+<td>sys_ui_list
+<p>Starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>
+</p>
+</td>
+<td>name, view, sys_domain, element, relationship, parent
+</td></tr>
+<tr>
+<td>sys_ui_section
+<p>Starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>
+</p>
+</td>
+<td>name, view, caption, sys_domain
+</td></tr>
+<tr>
+<td>sys_ui_related_list
+<p>Starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>
+</p>
+</td>
+<td>name, view, related_list, sys_domain
+</td></tr>
+<tr>
+<td>sys_ui_view
+</td>
+<td>name
+</td></tr>
+<tr>
+<td>sys_user_role
+</td>
+<td>name
+</td></tr>
+<tr>
+<td>sys_wizard
+<p>Starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>
+</p>
+</td>
+<td> name
+</td></tr></table>
+<h3><span class="mw-headline" id="Matching_Customer_Update_Record_Names_for_Collisions"><span class="mw-headline-number">6.1.2</span> Matching Customer Update Record Names for Collisions</span></h3>
+<p>To understand coalescing, it helps to understand how records that do not coalesce work:
+</p><p>For most record types, when a Customer Update is moved to a new instance, the system does not detect collisions for the following reason:
+</p>
+<dl><dd>When you create a record, it receives a <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">unique Sys ID</a>. For most record types, the Sys ID becomes part of the Customer Update record name. For example:</dd></dl>
+<dl><dd><dl><dd><tt>sysevent_email_template_9e1998c078b71100a92ecacd80df1d39</tt></dd></dl></dd></dl>
+<dl><dd>Creating an identical record in the same table on another instance produces a Customer Update record name with a different Sys ID, for example:</dd></dl>
+<dl><dd><dl><dd><tt>sysevent_email_template_10b958c8653311005840134572f8e020</tt></dd></dl></dd></dl>
+<dl><dd>As a result, even though the records might be otherwise identical, the records have different names so the system does not detect the collision.</dd></dl>
+<p><br />
+Coalescing records, in contrast, use the following approach to naming records and determining collisions:
+</p><p>The following Customer Update record types use some or all of their coalescing columns instead of the Sys ID in their names. The resulting identical record name in each instance helps the system to identify collisions even if the records have different Sys IDs.
+</p>
+<dl><dd>sys_dictionary</dd>
+<dd>sys_documentation</dd>
+<dd>sys_choice_set</dd>
+<dd>sys_ui_list</dd>
+<dd>sys_ui_related_list</dd></dl>
+<p><br />
+When a customer update is moved from one instance to another, it may be re-written to match the target instance. The re-write can involve changing the update name of the customer update and one or more sys_ids within the update. The re-writes are done when the record or the reference field is for a table that uses a coalesce strategy. This ensures that the customer update will be applied to the correct record. For example, if the sys_dictionary record for tablename.fieldname has sys_id "123456789" on instance A and sys_id "987654321" on instance B, when a customer update that refers to that record is retrieved from instance A and recorded in the sys_update_xml table on instance B, references to "123456789" are updated to read "987654321".
+</p>
+<h3><span class="mw-headline" id="Preventing_Duplicate_Records"><span class="mw-headline-number">6.1.3</span> Preventing Duplicate Records</span></h3>
+<p>To prevent creating duplicate records with update sets, you can:
+</p>
+<ul><li> <a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="Transferring Update Sets">Move data</a> with update sets rather than recreating it on separate instances to ensure the records have the same Sys ID..</li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Exporting+and+Importing+XML+Files&amp;oldid=0.html" title="Exporting and Importing XML Files">Export and import records as XML files</a> to ensure the records have the same Sys ID.</li>
+<li> <a href="index.php%3Ftitle=Unique_Index.html" title="Unique Index">Enable a unique index</a> for the table from the <a href="index.php%3Ftitle=System_Dictionary.html" title="System Dictionary">system dictionary</a>.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The default records included in the baseline system will always have the same Sys ID because the instance imports the records as XML files during instance provisioning.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Mark_an_Update_Set_as_Complete"><span class="mw-headline-number">7</span> Mark an Update Set as Complete</span></h1>
+<p>When you have completed the customizations and compared local update sets to resolve conflicts, mark the update set as <b>Complete</b>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Mark an update set as Complete only when it is ready to migrate. Once an update set is complete, do not change it back to In progress. Instead, create another update set for the rest of the changes, and be sure to commit them together in the order that they were created. Naming conventions may help in this case (for example, Performance Enhancements and Performance Enhancements 2).</i>
+</td></tr></table>
+<ol><li> Open the update set record.</li>
+<li> Change the <b>State</b> of the update set from <b>In progress</b> to <b>Complete</b>. 
+<ul><li>The update set is available for other instances to retrieve. See <a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="Transferring Update Sets">Transferring Update Sets</a>.</li>
+<li>No additional customizations are tracked in the update set.</li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Us20.png.html" class="image" title="Image:us20.png"><img alt="Image:us20.png" src="images/7/77/Us20.png" width="757" height="95" /></a></dd></dl></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201014642
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.349 seconds
+Real time usage: 0.416 seconds
+Preprocessor visited node count: 112/1000000
+Preprocessor generated node count: 322/1000000
+Post‐expand include size: 4145/2097152 bytes
+Template argument size: 2085/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   53.849      1 - -total
+ 75.10%   40.438      1 - Template:Update_Sets
+ 59.60%   32.096      1 - Template:Topic
+ 18.10%    9.748      4 - Template:Note
+ 10.92%    5.878      1 - Embedded:Update_Sets
+  9.47%    5.097      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:4463-0!*!0!1!en!5!* and timestamp 20171201014642 and revision id 251036
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html">http://wiki.servicenow.com/index.php?title=Using_Update_Sets&amp;oldid=251036</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_4463"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="4463" data-vote-the-vote="5" data-vote-id="4463" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4463_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="4463" data-vote-the-vote="1" data-vote-id="4463" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4463_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Using+Update+Sets&amp;returntoquery=oldid%3D251036" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Using+Update+Sets&amp;returntoquery=oldid%3D251036" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Update_Sets.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Update_Sets&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Update+Sets.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Update+Sets&amp;returnto=Using+Update+Sets&amp;oldid=251036&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_Update_Sets&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Update_Sets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Update_Sets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Update_Sets&amp;oldid=251036.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Update_Sets&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:26, 13 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":778});});</script></body></html>

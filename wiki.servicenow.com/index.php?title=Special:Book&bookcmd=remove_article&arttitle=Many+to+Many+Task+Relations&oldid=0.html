@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Many to Many Task Relations - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Many_to_Many_Task_Relations","wgTitle":"Many to Many Task Relations","wgCurRevisionId":250327,"wgRevisionId":250327,"wgArticleId":6888,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Task Table"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Many_to_Many_Task_Relations","wgRelevantArticleId":6888,"wgRequestId":"6cb8c13670b378106a3c3284","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170823162531"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Many_to_Many_Task_Relations"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Many to Many Task Relations"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Task Table"/>
+<meta name="category" content="Task Table"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Many to Many Task Relations"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170823162531"/>
+
+	<meta property="article:published_time" content="20170823162531"/>
+
+	<meta property="article:modified_time" content="20170823162531"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Task Table"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Many_to_Many_Task_Relations"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Many_to_Many_Task_Relations rootpage-Many_to_Many_Task_Relations skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Many+to+Many+Task+Relations.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (496 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Many to Many Task Relations</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task Table</a> &gt; Many to Many Task Relations</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/task-table/concept/c_ManyToManyTaskRelations.html">Many to Many Task Relations</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task Table</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Planned_Task.html" title="Planned Task">Planned Task</a>
+<ul><li><a href="index.php%3Ftitle=Planned_Task_Hierarchy.html" title="Planned Task Hierarchy">Planned Task Hierarchy</a></li></ul></li>
+<li><strong class="selflink">Many to Many Relations</strong></li>
+<li><a href="index.php%3Ftitle=Using_Task_Outage.html" title="Using Task Outage">Using Task Outage</a></li>
+<li><a href="index.php%3Ftitle=Time_Cards.html" title="Time Cards">Time Cards</a></li>
+<li><a href="index.php%3Ftitle=Defining_Assignment_Rules.html" title="Defining Assignment Rules">Assignments</a></li>
+<li><a href="index.php%3Ftitle=New_Ticket_Module.html" title="New Ticket Module">New Ticket Module</a></li>
+<li><a href="index.php%3Ftitle=Approvals.html" title="Approvals">Approvals</a>
+<ul><li><a href="index.php%3Ftitle=Execution_Order_of_Scripts_and_Engines.html" title="Execution Order of Scripts and Engines">Execution Order of Scripts and Engines</a></li>
+<li><a href="index.php%3Ftitle=Approval_Engines.html" title="Approval Engines">Approval Engines</a></li>
+<li><a href="index.php%3Ftitle=Approval_Rules.html" title="Approval Rules">Approval Rules</a> </li>
+<li><a href="index.php%3Ftitle=Approval_with_E-Signature.html" title="Approval with E-Signature">Approval with E-Signature</a></li></ul></li>
+<li>Approvals with Workflows
+<ul><li><a href="index.php%3Ftitle=Case_Study_-_Advanced_Approval_Workflow_(Part_1).html" title="Case Study - Advanced Approval Workflow (Part 1)">Case Study 1</a></li>
+<li><a href="index.php%3Ftitle=Case_Study_-_Advanced_Approval_Workflow_(Part_2).html" title="Case Study - Advanced Approval Workflow (Part 2)">Case Study 2</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Approval_Summarizer_Formatter.html" title="Approval Summarizer Formatter">Approval Summarizer Formatter</a></li>
+<li><a href="index.php%3Ftitle=Process_Flow_Formatter.html" title="Process Flow Formatter">Process Flow Formatter</a></li>
+<li><a href="index.php%3Ftitle=Task_Parent_Breadcrumbs_Formatter.html" title="Task Parent Breadcrumbs Formatter">Task Parent Breadcrumbs Formatter</a></li>
+<li><a href="index.php%3Ftitle=Managing_Planned_Tasks_in_Project.html" title="Managing Planned Tasks in Project" class="mw-redirect">Managing Planned Tasks in Project</a></li>
+<li><a href="index.php%3Ftitle=Task_Resources.html#Using_Task_Resources_with_Other_Planned_Tasks" title="Task Resources">Managing Task Resource</a></li>
+<li><a href="index.php%3Ftitle=TaskStateUtil.html" title="TaskStateUtil">TaskStateUtil API</a></li>
+<li><a href="index.php%3Ftitle=Workflows.html" title="Workflows">Workflows</a></li></ul>
+</td></tr>
+<tr>
+<th>
+<p>Get the Book
+</p>
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Task.html" title="Book:Task"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Task.html" title="Book:Task">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Activating_the_Plugin"><span class="tocnumber">2</span> <span class="toctext">Activating the Plugin</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Plugin_Manifest"><span class="tocnumber">3</span> <span class="toctext">Plugin Manifest</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Defining_a_Relationship_Type"><span class="tocnumber">4</span> <span class="toctext">Defining a Relationship Type</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Viewing_Task_Relations"><span class="tocnumber">5</span> <span class="toctext">Viewing Task Relations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Modifying_the_Displayed_Fields"><span class="tocnumber">5.1</span> <span class="toctext">Modifying the Displayed Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Mark_as_Solution_Button"><span class="tocnumber">6</span> <span class="toctext">Mark as Solution Button</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#UI_Actions"><span class="tocnumber">7</span> <span class="toctext">UI Actions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Example_1_-_Cause_an_Incident"><span class="tocnumber">7.1</span> <span class="toctext">Example 1 - Cause an Incident</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Example_2_-_Cause_a_Problem"><span class="tocnumber">7.2</span> <span class="toctext">Example 2 - Cause a Problem</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html#Example_3_-_Fix_a_Problem"><span class="tocnumber">7.3</span> <span class="toctext">Example 3 - Fix a Problem</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>By default, tasks can be related to each other using a parent/child relationship, such as a Problem with a group of child Incidents or a Catalog Request with a group of child Catalog Tasks. However, it may prove useful to record exactly the nature of the relationship between the task records. When activated, the Many to Many Task Relations plugin allows administrators to define relationships between different tasks. 
+</p>
+<h1><span class="mw-headline" id="Activating_the_Plugin"><span class="mw-headline-number">2</span> Activating the Plugin</span></h1>
+<p>The Many to Many Task Relations plugin is included with the following plugins:
+</p>
+<ul><li> <a href="index.php%3Ftitle=Planned_Task.html" title="Planned Task">Planned Task</a></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Work+Management+-+Versions+Prior+to+Fuji&amp;oldid=0.html" title="Work Management - Versions Prior to Fuji">Work Management</a></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Project+Management&amp;oldid=0.html" title="Project Management">Project Management</a></li>
+<li> <a href="index.php%3Ftitle=IT_Governance_Risk_and_Compliance.html" title="IT Governance Risk and Compliance" class="mw-redirect">Governance Risk and Compliance</a></li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Contact ServiceNow to activate the plugin by itself.</i>
+<table class="collapsible collapsed">
+<tr>
+<th> Click the plus to expand instructions for requesting a plugin.
+</th></tr>
+<tr>
+<td>
+<ol><li>Navigate to [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://hi.service-now.com">HI</a>].</li>
+<li>Click <b>Service Catalog</b>.</li>
+<li>Click <b>Request Plugin Activation</b>.
+<dl><dd><ul><li>[Required] In <b>Target Instance</b>, select the instance on which to activate the plugin.</li>
+<li>[Required] In <b>Plugin Name</b>, enter the name of the plugin to activate.</li>
+<li>[Optional] In <b>Date and time would you like the plugin to be enabled?</b>, specify a date and time at least 12 hours in the future. Leave this field empty if you want the plugin activated as soon as possible.</li></ul></dd>
+<dd> <b>Note:</b> Plugins are generally activated during business hours in the Pacific time zone, but can be scheduled for a different time with advance notice. 
+<ul><li>[Optional] In <b>Reason/Comments</b>, add any information that would be helpful for the ServiceNow technical support engineer activating the plugin.</li></ul></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+</td></tr></table>
+</td></tr></table>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>References to Work Management indicate that the information on this page is valid for ServiceNow versions prior to Fuji. In the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>, Work Management was renamed <a href="index.php%3Ftitle=Field_Service_Management.html" title="Field Service Management">Field Service Management</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Plugin_Manifest"><span class="mw-headline-number">3</span> Plugin Manifest</span></h1>
+<div class="floatright"><a href="index.php%3Ftitle=File:TaskRelationships.png.html" class="image"><img alt="TaskRelationships.png" src="images/7/78/TaskRelationships.png" width="222" height="107" /></a></div> 
+<p>When the plugin is activated, the <b>Task Relationships</b> application is available with the following modules: 
+</p>
+<ul><li><b>Knowledge Relation Types:</b> contains the definitions for the possible types of relationships between knowledge articles and tasks. </li>
+<li><b>Knowledge Relationships:</b> displays all of the defined relationships between existing tasks and knowledge articles. </li>
+<li><b>Relationship Types:</b> contains the definitions for the possible types of relationships between tasks. </li>
+<li><b>Relationships:</b> contains all of the defined relationships between existing tasks.</li></ul>
+<p>The following Relation Types are available by default: 
+</p>
+<ul><li>Knowledge Relation Types 
+<ul><li>Solution is documented in::Documenting solution for </li></ul></li>
+<li>Relationship Types 
+<ul><li>Caused by::Causes </li>
+<li>Contains::Task of </li>
+<li>Documenting Solution for::Solution is documented in </li>
+<li>Investigated by::Investigates </li>
+<li>Permanent correction for::Permanently corrected by </li>
+<li>Related to::Related to </li>
+<li>Requesting::Requested by </li>
+<li>Solved by::Solves</li></ul></li></ul>
+<h1><span class="mw-headline" id="Defining_a_Relationship_Type"><span class="mw-headline-number">4</span> Defining a Relationship Type</span></h1>
+<p>To define a new Relationship Type:
+</p>
+<ol><li>Navigate to <b>Task Relationships &gt; Relation Types</b> and click <b>New</b>.</li>
+<li>Populate the <b>Parent Descriptor</b> and <b>Child Descriptor</b> fields with a short description of the relationship between the two tasks, such as a parent descriptor of <b>Caused By</b> and a child descriptor of <b>Causes</b>. </li>
+<li>Right-click the form header bar and select <b>Save</b>. The <b>Name</b> field automatically populates with the Parent and Child descriptors.</li></ol>
+<p><a href="index.php%3Ftitle=File:TaskRelationshipType.png.html" class="image"><img alt="TaskRelationshipType.png" src="images/5/50/TaskRelationshipType.png" width="394" height="167" /></a> 
+</p><p>Furthermore, it is possible to define Task Relationships Allowed from the Task Relationship Type record. 
+</p>
+<ol><li>Scroll down to the related list and click <b>New</b>. </li>
+<li>Populate the parent and child tables to define which tables are able to accept the relationship. </li>
+<li>If desired, it is possible to define scripts to run in the <b>Parent</b> and <b>Child</b> script fields. These scripts are run when a parent or child record is run to automatically generate the other task (child or parent). These scripts use the <b>current</b> value of the new record, as opposed to the <b>source</b> record which triggered the script.</li></ol>
+<p><a href="index.php%3Ftitle=File:TaskRelationshipAllowed.png.html" class="image"><img alt="TaskRelationshipAllowed.png" src="images/7/74/TaskRelationshipAllowed.png" width="516" height="328" /></a> 
+</p>
+<h1><span class="mw-headline" id="Viewing_Task_Relations"><span class="mw-headline-number">5</span> Viewing Task Relations</span></h1>
+<p>The <b>Task Relations</b> field can now be added to the task form:
+</p><p><a href="index.php%3Ftitle=File:RelItems.png.html" class="image"><img alt="RelItems.png" src="images/4/41/RelItems.png" width="777" height="228" /></a>
+</p><p>The plus icon can be used to add or remove tasks from the list:
+</p><p><a href="index.php%3Ftitle=File:RelItems2.png.html" class="image"><img alt="RelItems2.png" src="images/e/e9/RelItems2.png" width="660" height="790" /></a>
+</p>
+<h2><span class="mw-headline" id="Modifying_the_Displayed_Fields"><span class="mw-headline-number">5.1</span> Modifying the Displayed Fields</span></h2>
+<p>The fields displayed in the <b>Task Relations</b> field and editing interface are defined by the Reference Lookup's list view.
+</p><p>To modify the displayed fields:
+</p>
+<ol><li>Navigate to a form that has a reference to the table whose display values you would like to modify within Task Relations field.</li>
+<li>Click the magnifying glass to display the Reference Lookup list view.</li>
+<li>Right-click the list header and select the appropriate option for your version:
+<ul><li> <b><a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a> or later:</b> Configure &gt; List Layout</li>
+<li> <b><a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka</a> or earlier:</b> Personalize &gt; List Layout</li></ul></li></ol>
+<p>The selected List layout will be used as the display value for records within the Task Relations field.
+</p>
+<h1><span class="mw-headline" id="Mark_as_Solution_Button"><span class="mw-headline-number">6</span> Mark as Solution Button</span></h1>
+<p>This button gets added to the KB popup view and is displayed when you search the knowledge base from a task record.  Clicking the button creates a record in the Task / KB Relationships [task_rel_kb] table to associate the KB article with a task.
+Its functionality has been replaced in the KCS plugin and is no longer necessary.  You can disable this button by marking the active field false on the 'solution_button' UI macro.
+</p>
+<h1><span class="mw-headline" id="UI_Actions"><span class="mw-headline-number">7</span> UI Actions</span></h1>
+<p>Once the task relationships are defined, it is possible to use UI Actions to define the task relationship as a new task is being created from an old task. Below are a few examples. 
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> These examples may not work on all instances. They are provided as illustrative examples.
+</td></tr></table>
+<h2><span class="mw-headline" id="Example_1_-_Cause_an_Incident"><span class="mw-headline-number">7.1</span> Example 1 - Cause an Incident</span></h2>
+<p>This UI Action allows the change management team to log an incident directly from the change request and records that the incident was caused by the change. 
+</p><p>Create a new UI Action on the Change Request [change_request] table and place the following into the script: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">inccaus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;incident&quot;</span><span class="p">);</span>
+<span class="nx">inccaus</span><span class="p">.</span><span class="nx">short_description</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">short_description</span><span class="p">;</span>
+<span class="nx">inccaus</span><span class="p">.</span><span class="nx">comments</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">getHTMLValue</span><span class="p">();</span>
+<span class="c1">// inccaus.parent = current.sys_id;</span>
+<span class="nx">inccaus</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="nx">CauIncident</span><span class="p">();</span>
+
+<span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="s2">&quot;Incident &quot;</span> <span class="o">+</span> <span class="nx">inccaus</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s2">&quot; created&quot;</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setRedirectURL</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setReturnURL</span><span class="p">(</span><span class="nx">inccaus</span><span class="p">);</span>
+
+
+<span class="kd">function</span> <span class="nx">CauIncident</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">m2m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;task_rel_task&#39;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">child</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">parent</span> <span class="o">=</span> <span class="nx">inccaus</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Caused by::Causes&quot;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div> 
+<h2><span class="mw-headline" id="Example_2_-_Cause_a_Problem"><span class="mw-headline-number">7.2</span> Example 2 - Cause a Problem</span></h2>
+<p>This is a UI Action to allow the change management team to record a problem from a change request and record that the problem was caused by the change. 
+</p><p>Create a new UI Action on the Change Request [change_request] table and paste the following script: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">probcaus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;problem&quot;</span><span class="p">);</span>
+<span class="nx">probcaus</span><span class="p">.</span><span class="nx">short_description</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">short_description</span><span class="p">;</span>
+<span class="nx">probcaus</span><span class="p">.</span><span class="nx">comments</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">getHTMLValue</span><span class="p">();</span>
+<span class="c1">// probcaus.parent = current.sys_id;</span>
+<span class="nx">probcaus</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="nx">CauProblem</span><span class="p">();</span>
+
+<span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="s2">&quot;Problem &quot;</span> <span class="o">+</span> <span class="nx">probcaus</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s2">&quot; created&quot;</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setRedirectURL</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setReturnURL</span><span class="p">(</span><span class="nx">probcaus</span><span class="p">);</span>
+
+
+<span class="kd">function</span> <span class="nx">CauProblem</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">m2m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;task_rel_task&#39;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">child</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">parent</span> <span class="o">=</span> <span class="nx">probcaus</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Caused by::Causes&quot;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div> 
+<h2><span class="mw-headline" id="Example_3_-_Fix_a_Problem"><span class="mw-headline-number">7.3</span> Example 3 - Fix a Problem</span></h2>
+<p>This UI Action allows a change request to be generated from a problem, recording that the change will fix the problem. 
+</p><p>Create a new UI Action on the Problem [problem] table, and paste the following code: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">fixchg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;change_request&quot;</span><span class="p">);</span>
+<span class="nx">fixchg</span><span class="p">.</span><span class="nx">short_description</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">short_description</span><span class="p">;</span>
+<span class="nx">fixchg</span><span class="p">.</span><span class="nx">comments</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">getHTMLValue</span><span class="p">();</span>
+<span class="c1">// fixchg.parent = current.sys_id;</span>
+<span class="nx">fixchg</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="nx">FixChange</span><span class="p">();</span>
+
+<span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="s2">&quot;Change &quot;</span> <span class="o">+</span> <span class="nx">fixchg</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s2">&quot; created&quot;</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setRedirectURL</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setReturnURL</span><span class="p">(</span><span class="nx">fixchg</span><span class="p">);</span>
+
+
+<span class="kd">function</span> <span class="nx">FixChange</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">m2m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;task_rel_task&#39;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">child</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">parent</span> <span class="o">=</span> <span class="nx">fixchg</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Fixes::Fixed by&quot;</span><span class="p">);</span>
+<span class="nx">m2m</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203195059
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.242 seconds
+Real time usage: 1.251 seconds
+Preprocessor visited node count: 127/1000000
+Preprocessor generated node count: 376/1000000
+Post‐expand include size: 6955/2097152 bytes
+Template argument size: 3300/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   69.314      1 - -total
+ 54.72%   37.929      1 - Template:Task
+ 44.16%   30.611      1 - Template:Topic
+ 28.65%   19.856      3 - Template:Note
+ 14.59%   10.112      1 - Template:Requesting_the_Plugin
+ 13.91%    9.640      1 - Template:Warning
+ 11.06%    7.665      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6888-0!*!0!1!en!5!* and timestamp 20171203195058 and revision id 250327
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Many_to_Many_Task_Relations&amp;oldid=250327.html">http://wiki.servicenow.com/index.php?title=Many_to_Many_Task_Relations&amp;oldid=250327</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Task+Table.html" title="Category:Task Table">Task Table</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Task+Table.html" title="Category:Task Table">Task Table</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6888"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6888" data-vote-the-vote="5" data-vote-id="6888" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6888_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6888" data-vote-the-vote="1" data-vote-id="6888" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6888_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Many+to+Many+Task+Relations.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Many+to+Many+Task+Relations.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Many_to_Many_Task_Relations.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Many_to_Many_Task_Relations&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Many+to+Many+Task+Relations.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Many+to+Many+Task+Relations&amp;returnto=Many+to+Many+Task+Relations&amp;oldid=250327&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Many_to_Many_Task_Relations&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FMany_to_Many_Task_Relations.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Many_to_Many_Task_Relations" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Many_to_Many_Task_Relations&amp;oldid=250327.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Many_to_Many_Task_Relations&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:25, 23 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":651});});</script></body></html>

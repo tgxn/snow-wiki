@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Scripting in Scoped Applications - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scripting_in_Scoped_Applications","wgTitle":"Scripting in Scoped Applications","wgCurRevisionId":245283,"wgRevisionId":245283,"wgArticleId":23978,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Scoped System API"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scripting_in_Scoped_Applications","wgRelevantArticleId":23978,"wgRequestId":"f0bcfb8d266e26f60490c6a7","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150318221328"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Scripting_in_Scoped_Applications"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Scripting in Scoped Applications"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Scoped System API"/>
+<meta name="category" content="Scoped System API"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Scripting_in_Scoped_Applications.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Scripting in Scoped Applications"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150318221328"/>
+
+	<meta property="article:published_time" content="20150318221328"/>
+
+	<meta property="article:modified_time" content="20150318221328"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Scoped System API"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Scripting_in_Scoped_Applications"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scripting_in_Scoped_Applications rootpage-Scripting_in_Scoped_Applications skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+in+Scoped+Applications.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Scripting+in+Scoped+Applications&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scripting in Scoped Applications</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Scripting in Scoped Applications</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <strong class="selflink">Scoped Application Scripting</strong>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2061f6deeect'></div><script type="text/javascript">window.tamOnload_tam5a2061f6deeect=[];tree = new dTree('tam5a2061f6deeect');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2061f6deeect = tree;
+                                               tam5a2061f6deeect.add(1, 0, ' <strong class=\"selflink\">Scoped Scripting</strong>');
+
+tam5a2061f6deeect.add(2, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_Script_Logging\&quot;" title=\"Scoped Script Logging\">Scoped Logging</a>');
+tam5a2061f6deeect.add(3, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=List_of_Scoped_Scriptable_Objects\&quot;" title=\"List of Scoped Scriptable Objects\">Scoped Objects</a>');
+tam5a2061f6deeect.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_System_API\&quot;" title=\"Scoped System API\">Scoped System API</a>');
+tam5a2061f6deeect.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideAggregate_API_Reference\&quot;" title=\"Scoped GlideAggregate API Reference\">GlideAggregate</a>');
+tam5a2061f6deeect.add(6, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDate_API_Reference\&quot;" title=\"Scoped GlideDate API Reference\">GlideDate</a>');
+tam5a2061f6deeect.add(7, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDateTime_API_Reference\&quot;" title=\"Scoped GlideDateTime API Reference\">GlideDateTime</a>');
+tam5a2061f6deeect.add(8, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDuration_API_Reference\&quot;" title=\"Scoped GlideDuration API Reference\">GlideDuration</a>');
+tam5a2061f6deeect.add(9, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideElement_API_Reference\&quot;" title=\"Scoped GlideElement API Reference\">GlideElement</a>');
+tam5a2061f6deeect.add(10, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideElementDescriptor_API_Reference\&quot;" title=\"Scoped GlideElementDescriptor API Reference\">GlideElementDescriptor</a>');
+tam5a2061f6deeect.add(11, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideEmailOutbound_API_Reference\&quot;" title=\"Scoped GlideEmailOutbound API Reference\">GlideEmailOutbound</a>');
+tam5a2061f6deeect.add(12, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideScopedEvaluator_API_Reference\&quot;" title=\"Scoped GlideScopedEvaluator API Reference\">GlideEvaluator</a>');
+tam5a2061f6deeect.add(13, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideFilter_API_Reference\&quot;" title=\"Scoped GlideFilter API Reference\">GlideFilter</a>');
+tam5a2061f6deeect.add(14, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideFormScratchpad_API_Reference\&quot;" title=\"Scoped GlideFormScratchpad API Reference\">GlideFormScratchpad</a>');
+tam5a2061f6deeect.add(15, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideLocale_API_Reference\&quot;" title=\"Scoped GlideLocale API Reference\">GlideLocale</a>');
+tam5a2061f6deeect.add(16, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlidePluginManager_API_Reference\&quot;" title=\"Scoped GlidePluginManager API Reference\">GlidePluginManager</a>');
+tam5a2061f6deeect.add(17, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideQueryCondition_API_Reference\&quot;" title=\"Scoped GlideQueryCondition API Reference\">GlideQueryCondition</a>');
+tam5a2061f6deeect.add(18, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideRecord_API_Reference\&quot;" title=\"Scoped GlideRecord API Reference\">GlideRecord</a>');
+tam5a2061f6deeect.add(19, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a>');
+tam5a2061f6deeect.add(20, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSchedule_API_Reference\&quot;" title=\"Scoped GlideSchedule API Reference\">GlideSchedule</a>');
+tam5a2061f6deeect.add(21, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideScriptedProcessor_API_Reference\&quot;" title=\"Scoped GlideScriptedProcessor API Reference\">GlideScriptedProcessor</a>');
+tam5a2061f6deeect.add(22, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideServletResponse_API_Reference\&quot;" title=\"Scoped GlideServletResponse API Reference\">GlideServletResponse</a>');
+tam5a2061f6deeect.add(23, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideServletRequest_API_Reference\&quot;" title=\"Scoped GlideServletRequest API Reference\">GlideServletRequest</a>');
+tam5a2061f6deeect.add(24, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSession_API_Reference\&quot;" title=\"Scoped GlideSession API Reference\">GlideSession</a>');
+tam5a2061f6deeect.add(25, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSysListControl_API_Reference\&quot;" title=\"Scoped GlideSysListControl API Reference\">GlideSysListControl</a>');
+tam5a2061f6deeect.add(26, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSystem_API_Reference\&quot;" title=\"Scoped GlideSystem API Reference\">GlideSystem</a>');
+tam5a2061f6deeect.add(27, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideTableHierarchy_API_Reference\&quot;" title=\"Scoped GlideTableHierarchy API Reference\">GlideTableHierarchy</a>');
+tam5a2061f6deeect.add(28, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideTime_API_Reference\&quot;" title=\"Scoped GlideTime API Reference\">GlideTime</a>');
+tam5a2061f6deeect.add(29, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideUICompatibility_API_Reference\&quot;" title=\"Scoped GlideUICompatibility API Reference\">GlideUICompatibility</a>');
+tam5a2061f6deeect.add(30, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideURI_API_Reference\&quot;" title=\"Scoped GlideURI API Reference\">GlideURI</a>');
+tam5a2061f6deeect.add(31, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideUser_API_Reference\&quot;" title=\"Scoped GlideUser API Reference\">GlideUser</a>');
+tam5a2061f6deeect.add(32, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessageV2</a>');
+tam5a2061f6deeect.add(33, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponseV2</a>');
+tam5a2061f6deeect.add(34, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessageV2</a>');
+tam5a2061f6deeect.add(35, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponseV2</a>');
+tam5a2061f6deeect.add(36, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_TemplatePrinter_API_Reference\&quot;" title=\"Scoped TemplatePrinter API Reference\">TemplatePrinter</a>');
+tam5a2061f6deeect.add(37, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_Workflow_API_Reference\&quot;" title=\"Scoped Workflow API Reference\">Workflow</a>');
+tam5a2061f6deeect.add(38, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLDocument2_API_Reference\&quot;" title=\"Scoped XMLDocument2 API Reference\">XMLDocument2</a>');
+tam5a2061f6deeect.add(39, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLNode_API_Reference\&quot;" title=\"Scoped XMLNode API Reference\">XMLNode</a>');
+tam5a2061f6deeect.add(40, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLNodeIterator_API_Reference\&quot;" title=\"Scoped XMLNodeIterator API Reference\">XMLNodeIterator</a>');
+
+                                               document.getElementById('5a2061f6deeect').innerHTML = tam5a2061f6deeect.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2061f6deeect) { window.tamOnload_tam5a2061f6deeect[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html" title="Applications">Applications</a></li>
+<li><a href="index.php%3Ftitle=Creating_Custom_Applications.html" title="Creating Custom Applications">Creating Custom Applications</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Scripting_in_Scoped_Applications.html" title="Book:Scripting in Scoped Applications"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Scripting_in_Scoped_Applications.html" title="Book:Scripting in Scoped Applications">Scripting in Scoped Applications</a></center>
+</td></tr></table>
+</div>
+ <div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Scripting_Basics"><span class="tocnumber">2</span> <span class="toctext">Scripting Basics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Application_Scope"><span class="tocnumber">2.1</span> <span class="toctext">Application Scope</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Application_Namespace"><span class="tocnumber">2.2</span> <span class="toctext">Application Namespace</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Script_Includes"><span class="tocnumber">3</span> <span class="toctext">Script Includes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Public_and_Private_Script_Includes"><span class="tocnumber">3.1</span> <span class="toctext">Public and Private Script Includes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Calling_Script_Includes"><span class="tocnumber">3.2</span> <span class="toctext">Calling Script Includes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Calling_a_Script_from_the_Same_Application_Scope"><span class="tocnumber">3.2.1</span> <span class="toctext">Calling a Script from the Same Application Scope</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Calling_a_Public_Script_from_Another_Application_Scope"><span class="tocnumber">3.2.2</span> <span class="toctext">Calling a Public Script from Another Application Scope</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Calling_a_Global_Script_from_Another_Application_Scope"><span class="tocnumber">3.2.3</span> <span class="toctext">Calling a Global Script from Another Application Scope</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Creating_a_Script_Include"><span class="tocnumber">3.3</span> <span class="toctext">Creating a Script Include</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Business_Rules"><span class="tocnumber">4</span> <span class="toctext">Business Rules</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Scoped_System_API"><span class="tocnumber">5</span> <span class="toctext">Scoped System API</span></a></li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Building scoped applications allows you to associate your scripts with a specific application, hiding the implementation details and enforcing application independence. Scoped scripting is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h1><span class="mw-headline" id="Scripting_Basics"><span class="mw-headline-number">2</span> Scripting Basics</span></h1>
+<p>The scripting basics apply to all scripts. Additional scripting rules apply to <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Script_Includes">script includes</a> and <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html#Business_Rules">business rules</a>.
+</p><p>When you create an application as described in <a href="index.php%3Ftitle=Creating_Custom_Applications.html" title="Creating Custom Applications">Creating Custom Applications</a> the scripts you define are automatically associated with the current application. The script includes, business rules, and other scripts that you create for your application are collected in the <b>Application Files</b> tab of the <b>Custom Application</b> form.
+</p>
+<h2><span class="mw-headline" id="Application_Scope"><span class="mw-headline-number">2.1</span> Application Scope</span></h2>
+<p>All scripts must have either a private application scope or global scope. All scripts defined before the Fuji release are assigned the global scope by default. When you <a href="index.php%3Ftitle=Creating_Custom_Applications.html" title="Creating Custom Applications">create a custom application</a>, the current application scope is the default for any scripts that you define. To create the script within another application, select the application using the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Picker" title="Applications">application picker</a>.
+</p>
+<h2><span class="mw-headline" id="Application_Namespace"><span class="mw-headline-number">2.2</span> Application Namespace</span></h2>
+<p>Every custom application has an application scope that is defined by its namespace. The application’s namespace is used as a prefix to all script artifacts. The namespace is automatically generated using your company code [glide.appcreator.company.code] along with a unique sequence to uniquely identify the scope. The namespace consists of a unique organization code, between 2 and 5 characters in length, followed by a short form application ID in the following format:
+</p><p><code>
+</p>
+<pre>x_[organization-code]_[app-id]
+</pre>
+<p></code>
+</p><p>For example, if the organization code is <tt>acm</tt> (for Acme Power and Light) and the application ID is <tt>power</tt>, the following namespace is generated:
+</p>
+<pre>x_acm_power
+</pre>
+<p>All artifacts&#8212;including scripts, tables, and UI pages&#8212;in this application scope are prefixed with the <tt>x_acm_power</tt> prefix&#8212;for example, <tt>x_acm_power_customer</tt> and <tt>x_acm_power_vehicle</tt>.
+</p>
+<h1><span class="mw-headline" id="Script_Includes"><span class="mw-headline-number">3</span> Script Includes</span></h1>
+<p>In addition to the general scripting guidelines, there are additional considerations for defining script includes in scoped applications. For general information on script includes, see <a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes">Script Includes</a>.
+</p>
+<h2><span class="mw-headline" id="Public_and_Private_Script_Includes"><span class="mw-headline-number">3.1</span> Public and Private Script Includes</span></h2>
+<p>Forms for script includes have an <b>Accessible from</b> field, which defines whether a script is <i>public</i>&#8212;that is, available to all applications&#8212;or <i>private</i>&#8212;available only to the application in which it is defined.
+</p><p>To make a script public, and allow it to be called from other applications, set the <b>Accessible from</b> field on the <b>Script Include</b> form to <b>All application scopes</b>. Use caution when you make a script include public, because any changes to the script include must be done carefully to prevent breaking applications that depend on it.
+</p>
+<div class="floatleft"><a href="index.php%3Ftitle=File:App_scope_all_apps.png.html" class="image"><img alt="App scope all apps.png" src="images/f/fd/App_scope_all_apps.png" width="330" height="39" /></a></div><br style="clear:both;" />
+<p>To make a script private and inaccessible from other applications, set the <b>Accessible from</b> field to <b>This application scope only</b>. This allows the script to be called only by code within the the defined application scope and prevents code in other application scopes from accessing the script. By setting scripts to private, application developers can easily modify or refactor scripts in future versions since no other applications depend on it.
+</p>
+<div class="floatleft"><a href="index.php%3Ftitle=File:App_scope_this_app_only.png.html" class="image"><img alt="App scope this app only.png" src="images/f/f8/App_scope_this_app_only.png" width="329" height="38" /></a></div><br style="clear:both;" />
+<p>The following diagram illustrates the effects of making script includes public and private.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:1018px;"><a href="index.php%3Ftitle=File:Script_include_app_access.png.html" class="image"><img alt="" src="images/2/29/Script_include_app_access.png" width="1016" height="558" class="thumbimage" /></a>  <div class="thumbcaption">Baseline application access for script includes</div></div></div> <br clear="all" />
+<h2><span class="mw-headline" id="Calling_Script_Includes"><span class="mw-headline-number">3.2</span> Calling Script Includes</span></h2>
+<p>The system has a special naming convention policy for calling:
+</p>
+<ul><li> Any script from the same application scope</li>
+<li> Public scripts from another application scope</li>
+<li> Global scripts from another application scope </li></ul>
+<h3><span class="mw-headline" id="Calling_a_Script_from_the_Same_Application_Scope"><span class="mw-headline-number">3.2.1</span> Calling a Script from the Same Application Scope</span></h3>
+<p>No special prefix is required to call private or public script includes that are defined within the same application.  For example, if a script include named <tt>LightsAPI</tt> is defined within the <tt>x_acm_power</tt> application, the script include can be called as follows:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">lights</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LightsAPI</span><span class="p">();</span>
+<span class="nx">lights</span><span class="p">.</span><span class="nx">turnOn</span><span class="p">();</span>
+</pre></div>
+<h3><span class="mw-headline" id="Calling_a_Public_Script_from_Another_Application_Scope"><span class="mw-headline-number">3.2.2</span> Calling a Public Script from Another Application Scope</span></h3>
+<p>A public script include is one where the <b>Accessible from</b> field has been set to <b>All application scopes</b>. When calling across application boundaries, the script must be fully qualified using the namespace to differentiate the script from any other scripts the may have the same name. For example, for another application to invoke the <tt>turnOn</tt> method of a public script include named <tt>LightsAPI</tt> in the scope <tt>x_acm_power</tt>, the call must be fully qualified using the <tt>[scope].[API]</tt> namespace format. The syntax would be:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">lights</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">x_acm_power</span><span class="p">.</span><span class="nx">LightsAPI</span><span class="p">();</span>
+<span class="nx">lights</span><span class="p">.</span><span class="nx">turnOn</span><span class="p">();</span>
+</pre></div>
+<h3><span class="mw-headline" id="Calling_a_Global_Script_from_Another_Application_Scope"><span class="mw-headline-number">3.2.3</span> Calling a Global Script from Another Application Scope</span></h3>
+<p>A custom application can also call a global script include that is public. For example, the <tt>ArrayUtils</tt> script include is in the global scope and must be fully qualified when accessing its functions:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">switches</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">global</span><span class="p">.</span><span class="nx">ArrayUtil</span><span class="p">();</span>
+<span class="nx">switches</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">ary</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+</pre></div>
+<p>You must also use a fully qualified namespace to extend objects. For example, <tt>AbstractAjaxProcessor</tt> must be fully qualified when extending:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">LightsAPI</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="nx">LightsAPI</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extendsObject</span><span class="p">(</span><span class="nx">global</span><span class="p">.</span><span class="nx">AbstractAjaxProcessor</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;LightsAPI&#39;</span>
+<span class="p">});</span>
+</pre></div>
+<h2><span class="mw-headline" id="Creating_a_Script_Include"><span class="mw-headline-number">3.3</span> Creating a Script Include</span></h2>
+<p>To create a script include for an application, the application must be the <i>current</i> application. When you create or open an application, it will remain the current application unless you switch to another application. 
+</p><p>To create a script include for a scoped application:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Script Includes</b> and click <b>New</b>.</li>
+<li>The <b>Application</b> defaults to the current application.</li>
+<li>Set the form fields. The fields are described in detail on the <a href="index.php%3Ftitle=Script_Includes.html#Script_Include_Form" title="Script Includes">Script Includes</a> page.</li>
+<li>Set the script visibility:
+<dl><dd><b>All application scopes</b>: The script include will be visible to all application scopes on the instance.</dd>
+<dd><b>This application scope only</b>: The script include will be visible only within the current application.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:1019px;"><a href="index.php%3Ftitle=File:ScopedScriptInclude.png.html" class="image"><img alt="" src="images/a/a0/ScopedScriptInclude.png" width="1017" height="588" class="thumbimage" /></a>  <div class="thumbcaption">A script include with application scope</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd>The script include is added to the Application Files tab.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:1027px;"><a href="index.php%3Ftitle=File:ApplicationFilesTab.png.html" class="image"><img alt="" src="images/7/72/ApplicationFilesTab.png" width="1025" height="379" class="thumbimage" /></a>  <div class="thumbcaption">Script include added to the Application Files tab</div></div></div><br style="clear:both;" /></dd></dl></li></ol>
+<h1><span class="mw-headline" id="Business_Rules"><span class="mw-headline-number">4</span> Business Rules</span></h1>
+<p>Business rules are configuration records, or application files, you associate with a particular table. To create a business rule the table record for the target table must explicitly allow configuration. When allowed, the table appears as an option from the business rule's <b>Table</b> field. When restricted, the system hides the table from the business rule's list of available tables. By default, most system application tables allow configuration and therefore allow the creation of business rules. Tables from custom applications allow or restrict configuration as set by their application developers. For more information about allowing or restricting configuration, see <a href="index.php%3Ftitle=Application_Access_Settings.html" title="Application Access Settings">Application Access Settings</a>.
+</p><p>The types of business rules you can create and how you can access those rules varies depending on the scope of the business rule and the scope of the table it runs on. For more information on creating business rules, including business rules for custom applications, see <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">Business Rules</a>.
+</p>
+<h1><span class="mw-headline" id="Scoped_System_API"><span class="mw-headline-number">5</span> Scoped System API</span></h1>
+<p>Scripts that are part of a private application scope can only access objects defined in the <a href="index.php%3Ftitle=Scoped_System_API.html" title="Scoped System API">Scoped System API</a>. Scripts in the global scope and scripts created prior to the Fuji release can access any method in the comprehensive system API.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130195434
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.320 seconds
+Real time usage: 3.505 seconds
+Preprocessor visited node count: 137/1000000
+Preprocessor generated node count: 362/1000000
+Post‐expand include size: 1560/2097152 bytes
+Template argument size: 574/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  226.114      1 - -total
+ 94.32%  213.274      1 - Template:Scoped_Applications_and_Scripting
+ 81.64%  184.597      1 - Template:Topic
+  5.43%   12.277      1 - Template:LimitedTOC
+  3.30%    7.467      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23978-0!*!0!1!en!5!* and timestamp 20171130195430 and revision id 245283
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html">http://wiki.servicenow.com/index.php?title=Scripting_in_Scoped_Applications&amp;oldid=245283</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Scoped+System+API.html" title="Category:Scoped System API">Scoped System API</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Applications.html" title="Category:Applications">Applications</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Scoped+System+API.html" title="Category:Scoped System API">Scoped System API</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23978"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23978" data-vote-the-vote="5" data-vote-id="23978" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23978_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23978" data-vote-the-vote="1" data-vote-id="23978" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23978_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Scripting+in+Scoped+Applications&amp;returntoquery=oldid%3D245283" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Scripting+in+Scoped+Applications&amp;returntoquery=oldid%3D245283" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Scripting_in_Scoped_Applications.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+in+Scoped+Applications.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Scripting+in+Scoped+Applications&amp;returnto=Scripting+in+Scoped+Applications&amp;oldid=245283&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FScripting_in_Scoped_Applications.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Scripting_in_Scoped_Applications" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;oldid=245283.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Scripting_in_Scoped_Applications&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 22:13, 18 March 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":736});});</script></body></html>

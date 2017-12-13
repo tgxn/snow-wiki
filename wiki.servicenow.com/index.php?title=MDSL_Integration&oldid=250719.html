@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>MDSL Integration - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MDSL_Integration","wgTitle":"MDSL Integration","wgCurRevisionId":250719,"wgRevisionId":250719,"wgArticleId":12723,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Other Integrations"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"MDSL_Integration","wgRelevantArticleId":12723,"wgRequestId":"db8a0061e1260948e6b585a0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170901194030"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=MDSL_Integration"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="MDSL Integration"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Other Integrations"/>
+<meta name="category" content="Other Integrations"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=MDSL_Integration.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:MDSL Integration"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170901194030"/>
+
+	<meta property="article:published_time" content="20170901194030"/>
+
+	<meta property="article:modified_time" content="20170901194030"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Other Integrations"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=MDSL_Integration"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-MDSL_Integration rootpage-MDSL_Integration skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=MDSL+Integration.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=MDSL+Integration&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">MDSL Integration</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+MDSL Integration</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#column-one">navigation</a>, <a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-business-management/page/product/vendor-performance/concept/c_VendorPerformance.html">Vendor Performance</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> Other Integrations
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Borland_Starteam_Integration.html" title="Borland Starteam Integration">Borland Starteam Integration</a> </li>
+<li><a href="index.php%3Ftitle=Building_a_Search_Provider_for_your_Instance.html" title="Building a Search Provider for your Instance">Building a Search Provider for your Instance</a> </li>
+<li><a href="index.php%3Ftitle=Integrating_ServiceNow_with_your_Intranet.html" title="Integrating ServiceNow with your Intranet">Integrating ServiceNow with your Intranet</a> </li>
+<li><a href="index.php%3Ftitle=JDBCProbe.html" title="JDBCProbe">Integrating Databases using JDBCProbe</a> </li>
+<li><a href="index.php%3Ftitle=Syslog_Probe.html" title="Syslog Probe">Integrating Syslog Servers with Syslog Probe</a></li>
+<li><a href="index.php%3Ftitle=Change_Management_Integration_with_Outlook.html" title="Change Management Integration with Outlook">Change Management Integration with Outlook</a> </li>
+<li><a href="index.php%3Ftitle=Computer_Telephony_Integration_(CTI).html" title="Computer Telephony Integration (CTI)" class="mw-redirect">Computer Telephony Integration (CTI)</a> </li>
+<li><a href="index.php%3Ftitle=HDI_Survey_Integration.html" title="HDI Survey Integration">HDI Survey</a> </li>
+<li><a href="index.php%3Ftitle=Sendmail_Support.html" title="Sendmail Support">Integrating with Sendmail</a></li>
+<li><strong class="selflink">MDSL Telecom Expense Management</strong></li></ul>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Setting_up_an_MDSL_Integration_for_Service_Catalog_Requests"><span class="tocnumber">2</span> <span class="toctext">Setting up an MDSL Integration for Service Catalog Requests</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Create_a_SOAP_Message"><span class="tocnumber">2.1</span> <span class="toctext">Create a SOAP Message</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Variables"><span class="tocnumber">2.1.1</span> <span class="toctext">Variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Configure_the_Service_Catalog"><span class="tocnumber">2.2</span> <span class="toctext">Configure the Service Catalog</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Setting_up_Access_to_the_MDSL_Web_Portal_Through_ServiceNow"><span class="tocnumber">3</span> <span class="toctext">Setting up Access to the MDSL Web Portal Through ServiceNow</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#SSO_Integration"><span class="tocnumber">3.1</span> <span class="toctext">SSO Integration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Usable_Methods"><span class="tocnumber">3.1.1</span> <span class="toctext">Usable Methods</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.mdsl.com">MDSL Telecom Expense Management</a> provides inventory and expense management for telecom goods and services. Integration between ServiceNow and the MDSL request and procurement system is a two-way web service integration.  This integration currently supports service catalog requests for mobile devices but can be expanded to support any other telecom product or service.
+</p>
+<ul><li>The request process begins when a user orders a mobile device through the ServiceNow service catalog. </li>
+<li>A service catalog workflow for mobile telecom devices triggers a SOAP message to MDSL. </li>
+<li>ServiceNow passes relevant variables to MDSL using the SOAP message. Refer to the <a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Variables">list of usable variables</a> for more information. This SOAP message starts the MDSL request workflow. </li>
+<li>The MDSL integration layer reads the SOAP message from ServiceNow and processes the information for the MDSL request workflow. </li>
+<li>After the MDSL request workflow is complete, MDSL sends a success or failure acknowledgement to ServiceNow along with these device specific details to update the ServiceNow CMDB: device serial number, mobile number, contract number, and service plan.</li></ul>
+<p><a href="index.php%3Ftitle=File:MDSL_basic_architecture.png.html" class="image"><img alt="MDSL basic architecture.png" src="images/7/75/MDSL_basic_architecture.png" width="724" height="257" /></a>
+</p><p><br style="clear:both" />
+</p>
+<h1><span class="mw-headline" id="Setting_up_an_MDSL_Integration_for_Service_Catalog_Requests"><span class="mw-headline-number">2</span> Setting up an MDSL Integration for Service Catalog Requests</span></h1>
+<p>To integrate ServiceNow and MDSL, create an outbound SOAP message and a catalog request workflow to trigger the SOAP message.
+</p>
+<h2><span class="mw-headline" id="Create_a_SOAP_Message"><span class="mw-headline-number">2.1</span> Create a SOAP Message</span></h2>
+<ol><li>Navigate to <b>System Web Services &gt; SOAP Message</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>In the <b>Name</b> field enter <b>MDSL_Start_Workflow_V2</b> or another descriptive name.</li>
+<li>Enter the SOAP message to be sent to MDSL in the <b>WSDL XML</b> field.
+<dl><dd>See the SOAP message example for more information</dd></dl></li>
+<li>[Optional] Enter a <b>Description</b> for the SOAP Message.</li>
+<li>Do not modify other fields.</li>
+<li>Click <b>Submit</b>.</li></ol>
+<p><br />
+</p><p>This example SOAP message outlines the variables that need to be sent from ServiceNow to MDSL. Variables are indicated with the format ${variable}.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>SOAP Envelope:
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:m=</span><span class="s">&quot;http://www.mdsl.com/ExtProcessToWorkflow&quot;</span>  <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;StartWorkFlow</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.mdsl.com/ExtProcessToWorkflow&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;requestid</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${requestid}<span class="nt">&lt;/requestid&gt;</span>
+       <span class="nt">&lt;requester_hrid</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${requester_hrid}<span class="nt">&lt;/requester_hrid&gt;</span>
+      <span class="nt">&lt;enduser_hrid</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${enduser_hrid}<span class="nt">&lt;/enduser_hrid&gt;</span>
+      <span class="nt">&lt;authorizer_hrids</span> <span class="na">xsi:type=</span><span class="s">&quot;m:ArrayOfAuthHridValues&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;AuthHridValues</span> <span class="na">xsi:type=</span><span class="s">&quot;m:AuthHridValues&quot;</span><span class="nt">&gt;</span>
+      	<span class="nt">&lt;authhrid</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${authhrid}<span class="nt">&lt;/authhrid&gt;</span>
+      <span class="nt">&lt;/AuthHridValues&gt;</span>
+      <span class="nt">&lt;/authorizer_hrids&gt;</span>
+      <span class="nt">&lt;reqstatus</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${reqstatus}<span class="nt">&lt;/reqstatus&gt;</span>
+      <span class="c">&lt;!-- one out of {&#39;New&#39;, &#39;Change&#39;, &#39;Cancel&#39;, &#39;Other&#39;} --&gt;</span>
+      <span class="nt">&lt;reqType&gt;</span>${reqType}<span class="nt">&lt;/reqType&gt;</span>
+      <span class="nt">&lt;requestVariables</span> <span class="na">xsi:type=</span><span class="s">&quot;m:ArrayOfRequestVariablesArray&quot;</span><span class="nt">&gt;</span>
+      	<span class="c">&lt;!-- Array[]   nillable--&gt;</span>
+     	 <span class="nt">&lt;requestVariablesArray</span> <span class="na">xsi:type=</span><span class="s">&quot;m:requestVariablesArray&quot;</span><span class="nt">&gt;</span>
+      		<span class="nt">&lt;key</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${key}<span class="nt">&lt;/key&gt;</span>
+      		<span class="nt">&lt;value</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${value}<span class="nt">&lt;/value&gt;</span>
+     	 <span class="nt">&lt;/requestVariablesArray&gt;</span>
+      <span class="nt">&lt;/requestVariables&gt;</span>
+      <span class="c">&lt;!-- optional --&gt;</span>
+      <span class="nt">&lt;Notes</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>${notes}<span class="nt">&lt;/Notes&gt;</span>
+    <span class="nt">&lt;/StartWorkFlow&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Variables"><span class="mw-headline-number">2.1.1</span> Variables</span></h3>
+<p>MDSL uses specific variable names when retrieving data from ServiceNow. Additional variables not included in this table must be created in MDSL before they can be passed from ServiceNow.
+</p>
+<table width="1000px" cellspacing="1" cellpadding="3" border="1">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Variable</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Definition</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Example</b>
+</td></tr>
+<tr>
+<td>${requestid}
+</td>
+<td>The ID generated by ServiceNow when placing the service catalog request.
+</td>
+<td>RITM0010083
+</td></tr>
+<tr>
+<td>${requested_hrid}
+</td>
+<td>The ServiceNow User ID of the person who submitted the catalog request.
+</td>
+<td>HRID1234
+</td></tr>
+<tr>
+<td>${enduser_hrid}
+</td>
+<td>The ServiceNow User ID of the final recipient of the requested item.
+</td>
+<td>HRID4321
+</td></tr>
+<tr>
+<td>${authhrid}
+</td>
+<td>The ServiceNow User ID of the catalog request approver.
+</td>
+<td>HRID2341
+</td></tr>
+<tr>
+<td>${reqstatus}
+</td>
+<td> The approval status of the catalog request.
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>${reqType}
+</td>
+<td>The request type generated by ServiceNow (New, Change, Cancel, Other)
+</td>
+<td>New
+</td></tr>
+<tr>
+<td>${key}
+</td>
+<td>The type of device ordered.
+</td>
+<td>R_MOBILE
+</td></tr>
+<tr>
+<td>${value}
+</td>
+<td>A unique item identifier used by MDSL to update the ServiceNow CMDB.
+</td>
+<td>290052243
+</td></tr>
+<tr>
+<td>${notes}
+</td>
+<td>Any optional notes that need to be passed to MDSL.
+</td>
+<td>Please confirm pricing.
+</td></tr></table>
+<h2><span class="mw-headline" id="Configure_the_Service_Catalog"><span class="mw-headline-number">2.2</span> Configure the Service Catalog</span></h2>
+<ol><li>Create a new service catalog workflow. See <a href="index.php%3Ftitle=Defining_a_Service_Catalog_Workflow.html" title="Defining a Service Catalog Workflow">Defining a Service Catalog Workflow</a> for more information.</li>
+<li>Create a <b>Run Script</b> activity in the workflow. See the example script for more information.</li>
+<li>Click on the <b>Workflow Actions Menu</b> (<a href="index.php%3Ftitle=File:Workflow_Actions.png.html" class="image"><img alt="Workflow Actions.png" src="images/thumb/9/99/Workflow_Actions.png/25px-Workflow_Actions.png" width="25" height="18" srcset="/images/9/99/Workflow_Actions.png 1.5x, /images/9/99/Workflow_Actions.png 2x" /></a>) and click <b>Publish</b>.</li>
+<li>Navigate to <b>Service Catalog &gt; Maintain Items</b>.</li>
+<li>Edit the catalog item record for a mobile device. </li>
+<li>Enter the new workflow in the <b>Workflow</b> reference field.</li>
+<li>Click <b>Update</b>.</li></ol>
+<p><br />
+</p><p><a href="index.php%3Ftitle=File:MDSL_Workflow.png.html" class="image"><img alt="MDSL Workflow.png" src="images/1/12/MDSL_Workflow.png" width="684" height="350" /></a>
+</p><p><br style="clear:both" />
+This example workflow includes a <b>Send to MDSL</b> workflow activity following successful approval of the request. The workflow activity sets the <a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Variables">required variables</a> and sends the appropriate SOAP message to initiate the request within MDSL. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SOAPMessage</span><span class="p">(</span><span class="s1">&#39;MDSL_Start_WorkFlow_V2&#39;</span><span class="p">,</span> <span class="s1">&#39;StartWorkFlow&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;requestid&#39;</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;requester_hrid&#39;</span><span class="p">,</span> <span class="s1">&#39;MDSLSN&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;enduser_hrid&#39;</span><span class="p">,</span> <span class="s1">&#39;MDSLSN&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;authhrid&#39;</span><span class="p">,</span> <span class="s1">&#39;10276926&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;reqstatus&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;reqType&#39;</span><span class="p">,</span> <span class="s1">&#39;New&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;R_MOBILE&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;290052243&#39;</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">variables</span><span class="p">.</span><span class="nx">requirements</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</pre></div>
+<h1><span class="mw-headline" id="Setting_up_Access_to_the_MDSL_Web_Portal_Through_ServiceNow"><span class="mw-headline-number">3</span> Setting up Access to the MDSL Web Portal Through ServiceNow</span></h1>
+<p>End users can check the status of a request through the MDSL web portal. Access to the MDSL web portal is set up by MDSL and passed to the client for stand-alone access or iFrame integration within ServiceNow through single sign-on (SSO).
+</p>
+<h2><span class="mw-headline" id="SSO_Integration"><span class="mw-headline-number">3.1</span> SSO Integration</span></h2>
+<p>MDSL allows access to the MDSL web portal through SSO. SSO access can be configured with industry standard SAML/WS-Federation technologies or a custom-built simple SSO. The custom SSO solution requires the user to provide a specific parameter, including appropriate identification information, in the URL used to access the web portal. Refer to the table of usable methods for detailed information. Parameters passed to MDSL are indicated in bold. The MDSL system compares the paramater provided in the URL against existing user records. If the parameter matches a single user, MDSL allows access using those user credentials.
+</p><p>To set up iFrame access to the MDSL web portal in ServiceNow:
+</p>
+<ol><li>Navigate to <b>Content Management &gt; iFrames</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Enter a <b>Name</b> for the iFrame.</li>
+<li>Set <b>Sizing</b> to <b>Fixed size</b>.</li>
+<li>[Optional] Set the <b>Height</b> and <b>Width</b> fields to the desired size.</li>
+<li>[Optional] Enter a <b>Frame name</b>.</li>
+<li>Enter the MDSL web portal URL including the specific parameter in the <b>URL</b> field. See the <a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html#Usable_Methods">table of usable methods</a> for more information.</li>
+<li>Click <b>Submit</b>.</li>
+<li><a href="index.php%3Ftitle=Creating_a_Content_Page.html#Adding_Content_to_the_Page" title="Creating a Content Page">Add the iFrame to a page.</a></li></ol>
+<dl><dd><dl><dd>MDSL returns the following message if the user is denied access:</dd>
+<dd><b>SSO Succeeded but the current user is either not permissioned to access this application or the details provided didn't match a single user. See server event log for more details.</b></dd></dl></dd></dl>
+<h3><span class="mw-headline" id="Usable_Methods"><span class="mw-headline-number">3.1.1</span> Usable Methods</span></h3>
+<table cellspacing="1" cellpadding="3" border="1">
+
+<tr>
+<td bgcolor="#dfdbdc"> Method
+</td>
+<td bgcolor="#dfdbdc"> Parameter URL
+</td></tr>
+<tr>
+<td>Email
+</td>
+<td>https://asp.mdsl.com/&lt;Customer MDSL Instance&gt;/Portal/Usage.aspx?<b>SN-IDP-email=username@yourcompany.com</b>
+</td></tr>
+<tr>
+<td>HR ID (employee number)
+</td>
+<td>https://asp.mdsl.com/&lt;Customer MDSL Instance&gt;/Portal/Usage.aspx?<b>SN-IDP-hrid=HRIDDemo</b>
+</td></tr>
+<tr>
+<td>UserID (Windows NT login)
+</td>
+<td>https://asp.mdsl.com/&lt;Customer MDSL Instance&gt;/Portal/Usage.aspx?<b>SN-IDP-userid=windows/userID</b>
+</td></tr></table>
+<p><br />
+</p><p><br />
+<br style="clear:both" />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202015606
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.188 seconds
+Real time usage: 1.119 seconds
+Preprocessor visited node count: 83/1000000
+Preprocessor generated node count: 332/1000000
+Post‐expand include size: 2122/2097152 bytes
+Template argument size: 1092/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   35.255      1 - -total
+ 76.43%   26.945      1 - Template:Other_Integration
+ 44.09%   15.545      1 - Template:Topic
+ 21.54%    7.595      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:12723-0!*!0!1!en!5!* and timestamp 20171202015605 and revision id 250719
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html">http://wiki.servicenow.com/index.php?title=MDSL_Integration&amp;oldid=250719</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Other+Integrations.html" title="Category:Other Integrations">Other Integrations</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Other+Integrations.html" title="Category:Other Integrations">Other Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_12723"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="12723" data-vote-the-vote="5" data-vote-id="12723" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_12723_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="12723" data-vote-the-vote="1" data-vote-id="12723" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_12723_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=MDSL_Integration.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=MDSL+Integration&amp;returntoquery=oldid%3D250719" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=MDSL+Integration&amp;returntoquery=oldid%3D250719" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=MDSL_Integration.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=MDSL_Integration&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=MDSL+Integration.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=MDSL+Integration&amp;returnto=MDSL+Integration&amp;oldid=250719&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=MDSL_Integration&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FMDSL_Integration.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/MDSL_Integration" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=MDSL_Integration&amp;oldid=250719.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=MDSL_Integration&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:40, 1 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":2478});});</script></body></html>

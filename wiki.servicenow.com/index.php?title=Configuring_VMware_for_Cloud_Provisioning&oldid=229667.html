@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Configuring VMware for Cloud Provisioning - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Configuring_VMware_for_Cloud_Provisioning","wgTitle":"Configuring VMware for Cloud Provisioning","wgCurRevisionId":229667,"wgRevisionId":229667,"wgArticleId":17117,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["VMware for Cloud Provisioning"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Configuring_VMware_for_Cloud_Provisioning","wgRelevantArticleId":17117,"wgRequestId":"036545e678575fec0eeb4594","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20140606000620"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Configuring_VMware_for_Cloud_Provisioning"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Configuring VMware for Cloud Provisioning"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="VMware for Cloud Provisioning"/>
+<meta name="category" content="VMware for Cloud Provisioning"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Configuring VMware for Cloud Provisioning"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20140606000620"/>
+
+	<meta property="article:published_time" content="20140606000620"/>
+
+	<meta property="article:modified_time" content="20140606000620"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="VMware for Cloud Provisioning"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Configuring_VMware_for_Cloud_Provisioning"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Configuring_VMware_for_Cloud_Provisioning rootpage-Configuring_VMware_for_Cloud_Provisioning skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+VMware+for+Cloud+Provisioning.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Configuring+VMware+for+Cloud+Provisioning&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Configuring VMware for Cloud Provisioning</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Configuring VMware for Cloud Provisioning</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22896941ba9t'></div><script type="text/javascript">window.tamOnload_tam5a22896941ba9t=[];tree = new dTree('tam5a22896941ba9t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22896941ba9t = tree;
+                                               tam5a22896941ba9t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Operations\&quot;" title=\"Cloud Operations\">Cloud Operations</a>');
+
+tam5a22896941ba9t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Users\&quot;" title=\"Cloud Users\">Cloud Users</a>');
+tam5a22896941ba9t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Security\&quot;" title=\"Cloud Provisioning Security\">Security</a>');
+tam5a22896941ba9t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=My_Assets_Portal\&quot;" title=\"My Assets Portal\">My Assets Portal</a>');
+tam5a22896941ba9t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resources_Portal\&quot;" title=\"Amazon Resources Portal\">Amazon Resources Portal</a>');
+tam5a22896941ba9t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Virtual_Assets_Management_Portals\&quot;" title=\"Virtual Assets Management Portals\">Virtual Assets Portals</a>');
+tam5a22896941ba9t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Virtual_Assets_in_Cloud_Provisioning\&quot;" title=\"Managing Virtual Assets in Cloud Provisioning\">Managing Virtual Assets</a>');
+tam5a22896941ba9t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Control_for_Cloud_Provisioning\&quot;" title=\"Change Control for Cloud Provisioning\">Change Control</a>');
+tam5a22896941ba9t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Level_Management_for_Cloud_Provisioning\&quot;" title=\"Service Level Management for Cloud Provisioning\">Service Level Management</a>');
+tam5a22896941ba9t.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Extension_Points\&quot;" title=\"Cloud Provisioning Extension Points\">Cloud Provisioning Extension Points</a>');
+tam5a22896941ba9t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services\&quot;" title=\"Amazon Web Services\">Amazon Web Services</a>');
+tam5a22896941ba9t.add(12, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_Web_Services\&quot;" title=\"Configuring Amazon Web Services\">Configuring an AWS Account</a>');
+tam5a22896941ba9t.add(13, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Billing\&quot;" title=\"Amazon Web Services Billing\">AWS Billing</a>');
+tam5a22896941ba9t.add(14, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Demo_Data\&quot;" title=\"Amazon Web Services Demo Data\">AWS Demo Data</a>');
+tam5a22896941ba9t.add(15, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resource_Optimization\&quot;" title=\"Amazon Resource Optimization\">Resource Optimization</a>');
+tam5a22896941ba9t.add(16, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Tagging\&quot;" title=\"AWS Tagging\">AWS Tagging</a>');
+tam5a22896941ba9t.add(17, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Elastic_Block_Store\&quot;" title=\"Amazon Elastic Block Store\">Amazon Elastic Block Store</a>');
+tam5a22896941ba9t.add(18, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Virtual_Private_Clouds\&quot;" title=\"AWS Virtual Private Clouds\">Virtual Private Clouds</a>');
+tam5a22896941ba9t.add(19, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Console\&quot;" title=\"Amazon Web Services Console\">Amazon Web Services Console</a>');
+tam5a22896941ba9t.add(20, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_Web_Services\&quot;" title=\"Installed with Amazon Web Services\">Installed with Amazon Web Services</a>');
+tam5a22896941ba9t.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_CloudFormation\&quot;" title=\"Amazon CloudFormation\">Amazon CloudFormation</a>');
+tam5a22896941ba9t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_an_AWS_CloudFormation_Template\&quot;" title=\"Setting Up an AWS CloudFormation Template\">Setting Up a CloudFormation Template</a>');
+tam5a22896941ba9t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_CloudFormation_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from CloudFormation Templates in Cloud Provisioning\">Creating a Catalog Item</a>');
+tam5a22896941ba9t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_CloudFormation_Stacks\&quot;" title=\"Managing CloudFormation Stacks\">Managing CloudFormation Stacks</a>');
+tam5a22896941ba9t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_AWS_CloudFormation_Stack\&quot;" title=\"Requesting an AWS CloudFormation Stack\">Requesting a CloudFormation Stack</a>');
+tam5a22896941ba9t.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 for Cloud Provisioning\">Amazon EC2</a>');
+tam5a22896941ba9t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EC2_Provisioning_Quick_Start\&quot;" title=\"EC2 Provisioning Quick Start\">EC2 Provisioning Quick Start</a>');
+tam5a22896941ba9t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_Amazon_EC2\&quot;" title=\"Cloud Administration for Amazon EC2\">Cloud Administration</a>');
+tam5a22896941ba9t.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Configuring Amazon EC2 for Cloud Provisioning\">Configuration</a>');
+tam5a22896941ba9t.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from EC2 Images in Cloud Provisioning\">Creating Catalog Items</a>');
+tam5a22896941ba9t.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Approvals_and_Provisioning_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Approvals and Provisioning for Cloud Provisioning\">Approvals and Provisioning</a>');
+tam5a22896941ba9t.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_Amazon_EC2_Instance_for_Cloud_Provisioning\&quot;" title=\"Requesting an Amazon EC2 Instance for Cloud Provisioning\">Service Catalog Request</a>');
+tam5a22896941ba9t.add(33, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Integration_for_Training_Partners_in_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Integration for Training Partners in Cloud Provisioning\">Training Partner Integration</a>');
+tam5a22896941ba9t.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Installed with Amazon EC2 for Cloud Provisioning\">Installed with EC2 Provisioning</a>');
+tam5a22896941ba9t.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_for_Cloud_Provisioning\&quot;" title=\"VMware for Cloud Provisioning\">VMware</a>');
+tam5a22896941ba9t.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Provisioning_Quick_Start\&quot;" title=\"VMware Provisioning Quick Start\">VMware Provisioning Quick Start</a>');
+tam5a22896941ba9t.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_VMware\&quot;" title=\"Cloud Administration for VMware\">Cloud Administration</a>');
+tam5a22896941ba9t.add(38, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=User_Privileges_for_vCenter_API_for_Cloud_Provisioning\&quot;" title=\"User Privileges for vCenter API for Cloud Provisioning\">User Privileges for vCenter API</a>');
+tam5a22896941ba9t.add(39, 35, '<strong class=\"selflink\">Configuration</strong>');
+tam5a22896941ba9t.add(40, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Networks_for_Cloud_Provisioning\&quot;" title=\"VMware Networks for Cloud Provisioning\">VMware Networks</a>');
+tam5a22896941ba9t.add(41, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Templates_and_Offerings_for_Cloud_Provisioning\&quot;" title=\"VMware Templates and Offerings for Cloud Provisioning\">Templates and Offerings</a>');
+tam5a22896941ba9t.add(42, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from VMware Templates in Cloud Provisioning\">Creating Catalog Items</a>');
+tam5a22896941ba9t.add(43, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_a_VMware_Instance_in_Cloud_Provisioning\&quot;" title=\"Requesting a VMware Instance in Cloud Provisioning\" class=\"mw-redirect\">Service Catalog Requests</a>');
+tam5a22896941ba9t.add(44, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approving_and_Provisioning_VMware_Requests_for_Cloud_Provisioning\&quot;" title=\"Approving and Provisioning VMware Requests for Cloud Provisioning\">Approving and Provisioning Requests</a>');
+tam5a22896941ba9t.add(45, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Error_Handling\&quot;" title=\"Cloud Provisioning Error Handling\">Error Handling</a>');
+tam5a22896941ba9t.add(46, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_VMware_for_Cloud_Provisioning\&quot;" title=\"Installed with VMware for Cloud Provisioning\">Installed with VMware Provisioning</a>');
+
+                                               document.getElementById('5a22896941ba9t').innerHTML = tam5a22896941ba9t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22896941ba9t) { window.tamOnload_tam5a22896941ba9t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow Overview</a></li>
+<li><a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Cloud_Provisioning.html" title="Book:Cloud Provisioning">Cloud Provisioning</a></b></center>
+</td></tr></table>
+</div><div class="toclimit-3"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Required_Roles"><span class="tocnumber">2</span> <span class="toctext">Required Roles</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#vCenter_and_the_ESX_Server"><span class="tocnumber">3</span> <span class="toctext">vCenter and the ESX Server</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#ESX_Servers"><span class="tocnumber">3.1</span> <span class="toctext">ESX Servers</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#vCenter"><span class="tocnumber">3.2</span> <span class="toctext">vCenter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#VM_Configuration_in_ServiceNow"><span class="tocnumber">4</span> <span class="toctext">VM Configuration in ServiceNow</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#IP_Pools"><span class="tocnumber">4.1</span> <span class="toctext">IP Pools</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Windows_VMs"><span class="tocnumber">4.2</span> <span class="toctext">Windows VMs</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Versions_Prior_to_the_Eureka_Release"><span class="tocnumber">4.2.1</span> <span class="toctext">Versions Prior to the Eureka Release</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Linux_VMs"><span class="tocnumber">4.3</span> <span class="toctext">Linux VMs</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Group_Membership"><span class="tocnumber">4.4</span> <span class="toctext">Group Membership</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Configuring_the_Catalog_Offering"><span class="tocnumber">4.5</span> <span class="toctext">Configuring the Catalog Offering</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Size_Selections"><span class="tocnumber">4.5.1</span> <span class="toctext">Size Selections</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Offering_Selections"><span class="tocnumber">4.5.2</span> <span class="toctext">Offering Selections</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Pricing"><span class="tocnumber">4.5.3</span> <span class="toctext">Pricing</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Editing_Prices"><span class="tocnumber">4.5.3.1</span> <span class="toctext">Editing Prices</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#CPU_Selections"><span class="tocnumber">4.5.4</span> <span class="toctext">CPU Selections</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Memory_Selections"><span class="tocnumber">4.5.5</span> <span class="toctext">Memory Selections</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Data_Disk_Size_Selections"><span class="tocnumber">4.5.6</span> <span class="toctext">Data Disk Size Selections</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Lease_Duration"><span class="tocnumber">4.6</span> <span class="toctext">Lease Duration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Grace_Period"><span class="tocnumber">4.6.1</span> <span class="toctext">Grace Period</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Managing_Datastores"><span class="tocnumber">5</span> <span class="toctext">Managing Datastores</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#How_Datastore_Space_Is_Allocated"><span class="tocnumber">5.1</span> <span class="toctext">How Datastore Space Is Allocated</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Configuring_Datastores"><span class="tocnumber">5.2</span> <span class="toctext">Configuring Datastores</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Setting_the_Minimum_Free_Disk_Space"><span class="tocnumber">5.3</span> <span class="toctext">Setting the Minimum Free Disk Space</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Versions_Prior_to_the_Eureka_Release_2"><span class="tocnumber">5.3.1</span> <span class="toctext">Versions Prior to the Eureka Release</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Configuring Orchestration for VMware requires these steps, in order:
+</p>
+<ol><li>Install and configure vCenter.</li>
+<li>Create virtual server templates on the ESX Server.</li>
+<li>Create <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#vCenter">vCenter</a> and <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#ESX_Servers">ESX records</a> in ServiceNow.</li>
+<li>Configure the <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Windows_VMs">Windows</a> and <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Linux_VMs">Linux</a> connection information.</li>
+<li>Allocate <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#IP_Pools">IP addresses</a> for virtual servers on the network.</li>
+<li>Assign users to the default approval and provisioning <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Group_Membership">groups</a>.</li>
+<li>Configure the <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Configuring_the_Catalog_Offering">virtual server products</a> that a user selects in the service catalog.</li>
+<li>Configure the <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Managing_Datastores">datastores</a>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you are using a version of ServiceNow earlier than Calgary, see previous version information in <a href="index.php%3Ftitle=Configuring_VMware_-_Versions_Prior_to_Calgary.html" title="Configuring VMware - Versions Prior to Calgary" class="mw-redirect">Configuring VMware - Versions Prior to Calgary</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Required_Roles"><span class="mw-headline-number">2</span> Required Roles</span></h1>
+<p>Users who are members of the Virtual Provisioning Cloud Administrators group (cloud_admin role) can configure VMware accounts in ServiceNow.
+</p>
+<h1><span class="mw-headline" id="vCenter_and_the_ESX_Server"><span class="mw-headline-number">3</span> vCenter and the ESX Server</span></h1>
+<p>vCenter is the VMware management console that manages the activities of ESX Servers. ESX Servers contain the virtual server templates and hosts running virtual machines. Refer to VMware product documentation for instructions about installing and configuring vCenter and ESX Servers. Observe the following requirements when setting up ServiceNow to interact with vCenter and the ESX Server:
+</p>
+<ul><li>Ensure that all VMware products advertised in the ServiceNow service catalog have corresponding templates on the ESX Server. The names of the templates on the ESX Server should be descriptive enough to simplify selection during the manual phase of provisioning.</li>
+<li>The <a href="index.php%3Ftitle=Orchestration_VMware_Support_Plugin.html#MID_Server_Probes" title="Orchestration VMware Support Plugin" class="mw-redirect">MID Server probe's</a> user must log in to vCenter with the proper VMware role to execute the probe’s action.</li>
+<li>ServiceNow supports Cloud Provisioning on vCenter versions 4.1 through 5.1. Using Cloud Provisioning with other versions of vCenter may cause unexpected results.</li></ul>
+<h2><span class="mw-headline" id="ESX_Servers"><span class="mw-headline-number">3.1</span> ESX Servers</span></h2>
+<p>With the proper credentials, ServiceNow Discovery can detect and explore all the ESX Servers in a network. Discovery returns the hardware characteristics of the ESX machines and the relationships to the other VMware components. If you are not using ServiceNow Discovery, you must configure each ESX Server record manually. To view the ESX records in ServiceNow, navigate to <b>VMware &gt; Configuration &gt; ESX Servers</b>. 
+</p><p>To configure the relationships between VMware components manually, click the green plus sign ( <b>+</b> ) beside <b>Related Items</b> and use the Define Relationships form provided. See <a href="index.php%3Ftitle=VMware_Component_Relationships.html" title="VMware Component Relationships">VMware Component Relationships</a> for the relationships in the base ServiceNow system.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:VM_ESX_Server_Calgary.png.html" class="image" title="VM_ESX_Server_Calgary.png"><img alt="VM_ESX_Server_Calgary.png" src="images/thumb/8/82/VM_ESX_Server_Calgary.png/1000px-VM_ESX_Server_Calgary.png" width="1000" height="604" srcset="/images/8/82/VM_ESX_Server_Calgary.png 1.5x, /images/8/82/VM_ESX_Server_Calgary.png 2x" /></a> <br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="vCenter"><span class="mw-headline-number">3.2</span> vCenter</span></h2>
+<p>Create a record for each vCenter instance in the network. 
+</p>
+<ol><li>Navigate to <b>VMware  &gt; Configuration &gt; vCenter Instances</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Enter the <b>Name</b> of an active vCenter machine and the <b>URL</b> to the instance, then save the record. 
+<dl><dd>The location of this vCenter is for convenience and is not used anywhere else. </dd></dl></li>
+<li>Click the <b>Discover vCenter Details</b> related link to have ServiceNow explore vCenter and record the relationships between the vCenter and the other VMware components. 
+<dl><dd>This action does not require the ServiceNow Discovery application, but performs the same type of scan. For more information on this utility, see <a href="index.php%3Ftitle=Discovery_for_VMware_vCenter.html#Gathering_vCenter_Data_Without_Running_Discovery" title="Discovery for VMware vCenter">Gathering vCenter Data Without Running Discovery</a>. A <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> is required for this procedure. See <a href="index.php%3Ftitle=VMware_Component_Relationships.html" title="VMware Component Relationships">VMware Component Relationships</a> for the relationships provided in the base system.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_vCenter_Calgary.png.html" class="image" title="VM_vCenter_Calgary.png"><img alt="VM_vCenter_Calgary.png" src="images/thumb/8/81/VM_vCenter_Calgary.png/1000px-VM_vCenter_Calgary.png" width="1000" height="490" srcset="/images/8/81/VM_vCenter_Calgary.png 1.5x, /images/8/81/VM_vCenter_Calgary.png 2x" /></a> <br style="clear:both;" /></dd></dl></li></ol>
+<h1><span class="mw-headline" id="VM_Configuration_in_ServiceNow"><span class="mw-headline-number">4</span> VM Configuration in ServiceNow</span></h1>
+<p>The VM configuration in ServiceNow provides the information necessary to create each type of virtual server offered in the service catalog and to power up the virtual machines on the network. This includes: 
+</p>
+<ul><li>List of available IP addresses (<a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#IP_Pools">IP pools)</a> to assign to virtual machines as they are added to the network.</li>
+<li>Credentials and connection information for <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Windows_VMs">Windows</a> and <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Linux_VMs">Linux</a>.</li>
+<li><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Configuring_the_Catalog_Offering">Catalog offering</a> configuration.</li></ul>
+<h2><span class="mw-headline" id="IP_Pools"><span class="mw-headline-number">4.1</span> IP Pools</span></h2>
+<p>IP pools are collections of IP addresses that can be or have been assigned to newly-provisioned virtual machines (VMs). Each IP pool can be associated with one or more <a href="index.php%3Ftitle=VMware_Networks_for_Cloud_Provisioning.html" title="VMware Networks for Cloud Provisioning">VMware networks</a>.  When the <a href="index.php%3Ftitle=Orchestration_VMware_Activities.html#Select_IP_Address" title="Orchestration VMware Activities">Select IP Address</a> activity runs, it identifies the IP pools associated with the VMware network selected for the virtual machine (generally by the <a href="index.php%3Ftitle=Orchestration_VMware_Activities.html#Select_Datacenter.2C_Network.2C_and_Folder" title="Orchestration VMware Activities">Select Datacenter, Network, and Folder</a> activity), chooses the one with the most available IP addresses, and allocates an IP address to the virtual machine from that pool.
+</p><p>An administrator must ensure that there are IP pools associated with all active VMware networks and that the IP pools contain enough IP addresses to meet the demand for new virtual servers. Associate VMware networks with an IP pool by editing the <b>VMware Network</b> related list on the IP Pool form. When you <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+VMware+Support&amp;oldid=0.html" title="Orchestration VMware Support" class="mw-redirect">provision</a> a new virtual machine through vCenter, select a VMware network. Orchestration assigns an available IP address from the VMware network's IP pool to the new virtual machine. If the VMware network contains multiple IP pools, Orchestration selects an IP address from the pool with the most available addresses. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>vCenter contains VMware networks that Discovery (including <a href="index.php%3Ftitle=DiscoverNow.html" title="DiscoverNow">DiscoverNow</a>) adds to the CMDB as VMware CIs.</i>
+</td></tr></table>
+<p><br />
+To add a new IP pool:
+</p>
+<ol><li>Navigate to <b>VMware &gt; Rules &gt; IP Pools</b> and click <b>New</b>.</li>
+<li>Enter the specifics of the network in which virtual servers will be created. An optional <b>Alternate DNS Server IP</b> can be specified, starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+<dl><dd><br /></dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:402px;"><a href="index.php%3Ftitle=File:Cp_vm_ip_pool_config.png.html" class="image"><img alt="" src="images/thumb/e/eb/Cp_vm_ip_pool_config.png/400px-Cp_vm_ip_pool_config.png" width="400" height="182" class="thumbimage" srcset="/images/e/eb/Cp_vm_ip_pool_config.png 1.5x, /images/e/eb/Cp_vm_ip_pool_config.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Cp_vm_ip_pool_config.png.html" class="internal" title="Enlarge"></a></div>VM IP Pool Configuration</div></div></div><br style="clear:both;" /></dd>
+<dd><br /></dd></dl></li>
+<li>Save the record.</li>
+<li>To add IP addresses to the pool, click <b>Add Allocatable IPs</b> under <b>Related Links</b>.</li>
+<li>Add ranges, networks, or individual addresses in a comma separated list.
+<dl><dd><br /></dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:902px;"><a href="index.php%3Ftitle=File:Cp_ip_pool_allocation2.png.html" class="image"><img alt="" src="images/thumb/0/05/Cp_ip_pool_allocation2.png/900px-Cp_ip_pool_allocation2.png" width="900" height="668" class="thumbimage" srcset="/images/0/05/Cp_ip_pool_allocation2.png 1.5x, /images/0/05/Cp_ip_pool_allocation2.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Cp_ip_pool_allocation2.png.html" class="internal" title="Enlarge"></a></div>VM IP Pool Allocation</div></div></div><br style="clear:both;" /></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Allocate IP Addresses</b>.
+<dl><dd>ServiceNow lists each IP address separately in the related list and marks them as not in use. When a VMware instance is provisioned, Orchestration marks the address as <b>In use</b> and associates the virtual machine name with the IP address in the IP pool record.</dd>
+<dd><br /></dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:902px;"><a href="index.php%3Ftitle=File:VM_IP_Pool2.png.html" class="image"><img alt="" src="images/thumb/e/e5/VM_IP_Pool2.png/900px-VM_IP_Pool2.png" width="900" height="530" class="thumbimage" srcset="/images/e/e5/VM_IP_Pool2.png 1.5x, /images/e/e5/VM_IP_Pool2.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:VM_IP_Pool2.png.html" class="internal" title="Enlarge"></a></div>Allocated IP addresses</div></div></div><br style="clear:both;" /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Windows_VMs"><span class="mw-headline-number">4.2</span> Windows VMs</span></h2>
+<p>The following describes how to configure Windows connection information starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. If you are using an earlier release, see <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Versions_Prior_to_the_Eureka_Release">previous version information</a>.
+</p><p>To configure Windows connection information:
+</p>
+<ol><li>Navigate to <b>VMware &gt; Customization Specifications  &gt; Windows</b> and click <b>New</b>.</li>
+<li>Enter a unique and descriptive <b>Name</b> that includes the operating system.
+<dl><dd>This value appears in the <b>Operating System</b> choice list for the catalog request item. The user's selection tells the provisioning task which configuration information to use.</dd></dl></li>
+<li>Enter the registered user's name and organization.</li>
+<li>Enter the <b>Product key</b>, select the <b>License mode</b>, and, if the selected license type is <b>Per server</b>, enter the maximum number of <b>Concurrent connections</b>.</li>
+<li>Enter the <b>Administrator password</b>.</li>
+<li>Choose a <b>Membership</b> option, either <b>Domain</b> or <b>Workgroup</b>. If you choose Workgroup, enter the workgroup name. If you choose, Domain, enter the domain name and login credentials.</li>
+<li>[Optional] Add any number of Windows commands, each listed on a new line, to the <b>Run once</b> field.</li>
+<li>In the <b>Choose networking through</b> field, choose whether to use <b>IP Pool</b> or <b>DHCP</b>.
+<dl><dd><br /></dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:VM_Config_Windows_Eur.png.html" class="image"><img alt="" src="images/thumb/b/bb/VM_Config_Windows_Eur.png/800px-VM_Config_Windows_Eur.png" width="800" height="469" class="thumbimage" srcset="/images/b/bb/VM_Config_Windows_Eur.png 1.5x, /images/b/bb/VM_Config_Windows_Eur.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:VM_Config_Windows_Eur.png.html" class="internal" title="Enlarge"></a></div>Windows configuration</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h3><span class="mw-headline" id="Versions_Prior_to_the_Eureka_Release"><span class="mw-headline-number">4.2.1</span> Versions Prior to the Eureka Release</span></h3>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand previous version information</b>
+</th></tr>
+<tr>
+<td>
+<ol><li>Navigate to <b>VMware &gt; Customization Specifications  &gt; Windows</b> and click <b>New</b>.</li>
+<li>Enter a unique and descriptive  <b>Name</b> that includes the operating system.
+<dl><dd>This value appears in the <b>Operating System</b> choice list for the catalog request item. The user's selection tells the provisioning task which configuration information to use.</dd></dl></li>
+<li>Enter the machine and domain login credentials for the virtual machine, the operating system product key, and the registered user's name.</li>
+<li>Select the <b>License type</b> and, if the selected license type is <b>Per server</b>, enter the maximum number of <b>Concurrent connections</b> (Dublin release).</li>
+<li>[Optional] Add any number of Windows commands, each listed on a new line, to the <b>Run once</b> field (Dublin release).
+<dl><dd><br /></dd>
+<dd> <a href="index.php%3Ftitle=File:VM_Config_Windows_Calgary.png.html" class="image" title="VM_Config_Windows_Calgary.png‎"><img alt="VM_Config_Windows_Calgary.png‎" src="images/9/91/VM_Config_Windows_Calgary.png" width="1000" height="404" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+</td></tr></table>
+<h2><span class="mw-headline" id="Linux_VMs"><span class="mw-headline-number">4.3</span> Linux VMs</span></h2>
+<p>To configure Linux connection information:
+</p>
+<ol><li>Navigate to <b>VMware &gt; Customization Specifications &gt; Linux</b> and click <b>New</b>.</li>
+<li>Enter a unique and descriptive <b>Name</b> that includes the operating system.
+<dl><dd>This value appears in the <b>Operating System</b> choice list for the catalog request item. The user's selection tells the provisioning task which configuration information to use.</dd></dl></li>
+<li>Enter the DNS name in the <b>Domain</b> field.</li>
+<li>Choose whether to use IP Pool or DHCP in the <b>Choose networking through</b> field (Eureka release).
+<dl><dd><br /></dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:VM_Config_Linux_Eur.png.html" class="image"><img alt="" src="images/thumb/b/bb/VM_Config_Linux_Eur.png/800px-VM_Config_Linux_Eur.png" width="800" height="141" class="thumbimage" srcset="/images/b/bb/VM_Config_Linux_Eur.png 1.5x, /images/b/bb/VM_Config_Linux_Eur.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:VM_Config_Linux_Eur.png.html" class="internal" title="Enlarge"></a></div>Linux configuration</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h2><span class="mw-headline" id="Group_Membership"><span class="mw-headline-number">4.4</span> Group Membership</span></h2>
+<p>Activating the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+VMware+Support&amp;oldid=0.html" title="Orchestration VMware Support" class="mw-redirect">Orchestration - VMware Support</a> plugin installs the following groups:
+</p>
+<ul><li><b>VMware Approvers:</b> approve requests for VMware instances.</li>
+<li><b>VMware Operators:</b> are responsible for the technical operation of the VMware cloud provisioning environment.</li></ul>
+<p>To add users to these groups:
+</p>
+<ol><li>Navigate to <b>User Administration &gt; Groups</b>.</li>
+<li>Open <b>VMware Operators</b> from the list of groups.</li>
+<li>Go to the <b>Group Members</b> related list and click <b>Edit</b>.</li>
+<li>Select one or more users from the list and click <b>Save</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_Approval_Group_Calgary.png.html" class="image" title="VM_Approval_Group_Calgary.png‎"><img alt="VM_Approval_Group_Calgary.png‎" src="images/thumb/8/80/VM_Approval_Group_Calgary.png/900px-VM_Approval_Group_Calgary.png" width="900" height="344" srcset="/images/8/80/VM_Approval_Group_Calgary.png 1.5x, /images/8/80/VM_Approval_Group_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Repeat this process to add members to the <b>VMware Approvers</b> group.</li></ol>
+<h2><span class="mw-headline" id="Configuring_the_Catalog_Offering"><span class="mw-headline-number">4.5</span> Configuring the Catalog Offering</span></h2>
+<p>The products you configure in the service catalog must represent accurately the items they offer. Users can select from lists of preconfigured virtual servers or build their own server.
+</p>
+<h3><span class="mw-headline" id="Size_Selections"><span class="mw-headline-number">4.5.1</span> Size Selections</span></h3>
+<p>A VMware size defines a virtual hardware package that includes predefined number of CPUs, amount of memory, data disk size, and related details. Users can choose a VMware size or select separate attributes. When the user selects a size, the individual selections for CPU, memory, and disk size are hidden.
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Sizes</b> and click <b>New</b>. </li>
+<li>Complete the form with the following considerations: 
+<ul><li>The <b>Name</b> should indicate some increment of size, such as <b>Large</b> or <b>Standard</b>. </li>
+<li>In the <b>CPUs</b>, <b>Memory</b>, and <b>Data disk size</b> fields, enter a <i>label</i> to appear in the service catalog. For example, enter <b>4 GB</b> of memory or <b>30 GB</b> for the data disk size. </li>
+<li>In the corresponding <b>value</b> fields, enter the value of that element in the specified units. For example, a data disk size with a label of <b>30 GB</b> has a value of <b>30,720</b> (in MB). </li></ul></li>
+<li>Click <b>Submit</b>. 
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:VM_Size_Definition.png.html" class="image" title="VM_Size_Definition.png‎"><img alt="VM_Size_Definition.png‎" src="images/thumb/7/79/VM_Size_Definition.png/900px-VM_Size_Definition.png" width="900" height="236" srcset="/images/7/79/VM_Size_Definition.png 1.5x, /images/7/79/VM_Size_Definition.png 2x" /></a></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Offering_Selections"><span class="mw-headline-number">4.5.2</span> Offering Selections</span></h3>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Offerings</b> and click <b>New</b>.</li>
+<li>Enter the virtual server's  <b>Offering</b> description as it should appear in the service catalog.
+<dl><dd>Typically, this contains the operating system and some version information, such as <b>Windows Server 2003</b> or <b>CentOS 6</b>.</dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h3><span class="mw-headline" id="Pricing"><span class="mw-headline-number">4.5.3</span> Pricing</span></h3>
+<p>All prices for virtual servers or modifications to virtual servers are calculated from the per-unit price for the following components:
+</p>
+<ul><li>CPU</li>
+<li>Memory</li>
+<li>Data disk size</li></ul>
+<p>The Catalog VM Element Price [sc_vm_element_price] table stores the prices for VMware components included in the base system. Each component has a single record that defines the units and the price per unit. Users with the cloud_admin role can access these records to change the unit price for each component.
+</p><p>To change the price for a component:
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Prices</b>.</li>
+<li>Select a component.</li>
+<li>Enter the new price per unit in the <b>Service catalog price</b> field.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_Price.png.html" class="image" title="VM_Price.png‎"><img alt="VM_Price.png‎" src="images/thumb/a/ab/VM_Price.png/900px-VM_Price.png" width="900" height="94" srcset="/images/a/ab/VM_Price.png 1.5x, /images/a/ab/VM_Price.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Update</b>.
+<dl><dd>ServiceNow recalculates the price for all items in the service catalog that use this <b>Element type</b>.</dd></dl></li></ol>
+<h4><span class="mw-headline" id="Editing_Prices"><span class="mw-headline-number">4.5.3.1</span> Editing Prices</span></h4>
+<p>By default, the price of an instance is determined by the selection in the <b>VM Size</b> field in the <a href="index.php%3Ftitle=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning.html" title="Creating Catalog Items from VMware Templates in Cloud Provisioning">VMware Catalog Item</a> form. If a requester changes the desired size when ordering a virtual machine, or an administrator changes the price of the size, ServiceNow recalculates the instance price automatically. The administrator can make price changes by modifying the specifications of the instance in the <a href="index.php%3Ftitle=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning.html#Size_Definitions" title="Creating Catalog Items from VMware Templates in Cloud Provisioning">VMware Size Definition</a> form or override the calculated price in the VMware Catalog Item form when <a href="index.php%3Ftitle=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning.html#Creating_a_Catalog_Item" title="Creating Catalog Items from VMware Templates in Cloud Provisioning">creating a service catalog item</a>. You cannot adjust instance size prices by editing quantities in the VMware Size Definitions list view.
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Sizes</b>.</li>
+<li>Select a size.</li>
+<li>Change the quantity of CPUs, the memory, or the data disk size.</li>
+<li>Click <b>Update</b>.
+<dl><dd>ServiceNow calculates the price of the modified size.</dd></dl></li></ol>
+<h3><span class="mw-headline" id="CPU_Selections"><span class="mw-headline-number">4.5.4</span> CPU Selections</span></h3>
+<p>You can customize service catalog hardware selections so that users can request the number of CPUs for a virtual server. The service catalog shows the CPU option only when the user declines the choice of a predefined virtual server size. 
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; CPU Selections</b> and click <b>New</b>.</li>
+<li>In the <b>CPUs label</b> field, enter a description of this CPU selection to be displayed in the service catalog.</li>
+<li>In the <b>Value</b> field, enter the quantity for this CPU selection. 
+<dl><dd>Be sure the <b>CPU label</b> quantity matches the number in the <b>Value</b> field. ServiceNow calculates the cost for each CPU quantity based on the configured <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Pricing">price</a> per unit.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_CPU_Select_Calgary.png.html" class="image" title="VM_CPU_Select_Calgary.png‎"><img alt="VM_CPU_Select_Calgary.png‎" src="images/thumb/1/10/VM_CPU_Select_Calgary.png/900px-VM_CPU_Select_Calgary.png" width="900" height="110" srcset="/images/1/10/VM_CPU_Select_Calgary.png 1.5x, /images/1/10/VM_CPU_Select_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h3><span class="mw-headline" id="Memory_Selections"><span class="mw-headline-number">4.5.5</span> Memory Selections</span></h3>
+<p>You can customize service catalog hardware selections so that users can request a specific amount of memory for a virtual server. The service catalog shows the VM memory option when the user declines the choice of a predefined virtual server size. 
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Memory Selections</b> and click <b>New</b>.</li>
+<li>In the <b>Memory label</b> field, enter the memory quantity to be displayed in the service catalog.
+<dl><dd>This field typically includes a number and size abbreviation, such as <b>4 GB</b>.</dd></dl></li>
+<li>Enter the <b>Value</b> for this memory selection as an integer representing the total number of MB.
+<dl><dd>In the example used here, 4 GB of memory would have a value of <b>4,096</b>. ServiceNow calculates the cost for the amount of memory selected based on the configured <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Pricing">price</a> per unit.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_Memory_Select_Calgary.png.html" class="image" title="VM_Memory_Select_Calgary.png"><img alt="VM_Memory_Select_Calgary.png" src="images/thumb/c/ce/VM_Memory_Select_Calgary.png/900px-VM_Memory_Select_Calgary.png" width="900" height="102" srcset="/images/c/ce/VM_Memory_Select_Calgary.png 1.5x, /images/c/ce/VM_Memory_Select_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h3><span class="mw-headline" id="Data_Disk_Size_Selections"><span class="mw-headline-number">4.5.6</span> Data Disk Size Selections</span></h3>
+<p>You can customize service catalog hardware selections so that users can request the virtual server's data disk size. The service catalog shows the data disk size option only when the user declines the choice of a predefined virtual server <i>class</i>. 
+</p>
+<ol><li>Navigate to <b>VMware &gt; Service Catalog &gt; Data Disk Size Selections</b> and click <b>New</b>.</li>
+<li>In the <b>Data disk size label</b> field, enter the name to be displayed in the service catalog.
+<dl><dd>This field typically includes a number and size abbreviation, such as <b>20GB</b>.</dd></dl></li>
+<li>In the <b>Value</b> field, enter the number of megabytes of disk space this option represents.
+<dl><dd>In this examples the data disk would have a value of 20,480. ServiceNow calculates the cost for the disk size selected based on the configured <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Pricing">price</a> per unit.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_Disk_Size_Select_Calgary.png.html" class="image" title="VM_Disk_Size_Select_Calgary.png‎"><img alt="VM_Disk_Size_Select_Calgary.png‎" src="images/thumb/2/25/VM_Disk_Size_Select_Calgary.png/900px-VM_Disk_Size_Select_Calgary.png" width="900" height="97" srcset="/images/2/25/VM_Disk_Size_Select_Calgary.png 1.5x, /images/2/25/VM_Disk_Size_Select_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h2><span class="mw-headline" id="Lease_Duration"><span class="mw-headline-number">4.6</span> Lease Duration</span></h2>
+<p>The default setting for a lease period and the maximum allowed duration of a virtual server lease are controlled by the following properties found in <b>Cloud Provisioning &gt; Management &gt; Properties</b> (Calgary release). For instructions on configuring lease start and end times for individual virtual machines, see <a href="index.php%3Ftitle=Requesting_a_VMware_Instance_in_Cloud_Provisioning.html" title="Requesting a VMware Instance in Cloud Provisioning" class="mw-redirect">Requesting a VMware Instance in Cloud Provisioning</a>.
+</p>
+<ul><li><b>Default lease duration:</b> This property (<tt>glide.vm.lease_duration</tt>) controls the length of the lease period automatically configured for a virtual server request. The default duration is 60 days from the lease start time, which always begins on the current date and time.</li>
+<li><b>Max lease duration:</b> This property (<tt>glide.vm.max_lease_duration</tt>) controls the maximum length of the lease period permitted for a virtual server. The default maximum duration is 90 days from the lease start time. This property prevents virtual resources that have been ignored from running indefinitely.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>ServiceNow applies the same values to both Amazon EC2 and VMware lease durations.</i>
+</td></tr></table>
+<p><br />
+<br />
+</p><p><a href="index.php%3Ftitle=File:Lease_Duration_Diagram.png.html" class="image" title="Lease_Duration_Diagram.png‎"><img alt="Lease_Duration_Diagram.png‎" src="images/d/df/Lease_Duration_Diagram.png" width="651" height="243" /></a>
+</p>
+<h3><span class="mw-headline" id="Grace_Period"><span class="mw-headline-number">4.6.1</span> Grace Period</span></h3>
+<p>A configurable <i>grace period</i> enables an administrator to delay the termination of a virtual machine when the lease end date expires. When the lease ends, the virtual machine is powered off, but is available for use until the end of the grace period. To change the default grace period of 7 days, navigate to <b>Cloud Provisioning &gt; Management &gt; Properties</b> and edit the value in the <b>Grace period after lease end until VM termination</b> property (<tt>glide.vm.grace_period</tt>).
+</p><p>When the lease ends, the platform runs the VMware End of Lease workflow, which notifies the requestor that the lease has expired, and then powers off the virtual machine. The VMware End of Lease workflow evaluates the <tt>glide.vm.grace_period</tt> property to determine when the VMware Termination workflow should run. The requestor is notified when the virtual machine is terminated, or if termination failed. 
+</p><p>To configure a different workflow to run when a lease is terminated.
+</p>
+<ol><li>In the application navigation filter, enter <b>task_action_workflow.list</b>.</li>
+<li>Select the <b>end_of_lease</b> action for the VMware Virtual Machine Instance [cmdb_ci_vmware_instance] table.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:VM_Lease_End_Workflow.png.html" class="image" title="VM_Lease_End_Workflow.png‎"><img alt="VM_Lease_End_Workflow.png‎" src="images/thumb/3/3f/VM_Lease_End_Workflow.png/900px-VM_Lease_End_Workflow.png" width="900" height="103" srcset="/images/3/3f/VM_Lease_End_Workflow.png 1.5x, /images/3/3f/VM_Lease_End_Workflow.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Select a different workflow to run in the <b>Workflow</b> field.</li>
+<li>Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Managing_Datastores"><span class="mw-headline-number">5</span> Managing Datastores</span></h1>
+<p><i>Datastores</i> represent storage locations for virtual machine files. The VM vCenter Datastores form shows the most recent datastore availability and capacity information for the the datastores, and  allows you to manage how storage space is handled when provisioning VMs. Using this form you can make most efficient use of space, reducing the amount of wasted space. This section describes datastore functionality available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<h2><span class="mw-headline" id="How_Datastore_Space_Is_Allocated"><span class="mw-headline-number">5.1</span> How Datastore Space Is Allocated</span></h2>
+<p>By allocating reserved space when a VM is requested and accounting for recently provisioned space, the user can be assured that sufficient space will still be available for provisioning when the request is fulfilled. To accomplish this, space on the datastore is processed as follows:
+</p>
+<ul><li>When a VM is requested, the amount of reserved space is incremented to account for the requested disk size (template size plus additional disk size). If the reserve space request fails because of insufficient space after discovery, a task to fix the issue is created for the cloud operator. If the VM request is canceled, the reserved space is decremented to remove requested disk space.</li>
+<li>For automated provisioning, the datastore with the least disk space, but sufficient for the VM request, is automatically selected. </li>
+<li>When the VM is provisioned, the reserved space is decremented to remove provisioned disk size, and recently provisioned space is updated to provisioned disk size. </li>
+<li>Whenever a datastore is rediscovered and updated accordingly, the amount of recently provisioned space is reset to 0. When a VM provisioned from a ServiceNow instance is terminated, the provisioned space is released and the free space is incremented. If the workflow is canceled before the VM is provisioned, the reserved space is updated to remove not provisioned disk size.</li>
+<li>When a <a href="index.php%3Ftitle=Managing_Virtual_Assets_in_Cloud_Provisioning.html#Modifying_the_Specifications_of_a_Virtual_Machine" title="Managing Virtual Assets in Cloud Provisioning">VM is modified</a>, the requested amount of space is reserved, and the reserved space field is updated. When the Modify VM workflow finishes, the reserved space is updated to decrease the disk size added and the recently provisioned space is increased. When the VM is terminated (Terminate VM), the recently provisioned space in all affected datastores is released. </li></ul>
+<p>When a catalog task is created and a cloud operator chooses a datastore, only those datastores with the enough space to continue are shown in the choice list.
+</p>
+<h2><span class="mw-headline" id="Configuring_Datastores"><span class="mw-headline-number">5.2</span> Configuring Datastores</span></h2>
+<p>The Datastores module allows cloud administrators to configure the VMware vCenter datastores. Cloud administrators can modify recently provisioned space and reserved space fields to manually adjust space usage, and can block VM provisioned space or reserve extra space for specified datastores. 
+</p><p>To manage datastores:
+</p>
+<ol><li>Navigate to <b>VMware &gt; Datastores</b>. 
+<dl><dd>Current information on each datastore is displayed in the table.</dd></dl></li>
+<li>To set availability for a datastore, double-click the <b>Availability for provisioning</b> field and select <b>Include</b> or <b>Exclude</b>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:902px;"><a href="index.php%3Ftitle=File:Cp_datastores_eur.png.html" class="image"><img alt="" src="images/thumb/8/86/Cp_datastores_eur.png/900px-Cp_datastores_eur.png" width="900" height="175" class="thumbimage" srcset="/images/8/86/Cp_datastores_eur.png 1.5x, /images/8/86/Cp_datastores_eur.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Cp_datastores_eur.png.html" class="internal" title="Enlarge"></a></div>Datastore configuration</div></div></div><br style="clear:both;" /></dd></dl></li></ol>
+<table class="standard">
+<tr>
+<th width="25%"> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>Name
+</td>
+<td>The name of the datastore.
+</td></tr>
+<tr>
+<td>Capacity
+</td>
+<td> The total storage capacity of the datastore.
+</td></tr>
+<tr>
+<td>Free space (GB)
+</td>
+<td> The free space available for VM provisioning on the datastore.
+</td></tr>
+<tr>
+<td>Recently provisioned space (GB)
+</td>
+<td> The space requested by recent VM provisioning requests since the most recent discovery. Whenever a datastore is rediscovered and updated accordingly, the amount of recently provisioned space is reset to 0. If a VM was terminated, the provisioned space may be a negative number.
+</td></tr>
+<tr>
+<td>Reserved space (GB)
+</td>
+<td> The amount of space reserved on the datastore for scheduled VM provision requests and extra disk space requests for modify VM requests. The <b>Reserved space</b> for the requested VM must be less than <b>Free space</b> - ('<i>Recently provisioned space<b> + Reserved space</b></i>) - <b>Minimum free space</b> in order for that datastore to be used by the VM.
+</td></tr>
+<tr>
+<td>Availability for provisioning
+</td>
+<td> Indicates whether the datastore is available (Include) or unavailable (Exclude) for provisioning. For newly discovered datastores, the default value is Include. Running Discovery does not change this field.
+</td></tr></table>
+<h2><span class="mw-headline" id="Setting_the_Minimum_Free_Disk_Space"><span class="mw-headline-number">5.3</span> Setting the Minimum Free Disk Space</span></h2>
+<p>The minimum free disk space property allows you to set the amount of free disk space on a datastore to ensure the vCenter functions correctly. To set the property, navigate to <b>Cloud Provisioning &gt; Management &gt; Properties</b>. This property is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. If you are using an earlier release, see <a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html#Versions_Prior_to_the_Eureka_Release_2">previous version information</a>.
+</p>
+<table class="standard">
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>Minimum free disk space on each VMware datastore (MB)
+<p>[glide.vmware.provisioning.datastore.reserved_space]
+</p>
+</td>
+<td>The amount of free disk space required on a datastore. The default value is 1024 MB.
+</td></tr></table>
+<h3><span class="mw-headline" id="Versions_Prior_to_the_Eureka_Release_2"><span class="mw-headline-number">5.3.1</span> Versions Prior to the Eureka Release</span></h3>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand previous version information</b>
+</th></tr>
+<tr>
+<td>
+<p>To view datastore information, navigate to <b>VMware &gt; Datastores</b>. The Datastore form shows the following for each datastore:
+</p>
+<table class="standard">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>Name
+</td>
+<td>The name of the datastore.
+</td></tr>
+<tr>
+<td>Capacity
+</td>
+<td> The total storage capacity of the datastore.
+</td></tr>
+<tr>
+<td>Free space (GB)
+</td>
+<td> The free space available for VM provisioning on the datastore.
+</td></tr></table>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202110722
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.451 seconds
+Real time usage: 0.878 seconds
+Preprocessor visited node count: 186/1000000
+Preprocessor generated node count: 426/1000000
+Post‐expand include size: 2223/2097152 bytes
+Template argument size: 820/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  117.909      1 - -total
+ 82.04%   96.731      1 - Template:Cloud_Provisioning
+ 70.67%   83.327      1 - Template:Topic
+  7.39%    8.717      3 - Template:Note
+  6.08%    7.165      1 - Template:LimitedTOC
+  4.77%    5.621      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:17117-0!*!0!1!en!5!* and timestamp 20171202110721 and revision id 229667
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html">http://wiki.servicenow.com/index.php?title=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=VMware+for+Cloud+Provisioning.html" title="Category:VMware for Cloud Provisioning">VMware for Cloud Provisioning</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Cloud+Provisioning.html" title="Category:Cloud Provisioning">Cloud Provisioning</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=VMware+for+Cloud+Provisioning.html" title="Category:VMware for Cloud Provisioning">VMware for Cloud Provisioning</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_17117"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="17117" data-vote-the-vote="5" data-vote-id="17117" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17117_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="17117" data-vote-the-vote="1" data-vote-id="17117" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17117_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Configuring+VMware+for+Cloud+Provisioning&amp;returntoquery=oldid%3D229667" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Configuring+VMware+for+Cloud+Provisioning&amp;returntoquery=oldid%3D229667" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Configuring_VMware_for_Cloud_Provisioning.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+VMware+for+Cloud+Provisioning.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Configuring+VMware+for+Cloud+Provisioning&amp;returnto=Configuring+VMware+for+Cloud+Provisioning&amp;oldid=229667&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FConfiguring_VMware_for_Cloud_Provisioning.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Configuring_VMware_for_Cloud_Provisioning" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;oldid=229667.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Configuring_VMware_for_Cloud_Provisioning&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:06, 6 June 2014.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1092});});</script></body></html>

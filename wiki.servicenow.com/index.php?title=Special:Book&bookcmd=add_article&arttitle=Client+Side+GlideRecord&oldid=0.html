@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Client Side GlideRecord - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Client_Side_GlideRecord","wgTitle":"Client Side GlideRecord","wgCurRevisionId":250101,"wgRevisionId":250101,"wgArticleId":20461,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Client Scripting","Client APIs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Client_Side_GlideRecord","wgRelevantArticleId":20461,"wgRequestId":"25948e35f7a3895002f3b79c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170814183818"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Client_Side_GlideRecord"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Client Side GlideRecord"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Client APIs"/>
+<meta name="category" content="Client APIs"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Client Side GlideRecord"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170814183818"/>
+
+	<meta property="article:published_time" content="20170814183818"/>
+
+	<meta property="article:modified_time" content="20170814183818"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Client APIs"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Client_Side_GlideRecord"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Client_Side_GlideRecord rootpage-Client_Side_GlideRecord skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Client+Side+GlideRecord.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Client Side GlideRecord</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Client_API_Reference.html" title="Client API Reference">Client APIs</a> &gt; Client Side GlideRecord</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a229c902fc08t'></div><script type="text/javascript">window.tamOnload_tam5a229c902fc08t=[];tree = new dTree('tam5a229c902fc08t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a229c902fc08t = tree;
+                                               tam5a229c902fc08t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a229c902fc08t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a229c902fc08t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a229c902fc08t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a229c902fc08t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a229c902fc08t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a229c902fc08t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a229c902fc08t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a229c902fc08t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a229c902fc08t.add(10, 0, 'Jelly');
+tam5a229c902fc08t.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extensions_to_Jelly_Syntax\&quot;" title=\"Extensions to Jelly Syntax\">Extensions to Jelly Syntax</a> ');
+tam5a229c902fc08t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a229c902fc08t.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a229c902fc08t.add(14, 0, 'Debugging');
+tam5a229c902fc08t.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a229c902fc08t.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a229c902fc08t.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a229c902fc08t.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a229c902fc08t.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a229c902fc08t.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a229c902fc08t.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a229c902fc08t.add(22, 0, 'Client-Side Glide Reference');
+tam5a229c902fc08t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a229c902fc08t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a229c902fc08t.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a229c902fc08t.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a229c902fc08t.add(27, 22, '<strong class=\"selflink\">Client-side GlideRecord</strong>');
+tam5a229c902fc08t.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a229c902fc08t.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a229c902fc08t.add(30, 0, 'Server-Side Glide Reference');
+tam5a229c902fc08t.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a229c902fc08t.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a229c902fc08t.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a229c902fc08t.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a229c902fc08t.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">Date and Time Functions</a> ');
+tam5a229c902fc08t.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a229c902fc08t.add(37, 0, 'Script Helpers');
+tam5a229c902fc08t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a229c902fc08t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a229c902fc08t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a229c902fc08t.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a229c902fc08t.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a229c902fc08t.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a229c902fc08t.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a229c902fc08t.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a229c902fc08t.add(46, 0, 'Script Objects');
+tam5a229c902fc08t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a229c902fc08t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a229c902fc08t.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a229c902fc08t').innerHTML = tam5a229c902fc08t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a229c902fc08t) { window.tamOnload_tam5a229c902fc08t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<p><br />
+</p><p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/glide-server-apis/concept/c_GlideRecord.html">GlideRecord</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The Wiki page is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Client-side GlideRecord enables the use of some GlideRecord functionality inside client-side scripts, such as client scripts and UI policy scripts.
+</p><p>The client-side API is similar to that of <a href="index.php%3Ftitle=GlideRecord.html" title="GlideRecord">server-side GlideRecord</a>, with the following differences:
+</p>
+<ul><li> Client-side GlideRecord has a limited set of functionality.</li>
+<li> Queries made with the client-side GlideRecord are executed on the server. Therefore, a request must be made from the client browser to obtain the record data. Precautions should be made to ensure that queries are optimized and that they do not run synchronously.</li>
+<li> Client-side GlideRecord does not support <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Dot-Walking&amp;oldid=0.html" title="Dot-Walking">Dot-Walking</a>.</li></ul>
+<p>For more about using client-side GlideRecord, see the <i>Using GlideRecord query from client</i> section in <a href="index.php%3Ftitle=Client_Scripts.html#What_are_some_of_the_available_helper_functions.3F" title="Client Scripts">What are some of the available helper functions?</a>.
+</p><p>Client-side GlideRecord is not supported in scoped applications. Instead, create a script include and use GlideAjax, or use the REST APIs.
+</p>
+<h2><span class="mw-headline" id="Where_To_Use"><span class="mw-headline-number">1.1</span> Where To Use</span></h2>
+<p>Client-side GlideRecord methods can be called from any client-side script in a global application; however, other, more efficient, methods are recommended and should be investigated first. For more information, see <a href="index.php%3Ftitle=Client_Script_Best_Practices.html#Minimize_Server_Lookups" title="Client Script Best Practices">Client Script Best Practices</a>.
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<table class="sortable standard">
+
+<tr>
+<th> Method Summary
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#addQuery.28fieldName.2C_operator.2C_value.29">addQuery(fieldName, operator, value)</a>
+</td>
+<td> Adds a filter to return records based on 1, 2, or 3 arguments.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#getEncodedQuery.28.29">getEncodedQuery()</a>
+</td>
+<td> Gets the encoded query as a string.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#deleteRecord.28responseFunction.29">deleteRecord(responseFunction)</a>
+</td>
+<td> Deletes a single record.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#get.28name.2C_value.29">get(name, value)</a>
+</td>
+<td> Defines a GlideRecord based on the specified expression of <tt>name = value</tt>.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#getTableName.28.29">getTableName()</a>
+</td>
+<td> Retrieves the table name associated with this GlideRecord.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#hasNext.28.29">hasNext()</a>
+</td>
+<td> Determines if there are any more records in the GlideRecord.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#insert.28responseFunction.29">insert(responseFunction)</a>
+</td>
+<td> Inserts a new record using the field values that have been set for the current record.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#next.28.29">next()</a>
+</td>
+<td> Moves to the next record in the GlideRecord.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#addOrderBy.28column.29">addOrderBy(column)</a>
+</td>
+<td> Adds a column to order by in the query.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#orderBy.28f.29">orderBy(f)</a>
+</td>
+<td> Specifies and orderBy column (this may be called more than once to order by multiple columns).
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#query.28responseFunction.29">query(responseFunction)</a>
+</td>
+<td> Runs the query against the table based on the <tt>addQuery()</tt> filter.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#setLimit.28maxQuery.29">setLimit(maxQuery)</a>
+</td>
+<td> Sets the limit for how many records will be returned by the GlideRecord query.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html#getLimit.28.29"> getLimit()</a>
+</td>
+<td> Gets the limit of records to be returned by the GlideRecord query.
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">3</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="addQuery.28fieldName.2C_operator.2C_value.29"><span class="mw-headline-number">3.1</span> addQuery(fieldName, operator, value)</span></h2>
+<p>Adds a filter to return records based on 1, 2, or 3 arguments. 
+</p>
+<ul><li>1 argument adds an encoded query string. </li>
+<li>2 arguments return records where the field is equal to the value (or is in a list of values). </li>
+<li>3 arguments return records where the field meets the specified condition (field, <a href="index.php%3Ftitle=Using_GlideRecord_to_Query_Tables.html#Available_JavaScript_Operators" title="Using GlideRecord to Query Tables">operator</a>, and value). </li></ul>
+<p>This method can accept an <tt>IN</tt> operator (see example 2).
+</p>
+<h3><span class="mw-headline" id="Input_Fields"><span class="mw-headline-number">3.1.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>fieldName</b> - (String) Name of the field.</li>
+<li><b>operator</b> - (Object) <a href="index.php%3Ftitle=Using_GlideRecord_to_Query_Tables.html#Available_JavaScript_Operators" title="Using GlideRecord to Query Tables">An operator for the query</a>.</li>
+<li><b>value</b> - (Object) Value to query on.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields"><span class="mw-headline-number">3.1.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void<br />
+</p>
+<h3><span class="mw-headline" id="Example_1"><span class="mw-headline-number">3.1.3</span> Example 1</span></h3>
+<dl><dd><dl><dd></dd></dl></dd></dl>
+<table>
+
+<tr>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;sys_created_on&#39;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;2010-01-19 04:05:00&quot;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">recResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">recResponse</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">while</span> <span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+		<span class="nx">rec</span><span class="p">.</span><span class="nx">active</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Active incident &#39;</span> <span class="o">+</span> <span class="nx">rec</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s1">&#39; closed&#39;</span><span class="p">);</span>
+		<span class="nx">rec</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+	<span class="p">}</span> 
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+<h3><span class="mw-headline" id="Example_2_-_Using_the_IN_Operator"><span class="mw-headline-number">3.1.4</span> Example 2 - Using the IN Operator</span></h3>
+<dl><dd><dl><dd></dd></dl></dd></dl>
+<table>
+
+<tr>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">que</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">que</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span><span class="s1">&#39;IN&#39;</span><span class="p">,</span><span class="s1">&#39;INC00001,INC00002&#39;</span><span class="p">);</span>
+<span class="nx">que</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">queResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">queResponse</span><span class="p">(</span><span class="nx">que</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">while</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+		<span class="c1">//do something....</span>
+	<span class="p">}</span> 
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+<h3><span class="mw-headline" id="Controlling_Invalid_Queries"><span class="mw-headline-number">3.1.5</span> Controlling Invalid Queries</span></h3>
+<p>By default, queries with invalid field names run but ignore the invalid condition. For more strict query control in client scripts, use GlideAjax and make the call on the server.
+</p><p><br /> 
+</p>
+<h4><span class="mw-headline" id="Example"><span class="mw-headline-number">3.1.5.1</span> Example</span></h4>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cm">/*</span>
+<span class="cm"> * Default behavior if no property or property = false</span>
+<span class="cm"> * Remove invalid query condition</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;incident&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;field_that_doesnt_exist&quot;</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">grResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">grResponse</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+		<span class="c1">//do something....</span>
+  <span class="p">}</span> 
+<span class="p">}</span>
+<span class="c1">//returns records matching active=true</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Property = true</span>
+<span class="cm"> * Invalidate entire query if invalid condition exists</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;incident&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;field_that_doesnt_exist&quot;</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">grResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">grResponse</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+		<span class="c1">//do something....</span>
+  <span class="p">}</span> 
+<span class="p">}</span>
+<span class="c1">// returns no records</span>
+<span class="c1">//also generated log message &quot;field name &#39;field_that_doesnt_exist&#39; not found in table &#39;incident&#39;&quot;</span>
+
+
+<span class="cm">/*</span>
+<span class="cm"> * Property = true, override strict query for session</span>
+<span class="cm"> * Same behavior as setting property = false except only applies to this session</span>
+<span class="cm"> */</span>
+
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;incident&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;field_that_doesnt_exist&quot;</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">grResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">grResponse</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+		<span class="c1">//do something....</span>
+  <span class="p">}</span> 
+<span class="p">}</span>
+<span class="c1">//returns records matching active=true</span>
+</pre></div> 
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getEncodedQuery.28.29"><span class="mw-headline-number">3.2</span> getEncodedQuery()</span></h2>
+<p>Gets the encoded query as a string.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_2"><span class="mw-headline-number">3.2.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_2"><span class="mw-headline-number">3.2.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (String) the encoded query.
+</p>
+<h2><span class="mw-headline" id="deleteRecord.28responseFunction.29"><span class="mw-headline-number">3.3</span> deleteRecord(responseFunction)</span></h2>
+<p>Deletes a single record.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_3"><span class="mw-headline-number">3.3.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>responseFunction</b> - (String) The response function for the Ajax callback.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_3"><span class="mw-headline-number">3.3.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (boolean) true if record was deleted or false if none found to delete.
+</p>
+<h3><span class="mw-headline" id="Example_2"><span class="mw-headline-number">3.3.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">recResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">recResponse</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">while</span> <span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+      <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Inactive incident &#39;</span> <span class="o">+</span> <span class="nx">rec</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s1">&#39; deleted&#39;</span><span class="p">);</span>
+      <span class="nx">rec</span><span class="p">.</span><span class="nx">deleteRecord</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="get.28sys_id.29"><span class="mw-headline-number">3.4</span> get(sys_id)</span></h2>
+<p>Executes a GlideRecord query for a record with the specified <tt>sys_id</tt>. This method is expected to be used to query for single records, so a <tt>next</tt> operation on the recordset is performed by this method before returning.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_4"><span class="mw-headline-number">3.4.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>sys_id</b> - (Object) The <tt>sys_id</tt> to query.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_4"><span class="mw-headline-number">3.4.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (boolean) true if one or more matching records were found, or false if no matches were found.
+</p>
+<h2><span class="mw-headline" id="Example_3"><span class="mw-headline-number">3.5</span> Example</span></h2>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">kbWriteComment</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">comments</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">fb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;kb_feedback&#39;</span><span class="p">);</span>
+ <span class="nx">fb</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+ <span class="nx">fb</span><span class="p">.</span><span class="nx">article</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+ <span class="nx">fb</span><span class="p">.</span><span class="nx">comments</span> <span class="o">=</span> <span class="nx">comments</span><span class="p">;</span>
+ <span class="nx">fb</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">kbGetText</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;kb_knowledge&#39;</span><span class="p">);</span>
+ <span class="k">if</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
+ <span class="nx">gr</span><span class="p">.</span><span class="nx">u_times_used</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">u_times_used</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+ <span class="nx">gr</span><span class="p">.</span><span class="nx">u_last_used</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">nowDateTime</span><span class="p">();</span>
+ <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+ <span class="c1">// return &quot;Knowledge article &quot; + gr.number + &quot;:\n&quot; +</span>
+ <span class="c1">// &quot;[code]&quot; + gr.text + &quot;[/code]&quot;;</span>
+ <span class="k">return</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getTableName.28.29"><span class="mw-headline-number">3.6</span> getTableName()</span></h2>
+<p>Retrieves the table name associated with this GlideRecord.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_5"><span class="mw-headline-number">3.6.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_5"><span class="mw-headline-number">3.6.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (String) the table name.
+</p>
+<h3><span class="mw-headline" id="Example_4"><span class="mw-headline-number">3.6.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sc_request&#39;</span><span class="p">);</span> 
+<span class="nx">item</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">request</span><span class="p">);</span> 
+<span class="nx">item</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">itemResponse</span><span class="p">);</span> 
+
+<span class="kd">function</span> <span class="nx">itemResponse</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The table is &#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">getTableName</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="hasNext.28.29"><span class="mw-headline-number">3.7</span> hasNext()</span></h2>
+<p>Determines if there are any more records in the GlideRecord.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_6"><span class="mw-headline-number">3.7.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_6"><span class="mw-headline-number">3.7.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (boolean) true if there are more records in the query set.
+</p>
+<h3><span class="mw-headline" id="Example_5"><span class="mw-headline-number">3.7.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">dothis</span><span class="p">();</span> <span class="c1">// found it, do it</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">dothat</span><span class="p">();</span> <span class="c1">// didn&#39;t find it</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="insert.28responseFunction.29"><span class="mw-headline-number">3.8</span> insert(responseFunction)</span></h2>
+<p>Inserts a new record using the field values that have been set for the current record.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_7"><span class="mw-headline-number">3.8.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>responseFunction</b> - (String) The response function for the Ajax callback.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_7"><span class="mw-headline-number">3.8.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (String) the unique ID of the inserted record, or null if the record is not inserted.
+</p>
+<h3><span class="mw-headline" id="Example_6"><span class="mw-headline-number">3.8.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;to_do&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span> 
+<span class="nx">gr</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;first to do item&#39;</span><span class="p">;</span> 
+<span class="nx">gr</span><span class="p">.</span><span class="nx">description</span> <span class="o">=</span> <span class="s1">&#39;learn about GlideRecord&#39;</span><span class="p">;</span> 
+<span class="nx">gr</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="next.28.29"><span class="mw-headline-number">3.9</span> next()</span></h2>
+<p>Moves to the next record in the GlideRecord.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_8"><span class="mw-headline-number">3.9.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_8"><span class="mw-headline-number">3.9.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (boolean) false if there are no more records in the query set.
+</p>
+<h3><span class="mw-headline" id="Example_7"><span class="mw-headline-number">3.9.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">recResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">recResponse</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s1">&#39; exists&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="addOrderBy.28column.29"><span class="mw-headline-number">3.10</span> addOrderBy(column)</span></h2>
+<p>Adds a column to order by in the query.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_9"><span class="mw-headline-number">3.10.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>f</b> - (String) The column to add.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_9"><span class="mw-headline-number">3.10.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="orderBy.28f.29"><span class="mw-headline-number">3.11</span> orderBy(f)</span></h2>
+<p>Specifies an orderBy column (this may be called more than once to order by multiple columns).
+</p>
+<h3><span class="mw-headline" id="Input_Fields_10"><span class="mw-headline-number">3.11.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>f</b> - (String) The column name used to order the recordset.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_10"><span class="mw-headline-number">3.11.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p>
+<h3><span class="mw-headline" id="Example_8"><span class="mw-headline-number">3.11.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">UpdateProjectWBS</span><span class="p">(</span><span class="nx">project</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">child</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;pm_project_task&#39;</span><span class="p">);</span>
+  <span class="nx">child</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="nx">project</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+  <span class="nx">child</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">(</span><span class="s1">&#39;order&#39;</span><span class="p">);</span>
+  <span class="nx">child</span><span class="p">.</span><span class="nx">orderBy</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
+  <span class="nx">child</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">childResponse</span><span class="p">);</span>
+  <span class="nx">g_form</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="s1">&#39; Project Tasks updated&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">childResponse</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">child</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">seq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">child</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">count</span> <span class="o">+=</span> <span class="nx">UpdateProjectTaskWBS</span><span class="p">(</span><span class="nx">child</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">++</span><span class="nx">seq</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="query.28responseFunction.29"><span class="mw-headline-number">3.12</span> query(responseFunction)</span></h2>
+<p>Runs the query against the table based on the <tt>addQuery()</tt> filter. This queries the GlideRecord table as well as any references of the table.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_11"><span class="mw-headline-number">3.12.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>responseFunction</b> - (String) The response function for the Ajax callback.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_11"><span class="mw-headline-number">3.12.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p>
+<h3><span class="mw-headline" id="Example_9"><span class="mw-headline-number">3.12.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">recResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">recResponse</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+   <span class="nx">alert</span><span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s1">&#39; exists&#39;</span><span class="p">);</span>
+  <span class="p">}</span> 
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="setLimit.28maxQuery.29"><span class="mw-headline-number">3.13</span> setLimit(maxQuery)</span></h2>
+<p>Sets the limit for how many records are in the GlideRecord.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_12"><span class="mw-headline-number">3.13.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>maxQuery</b> - (int) The limit for number of records to fetch.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_12"><span class="mw-headline-number">3.13.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p>
+<h3><span class="mw-headline" id="Example_10"><span class="mw-headline-number">3.13.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">orderByDesc</span><span class="p">(</span><span class="s1">&#39;sys_created_on&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">setLimit</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">grResponse</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">grResponse</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+     <span class="c1">//do something...</span>
+  <span class="p">}</span> 
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getLimit.28.29"><span class="mw-headline-number">3.14</span> getLimit()</span></h2>
+<p>Returns the limit for records to be returned by the GlideRecord query.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_13"><span class="mw-headline-number">3.14.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_13"><span class="mw-headline-number">3.14.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (int) the limit for records to be returned by the GlideRecord query.
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202122908
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.424 seconds
+Real time usage: 4.824 seconds
+Preprocessor visited node count: 366/1000000
+Preprocessor generated node count: 666/1000000
+Post‐expand include size: 3411/2097152 bytes
+Template argument size: 718/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  113.957      1 - -total
+ 95.16%  108.444      1 - Template:General_Script
+ 88.59%  100.959      1 - Template:Topic
+  7.32%    8.342      1 - Embedded:General_Script
+  4.27%    4.863      1 - Template:Note
+  3.91%    4.461      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:20461-0!*!0!1!*!5!* and timestamp 20171202122904 and revision id 250101
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Client_Side_GlideRecord&amp;oldid=250101.html">http://wiki.servicenow.com/index.php?title=Client_Side_GlideRecord&amp;oldid=250101</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Category:Client_Scripting&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Client Scripting (page does not exist)">Client Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+APIs.html" title="Category:Client APIs">Client APIs</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Client_Scripting&amp;action=edit&amp;redlink=1.html" class="new" title="Category:Client Scripting (page does not exist)">Client Scripting</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+APIs.html" title="Category:Client APIs">Client APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_20461"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="20461" data-vote-the-vote="5" data-vote-id="20461" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20461_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="20461" data-vote-the-vote="1" data-vote-id="20461" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20461_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Side+GlideRecord&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Client+Side+GlideRecord.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Client+Side+GlideRecord.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Client_Side_GlideRecord.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Client_Side_GlideRecord&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Client+Side+GlideRecord.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Client+Side+GlideRecord&amp;returnto=Client+Side+GlideRecord&amp;oldid=250101&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Client_Side_GlideRecord&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FClient_Side_GlideRecord.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Client_Side_GlideRecord" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Client_Side_GlideRecord&amp;oldid=250101.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Client_Side_GlideRecord&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:38, 14 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1635});});</script></body></html>

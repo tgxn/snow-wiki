@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Transferring Update Sets - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Transferring_Update_Sets","wgTitle":"Transferring Update Sets","wgCurRevisionId":251080,"wgRevisionId":251080,"wgArticleId":14908,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["System Update Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Transferring_Update_Sets","wgRelevantArticleId":14908,"wgRequestId":"1e0b87e6c966d14becffbbf0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170914172615"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Transferring_Update_Sets"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Transferring Update Sets"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="System Update Sets"/>
+<meta name="category" content="System Update Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Transferring_Update_Sets.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Transferring Update Sets"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170914172615"/>
+
+	<meta property="article:published_time" content="20170914172615"/>
+
+	<meta property="article:modified_time" content="20170914172615"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="System Update Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Transferring_Update_Sets"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Transferring_Update_Sets rootpage-Transferring_Update_Sets skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Transferring Update Sets</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Build.html" title="Build">Build</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">System Update Sets</a> &gt; Transferring Update Sets</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Transferring_Update_Sets.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Transferring_Update_Sets.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-application-development/page/build/system-update-sets/reference/update-set-transfers.html">Update Set Transfers</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">System Update Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" title="Getting Started with Update Sets">Getting Started</a></li>
+<li><a href="index.php%3Ftitle=Administering_Update_Sets.html" title="Administering Update Sets">Administering Update Sets</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Using Update Sets">Using Update Sets</a> </li>
+<li><strong class="selflink">Transferring Update Sets</strong> </li>
+<li><a href="index.php%3Ftitle=Saving_Customizations_in_a_Single_XML_File.html" title="Saving Customizations in a Single XML File">Saving Customizations in a Single XML File</a></li>
+<li><a href="index.php%3Ftitle=Update_Sets_Best_Practices.html" title="Update Sets Best Practices"> Update Sets Best Practices</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="Importing from Another ServiceNow Instance">Importing from Another ServiceNow Instance</a></li>
+<li> <a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets.html" title="Moving Workflows with Update Sets">Moving Workflows with Update Sets</a></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a></li></ul>
+<center><b><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Retrieving_Update_Sets"><span class="tocnumber">2</span> <span class="toctext">Retrieving Update Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Transferring_with_IP_Access_Control"><span class="tocnumber">2.1</span> <span class="toctext">Transferring with IP Access Control</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Transferring_with_Basic_Authentication"><span class="tocnumber">2.2</span> <span class="toctext">Transferring with Basic Authentication</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Transferring_with_an_XML_File"><span class="tocnumber">2.3</span> <span class="toctext">Transferring with an XML File</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Previewing_Remote_Update_Sets"><span class="tocnumber">3</span> <span class="toctext">Previewing Remote Update Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Resolving_Preview_Problems"><span class="tocnumber">3.1</span> <span class="toctext">Resolving Preview Problems</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Reviewing_Preview_Records"><span class="tocnumber">3.2</span> <span class="toctext">Reviewing Preview Records</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Committing_Update_Sets"><span class="tocnumber">4</span> <span class="toctext">Committing Update Sets</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Backing_Out_Update_Sets"><span class="tocnumber">5</span> <span class="toctext">Backing Out Update Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Expected_Results_of_the_Back_Out_Process"><span class="tocnumber">5.1</span> <span class="toctext">Expected Results of the Back Out Process</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Deleting_Update_Sets"><span class="tocnumber">6</span> <span class="toctext">Deleting Update Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Deleting_Update_Entries"><span class="tocnumber">6.1</span> <span class="toctext">Deleting Update Entries</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>When an <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Using Update Sets">update set is completed</a>, you can transfer it to another instance. Transfer update sets between instances to move customizations from development, through testing, and into production.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Properties that are tagged as Private are excluded from update sets. Keeping system properties private prevents settings in one instance from overwriting values in another instance. For example, you may not want a system property in a production instance to use a particular value from a development instance.  See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Adding a Property</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Retrieving_Update_Sets"><span class="mw-headline-number">2</span> Retrieving Update Sets</span></h1>
+<p>To retrieve completed update sets from another instance:
+</p>
+<ol><li>If IP address access control is enabled on the source instance, <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Transferring_with_IP_Access_Control">set up the target instance as an exception</a>.</li>
+<li>On the target instance, navigate to <b>System Update Sets &gt; Update Source</b> and click <b>New</b>. </li>
+<li>Define the connection settings (see table).
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:672px;"><a href="index.php%3Ftitle=File:RemoteInstance.png.html" class="image"><img alt="" src="images/8/8f/RemoteInstance.png" width="670" height="276" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:RemoteInstance.png.html" class="internal" title="Enlarge"></a></div>Define connection settings</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Test Connection</b> (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>).
+<ul><li> If the connection is successful, a confirmation message appears.</li>
+<li> If the connection fails, a warning message identifies the reason the connection failed.</li></ul></li>
+<li>If the connection fails, modify the settings to establish connectivity.
+<ul><li>You must establish connectivity before you can save the connection settings (starting with the Dublin release).</li>
+<li> You may want to modify the source instance (for example, change the password).</li></ul></li>
+<li>Right-click the form header and select <b>Save</b>. </li>
+<li>Under <b>Related Links</b>, click <b>Retrieve Completed Update Sets</b>.
+<ul><li>Any update sets marked as <b>Completed</b> are transferred from the source instance to the target instance. Update sets that already exist on the target instance are skipped.</li>
+<li>The confirmation page provides detailed messages about how many update sets were transferred and how many were skipped (starting with the Dublin release).</li>
+<li>To view retrieved update sets, navigate to <b>System Update Sets &gt; Retrieved Update Sets</b>. </li></ul></li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Enter a unique name describing the instance.
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> Specify whether the remote instance is a development, test, or UAT instance.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Specify whether the local instance can transfer update sets to the remote instance. You can only transfer update sets to active remote instances (starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>).
+</td></tr>
+<tr>
+<td> URL
+</td>
+<td> Specify the URL of the remote instance using the appropriate transfer protocol. Each remote instance record should have a unique URL. Creating duplicate records with the same URL can cause errors. The remote instance must be on the same <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Upgrades+and+the+Release+Cycle&amp;oldid=0.html#Release_Terminology" title="Upgrades and the Release Cycle">release family</a> as the local instance (starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>).
+<p><b>Note:</b> You cannot change the URL after the system verifies the connection (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>). Use the <b>Active</b> field to deactivate unwanted remote instances.
+</p>
+</td></tr>
+<tr>
+<td> Username
+</td>
+<td> Enter the user on the remote instance who authorizes transferring update sets to this the instance. This user account must have the admin user role on the remote instance.
+</td></tr>
+<tr>
+<td> Password
+</td>
+<td> Enter the password of the authorizing user.
+</td></tr>
+<tr>
+<td> Short description
+</td>
+<td> [Optional] Enter any other relevant information about the remote instance.
+</td></tr></table>
+<h2><span class="mw-headline" id="Transferring_with_IP_Access_Control"><span class="mw-headline-number">2.1</span> Transferring with IP Access Control</span></h2>
+<p>If <a href="index.php%3Ftitle=IP_Range_Based_Authentication.html#Access_Control" title="IP Range Based Authentication">IP address access control</a> is enabled on the source instance or the source instance resides in a different datacenter than the target instance, complete the following steps before transferring an update set: 
+</p>
+<ol><li>Go to <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://hi.service-now.com/com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=b85d23ae6f086100a5117357ea3ee4f3">this URL</a> to find out the IP addresses of all application nodes supporting your instance. You can also contact Customer Support.</li>
+<li>On the source instance, navigate to <b>System Security &gt; IP Address Access Control</b>.</li>
+<li>Add the IP address from step one as an exception.</li></ol>
+<h2><span class="mw-headline" id="Transferring_with_Basic_Authentication"><span class="mw-headline-number">2.2</span> Transferring with Basic Authentication</span></h2>
+<p>If the source instance has <a href="index.php%3Ftitle=Web_Services_Security.html#Basic_Authentication" title="Web Services Security" class="mw-redirect">basic authentication</a> turned on for SOAP requests, you must use valid credentials to retrieve update sets.
+</p>
+<h2><span class="mw-headline" id="Transferring_with_an_XML_File"><span class="mw-headline-number">2.3</span> Transferring with an XML File</span></h2>
+<p>You can also unload an update set as an XML file and then transfer it to another instance. See <a href="index.php%3Ftitle=Saving_Customizations_in_a_Single_XML_File.html" title="Saving Customizations in a Single XML File">Saving Customizations in a Single XML File</a>.
+</p>
+<h1><span class="mw-headline" id="Previewing_Remote_Update_Sets"><span class="mw-headline-number">3</span> Previewing Remote Update Sets</span></h1>
+<p>Previewing compares an update set retrieved from a remote instance to updates on the local instance and detects potential problems. You must preview an update set and address all problems before you can commit it.
+</p><p>To preview a retrieved update set: 
+</p>
+<ol><li>Navigate to <b>System Update Sets &gt; Retrieved Update Sets</b>. </li>
+<li>Open the update set. </li>
+<li>Click <b>Preview Update Set</b>.
+<dl><dd>The <b>Update Set Preview</b> page shows results and lists problems. Read the information and click <b>Close</b>.</dd></dl></li>
+<li>On the <b>Retrieved Update Set</b> form:
+<dl><dd>If no problems were detected, click <b>Commit Update Set</b> to commit all changes on the instance without reviewing the preview results. See <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Committing_Update_Sets">Committing Update Sets</a>.</dd>
+<dd>If problems were detected, resolve each problem in the <b>Update Set Preview Problems</b> related list.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:702px;"><a href="index.php%3Ftitle=File:UpdateSetPreviewProblems.png.html" class="image"><img alt="" src="images/thumb/d/d4/UpdateSetPreviewProblems.png/700px-UpdateSetPreviewProblems.png" width="700" height="668" class="thumbimage" srcset="/images/d/d4/UpdateSetPreviewProblems.png 1.5x, /images/d/d4/UpdateSetPreviewProblems.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:UpdateSetPreviewProblems.png.html" class="internal" title="Enlarge"></a></div>Update set preview detects problems</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>[Optional] Open the update set record and click <b>Show All Preview Records</b> to make sure the correct updates are being committed. See <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Reviewing_Preview_Records">Reviewing Preview Records</a>.</li>
+<li>[Optional] Open the update set record and click <b>Run Preview Again</b> to run the comparisons again. Review the preview results again to ensure that all problems are resolved.</li></ol>
+<h2><span class="mw-headline" id="Resolving_Preview_Problems"><span class="mw-headline-number">3.1</span> Resolving Preview Problems</span></h2>
+<p>The process of previewing an update set detects problems that may occur if you commit the updates on the local instance. Before you commit an update set, follow this procedure to resolve all of the problems that the preview process discovered.
+</p>
+<ol><li>Navigate to <b>System Update Sets &gt; Retrieved Update Sets</b>.</li>
+<li>Open the update set record and scroll down to the <b>Update Set Preview Problems</b> related list.</li>
+<li>Review each problem description to determine the cause and resolve the problem as described in the table. Alternatively, choose one of the following options:
+<ul><li><b>Accept remote update:</b> commit the remote update set without fixing the problem.</li>
+<li><b>Skip remote update:</b> skip the update when you commit the update set.</li></ul></li></ol>
+<table class="standard">
+
+<tr>
+<th>Type and Example
+</th>
+<th>Description
+</th>
+<th>Resolution
+</th></tr>
+<tr>
+<td>Missing object
+<p>Example: Could not find a record in sys_ui_policy referenced in this update
+</p>
+</td>
+<td>The object or a referenced object does not exist on the target instance. For example:
+<ul><li>An update modifies the form layout for a table that has not been created in the local instance.</li>
+<li>A UI policy action is included in the update set, but the parent UI policy is not.</li></ul>
+</td>
+<td>Create another update set on the source instance to transfer the missing object to the local instance or create the object on the local instance. Use the following <b>Available Actions</b> to assist in problem resolution:
+<ul><li><b>Find missing field</b> or <b>Find missing record:</b> Opens a new window and searches the source instance for the missing field (dictionary entry) or record.</li>
+<li><b>Find missing update:</b> Opens a new window and searches the source instance for the update record that corresponds to the missing field or record.</li></ul>
+</td></tr>
+<tr>
+<td>Type mismatch <br />
+<p>(<a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a> and earlier)
+</p><p>Example: Found a table field (u_case.due_date), but with a different type. (Found date, expected string.)
+</p>
+</td>
+<td>The type of a column on the target instance does not match the type in the update set. For example, the target instance has a field called <b>due_date</b> with a type of <b>date</b> and the retrieved set has the same field with a type of <b>string</b>.
+</td>
+<td>Change the field type on the source instance and transfer the update set again. Alternatively, if the type change is intentional, manually change the data type on the target instance. Use these <b>Available Actions</b> to assist in problem resolution:
+<ul><li><b>Show local field</b> or <b>Show local record:</b> opens the dictionary entry or record on the local instance. </li>
+<li><b>Show local update:</b> opens the update record on the local instance that corresponds to the dictionary entry or record.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>A data type change that results in data loss is skipped automatically, even if you accept the update. See the <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Committing_Update_Sets">update log</a>.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>Collision
+<p>Example: Found a local update that is newer than this one
+</p>
+</td>
+<td>A change in the update set is older than a change to the same object on the local instance.
+</td>
+<td>Compare the two updates and determine which version to use. To use the version on the local instance, select <b>Skip remote update</b>. To use the version in the update set, select <b>Accept remote update</b>. Use these <b>Available Actions</b> to assist in problem resolution:
+<ul><li><b>Compare with local:</b> opens the preview record, which provides a comparison of the differences between the local version and the version in the update set.</li>
+<li><b>Show local field</b> or <b>Show local record</b></li>
+<li><b>Show local update</b></li></ul>
+</td></tr>
+<tr>
+<td>Uncommitted update
+<p>Example: Could not find a table field (u_case.u_reference) referenced in this update, but did find it in another uncommitted update set
+</p>
+</td>
+<td>The object exists in another remote update set that has not been committed.
+</td>
+<td>Commit the other remote update set first or move this update to the other update set. Use these <b>Available Actions</b> to assist in problem resolution:
+<ul><li><b>Show uncommitted update:</b> opens the update record in the other remote update set.</li>
+<li><b>Show uncommitted update set:</b> open the other remote update set record.</li></ul>
+</td></tr>
+<tr>
+<td>Application scope validation issue
+</td>
+<td>The previewer identifies the following combination of states as a problem:
+<p>The scope for the update set is not Global and
+The application is not found on the target instance and
+The application is not included with the update set and
+The application is not found on the ServiceNow Store.
+</p>
+</td>
+<td>Transfer the update set only to instances with that include the application scope or ensure that the update set includes the application.
+</td></tr></table>
+<h2><span class="mw-headline" id="Reviewing_Preview_Records"><span class="mw-headline-number">3.2</span> Reviewing Preview Records</span></h2>
+<p>Previewing an update set creates a preview record for each update. You can review the preview records to make sure the correct updates are being committed.
+</p>
+<ol><li>Preview the update set.</li>
+<li>Open the update set record, and click <b>Show All Preview Records</b>.</li>
+<li>Open a preview record and review the information (see table).
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:702px;"><a href="index.php%3Ftitle=File:PreviewRecord.png.html" class="image"><img alt="" src="images/thumb/4/46/PreviewRecord.png/700px-PreviewRecord.png" width="700" height="540" class="thumbimage" srcset="/images/4/46/PreviewRecord.png 1.5x, /images/4/46/PreviewRecord.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:PreviewRecord.png.html" class="internal" title="Enlarge"></a></div>Preview record</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>If necessary, <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Addressing_Problems">address any problems</a> listed in the <b>Update Problems</b> related list.</li>
+<li>In the <b>Proposed action</b> field, select the action to take when committing the update set.</li>
+<li>Click <b>Update</b> to save the action.</li>
+<li>Repeat steps 3 &#8211; 7 for every preview record you want to review.</li></ol>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Disposition
+</td>
+<td>Indicates when a collision is detected:
+<ul><li><b>Collision/Update</b>, <b>Collision/Insert</b>, or <b>Collision/Delete:</b> the change is <i>older</i> than a change to the same object on the local instance.</li>
+<li><b>Update</b>, <b>Insert</b>, or <b>Delete:</b> the change does not conflict with a change on the local instance.</li></ul>
+</td></tr>
+<tr>
+<td>File differences
+</td>
+<td>Compares the most recent version of the object on the local instance with the version in the update set. Differences are marked with a color key. Deletions are highlighted in red, additions in green, and modifications in yellow.
+</td></tr>
+<tr>
+<td>Proposed action
+</td>
+<td>Indicates how to handle the change when the update set is committed.
+<ul><li><b>Commit:</b> accept the change in the remote update. The default proposed action for every preview record is <b>Commit</b>, even if a newer update exists on the instance.</li>
+<li> <b>Skip:</b> reject the change.</li></ul>
+</td></tr></table>
+<h1><span class="mw-headline" id="Committing_Update_Sets"><span class="mw-headline-number">4</span> Committing Update Sets</span></h1>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Avoid committing an update set during business hours because it can affect instance performance.
+</td></tr></table>
+<p>When you have previewed the update set and resolved any conflicts or problems, commit the update set. Committing an update set applies all changes to the instance and creates a local copy of the update set that contains an update record for every change.
+</p>
+<ol><li> Navigate to <b>System Update Sets &gt; Retrieved Update Sets</b> and open the update set.</li>
+<li><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Addressing_Problems">Address any problems</a>. You cannot commit an update set until all problems are addressed.</li>
+<li>Click <b>Commit Update Set</b>. </li>
+<li> If any updates have a proposed action of <b>Skip</b>, a confirmation message appears when you commit the update set. (<a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a> only.)
+<ul><li> Click <b>Cancel</b> to return to the preview and reevaluate the change. None of the updates are committed.</li>
+<li> Click <b>OK</b> to skip the change and continue committing the changes that are marked as <b>Commit</b>.</li></ul>
+<dl><dd>A completion page appears when the update set has been successfully committed.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:482px;"><a href="index.php%3Ftitle=File:Update_Set_Commit_Confirm.png.html" class="image"><img alt="" src="images/d/d2/Update_Set_Commit_Confirm.png" width="480" height="264" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Update_Set_Commit_Confirm.png.html" class="internal" title="Enlarge"></a></div>‎Update set is committed</div></div></div>  <br style="clear:both;" /></dd></dl></li>
+<li>[Recommended] Click <b>Commit log</b> on the confirmation page, or navigate to <b>System Update Sets &gt; Update log</b> and filter for the update set name.
+<ul><li>Look for warnings that contain the text <b>unsafe edit</b>. The system automatically skips any changes that will result in data loss, such as changing the type of a field that contains data. You must manually make any of these changes, if necessary. Use caution when making changes that affect production data.</li>
+<li>Look for errors that indicate which records failed to commit and why. Create a new update set to address those failures, if necessary.</li></ul></li>
+<li> [Recommended] When you are no longer working on the update set but do not want it to be transferred to another instance, navigate to <b>System Update Sets &gt; Local Update Sets</b> and open the local update set record. Change the <b>State</b> to <b>Ignore</b>.
+<dl><dd>For completed update sets on the production instance, you should always change the state to <b>Ignore</b>. This state ensures the update set is not committed again when cloning the instance.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Backing_Out_Update_Sets"><span class="mw-headline-number">5</span> Backing Out Update Sets</span></h1>
+<p>You can back out changes to existing records for any committed update set, starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. Previously, you could back out only the most recently committed local update set.
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Do not back out the <b>Default</b> update set because that can damage the configuration of the instance.
+</td></tr></table>
+<ol><li>Navigate to <b>System Update Sets &gt; Local Update Sets</b> or <b>System Update Sets &gt; Retrieved Update Sets</b>.
+<dl><dd>On the Eureka release, navigate to <b>System Update Sets &gt; Local Update Sets</b>. </dd></dl></li>
+<li>Open the update set record.</li>
+<li>Carefully review the contents of the update set and consider whether there will be problems if it is backed out. See the <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Expected_Results_of_the_Back_Out_Process">table of expected results</a>.
+<dl><dd>If backing out an update set is not sufficient or will cause issues, then, instead, create and commit a new update set to reverse the customizations.</dd></dl></li>
+<li> Click <b>Back Out</b>. The <b>Progress</b> popup displays actions, progress, and problems. Problems are changes in more recent update sets that affect the update set that is being backed out. You receive a warning for each problem that is found and you must take action on each problem before proceeding with back out.  
+<ul><li>If you choose to keep the latest version, click <b>Use Current</b>.</li>
+<li>If you choose to back out to the previous version, click <b>Back Out</b>.</li></ul></li></ol>
+<p>All changes are reversed as described in the table. The current update set tracks all of the new changes that occur.
+</p><p>The update set and all associated update records are deleted. If needed, you can still navigate to the retrieved update set, preview it, and commit it again.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you commit, back out, and then reapply a remote update set, errors appear in the previewer because backing out an update set creates ‘delete’ updates in the current update set. The deletes are considered more recent changes and cause collisions.</i>
+</td></tr></table>
+<h2><span class="mw-headline" id="Expected_Results_of_the_Back_Out_Process"><span class="mw-headline-number">5.1</span> Expected Results of the Back Out Process</span></h2>
+<p>The back out process reverses both record-level updates and changes to the dictionary, as described in the following table:
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Some changes cause loss of data.
+</td></tr></table>
+<table class="standard">
+
+<tr>
+<th> Customer Update
+</th>
+<th> Back out action
+</th></tr>
+<tr>
+<td> A new table
+</td>
+<td> The table is dropped from the database, deleting any data from it.
+</td></tr>
+<tr>
+<td> A new field
+</td>
+<td> The field is dropped from the database, deleting any data from it.
+</td></tr>
+<tr>
+<td> A deleted field
+</td>
+<td> The field is restored to the database, but the original data is lost.
+</td></tr>
+<tr>
+<td> A resized field
+</td>
+<td> The field resize is reversed. If the field has been increased, data is truncated first to avoid errors.
+</td></tr>
+<tr>
+<td> A <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configured</a> form
+</td>
+<td> The form is reverted to its previous state.
+</td></tr>
+<tr>
+<td> A record is inserted
+</td>
+<td> The record is deleted.
+</td></tr>
+<tr>
+<td> A record is deleted
+</td>
+<td> The record is restored with its original data.
+</td></tr></table>
+<h1><span class="mw-headline" id="Deleting_Update_Sets"><span class="mw-headline-number">6</span> Deleting Update Sets</span></h1>
+<p>To undo customizations, <a href="index.php%3Ftitle=Transferring_Update_Sets.html#Backing_Out_Update_Sets">back out the update set</a>. 
+</p><p>Administrators can delete an update set only when it is not the current update set and it is empty (no <tt>sys_update_xml</tt> entries are associated with it). For example, after merging update sets you may choose to delete the original sets. This function is restricted by an <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">access control rule (ACL)</a> on the Update Set [sys_update_set] table.
+</p><p>Deleting update sets that contain sys_update_xml entries is restricted and not recommended because:
+</p>
+<ul><li> It does not undo the updates.</li>
+<li> It removes any record of who applied the customizations.</li>
+<li> It removes the <tt>sys_update_xml</tt> entries associated with the update set, so customizations are overwritten when the instance is upgraded.</li></ul>
+<h2><span class="mw-headline" id="Deleting_Update_Entries"><span class="mw-headline-number">6.1</span> Deleting Update Entries</span></h2>
+<p>Deleting <tt>sys_update_xml</tt> entries is not recommended because:
+</p>
+<ul><li> It removes the record of modifications to the instance.</li>
+<li> Your customizations may be overwritten when the instance is upgraded.</li></ul>
+<p>When you try to delete an update entry, a warning message appears. Click <b>OK</b> to confirm the deletion.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130105301
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.339 seconds
+Real time usage: 0.514 seconds
+Preprocessor visited node count: 125/1000000
+Preprocessor generated node count: 372/1000000
+Post‐expand include size: 4931/2097152 bytes
+Template argument size: 2172/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   84.181      1 - -total
+ 69.02%   58.103      1 - Template:Update_Sets
+ 59.78%   50.327      1 - Template:Topic
+ 17.05%   14.353      4 - Template:Note
+ 14.97%   12.605      2 - Template:T
+  8.07%    6.794      3 - Template:Warning
+  7.05%    5.933      1 - Embedded:Update_Sets
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:14908-0!*!0!1!en!5!* and timestamp 20171130105300 and revision id 251080
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Transferring_Update_Sets&amp;oldid=251080.html">http://wiki.servicenow.com/index.php?title=Transferring_Update_Sets&amp;oldid=251080</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_14908"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="14908" data-vote-the-vote="5" data-vote-id="14908" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_14908_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="14908" data-vote-the-vote="1" data-vote-id="14908" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_14908_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Transferring+Update+Sets.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Transferring+Update+Sets.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Transferring_Update_Sets.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Transferring_Update_Sets&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Transferring+Update+Sets.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Transferring+Update+Sets&amp;returnto=Transferring+Update+Sets&amp;oldid=251080&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Transferring_Update_Sets&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FTransferring_Update_Sets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Transferring_Update_Sets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Transferring_Update_Sets&amp;oldid=251080.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Transferring_Update_Sets&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:26, 14 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":904});});</script></body></html>

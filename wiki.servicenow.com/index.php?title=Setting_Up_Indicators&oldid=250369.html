@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Setting Up Indicators - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Setting_Up_Indicators","wgTitle":"Setting Up Indicators","wgCurRevisionId":250369,"wgRevisionId":250369,"wgArticleId":22518,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Performance Analytics"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Setting_Up_Indicators","wgRelevantArticleId":22518,"wgRequestId":"d027ee39ffba9b3568e952c2","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170825141218"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Setting_Up_Indicators"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Setting Up Indicators"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Performance Analytics"/>
+<meta name="category" content="Performance Analytics"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Setting_Up_Indicators.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Setting Up Indicators"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170825141218"/>
+
+	<meta property="article:published_time" content="20170825141218"/>
+
+	<meta property="article:modified_time" content="20170825141218"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Performance Analytics"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Setting_Up_Indicators"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Setting_Up_Indicators rootpage-Setting_Up_Indicators skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Setting+Up+Indicators.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Setting+Up+Indicators&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Setting Up Indicators</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Setting Up Indicators</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-performance-analytics-and-reporting/page/use/performance-analytics/concept/c_SetUpIndicators.html">Setting up Indicators</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Performance+Analytics&amp;oldid=0.html" title="Performance Analytics">Performance Analytics</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a206692bde89t'></div><script type="text/javascript">window.tamOnload_tam5a206692bde89t=[];tree = new dTree('tam5a206692bde89t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a206692bde89t = tree;
+                                               tam5a206692bde89t.add(1, 0, ' Using');
+
+tam5a206692bde89t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_Performance_Analytics\&quot;" title=\"Getting Started with Performance Analytics\">Getting Started with Performance Analytics</a>');
+tam5a206692bde89t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Collecting_Data_for_Performance_Analytics\&quot;" title=\"Collecting Data for Performance Analytics\">Collecting Data for Performance Analytics</a>');
+tam5a206692bde89t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Indicator_Scores_Manually\&quot;" title=\"Adding Indicator Scores Manually\">Adding Indicator Scores Manually</a>');
+tam5a206692bde89t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Performance_Analytics_Scorecards\&quot;" title=\"Using Performance Analytics Scorecards\">Using Scorecards</a>');
+tam5a206692bde89t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Performance_Analytics_Dashboards\&quot;" title=\"Using Performance Analytics Dashboards\">Using Dashboards</a>');
+tam5a206692bde89t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_Homepages_and_Dashboards_to_PDF\&quot;" title=\"Exporting Homepages and Dashboards to PDF\">Exporting Dashboards to PDF</a>');
+tam5a206692bde89t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Summaries\&quot;" title=\"Email Summaries\">Email Summaries</a>');
+tam5a206692bde89t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Mobile_Apps\&quot;" title=\"Using Mobile Apps\">Using Mobile Apps</a>');
+tam5a206692bde89t.add(10, 0, ' Administering');
+tam5a206692bde89t.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Widgets\&quot;" title=\"Creating Widgets\">Creating Widgets</a>');
+tam5a206692bde89t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Dashboards\&quot;" title=\"Creating Dashboards\" class=\"mw-redirect\">Creating Dashboards</a>');
+tam5a206692bde89t.add(13, 10, '<strong class=\"selflink\">Setting Up Indicators</strong>');
+tam5a206692bde89t.add(14, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Breakdowns\&quot;" title=\"Creating Breakdowns\">Creating Breakdowns</a>');
+tam5a206692bde89t.add(15, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Bucket_Groups\&quot;" title=\"Creating Bucket Groups\">Creating Bucket Groups</a> ');
+tam5a206692bde89t.add(16, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_and_Deleting_Indicator_Groups\&quot;" title=\"Adding and Deleting Indicator Groups\">Adding and Deleting Indicator Groups</a>');
+tam5a206692bde89t.add(17, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Targets\&quot;" title=\"Creating Targets\">Creating Targets</a>');
+tam5a206692bde89t.add(18, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Thresholds\&quot;" title=\"Creating Thresholds\">Creating Thresholds</a>');
+tam5a206692bde89t.add(19, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Units\&quot;" title=\"Creating Units\">Creating Units</a>');
+tam5a206692bde89t.add(20, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Performance_Analytics_with_Domain_Separation\&quot;" title=\"Performance Analytics with Domain Separation\">Domain Separation</a>');
+tam5a206692bde89t.add(21, 0, ' Reference');
+tam5a206692bde89t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Troubleshooting_Performance_Analytics\&quot;" title=\"Troubleshooting Performance Analytics\">Troubleshooting</a>');
+tam5a206692bde89t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Importing_and_Exporting_Scores\&quot;" title=\"Importing and Exporting Scores\">Importing and Exporting Scores</a>');
+tam5a206692bde89t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Performance_Analytics_API\&quot;" title=\"Performance Analytics API\">Web Service API</a>');
+tam5a206692bde89t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Performance_Analytics_API_Examples\&quot;" title=\"Performance Analytics API Examples\">API Examples</a>');
+tam5a206692bde89t.add(26, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Performance_Analytics\&quot;" title=\"Installed with Performance Analytics\">Installed Components</a>');
+
+                                               document.getElementById('5a206692bde89t').innerHTML = tam5a206692bde89t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a206692bde89t) { window.tamOnload_tam5a206692bde89t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Incident_Management.html" title="Incident Management">Incident Management</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Performance_Analytics.html" title="Book:Performance Analytics"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Performance_Analytics.html" title="Book:Performance Analytics">Performance Analytics</a> </center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Video_Tutorial"><span class="tocnumber">2</span> <span class="toctext">Video Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Defining_Indicator_Sources"><span class="tocnumber">3</span> <span class="toctext">Defining Indicator Sources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Using_Database_Views"><span class="tocnumber">3.1</span> <span class="toctext">Using Database Views</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Creating_Indicators"><span class="tocnumber">4</span> <span class="toctext">Creating Indicators</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Creating_Automated_Indicators"><span class="tocnumber">4.1</span> <span class="toctext">Creating Automated Indicators</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Creating_Manual_Indicators"><span class="tocnumber">4.2</span> <span class="toctext">Creating Manual Indicators</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Creating_Formula_Indicators"><span class="tocnumber">4.3</span> <span class="toctext">Creating Formula Indicators</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Rounding_in_Formula_Indicators"><span class="tocnumber">4.4</span> <span class="toctext">Rounding in Formula Indicators</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html#Editing_an_Indicator_from_a_Scorecard"><span class="tocnumber">4.5</span> <span class="toctext">Editing an Indicator from a Scorecard</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Indicators are at the heart of Performance Analytics. They provide you with the key information on how your business is doing. You can present them in your scorecards and in user-friendly dashboards.
+Before you can create indicators, you need to define the sources from which the data is retrieved. 
+</p><p>Users with the pa_admin, pa_power_user and pa_data_collector roles can set up and edit indicators.
+</p>
+<h1><span class="mw-headline" id="Video_Tutorial"><span class="mw-headline-number">2</span> Video Tutorial</span></h1>
+<p>The following video tutorial explains the different types of indicators that you can create for Performance Analytics in the ServiceNow platform, and demonstrates the process for creating a manual indicator, then converting it to an automated indicator.
+</p>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<th> Performance Analytics: Create Your First Indicator
+</th></tr>
+<tr>
+<td><div class='embedvideo ' style='width: 500px;'><iframe src="http://www.youtube.com/embed/QQNujcNOhlY?" width="500" height="281" frameborder="0" allowfullscreen="true"></iframe></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="Defining_Indicator_Sources"><span class="mw-headline-number">3</span> Defining Indicator Sources</span></h1>
+<p>An indicator source is a source record that identifies a table or view of interest and a set of conditions for which to gather data. Indicator sources are based on a facts table, for example, Incident [incident] and the conditions to gather data for indicators. If you want to use the indicator source to create a snapshot of the situation on a certain date, the conditions should include a date related filter, so you can schedule a historic data collection for it.
+</p><p>One indicator source can be shared by multiple indicators (1:n relationship). It is important to pick your indicator sources carefully. Since an indicator is linked to an indicator source, it is not easy to change the indicator source after you created it. Changing the indicator source, could involve having to go through a lot of indicator records to adjust the source. A possible approach is to create, for example, an indicator source based on the <i>state</i> of the incident. Thus, you can have the following indicator sources: <b>Incidents.New</b>, <b>Incidents.Open</b>, and <b>Incidents.Resolved</b>.
+Then, you can create indicators based on these incidents' states. If you want to take it a step further, you can define an incident dashboard with tabs grouping the incidents by state, and put the appropriate indicators on that. This in fact is how the demo data of Performance Analytics for Incident Management is set up.
+</p><p>Users with the pa_data_collector role can define indicator sources.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Indicator sources must be created before an indicator can be created. Also, in the indicator definition an aggregation needs to be applied (count, sum, average, max, min) to the record set of the indicator source and, if needed, additional conditions.</i>
+</td></tr></table>
+<p><br />
+</p>
+<ol><li> Navigate to <b>Performance Analytics &gt; Data Collector &gt; Indicator Sources</b>.</li>
+<li> Click <b>New</b>.</li>
+<li> Enter a <b>Name</b> by which you can easily see what the indicator source is used for. For example, <b>Incidents.Open</b>.</li>
+<li> [Optionally] Enter a more detailed <b>Description</b>. For example, <b>Daily collection open incidents</b>.</li>
+<li> Select the preferred value at <b>Valid for Frequency</b>. 
+<dl><dd> The frequency determines the interval at which the data for the indicator source must be collected, such as daily, weekly, or bi-weekly.</dd></dl></li>
+<li> Select the <b>Facts table</b> the indicator source is based on. For example, Incident [incident].</li>
+<li> Add <b>Conditions</b> that must be fulfilled before data is included in the subset. For example <b>[Active] [is] [true]</b> or <b>[Created] [at or before] [date]</b>. Date fields are often used in conditions for time stamping. Any records that match the conditions are shown immediately.
+<dl><dd> Conditions should contain high level criteria here, as this is meant to extract a large record set. Then, use the indicator advanced filters to delve deeper into the data.</dd></dl></li>
+<li> Click <b>Submit</b>.</li></ol>
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:902px;"><a href="index.php%3Ftitle=File:Creating_Indicator_Sources.png.html" class="image"><img alt="" src="images/thumb/a/ad/Creating_Indicator_Sources.png/900px-Creating_Indicator_Sources.png" width="900" height="515" class="thumbimage" srcset="/images/thumb/a/ad/Creating_Indicator_Sources.png/1350px-Creating_Indicator_Sources.png 1.5x, /images/thumb/a/ad/Creating_Indicator_Sources.png/1800px-Creating_Indicator_Sources.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Creating_Indicator_Sources.png.html" class="internal" title="Enlarge"></a></div>Define indicator source form</div></div></div> <br style="clear:both" /></dd></dl>
+<p>For example, the following settings create an indicator source that collects new incidents daily:
+</p>
+<ul><li> <b>Name:</b> <i>Incidents.New</i></li>
+<li> <b>Frequency:</b> <i>Daily</i></li>
+<li> <b>Facts table:</b> <i>Incident [incident]</i></li>
+<li> <b>Condition:</b> <i>[Opened] [on] [Today]</i></li></ul>
+<p>For example, consider <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Collecting+Data+for+Performance+Analytics&amp;oldid=0.html#Creating_Jobs" title="Collecting Data for Performance Analytics">job collection parameters</a> that include these settings:
+</p>
+<ul><li> <b>Operator:</b> <i>Relative</i></li>
+<li> <b>Relative start:</b> <i>60</i></li>
+<li> <b>Relative start interval:</b> <i>days ago</i></li></ul>
+<p>In this case, the job collects scores up to 60 days from today's  date, even though the indicator source is set to <i>Today</i>.
+</p>
+<h2><span class="mw-headline" id="Using_Database_Views"><span class="mw-headline-number">3.1</span> Using Database Views</span></h2>
+<p>Database views allow you to combine data from tables in your ServiceNow instance that are not connected by default. By combining these tables in a database view, you can easily access them by calling up the view, and then select fields from any of the tables included in the view. For example, if you want to report on the number of SLAs breached, you need fields from both the SLA and the Incident tables. To create <a href="index.php%3Ftitle=Database_Views.html" title="Database Views"> database views</a>, navigate to <b>System Definition &gt; Database Views</b>. 
+</p><p>If you select a database view as the <b>Facts table</b> for an indicator source, you must provide additional configuration in the <b>Additional conditions</b> section of the Indicator Source form. The choice lists present the available views for the joined tables.
+</p>
+<ol><li> <b>View Table</b>: select the table to collect records from, for example, <b>incident</b>. </li>
+<li> <b>List View</b>: select the list view used to display collected record sets. <b>Default view</b> is suggested, but you can select any defined view, for example, <b>Self Service</b>, or <b>Mobile</b>.</li></ol>
+<h1><span class="mw-headline" id="Creating_Indicators"><span class="mw-headline-number">4</span> Creating Indicators</span></h1>
+<h2><span class="mw-headline" id="Creating_Automated_Indicators"><span class="mw-headline-number">4.1</span> Creating Automated Indicators</span></h2>
+<p>Automated indicators are used to automatically collect scores on a regular basis. Each indicator is linked to an indicator source. Several properties (such as, frequency, direction, and a default time series) can be defined for the indicator to influence the way the data is processed. You can define extra properties in the <b>Source</b> section, such as aggregates or a script that needs to be executed. The <b>Additional conditions</b> section enables you to define extra conditions that must be met for the data collected.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i> You can add <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Adding+and+Deleting+Indicator+Groups&amp;oldid=0.html" title="Adding and Deleting Indicator Groups">indicator groups</a> for the indicator by entering them in the bar below the indicator title. More than one indicator group can be assigned to one indicator and they can be removed by clicking (x). Indicator groups can be used to search for indicators that belong together when creating a widget.</i>
+</td></tr></table>
+<p><br />
+To create an automated indicator:
+</p>
+<ol><li> Navigate to <b>Performance Analytics &gt; Indicators &gt; Automated Indicators</b>.</li>
+<li> Fill in the fields, as appropriate (see table below).</li>
+<li> Click <b>Submit</b>.</li></ol>
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Create_Automated_Indicator.png.html" class="image"><img alt="" src="images/thumb/8/86/Create_Automated_Indicator.png/800px-Create_Automated_Indicator.png" width="800" height="581" class="thumbimage" srcset="/images/8/86/Create_Automated_Indicator.png 1.5x, /images/8/86/Create_Automated_Indicator.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Create_Automated_Indicator.png.html" class="internal" title="Enlarge"></a></div>Create automated indicator form</div></div></div><br style="clear:both" /></dd></dl>
+<table class="standard sortable">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Descriptive name of the indicator.
+</td></tr>
+<tr>
+<td> Description
+</td>
+<td> A more detailed description of what the indicator does and its purpose.
+</td></tr>
+<tr>
+<td> Frequency
+</td>
+<td> The frequency used for displaying this indicator on scorecards and widgets, such as <b>Daily</b>, <b>Weekly</b>, <b>Bi-weekly</b>, <b>4-Weeks</b>, <b>Monthly</b>. The frequency of the indicators are independent from the job frequency. For example, you could set an indicator's display frequency as monthly, while the job collection runs daily. This ensures that when the indicator is shown, it displays recent data. However, when creating a new indicator, you must select indicator sources that <i>match the frequency of the indicator</i>.
+</td></tr>
+<tr>
+<td> Direction
+</td>
+<td> When an improvement of the indicator value is taking place. Possible values are <b>Minimize</b> (the lower the value the better) or <b>Maximize</b> (the higher the value, the better).
+</td></tr>
+<tr>
+<td> Unit
+</td>
+<td> The unit of measurement for the indicator.
+</td></tr>
+<tr>
+<td> Precision
+</td>
+<td> Number of digits behind the decimal separator (0 = none).
+</td></tr>
+<tr>
+<td> Key
+</td>
+<td> Check box to indicate if the indicator is a key metric for the process being monitored. Can be used to filter key indicators when selecting scorecards to be displayed at <b>Performance Analytics &gt; Scorecards</b>.
+</td></tr>
+<tr>
+<td> Indicator source
+</td>
+<td> The basic source for calculating the indicator. You can select only indicator sources for which the <b>Valid for Frequency</b> value for the indicator source is the same as the <b>Frequency</b> for the indicator.
+</td></tr>
+<tr>
+<td> Collect records
+</td>
+<td> Check box to indicate if the individual records (sys_ids) are stored when the indicator is collected. Selecting this check box enables you to to drill down to those details in the scorecard and widgets.
+</td></tr>
+<tr>
+<td> Aggregate
+</td>
+<td> The aggregate function to apply when calculating the indicator on the indicator source.  Possible values are <b>Count</b>, <b>Sum</b>, <b>Average</b>, <b>Minimum</b>, <b>Maximum</b>, or <b>Count distinct</b>. Count distinct counts the number of <i>unique</i> records rather than the total number of records. So, for example, if the name of a user appears more than once in a list, the user is only counted once. Available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji Release</a>.
+</td></tr>
+<tr>
+<td> Scripted
+</td>
+<td> A check box to indicate if the value should be aggregated based on a script. This option is available only if <b>Aggregate</b> is set to <b>Sum</b>, <b>Average</b>, <b>Minimum</b>, <b>Maximum</b>, or <b>Count Distinct</b>. Clear the <b>Scripted</b> check box to aggregate the value by a field.
+</td></tr>
+<tr>
+<td> Script
+</td>
+<td> Select a script or create a new script for the aggregation. This option is available only if the <b>Scripted</b> check box is selected.
+<p>A script is used to add information to a record set that is not stored in the table. This additional, virtual attribute can be used in an indicator to base an aggregation on, or as an attribute to classify scores per bucket. The elements of the breakdown source are not stored in a column in the facts table. The script will add a virtual column and adds an element value to each record. 
+</p><p>Several sample scripts are available, for example <a href="index.php%3Ftitle=Creating_Breakdowns.html#Scripts_for_Automated_Breakdowns" title="Creating Breakdowns">Incident.Age.Days</a>. This is a script that determines the age of open incidents by comparing the creation date with the current date. You can adjust the sample script to your needs or define your own <a href="index.php%3Ftitle=Useful_Scripts_Portal.html" title="Useful Scripts Portal">script</a>.
+</p>
+</td></tr>
+<tr>
+<td> Field
+</td>
+<td> The field that contains the values to be aggregated.
+<p>This option is available only if the <b>Scripted</b> check box is cleared.
+</p>
+</td></tr>
+<tr>
+<td> Value when nil
+</td>
+<td> The value that is inserted as the score when no value is collected.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This value applies only to the indicator score. It does not impact scores for breakdown elements.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Facts table
+</td>
+<td> Table for the indicator.  This field automatically displays the table associated with the selected <b>Indicator source</b>.
+</td></tr>
+<tr>
+<td> Conditions
+</td>
+<td> [Optional] Additional conditions can be added to the conditions in the selected <b>Indicator source</b>. Having conditions available at both the indicator source level and the automated indicator level enables you to create extra selections for the indicator data collected.
+<p>For example, to view the number of open incidents not reassigned, based on the reassignment count, you could use the indicator source <b>Incident.Open</b>. However, to get the number of open incidents not reassigned, you must add these conditions in the Indicator form: <br />
+</p>
+<dl><dd><b>[Reassignment count] [is] [0]</b> <b>[or]</b> <br /></dd>
+<dd><b>[Reassignment count] [is] [empty]</b>. </dd></dl>
+</td></tr>
+<tr>
+<td> Display
+</td>
+<td> Check box to indicate if the indicator can be used for display. Clear this check box to use the indicator only for formula indicators, for example. When this check box is cleared, the indicator is <i>not</i> shown on the scorecard, but is shown in the widget configurations and on the dashboards.
+</td></tr>
+<tr>
+<td> Visible by all roles
+</td>
+<td> Check box to indicate if the indicator is visible to all roles. If this check box is cleared, you can select the roles for which the indicator is visible.
+</td></tr>
+<tr>
+<td> Default time series
+</td>
+<td> A predefined analytical function, like a 7-days running average, to display the indicator instead of showing the actual values of the indicator.
+</td></tr>
+<tr>
+<td> Live group profile
+</td>
+<td> Live group profile that indicates the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Live+Feed&amp;oldid=0.html" title="Using Live Feed" class="mw-redirect">live group</a> to which indicator's scores are published.
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td> Number indicating the order in which scorecards are displayed. Indicators with the lowest value are displayed at the top of the scorecard list. If no values are provided in the <b>Order</b> field, scorecards are displayed from <i>a to z</i> using the <b>Name</b> field. To use the order field, you must enter order numbers for all indicators. If you put in numbers for only a few indicators, the order in which scorecards are displayed reverts to <i>a to z</i>.
+</td></tr>
+<tr>
+<td> Default chart type
+</td>
+<td> Set a default chart type (line, column, spline, or area) for this indicator. When opening the detailed scorecard for the first time, the default chart type is used. If the chart type is changed in the detailed scorecard, that preference is remembered. Available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</td></tr>
+<tr>
+<td> Collect breakdown matrix
+</td>
+<td> If the indicator contains multiple breakdowns, select this option to collect a breakdown matrix. An example of a scorecard with two breakdown layers is: problems by priority and by assignment group. The option is enabled by default for new indicators, which means scores are collected for multiple breakdowns. If the option is selected for existing indicators, the scores for the breakdown matrix are collected on running the first new collection job. Note that enabling this option multiplies the amount of data Performance Analytics collects. If a second level breakdown is only required for a single score, using a 'group by' report on the record set is preferable. Available starting with <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji Release</a>.
+<p>Users with the data_collector role can enable this option.   
+</p>
+</td></tr></table>
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Add_Remove_Breakdown.png.html" class="image"><img alt="" src="images/thumb/6/6a/Add_Remove_Breakdown.png/800px-Add_Remove_Breakdown.png" width="800" height="227" class="thumbimage" srcset="/images/thumb/6/6a/Add_Remove_Breakdown.png/1200px-Add_Remove_Breakdown.png 1.5x, /images/thumb/6/6a/Add_Remove_Breakdown.png/1600px-Add_Remove_Breakdown.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Add_Remove_Breakdown.png.html" class="internal" title="Enlarge"></a></div>Add or remove breakdown</div></div></div><br style="clear:both" /></dd></dl>
+<p>To add or remove breakdowns to an automated indicator:
+</p>
+<ol><li> Open an existing automated indicator.</li>
+<li> Click <b>Edit</b> in the <b>Breakdowns</b> related list.</li>
+<li> [Optionally] Use <b>Add Filter</b> and <b>Run Filter</b> to make a limited selection of breakdowns.</li>
+<li> Select one or more breakdowns from the choice list with the breakdowns in the Collection.</li>
+<li> Click <b>Add</b> to move the breakdowns to the Breakdowns List. If you want to remove breakdowns from the Breakdowns List, select these breakdowns and click <b>Remove</b>.</li>
+<li> Click <b>Save</b>.</li></ol>
+<p>Sometimes, not all breakdown combinations (including second level breakdowns) give useful information. For example, the combination [Country, Region] will give the same scores as the breakdown Country. You can eliminate these combinations in a list with <b>Breakdown matrix exclusions</b>. These exclusions are not shown in the detailed scorecard and in the scoresheet, and cannot be selected when creating widgets. Available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji Release</a>. 
+</p>
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Exclude_Breakdown.png.html" class="image"><img alt="" src="images/thumb/5/5c/Exclude_Breakdown.png/800px-Exclude_Breakdown.png" width="800" height="136" class="thumbimage" srcset="/images/thumb/5/5c/Exclude_Breakdown.png/1200px-Exclude_Breakdown.png 1.5x, /images/thumb/5/5c/Exclude_Breakdown.png/1600px-Exclude_Breakdown.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Exclude_Breakdown.png.html" class="internal" title="Enlarge"></a></div>Exclude breakdown from breakdown matrix</div></div></div><br style="clear:both" /></dd></dl>
+<p>To exclude breakdowns from the breakdown matrix:
+</p>
+<ol><li> Open an existing automated indicator.</li>
+<li> Click <b>New</b> in the <b>Breakdown matrix exclusions</b> related list.</li>
+<li> In the <b>Breakdown</b> field, select the breakdown you want to exclude.</li>
+<li> In the <b>2nd Breakdown</b> field, select the second level breakdown you want to exclude. Both fields are mandatory.</li>
+<li> Click <b>Submit</b>.</li></ol>
+<dl><dd> <div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Edit_Jobs_2.png.html" class="image"><img alt="" src="images/thumb/1/1a/Edit_Jobs_2.png/800px-Edit_Jobs_2.png" width="800" height="158" class="thumbimage" srcset="/images/thumb/1/1a/Edit_Jobs_2.png/1200px-Edit_Jobs_2.png 1.5x, /images/thumb/1/1a/Edit_Jobs_2.png/1600px-Edit_Jobs_2.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Edit_Jobs_2.png.html" class="internal" title="Enlarge"></a></div>Edit jobs</div></div></div><br style="clear:both" /></dd></dl>
+<p>To edit jobs for the indicator:
+</p>
+<ol><li> Open an existing automated indicator.</li>
+<li> Click <b>Edit</b> in the <b>Jobs</b> related list.</li>
+<li> [Optionally] Use <b>Add Filter</b> and <b>Run Filter</b> to make a limited selection of jobs.</li>
+<li> Select one or more jobs from the choice list with the jobs in the Collection.</li>
+<li> Click <b>Add</b> to move the jobs to the Jobs List. If you want to remove jobs from the Jobs List, select these jobs and click <b>Remove</b>.</li>
+<li> Click <b>Save</b>.</li></ol>
+<h2><span class="mw-headline" id="Creating_Manual_Indicators"><span class="mw-headline-number">4.2</span> Creating Manual Indicators</span></h2>
+<p>Manual indicators are created in the same way as automated indicators. The difference with manual indicators is that they do not have an indicator source associated with them. This means they are not generated automatically by a data collection job. Instead, you must populate these indicators <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Adding+Indicator+Scores+Manually&amp;oldid=0.html" title="Adding Indicator Scores Manually"> by adding scores manually</a> or by <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Importing+and+Exporting+Scores&amp;oldid=0.html" title="Importing and Exporting Scores">importing</a> data. Manual indicators are typically used for data that cannot be retrieved from your ServiceNow instance because it comes from an outside system. One example could be customer data from a third-party sales system. To create a manual indicator, navigate to <b>Performance Analytics &gt; Indicators &gt; Manual Indicators</b>. 
+</p><p>You can assign data contributors for each manual indicator. A data contributor can be a single person or a group. Users with the pa_admin, pa_power_user or pa_contributor role can view the scoresheet entry menu and select the indicators they are allowed to provide and add manual data to.  
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The <b>Frequency</b> for a manual indicator specifies how to visualize its data. For example, if you set the data points per day or per month in the charts, this also affects the scoresheet, so it determines whether you can enter daily or monthly values.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Creating_Formula_Indicators"><span class="mw-headline-number">4.3</span> Creating Formula Indicators</span></h2>
+<p>Use formulas to create new indicators based on the historic data of other indicators or based on analytical functions. Formulas are often used to:
+</p>
+<ul><li> Calculate ratios and percentages</li></ul>
+<ul><li> Combine data from different applications</li></ul>
+<ul><li> Build predictive indicators based on historic performance</li></ul>
+<p>To create a formula indicator, navigate to <b>Performance Analytics &gt; Indicators &gt; Formula Indicators</b>.
+</p><p>The properties of a formula indicator are similar to an automated indicator except for the condition. Formulas can consist of other indicators, constants, and time series, or any combination of these. 
+</p><p>In the Formula section of the Indicators form:
+</p>
+<ol><li> Click the <b>Browse for an indicator</b> link at the bottom and select an indicator, time series, or breakdown to use in the formula. 
+<dl><dd> Use the <b>+</b> and <b>-</b> to expand or collapse the list.</dd></dl></li>
+<li> Enter any operators or numbers to include in the formula. Use valid operator symbols, such as <i>+</i>, <i>-</i>, <i>/</i>, <i>%</i>, <i>&gt;</i>, <i>&lt;</i>.</li></ol>
+<p>For example, if you want to calculate the average age of open incidents based on summed age of open incidents and number of open incidents, you could use this formula: <br />
+</p>
+<dl><dd><tt>[[Summed age of open incidents]] / [[Open incidents]] / 24 </tt></dd></dl>
+<p>Formulas support multi-level breakdowns. For indicators that have <b>Collect breakdown matrix</b> enabled, it is possible to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Scorecards&amp;oldid=0.html#Drill_down_into_details" title="Using Scorecards" class="mw-redirect">drill down</a> to the second level in the detailed scorecard on the <b>Breakdowns</b> tab. For example, Closed incidents by Category, and then by Priority, or vice versa. Available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h2><span class="mw-headline" id="Rounding_in_Formula_Indicators"><span class="mw-headline-number">4.4</span> Rounding in Formula Indicators</span></h2>
+<p>Formula indicators round fractional results using Banker's rounding or mathematical rounding depending on the indicator <b>Precision</b>.
+</p><p>When a formula indicator has a <b>Precision</b> of 0, the indicator rounds the result to the nearest even, whole number. For example, if a formula indicator with <b>Precision</b> 0 calculates the values 7 + (5 / 2), the indicator rounds the result up to 10. However, if the formula calculates 2 + (5 / 2), the indicator rounds the result down to 4.
+</p><p>When a formula indicator has a <b>Precision</b> greater than 0, the indicator rounds to the nearest decimal point for the given precision. For example, a formula indicator with <b>Precision</b> 1 rounds a result of 4.45 to 4.5.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Rounding applies only to the formula result. Values within the formula are not rounded.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Editing_an_Indicator_from_a_Scorecard"><span class="mw-headline-number">4.5</span> Editing an Indicator from a Scorecard</span></h2>
+<p>Users with the pa_admin and pa_power_user roles can access and edit the indicator for a scorecard from that scorecard starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. To edit an indicator from a scorecard, click the context menu icon (<a href="index.php%3Ftitle=File:Show_functions.png.html" class="image"><img alt="Show functions.png" src="images/thumb/5/51/Show_functions.png/20px-Show_functions.png" width="20" height="21" srcset="/images/thumb/5/51/Show_functions.png/30px-Show_functions.png 1.5x, /images/thumb/5/51/Show_functions.png/40px-Show_functions.png 2x" /></a>) and select <b>Edit Indicator</b>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130201411
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.337 seconds
+Real time usage: 0.633 seconds
+Preprocessor visited node count: 132/1000000
+Preprocessor generated node count: 394/1000000
+Post‐expand include size: 3967/2097152 bytes
+Template argument size: 1899/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   95.031      1 - -total
+ 78.15%   74.270      1 - Template:Performance_Analytics
+ 66.84%   63.514      1 - Template:Topic
+  9.41%    8.941      6 - Template:Note
+  7.89%    7.502      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22518-0!*!0!1!en!5!* and timestamp 20171130201410 and revision id 250369
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html">http://wiki.servicenow.com/index.php?title=Setting_Up_Indicators&amp;oldid=250369</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Performance+Analytics.html" title="Category:Performance Analytics">Performance Analytics</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Use.html" title="Category:Use">Use</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Performance+Analytics.html" title="Category:Performance Analytics">Performance Analytics</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22518"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22518" data-vote-the-vote="5" data-vote-id="22518" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22518_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22518" data-vote-the-vote="1" data-vote-id="22518" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22518_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Setting_Up_Indicators.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Setting+Up+Indicators&amp;returntoquery=oldid%3D250369" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Setting+Up+Indicators&amp;returntoquery=oldid%3D250369" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Setting_Up_Indicators.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Setting_Up_Indicators&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Setting+Up+Indicators.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Setting+Up+Indicators&amp;returnto=Setting+Up+Indicators&amp;oldid=250369&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSetting_Up_Indicators.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Setting_Up_Indicators" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;oldid=250369.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Setting_Up_Indicators&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 14:12, 25 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1094});});</script></body></html>

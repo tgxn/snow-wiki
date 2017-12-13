@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>SAML 2.0 Setup - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SAML_2.0_Setup","wgTitle":"SAML 2.0 Setup","wgCurRevisionId":250830,"wgRevisionId":250830,"wgArticleId":23958,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SAML"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SAML_2.0_Setup","wgRelevantArticleId":23958,"wgRequestId":"a5dadd4640511ae10f2612ec","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170908172211"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=SAML_2.0_Setup"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="SAML 2.0 Setup"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="SAML"/>
+<meta name="category" content="SAML"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=SAML_2.0_Setup.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:SAML 2.0 Setup"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170908172211"/>
+
+	<meta property="article:published_time" content="20170908172211"/>
+
+	<meta property="article:modified_time" content="20170908172211"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="SAML"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=SAML_2.0_Setup"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SAML_2_0_Setup rootpage-SAML_2_0_Setup skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SAML+2.0+Setup.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=SAML+2.0+Setup&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">SAML 2.0 Setup</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+SAML 2.0 Setup</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#column-one">navigation</a>, <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/saml/concept/c_SAML2.0WebBrowserSSOProfile.html">SAML 2.0</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Authentication.html" title="Authentication">Authentication</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22ebc43d966t'></div><script type="text/javascript">window.tamOnload_tam5a22ebc43d966t=[];tree = new dTree('tam5a22ebc43d966t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22ebc43d966t = tree;
+                                               tam5a22ebc43d966t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Digest_Token_Authentication\&quot;" title=\"Digest Token Authentication\">Digest Token Authentication</a> ');
+
+tam5a22ebc43d966t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_Java_Digest_Algorithm_for_Encryption\&quot;" title=\"Sample Java Digest Algorithm for Encryption\">Sample Java Digest Algorithm for Encryption</a> ');
+tam5a22ebc43d966t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_C\&quot;" title=\"Sample C\">Sample C</a>');
+tam5a22ebc43d966t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multiple_Provider_Single_Sign-On\&quot;" title=\"Multiple Provider Single Sign-On\">Multi-Provider Single Sign-On</a>');
+tam5a22ebc43d966t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Web_Browser_SSO_Profile\&quot;" title=\"SAML 2.0 Web Browser SSO Profile\">SAML 2.0 Web Browser SSO Profile</a>');
+tam5a22ebc43d966t.add(6, 5, '<strong class=\"selflink\">SAML 2.0 Setup</strong>');
+tam5a22ebc43d966t.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_ADFS_3.0_to_Communicate_with_SAML_2.0\&quot;" title=\"Configuring ADFS 3.0 to Communicate with SAML 2.0\">Configuring ADFS 3.0 to Communicate with SAML 2.0</a>');
+tam5a22ebc43d966t.add(8, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Troubleshooting\&quot;" title=\"SAML 2.0 Troubleshooting\">Troubleshooting SAML 2.0</a>');
+tam5a22ebc43d966t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Applications\&quot;" title=\"OAuth Applications\">OAuth</a>');
+tam5a22ebc43d966t.add(10, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Setup\&quot;" title=\"OAuth Setup\">OAuth Setup</a>');
+tam5a22ebc43d966t.add(11, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_OAuth_Tokens\&quot;" title=\"Generating OAuth Tokens\">Generating OAuth Tokens</a>');
+tam5a22ebc43d966t.add(12, 9, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Client_API_Reference\&quot;" title=\"OAuth Client API Reference\">OAuth Client API Reference</a>');
+tam5a22ebc43d966t.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OKTA_SSO_Integration\&quot;" title=\"OKTA SSO Integration\">Okta SSO Integration</a>');
+
+                                               document.getElementById('5a22ebc43d966t').innerHTML = tam5a22ebc43d966t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22ebc43d966t) { window.tamOnload_tam5a22ebc43d966t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Legacy
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22ebc4432f9t'></div><script type="text/javascript">window.tamOnload_tam5a22ebc4432f9t=[];tree = new dTree('tam5a22ebc4432f9t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22ebc4432f9t = tree;
+                                               tam5a22ebc4432f9t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Unencrypted_HTTP_Header\&quot;" title=\"Unencrypted HTTP Header\">Unencrypted HTTP Header </a>');
+
+tam5a22ebc4432f9t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies\&quot;" title=\"Sample ASP.NET with C Sharp Redirect with Cookies\">Sample ASP.NET with C Sharp Redirect with Cookies</a> ');
+tam5a22ebc4432f9t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP_Script_for_Unencrypted_Single_Sign-On\&quot;" title=\"Sample ASP Script for Unencrypted Single Sign-On\">Sample ASP Script for Unencrypted Single Sign-On</a> ');
+tam5a22ebc4432f9t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_1.1_Browser_POST_Profile\&quot;" title=\"SAML 1.1 Browser POST Profile\">SAML 1.1 Browser POST Profile</a>');
+tam5a22ebc4432f9t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OpenID\&quot;" title=\"OpenID\">Stateless OpenID with signature verification</a>');
+
+                                               document.getElementById('5a22ebc4432f9t').innerHTML = tam5a22ebc4432f9t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22ebc4432f9t) { window.tamOnload_tam5a22ebc4432f9t[i](); }</script>
+
+
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#SAML_2.0_Integration_Requirements"><span class="tocnumber">1</span> <span class="toctext">SAML 2.0 Integration Requirements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Upgrading_from_Previous_Versions"><span class="tocnumber">1.1</span> <span class="toctext">Upgrading from Previous Versions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Cloning_an_Instance_with_a_SAML_Integration"><span class="tocnumber">2</span> <span class="toctext">Cloning an Instance with a SAML Integration</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#SAML_2.0_Setup"><span class="tocnumber">3</span> <span class="toctext">SAML 2.0 Setup</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_1._Activate_the_Latest_SAML_2.0_Plugin"><span class="tocnumber">3.1</span> <span class="toctext">Step 1. Activate the Latest SAML 2.0 Plugin</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2._Set_Identity_Provider_.28IdP.29_System_Properties"><span class="tocnumber">3.2</span> <span class="toctext">Step 2. Set Identity Provider (IdP) System Properties</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2a._Set_the_IdP_Issuer_URL"><span class="tocnumber">3.2.1</span> <span class="toctext">Step 2a. Set the IdP Issuer URL</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2b._Set_the_AuthnRequest_Service_URL"><span class="tocnumber">3.2.2</span> <span class="toctext">Step 2b. Set the AuthnRequest Service URL</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2c._Set_the_SingleLogoutRequest_Service_URL"><span class="tocnumber">3.2.3</span> <span class="toctext">Step 2c. Set the SingleLogoutRequest Service URL</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2d._.28Optional.29_Enable_Signed_Logout_Requests"><span class="tocnumber">3.2.4</span> <span class="toctext">Step 2d. (Optional) Enable Signed Logout Requests</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3._Set_the_Service_Provider_.28SP.29_System_Properties"><span class="tocnumber">3.3</span> <span class="toctext">Step 3. Set the Service Provider (SP) System Properties</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3a._Set_the_Instance_URL"><span class="tocnumber">3.3.1</span> <span class="toctext">Step 3a. Set the Instance URL</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3b._Set_the_Audience_URL"><span class="tocnumber">3.3.2</span> <span class="toctext">Step 3b. Set the Audience URL</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3c._Set_Up_NameID_Policy"><span class="tocnumber">3.3.3</span> <span class="toctext">Step 3c. Set Up NameID Policy</span></a>
+<ul>
+<li class="toclevel-4 tocsection-15"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Determine_What_User_Table_Field_Matches_the_NameID_Token"><span class="tocnumber">3.3.3.1</span> <span class="toctext">Determine What User Table Field Matches the NameID Token</span></a></li>
+<li class="toclevel-4 tocsection-16"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Set_the_IdP_NameID_Policy"><span class="tocnumber">3.3.3.2</span> <span class="toctext">Set the IdP NameID Policy</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Add_Appropriate_Values_to_the_User_Table_Field"><span class="tocnumber">3.3.3.3</span> <span class="toctext">Add Appropriate Values to the User Table Field</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3d._.28Optional.29_Enable_Providing_an_Authentication_Context_Class"><span class="tocnumber">3.3.4</span> <span class="toctext">Step 3d. (Optional) Enable Providing an Authentication Context Class</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3e._.28Optional.29_Set_Keystore_Properties_for_Signing_Logout_Requests"><span class="tocnumber">3.3.5</span> <span class="toctext">Step 3e. (Optional) Set Keystore Properties for Signing Logout Requests</span></a>
+<ul>
+<li class="toclevel-4 tocsection-20"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Installing_a_Service_Provider_Key_Store_for_Signing_SAML_Requests"><span class="tocnumber">3.3.5.1</span> <span class="toctext">Installing a Service Provider Key Store for Signing SAML Requests</span></a></li>
+<li class="toclevel-4 tocsection-21"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Creating_a_Service_Provider_Key_Store"><span class="tocnumber">3.3.5.2</span> <span class="toctext">Creating a Service Provider Key Store</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_4._.28Optional.29_Set_Advanced_System_Properties"><span class="tocnumber">3.4</span> <span class="toctext">Step 4. (Optional) Set Advanced System Properties</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_5._Install_the_IdP_Certificate"><span class="tocnumber">3.5</span> <span class="toctext">Step 5. Install the IdP Certificate</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Replacing_a_Missing_Certificate"><span class="tocnumber">3.5.1</span> <span class="toctext">Replacing a Missing Certificate</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_6._Generate_ServiceNow_Service_Provider_.28SP.29_Metadata"><span class="tocnumber">3.6</span> <span class="toctext">Step 6. Generate ServiceNow Service Provider (SP) Metadata</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_7._Test_the_Integration"><span class="tocnumber">3.7</span> <span class="toctext">Step 7. Test the Integration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Troubleshooting_Login_Errors"><span class="tocnumber">3.7.1</span> <span class="toctext">Troubleshooting Login Errors</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Create_a_SAML_2.0_Update_1_SSO_Configuration_for_Multi-SSO"><span class="tocnumber">4</span> <span class="toctext">Create a SAML 2.0 Update 1 SSO Configuration for Multi-SSO</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#SAML_2.0_Update_1_Requirements"><span class="tocnumber">5</span> <span class="toctext">SAML 2.0 Update 1 Requirements</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Upgrading_an_Existing_SAML_2.0_Integration_to_SAML_2.0_Update_1"><span class="tocnumber">6</span> <span class="toctext">Upgrading an Existing SAML 2.0 Integration to SAML 2.0 Update 1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Request_the_SAML_2.0_Update_1_Plugin"><span class="tocnumber">6.1</span> <span class="toctext">Request the SAML 2.0 Update 1 Plugin</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Merge_Customizations_from_Existing_Installation_Exit_Scripts_into_New_Scripts"><span class="tocnumber">6.2</span> <span class="toctext">Merge Customizations from Existing Installation Exit Scripts into New Scripts</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Test_the_Update"><span class="tocnumber">6.3</span> <span class="toctext">Test the Update</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Responses_After_the_Update"><span class="tocnumber">6.4</span> <span class="toctext">Sample SAML 2 Responses After the Update</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Response_with_Issuer_Element"><span class="tocnumber">6.4.1</span> <span class="toctext">Sample SAML 2 Response with Issuer Element</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Response_with_the_SubjectConfirmation_and_SubjectConfirmationData_Elements"><span class="tocnumber">6.4.2</span> <span class="toctext">Sample SAML 2 Response with the SubjectConfirmation and SubjectConfirmationData Elements</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Response_with_the_AudienceRestrictions_and_Audience_Elements"><span class="tocnumber">6.4.3</span> <span class="toctext">Sample SAML 2 Response with the AudienceRestrictions and Audience Elements</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="SAML_2.0_Integration_Requirements"><span class="mw-headline-number">1</span> SAML 2.0 Integration Requirements</span></h1>
+<p>The <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/saml/concept/c_SAML2.0WebBrowserSSOProfile.html">SAML 2.0</a> single sign-on integration requires:
+</p>
+<ul><li> Activating the latest SAML 2.0 plugin</li>
+<li> Access to a SAML 2.0 Identity Provider (IdP)
+<ul><li> Must provide an authentication request service</li>
+<li> Must provide a single logout service</li>
+<li> Must have a valid certificate</li>
+<li> Must accept Service Provider (SP) metadata</li>
+<li> Must use the <tt>NameID</tt> element in the SAMLResponse</li></ul></li></ul>
+<h2><span class="mw-headline" id="Upgrading_from_Previous_Versions"><span class="mw-headline-number">1.1</span> Upgrading from Previous Versions</span></h2>
+<p>The following table lists the actions to take if you are running a previous versions of SAML.
+</p>
+<table class="standard">
+
+<tr>
+<th> Previous SAML version
+</th>
+<th> Action required
+</th></tr>
+<tr>
+<td> SAML 1.1
+</td>
+<td> Contact Customer Support to migrate your instance to SAML 2.0 Update 1.
+</td></tr>
+<tr>
+<td> SAML 2.0
+</td>
+<td> Update to SAML 2.0 Update 1. See <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Upgrading_an_Existing_SAML_2.0_Integration_to_SAML_2.0_Update_1">Upgrading an Existing SAML 2.0 Integration to SAML 2.0 Update 1</a>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Cloning_an_Instance_with_a_SAML_Integration"><span class="mw-headline-number">2</span> Cloning an Instance with a SAML Integration</span></h1>
+<p>Before cloning an instance that uses SAML 2.0, preserve the SAML SSO-related settings to prevent the target instance from redirecting all authentication requests to the original IdP with the wrong issuer and audience parameters.
+</p><p>To preserve the settings:
+</p>
+<ol><li>Navigate to <b>System Clone &gt; Preserve Data &gt; Core Instance Properties</b>.</li>
+<li>Ensure SAML SSO-related properties are preserved as shown below.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:702px;"><a href="index.php%3Ftitle=File:DataPreserver_SAML.png.html" class="image"><img alt="" src="images/thumb/4/49/DataPreserver_SAML.png/700px-DataPreserver_SAML.png" width="700" height="467" class="thumbimage" srcset="/images/4/49/DataPreserver_SAML.png 1.5x, /images/4/49/DataPreserver_SAML.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:DataPreserver_SAML.png.html" class="internal" title="Enlarge"></a></div>Preserving SAML SSO-related settings</div></div></div><br style="clear:both;" />
+<p>When you <a href="index.php%3Ftitle=System_Clone.html#Cloning_an_Instance" title="System Clone">create the clone</a>, include attachments so that certificates carry over to the target instance.
+</p>
+<h1><span class="mw-headline" id="SAML_2.0_Setup"><span class="mw-headline-number">3</span> SAML 2.0 Setup</span></h1>
+<p>Use the following steps to install a new integration of SAML 2.0.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>It is recommended that customers using an existing SAML 2.0 integration upgrade to the latest <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Upgrading_an_Existing_SAML_2.0_Integration_to_SAML_2.0_Update_1">SAML 2.0 integration update</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<ol>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_1._Activate_the_Latest_SAML_2.0_Plugin">Activate the latest SAML 2.0 plugin.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2._Set_Identity_Provider_.28IdP.29_System_Properties">Set Identity Provider (IdP) system properties.</a>
+<ol type="a">
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2a._Set_the_IdP_Issuer_URL">Set the IdP issuer URL system property.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2b._Set_the_AuthnRequest_Service_URL">Set the AuthnRequest service URL system property.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2c._Set_the_SingleLogoutRequest_Service_URL">Set the SingleLogoutRequest service URL system property.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2d._.28Optional.29_Enable_Signed_Logout_Requests">(Optional) Enable signed logout requests</a></li>
+</ol>
+</li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3._Set_the_Service_Provider_.28SP.29_System_Properties">Set Service Provider (SP) system properties.</a>
+<ol type="a">
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3a._Set_the_Instance_URL">Set the instance URLs system properties.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3b._Set_the_Audience_URL">Set the audience URL system property.</a>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3c._Set_Up_NameID_Policy">Set the NameID policy.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3d._.28Optional.29_Enable_Providing_an_Authentication_Context_Class">(Optional) Enable providing an authentication context class.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3e._.28Optional.29_Set_Keystore_Properties_for_Signing_Logout_Requests">(Optional) Set Keystore properties for signing logout requests</a></li>
+</ol>
+</li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_4._.28Optional.29_Set_Advanced_System_Properties">(Optional) Set advanced system properties.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_5._Install_the_IdP_Certificate">Install the IdP certificate.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_6._Generate_ServiceNow_Service_Provider_.28SP.29_Metadata">Generate ServiceNow Service Provider (SP) metadata.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_7._Test_the_Integration">Test the integration.</a></li>
+</ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>View the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Video+Tutorial+Configuring+SAML+2.0+Plugin&amp;oldid=0.html" title="Video Tutorial Configuring SAML 2.0 Plugin">SAML 2.0 video tutorial</a> for a demonstration.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Step_1._Activate_the_Latest_SAML_2.0_Plugin"><span class="mw-headline-number">3.1</span> Step 1. Activate the Latest SAML 2.0 Plugin</span></h2>
+<p>The SAML 2.0 plugin is activated when you activate <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Multiple+Provider+Single+Sign-On&amp;oldid=0.html" title="Multiple Provider Single Sign-On">Multiple Provider Single Sign-On</a> starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. For previous versions, contact customer support to request the most recent version of the <b>SAML 2.0 Single Sign-On</b> plugin.
+</p><p>The plugin installs a new application called <b>SAML 2 Single Sign-on</b>.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:238px;"><a href="index.php%3Ftitle=File:Saml2_app.png.html" class="image"><img alt="" src="images/1/17/Saml2_app.png" width="236" height="172" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Saml2_app.png.html" class="internal" title="Enlarge"></a></div>The SAML application menu and modules</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Step_2._Set_Identity_Provider_.28IdP.29_System_Properties"><span class="mw-headline-number">3.2</span> Step 2. Set Identity Provider (IdP) System Properties</span></h2>
+<p>An IdP generally offers an XML document containing their authentication and logout metadata. For example, <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.ssocircle.com/en/">SSOCircle</a> publishes their <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://idp.ssocircle.com/">metadata</a> online.
+</p><p>Browse the IdP metadata to find these entries:
+</p>
+<ul><li> The <tt>SingleSignOnService</tt> element with a <tt>Binding</tt> attribute that contains a value of <tt>HTTP-Redirect</tt>. The <tt>Location</tt> attribute lists the URL the integration requires for the AuthnRequest service.</li>
+<li> The <tt>SingleLogoutService</tt> element with a <tt>Binding</tt> attribute that contains a value of <tt>HTTP-Redirect</tt>.The <tt>Location</tt> attribute lists the URL the integration requires for the SingleLogoutRequest service.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The SAML 2.0 integration only supports binding to IdP services by HTTP-Redirect.</i>
+</td></tr></table>
+<p><br />
+For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;SingleSignOnService</span> <span class="na">Binding=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot;</span>
+<span class="na">Location=</span><span class="s">&quot;https://idp.ssocircle.com:443/sso/SSORedirect/metaAlias/ssocircle&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;SingleLogoutService</span> <span class="na">Binding=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot;</span>
+<span class="na">Location=</span><span class="s">&quot;https://idp.ssocircle.com:443/sso/IDPSloRedirect/metaAlias/ssocircle&quot;</span>
+<span class="na">ResponseLocation=</span><span class="s">&quot;https://idp.ssocircle.com:443/sso/IDPSloRedirect/metaAlias/ssocircle&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Idp_properties.png.html" class="image"><img alt="" src="images/thumb/5/5e/Idp_properties.png/600px-Idp_properties.png" width="600" height="349" class="thumbimage" srcset="/images/5/5e/Idp_properties.png 1.5x, /images/5/5e/Idp_properties.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Idp_properties.png.html" class="internal" title="Enlarge"></a></div>Identity Provider (IdP) System Properties</div></div></div> <br style="clear:both;" />
+<h3><span class="mw-headline" id="Step_2a._Set_the_IdP_Issuer_URL"><span class="mw-headline-number">3.2.1</span> Step 2a. Set the IdP Issuer URL</span></h3>
+<p>Provide the URL to the IdP's who will issue the security token. The integration verifies that each SAML response contains the same URL listed in this system property as the URL listed in the <b>Issuer</b> element. For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;samlp:Response</span> <span class="na">xmlns:samlp=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;</span>
+  <span class="na">Destination=</span><span class="s">&quot;https://demoi2.service-now.com/navpage.do&quot;</span>
+  <span class="na">ID=</span><span class="s">&quot;s28da6774c88ae1eab292bf25fe625db81919d8e1e&quot;</span>
+  <span class="na">InResponseTo=</span><span class="s">&quot;SNC841720c227c81948cfd68cadcad235c6&quot;</span>
+  <span class="na">IssueInstant=</span><span class="s">&quot;2012-01-30T20:07:10Z&quot;</span>
+  <span class="na">Version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;saml:Issuer</span> <span class="na">xmlns:saml=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;</span><span class="nt">&gt;</span>http://idp.ssocircle.com<span class="nt">&lt;/saml:Issuer&gt;</span>
+   ...
+   <span class="nt">&lt;saml:Assertion</span> <span class="na">xmlns:saml=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;</span>
+     <span class="na">ID=</span><span class="s">&quot;s2f347f973c063836cf70ea38302d94976f9c5b851&quot;</span>
+     <span class="na">IssueInstant=</span><span class="s">&quot;2012-01-30T20:07:10Z&quot;</span>
+     <span class="na">Version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;saml:Issuer&gt;</span>http://idp.ssocircle.com<span class="nt">&lt;/saml:Issuer&gt;</span>
+      ...
+   <span class="nt">&lt;/saml:Assertion&gt;</span>
+<span class="nt">&lt;/samlp:Response&gt;</span>
+</pre></div>
+<ol><li>Navigate to <b>SAML 2 Single Sign-on &gt; Properties</b>.</li>
+<li>In the property <b>The Identity Provider URL which will issue the SAML2 security token with user info.</b>, enter the URL to your IdP. 
+<dl><dd>By default, the integration contains the URL to SSOCircle <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://idp.ssocircle.com">http://idp.ssocircle.com</a>.</dd></dl></li></ol>
+<h3><span class="mw-headline" id="Step_2b._Set_the_AuthnRequest_Service_URL"><span class="mw-headline-number">3.2.2</span> Step 2b. Set the AuthnRequest Service URL</span></h3>
+<p>Using the IdP's metdata, set the request service URLs for the integration's IdP.
+</p>
+<ol><li>In the property <b>The base URL to the Identity Provider's AuthnRequest service. The AuthnRequest will be posted to this URL as the SAMLRequest parameter</b>, enter the URL to the HTTP-Redirect binding obtained from the <tt>SingleSignOnService</tt> element. </li>
+<li>Select the check box next to <b>Sign AuthnRequest</b> to enable the Identity Provider's single-sign on service to receive a signed AuthnRequest.</li>
+<li>In the property <b>When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL. This is the base URL where the initial SAML 2.0 AuthnRequest is sent using the SAMLRequest parameter</b>, enter the URL to the HTTP-Redirect binding obtained from the <tt>SingleSignOnService</tt> element.
+<dl><dd>By default, the integration contains the URL to the SSOCircle service.</dd></dl></li></ol>
+<h3><span class="mw-headline" id="Step_2c._Set_the_SingleLogoutRequest_Service_URL"><span class="mw-headline-number">3.2.3</span> Step 2c. Set the SingleLogoutRequest Service URL</span></h3>
+<p>Using the IdP's metdata, set the request service URLs for the integration's IdP.
+</p>
+<ol><li>In the property <b>The base URL to the Identity Provider's SingleLogoutRequest service. The LogoRequest will be posted to this URL as the SAMLRequest parameter</b>, enter the URL obtained from the <tt>SingleLogoutService</tt> element. 
+<dl><dd>By default, the integration contains the URL to the SSOCircle service.</dd></dl></li>
+<li>In the property <b>URL to redirect users after logout, typically back to the portal that enabled the SSO (e.g. http://portal.companya.com/logout)</b>, enter the URL where you want to redirect users after they successfully logout. If your IdP uses form-based authentication, enter the URL to your IdP's login form. If your IdP uses a non-form-based authentication method such as Kerberos, you should set the URL to a static logout page. This way, users who log out do not get immediately get redirected to the IdP and login again.
+<dl><dd>By default, the integration contains the URL to the static UI page <tt>external_logout_complete.do</tt>.</dd></dl></li></ol>
+<h3><span class="mw-headline" id="Step_2d._.28Optional.29_Enable_Signed_Logout_Requests"><span class="mw-headline-number">3.2.4</span> Step 2d. (Optional) Enable Signed Logout Requests</span></h3>
+<p>Some IdPs require the Service Provider to sign logout requests with a certificate. If your IdP requires signed logout requests, use the IdP's metdata to set the following system properties.
+</p>
+<ol><li>From the property <b>Sign LogoutRequest. Set this property to true if the Identity Provider's SingleLogoutRequest service requires signed LogoutRequest</b>, select <b>Yes</b> to specify that your IdP requires a signed logout request, or select <b>No</b> to use unsigned logout requests.</li>
+<li>If you selected <b>Yes</b> to <b>Sign LogoutRequest</b>, then in <b>The protocol binding for the Identity Provider's SingleLogoutRequest service. (Value can be either "<a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a>" or "<a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST</a>".)</b> property, enter the one of the supported values listed in <tt>Binding</tt> attribute from the <tt>SingleLogoutService</tt> element.
+<dl><dd>By default, the integration uses an HTTP-Redirect binding.</dd></dl></li>
+<li>Click <b>Update</b>.</li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Installing_a_Service_Provider_Key_Store_for_Signing_SAML_Requests">Install a Service Provider (SP) key store</a>.</li></ol>
+<h2><span class="mw-headline" id="Step_3._Set_the_Service_Provider_.28SP.29_System_Properties"><span class="mw-headline-number">3.3</span> Step 3. Set the Service Provider (SP) System Properties</span></h2>
+<p>These system properties define how the ServiceNow system interacts with the IdP as a Service Provider.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Sp_properties.png.html" class="image"><img alt="" src="images/thumb/9/9b/Sp_properties.png/600px-Sp_properties.png" width="600" height="562" class="thumbimage" srcset="/images/9/9b/Sp_properties.png 1.5x, /images/9/9b/Sp_properties.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Sp_properties.png.html" class="internal" title="Enlarge"></a></div>Service Provider (SP) System Properties</div></div></div> <br style="clear:both;" />
+<h3><span class="mw-headline" id="Step_3a._Set_the_Instance_URL"><span class="mw-headline-number">3.3.1</span> Step 3a. Set the Instance URL</span></h3>
+<p>Set the instance-specific URLs.
+</p>
+<ol><li>In the property <b>The URL to the Service-now instance (usually this instance)</b>, enter the URL (including login page) of the instance for which the IdP authenticates. For example: https://yourinstance.service-now.com/navpage.do</li>
+<li>In the property <b>The entity identification, or the issuer</b>, enter the base URL (excluding login page) of the instance for which the IdP authenticates. For example: https://yourinstance.service-now.com/</li></ol>
+<h3><span class="mw-headline" id="Step_3b._Set_the_Audience_URL"><span class="mw-headline-number">3.3.2</span> Step 3b. Set the Audience URL</span></h3>
+<p>The Audience system property allows your instance to verify that it is the intended recipient of a SAML response. The integration verifies that each SAML response contains the same URL listed in this system property as the URL listed in the <b>Audience</b> element. For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;samlp:Response</span> <span class="na">xmlns:samlp=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;</span>
+  <span class="na">ID=</span><span class="s">&quot;s2cdc74f37f923e26fe1aeec42b70a93d24230334f&quot;</span>
+  <span class="na">InResponseTo=</span><span class="s">&quot;90AA6073F01567BFB0DF194F596314E2&quot;</span>
+  <span class="na">Version=</span><span class="s">&quot;2.0&quot;</span>
+  <span class="na">IssueInstant=</span><span class="s">&quot;2010-04-29T23:21:51Z&quot;</span>
+  <span class="na">Destination=</span><span class="s">&quot;https://dloomac.service-now.com/navpage.do&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;saml:Conditions</span> <span class="na">NotBefore=</span><span class="s">&quot;2012-01-30T19:57:10Z&quot;</span>
+  <span class="na">NotOnOrAfter=</span><span class="s">&quot;2012-01-30T20:17:10Z&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;saml:AudienceRestriction&gt;</span>
+      <span class="nt">&lt;saml:Audience&gt;</span>https://demoi2.service-now.com<span class="nt">&lt;/saml:Audience&gt;</span>
+   <span class="nt">&lt;/saml:AudienceRestriction&gt;</span>
+<span class="nt">&lt;/saml:Conditions&gt;</span>
+...
+<span class="nt">&lt;/samlp:Response&gt;</span>
+</pre></div>
+<ol><li>Navigate to <b>SAML 2 Single Sign-on &gt; Properties</b>.</li>
+<li>In the property <b>The audience uri that accepts SAML2 token. (Normally, it is your instance URI. For example: https://&lt;instance name&gt;.service-now.com.)</b>, enter the URL of your instance. For example, https://demoi2.service-now.com. This URL must match the value of the <b>Audience</b> element in the SAML Response.</li>
+<li>Click <b>Update</b>.</li></ol>
+<h3><span class="mw-headline" id="Step_3c._Set_Up_NameID_Policy"><span class="mw-headline-number">3.3.3</span> Step 3c. Set Up NameID Policy</span></h3>
+<p>SAML 2.0 requires the IdP to exchange a <tt>NameID</tt> token with the service provider. For the SAML 2.0 integration the <tt>NameID</tt> token must map to a particular field in the User table. The integration uses the <tt>NameID</tt> token's value to determine what ServiceNow user the IdP authenticates.
+</p>
+<ol><li>Browse the IdP metadata to find the <tt>NameIDFormat</tt> element that contains a value of <tt>emailAddress</tt>. The value of this element is the default format that the integration uses.</li>
+<li>Review other <tt>NameIDFormat</tt> elements to determine if there are formats that match other fields in the User table.</li></ol>
+<h4><span class="mw-headline" id="Determine_What_User_Table_Field_Matches_the_NameID_Token"><span class="mw-headline-number">3.3.3.1</span> Determine What User Table Field Matches the NameID Token</span></h4>
+<p>Identity providers specify what format the <tt>NameID</tt> token has. Setting up SAML 2.0 requires selecting a field from the User table that matches the format of the <tt>NameID</tt> token. Typically, IdPs offer the option to use an email address as the <tt>NameID</tt> token. Since the User table contains an email field, this field is a logical choice for use as a <tt>NameID</tt> token. To use another field from the User table as the <tt>NameID</tt> token, first verify that the IdP offers a NameID format that matches the value of a User table field. This may require adding the field to the User table.
+</p>
+<ol><li>Compare the available formats in the IdP's <tt>NameIDFormat</tt> element to fields in the User table.</li>
+<li>Select a <tt>NameID</tt> format where there is a matching value in the User table.</li>
+<li>In the <b>The User table field to match with the Subject's NameID element in the SAMLResponse</b> field, enter the name of the User table field to search for matching values in the <tt>NameID</tt> token. 
+<dl><dd>By default, the integration uses the email field.</dd></dl></li></ol>
+<h4><span class="mw-headline" id="Set_the_IdP_NameID_Policy"><span class="mw-headline-number">3.3.3.2</span> Set the IdP NameID Policy</span></h4>
+<p>Specify what format the IdP uses for the <tt>NameID</tt> token. This format is listed as part of the IdP's metadata.
+</p>
+<ol><li>In the property <b>The NameID policy to use for returning the Subject's NameID in the SAMLResponse. Your SAML identity provider will have to support this by declaring the policy in its metadata. The NameID value is used to match with the specified field in the User table to lookup the user.</b>, enter the value of the <tt>NameIDFormat</tt> element the integration uses.
+<dl><dd>By default, the integration uses the SSOCircle <tt>NameIDFormat</tt> for email addresses.</dd></dl></li>
+<li>Click <b>Save</b>.</li></ol>
+<h4><span class="mw-headline" id="Add_Appropriate_Values_to_the_User_Table_Field"><span class="mw-headline-number">3.3.3.3</span> Add Appropriate Values to the User Table Field</span></h4>
+<p>Ensure that the integration's User table field contains appropriate matching values. For example, if the integration uses the email field as the <tt>NameID</tt> token, ensure that the ServiceNow system lists the same email address as the IdP. The integration fails to authenticate any user who does not have a matching value for the <tt>NameID</tt> token.
+</p>
+<h3><span class="mw-headline" id="Step_3d._.28Optional.29_Enable_Providing_an_Authentication_Context_Class"><span class="mw-headline-number">3.3.4</span> Step 3d. (Optional) Enable Providing an Authentication Context Class</span></h3>
+<p>You can enable the ServiceNow system to send an authentication context class request to the IdP containing your instance's preferred authentication request format. If you enable creating an AuthContextClass message, then you must also specify an authentication context class reference format.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Some IdP's do not allow the Service Provider to set the authentication context class. Disabling this setting allows the IdP to choose the authentication context class.</i>
+</td></tr></table>
+<p><br />
+</p>
+<ol><li>From the property <b>Create an AuthnContextClass request in the AuthnRequest statement</b>, select <b>Yes</b> to specify a particular context class such as Password Protected Transport, or select <b>No</b> to have the IdP select the most appropriate context class.</li>
+<li>If you selected <b>Yes</b> to <b>Create an AuthnContextClass request in the AuthnRequest statement</b>, then in <b>The AuthnContextClassRef method that we will request in our SAML 2.0 AuthnRequest to the Identity Provider</b> property, enter the URN of the context class you want to use for authentication (see table). 
+<dl><dd>By default, the integration uses a Password Protected Transport authentication method.</dd></dl></li>
+<li>Click <b>Update</b>.</li></ol>
+<p><br />
+<b>AuthnContextClass URN options</b>
+</p>
+<table class="standard">
+
+<tr>
+<th> Authentication Type
+</th>
+<th> Authentication Context Class URN
+</th></tr>
+<tr>
+<td> Forms-based authentication
+</td>
+<td> <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport">urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</a>
+</td></tr>
+<tr>
+<td> Kerberos-based authentication
+</td>
+<td> <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="urn:federation:authentication:windows">urn:federation:authentication:windows</a>
+</td></tr></table>
+<h3><span class="mw-headline" id="Step_3e._.28Optional.29_Set_Keystore_Properties_for_Signing_Logout_Requests"><span class="mw-headline-number">3.3.5</span> Step 3e. (Optional) Set Keystore Properties for Signing Logout Requests</span></h3>
+<p>The Keystore properties allow the integration to sign logout requests using your signed server and signed CA certificates.
+</p>
+<ol><li>In the property <b>The alias of key entry stored in SAML 2.0 SP Keystore used to sign SAML 2 requests</b>, enter the alias name you created for the SAML 2.0 Keystore. By default, the integration looks for the alias <b>saml2sp</b>.</li>
+<li> in the property <b>The password of key entry stored in SAML 2.0 SP Keystore used to sign SAML 2 requests</b>, enter the password to your SAML 2.0 Keystore. By default, the password is the same as the default alias name.</li>
+<li>Click <b>Update</b>.</li>
+<li>Regenerate your <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_6._Generate_ServiceNow_Service_Provider_.28SP.29_Metadata">SP metadata</a>.</li></ol>
+<h4><span class="mw-headline" id="Installing_a_Service_Provider_Key_Store_for_Signing_SAML_Requests"><span class="mw-headline-number">3.3.5.1</span> Installing a Service Provider Key Store for Signing SAML Requests</span></h4>
+<p>Use the following steps to remove the existing example key store and install your own Service Provider key store containing your public and private key pair.
+</p>
+<ol><li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Creating_a_Service_Provider_Key_Store">Create a Service Provider key store.</a></li>
+<li>Navigate to <b>SAML 2 Single Sign-on &gt; Certificate</b>.</li>
+<li>Click <b>SAML 2.0 SP Keystore</b>.</li>
+<li>Click the <b>Manage Attachments</b> link.</li>
+<li>Select the Delete checkbox next to <b>saml2sp_keystore</b>.</li>
+<li>Click <b>Remove</b>.</li>
+<li>Click <b>Choose Files</b> and select the Keystore containing your signed certificates.</li>
+<li>Click <b>Attach</b>.</li>
+<li>Close the Attachments popup.</li>
+<li>In <b>Key store password</b>, enter the password to access the SAML 2 alias.</li>
+<li>Click <b>Update</b>.</li></ol>
+<h4><span class="mw-headline" id="Creating_a_Service_Provider_Key_Store"><span class="mw-headline-number">3.3.5.2</span> Creating a Service Provider Key Store</span></h4>
+<p>In order for your instance to sign logout requests, you must create a Java Key store containing the following items:
+</p>
+<ul><li> Signed server certificate for the ServiceNow instance</li>
+<li> Signed CA certificate</li>
+<li> Public and private key pair</li></ul>
+<p>You may create your own signed certificate with a private certificate authority or purchase one from a public certificate authority.
+</p><p>The following steps illustrate how to generate a new Java Keytool keystore file, create a certificate signing request (CSR), and import certificates. Any root or intermediate certificates need to be imported before importing the primary certificate for your domain. Type these commands in a command line interface.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>These instructions are not specific to the ServiceNow platform and require technical knowledge of security certificates to complete. Technical Support cannot assist in creating the certificates.</i>
+</td></tr></table>
+<p><br />
+</p>
+<ol><li>Generate a Java keystore and key pair. 
+<dl><dd><pre>keytool -genkey -alias mydomain -keyalg RSA -keystore my.keystore</pre>   </dd></dl></li>
+<li>Generate a CSR for an existing Java keystore.
+<dl><dd><pre>keytool -certreq -alias mydomain -keystore my.keystore -file mydomain.csr</pre></dd></dl></li>
+<li>Import a root or intermediate certificate authority CA certificate to an existing Java keystore.
+<dl><dd><pre>keytool -import -trustcacerts -alias root -file Thawte.crt -keystore my.keystore</pre></dd></dl></li>
+<li>Import a signed primary certificate to an existing Java keystore.
+<dl><dd><pre>keytool -import -trustcacerts -alias mydomain -file mydomain.crt -keystore my.keystore</pre></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Step_4._.28Optional.29_Set_Advanced_System_Properties"><span class="mw-headline-number">3.4</span> Step 4. (Optional) Set Advanced System Properties</span></h2>
+<p>The following advanced settings allow you to further increase security and debug the integration.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Adv_properties.png.html" class="image"><img alt="" src="images/thumb/5/5f/Adv_properties.png/600px-Adv_properties.png" width="600" height="130" class="thumbimage" srcset="/images/5/5f/Adv_properties.png 1.5x, /images/5/5f/Adv_properties.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Adv_properties.png.html" class="internal" title="Enlarge"></a></div>Advanced SAML 2.0 system properties</div></div></div> <br style="clear:both;" />
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> The number of seconds "notBefore" constraint, or after "notOnOrAfter" constraint, to consider still valid
+</td>
+<td> Enter the number of seconds to add to the <b>NotBefore</b> and <b>NotOnOrAfter</b> constraints to account for time differences between the IdP clock and SP clock. These constraints prevent against replay attacks by denying requests that are not made within the specified time frame. If the IdP clock and SP clock are significantly different, network latency may result in the SAML request being unauthorized. This property adds a grace period during which SAML requests and responses are still considered valid.
+</td></tr>
+<tr>
+<td> Turn on debug logging for SAML 2.0 Authentication
+</td>
+<td> Select <b>Yes</b> to enable additional logging information for SAML 2.0 events.
+</td></tr></table>
+<h2><span class="mw-headline" id="Step_5._Install_the_IdP_Certificate"><span class="mw-headline-number">3.5</span> Step 5. Install the IdP Certificate</span></h2>
+<p>Identity providers use a certificate to verify communications with the service provider. Locate the IdP's certificate within the IdP's metadata. You must install the same certificate on both the IdP and the instance.
+</p><p>Certificates for single-sign on should always be in PEM format to work with SAML certificates.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Enable the <b>Certificate Expiring</b> and <b>Certificate Expired</b> <a href="index.php%3Ftitle=Email_Notifications.html" title="Email Notifications">notifications</a> so you remember to update the certificate.</i>
+</td></tr></table>
+<p><br />
+To install the certificate on the ServiceNow instance:
+</p>
+<ol><li>Browse the IdP metadata to find the <tt>ds:X509Certificate</tt> element. The value of this element contains the IdP's certificate.</li>
+<li>In the ServiceNow system, navigate to <b>SAML 2 Single Sign-on &gt; Certificate</b>.</li>
+<li>Do not change the <b>Name</b> entry. The name of the X.509 certificate must be <b>SAML 2.0</b> in order for the integration to use it.</li>
+<li>In the <b>PEM Certificate</b> field, enter the value of the <tt>ds:X509Certificate</tt> element.</li>
+<li>Click <b>Save</b>.</li></ol>
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:717px;"><a href="index.php%3Ftitle=File:Saml2_cert.png.html" class="image"><img alt="" src="images/7/79/Saml2_cert.png" width="715" height="369" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Saml2_cert.png.html" class="internal" title="Enlarge"></a></div>X.509 Certificate form</div></div></div><br style="clear:both;" /></dd></dl>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The integration does not currently sign the certificate when sending authentication requests to the IdP, however there is an option to <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2d._.28Optional.29_Enable_Signed_Logout_Requests">sign logout requests</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Replacing_a_Missing_Certificate"><span class="mw-headline-number">3.5.1</span> Replacing a Missing Certificate</span></h3>
+<p>If the the ServiceNow application <b>SAML 2 Single Sign-on &gt; Certificate</b> module displays a blank page, someone has deleted the SAML 2.0 certificate record. 
+</p><p>To fix the missing certificate:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Certificates</b>.</li>
+<li>Create a new record called <b>SAML 2.0</b>. You <i>MUST</i> use this name.</li>
+<li>Click <b>SAML 2 Single Sign-on &gt; Certificate</b>.</li>
+<li>In the <b>PEM Certificate</b> field, enter the value of the <tt>ds:X509Certificate</tt> element from your IdP's metadata.</li>
+<li>Click <b>Save</b>.</li></ol>
+<h2><span class="mw-headline" id="Step_6._Generate_ServiceNow_Service_Provider_.28SP.29_Metadata"><span class="mw-headline-number">3.6</span> Step 6. Generate ServiceNow Service Provider (SP) Metadata</span></h2>
+<p>After setting all the integration properties, generate the instance SP metadata. The IdP needs the instance SP metadata to authenticate and forward requests.
+</p>
+<ol>
+<li>Navigate to <b>SAML 2 Single Sign-on &gt; Metadata</b>. The integration automatically generates the instance's SP metadata from the system property settings.</li>
+<li>Copy the SP metadata in the text box. For example:
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;EntityDescriptor</span> <span class="na">xmlns=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:metadata&quot;</span>
+  <span class="na">entityID=</span><span class="s">&quot;https://demoi2.service-now.com&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SPSSODescriptor</span> <span class="na">AuthnRequestsSigned=</span><span class="s">&quot;false&quot;</span> 
+    <span class="na">WantAssertionsSigned=</span><span class="s">&quot;false&quot;</span> 
+    <span class="na">protocolSupportEnumeration=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;SingleLogoutService</span> <span class="na">Binding=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot;</span>
+      <span class="na">Location=</span><span class="s">&quot;https://demoi2.service-now.com/navpage.do&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;NameIDFormat&gt;</span>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress<span class="nt">&lt;/NameIDFormat&gt;</span>
+    <span class="nt">&lt;AssertionConsumerService</span> <span class="na">isDefault=</span><span class="s">&quot;true&quot;</span> 
+       <span class="na">index=</span><span class="s">&quot;0&quot;</span> 
+       <span class="na">Binding=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&quot;</span> 
+       <span class="na">Location=</span><span class="s">&quot;https://demoi2.service-now.com/navpage.do&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/SPSSODescriptor&gt;</span>
+<span class="nt">&lt;/EntityDescriptor&gt;</span>
+</pre></div>
+</li>
+<li>Provide the instance SP metadata to the IdP. For example, SSOCircle allows a user to provide the SP metadata online.</li>
+</ol>
+<h2><span class="mw-headline" id="Step_7._Test_the_Integration"><span class="mw-headline-number">3.7</span> Step 7. Test the Integration</span></h2>
+<p>After completing all other setup tasks, test the integration.
+</p>
+<ol>
+<li>Log in to the instance as a user with the admin role.</li>
+<li>Navigate to <b>SAML 2 Single Sign-on &gt; Properties</b>.</li>
+<li>In the property <b>Enable external authentication</b>, select <b>Yes</b>.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Enabling external authentication requires all users to use SAML 2.0 single sign-on. Thus, if anyone tries to access the ServiceNow application in an unauthenticated state, the instance automatically sends an authentication request to the (IdP) and redirects the user to the SAML IdP Authentication page.</i>
+</td></tr></table>
+</li>
+<li>Click <b>Save</b>.</li>
+<li>Log out of the instance.</li>
+<li>Browse to the instance URL. If the integration is functioning properly, the IdP should ask for the users credentials.</li>
+<li>Provide the IdP user credentials. If the integration is functioning properly, the IdP should forward the user to the instance as the appropriate user. </li>
+</ol>
+<h3><span class="mw-headline" id="Troubleshooting_Login_Errors"><span class="mw-headline-number">3.7.1</span> Troubleshooting Login Errors</span></h3>
+<p>Here is a list of common login errors and their solutions.
+</p>
+<table class="standard">
+
+<tr>
+<th> Error or Symptom
+</th>
+<th> Solution
+</th></tr>
+<tr>
+<td> Authentication fails and the login request generates an infinite loop between the ServiceNow system and the IdP.
+</td>
+<td> Set (or create) the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">system property</a> <tt>glide.authenticate.failed_redirect</tt> to redirect failed authentication requests to this URL. Typically the URL endpoint is an error page or logout page.
+</td></tr>
+<tr>
+<td> Login requests generate an infinite loop between the ServiceNow system and the IdP when High Security is active.
+</td>
+<td> The <a href="index.php%3Ftitle=High_Security_Settings.html" title="High Security Settings">High Security</a> plugin's rotating session feature can cause problems with the SAML 2.0 authentication process. Disable the rotating session feature when using SAML 2.0 for authentication. SAML 2.0 needs to redirect URLs to an IdP.  When rotating sessions are enabled, any redirection causes the session to rotate and forces the instance to query the IdP again. This causes an endless loop of new sessions between the instance and the IdP.
+</td></tr></table>
+<p>For additional troubleshooting help, see <a href="index.php%3Ftitle=SAML_2.0_Troubleshooting.html" title="SAML 2.0 Troubleshooting">SAML 2.0 Troubleshooting</a>.
+</p>
+<h1><span class="mw-headline" id="Create_a_SAML_2.0_Update_1_SSO_Configuration_for_Multi-SSO"><span class="mw-headline-number">4</span> Create a SAML 2.0 Update 1 SSO Configuration for Multi-SSO</span></h1>
+<p>You can create and update SAML 2.0 Update 1 SSO configurations from the multiple provider single sign-on feature. 
+</p>
+<ol><li>Navigate to <b>Multi-Provider SSO &gt; Identity Providers</b>.</li>
+<li>To update a configuration, click on an SSO configuration record.</li>
+<li>To create a new configuration, click <b>New</b>.</li>
+<li> Click <b>SAML2 Update 1</b>.</li>
+<li> Complete the form, using the fields from the table and submit the record.</li></ol>
+<p>For more information on multi-provider single-sign on, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Multiple+Provider+Single+Sign-On&amp;oldid=0.html" title="Multiple Provider Single Sign-On">Multi-Provider Single Sign-On</a>.
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Enter the name for the SSO property record.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Select the check box to set the SAML configuration to active.
+</td></tr>
+<tr>
+<td> User Field
+</td>
+<td> Enter the field on the User table that contains the value the IdP needs to identify the user.
+</td></tr>
+<tr>
+<td> Identity Provider URL
+</td>
+<td> Enter the URL to your IdP.
+</td></tr>
+<tr>
+<td> Identity Provider's AuthnRequest
+</td>
+<td> Enter the URL to the HTTP-Redirect binding obtained from the <tt>SingleSignOnService</tt> element.
+</td></tr>
+<tr>
+<td> Identity Provider's SingleLogoutRequest
+</td>
+<td> Enter the URL obtained from the <tt>SingleLogoutService</tt> element.
+</td></tr>
+<tr>
+<td> Failed Requirement Redirect
+</td>
+<td> Enter the URL for redirecting failed authentication requests. Typically, the URL endpoint is an error page or logout page.
+</td></tr>
+<tr>
+<td> ServiceNow Homepage
+</td>
+<td> Enter the URL, including login page, of the ServiceNow instance for which the IdP authenticates. For example: https://yourinstance.service-now.com/navpage.do
+</td></tr>
+<tr>
+<td> Entity ID/Issuer
+</td>
+<td> Enter the base URL, excluding login page. of the instance for which the IdP authenticates. For example: &lt;/nowiki&gt;<a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://yourinstance.service-now.com/">https://yourinstance.service-now.com/</a>&lt;/nowiki&gt;
+</td></tr>
+<tr>
+<td> Protocol Binding for the IDP's SingleLogoutReuqest
+</td>
+<td> Enter one of the supported values listed in the <tt>Binding</tt> attribute from the <tt>SingleLogoutService</tt> element.
+</td></tr>
+<tr>
+<td> NameID Policy
+</td>
+<td> Enter the value of the <tt>NameIDFormat</tt> element the integration uses.
+</td></tr>
+<tr>
+<td> NameID Attribute
+</td>
+<td> Leave this field blank unless you configure a new NameID policy. If you do configure a new policy, the system needs to know which field in the User table it should use to identify the user logging in by matching the <tt>NameID</tt> token. Enter the name of that User table field here.
+</td></tr>
+<tr>
+<td> Create AuthnContextClass
+</td>
+<td> Select the check box to specify a particular context class such as Password Protected Transport. If the check box is cleared, the IdP selects the most appropriate context class.
+</td></tr>
+<tr>
+<td> AuthnContextClassRef Method
+</td>
+<td> Enter the URN of the login mechanism you want the IdP to use to authenticate users.
+</td></tr>
+<tr>
+<td> External logout redirect
+</td>
+<td> Enter the URL where the integration redirects users after they log out.
+</td></tr>
+<tr>
+<td> Signing Key Alias
+</td>
+<td> Enter the alias of the key entry stored in <a href="index.php%3Ftitle=SAML_2.0_Web_Browser_SSO_Profile.html#Creating_a_Service_Provider_Key_Store" title="SAML 2.0 Web Browser SSO Profile">SAML 2.0 SP Keystore</a>. This property is renamed Signing/Encryption Key Alia in the Fuji release to support encrypted SAML assertions.
+</td></tr>
+<tr>
+<td> Signing Key Password
+</td>
+<td> Enter the password of the key entry stored in <a href="index.php%3Ftitle=SAML_2.0_Web_Browser_SSO_Profile.html#Creating_a_Service_Provider_Key_Store" title="SAML 2.0 Web Browser SSO Profile">SAML 2.0 SP Keystore</a>. This property is renamed Signing/Encryption Key Password in the Fuji release to support encrypted SAML assertions.
+</td></tr>
+<tr>
+<td>Encrypt Assertion
+</td>
+<td>Select the check box to encrypt the assertion in the SAML response. The metadata generated for the IDP embeds the x509 certificate, which the IDP uses to encrypt the assertion in the SAML response that it generates.
+</td></tr>
+<tr>
+<td> Clock Skew
+</td>
+<td> Enter the number of seconds between the two attributes that make up the SAMLResponse nonce. A valid SAMLResponse must fall between the <b>notBefore</b> and <b>notOnOrAfter</b> date-time values. See <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Response_with_the_SubjectConfirmation_and_SubjectConfirmationData_Elements">Sample SAML 2 Response with the SubjectConfirmation and SubjectConfirmationData Elements</a> and <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Sample_SAML_2_Response_with_the_AudienceRestrictions_and_Audience_Elements">Sample SAML 2 Response with the AudienceRestrictions and Audience Elements</a> for a sample SAMLResponse message.
+</td></tr>
+<tr>
+<td> Force AuthnRequest
+</td>
+<td> Select the check box to force AuthnRequests to occur.
+</td></tr>
+<tr>
+<td> Is Passive AuthnRequest
+</td>
+<td> Select the check box if the AuthnRequest is passive.
+</td></tr>
+<tr>
+<td> Sign AuthnRequest
+</td>
+<td> Select the check box to enable the IdP's single-sign on service to receive a signed AuthnRequest.
+</td></tr>
+<tr>
+<td> Signing Signature Algorithm
+</td>
+<td> Enter the URL that points to the SAML 2.0 Identity Provider AuthnRequest Consumer for eSignature Authentication.
+</td></tr>
+<tr>
+<td> Single Sign-On Script
+</td>
+<td> Select the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Multiple+Provider+Single+Sign-On&amp;oldid=0.html#Scripts" title="Multiple Provider Single Sign-On">Single Sign-On script</a>.
+</td></tr>
+<tr>
+<td> x509 Certificate
+</td>
+<td> Select the <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_5._Install_the_IdP_Certificate">IdP certificate</a>.
+</td></tr></table>
+<h1><span class="mw-headline" id="SAML_2.0_Update_1_Requirements"><span class="mw-headline-number">5</span> SAML 2.0 Update 1 Requirements</span></h1>
+<p>The SAML 2.0 update requires:
+</p>
+<ul><li> Activating the SAML 2.0 Update 1 plugin</li>
+<li> Additional metadata from the SAML 2.0 Identity Provider (IdP)
+<ul><li> SAML Request can include an <b>AuthnContextClass</b> element to specify the Service Provider's preferred login mechanism such as form-based authentication or Kerberos. If this element is not specified, the IdP chooses the login method.</li>
+<li> SAML Response must include an <b>Issuer</b> element that matches the value listed in the issuer system property </li>
+<li> SAML Response must include <b>SubjectConfirmation</b> and <b>SubjectConfirmationData</b> elements with a <b>Recipient</b> attribute</li>
+<li> SAML Response must include <b>AudienceRestriction</b> and <b>Audience</b> elements that match the value listed in the audience system property</li></ul></li></ul>
+<h1><span class="mw-headline" id="Upgrading_an_Existing_SAML_2.0_Integration_to_SAML_2.0_Update_1"><span class="mw-headline-number">6</span> Upgrading an Existing SAML 2.0 Integration to SAML 2.0 Update 1</span></h1>
+<p>Perform these steps to update your existing SAML 2.0 integration.
+</p>
+<ol><li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Request_the_SAML_2.0_Update_1_Plugin">Request the SAML 2.0 Update 1 plugin.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_2a._Set_the_IdP_Issuer_URL">Set the IdP issuer URL system property.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3d._.28Optional.29_Enable_Providing_an_Authentication_Context_Class">(Optional) Enable providing an authentication context class.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_3b._Set_the_Audience_URL">Set the audience URL system property.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Step_4._.28Optional.29_Set_Advanced_System_Properties">(Optional) Set advanced system properties.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Merge_Customizations_from_Existing_Installation_Exit_Scripts_into_New_Scripts">Merge customizations from existing scripts into new scripts.</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Test_the_Update">Test the update.</a></li></ol>
+<h3><span class="mw-headline" id="Request_the_SAML_2.0_Update_1_Plugin"><span class="mw-headline-number">6.1</span> Request the SAML 2.0 Update 1 Plugin</span></h3>
+<p>Contact customer support to request the <b>SAML 2.0 Single Sign-On - Update 1: security enhancements</b> plugin. The plugin applies updated versions of the <b>SAML2SingleSignon</b> installation exit (login script),  <b>SAML2Logout</b> installation exit (logout script), and <b>SAML2</b> script include (script object).
+</p>
+<table class="collapsible collapsed">
+<tr>
+<th> Click the plus to expand instructions for requesting a plugin.
+</th></tr>
+<tr>
+<td>
+<ol><li>Navigate to [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://hi.service-now.com">HI</a>].</li>
+<li>Click <b>Service Catalog</b>.</li>
+<li>Click <b>Request Plugin Activation</b>.
+<dl><dd><ul><li>[Required] In <b>Target Instance</b>, select the instance on which to activate the plugin.</li>
+<li>[Required] In <b>Plugin Name</b>, enter the name of the plugin to activate.</li>
+<li>[Optional] In <b>Date and time would you like the plugin to be enabled?</b>, specify a date and time at least 12 hours in the future. Leave this field empty if you want the plugin activated as soon as possible.</li></ul></dd>
+<dd> <b>Note:</b> Plugins are generally activated during business hours in the Pacific time zone, but can be scheduled for a different time with advance notice. 
+<ul><li>[Optional] In <b>Reason/Comments</b>, add any information that would be helpful for the ServiceNow technical support engineer activating the plugin.</li></ul></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+</td></tr></table>
+<h3><span class="mw-headline" id="Merge_Customizations_from_Existing_Installation_Exit_Scripts_into_New_Scripts"><span class="mw-headline-number">6.2</span> Merge Customizations from Existing Installation Exit Scripts into New Scripts</span></h3>
+<p>The update saves an inactive copy of the integration's original installation exit scripts. You can use these copies to merge any customizations you made to the login and logout scripts to the new versions of these installation exits.
+</p>
+<table class="standard">
+
+<tr>
+<th> Original Installation Exit Script Name
+</th>
+<th> Original Script Status
+</th>
+<th> New Installation Exit Script Name
+</th>
+<th> New Script Status
+</th></tr>
+<tr>
+<td> SAML2SingleSignon
+</td>
+<td> Inactive
+</td>
+<td> SAML2SingleSignon_update1
+</td>
+<td> Active
+</td></tr>
+<tr>
+<td> SAML2
+</td>
+<td> Inactive
+</td>
+<td> SAML2_update1
+</td>
+<td> Active
+</td></tr>
+<tr>
+<td> SAML2Logout
+</td>
+<td> Inactive
+</td>
+<td> SAML2Logout_update1
+</td>
+<td> Active
+</td></tr></table>
+<p>You can navigate to the SAML 2.0 login and logout installation exit scripts using these paths.
+</p>
+<ul><li> <b>SAML 2 Single Sign-on &gt; Login script.</b></li>
+<li> <b>SAML 2 Single Sign-on &gt; Logout script.</b></li>
+<li> <b>System Definition &gt; Installation Exits.</b></li></ul>
+<p>You can navigate to the SAML 2.0 update 1 script include using these paths.
+</p>
+<ul><li> <b>SAML 2 Single Sign-on &gt; Script object.</b></li>
+<li> <b>System Definition &gt; Script Includes.</b></li></ul>
+<h3><span class="mw-headline" id="Test_the_Update"><span class="mw-headline-number">6.3</span> Test the Update</span></h3>
+<p>Perform these steps to troubleshoot your integration update.
+</p>
+<ol><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add a new system property</a> called <tt>glide.authenticate.sso.saml2.debug</tt> with a value of <b>true</b>.</li>
+<li>Attempt SAML 2.0 login.</li>
+<li>Review the system log. SAML2 validation errors begin with the text <b>SAML2ValidationError</b>.</li>
+<li>Identify and fix any <a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html#Troubleshooting_Login_Errors">common login errors</a>.</li></ol>
+<h2><span class="mw-headline" id="Sample_SAML_2_Responses_After_the_Update"><span class="mw-headline-number">6.4</span> Sample SAML 2 Responses After the Update</span></h2>
+<p>The following sections illustrate the new required elements and attributes that the IdP should provide in the SAML Response.
+</p>
+<h3><span class="mw-headline" id="Sample_SAML_2_Response_with_Issuer_Element"><span class="mw-headline-number">6.4.1</span> Sample SAML 2 Response with Issuer Element</span></h3>
+<p>The following SAML 2 response uses the <b>Issuer</b> element.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;samlp:Response</span> <span class="na">xmlns:samlp=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;</span>
+  <span class="na">Destination=</span><span class="s">&quot;https://demoi2.service-now.com/navpage.do&quot;</span>
+  <span class="na">ID=</span><span class="s">&quot;s28da6774c88ae1eab292bf25fe625db81919d8e1e&quot;</span>
+  <span class="na">InResponseTo=</span><span class="s">&quot;SNC841720c227c81948cfd68cadcad235c6&quot;</span>
+  <span class="na">IssueInstant=</span><span class="s">&quot;2012-01-30T20:07:10Z&quot;</span>
+  <span class="na">Version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;saml:Issuer</span> <span class="na">xmlns:saml=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;</span><span class="nt">&gt;</span>http://idp.ssocircle.com<span class="nt">&lt;/saml:Issuer&gt;</span>
+   ...
+   <span class="nt">&lt;saml:Assertion</span> <span class="na">xmlns:saml=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;</span>
+     <span class="na">ID=</span><span class="s">&quot;s2f347f973c063836cf70ea38302d94976f9c5b851&quot;</span>
+     <span class="na">IssueInstant=</span><span class="s">&quot;2012-01-30T20:07:10Z&quot;</span>
+     <span class="na">Version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;saml:Issuer&gt;</span>http://idp.ssocircle.com<span class="nt">&lt;/saml:Issuer&gt;</span>
+      ...
+   <span class="nt">&lt;/saml:Assertion&gt;</span>
+<span class="nt">&lt;/samlp:Response&gt;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Sample_SAML_2_Response_with_the_SubjectConfirmation_and_SubjectConfirmationData_Elements"><span class="mw-headline-number">6.4.2</span> Sample SAML 2 Response with the SubjectConfirmation and SubjectConfirmationData Elements</span></h3>
+<p>The following SAML 2 response uses the <b>SubjectConfirmation</b> and <b>SubjectConfirmationData</b> elements with the <b>NotOnOrAfter</b> and <b>Recipient</b> attributes.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;saml:SubjectConfirmation</span> <span class="na">Method=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:cm:bearer&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;saml:SubjectConfirmationData</span> <span class="na">InResponseTo=</span><span class="s">&quot;SNC841720c227c81948cfd68cadcad235c6&quot;</span>
+     <span class="na">NotOnOrAfter=</span><span class="s">&quot;2012-01-30T20:17:10Z&quot;</span>
+     <span class="na">Recipient=</span><span class="s">&quot;https://demoi2.service-now.com/navpage.do&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/saml:SubjectConfirmation&gt;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Sample_SAML_2_Response_with_the_AudienceRestrictions_and_Audience_Elements"><span class="mw-headline-number">6.4.3</span> Sample SAML 2 Response with the AudienceRestrictions and Audience Elements</span></h3>
+<p>The following SAML 2 response uses the <b>AudienceRestrictions</b> and <b>Audience</b> elements with the <b>NotBefore</b> and <b>NotOnOrAfter</b> attributes.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;saml:Conditions</span> <span class="na">NotBefore=</span><span class="s">&quot;2012-01-30T19:57:10Z&quot;</span>
+  <span class="na">NotOnOrAfter=</span><span class="s">&quot;2012-01-30T20:17:10Z&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;saml:AudienceRestriction&gt;</span>
+      <span class="nt">&lt;saml:Audience&gt;</span>https://demoi2.service-now.com<span class="nt">&lt;/saml:Audience&gt;</span>
+   <span class="nt">&lt;/saml:AudienceRestriction&gt;</span>
+<span class="nt">&lt;/saml:Conditions&gt;</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202180703
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.520 seconds
+Real time usage: 3.267 seconds
+Preprocessor visited node count: 404/1000000
+Preprocessor generated node count: 918/1000000
+Post‐expand include size: 5013/2097152 bytes
+Template argument size: 1890/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1525.342      1 - -total
+  2.62%   39.975      1 - Template:Authentication
+  2.32%   35.385      1 - Template:Topic
+  0.83%   12.732      9 - Template:Note
+  0.39%    5.945      1 - Template:Requesting_the_Plugin
+  0.24%    3.616      2 - Template:T
+  0.23%    3.563      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23958-0!*!0!1!en!5!* and timestamp 20171202180700 and revision id 250830
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html">http://wiki.servicenow.com/index.php?title=SAML_2.0_Setup&amp;oldid=250830</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=SAML.html" title="Category:SAML">SAML</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=SAML.html" title="Category:SAML">SAML</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23958"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23958" data-vote-the-vote="5" data-vote-id="23958" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23958_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23958" data-vote-the-vote="1" data-vote-id="23958" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23958_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=SAML_2.0_Setup.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=SAML+2.0+Setup&amp;returntoquery=oldid%3D250830" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=SAML+2.0+Setup&amp;returntoquery=oldid%3D250830" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=SAML_2.0_Setup.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=SAML_2.0_Setup&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SAML+2.0+Setup.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=SAML+2.0+Setup&amp;returnto=SAML+2.0+Setup&amp;oldid=250830&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSAML_2.0_Setup.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FSAML_2.0_Setup.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;oldid=250830.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=SAML_2.0_Setup&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:22, 8 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1104});});</script></body></html>

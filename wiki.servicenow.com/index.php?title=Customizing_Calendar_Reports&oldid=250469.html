@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Customizing Calendar Reports - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Customizing_Calendar_Reports","wgTitle":"Customizing Calendar Reports","wgCurRevisionId":250469,"wgRevisionId":250469,"wgArticleId":3174,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Report Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Customizing_Calendar_Reports","wgRelevantArticleId":3174,"wgRequestId":"5f4ff270422c68a38afedcc2","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170829193431"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Customizing_Calendar_Reports"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Customizing Calendar Reports"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Report Administration"/>
+<meta name="category" content="Report Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Customizing_Calendar_Reports.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Customizing Calendar Reports"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170829193431"/>
+
+	<meta property="article:published_time" content="20170829193431"/>
+
+	<meta property="article:modified_time" content="20170829193431"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Report Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Customizing_Calendar_Reports"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Customizing_Calendar_Reports rootpage-Customizing_Calendar_Reports skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Customizing+Calendar+Reports.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Customizing+Calendar+Reports&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Customizing Calendar Reports</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Customizing Calendar Reports</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-performance-analytics-and-reporting/page/use/reporting/concept/c_CustomizeCalendarReports.html">Customize Calendar Reports</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Reporting.html" title="Reporting">Reports</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22b294b6950t'></div><script type="text/javascript">window.tamOnload_tam5a22b294b6950t=[];tree = new dTree('tam5a22b294b6950t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22b294b6950t = tree;
+                                               tam5a22b294b6950t.add(1, 0, 'Basic Reporting');
+
+tam5a22b294b6950t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting\&quot;" title=\"Reporting\">Introduction</a>');
+tam5a22b294b6950t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_Reports\&quot;" title=\"Generating Reports\">Generating Reports</a>');
+tam5a22b294b6950t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_List_Reports\&quot;" title=\"Creating List Reports\">Lists</a>');
+tam5a22b294b6950t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Line_Charts\&quot;" title=\"Creating Line Charts\">Line Charts</a>');
+tam5a22b294b6950t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Column_Charts\&quot;" title=\"Creating Column Charts\">Column Charts</a>');
+tam5a22b294b6950t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Area_and_Spline_Charts\&quot;" title=\"Creating Area and Spline Charts\">Area and Spline Charts</a>');
+tam5a22b294b6950t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Bar_Charts\&quot;" title=\"Creating Bar Charts\">Bar Charts</a>');
+tam5a22b294b6950t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pareto_Charts\&quot;" title=\"Creating Pareto Charts\">Pareto Charts</a> ');
+tam5a22b294b6950t.add(10, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Histograms\&quot;" title=\"Creating Histograms\">Histograms</a>');
+tam5a22b294b6950t.add(11, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pie_Charts\&quot;" title=\"Creating Pie Charts\">Pie Charts</a>');
+tam5a22b294b6950t.add(12, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Donut_Charts\&quot;" title=\"Creating Donut Charts\">Donut and Semi-donut Charts</a>');
+tam5a22b294b6950t.add(13, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Dials_and_Speedometers\&quot;" title=\"Creating Dials and Speedometers\">Dials and Speedometers</a>');
+tam5a22b294b6950t.add(14, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pivot_Tables\&quot;" title=\"Creating Pivot Tables\">Pivot Tables</a>');
+tam5a22b294b6950t.add(15, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Funnel_and_Pyramid_Charts\&quot;" title=\"Creating Funnel and Pyramid Charts\">Funnel and Pyramid Charts</a>');
+tam5a22b294b6950t.add(16, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Calendars\&quot;" title=\"Creating Calendars\">Calendars</a>');
+tam5a22b294b6950t.add(17, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Box_Charts\&quot;" title=\"Creating Box Charts\">Box Charts</a>');
+tam5a22b294b6950t.add(18, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trend_Charts\&quot;" title=\"Creating Trend Charts\">Trend Charts</a>');
+tam5a22b294b6950t.add(19, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Control_Charts\&quot;" title=\"Creating Control Charts\">Control Charts</a>');
+tam5a22b294b6950t.add(20, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trendbox_Charts\&quot;" title=\"Creating Trendbox Charts\">Trendbox Charts</a>');
+tam5a22b294b6950t.add(21, 0, 'Advanced Reporting');
+tam5a22b294b6950t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_and_Publishing_Reports\&quot;" title=\"Scheduling and Publishing Reports\">Schedule and Publish</a>');
+tam5a22b294b6950t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Chart_Colors\&quot;" title=\"Configuring Chart Colors\">Set Colors</a>');
+tam5a22b294b6950t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Page_Header_Footer_Templates\&quot;" title=\"PDF Page Header Footer Templates\">PDF Header Footer Templates</a>');
+tam5a22b294b6950t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Use_Service_Catalog_Variables_in_Reports\&quot;" title=\"Use Service Catalog Variables in Reports\" class=\"mw-redirect\">Use Service Catalog Variables in Reports</a>');
+tam5a22b294b6950t.add(26, 0, 'Administration');
+tam5a22b294b6950t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Engine_Overview\&quot;" title=\"Report Engine Overview\" class=\"mw-redirect\">Report Engine Overview</a>');
+tam5a22b294b6950t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_System_Tables\&quot;" title=\"Reporting on System Tables\">Reporting on System Tables</a> ');
+tam5a22b294b6950t.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Public_Report\&quot;" title=\"Creating a Public Report\">Creating a Public Report</a> ');
+tam5a22b294b6950t.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Excel_Export_Threshold\&quot;" title=\"Excel Export Threshold\" class=\"mw-redirect\">Excel Export Threshold</a> ');
+tam5a22b294b6950t.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_Properties\&quot;" title=\"Reporting Properties\">Reporting Properties</a> ');
+tam5a22b294b6950t.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Saving_Group-Level_Filters_and_Reports\&quot;" title=\"Saving Group-Level Filters and Reports\">Saving Group-Level Reports</a> ');
+tam5a22b294b6950t.add(33, 26, '<strong class=\"selflink\">Customizing Calendar Reports</strong>');
+tam5a22b294b6950t.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Ensuring_Domain_Separation_on_Reports_and_Gauges\&quot;" title=\"Ensuring Domain Separation on Reports and Gauges\">Ensuring Domain Separation on Reports and Gauges</a>');
+tam5a22b294b6950t.add(35, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Sources\&quot;" title=\"Report Sources\">Report Sources</a>');
+tam5a22b294b6950t.add(36, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Ranges\&quot;" title=\"Report Ranges\">Report Ranges</a>');
+tam5a22b294b6950t.add(37, 26, 'Creating Custom Charts');
+tam5a22b294b6950t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Definitions\&quot;" title=\"Custom Chart Definitions\">Custom Chart Definitions</a>');
+tam5a22b294b6950t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Data_Generation\&quot;" title=\"Custom Chart Data Generation\">Custom Chart Data Generation</a>');
+tam5a22b294b6950t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Rendering\&quot;" title=\"Custom Chart Rendering\">Custom Chart Rendering</a>');
+tam5a22b294b6950t.add(41, 0, 'Application Reports');
+tam5a22b294b6950t.add(42, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Incidents\&quot;" title=\"Reporting on Incidents\">Incident Management</a>');
+tam5a22b294b6950t.add(43, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Problems\&quot;" title=\"Reporting on Problems\">Problem Management</a>');
+tam5a22b294b6950t.add(44, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Changes\&quot;" title=\"Reporting on Changes\">Change Management</a>');
+tam5a22b294b6950t.add(45, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Knowledge_Management_Reporting\&quot;" title=\"Knowledge Management Reporting\" class=\"mw-redirect\">Knowledge Management</a>');
+tam5a22b294b6950t.add(46, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Service_Catalog_Variables\&quot;" title=\"Reporting on Service Catalog Variables\">Service Catalog</a>');
+tam5a22b294b6950t.add(47, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sales_Reports\&quot;" title=\"Sales Reports\" class=\"mw-redirect\">Sales Force Automation</a>');
+tam5a22b294b6950t.add(48, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_SLAs\&quot;" title=\"Reporting on SLAs\">Reporting on SLAs</a>');
+tam5a22b294b6950t.add(49, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Vendor_Reporting\&quot;" title=\"Vendor Reporting\">Vendor Performance</a>');
+tam5a22b294b6950t.add(50, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assessment_Reporting\&quot;" title=\"Assessment Reporting\">Assessments</a>');
+tam5a22b294b6950t.add(51, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=KPI_Reports\&quot;" title=\"KPI Reports\">KPI Reports</a>');
+tam5a22b294b6950t.add(52, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Base_System_Reports\&quot;" title=\"Base System Reports\">Base System Reports</a>');
+
+                                               document.getElementById('5a22b294b6950t').innerHTML = tam5a22b294b6950t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22b294b6950t) { window.tamOnload_tam5a22b294b6950t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Metric_Definition_Support.html" title="Metric Definition Support">Metric Definition Support</a></li>
+<li><a href="index.php%3Ftitle=Database_Views.html" title="Database Views">Database Views</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports">Get the Book</a></b></center>
+</td></tr></table>
+</div> 
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#Configuring_Calendar_Attributes"><span class="tocnumber">2</span> <span class="toctext">Configuring Calendar Attributes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#Highlighting_Calendar_Entries"><span class="tocnumber">3</span> <span class="toctext">Highlighting Calendar Entries</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#Reporting_Limit"><span class="tocnumber">4</span> <span class="toctext">Reporting Limit</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html#Customizing_Start_and_End_Dates"><span class="tocnumber">5</span> <span class="toctext">Customizing Start and End Dates</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>You can specify the elements (fields) that get displayed for each task on a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Calendars&amp;oldid=0.html" title="Creating Calendars">Calendar report</a>. By default, the <b>number </b>and <b>short_description</b> fields are displayed, but this is configurable. You can configure radio buttons to appear on reports for various fields in the Task [task] table, so that calendar entries can be highlighted by properties such as priority level and approval status. You can select a different color to highlight each task property.
+</p>
+<h1><span class="mw-headline" id="Configuring_Calendar_Attributes"><span class="mw-headline-number">2</span> Configuring Calendar Attributes</span></h1>
+<p>To change the information displayed in a Calendar report, add attributes to the System Dictionary entry for the table you are using: 
+</p>
+<ol><li>Open a form for any record in that table. </li>
+<li>Right-click the form header and select <b>Configure &gt; Dictionary</b> (<b>Personalize &gt; Dictionary</b> in versions prior to <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>).</li>
+<li>In the record list that appears, select the first record that does not have a value in the <b>Column name</b> field. 
+<dl><dd><a href="index.php%3Ftitle=File:Reports_Calendar_Attributes1.png.html" class="image" title="Reports_Calendar_Attributes1.png"><img alt="Reports_Calendar_Attributes1.png" src="images/thumb/b/b0/Reports_Calendar_Attributes1.png/800px-Reports_Calendar_Attributes1.png" width="800" height="320" class="thumbborder" srcset="/images/thumb/b/b0/Reports_Calendar_Attributes1.png/1200px-Reports_Calendar_Attributes1.png 1.5x, /images/b/b0/Reports_Calendar_Attributes1.png 2x" /></a> </dd></dl></li>
+<li>Switch the Dictionary Entry form to the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=View+Management&amp;oldid=0.html#Switching_Views" title="View Management">Advanced view</a> (starting with Eureka).</li>
+<li>In the <b>Attributes</b> field, add <b>calendar_elements=&lt;field name&gt;;&lt;field name&gt;, </b>listing the fields you want to appear in each entry of your calendar report, separated by semi-colons. 
+<dl><dd><b>Note:</b> When you define attributes for calendar elements, you replace the default display elements of <b>number</b> and <b>short_description</b> with the attributes that you list in this field. To add any additional attributes to the calendar entry and retain the number and short description of the change, you must include the <b>number</b> and <b>short_description</b> fields in your attributes. </dd>
+<dd>For example, to add risk level information to your change calendar, add the following attribute to the change_request table: </dd>
+<dd><pre> calendar_elements=number;short_description;risk</pre> </dd>
+<dd><a href="index.php%3Ftitle=File:Reports_Calendar_Attributes2.png.html" class="image" title="Reports_Calendar_Attributes2.png"><img alt="Reports_Calendar_Attributes2.png" src="images/thumb/e/e1/Reports_Calendar_Attributes2.png/800px-Reports_Calendar_Attributes2.png" width="800" height="565" class="thumbborder" srcset="/images/e/e1/Reports_Calendar_Attributes2.png 1.5x, /images/e/e1/Reports_Calendar_Attributes2.png 2x" /></a> </dd></dl></li>
+<li>If the table already has an attribute, separate it from the new attribute you are adding with a comma, as in this example: 
+<dl><dd><pre>update_synch=true,calendar_elements=number;short_description;risk</pre> </dd></dl></li>
+<li>Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Highlighting_Calendar_Entries"><span class="mw-headline-number">3</span> Highlighting Calendar Entries</span></h1>
+<p>By default, ServiceNow calendar reports provide three radio buttons above the calendar that enable you to highlight tasks by priority level, approval status, and escalation level. When you select <b>Priority</b>, for example, all tasks in the calendar at a priority level of <b>1 - Critical</b> or <b>2 - High</b> are highlighted in a different color. 
+</p><p>The <tt>glide.ui.report.extend_calendar_choices</tt> property specifies how calendar highlighting options are determined. If the property is set to true, highlighting options are based on the current reporting table plus the base table. If the property is set to false, highlighting options are set by the styles in the Task table only.
+</p><p><br /> 
+</p><p><a href="index.php%3Ftitle=File:Reports_Highlight_Controls4.png.html" class="image" title="Reports_Highlight_Controls4.png‎"><img alt="Reports_Highlight_Controls4.png‎" src="images/thumb/7/7c/Reports_Highlight_Controls4.png/500px-Reports_Highlight_Controls4.png" width="500" height="306" srcset="/images/thumb/7/7c/Reports_Highlight_Controls4.png/750px-Reports_Highlight_Controls4.png 1.5x, /images/thumb/7/7c/Reports_Highlight_Controls4.png/1000px-Reports_Highlight_Controls4.png 2x" /></a> 
+</p><p><br /> 
+</p><p>To suit your own business needs, you can add or remove highlight controls and configure any combination of levels and states to be highlighted in a wide range of possible colors. The calendar selects the highlighting controls from the table in which they are defined (incident, change, problem, and so on). If no field styles are applied in a related table, then the calendar uses any highlighting definitions from the <i>task</i> (base) table. It is possible that some attributes of your change calendar, such as <b>risk</b>, cannot be configured for highlighting. 
+</p><p>To define the highlighting controls for your task calendar reports: 
+</p>
+<ol><li>Navigate to <b>System UI &gt; Field Styles</b>. </li>
+<li>To see the default highlighting controls, filter the view of the record list for the <i>task</i> table. 
+<dl><dd>Notice that there are several records for each field, representing different levels or states possible for that field, and that each state is represented by a different highlight color. You can delete records for those levels or states you are not interested in seeing, change the highlight colors, or add new controls. </dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Reports_Highlight_Controls1.png.html" class="image" title="Reports_Highlight_Controls1.png"><img alt="Reports_Highlight_Controls1.png" src="images/thumb/d/dd/Reports_Highlight_Controls1.png/800px-Reports_Highlight_Controls1.png" width="800" height="376" class="thumbborder" srcset="/images/thumb/d/dd/Reports_Highlight_Controls1.png/1200px-Reports_Highlight_Controls1.png 1.5x, /images/thumb/d/dd/Reports_Highlight_Controls1.png/1600px-Reports_Highlight_Controls1.png 2x" /></a> </dd>
+<dd><br /></dd></dl></li>
+<li>To add a new control, click <b>New</b> in the record list. </li>
+<li>Select the <b>Task [task]</b> table from the list of tables. </li>
+<li>Select the <b>Field</b> you want to use as a control from the list of <i>task</i> fields. </li>
+<li>Type the field <b>Value</b> to use for your highlight trigger. 
+<dl><dd>If you are unsure of the value to use, navigate to <b>System Definitions &gt; Tables and Columns</b> and look up the data type for your field in the <i>task</i> table. Field values may be a boolean, an integer, or a string in the table, regardless of how the value appears in the form. </dd></dl></li>
+<li>Define the <b>Style</b> (highlight color) for this level or state. Type <b>background-color:&lt;<i>color name</i>&gt;</b>, where &lt;<i>color name</i>&gt; is the configured name of a ServiceNow color as defined in <b>Reports &gt; Color Definition</b>. 
+<dl><dd>The following record creates a radio button for the <b>Knowledge</b> check box that highlights all entries for which a knowledge base article has been created. </dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Reports_Highlight_Controls2.png.html" class="image" title="Reports_Highlight_Controls2.png‎"><img alt="Reports_Highlight_Controls2.png‎" src="images/thumb/3/37/Reports_Highlight_Controls2.png/700px-Reports_Highlight_Controls2.png" width="700" height="227" class="thumbborder" srcset="/images/thumb/3/37/Reports_Highlight_Controls2.png/1050px-Reports_Highlight_Controls2.png 1.5x, /images/thumb/3/37/Reports_Highlight_Controls2.png/1400px-Reports_Highlight_Controls2.png 2x" /></a> </dd>
+<dd><br /></dd></dl></li>
+<li>Open a calendar report, such as <i>Change Calendar</i> from <b>Reports &gt; View/Run</b> and select the <b>Knowledge</b> radio button. 
+<dl><dd>All calendar entries for changes that have knowledge base articles are highlighted in your selected color.</dd>
+<dd><br /></dd></dl></li></ol>
+<h1><span class="mw-headline" id="Reporting_Limit"><span class="mw-headline-number">4</span> Reporting Limit</span></h1>
+<p>In the base ServiceNow system, calendar reports can save a maximum of 10,000 records.  To override this default setting, add the <b>glide.ui.max_calendar_records</b> property. 
+</p>
+<ol><li>In the navigation filter, enter <b>sys_properties.list</b>.</li>
+<li>Click <b>New</b> in the list of properties.</li>
+<li>Complete the form as follows:
+<ul><li><b>Name:</b> <i>glide.ui.max_calendar_records</i></li>
+<li><b>Description:</b> Type a phrase that describes the function of the property, such as <i>Maximum number of calendar records saved. The default is 10,000.</i></li>
+<li><b>Type:</b> Select <b>integer</b> from the list.</li>
+<li><b>Value:</b> Type a new value for the number of records retained by the platform.</li></ul>
+<dl><dd>The completed form looks like this:</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:System_Property_Calendar_Reports.png.html" class="image" title="System_Property_Calendar_Reports.png‎"><img alt="System_Property_Calendar_Reports.png‎" src="images/thumb/c/c2/System_Property_Calendar_Reports.png/800px-System_Property_Calendar_Reports.png" width="800" height="411" class="thumbborder" srcset="/images/thumb/c/c2/System_Property_Calendar_Reports.png/1200px-System_Property_Calendar_Reports.png 1.5x, /images/thumb/c/c2/System_Property_Calendar_Reports.png/1600px-System_Property_Calendar_Reports.png 2x" /></a></dd>
+<dd><br /> </dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<p>If a calendar entry has a duration, it includes parenthetical information to indicate how many days since the event started and how many days until the event ends.  For example, the parenthetical information included for the "CHG0000005 - Install new PBX ( -2 to +2)" entry indicates that the change started 2 days ago and has 2 days left until the end date.  The start or end time might also show up here on the start day and end day of the change. To remove the information, add a property named <tt>glide.ui.calendar.include_duration_info</tt> and set its value to <b>false</b>.
+</p>
+<h1><span class="mw-headline" id="Customizing_Start_and_End_Dates"><span class="mw-headline-number">5</span> Customizing Start and End Dates</span></h1>
+<p>Base calendar reports support multi-day events. For example, a change request with a <b>Work Start</b> date Monday and a <b>Work End</b> date Tuesday is displayed on both days when viewed in a <b>Calendar</b> field. However, when two custom fields named <b>First Date</b> and <b>Last Date</b> are used, the same behavior does not occur.
+</p><p>To achieve the multi-day span behavior in a calendar report with custom fields, name the fields in the following way:
+</p>
+<ul><li> <tt>u_first_date → u_my_start_date</tt> </li>
+<li> <tt>u_last_date → u_my_end_date</tt></li></ul>
+<p>The code looks for an ending field with exactly the same name as the start date field, except using the word <i>end</i> instead of <i>start</i>. If the custom fields are <b>My Start Date</b> and <b>My End Date</b>, the system correctly interprets the meaning of these fields because their names are exactly the same except for the word <i>start</i> and <i>end</i>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202140301
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.251 seconds
+Real time usage: 0.390 seconds
+Preprocessor visited node count: 83/1000000
+Preprocessor generated node count: 272/1000000
+Post‐expand include size: 4267/2097152 bytes
+Template argument size: 873/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  111.791      1 - -total
+ 92.54%  103.453      1 - Template:Reports_v2
+ 83.16%   92.969      1 - Template:Topic
+  7.45%    8.332      1 - Embedded:Reports_v2
+  6.83%    7.632      1 - Template:Note
+  5.94%    6.639      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:3174-0!*!0!1!en!5!* and timestamp 20171202140300 and revision id 250469
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html">http://wiki.servicenow.com/index.php?title=Customizing_Calendar_Reports&amp;oldid=250469</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Category:Report_Administration.html" title="Category:Report Administration">Report Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Category:Report_Administration.html" title="Category:Report Administration">Report Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_3174"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="3174" data-vote-the-vote="5" data-vote-id="3174" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3174_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="3174" data-vote-the-vote="1" data-vote-id="3174" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3174_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Customizing_Calendar_Reports.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Customizing+Calendar+Reports&amp;returntoquery=oldid%3D250469" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Customizing+Calendar+Reports&amp;returntoquery=oldid%3D250469" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Customizing_Calendar_Reports.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Customizing+Calendar+Reports.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Customizing+Calendar+Reports&amp;returnto=Customizing+Calendar+Reports&amp;oldid=250469&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCustomizing_Calendar_Reports.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Customizing_Calendar_Reports" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;oldid=250469.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Customizing_Calendar_Reports&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:34, 29 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":985});});</script></body></html>

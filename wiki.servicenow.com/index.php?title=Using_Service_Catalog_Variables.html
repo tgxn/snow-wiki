@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Service Catalog Variables - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Service_Catalog_Variables","wgTitle":"Using Service Catalog Variables","wgCurRevisionId":250406,"wgRevisionId":250406,"wgArticleId":1823,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Service Catalog Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Service_Catalog_Variables","wgRelevantArticleId":1823,"wgRequestId":"730723cc6978aea4ceeeeb42","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170825170713"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Service_Catalog_Variables"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Service Catalog Variables"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Service Catalog Management"/>
+<meta name="category" content="Service Catalog Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Using_Service_Catalog_Variables.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Service Catalog Variables"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170825170713"/>
+
+	<meta property="article:published_time" content="20170825170713"/>
+
+	<meta property="article:modified_time" content="20170825170713"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Service Catalog Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Service_Catalog_Variables"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Service_Catalog_Variables rootpage-Using_Service_Catalog_Variables skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Service Catalog Variables</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=IT_Services_Applications.html" title="IT Services Applications">IT Services</a> &gt; <a href="index.php%3Ftitle=ITIL_Service_Catalog_Management.html" title="ITIL Service Catalog Management" class="mw-redirect">Service Catalog Management</a> &gt; Using Service Catalog Variables</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-catalog-management/concept/c_ServiceCatalogVariables.html">Service Catalog Variables</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Service_Catalog_Management.html" title="Service Catalog Management">Service Catalog Management</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20fe2f86a9dt'></div><script type="text/javascript">window.tamOnload_tam5a20fe2f86a9dt=[];tree = new dTree('tam5a20fe2f86a9dt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20fe2f86a9dt = tree;
+                                               tam5a20fe2f86a9dt.add(1, 0, ' Setup');
+
+tam5a20fe2f86a9dt.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Multiple_Service_Catalogs\&quot;" title=\"Managing Multiple Service Catalogs\">Multiple Catalogs</a>');
+tam5a20fe2f86a9dt.add(3, 2, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrading_to_Multiple_Service_Catalogs\&quot;" title=\"Upgrading to Multiple Service Catalogs\">Upgrading</a>');
+tam5a20fe2f86a9dt.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_the_Homepage_for_a_Catalog\&quot;" title=\"Managing the Homepage for a Catalog\">Homepage</a> ');
+tam5a20fe2f86a9dt.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Categories\&quot;" title=\"Service Catalog Categories\">Categories</a> ');
+tam5a20fe2f86a9dt.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Catalog_Items\&quot;" title=\"Defining Catalog Items\">Catalog Items</a>');
+tam5a20fe2f86a9dt.add(7, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Order_Guides\&quot;" title=\"Service Catalog Order Guides\">Order Guides</a> ');
+tam5a20fe2f86a9dt.add(8, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Running_Order_Guides_Automatically\&quot;" title=\"Running Order Guides Automatically\">Automatic Order Guides</a>');
+tam5a20fe2f86a9dt.add(9, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Record_Producer\&quot;" title=\"Record Producer\">Record Producers</a> ');
+tam5a20fe2f86a9dt.add(10, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Content_Items_to_Service_Catalog\&quot;" title=\"Adding Content Items to Service Catalog\">Content Items</a>');
+tam5a20fe2f86a9dt.add(11, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Catalog_Item_Designer\&quot;" title=\"Catalog Item Designer\">Item Designer</a>');
+tam5a20fe2f86a9dt.add(12, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_the_Catalog_Item_Designer\&quot;" title=\"Administering the Catalog Item Designer\">Admin</a>');
+tam5a20fe2f86a9dt.add(13, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Catalog_Item_Designer\&quot;" title=\"Using the Catalog Item Designer\">Using</a>');
+tam5a20fe2f86a9dt.add(14, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Catalog_Item_Designer\&quot;" title=\"Installed with Catalog Item Designer\">Installed components</a>');
+tam5a20fe2f86a9dt.add(15, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Request_Fulfillment\&quot;" title=\"Managing Request Fulfillment\">Fulfillment</a> ');
+tam5a20fe2f86a9dt.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Workflows\&quot;" title=\"Service Catalog Workflows\">Workflows</a>  ');
+tam5a20fe2f86a9dt.add(17, 16, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Service_Catalog_Workflow\&quot;" title=\"Defining a Service Catalog Workflow\">Defining</a>');
+tam5a20fe2f86a9dt.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Execution_Plans\&quot;" title=\"Using Execution Plans\">Execution Plans</a> ');
+tam5a20fe2f86a9dt.add(19, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_an_Execution_Plan\&quot;" title=\"Creating an Execution Plan\">Creating</a>');
+tam5a20fe2f86a9dt.add(20, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Execution_Plan_Tasks\&quot;" title=\"Creating Execution Plan Tasks\">Tasks</a>');
+tam5a20fe2f86a9dt.add(21, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Applying_Conditions_to_Execution_Plan_Tasks\&quot;" title=\"Applying Conditions to Execution Plan Tasks\">Conditions</a> ');
+tam5a20fe2f86a9dt.add(22, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Execution_Plan_Approval_Tasks\&quot;" title=\"Execution Plan Approval Tasks\">Approvals</a>');
+tam5a20fe2f86a9dt.add(23, 0, ' Configuration');
+tam5a20fe2f86a9dt.add(24, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Access_Controls\&quot;" title=\"Service Catalog Access Controls\" class=\"mw-redirect\">Access Controls</a> ');
+tam5a20fe2f86a9dt.add(25, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Hiding_Prices_in_the_Service_Catalog\&quot;" title=\"Hiding Prices in the Service Catalog\">Hiding Prices</a>');
+tam5a20fe2f86a9dt.add(26, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Localizing_Price_in_the_Service_Catalog\&quot;" title=\"Localizing Price in the Service Catalog\">Localizing Prices</a>');
+tam5a20fe2f86a9dt.add(27, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_UI_Policy\&quot;" title=\"Service Catalog UI Policy\">UI Policy</a>');
+tam5a20fe2f86a9dt.add(28, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Service_Catalog_Renderers\&quot;" title=\"Using Service Catalog Renderers\">Using Renderers</a>');
+tam5a20fe2f86a9dt.add(29, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Data_Lookup\&quot;" title=\"Service Catalog Data Lookup\">Data Lookup</a>');
+tam5a20fe2f86a9dt.add(30, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Properties\&quot;" title=\"Service Catalog Properties\">Properties</a>');
+tam5a20fe2f86a9dt.add(31, 23, ' Cart');
+tam5a20fe2f86a9dt.add(32, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Cart_Layouts\&quot;" title=\"Configuring Cart Layouts\">Cart Layout</a>');
+tam5a20fe2f86a9dt.add(33, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_a_Two-Step_Checkout\&quot;" title=\"Enabling a Two-Step Checkout\">2-Step Checkout</a>');
+tam5a20fe2f86a9dt.add(34, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_Bulk_Requests\&quot;" title=\"Enabling Bulk Requests\">Bulk Requests</a> ');
+tam5a20fe2f86a9dt.add(35, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variables\&quot;" title=\"Service Catalog Variables\">Variables</a>');
+tam5a20fe2f86a9dt.add(36, 35, ' <strong class=\"selflink\">Using</strong>');
+tam5a20fe2f86a9dt.add(37, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Variable_Types\&quot;" title=\"Variable Types\">Types</a>');
+tam5a20fe2f86a9dt.add(38, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variable_Sets\&quot;" title=\"Service Catalog Variable Sets\">Sets</a>');
+tam5a20fe2f86a9dt.add(39, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Qualifiers_for_Service_Catalog_Variables\&quot;" title=\"Reference Qualifiers for Service Catalog Variables\">Qualifiers</a>');
+tam5a20fe2f86a9dt.add(40, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variable_Pricing\&quot;" title=\"Service Catalog Variable Pricing\">Pricing</a>');
+tam5a20fe2f86a9dt.add(41, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auditable_Service_Catalog_Variables\&quot;" title=\"Auditable Service Catalog Variables\">Auditable</a>');
+tam5a20fe2f86a9dt.add(42, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scriptable_Service_Catalog_Variables\&quot;" title=\"Scriptable Service Catalog Variables\">Scriptable</a> ');
+tam5a20fe2f86a9dt.add(43, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Service_Catalog_Variables\&quot;" title=\"Reporting on Service Catalog Variables\">Reporting</a>');
+tam5a20fe2f86a9dt.add(44, 0, ' Scripting');
+tam5a20fe2f86a9dt.add(45, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Catalog_Client_Script\&quot;" title=\"Creating a Catalog Client Script\">Creating a Script</a>');
+tam5a20fe2f86a9dt.add(46, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Currency_and_Price_Fields\&quot;" title=\"Scripting Currency and Price Fields\">Currency</a>');
+tam5a20fe2f86a9dt.add(47, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Script_API\&quot;" title=\"Service Catalog Script API\">Script API</a> ');
+tam5a20fe2f86a9dt.add(48, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Custom_Shopping_Cart\&quot;" title=\"Creating a Custom Shopping Cart\" class=\"mw-redirect\">Custom Cart</a>');
+tam5a20fe2f86a9dt.add(49, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scriptable_Assignment_of_Execution_Plans\&quot;" title=\"Scriptable Assignment of Execution Plans\">Execution Plans</a>');
+
+                                               document.getElementById('5a20fe2f86a9dt').innerHTML = tam5a20fe2f86a9dt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20fe2f86a9dt) { window.tamOnload_tam5a20fe2f86a9dt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=ITIL_Implementation_Guide.html" title="ITIL Implementation Guide" class="mw-redirect">ITIL Implementation Guide</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:Service_Catalog_Administration.html" title="Book:Service Catalog Administration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Service_Catalog_Administration.html" title="Book:Service Catalog Administration">Service Catalog Admin</a>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Creating_Variables_for_Catalog_Items"><span class="tocnumber">2</span> <span class="toctext">Creating Variables for Catalog Items</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Defining_Help_Information"><span class="tocnumber">2.1</span> <span class="toctext">Defining Help Information</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Applying_Roles"><span class="tocnumber">2.2</span> <span class="toctext">Applying Roles</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Defining_Question_Choices"><span class="tocnumber">3</span> <span class="toctext">Defining Question Choices</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Editing_Variables"><span class="tocnumber">4</span> <span class="toctext">Editing Variables</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Administrators and users with the catalog_admin role can create service catalog variables and add them to a service catalog item, to provide options when ordering that item. The variables define questions to ask the customer ordering the catalog item.
+</p>
+<h1><span class="mw-headline" id="Creating_Variables_for_Catalog_Items"><span class="mw-headline-number">2</span> Creating Variables for Catalog Items</span></h1>
+<ol><li> Navigate to <b>Service Catalog &gt; Maintain Items</b>.</li>
+<li> Select the desired catalog item.</li>
+<li> In the <b>Variables</b> related list, click <b>New</b>.</li>
+<li> Select the variable type - some additional fields may be displayed depending on the type, see <a href="index.php%3Ftitle=Variable_Types.html" title="Variable Types">Variable Types</a> for more information about extra fields. </li>
+<li> Fill in the fields (see table).</li>
+<li> If applicable, <a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Applying_Roles">apply roles</a> to control who can create, read, or update the information in the variable.</li>
+<li> Click <b>Submit</b>.</li></ol>
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Catalog_variable_form_Eureka.png.html" class="image"><img alt="" src="images/thumb/a/ab/Catalog_variable_form_Eureka.png/800px-Catalog_variable_form_Eureka.png" width="800" height="686" class="thumbimage" srcset="/images/a/ab/Catalog_variable_form_Eureka.png 1.5x, /images/a/ab/Catalog_variable_form_Eureka.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Catalog_variable_form_Eureka.png.html" class="internal" title="Enlarge"></a></div>A variable that holds the user's response for a yes/no question.</div></div></div>  <br clear="all" /></dd></dl>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You might need to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configure the form</a> to see all the fields below.</i>
+</td></tr></table>
+<table class="standard">
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Type
+</td>
+<td> The <a href="index.php%3Ftitle=Variable_Types.html" title="Variable Types">type of variable</a>.
+</td></tr>
+<tr>
+<td> Cat item
+</td>
+<td> The catalog item using the variable.
+</td></tr>
+<tr>
+<td> Mandatory
+</td>
+<td> Makes the variable mandatory as part of the ordering process.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Makes the variable active (available).
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Fields available when the variable belongs to record producers</b>
+</td></tr>
+<tr>
+<td> Map to field
+</td>
+<td> Maps the variable to a specific field on the table for the record producer.
+</td></tr>
+<tr>
+<td> Field
+</td>
+<td> The field that the variable maps to.
+</td></tr>
+<tr>
+<td> Record producer table
+</td>
+<td> The table that the record producer creates a record in.
+</td></tr>
+<tr>
+<td> Field
+</td>
+<td> The field that the variable maps to.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Availability</b>
+</td></tr>
+<tr>
+<td> Visible Elsewhere
+</td>
+<td> Displays the variable on other types of catalog items (such as content items and record producers).
+</td></tr>
+<tr>
+<td> Visible on Bundles
+</td>
+<td> Displays the variable on bundles.
+</td></tr>
+<tr>
+<td> Visible on Guides
+</td>
+<td> Displays the variable on order guides.
+<p><b>Note:</b> If an order guide has a large number of items, which in turn have a large number of variables, consider unchecking this on as many items as possible, to improve loading performance on order guides. 
+</p>
+</td></tr>
+<tr>
+<td> Visible on Summaries
+</td>
+<td> Displays the variable on the summary of the catalog item.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Question</b>
+</td></tr>
+<tr>
+<td> Question
+</td>
+<td> The question to display to the end user.
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> An identifying name for the question.
+</td></tr>
+<tr>
+<td> Show help
+</td>
+<td> Provides additional information when the user requests it. See <a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html#Defining_Help_Information">Defining Help Information</a> for information about setting up this additional information.
+</td></tr>
+<tr>
+<td> Description
+</td>
+<td> A detailed description of the question. This is not customer-visible.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Type Specifications</b>: Options in this section differ depending on the variable type. See the table below.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Default Value</b>
+</td></tr>
+<tr>
+<td> Default value
+</td>
+<td> The default value for the variable.
+</td></tr>
+<tr>
+<td> Variable attributes
+</td>
+<td> The <a href="index.php%3Ftitle=Variable_Types.html#Using_Variable_Attributes" title="Variable Types">attributes for this variable</a>.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Other fields</b>
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td> A number defining the order in which that variable appears.
+</td></tr>
+<tr>
+<td> Global
+</td>
+<td> An option to show the variable in all catalog tasks within service catalog workflows or execution plans by default. The variable must be attached to individual catalog tasks if this option is not selected.
+</td></tr></table>
+<p><br />
+These fields are available for the <b>Type Specifications</b> section of the Variable form.
+</p>
+<table class="standard">
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Yes/No</b>
+</td></tr>
+<tr>
+<td> Include none
+</td>
+<td> Includes or excludes <b>None</b> as a selection choice for the variable.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Multiple Choice</b>
+</td></tr>
+<tr>
+<td> Choice direction
+</td>
+<td> The direction the choice box expands: down or across.
+</td></tr>
+<tr>
+<td> Do not select the first choice
+</td>
+<td> None of the choices will be selected when checked.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Numeric Scale</b>
+</td></tr>
+<tr>
+<td> Scale min
+</td>
+<td> The lowest value on the selectable scale.
+</td></tr>
+<tr>
+<td> Scale max
+</td>
+<td> The highest level on the selectable scale.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Lookup Select Box</b>
+</td></tr>
+<tr>
+<td> Lookup from table
+</td>
+<td> The table where the select box obtains values for the user to select.
+</td></tr>
+<tr>
+<td> Lookup value field
+</td>
+<td> The field in the lookup table that populates the default variable value.
+</td></tr>
+<tr>
+<td> Lookup label field(s)
+</td>
+<td> A comma-separated list of fields on the lookup table whose values are used to display the selections in the select box.
+</td></tr>
+<tr>
+<td> Lookup price field
+</td>
+<td> The field whose value is used to modify the price of the item being ordered.
+</td></tr>
+<tr>
+<td> Lookup recurring price field
+</td>
+<td> The field whose value is used to modify the recurring price of the item being ordered.
+</td></tr>
+<tr>
+<td> Unique values only
+</td>
+<td> Permit the field to have a unique value. The system will not let two records have the same value for that field.
+</td></tr>
+<tr>
+<td> Reference qual
+</td>
+<td> The <a href="index.php%3Ftitle=Reference_Qualifiers.html" title="Reference Qualifiers">reference qualifier</a>.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Select Box</b>
+</td></tr>
+<tr>
+<td>Choice table
+</td>
+<td> The table where the select box obtains values for the user to select.
+</td></tr>
+<tr>
+<td>Choice field
+</td>
+<td> The field in the table that populates the default variable value.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Check Box</b>
+</td></tr>
+<tr>
+<td>Price if checked
+</td>
+<td> The price of the item.
+</td></tr>
+<tr>
+<td>Recurring price if checked
+</td>
+<td> The price that the order increments if the user orders more than a quantity of one.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Reference</b>. See <a href="index.php%3Ftitle=Reference_Qualifiers.html#Configuring_Reference_Qualifiers" title="Reference Qualifiers">Reference Qualifiers</a>.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Macro</b> and <b>Macro with Label</b>
+</td></tr>
+<tr>
+<td>Macro
+</td>
+<td>The <a href="index.php%3Ftitle=UI_Macros.html" title="UI Macros">UI macro</a> to insert into the catalog item.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>UI page</b>
+</td></tr>
+<tr>
+<td>Macro
+</td>
+<td>The <a href="index.php%3Ftitle=UI_Pages.html" title="UI Pages">UI page</a> to insert into the catalog item.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Container Start</b>
+</td></tr>
+<tr>
+<td>Layout
+</td>
+<td>The type of layout for the container.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>List Collector</b>
+</td></tr>
+<tr>
+<td>List table
+</td>
+<td>The table with the values for the list collector.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Lookup Multiple Choice</b>. The fields for this type are described in the Multiple Choice and Lookup Select Box types.
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Defining_Help_Information"><span class="mw-headline-number">2.1</span> Defining Help Information</span></h2>
+<p>To include help information for a variable:
+</p>
+<ol><li>Select the <b>Show help</b> option.
+<dl><dd>Additional fields appear, to define the <b>Help tag</b> and <b>Help text</b>. </dd></dl></li>
+<li>In the <b>Help tag</b> field, enter the short descriptive text that should appear between the question and the responses. For example, <b>Click here for help</b> or <b>More Information</b>.</li>
+<li>In the <b>Help text</b> field, enter the expanded help text that appears when the user clicks the <b>Help tag</b>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:375px;"><a href="index.php%3Ftitle=File:Variable_help_expanded.png.html" class="image"><img alt="" src="images/5/52/Variable_help_expanded.png" width="373" height="231" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Variable_help_expanded.png.html" class="internal" title="Enlarge"></a></div>Variable help</div></div></div><br clear="all" /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Applying_Roles"><span class="mw-headline-number">2.2</span> Applying Roles</span></h2>
+<p>Apply role-based restrictions to a catalog variable to control which users can create, write (update), read, and delete a value for the variable. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Variable_roles.png.html" class="image"><img alt="" src="images/thumb/7/7a/Variable_roles.png/600px-Variable_roles.png" width="600" height="172" class="thumbimage" srcset="/images/7/7a/Variable_roles.png 1.5x, /images/7/7a/Variable_roles.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Variable_roles.png.html" class="internal" title="Enlarge"></a></div>Applying roles to the variable</div></div></div> <br style="clear:both;" />
+<p>This example shows that, for the the <i>CPU Speed</i> variable used by the <i>Executive Desktop</i> catalog item, only users with the <b>itil</b> role can write (update) or create a value for that variable.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You might need to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configure</a> the variable form to add the <b>Create roles</b>, <b>Read roles</b>, <b>Update roles</b>, and <b>Write roles</b> fields.</i>
+</td></tr></table>
+<p><br />
+To add role-based restrictions to a variable, click the lock icon by each field and select the roles that should have the associated access.
+</p>
+<h1><span class="mw-headline" id="Defining_Question_Choices"><span class="mw-headline-number">3</span> Defining Question Choices</span></h1>
+<p>Some variable types present the user with a list of choices. For example, a multiple choice variable that asks how much memory you want in a computer requires you to define the available choices, such as <i>1GB</i> and <i>2GB</i>.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:410px;"><a href="index.php%3Ftitle=File:Question_choice.png.html" class="image"><img alt="" src="images/5/5c/Question_choice.png" width="408" height="213" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Question_choice.png.html" class="internal" title="Enlarge"></a></div>The Question Choice form</div></div></div> <br clear="all" />
+<p>To define question choices for a variable:
+</p>
+<ol><li> Open the variable definition.</li>
+<li> In the <b>Question Choices</b> related list, click <b>New</b>.</li>
+<li> Enter the question choice details and save the record.
+<ul><li> <b>Price:</b> and <b>Recurring price:</b> variables may affect the item's <a href="index.php%3Ftitle=Service_Catalog_Variable_Pricing.html" title="Service Catalog Variable Pricing">price</a> and recurring price (if used).</li>
+<li> <b>Order:</b> the number defining the order this appears when displayed.</li>
+<li> <b>Question:</b> the actual question being asked for that variable.</li>
+<li> <b>Text:</b> the choice presented to the user.</li>
+<li> <b>Value:</b> the value stored in the database.</li></ul></li>
+<li> Repeat the steps for each available choice to define the full set of choices for that variable.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you modify variable choices that are attached to a catalog item, existing requested items (RITMs) are not affected. The changes apply to the new requested items.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Editing_Variables"><span class="mw-headline-number">4</span> Editing Variables</span></h1>
+<p>When a user orders a catalog item, the information collected from the item's variables is passed to the requested item generated for that order.
+</p><p>You can edit this information using the variable editor, changing variable information if needed, then saving your changes.
+</p><p><a href="index.php%3Ftitle=File:Service_Catalog_Variable_Editor.png.html" class="image"><img alt="Service Catalog Variable Editor.png" src="images/thumb/c/cc/Service_Catalog_Variable_Editor.png/500px-Service_Catalog_Variable_Editor.png" width="500" height="429" srcset="/images/thumb/c/cc/Service_Catalog_Variable_Editor.png/750px-Service_Catalog_Variable_Editor.png 1.5x, /images/c/cc/Service_Catalog_Variable_Editor.png 2x" /></a>
+</p><p>You may need to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configure the form</a> to see the variable editor.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The variable editor does not support confirmation messages if you navigate away from this form. If you do not save your changes before navigating away, your changes will be lost.</i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201070103
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.218 seconds
+Real time usage: 0.456 seconds
+Preprocessor visited node count: 93/1000000
+Preprocessor generated node count: 314/1000000
+Post‐expand include size: 3310/2097152 bytes
+Template argument size: 1485/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   64.143      1 - -total
+ 86.83%   55.698      1 - Template:Service_Catalog_Admin
+ 77.92%   49.978      1 - Template:Topic
+ 10.53%    6.754      5 - Template:Note
+  6.11%    3.922      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:1823-0!*!0!1!en!5!* and timestamp 20171201070103 and revision id 250406
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Service_Catalog_Variables&amp;oldid=250406.html">http://wiki.servicenow.com/index.php?title=Using_Service_Catalog_Variables&amp;oldid=250406</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Catalog+Management.html" title="Category:Service Catalog Management">Service Catalog Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Catalog+Management.html" title="Category:Service Catalog Management">Service Catalog Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_1823"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="1823" data-vote-the-vote="5" data-vote-id="1823" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_1823_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="1823" data-vote-the-vote="1" data-vote-id="1823" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_1823_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Using+Service+Catalog+Variables.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Using+Service+Catalog+Variables.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Service_Catalog_Variables.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Service_Catalog_Variables&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Using+Service+Catalog+Variables.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Service+Catalog+Variables&amp;returnto=Using+Service+Catalog+Variables&amp;oldid=250406&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Service_Catalog_Variables.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Service_Catalog_Variables" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables&amp;oldid=250406.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Service_Catalog_Variables&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:07, 25 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":785});});</script></body></html>

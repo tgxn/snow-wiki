@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>WorkflowModelManager - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"WorkflowModelManager","wgTitle":"WorkflowModelManager","wgCurRevisionId":154883,"wgRevisionId":154883,"wgArticleId":13336,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Workflow Script Includes"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"WorkflowModelManager","wgRelevantArticleId":13336,"wgRequestId":"fe82e69f88a4a6e531b28082","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20130326200953"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=WorkflowModelManager"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="WorkflowModelManager"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Workflow Script Includes"/>
+<meta name="category" content="Workflow Script Includes"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=WorkflowModelManager.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:WorkflowModelManager"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20130326200953"/>
+
+	<meta property="article:published_time" content="20130326200953"/>
+
+	<meta property="article:modified_time" content="20130326200953"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Workflow Script Includes"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=WorkflowModelManager"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-WorkflowModelManager rootpage-WorkflowModelManager skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=WorkflowModelManager.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=WorkflowModelManager&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">WorkflowModelManager</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Server_API_Reference.html" title="Server API Reference">Server APIs</a>  &gt; <a href="index.php%3Ftitle=Workflow_Script_Includes_Reference.html" title="Workflow Script Includes Reference">Workflow Script Includes</a> &gt; WorkflowModelManager</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2586fee5fbat'></div><script type="text/javascript">window.tamOnload_tam5a2586fee5fbat=[];tree = new dTree('tam5a2586fee5fbat');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2586fee5fbat = tree;
+                                               tam5a2586fee5fbat.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a2586fee5fbat.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a2586fee5fbat.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a2586fee5fbat.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a2586fee5fbat.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a2586fee5fbat.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a2586fee5fbat.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a2586fee5fbat.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a2586fee5fbat.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a2586fee5fbat.add(10, 0, 'Jelly');
+tam5a2586fee5fbat.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extensions_to_Jelly_Syntax\&quot;" title=\"Extensions to Jelly Syntax\">Extensions to Jelly Syntax</a> ');
+tam5a2586fee5fbat.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a2586fee5fbat.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a2586fee5fbat.add(14, 0, 'Debugging');
+tam5a2586fee5fbat.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a2586fee5fbat.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a2586fee5fbat.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a2586fee5fbat.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a2586fee5fbat.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a2586fee5fbat.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a2586fee5fbat.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a2586fee5fbat.add(22, 0, 'Client-Side Glide Reference');
+tam5a2586fee5fbat.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a2586fee5fbat.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a2586fee5fbat.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a2586fee5fbat.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a2586fee5fbat.add(27, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Side_GlideRecord\&quot;" title=\"Client Side GlideRecord\">Client-side GlideRecord</a>');
+tam5a2586fee5fbat.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a2586fee5fbat.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a2586fee5fbat.add(30, 0, 'Server-Side Glide Reference');
+tam5a2586fee5fbat.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a2586fee5fbat.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a2586fee5fbat.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a2586fee5fbat.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a2586fee5fbat.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">Date and Time Functions</a> ');
+tam5a2586fee5fbat.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a2586fee5fbat.add(37, 0, 'Script Helpers');
+tam5a2586fee5fbat.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a2586fee5fbat.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a2586fee5fbat.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a2586fee5fbat.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a2586fee5fbat.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a2586fee5fbat.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a2586fee5fbat.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a2586fee5fbat.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a2586fee5fbat.add(46, 0, 'Script Objects');
+tam5a2586fee5fbat.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a2586fee5fbat.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a2586fee5fbat.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a2586fee5fbat').innerHTML = tam5a2586fee5fbat.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2586fee5fbat) { window.tamOnload_tam5a2586fee5fbat[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Provides a way to query the workflow model, to step backwards and forwards between specified wf_history items and to query the history for activity and transition-specific information. The interaction with this class is through the ActivityHistoryRecord JavaScript data object defined below. This is an inner classes and is only used while interacting with WorkflowModelManager.
+</p><p>This first pass provides an interface to support new UI tools being developed to assist in debugging a workflow. 
+</p><p>To acquire the executed history of the workflow activities:
+</p>
+<pre>var model = new WorkflowModelManager('myContextId');
+var activities = model.getExecutedHistory();
+</pre>
+<p>To output the playback of the workflow use the following:
+</p>
+<pre>var model = new WorkflowModelManager('myContextId');
+model.getExecutedHistory();
+model.playBack();
+</pre>
+<p>At this time, the playBack is required to load the executed transitions. This will also play a role in walking backwards on a model to rollback to a specific activity. This is just iteration one in our sprint
+</p><p>To see the details of the cached model:
+</p>
+<pre> var model = new WorkflowModelManager('myContextId');
+ model.getExecutedHistory();
+ model.dump();
+</pre>
+<h2><span class="mw-headline" id="Where_To_Use"><span class="mw-headline-number">1.1</span> Where To Use</span></h2>
+<p>This is currently used in activity "RollBack To" and in the workflow timeline as realized in the  "WorkflowTimeline" script include. It is also wrapped by WorkflowModelmanagerAjax class in the WorkflowModelManagerAjax script include.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<table cellspacing="1" cellpadding="3" border="1" width="800px" class="sortable">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Method Summary</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#initialize.28context.29">initialize(context)</a>
+</td>
+<td valign="top"> Method called by the Prototype JavaScript Framework during object construction.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getExecutedHistory.28.29">getExecutedHistory()</a>
+</td>
+<td> Returns a fully initialized list of JavaScript objects ActivityHistoryRecord.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getActivityHistoryRecordById.28haRecordSysId.29">getActivityHistoryRecordById(haRecordSysId)</a>
+</td>
+<td> Retrieves the history activity that is cached by the wf_history.sys_id provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getPreviousByExecutedOrderId.28haRecordSysId.29">getPreviousByExecutedOrderId(haRecordSysId)</a>
+</td>
+<td> Retrieves the history activity cached by wf_history.sys_id.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getPreviousByExecutedOrder.28haRecord.29">getPreviousByExecutedOrder(haRecord)</a>
+</td>
+<td> Retrieves the history activity that executed just previous to the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getNextByExecutedOrderId.28haRecordSysId.29">getNextByExecutedOrderId(haRecordSysId)</a>
+</td>
+<td> Retrieves the history activity that is cached by the wf_history.sys_id provided in the argument and then calls into getNextByExecutedOrder() with the retrieved JavaScript object.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getNextByExecutedOrder.28haRecord.29">getNextByExecutedOrder(haRecord)</a>
+</td>
+<td> Retrieves the history activity that executed just after the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getNextByTransitionId.28haRecordSysId.29">getNextByTransitionId(haRecordSysId)</a>
+</td>
+<td> Retrieves the history activity that executed just after the one identified by the sys_id provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getNextByTransition.28haRecord.29">getNextByTransition(haRecord)</a>
+</td>
+<td> Retrieves the history activity that executed just after the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getPreviousByTransitionId.28haRecordSysId.29">getPreviousByTransitionId(haRecordId)</a>
+</td>
+<td>  Retrieves the history activities that executed just prior to the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getPreviousByTransition.28haRecord.29">getPreviousByTransition(haRecordf)</a>
+</td>
+<td> Retrieves the history activities that executed just prior to the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getAllTransitionedIntoActivityId.28haRecordSysId.29">getAllTransitionedIntoActivityId(haRecordSysId)</a>
+</td>
+<td> Retrieves the history activit(y)ies that executed and transitioned into the one represented by the sys_id in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getAllTransitionedIntoActivity.28haRecord.29">getAllTransitionedIntoActivity(haRecord)</a>
+</td>
+<td> Retrieves the history activit(y)ies that executed and transitioned into the one provided in the argument.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getFinalExecutedActivityIdList.28.29">getFinalExecutedActivityIdList()</a>
+</td>
+<td> Returns the list of wf_history.sys_ids of all activities that successfully executed and were not rolled back or skipped up to the moment the function was called.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getFinalExecutedActivityList.28.29">getFinalExecutedActivityList()</a>
+</td>
+<td> Returns the list of wf_history activities of all activities that successfully executed and were not rolled back or skipped up to the moment the function was called.
+</td></tr></table>
+<h1><span class="mw-headline" id="ActivityHistoryRecord_Method_Summary"><span class="mw-headline-number">3</span> ActivityHistoryRecord Method Summary</span></h1>
+<p>This is a simple data object used to interact with the WorkflowModelManager class. It is basically a copy of the data from a GlideRecord on table wf_history. There are some helper methods defined for this class as well. There are no accessors or mutator to the simple data elements of this class.
+</p>
+<table cellspacing="1" cellpadding="3" border="1" width="800px" class="sortable">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Method Summary</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#initialize.28grA.29">initialize(grA)</a>
+</td>
+<td> Method called by the Prototype JavaScript Framework during object construction.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isJoin.28.29">isJoin()</a>
+</td>
+<td> Determines if this activity is a join.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isTurnstile.28.29">isTurnstile()</a>
+</td>
+<td> Determines if this Activity is a turnstile.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isARollback.28.29">isARollback()</a>
+</td>
+<td> Determines if this Activity is one of the Rollback activities.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isRolledBack.28.29">isRolledBack()</a>
+</td>
+<td> Determines if this workflow was rolled back.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#addTransition.28inTransition.29">addTransition(inTransition)</a>
+</td>
+<td> Gets the log string from the history record.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getTransitionCount.28.29">getTransitionCount()</a>
+</td>
+<td> Gets transitions that have gone FROM this activity towards the .to activity.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#addJoinFromActivityIds.28activityIds.29">addJoinFromActivityIds(activityIds)</a>
+</td>
+<td> Seeds all the expected wf_activity sys_ids that are expected to pass through this join and sets their arriveState = false.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#addArrivedActivityToJoin.28activityId.29">addArrivedActivityToJoin(activityId)</a>
+</td>
+<td> Changes the arrivedState of already known ids to true.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isJoinWaitingForActivity.28activityId.29">isJoinWaitingForActivity(activityId)</a>
+</td>
+<td> Tests the incoming wf_activity sys_id, presumed to be seeded in this history record.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#doesJoinContainActivity.28activityId.29">doesJoinContainActivity(activityId)</a>
+</td>
+<td> Tests the incoming wf_activity sys_id, presumed to be seeded in this history record. If it is, it is tested to see if it is an activity that would come through this join.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getSatisfiedJoinActivities.28.29">getSatisfiedJoinActivities()</a>
+</td>
+<td> Returns the sys_ids of the history records that transition to this Join activity that have already come through.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getUnSatisfiedJoinActivities.28.29">getUnSatisfiedJoinActivities()</a>
+</td>
+<td> Gets the log string from the history record.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isJoinSatisfied.28.29">isJoinSatisfied()</a>
+</td>
+<td> Examines the value of the arriveState. Called during playback when the transition to sys_id of a transition points to an activity that is a join.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#isIdADestination.28ahrSys_id.29">isIdADestination(ahrSys_id)</a>
+</td>
+<td> Determines if the sys_id passed in is a destination of any of the transitions associated with this instance of an ActivityHistoryRecord.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#debugDump.28.29">debugDump()</a>
+</td>
+<td> Prints debug information.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html#getLogString.28.29">getLogString()</a>
+</td>
+<td> Gets the log string from the history record.
+</td></tr></table>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">4</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="initialize.28context.29"><span class="mw-headline-number">4.1</span> initialize(context)</span></h2>
+<p>Called by the Prototype JavaScript Framework during object construction. Do not call this method directly. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields"><span class="mw-headline-number">4.1.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><i>context</i> - sys_id of a workflow context (table wf_context).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields"><span class="mw-headline-number">4.1.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getExecutedHistory.28.29"><span class="mw-headline-number">4.2</span> getExecutedHistory()</span></h2>
+<p>This is the worker method that must be called to initialize this object. Typical usage is to instantiate the class and then call this method and then call other methods to accomplish work.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_2"><span class="mw-headline-number">4.2.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li>'None</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_2"><span class="mw-headline-number">4.2.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> An ordered array of sys_ids from table wf_history. It is unlikely client code would use the return value, it is kept internally to this object for use by subsequent method calls.
+</p>
+<h3><span class="mw-headline" id="Example"><span class="mw-headline-number">4.2.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;myContextId&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">activities</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getActivityHistoryRecordById.28haRecordSysId.29"><span class="mw-headline-number">4.3</span> getActivityHistoryRecordById(haRecordSysId)</span></h2>
+<p>Retrieves the history activity that
+is cached by the  wf_history.sys_id provided in the argument. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_3"><span class="mw-headline-number">4.3.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> - sys_id of the activity history (table wf_history).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_3"><span class="mw-headline-number">4.3.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> ActivityHistoryRecord JavaScript object.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getPreviousByExecutedOrderId.28haRecordSysId.29"><span class="mw-headline-number">4.4</span> getPreviousByExecutedOrderId(haRecordSysId)</span></h2>
+<p>Retrieves the history activity cached by the  wf_history.sys_id provided in the argument. It then calls to getPreviousByExecutedOrder() with the retrieved JavaScript object.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_4"><span class="mw-headline-number">4.4.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> - Workflow history system ID (wf_history.sys_id)</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_4"><span class="mw-headline-number">4.4.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> ActivityHistoryRecord JavaScript object.
+</p>
+<h3><span class="mw-headline" id="Example_2"><span class="mw-headline-number">4.4.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;contextId&#39;</span><span class="p">);</span>
+<span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getActivityHistoryRecordById</span><span class="p">(</span><span class="s1">&#39;wf_history.sys_id&#39;</span><span class="p">);</span>
+<span class="nx">current</span><span class="p">.</span><span class="nx">debugDump</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getPreviousByExecutedOrderId</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+<span class="nx">results</span><span class="p">.</span><span class="nx">debugDump</span><span class="p">();</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getPreviousByExecutedOrder.28haRecord.29"><span class="mw-headline-number">4.5</span> getPreviousByExecutedOrder(haRecord)</span></h2>
+<p>Retrieves the history activity that executed just previous to the one provided in the argument.
+</p><p>The <i>previous</i> status is based on the activity index reflecting the nearest prior activity in time and not necessarily the nearest prior activity with a valid transition to this activity. To get the nearest prior activity that transitioned to this haRecord passed in use getPreviousByTransition( haRecord ).
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>In the process of assembling the execution order array, blanks are left in the array where history objects have been deleted. This ensures that the index in the array and the activity_index of the object remain in synch. For that reason, all objects coming out of the execution order array should be tested for nil() and not assumed to be the previous record based on activity_index  or array index value.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Input_Fields_5"><span class="mw-headline-number">4.5.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecord</i> - ActivityHistoryRecord JavaScript object</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_5"><span class="mw-headline-number">4.5.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> ActivityHistoryRecord JavaScript object.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getNextByExecutedOrderId.28haRecordSysId.29"><span class="mw-headline-number">4.6</span> getNextByExecutedOrderId(haRecordSysId)</span></h2>
+<p>Retrieves the history activity that is cached by the  wf_history.sys_id provided in the argument and then calls into getNextByExecutedOrder() with the retrieved JavaScript object.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_6"><span class="mw-headline-number">4.6.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> - sys_id of the activity history (table wf_history).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_6"><span class="mw-headline-number">4.6.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> ActivityHistoryRecord JavaScript object.
+</p>
+<h3><span class="mw-headline" id="Example_3"><span class="mw-headline-number">4.6.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;7b3e01573b130000dada82c09ccf3dcf&#39;</span><span class="p">);</span>
+<span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getActivityHistoryRecordById</span><span class="p">(</span><span class="s1">&#39;d6681d573b130000dada82c09ccf3d10&#39;</span><span class="p">);</span>
+<span class="nx">current</span><span class="p">.</span><span class="nx">debugDump</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getNextByExecutedOrderId</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+<span class="nx">results</span><span class="p">.</span><span class="nx">debugDump</span><span class="p">();</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getNextByExecutedOrder.28haRecord.29"><span class="mw-headline-number">4.7</span> getNextByExecutedOrder(haRecord)</span></h2>
+<p>Retrieves the history activity that executed just after to the one provided in the argument. The 'next' status is based on the activity index reflecting the nearest prior activity in time and not necessarily the nearest next wf_activity the provided activity transitioned to. To get the nearest next activity that transitioned to this haRecord passed in use getNextByTransitionOrder( haRecord )
+</p><p>Note: In the process of assembling the execution order array, blanks are left in the array where history objects have been deleted. This is done to ensure the index in the array and the activity_index of the object remain in synch. For that reason, all objects coming out of the execution order array should be tested for nil() and not assumed to be the previous record based on activity_index  or array index value alone.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_7"><span class="mw-headline-number">4.7.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecord</i> - ActivityHistoryRecord JavaScript object.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_7"><span class="mw-headline-number">4.7.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> ActivityHistoryRecord JavaScript object.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getNextByTransitionId.28haRecordSysId.29"><span class="mw-headline-number">4.8</span> getNextByTransitionId(haRecordSysId)</span></h2>
+<p>Retrieves the history activity that
+executed just after to the one identified by the sys_id provided in the argument. 
+</p><p>This function retreives the cached history record associated with the provided wf_history.sys_id
+and then calls getNextByTransition (see notes below for details).
+</p><p>The return values are based on what transitions came before the haRecord
+submitted and not necessarily the activities that executed just prior
+to the haRecord in time. To get the activity that executed prior to this
+activity in time, use getNextByExecutedOrder.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_8"><span class="mw-headline-number">4.8.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> - sys_id of the activity history (table wf_history).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_8"><span class="mw-headline-number">4.8.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecord JavaScript object.
+</p>
+<h3><span class="mw-headline" id="Example_4"><span class="mw-headline-number">4.8.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;7b3e01573b130000dada82c09ccf3dcf&#39;</span><span class="p">);</span>
+<span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+<span class="nx">model</span><span class="p">.</span><span class="nx">playBack</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getActivityHistoryRecordById</span><span class="p">(</span><span class="s1">&#39;d6681d573b130000dada82c09ccf3d10&#39;</span><span class="p">);</span>
+<span class="nx">current</span><span class="p">.</span><span class="nx">debugDump</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getNextByTransitionId</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;COMPLETED NEXT&#39;</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span> <span class="p">);</span>
+<span class="k">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+     <span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">debugDump</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getNextByTransition.28haRecord.29"><span class="mw-headline-number">4.9</span> getNextByTransition(haRecord)</span></h2>
+<p>Retrieves the history activity that
+executed just after to the one provided in the argument. The
+'next' status is based on the .to value of all the transitions that
+are associated with the activity represented in the haRecord.
+</p><p>The return value is a collection of ActivityHistoryRecords that identify
+the argument haRecord as their TO activity.
+</p><p>The return values are based on what transitions came before the haRecord
+sumbitted and not not necessarily the activities that executed just prior
+to the haRecord in time. To get the activity that executed prior to this
+activity in time use getNextByExecutedOrder.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_9"><span class="mw-headline-number">4.9.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecord</i> - ActivityHistoryRecord JavaScript object.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_9"><span class="mw-headline-number">4.9.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecords JavaScript object.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getPreviousByTransitionId.28haRecordSysId.29"><span class="mw-headline-number">4.10</span> getPreviousByTransitionId(haRecordSysId)</span></h2>
+<p>Retrieves the history activities that
+executed just prior to the one provided in the argument. The
+'next' status is based on the wf_activity.sys_id associated with the activity 
+represented in the haRecord existing as a TO in a transition associated with
+any ActivityHistoryRecords that come before the haRecord in the execution sequence.
+</p><p>The return value is a collection of ActivityHistoryRecords that identify
+the argument haRecord.wfaId as their TO activity.
+</p><p>The return values are based on what transitions came before the haRecord
+sumbitted and not not necessarily the activities that executed just prior
+to the haRecord in time. To get the activity that executed prior to this
+activity in time use getPreviousByExecutedOrder.
+</p><p>see sample in getPreviousByTransition below
+</p>
+<h3><span class="mw-headline" id="Input_Fields_10"><span class="mw-headline-number">4.10.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> - sys_id of the activity history (table wf_history).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_10"><span class="mw-headline-number">4.10.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecord JavaScript objects.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getPreviousByTransition.28haRecord.29"><span class="mw-headline-number">4.11</span> getPreviousByTransition(haRecord)</span></h2>
+<p>Retrieves the history activities that
+executed just prior to the one provided in the argument. The
+'next' status is based on the wf_activity.sys_id associated with the activity 
+represented in the haRecord existing as a TO in a transition associated with
+any ActivityHistoryRecords that come before the haRecord in the execution sequence.
+</p><p>(This differs from getAllTransitionedIntoActivity, which will returns all TO transitions up
+to the given haRecord in the execution sequence )
+</p><p>The return value is a collection of ActivityHistoryRecords that identify
+the argument haRecord.wfaId as their TO activity.
+</p><p>The return values are based on what transitions came before the haRecord
+sumbitted and not not necessarily the activities that executed just prior
+to the haRecord in time. To get the activity that executed prior to this
+activity in time, use getPreviousByExecutedOrder.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_11"><span class="mw-headline-number">4.11.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecord</i> - ActivityHistoryRecord JavaScript object.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_11"><span class="mw-headline-number">4.11.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecord JavaScript object.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getAllTransitionedIntoActivityId.28haRecordSysId.29"><span class="mw-headline-number">4.12</span> getAllTransitionedIntoActivityId(haRecordSysId)</span></h2>
+<p>Retrieves the history activities that
+executed and transitioned into the one represented by the sys_id in the argument. The
+'next' status is based on the wf_activity.sys_id associated with the activity 
+represented in the haRecord existing as a TO in a transition associated with
+any ActivityHistoryRecords that executed in the workflow's history. (This differs
+from getPreviousByTransition, which will only return TO transitions that
+come before the haRecord in the execution sequence (by time).)
+</p><p>The return value is a collection of ActivityHistoryRecords that identify
+the argument haRecord.wfaId as their TO activity.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_12"><span class="mw-headline-number">4.12.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecordSysId</i> -  sys_id of the activity history (table wf_history).</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_12"><span class="mw-headline-number">4.12.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecord JavaScript objects.
+</p>
+<h3><span class="mw-headline" id="Example_5"><span class="mw-headline-number">4.12.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  <span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;a143585c3b001000dada82c09ccf3d44&#39;</span><span class="p">);</span>
+  <span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">activity</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">begin</span><span class="p">;</span>
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;activity: &#39;</span> <span class="o">+</span> <span class="nx">activity</span><span class="p">.</span><span class="nx">wfaName</span> <span class="o">+</span> <span class="s1">&#39;, transitions: &#39;</span> <span class="o">+</span> <span class="nx">activity</span><span class="p">.</span><span class="nx">transitions</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span> <span class="nx">activity</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>    
+      <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;activity: &#39;</span> <span class="o">+</span> <span class="nx">activity</span><span class="p">.</span><span class="nx">wfaName</span> <span class="o">+</span> <span class="s1">&#39;, transitions: &#39;</span> <span class="o">+</span> <span class="nx">activity</span><span class="p">.</span><span class="nx">transitions</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>    
+      <span class="kd">var</span> <span class="nx">parents</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getAllTransitionedIntoActivity</span><span class="p">(</span><span class="nx">activity</span><span class="p">);</span>
+      <span class="k">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">parents</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">){</span>
+          <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39; ---------------  parent activity: &#39;</span> <span class="o">+</span> <span class="nx">parents</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">wfaName</span> <span class="p">);</span>
+      <span class="p">}</span>
+  
+      <span class="nx">activity</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getNextByExecutedOrder</span><span class="p">(</span> <span class="nx">activity</span> <span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getAllTransitionedIntoActivity.28haRecord.29"><span class="mw-headline-number">4.13</span> getAllTransitionedIntoActivity(haRecord)</span></h2>
+<p>Retrieves the history activities that
+executed and transitioned into the one represented by the sys_id in the argument. The
+'next' status is based on the wf_activity.sys_id associated with the activity 
+represented in the haRecord existing as a TO in a transition associated with
+any ActivityHistoryRecords that executed in the workflow's history. (This differs
+from getPreviousByTransition, which will only return TO transitions that
+come before the haRecord in the execution sequence (by time).)
+</p><p>The return value is a collection of ActivityHistoryRecords that identify
+the argument haRecord.wfaId as their TO activity.
+</p><p>The return values are based on all transitions in the executed history collection that transition
+To get the activity that executed prior to this activity in time use getPreviousByExecutedOrder
+</p>
+<h3><span class="mw-headline" id="Input_Fields_13"><span class="mw-headline-number">4.13.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>haRecord</i> - ActivityHistoryRecord JavaScript object.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_13"><span class="mw-headline-number">4.13.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> - Array of ActivityHistoryRecord JavaScript objects.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getFinalExecutedActivityIdList.28.29"><span class="mw-headline-number">4.14</span> getFinalExecutedActivityIdList()</span></h2>
+<p>Gets the list
+of wf_history.sys_ids of all activities that successfully 
+executed and were not rolled back or skipped up to the moment the 
+function was called.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Input_Fields_14"><span class="mw-headline-number">4.14.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_14"><span class="mw-headline-number">4.14.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of wf_history.sys_id values for executed activities.
+</p>
+<h3><span class="mw-headline" id="Example_6"><span class="mw-headline-number">4.14.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkflowModelManager</span><span class="p">(</span><span class="s1">&#39;ee3e0a053b101000dada82c09ccf3d7c&#39;</span><span class="p">);</span>
+<span class="nx">model</span><span class="p">.</span><span class="nx">getExecutedHistory</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">finals</span> <span class="o">=</span> <span class="nx">model</span><span class="p">.</span><span class="nx">getFinalExecutedActivityIdList</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39; EXECUTION PATH IDs --------------- : &#39;</span>  <span class="o">+</span> <span class="nx">finals</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">finals</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">finals</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="getFinalExecutedActivityList.28.29"><span class="mw-headline-number">4.15</span> getFinalExecutedActivityList()</span></h2>
+<p>Queries the wf_history table by context and retrieves all the 
+activities executed in the workflow given by the context
+set in the construction of this object. 
+</p><p>This function will produce a list of executed activities in the
+exact order each activity passed through the server side
+ActivityManager.java using the new activity_index to force the order
+coming out of the database.
+</p><p>On its this call will not give the full picture, it needs to load
+and map the transitions.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_15"><span class="mw-headline-number">4.15.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_15"><span class="mw-headline-number">4.15.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of ActivityHistoryRecord javascript objects.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="ActivityHistoryRecord_Detail"><span class="mw-headline-number">5</span> ActivityHistoryRecord Detail</span></h1>
+<h2><span class="mw-headline" id="initialize.28grA.29"><span class="mw-headline-number">5.1</span> initialize(grA)</span></h2>
+<p>Called by the Prototype JavaScript Framework during object construction. Do not call this method directly.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_16"><span class="mw-headline-number">5.1.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>grA</i> - GlideRecord on wf_history table.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_16"><span class="mw-headline-number">5.1.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isJoin.28.29"><span class="mw-headline-number">5.2</span> isJoin()</span></h2>
+<p>Determines if this activity is a join.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_17"><span class="mw-headline-number">5.2.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_17"><span class="mw-headline-number">5.2.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if the activity is "Join".
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isTurnstile.28.29"><span class="mw-headline-number">5.3</span> isTurnstile()</span></h2>
+<p>Determines if this Activity is a turnstile.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_18"><span class="mw-headline-number">5.3.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_18"><span class="mw-headline-number">5.3.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true if the Activity is "Turnstile".
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isARollback.28.29"><span class="mw-headline-number">5.4</span> isARollback()</span></h2>
+<p>Determines if this Activity is one of the Rollback activities.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_19"><span class="mw-headline-number">5.4.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_19"><span class="mw-headline-number">5.4.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if Activity is one of the Rollback activities.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isRolledBack.28.29"><span class="mw-headline-number">5.5</span> isRolledBack()</span></h2>
+<p>Determines if this workflow was rolled back.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_20"><span class="mw-headline-number">5.5.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_20"><span class="mw-headline-number">5.5.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true if this workflow was rolled back.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="addTransition.28inTransition.29"><span class="mw-headline-number">5.6</span> addTransition(inTransition)</span></h2>
+<p>As model is cached by _getExecutedTransitions(), this
+method adds transitions that have gone FROM this 
+activity towards the .to activity.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_21"><span class="mw-headline-number">5.6.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>inTransition</i> - ExecutedTransition JavaScript object to add to this activity.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_21"><span class="mw-headline-number">5.6.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getTransitionCount.28.29"><span class="mw-headline-number">5.7</span> getTransitionCount()</span></h2>
+<p>Gets the transition count for this activity.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_22"><span class="mw-headline-number">5.7.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_22"><span class="mw-headline-number">5.7.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Number of transitions from this activity.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="addJoinFromActivityIds.28activityIds.29"><span class="mw-headline-number">5.8</span> addJoinFromActivityIds(activityIds)</span></h2>
+<p>Seeds all the expected wf_activity sys_ids that are expected to pass through
+this join and sets their arriveState = false. This state
+is flipped to true as each expected activity transitions
+to this instance of the Join. This method is called as part of building the cached model in memory, and is
+not called during playback.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_23"><span class="mw-headline-number">5.8.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>activityIds</i> - Array of wf_activity.sys_ids that are headed towards join</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_23"><span class="mw-headline-number">5.8.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="addArrivedActivityToJoin.28activityId.29"><span class="mw-headline-number">5.9</span> addArrivedActivityToJoin(activityId)</span></h2>
+<p>Changes the arrivedState of already known
+ids to true. As soon as it does, it tests to see if the join
+is satisfied. if it is, the model walk can continue; if not,
+it should continue to next appropriate transition. This is called during playback, as expected wf_activities
+flow to the join.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_24"><span class="mw-headline-number">5.9.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><i>activityId</i> - Array of wf_activity.sys_ids that are headed towards join</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_24"><span class="mw-headline-number">5.9.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isJoinWaitingForActivity.28activityId.29"><span class="mw-headline-number">5.10</span> isJoinWaitingForActivity(activityId)</span></h2>
+<p>Tests the incoming wf_activity sys_id, presumed to
+be seeded in this history record. If it is,
+it is tested to see if it has already been through; if it has,
+then this join is not waiting on this activity and it should look
+further downstream for the one that is waiting. This test is
+is called in sequence as the model is walked, so it does presume
+in the instances of rollbacks and loops. If the sys_id is in here
+and the flag is true, this waiting Join is further up the sequence.
+This sort of check is required as the history records of Joins
+are removed from the history table, and so it is possible for a 
+record to be in the transition table with no match in the corresponding
+history table, but is still an appropriate match for an earlier executed
+instance of the same Join.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_25"><span class="mw-headline-number">5.10.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>activityId</i> - Array of wf_activity.sys_ids that are headed towards join</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_25"><span class="mw-headline-number">5.10.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if the activity has already been through.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="doesJoinContainActivity.28activityId.29"><span class="mw-headline-number">5.11</span> doesJoinContainActivity(activityId)</span></h2>
+<p>Tests the incoming wf_activity sys_id, presumed to
+be seeded in this history record. If it is,
+it is tested to see if it is an activity that would come through this join.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_26"><span class="mw-headline-number">5.11.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_26"><span class="mw-headline-number">5.11.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if it is an activity that would come through this join.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getSatisfiedJoinActivities.28.29"><span class="mw-headline-number">5.12</span> getSatisfiedJoinActivities()</span></h2>
+<p>Returns the sys_ids of the history
+records that transition to this Join activity
+that have already come through.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_27"><span class="mw-headline-number">5.12.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_27"><span class="mw-headline-number">5.12.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of sys_ids of the history records that transition to this Join activity.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getUnSatisfiedJoinActivities.28.29"><span class="mw-headline-number">5.13</span> getUnSatisfiedJoinActivities()</span></h2>
+<p>Returns the sys_ids of the history
+records that transition to this Join activity
+that the join is still waiting for.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_28"><span class="mw-headline-number">5.13.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_28"><span class="mw-headline-number">5.13.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> Array of sys_ids of the history records that transition to this Join activity.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isJoinSatisfied.28.29"><span class="mw-headline-number">5.14</span> isJoinSatisfied()</span></h2>
+<p>Examines the value of the arriveState.
+Called during playback when the transition to sys_id of a transition
+points to an activity that is a join. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_29"><span class="mw-headline-number">5.14.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_29"><span class="mw-headline-number">5.14.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if the join is satisfied; otherwise, false.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="isIdADestination.28ahrSys_id.29"><span class="mw-headline-number">5.15</span> isIdADestination(ahrSys_id)</span></h2>
+<p>Determines if the sys_id passed in is a destination of any of the transitions associated with this instance of an ActivityHistoryRecord.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_30"><span class="mw-headline-number">5.15.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>ahrSys_id</i> - Activity history sys_id from table wf_history</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_30"><span class="mw-headline-number">5.15.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> (Boolean) true, if the sys_id passed in is a destination of any of the transitions.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="debugDump.28.29"><span class="mw-headline-number">5.16</span> debugDump()</span></h2>
+<p>Prints debug information.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_31"><span class="mw-headline-number">5.16.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_31"><span class="mw-headline-number">5.16.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getLogString.28.29"><span class="mw-headline-number">5.17</span> getLogString()</span></h2>
+<p>Gets the log string from the history record.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_32"><span class="mw-headline-number">5.17.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b>
+</p>
+<ul><li><i>None</i></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_32"><span class="mw-headline-number">5.17.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The log string. 
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171204173354
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.310 seconds
+Real time usage: 3.248 seconds
+Preprocessor visited node count: 520/1000000
+Preprocessor generated node count: 754/1000000
+Post‐expand include size: 3465/2097152 bytes
+Template argument size: 772/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1070.123      1 - -total
+ 11.96%  127.955      1 - Template:General_Script
+ 10.16%  108.721      1 - Template:Topic
+  1.45%   15.482      2 - Template:T
+  0.55%    5.897      1 - Embedded:General_Script
+  0.39%    4.184      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:13336-0!*!0!1!*!5!* and timestamp 20171204173350 and revision id 154883
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=WorkflowModelManager&amp;oldid=154883.html">http://wiki.servicenow.com/index.php?title=WorkflowModelManager&amp;oldid=154883</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Script+Includes.html" title="Category:Workflow Script Includes">Workflow Script Includes</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow.html" title="Category:Workflow">Workflow</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Script+Includes.html" title="Category:Workflow Script Includes">Workflow Script Includes</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+APIs.html" title="Category:Server APIs">Server APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_13336"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="13336" data-vote-the-vote="5" data-vote-id="13336" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_13336_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="13336" data-vote-the-vote="1" data-vote-id="13336" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_13336_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=WorkflowModelManager.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=WorkflowModelManager&amp;returntoquery=printable%3Dyes" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=WorkflowModelManager&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=WorkflowModelManager.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=WorkflowModelManager&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=WorkflowModelManager.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=WorkflowModelManager&amp;returnto=WorkflowModelManager&amp;oldid=154883&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FWorkflowModelManager.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FWorkflowModelManager.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=WorkflowModelManager&amp;oldid=154883.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=WorkflowModelManager&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:09, 26 March 2013.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1067});});</script></body></html>

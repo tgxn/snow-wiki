@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Administering Zing Text Search - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Administering_Zing_Text_Search","wgTitle":"Administering Zing Text Search","wgCurRevisionId":250025,"wgRevisionId":250025,"wgArticleId":11439,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Search Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Administering_Zing_Text_Search","wgRelevantArticleId":11439,"wgRequestId":"9cd0a95101ddc1bb1d0e34f5","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170811164927"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Administering_Zing_Text_Search"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Administering Zing Text Search"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Search Administration"/>
+<meta name="category" content="Search Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Administering_Zing_Text_Search.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Administering Zing Text Search"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170811164927"/>
+
+	<meta property="article:published_time" content="20170811164927"/>
+
+	<meta property="article:modified_time" content="20170811164927"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Search Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Administering_Zing_Text_Search"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Administering_Zing_Text_Search rootpage-Administering_Zing_Text_Search skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Administering Zing Text Search</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Core_Configuration.html" title="Core Configuration">Core Configuration</a> &gt; <a href="index.php%3Ftitle=Zing_Text_Search.html" title="Zing Text Search">Search Administration</a> &gt; Administering Zing Text Search</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Zing_Text_Search.html" title="Zing Text Search">Zing Text Search</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><strong class="selflink">Administering Zing</strong>
+<ul><li><a href="index.php%3Ftitle=Document_scoring.html" title="Document scoring">Zing Result Scoring</a></li>
+<li><a href="index.php%3Ftitle=How_search_works.html" title="How search works">How Zing Works</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Top_Searches_Homepage.html" title="Top Searches Homepage">Top Searches Homepage</a></li>
+<li><a href="index.php%3Ftitle=Administering_Global_Text_Search.html" title="Administering Global Text Search">Global Text Search</a></li>
+<li><a href="index.php%3Ftitle=Administering_Knowledge_Search.html" title="Administering Knowledge Search" class="mw-redirect">Administering Knowledge Search</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Searching+Knowledge&amp;oldid=0.html" title="Searching Knowledge" class="mw-redirect">Searching Knowledge</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Enabling+Attachment+Indexing&amp;oldid=0.html" title="Enabling Attachment Indexing">Enabling Attachment Indexing</a></li>
+<li><a href="index.php%3Ftitle=Enabling_Text_Search_in_Record_Lists.html" title="Enabling Text Search in Record Lists">Enabling Text Search in Record Lists</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Global+Text+Search&amp;oldid=0.html" title="Using Global Text Search">Using Global Text Search</a></li>
+<li><a href="index.php%3Ftitle=Introduction_to_Searching.html" title="Introduction to Searching">Introduction to Searching</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Knowledge+Management+with+KCS&amp;oldid=0.html" title="Knowledge Management with KCS" class="mw-redirect">Knowledge Management with KCS</a></li></ul>
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/search-administration/concept/c_ZingTextSearch.html">Zing Text Indexing and Search Engine</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The Wiki page is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Controlling_Match_Relevance_by_Field"><span class="tocnumber">2</span> <span class="toctext">Controlling Match Relevance by Field</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Converting_Text_Indexes_to_Improve_Performance"><span class="tocnumber">3</span> <span class="toctext">Converting Text Indexes to Improve Performance</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Stop_Words"><span class="tocnumber">4</span> <span class="toctext">Configuring Stop Words</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Global_Stop_Words"><span class="tocnumber">4.1</span> <span class="toctext">Global Stop Words</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Table-Specific_Stop_Words"><span class="tocnumber">4.2</span> <span class="toctext">Table-Specific Stop Words</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Automatic_Stop_Words"><span class="tocnumber">4.3</span> <span class="toctext">Automatic Stop Words</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Text_Indexes_for_Tables"><span class="tocnumber">5</span> <span class="toctext">Configuring Text Indexes for Tables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Indexing_a_Single_Table"><span class="tocnumber">5.1</span> <span class="toctext">Indexing a Single Table</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Viewing_Text_Indexing_Statistics_and_Status"><span class="tocnumber">5.2</span> <span class="toctext">Viewing Text Indexing Statistics and Status</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Removing_an_Index"><span class="tocnumber">5.3</span> <span class="toctext">Removing an Index</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Removing_an_Index_for_a_Specific_Field"><span class="tocnumber">5.4</span> <span class="toctext">Removing an Index for a Specific Field</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Disabling_the_Junk_Filter"><span class="tocnumber">6</span> <span class="toctext">Disabling the Junk Filter</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Properties"><span class="tocnumber">7</span> <span class="toctext">Properties</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Security"><span class="tocnumber">8</span> <span class="toctext">Security</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#User_Roles"><span class="tocnumber">8.1</span> <span class="toctext">User Roles</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Zing_Table_Access_Rules"><span class="tocnumber">8.2</span> <span class="toctext">Zing Table Access Rules</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Search_Results_Automatically_Filtered_by_ACL_Rules"><span class="tocnumber">8.3</span> <span class="toctext">Search Results Automatically Filtered by ACL Rules</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Debugging_Zing"><span class="tocnumber">9</span> <span class="toctext">Debugging Zing</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Updating_Type-Ahead_Suggestions"><span class="tocnumber">10</span> <span class="toctext">Updating Type-Ahead Suggestions</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_.22Did_You_Mean.3F.22_Suggestions"><span class="tocnumber">11</span> <span class="toctext">Configuring "Did You Mean?" Suggestions</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Installed_Components"><span class="tocnumber">12</span> <span class="toctext">Installed Components</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Business_Rules"><span class="tocnumber">12.1</span> <span class="toctext">Business Rules</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Scheduled_Jobs"><span class="tocnumber">12.2</span> <span class="toctext">Scheduled Jobs</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#UI_Actions"><span class="tocnumber">12.3</span> <span class="toctext">UI Actions</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Homepages"><span class="tocnumber">12.4</span> <span class="toctext">Homepages</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#New_Tables"><span class="tocnumber">12.5</span> <span class="toctext">New Tables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Enhancements"><span class="tocnumber">13</span> <span class="toctext">Enhancements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Eureka"><span class="tocnumber">13.1</span> <span class="toctext">Eureka</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Dublin"><span class="tocnumber">13.2</span> <span class="toctext">Dublin</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Calgary"><span class="tocnumber">13.3</span> <span class="toctext">Calgary</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Zing is the text indexing and search engine that performs all searches in ServiceNow. Administrators and users with the ts_admin role can configure the following options for Zing:
+</p>
+<ul><li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Controlling_Match_Relevance_by_Field">Control match relevance by field</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Stop_Words">Configure global stop words and stop words for each index</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Text_Indexes_for_Tables">Configure text indexes for tables</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Disabling_the_Junk_Filter">Disable the junk filter for tables</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Properties">Configure properties for optimal performance</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Security">Control Zing security</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Debugging_Zing">Debug Zing</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Updating_Type-Ahead_Suggestions">Update type-ahead suggestions</a>.</li>
+<li><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_.22Did_You_Mean.3F.22_Suggestions">Configure "Did you mean?" suggestions</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Enabling_Punctuation_Handling">Enable punctuation handling</a>.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Installed_Components">Review components that are installed by text search</a>.</li></ul>
+<h1><span class="mw-headline" id="Controlling_Match_Relevance_by_Field"><span class="mw-headline-number">2</span> Controlling Match Relevance by Field</span></h1>
+<p>To improve search results, the search engine assigns to each potential match a numeric score that represents its relevancy to the query. Administrators can control the relative importance of a match for each field in a table with the ts_weight attribute. The default weight of a field is <i>1</i>.
+</p><p>To set the relative weight of a field:
+</p>
+<ol><li> Open the <a href="index.php%3Ftitle=System_Dictionary.html" title="System Dictionary">system dictionary entry</a> for the field.</li>
+<li> In the <b>Attributes</b> field, enter <i>ts_weight=&lt;value&gt;</i>, where &lt;value&gt; is the relative weight of the field.
+<dl><dd>For example, if the <b>Title</b> field has a <i>ts_weight=50</i> and the <b>Description</b> field has a <i>ts_weight=10</i>, then a match in the title is weighted 5 times more relevant than a match in the description and 50 times more relevant than a field without the ts_weight attribute.</dd></dl></li>
+<li> Click <b>Update</b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>To view the complete scoring system, see <a href="index.php%3Ftitle=Document_scoring.html" title="Document scoring">Document scoring</a>.</i>
+</td></tr></table>
+<p><br />
+The following fields have elevated scoring weights by default:
+</p>
+<ul><li>kb_knowledge.number = 50</li>
+<li>kb_knowledge.short_description = 10</li>
+<li>kb_knowledge.meta = 10</li>
+<li>task.number = 50</li>
+<li>task.short_description = 10</li></ul>
+<h1><span class="mw-headline" id="Converting_Text_Indexes_to_Improve_Performance"><span class="mw-headline-number">3</span> Converting Text Indexes to Improve Performance</span></h1>
+<p>To improve performance, a new text index structure is available (<a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>). It is configured automatically for instances created after the Calgary release. For upgraded instances, ServiceNow automatically starts the conversion.
+</p>
+<ul><li> All text indexes are regenerated. This process may take a while to complete, and you may notice performance degradation or incomplete search results while the indexes are being regenerated.</li>
+<li> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Enabling_Punctuation_Handling">Punctuation handling</a> is automatically enabled, if necessary. This process creates additional default <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Global_Stop_Words">global stop words</a> (for example, <i>I've</i> and <i>I'm</i>).</li>
+<li> When the upgrade completes, the text_event.upgrade_calgary event is written to the <a href="index.php%3Ftitle=Viewing_System_Logs.html" title="Viewing System Logs">system log</a>.</li></ul>
+<h1><span class="mw-headline" id="Configuring_Stop_Words"><span class="mw-headline-number">4</span> Configuring Stop Words</span></h1>
+<p><i>Stop words</i> are common words that are not indexed because they are not meaningful in search results. Articles, conjunctions, personal pronouns, and prepositions are examples of stop words that are not used in keyword searches.
+</p>
+<h2><span class="mw-headline" id="Global_Stop_Words"><span class="mw-headline-number">4.1</span> Global Stop Words</span></h2>
+<p>To configure the stop words for all indexed tables:
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Text Index Stop Words</b>.</li>
+<li> Add or remove stop words from the list.</li>
+<li> If a message appears at the top of the list, contact <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html" title="Technical Support" class="mw-redirect">Technical Support</a> to regenerate all indexes.
+<dl><dd> You must regenerate indexes whenever words may be missing from an index. For example, if you delete, inactivate, or change an active global stop word, the word may be missing from the index. An <i>after</i> <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Business_Rules">business rule</a> checks these conditions and generates the notification message when index regeneration is necessary.</dd></dl></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:RegenMsg.png.html" class="image"><img alt="" src="images/thumb/b/b2/RegenMsg.png/500px-RegenMsg.png" width="500" height="123" class="thumbimage" srcset="/images/b/b2/RegenMsg.png 1.5x, /images/b/b2/RegenMsg.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:RegenMsg.png.html" class="internal" title="Enlarge"></a></div><b>Notification to regenerate all indexes</b></div></div></div><br style="clear:both;" />
+<h2><span class="mw-headline" id="Table-Specific_Stop_Words"><span class="mw-headline-number">4.2</span> Table-Specific Stop Words</span></h2>
+<p>To configure the stop words for a specific table:
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Text Indexes</b>.</li>
+<li> Open the text index entry for the table.</li>
+<li> Add or remove stop words from the <b>Index Stop Words</b> related list.
+<dl><dd> For each word, select the desired <b>Stop mode</b> (<i>Not a Stop Word</i> (inactivates the stop word), <i>Neither Index nor Query</i>, or <i>Index but do not Query</i>).</dd></dl></li>
+<li> If a message appears at the top of the form, click <b>Regenerate Text Index</b> and click <b>OK</b>.
+<dl><dd> You must regenerate indexes whenever words may be missing from an index. For example, if you delete or change a stop word for which the mode was <i>Neither Index nor Query</i>, the word may be missing from the index. An <i>after</i> <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rule</a> checks these conditions and generates the notification message when index regeneration is necessary.</dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Text search uses the global list plus the table-specific list of stop words when indexing the table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:TableStopWords.png.html" class="image"><img alt="" src="images/thumb/c/ce/TableStopWords.png/500px-TableStopWords.png" width="500" height="417" class="thumbimage" srcset="/images/c/ce/TableStopWords.png 1.5x, /images/c/ce/TableStopWords.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:TableStopWords.png.html" class="internal" title="Enlarge"></a></div><b>Table-specific stop words</b></div></div></div><br style="clear:both;" />
+<h2><span class="mw-headline" id="Automatic_Stop_Words"><span class="mw-headline-number">4.3</span> Automatic Stop Words</span></h2>
+<p>To configure automatic stop words for a table:
+</p>
+<ol><li> Navigate to  <b>System Definition &gt; Text Indexes</b>.</li>
+<li> Open the text index entry for the table.</li>
+<li> Select the <b>Auto stop</b> check box.</li>
+<li> Enter the maximum number of occurrences for a non-stop word in the <b>Auto threshold</b> field.</li>
+<li> Click <b>Update</b>.
+<dl><dd> When the number of occurrences of a word exceeds the threshold, the word is automatically add as a stop word for the table with the <b>Stop mode</b> of <i>Index but do not Query</i> and a <b>Comment</b> to indicate that the stop word was generated automatically. Automatic stop words are compiled on a nightly basis by the <i>TS Index Stats</i> scheduled job.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Configuring_Text_Indexes_for_Tables"><span class="mw-headline-number">5</span> Configuring Text Indexes for Tables</span></h1>
+<p>You can add, rebuild, or remove text indexes against any table to control what is and is not searchable. The search engine only returns results for tables that are indexed. Ensure no indexing job is running before making these changes.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> 
+<ul><li><i>Each option in a choice list is defined with both a label and a value, which can be different. The label appears in the choice list on forms and is indexed for text searches. However, the value is used for scripting and is not found by a text search.</i></li>
+<li><i>A table is not automatically reindexed when data on a referenced table changes. For example, if a record in the knowledge base references a group and the group name changes, searches for the old group name will still yield results and searches for the new group name will not.</i></li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Indexing_a_Single_Table"><span class="mw-headline-number">5.1</span> Indexing a Single Table</span></h2>
+<p>To add or rebuild a text index for a table:
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Dictionary</b>.</li>
+<li> Open the dictionary entry for the table.</li>
+<li> Click the <b>Generate Text Index</b> related link and click <b>OK</b>.
+<dl><dd>Alternately, you can regenerate a text index from the table record in the list of text indexes. See <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Table-Specific_Stop_Words">Table-Specific Stop Words</a>.</dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This process may take a while to complete depending on table size and other factors. You may notice performance degradation or incomplete search results while the indexes are being regenerated. To estimate text indexing duration, you can view <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Viewing_Text_Indexing_Statistics_and_Status">historical statistics</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:Gen_text_index.png.html" class="image"><img alt="" src="images/thumb/7/7c/Gen_text_index.png/500px-Gen_text_index.png" width="500" height="242" class="thumbimage" srcset="/images/7/7c/Gen_text_index.png 1.5x, /images/7/7c/Gen_text_index.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Gen_text_index.png.html" class="internal" title="Enlarge"></a></div><b>Generate a single text index</b></div></div></div><br style="clear:both;" />
+<h2><span class="mw-headline" id="Viewing_Text_Indexing_Statistics_and_Status"><span class="mw-headline-number">5.2</span> Viewing Text Indexing Statistics and Status</span></h2>
+<p>To view text indexing statistics and status, navigate to <b>System Definition &gt; Text Indexes</b>.
+</p>
+<ul><li> If text indexing is in progress, view the status of each index in the <b>State</b> field. Refresh the list to view updates. Tables are indexed one at a time.</li>
+<li> To see how long it takes to index a specific table, view the <b>Last indexing duration</b> field for the table entry. Although each process varies based on activity and data, historical data can provide a good estimate.</li>
+<li> View statistics (such as the number of indexed rows, terms, and queries in the past week) in the list or on the form for a specific table.</li></ul>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:IndexStatus.png.html" class="image"><img alt="" src="images/thumb/f/ff/IndexStatus.png/500px-IndexStatus.png" width="500" height="213" class="thumbimage" srcset="/images/f/ff/IndexStatus.png 1.5x, /images/f/ff/IndexStatus.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:IndexStatus.png.html" class="internal" title="Enlarge"></a></div><b>Text index status</b></div></div></div><br style="clear:both;" />
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:IndexStats.png.html" class="image"><img alt="" src="images/thumb/b/bf/IndexStats.png/500px-IndexStats.png" width="500" height="155" class="thumbimage" srcset="/images/b/bf/IndexStats.png 1.5x, /images/b/bf/IndexStats.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:IndexStats.png.html" class="internal" title="Enlarge"></a></div><b>Text index statistics</b></div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Removing_an_Index"><span class="mw-headline-number">5.3</span> Removing an Index</span></h2>
+<p>To remove an index against a table:
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Dictionary</b>.</li>
+<li> Open the dictionary entry for the table.</li>
+<li> Clear the <b>Text index</b> check box and click <b>Update</b>.
+<dl><dd> The system no longer indexes or queries the table for text search results.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Removing_an_Index_for_a_Specific_Field"><span class="mw-headline-number">5.4</span> Removing an Index for a Specific Field</span></h2>
+<p>To remove an index against a specific field within an indexed table:
+</p>
+<ol><li> Navigate to a form containing the field.</li>
+<li> Right-click the field label and select <b>Configure Dictionary</b> (<b>Personalize Dictionary</b> in versions prior to <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a>).</li>
+<li> Add <b>no_text_index=true</b> to the <b>Attributes</b> field. Separate multiple <a href="index.php%3Ftitle=Dictionary_Attributes.html" title="Dictionary Attributes">attributes</a> with a comma (with no spaces).</li>
+<li> Click <b>Update</b>.
+<dl><dd> The system no longer indexes or queries the field for text search results.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Disabling_the_Junk_Filter"><span class="mw-headline-number">6</span> Disabling the Junk Filter</span></h1>
+<p>By default, Zing does not index or search for 2-digit numbers and single character words (unless they are Chinese or Japanese characters). You can turn off this filter for a table. For example, to have the ability to search for <i>error 92</i> in the knowledge base, turn off junk filtering for <i>kb_knowledge</i>.
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Dictionary</b>.</li>
+<li> Open the dictionary entry for the table.</li>
+<li> In the <b>Attributes</b> field, enter <b>text_index_filter_junk=false</b>.</li>
+<li> Right-click the header and select <b>Save</b>.</li>
+<li> Click the <b>Generate Text Index</b> related link and click <b>OK</b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> 
+<ul><li> To have the desired effect, you may also need to reconfigure the <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Automatic_Stop_Words">automatic stop words</a>. For example, if a specific 2-digit number appears in all of your problem numbers (92-0001, 92-0002, and so on), the automatic stop word threshold is quickly exceeded and the word is no longer found in searches. To find that 2-digit number in the problem table, you must disable both junk filtering and automatic stop words.</li>
+<li> Disabling the junk filter results in a larger table index. For optimal performance, do not apply this attribute unless it is required.</li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Properties"><span class="mw-headline-number">7</span> Properties</span></h1>
+<p>To configure Zing properties, navigate to <b>System Properties &gt; Text Search</b>.
+</p>
+<table cellspacing="1" cellpadding="3" border="1" style="width: 90%">
+<tr>
+<th>Name
+</th>
+<th>Description
+</th>
+<th>Details
+</th></tr>
+<tr style="vertical-align:top;">
+<td colspan="3"> <b>Text Search Query Properties</b>
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ir.query_method
+</td>
+<td>Query method for global text search. Run a query for each table, for each base class (parent table), or against a single index regardless of table (requires text index regeneration), or let GlideRecord handle the query (simple). With the Zing text search engine, the preferred value is "simple".
+</td>
+<td>To learn more, see <a href="index.php%3Ftitle=Administering_Global_Text_Search.html#Query_Method" title="Administering Global Text Search">Global Text Search Query Method</a>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.query.parallelism
+</td>
+<td>Number of simultaneous processes (1 to 10) used to perform search tasks
+</td>
+<td> Default value is <i>5</i>. Higher values do not provide additional benefits for mysql databases.
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.max_duration
+</td>
+<td>Length of time (in seconds, 10 to 600) that a search is allowed to run before it is canceled
+</td>
+<td> Default value is <i>60</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td> glide.ts.widget.top_search_tables
+</td>
+<td> Comma-separated list of table names which will have home page top searches widgets available for them
+</td>
+<td> Default value is <i>4</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td colspan="3"> <b>Text Search Index Properties</b>
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.index.parallelism
+</td>
+<td>Number of simultaneous processes (1 to 16) used to perform indexing tasks
+</td>
+<td> Default value is <i>8</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.optimize.parallelism
+</td>
+<td>Number of simultaneous processes (1 to 16) used to perform index optimization tasks
+</td>
+<td> Default value is <i>2</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td colspan="3"> <b>Text Search Database Properties</b>
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.private_pool
+</td>
+<td>Use a separate database connection pool for text queries
+</td>
+<td> Default value is <i>true</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.oracle_hint
+</td>
+<td>Use query hints for text searches against Oracle databases
+</td>
+<td> Default value is <i>true</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td colspan="3"> <b>Did You Mean Properties</b>
+</td></tr>
+<tr style="vertical-align:top;">
+<td> glide.ts.dym.enable_spell_correct
+</td>
+<td> Suggest alternate search spellings for knowledge or global search
+</td>
+<td> Default value is <i>false</i>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td> glide.ts.dym.enable_chain_suggest
+</td>
+<td> Suggest related searches for knowledge or global search
+</td>
+<td> Default value is <i>false</i>.
+</td></tr></table>
+<p><br />
+To configure additional Zing properties, open the <i>sys_properties</i> table. To learn more, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Adding a property</a>.
+</p>
+<table cellspacing="1" cellpadding="3" border="1" style="width: 90%">
+<tr>
+<th>Name
+</th>
+<th>Description
+</th>
+<th>Details
+</th></tr>
+<tr style="vertical-align:top;">
+<td>glide.ts.max_wildcard_expansion
+</td>
+<td> Maximum number of matches for a wildcard term that are allowed as unambiguous
+</td>
+<td> Default value is <i>500</i>. Type is <i>integer</i>. If a wildcard matches more words than this threshold, a message appears asking the user to refine the search.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The <b>Text Search Property Change Rationally</b> business rule ensures that valid values are entered for Zing text search properties.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Security"><span class="mw-headline-number">8</span> Security</span></h1>
+<h2><span class="mw-headline" id="User_Roles"><span class="mw-headline-number">8.1</span> User Roles</span></h2>
+<p>Zing installs the <i>ts_admin</i> <a href="index.php%3Ftitle=Creating_Roles.html" title="Creating Roles">user role</a>. Administrators and users with the <i>ts_admin</i> role can configure Zing text search settings.
+</p>
+<h2><span class="mw-headline" id="Zing_Table_Access_Rules"><span class="mw-headline-number">8.2</span> Zing Table Access Rules</span></h2>
+<p>Administrators and users with the <i>ts_admin</i> role have the following access to Zing system tables:
+</p>
+<ul><li><b>ts_index_name</b>: view the tables for which the data is indexed.</li>
+<li><b>ts_index_stop</b> and <b>ts_stop</b>: configure these tables for <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Stop_Words">stop words</a>. </li></ul>
+<p>Extending or modifying other Zing system tables is not recommended.
+</p>
+<h2><span class="mw-headline" id="Search_Results_Automatically_Filtered_by_ACL_Rules"><span class="mw-headline-number">8.3</span> Search Results Automatically Filtered by ACL Rules</span></h2>
+<p>Zing automatically filters search results using <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">ACL Rules</a>. Only users who meet the ACL requirements of the search results will actually see them.
+</p><p>For example, suppose you index the System Properties [sys_properties] table. When the ITIL User searches for a term in the system properties table, Zing returns no search results because the ITIL user does not meet the ACL rule requirements.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:781px;"><a href="index.php%3Ftitle=File:Zing_acl_check_01.png.html" class="image"><img alt="" src="images/5/5a/Zing_acl_check_01.png" width="779" height="456" class="thumbimage" /></a>  <div class="thumbcaption">ITIL User cannot see search results from restricted table</div></div></div> <br style="clear:both;" />
+<p>When a system administrator searches for the same property, Zing returns search results from the System Properties tables because the administrator meets the ACL rule requirements.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:1040px;"><a href="index.php%3Ftitle=File:Zing_acl_check_02.png.html" class="image"><img alt="" src="images/4/47/Zing_acl_check_02.png" width="1038" height="809" class="thumbimage" /></a>  <div class="thumbcaption">System Administrator can see search results</div></div></div> <br style="clear:both;" />
+<h1><span class="mw-headline" id="Debugging_Zing"><span class="mw-headline-number">9</span> Debugging Zing</span></h1>
+<p>Debugging messages create a log of search processes as they occur. These messages may help administrators configure optimal performance settings.
+</p><p>To view debugging messages, navigate to <b>System Diagnostics &gt; Session Debug &gt; Debug Text Search</b>. The search log messages appear at the bottom of the results page for the remainder of your session.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:302px;"><a href="index.php%3Ftitle=File:Ts_debug.png.html" class="image"><img alt="" src="images/thumb/6/6b/Ts_debug.png/300px-Ts_debug.png" width="300" height="192" class="thumbimage" srcset="/images/thumb/6/6b/Ts_debug.png/450px-Ts_debug.png 1.5x, /images/6/6b/Ts_debug.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Ts_debug.png.html" class="internal" title="Enlarge"></a></div><b>Debugging messages</b></div></div></div><br style="clear:both;" />
+<p>To debug text indexing problems, you may want to view text_index events in the <a href="index.php%3Ftitle=Viewing_System_Logs.html" title="Viewing System Logs">system log</a>.
+</p><p>In rare cases, you may need to reset the text search caches after regenerating a text index. If text search fails for known words, diagnose and fix this problem:
+</p>
+<ol><li>Enable text search debugging messages.</li>
+<li>In any table with search problems, search for the problem text.</li>
+<li>In the debug output, note the numbers used for the <b>Stemmed terms</b>.</li>
+<li>Enter <i>ts_word.list</i> in the navigation filter.</li>
+<li>Locate the stemmed terms and compare the numbers in the list to the debug output (step 3). If the numbers are different, the UI node's cache is stale.</li>
+<li>Navigate to <b>System Definition &gt; Text Indexes</b>.</li>
+<li>Click the <b>Reset Text Search Caches</b> related link and click <b>OK</b>.</li></ol>
+<h1><span class="mw-headline" id="Updating_Type-Ahead_Suggestions"><span class="mw-headline-number">10</span> Updating Type-Ahead Suggestions</span></h1>
+<p>The knowledge base and global text searches provide suggestions as you type. These type-ahead suggestions are compiled on a nightly basis by a scheduled job. If you need to refresh this list sooner:
+</p>
+<ol><li> Navigate to <b>System Scheduler &gt; Scheduled Jobs</b>.</li>
+<li> Open <b>TS Search Stats</b>.</li>
+<li> Run the scheduled job.</li></ol>
+<h1><span class="mw-headline" id="Configuring_.22Did_You_Mean.3F.22_Suggestions"><span class="mw-headline-number">11</span> Configuring "Did You Mean?" Suggestions</span></h1>
+<p>The knowledge base and global text searches can provide “Did you mean?” suggestions. Suggestions appear if a search does not return any results and an alternate spelling or similar recent search does. This feature is disabled by default.
+</p><p>To enable "Did you mean?" suggestions:
+</p>
+<ol><li> Navigate to <b>System Properties &gt; Text Search</b>.</li>
+<li> Select any of the following check boxes: 
+<ul><li> <b>Suggest alternate search spellings for knowledge or global search</b> (the <i>glide.ts.dym.enable_spell_correct</i> property).</li>
+<li> <b>Suggest related searches for knowledge or global search</b> (the <i>glide.ts.dym.enable_chain_suggest</i> property); uses search chains, which generate suggestions by tracking occurrences of similar searches, in order, over time.</li></ul></li>
+<li> Click <b>Save</b>.</li></ol>
+<h1><span class="mw-headline" id="Installed_Components"><span class="mw-headline-number">12</span> Installed Components</span></h1>
+<h2><span class="mw-headline" id="Business_Rules"><span class="mw-headline-number">12.1</span> Business Rules</span></h2>
+<p>The <b>Text Search Property Change Rationally</b> business rule ensures that valid values are entered for Zing text search properties.
+</p>
+<ul><li> <b>Text Index Stop Reminder</b>: warns the user of stop word changes that require the index to be rebuilt (table-specific). The warning is issued if record is deleted that had a stop mode "neither index nor query", if record's stop mode is updated to something else and was "neither index nor query", and if record's word is updated to something else and stop mode is  "neither index nor query".</li>
+<li> <b>Stop Word Reminder</b>: warns the user of stop word changes that require the index to be rebuilt (global).  The warning is issued if record is deleted and it was active, if record is inactivated, and if record's word is changed and was active.</li></ul>
+<h2><span class="mw-headline" id="Scheduled_Jobs"><span class="mw-headline-number">12.2</span> Scheduled Jobs</span></h2>
+<p>The following scheduled jobs are added:
+</p>
+<ul><li> <b>TS Search Stats:</b> compiles type-ahead suggestions each night. See <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Updating_Type-Ahead_Suggestions">Updating Type-Ahead Suggestions</a>.</li>
+<li> <b>TS Index Stats:</b> runs every night; collects statistics and performs maintenance for text search and indexing.</li>
+<li> <b>text index events process:</b> runs every 30 seconds; collects statistics and performs maintenance for text search and indexing.</li>
+<li> <b>TS Search Summary:</b> compiles top search statistics each hour. See <a href="index.php%3Ftitle=Top_Searches_Homepage.html#Updating_Top_Search_Statistics" title="Top Searches Homepage">Top Searches Homepage</a>.</li>
+<li> <b>TS Chain Summary:</b> compiles search chain statistics each hour.</li></ul>
+<h2><span class="mw-headline" id="UI_Actions"><span class="mw-headline-number">12.3</span> UI Actions</span></h2>
+<p>The following UI actions are added:
+</p>
+<ul><li> <b>Regenerate Text Index:</b> displays the "Regenerate Text Index" link on Text Index forms.</li></ul>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Regenerating all text indexes can cause severe performance degradation. Contact <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html" title="Technical Support" class="mw-redirect">Technical Support</a> for assistance with this function.
+</td></tr></table>
+<h2><span class="mw-headline" id="Homepages"><span class="mw-headline-number">12.4</span> Homepages</span></h2>
+<p>This homepage displays the most popular searches over the past hour, day, week, or month.  To learn more, see <a href="index.php%3Ftitle=Top_Searches_Homepage.html" title="Top Searches Homepage">Top Searches Homepage</a>.
+</p>
+<h2><span class="mw-headline" id="New_Tables"><span class="mw-headline-number">12.5</span> New Tables</span></h2>
+<p>The following tables are added: 
+</p>
+<table cellspacing="1" cellpadding="3" border="1" style="width: 75%">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Display Name (Table Name)</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr style="vertical-align:top;">
+<td> Text Indexes (ts_index_name)
+</td>
+<td> Tracks the tables for which the data is indexed.
+</td></tr>
+<tr style="vertical-align:top;">
+<td> Ts index stops (ts_index_stop)
+</td>
+<td> Stores the <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Stop_Words">stop words</a> for a specific table.
+</td></tr>
+<tr style="vertical-align:top;">
+<td> Stop words (ts_stop)
+</td>
+<td> Stores the global <a href="index.php%3Ftitle=Administering_Zing_Text_Search.html#Configuring_Stop_Words">stop words</a>.
+</td></tr>
+<tr style="vertical-align:top;">
+<td> ts_attachment<br />ts_chain_summary<br />ts_chain<br />ts_deleted_doc<br />ts_document<br />ts_index_stats<br />ts_phrase<br />ts_search_stats<br />ts_search_summary<br />ts_word_roots<br />ts_word<br />
+</td>
+<td> System tables that support Zing. Extending or modifying these tables is not recommended.
+</td></tr></table>
+<h1><span class="mw-headline" id="Enhancements"><span class="mw-headline-number">13</span> Enhancements</span></h1>
+<h2><span class="mw-headline" id="Eureka"><span class="mw-headline-number">13.1</span> Eureka</span></h2>
+<ul><li> Zing search can index <a href="index.php%3Ftitle=Introduction_to_Searching.html#Searching_HTML_Content" title="Introduction to Searching">certain elements of HTML tags</a>.</li></ul>
+<h2><span class="mw-headline" id="Dublin"><span class="mw-headline-number">13.2</span> Dublin</span></h2>
+<ul><li> Search results with exact word and phrase matches have higher relative importance than stemmed matches.</li></ul>
+<h2><span class="mw-headline" id="Calgary"><span class="mw-headline-number">13.3</span> Calgary</span></h2>
+<ul><li> To improve performance, the text index structure is revised. For upgraded instances, ServiceNow automatically converts existing text indexes to the new structure. New instances use the new index structure by default.</li>
+<li> When text indexes are converted to the new index structure, the text index reaper is no longer necessary to maintain indexes.</li>
+<li> To prevent performance and data corruption problems, you can no longer regenerate all text indexes. Administrators can regenerate the index for an individual table if necessary.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201090216
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.345 seconds
+Real time usage: 0.470 seconds
+Preprocessor visited node count: 218/1000000
+Preprocessor generated node count: 492/1000000
+Post‐expand include size: 5922/2097152 bytes
+Template argument size: 2970/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   59.542      1 - -total
+ 66.66%   39.693      1 - Template:Search_Admin
+ 55.85%   33.254      1 - Template:Topic
+ 18.27%   10.876      2 - Template:T
+ 13.57%    8.081      7 - Template:Note
+ 10.98%    6.535      1 - Template:Warning
+  9.38%    5.583      1 - Embedded:Search_Admin
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:11439-0!*!0!1!en!5!* and timestamp 20171201090216 and revision id 250025
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Administering_Zing_Text_Search&amp;oldid=250025.html">http://wiki.servicenow.com/index.php?title=Administering_Zing_Text_Search&amp;oldid=250025</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Category:Search_Administration.html" title="Category:Search Administration">Search Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Core+Configuration.html" title="Category:Core Configuration">Core Configuration</a> &gt; <a href="index.php%3Ftitle=Category:Search_Administration.html" title="Category:Search Administration">Search Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_11439"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="11439" data-vote-the-vote="5" data-vote-id="11439" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11439_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="11439" data-vote-the-vote="1" data-vote-id="11439" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11439_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Administering_Zing_Text_Search.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Administering+Zing+Text+Search.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Administering+Zing+Text+Search.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Administering_Zing_Text_Search.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Administering_Zing_Text_Search&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Administering+Zing+Text+Search.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Administering+Zing+Text+Search&amp;returnto=Administering+Zing+Text+Search&amp;oldid=250025&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Administering_Zing_Text_Search&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FAdministering_Zing_Text_Search.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FAdministering_Zing_Text_Search.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Administering_Zing_Text_Search&amp;oldid=250025.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Administering_Zing_Text_Search&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:49, 11 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1015});});</script></body></html>

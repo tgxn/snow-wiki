@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Coding Best Practices - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Coding_Best_Practices","wgTitle":"Coding Best Practices","wgCurRevisionId":245936,"wgRevisionId":245936,"wgArticleId":18113,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Development Best Practices"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Coding_Best_Practices","wgRelevantArticleId":18113,"wgRequestId":"a4229c5bc87eef3ee18ac308","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150415234820"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Coding_Best_Practices"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Coding Best Practices"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Development Best Practices"/>
+<meta name="category" content="Development Best Practices"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Coding+Best+Practices&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Coding Best Practices"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150415234820"/>
+
+	<meta property="article:published_time" content="20150415234820"/>
+
+	<meta property="article:modified_time" content="20150415234820"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Development Best Practices"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Coding_Best_Practices"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Coding_Best_Practices rootpage-Coding_Best_Practices skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Coding+Best+Practices.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Coding+Best+Practices&amp;oldid=0.html" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (79 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Coding Best Practices</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Development Best Practices</a> &gt; Coding Best Practices</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a>
+</th></tr>
+<tr>
+<td> <div style="width:260px;">
+<div class='dtree' id='5a21d6bc3e868t'></div><script type="text/javascript">window.tamOnload_tam5a21d6bc3e868t=[];tree = new dTree('tam5a21d6bc3e868t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21d6bc3e868t = tree;
+                                               tam5a21d6bc3e868t.add(1, 0, 'Planning');
+
+tam5a21d6bc3e868t.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Planning_for_Development_Best_Practices\&quot;" title=\"Planning for Development Best Practices\">Planning for Development Best Practices</a>');
+tam5a21d6bc3e868t.add(3, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Documenting_a_Migration_Procedure\&quot;" title=\"Documenting a Migration Procedure\">Documenting a Migration Procedure</a>');
+tam5a21d6bc3e868t.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Application_Design\&quot;" title=\"Modifying the Application Design\">Modifying the Application Design</a>');
+tam5a21d6bc3e868t.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understand_the_Requirements\&quot;" title=\"Understand the Requirements\">Requirements Best Practices</a>');
+tam5a21d6bc3e868t.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_UI_Appearance\&quot;" title=\"Customizing the UI Appearance\">Customizing the UI Appearance</a>');
+tam5a21d6bc3e868t.add(7, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Best_Practices\&quot;" title=\"Security Best Practices\">Security Best Practices</a>');
+tam5a21d6bc3e868t.add(8, 0, 'Development');
+tam5a21d6bc3e868t.add(9, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Script_Best_Practices\&quot;" title=\"Client Script Best Practices\">Client Script Best Practices</a>');
+tam5a21d6bc3e868t.add(10, 8, ' <strong class=\"selflink\">Coding Best Practices</strong>');
+tam5a21d6bc3e868t.add(11, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Commenting_Your_Work\&quot;" title=\"Commenting Your Work\">Commenting Your Work</a>');
+tam5a21d6bc3e868t.add(12, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Business_Rules_Best_Practices\&quot;" title=\"Business Rules Best Practices\">Business Rules Best Practices</a>');
+tam5a21d6bc3e868t.add(13, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Update_Sets_Best_Practices\&quot;" title=\"Update Sets Best Practices\">Update Sets Best Practices</a>');
+tam5a21d6bc3e868t.add(14, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_and_Importing_XML_Files\&quot;" title=\"Exporting and Importing XML Files\">Exporting and Importing XML Files</a>');
+tam5a21d6bc3e868t.add(15, 0, 'Maintenance');
+tam5a21d6bc3e868t.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Debugging_Tools_Best_Practices\&quot;" title=\"Debugging Tools Best Practices\">Debugging Tools Best Practices</a>');
+tam5a21d6bc3e868t.add(17, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Properties_Best_Practices\&quot;" title=\"System Properties Best Practices\">System Properties Best Practices</a>');
+tam5a21d6bc3e868t.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Logs_and_Queues_Best_Practices\&quot;" title=\"Logs and Queues Best Practices\">Logs and Queues Best Practices</a>');
+tam5a21d6bc3e868t.add(19, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrades_Best_Practices\&quot;" title=\"Upgrades Best Practices\">Upgrades Best Practices</a>');
+tam5a21d6bc3e868t.add(20, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Patches_Best_Practices\&quot;" title=\"Patches Best Practices\">Patches Best Practices</a>');
+tam5a21d6bc3e868t.add(21, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Performance_Best_Practices\&quot;" title=\"System Performance Best Practices\">System Performance Best Practices</a>');
+tam5a21d6bc3e868t.add(22, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_Performance_Best_Practices\&quot;" title=\"Import Set Performance Best Practices\">Import Set Performance Best Practices</a>');
+
+tam5a21d6bc3e868t.add(23, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a></div>');
+                                               document.getElementById('5a21d6bc3e868t').innerHTML = tam5a21d6bc3e868t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21d6bc3e868t) { window.tamOnload_tam5a21d6bc3e868t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Make_Code_Easy_to_Read"><span class="tocnumber">2</span> <span class="toctext">Make Code Easy to Read</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Include_Comments"><span class="tocnumber">2.1</span> <span class="toctext">Include Comments</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_White_Space"><span class="tocnumber">2.2</span> <span class="toctext">Use White Space</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_Descriptive_Variable_and_Function_Names"><span class="tocnumber">2.3</span> <span class="toctext">Use Descriptive Variable and Function Names</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Write_Simple_Statements"><span class="tocnumber">2.4</span> <span class="toctext">Write Simple Statements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Create_Small_Modular_Components"><span class="tocnumber">3</span> <span class="toctext">Create Small Modular Components</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Construct_Reusable_Functions"><span class="tocnumber">3.1</span> <span class="toctext">Construct Reusable Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Return_Values"><span class="tocnumber">3.1.1</span> <span class="toctext">Return Values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_Variables_to_Store_Function_Results"><span class="tocnumber">3.2</span> <span class="toctext">Use Variables to Store Function Results</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_Immediately_Invoked_Function_Expressions"><span class="tocnumber">3.3</span> <span class="toctext">Use Immediately Invoked Function Expressions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_Complex_GlideRecord_Queries"><span class="tocnumber">4</span> <span class="toctext">Avoid Complex GlideRecord Queries</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_Coding_Pitfalls"><span class="tocnumber">5</span> <span class="toctext">Avoid Coding Pitfalls</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Experiment_in_a_Sandbox"><span class="tocnumber">5.1</span> <span class="toctext">Experiment in a Sandbox</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Code_in_Stages"><span class="tocnumber">5.2</span> <span class="toctext">Code in Stages</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Do_Not_Use_Hard-Coded_Values"><span class="tocnumber">5.3</span> <span class="toctext">Do Not Use Hard-Coded Values</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_Dot-Walking_to_the_sys_id_of_a_Reference_Field"><span class="tocnumber">5.4</span> <span class="toctext">Avoid Dot-Walking to the sys_id of a Reference Field</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_getDisplayValue.28.29_Effectively"><span class="tocnumber">5.5</span> <span class="toctext">Use getDisplayValue() Effectively</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Verify_Values_Exist_Before_Using_Them"><span class="tocnumber">5.6</span> <span class="toctext">Verify Values Exist Before Using Them</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_Complex_Queries_on_Large_Data_Sets"><span class="tocnumber">5.7</span> <span class="toctext">Avoid Complex Queries on Large Data Sets</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Let_the_Database_Do_the_Work"><span class="tocnumber">5.8</span> <span class="toctext">Let the Database Do the Work</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_Dynamic_JEXL_Expressions_in_an_Evaluate"><span class="tocnumber">5.9</span> <span class="toctext">Avoid Dynamic JEXL Expressions in an Evaluate</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Avoid_eval_Function"><span class="tocnumber">5.10</span> <span class="toctext">Avoid eval Function</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Use_GlideAggregate_for_Simple_Record_Counting"><span class="tocnumber">5.11</span> <span class="toctext">Use GlideAggregate for Simple Record Counting</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Building strong functionality in ServiceNow begins with writing high-quality code. Take steps to make your code manageable, efficient, and scalable from the early stages. This helps to ensure good performance, reduces the chances of problems, and simplifies the <a href="index.php%3Ftitle=Debugging_Tools_Best_Practices.html" title="Debugging Tools Best Practices">debugging</a> process later.
+</p><p>Scoped applications are available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. Scripts created for scoped applications have new rules for referencing global scripts and scripts from other applications. The coding best practices still apply. The examples on this page may need to be changed to run in a scoped script. To start creating scoped applications, see <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications.html" title="Scripting in Scoped Applications">Scripting in Scoped Applications</a>.
+</p>
+<h1><span class="mw-headline" id="Make_Code_Easy_to_Read"><span class="mw-headline-number">2</span> Make Code Easy to Read</span></h1>
+<p>When writing code, remember that others may work with it in the future. Whenever possible, ensure your code is easy to read and understand. Follow any formatting standards used by your organization.
+</p>
+<h2><span class="mw-headline" id="Include_Comments"><span class="mw-headline-number">2.1</span> Include Comments</span></h2>
+<p>Always include comments in your code. What seems obvious to one developer may be unclear to others. Please review the guidelines for <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Commenting+Your+Work&amp;oldid=0.html" title="Commenting Your Work">commenting code</a>.
+</p>
+<h2><span class="mw-headline" id="Use_White_Space"><span class="mw-headline-number">2.2</span> Use White Space</span></h2>
+<p>Use empty lines and spaces to make code more readable. The easier it is to read code, the easier it is to identify and correct issues. Empty lines help to visually group blocks of code together so the reader can see the logical organization. Spaces on each line help make the items on an individual line easier to read. 
+</p><p>The format code icon (<a href="index.php%3Ftitle=File:Format_code.gifx.html" class="image"><img alt="Format code.gifx" src="images/6/67/Format_code.gifx" width="16" height="16" /></a>) in the ServiceNow <a href="index.php%3Ftitle=Using_the_Syntax_Editor.html" title="Using the Syntax Editor">syntax editor</a> is a useful tool for adjusting indentation without altering other spacing.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Example of poor white space usage</span>
+<span class="kd">function</span> <span class="nx">createRelationship</span><span class="p">(</span><span class="nx">relType</span><span class="p">,</span><span class="nx">childCI</span><span class="p">,</span><span class="nx">parentCI</span><span class="p">){</span>
+<span class="kd">var</span> <span class="nx">newRel</span><span class="o">=</span><span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;cmdb_rel_ci&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">newRelType</span><span class="o">=</span><span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;cmdb_rel_type&#39;</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">childCI</span><span class="o">==</span><span class="nx">parentCI</span><span class="p">)</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">relTypeID</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">newRelType</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">relType</span><span class="p">)){</span>
+<span class="nx">relTypeID</span><span class="o">=</span><span class="nx">newRelType</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">);</span>
+<span class="nx">newRel</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="nx">relTypeID</span><span class="p">);</span>
+<span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;child&#39;</span><span class="p">,</span><span class="nx">childCI</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+<span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span><span class="nx">parentCI</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+<span class="nx">newRel</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The lack of indentation and spacing in the previous example makes it difficult to determine the flow of logic. By adding a few spaces, the code becomes more readable:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Example of good white space usage</span>
+<span class="kd">function</span> <span class="nx">createRelationship</span><span class="p">(</span><span class="nx">relType</span><span class="p">,</span> <span class="nx">childCI</span><span class="p">,</span> <span class="nx">parentCI</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Put spaces between parameters and before curly brace</span>
+
+    <span class="kd">var</span> <span class="nx">newRel</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;cmdb_rel_ci&#39;</span><span class="p">);</span>   <span class="c1">// Put spaces around &#39;=&#39;.</span>
+    <span class="kd">var</span> <span class="nx">newrelType</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;cmdb_rel_type&#39;</span><span class="p">);</span> <span class="c1">// Optionally, put additional spaces to align &#39;=&#39; w/previous line.</span>
+    <span class="kd">var</span> <span class="nx">relTypeID</span><span class="p">;</span>                                  <span class="c1">// Group variables together where appropriate</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">childCI</span> <span class="o">==</span> <span class="nx">parentCI</span><span class="p">)</span>  <span class="c1">// Put a space after &#39;if&#39; and around operators (&#39;!=&#39;)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newRelType</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">relType</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Use extra blank lines to help break up chunks of code and improve readability</span>
+
+        <span class="nx">relTypeID</span> <span class="o">=</span> <span class="nx">newRelType</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">);</span>
+
+        <span class="nx">newRel</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>                     <span class="c1">// Group similar statements together</span>
+        <span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="nx">relTypeID</span><span class="p">);</span>
+        <span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;child&#39;</span><span class="p">,</span> <span class="nx">childCI</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+        <span class="nx">newRel</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="nx">parentCI</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+        <span class="nx">newRel</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Your organization may use a specific style guide for white space usage, curly brace placement, and other JavaScript guidelines. Follow standards that best suit the needs of your organization.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Use_Descriptive_Variable_and_Function_Names"><span class="mw-headline-number">2.3</span> Use Descriptive Variable and Function Names</span></h2>
+<p>Meaningful names for functions and variables better indicate to readers the purpose of code. Consider this code excerpt:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Poor function and variable names</span>
+<span class="kd">function</span> <span class="nx">del</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="c1">// 13=cancel/delete</span>
+        <span class="nx">r</span><span class="p">.</span><span class="nx">deleteRecord</span><span class="p">();</span>
+    <span class="k">else</span>
+        <span class="nx">a</span> <span class="o">=</span> <span class="nx">d</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>It is difficult to determine the purpose of <tt>function del(r, d, s)</tt>. A better way to write this is:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Good function and variable names</span>
+<span class="kd">function</span> <span class="nx">deleteIfCanceled</span><span class="p">(</span><span class="nx">glideRec</span><span class="p">,</span> <span class="nx">defaultAnswer</span><span class="p">,</span> <span class="nx">stateValue</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">stateValue</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span>
+        <span class="nx">glideRec</span><span class="p">.</span><span class="nx">deleteRecord</span><span class="p">();</span>
+    <span class="k">else</span>
+        <span class="nx">answer</span> <span class="o">=</span> <span class="nx">defaultAnswer</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Though it is helpful to be descriptive, there are cases where shorter variable names are acceptable. In some programming languages, it is common practice to use the variable <tt>i</tt> for counting in a looping statement (such as <tt>for-loop</tt>). The following code is perfectly acceptable:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">myArray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>  <span class="p">{</span>
+     <span class="c1">// Do some important processing on each record here</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Write_Simple_Statements"><span class="mw-headline-number">2.4</span> Write Simple Statements</span></h2>
+<p>Remember that less experienced developers may work with your code in the future. Make it as easy to maintain as possible. In general, it is the compiler's job to make code fast, so minimize the use of fancy tricks. For example, experienced programmers may not have an issue with the following statement:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="nx">y</span><span class="p">)</span> <span class="o">?</span> <span class="nx">a</span> <span class="o">:</span> <span class="nx">b</span><span class="p">;</span>
+</pre></div>
+<p>Less experienced developers may find it challenging to understand. Instead, the statement could be written more clearly as:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">result</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="nx">y</span><span class="p">)</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="k">else</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Create_Small_Modular_Components"><span class="mw-headline-number">3</span> Create Small Modular Components</span></h1>
+<p>Break down your code into modular components or specialized functions. <a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes">Script include</a> functions are excellent examples of this technique. Script includes are essentially libraries of functionality that can be implemented in other server-side scripts, such as <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rules</a>, <a href="index.php%3Ftitle=UI_Actions.html" title="UI Actions">UI actions</a>, and <a href="index.php%3Ftitle=Script_Actions.html" title="Script Actions">script actions</a>. Some of the benefits of specialized functions include:
+</p>
+<ul><li> They are easy to create, since they are small and simple with limited functionality.</li>
+<li> They are generally simpler and shorter, so it is easy to understand the logic, inputs, and outputs. This makes it easier for the next person who works with the code to make modifications. </li>
+<li> They are easier to test. As a related note, when you test the code, be sure to test both valid and invalid inputs to ensure the script is as robust as possible. </li></ul>
+<p>As you create small specialized functions, keep in mind how the small bits fit together in a larger construct. For example, you may find that doing a query of the same data inside 10 separate functions is not database-friendly, and that a different approach is necessary. 
+</p>
+<h2><span class="mw-headline" id="Construct_Reusable_Functions"><span class="mw-headline-number">3.1</span> Construct Reusable Functions</span></h2>
+<p>If you see the same or similar logic repeated in a process, consider creating a specialized function. This improves the quality of code, saves you the trouble of searching through multiple blocks of similar code when a problem arises, and makes code easier to maintain. 
+</p><p>For example, assume a script adds a user to one <a href="index.php%3Ftitle=Configuring_Watch_Lists.html" title="Configuring Watch Lists">watch list</a>, adds another user to a different watch list, and then adds a configuration item (CI) to a user-defined <a href="index.php%3Ftitle=Referencing_a_Glide_List_from_a_Script.html" title="Referencing a Glide List from a Script">glide_list</a> field. The only things that are different between the code for each command are the field name and the element being inserted; the logic is the same. The script could be constructed as a single function, <tt>addGlideListElement(listName, elementID)</tt>, and called repeatedly, as in this script include:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">AcmeIncidentFunctions</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="nx">AcmeIncidentFunctions</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">},</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * addGlideListElement - add a sys_id to a specified glide list field</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param grField - field element to add a value (e.g. current.watch_list)</span>
+<span class="cm">     * @param id - sys_id to add (if it doesn&#39;t already exist)</span>
+<span class="cm">     * @return - new list values</span>
+<span class="cm">     *</span>
+<span class="cm">     */</span>
+    <span class="nx">addGlideListElement</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grField</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Get the list of values</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">JSUtil</span><span class="p">.</span><span class="nx">notNil</span><span class="p">(</span><span class="nx">grField</span><span class="p">))</span>
+            <span class="kd">var</span> <span class="nx">idList</span> <span class="o">=</span> <span class="nx">grField</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="kd">var</span> <span class="nx">idList</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="c1">// Determine if the id passed is already in the list</span>
+        <span class="kd">var</span> <span class="nx">found</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">idList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">idList</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nx">found</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// If it was not in the list, then add it</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span>
+            <span class="nx">idList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+
+        <span class="c1">// Return the comma separated list of ids</span>
+        <span class="k">return</span> <span class="nx">idList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+	
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;AcmeIncidentFunctions&#39;</span>
+<span class="p">}</span>
+</pre></div>
+<p>That script include could be used in a business rule, workflow script activity, or other server-side script similar to this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">aif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcmeIncidentFunctions</span><span class="p">();</span>
+<span class="nx">current</span><span class="p">.</span><span class="nx">watch_list</span> <span class="o">=</span> <span class="nx">aif</span><span class="p">.</span><span class="nx">addGlideListElement</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">watch_list</span><span class="p">,</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">());</span>
+</pre></div>
+<h3><span class="mw-headline" id="Return_Values"><span class="mw-headline-number">3.1.1</span> Return Values</span></h3>
+<p>Get in the practice of returning some type of value when you create new functions. The value returned can tell the calling code useful information about how the function executed. Examples of return values include:
+</p>
+<ul><li>The number of records read from a table (return <b>0</b> to indicate an error).</li>
+<li>The success status of a particular operation (return <b>true</b> to indicate success).</li>
+<li>A JavaScript object (return <b>NULL</b> to indicate a failure).</li></ul>
+<p>Examples of values returned are shown here.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">current</span><span class="p">))</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">addErrorMessage</span><span class="p">(</span><span class="s1">&#39;Save Error&#39;</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * saveRecord – save a record</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param rec – GlideRecord</span>
+<span class="cm"> * @return – boolean (true=successful save)</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">saveRecord</span><span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">rec</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">.</span><span class="nx">nil</span><span class="p">())</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Use_Variables_to_Store_Function_Results"><span class="mw-headline-number">3.2</span> Use Variables to Store Function Results</span></h2>
+<p>Avoid situations where the same function is repeatedly called with the same result. This is common when you call functions with no parameters. Depending on the function, repeated calls may negatively affect performance. 
+</p><p>When possible, use a descriptive variable to store a value and refer to the variable instead of calling the same function repeatedly. Using variables can also make the code easier to understand. Consider this code sample:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span> <span class="o">||</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">u_coordinator</span> <span class="o">||</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span> <span class="o">||</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">.</span><span class="nx">manager</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do something important here</span>
+<span class="p">}</span>
+</pre></div>
+<p>This code can be written more efficiently as follows:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">currentUser</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">isOwner</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentUser</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">isCoordinator</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentUser</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">u_coordinator</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">isCaller</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentUser</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">isManager</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentUser</span> <span class="o">==</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">.</span><span class="nx">manager</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">isOwner</span> <span class="o">||</span> <span class="nx">isCoordinator</span> <span class="o">||</span> <span class="nx">isCaller</span> <span class="o">||</span> <span class="nx">isManager</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Do some important processing here</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Use_Immediately_Invoked_Function_Expressions"><span class="mw-headline-number">3.3</span> Use Immediately Invoked Function Expressions</span></h2>
+<p>An <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">immediately invoked function expression</a> is both declared and invoked within the same script field. Whenever you write a script that only needs to run in a single context, such as a <a href="index.php%3Ftitle=Transform_Map_Scripts.html" title="Transform Map Scripts">transform map script</a>, use this type of function. For functions that must run in multiple contexts, consider <a href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html#Construct_Reusable_Functions">reusable functions</a> instead.
+</p><p>By enclosing a script in an immediately invoked function expression you can:
+</p>
+<ul><li> Ensure the script does not impact other areas of the product, such as by overwriting global variables.</li>
+<li> Pass useful variables or objects as parameters.</li>
+<li> Identify function names in stack traces.</li>
+<li> Eliminate having to make separate function calls.</li></ul>
+<p>An immediately invoked function expression follows this format:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">(</span><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//The script you want to run</span>
+
+<span class="p">})(</span><span class="s1">&#39;value&#39;</span><span class="p">);</span> <span class="c1">//Note the parenthesis indicating this function should run.</span>
+</pre></div>
+<p>You can declare functions within the immediately invoked function expression. These inner functions are accessible only from within the immediately invoked function expression.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">(</span><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kd">function</span> <span class="nx">helperFunction</span><span class="p">(</span><span class="nx">parameter</span><span class="p">){</span>
+    <span class="c1">//return some value</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">helperFunction</span><span class="p">(</span><span class="nx">parameter</span><span class="p">);</span> <span class="c1">//Valid function call.</span>
+
+  <span class="c1">//perform any other script actions</span>
+
+<span class="p">})(</span><span class="s1">&#39;value&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">value2</span> <span class="o">=</span> <span class="nx">helperFunction</span><span class="p">(</span><span class="nx">parameter</span><span class="p">);</span> <span class="c1">//Invalid. This function is not accessible from outside the self-executing function.</span>
+</pre></div>
+<h1><span class="mw-headline" id="Avoid_Complex_GlideRecord_Queries"><span class="mw-headline-number">4</span> Avoid Complex GlideRecord Queries</span></h1>
+<p>Rather than creating a series of <a href="index.php%3Ftitle=GlideRecord.html#addQuery" title="GlideRecord"><tt>addQuery()</tt></a> and <a href="index.php%3Ftitle=GlideRecord.html#addOrCondition" title="GlideRecord"><tt>addOrCondition()</tt></a> calls to obtain a result, use <a href="index.php%3Ftitle=GlideRecord.html#addEncodedQuery" title="GlideRecord"><tt>addEncodedQuery()</tt></a> to make the query easier to create and maintain. 
+</p><p>Consider a requirement to obtain a list of all active Apple printers and computers in a company's Santa Ana office. Creating the proper combination of <tt>addQuery()</tt> and <tt>addOrCondition()</tt> queries to get the proper solution may sound simple. However, if the requirement changes and you are asked to add another office location and a different hardware manufacturer to the list, the task of maintaining the query can become challenging. 
+</p><p>For complex GlideRecord queries, it is easier to create a query string by generating encoded query strings <a href="index.php%3Ftitle=Reference_Qualifiers.html#Generating_Encoded_Query_Strings_through_a_Filter" title="Reference Qualifiers">through a filter</a> and using that string with <tt>addEncodedQuery</tt>. As requirements change, you can create a new query string using the list filter, verify the results with the requirement author, and use the query in the same script.
+</p>
+<h1><span class="mw-headline" id="Avoid_Coding_Pitfalls"><span class="mw-headline-number">5</span> Avoid Coding Pitfalls</span></h1>
+<h2><span class="mw-headline" id="Experiment_in_a_Sandbox"><span class="mw-headline-number">5.1</span> Experiment in a Sandbox</span></h2>
+<p>Trying out new coding ideas or concepts in a development instance can lead to messy results later on. If you make changes, then alter your approach while using an <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Using Update Sets">update set</a>, you may find unwanted changes getting in the update set and being promoted to other instances. If you do not use an update set for your proof of concept, your development instance may behave differently than your other instances, making it difficult to verify defects and fixes. 
+</p><p>If you do not have a sandbox environment available, use a ServiceNow demo instance. When you understand how to implement the new concept in a sandbox, build the solution in development.
+</p>
+<h2><span class="mw-headline" id="Code_in_Stages"><span class="mw-headline-number">5.2</span> Code in Stages</span></h2>
+<p>Do not attempt to write hundreds of lines of code in one sitting. This is especially true if you are learning a new technology. Write a few lines of code at a time and test as you go to ensure it works as expected.
+</p><p>Although this process may seem slow and tedious at first, it is ultimately more effective. If you try to write too much code at one time, it becomes difficult to locate the source of a problem. Instead of tracking back through lines and lines of code to find the defect, save time and effort by incrementally writing functional code.
+</p>
+<h2><span class="mw-headline" id="Do_Not_Use_Hard-Coded_Values"><span class="mw-headline-number">5.3</span> Do Not Use Hard-Coded Values</span></h2>
+<p>Avoid using hard-coded values in scripts, as they can lead to unpredictable results and can be difficult to track down later. Hard coding <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_ids</a> is not recommended, as they may not be the same between instances. Instead, try looking up a value by reference or by <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">creating a property</a> and retrieving the value with <a href="index.php%3Ftitle=GlideSystem.html#getProperty.28String.2C_Object.29" title="GlideSystem"><tt>gs.getProperty()</tt></a>.
+</p><p>Hard-coding group, user, or other names often leads to problems when an organizational change occurs. For example, assume you assign a value of <b>Service Desk</b> to the script variable for a group name:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">taskID</span> <span class="o">=</span> <span class="s1">&#39;26c811f06075388068d07268c841dcd0&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">groupName</span> <span class="o">=</span> <span class="s1">&#39;Service Desk&#39;</span> <span class="p">;</span>
+</pre></div>
+<p>The script will not function as expected when the group name changes from <b>Service Desk</b> to <b>Help Desk</b>. Instead, use a property:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">taskID</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;acme.default.task&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">groupName</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;acme.group.name&#39;</span><span class="p">);</span>
+</pre></div>
+<p>Also consider the following example in which a workflow needs an approval from the IT director of Acme Corp. Sara, the former IT director, has been replaced by Dale. See why the initial approach of hard-coding Sara's user information is not preferable.
+</p><p><b>Initial Approach:</b>
+</p>
+<ol><li>Create a user approval activity for Sara.</li>
+<li>When Dale becomes the new IT director, update the workflow.</li></ol>
+<p><b>Better Approach:</b>
+</p><p>This method eliminates the need to add hard-coded data in the workflow.  
+</p>
+<ol><li>Create a group, IT Director, and make Sara a member.</li>
+<li>Use the Group Approval Activity.</li>
+<li>When Dale becomes the new IT director, simply update the group membership instead of the workflow.</li></ol>
+<h2><span class="mw-headline" id="Avoid_Dot-Walking_to_the_sys_id_of_a_Reference_Field"><span class="mw-headline-number">5.4</span> Avoid Dot-Walking to the sys_id of a Reference Field</span></h2>
+<p>It is not necessary to include the sys_id of a reference field when dot-walking, as in the following example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span> <span class="c1">// Wrong</span>
+</pre></div>
+<p>The value of a reference field <b>is</b> a sys_id. When you dot-walk to the sys_id, the system does an additional database query to retrieve the caller_id record, then retrieves the sys_id. This can lead to performance issues. Instead, use the statement.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;caller_id&#39;</span><span class="p">);</span> <span class="c1">// Right</span>
+</pre></div>
+<h2><span class="mw-headline" id="Use_getDisplayValue.28.29_Effectively"><span class="mw-headline-number">5.5</span> Use getDisplayValue() Effectively</span></h2>
+<p>When scripting, become familiar with the tables and fields you are using. Instead of using <i>name</i>, <i>number</i>, or other explicit field name used for the display value, use the method <a href="index.php%3Ftitle=GlideRecord.html#getDisplayValue" title="GlideRecord">getDisplayValue()</a>. Consider the following example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myCI</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+</pre></div>
+<p>You would be required to update this code if the display value requirement changes on either of these two tables. For example, the business now wants to display the CI's serial number field instead of name. When someone changes the dictionary attribute on the Configuration Item [cmdb_ci] table, from name to serial_number, this code no longer reflects the current requirements.
+</p><p>Instead, consider using the following code:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myCI</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">();</span>
+</pre></div>
+<p>To determine which field on a table is used as the display value, <a href="index.php%3Ftitle=System_Dictionary.html" title="System Dictionary">inspect the dictionary</a> entry for the table and note which field has a <i>Display</i> field value of true.
+</p>
+<h2><span class="mw-headline" id="Verify_Values_Exist_Before_Using_Them"><span class="mw-headline-number">5.6</span> Verify Values Exist Before Using Them</span></h2>
+<p>To avoid unpredictable results and warning messages, verify that variables and fields have a value before using them. Consider the following code:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span><span class="p">.</span><span class="nx">installed_on</span><span class="p">.</span><span class="nx">sys_class_name</span><span class="p">;</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Table is: &#39;</span> <span class="o">+</span> <span class="nx">table</span><span class="p">);</span>
+</pre></div>
+<p>Any additional statements that use the variable <tt>table</tt> may throw warning messages in the <a href="index.php%3Ftitle=Viewing_System_Logs.html" title="Viewing System Logs">system log</a> if the value is undefined. This can happen if the <b>cmdb_ci</b> field is empty or if the <b>installed_on</b> field in the CI is empty. The following code demonstrates a better way to verify that the <tt>table</tt> variable has a value before using it:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">cmdb_ci</span><span class="p">.</span><span class="nx">installed_on</span><span class="p">.</span><span class="nx">sys_class_name</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">table</span><span class="p">)</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Table is: &#39;</span> <span class="o">+</span> <span class="nx">table</span><span class="p">);</span>
+<span class="k">else</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Warning: table is undefined&#39;</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="Avoid_Complex_Queries_on_Large_Data_Sets"><span class="mw-headline-number">5.7</span> Avoid Complex Queries on Large Data Sets</span></h2>
+<p>Limit the number of times you search large tables. As your instance grows, these searches can affect performance. Assume you have a requirement to search the CMDB for the importance of all upstream services related to a specific server when that server is added to the Incident form. Running a query on the Relationship [cmdb_rel_ci] table is not a problem for a simple CMDB with a few hundred or thousand CIs. However, for a CMDB with three million CIs and hundreds of thousands of relationships, the query could take hours. 
+</p><p>One solution is to <a href="index.php%3Ftitle=Creating_Defined_Related_Lists.html" title="Creating Defined Related Lists">create a related list</a> for the CI that lists affected services. The list can be updated by a business rule as relationships for the CI are updated. When a CI is added to an incident, the affected services list can be quickly retrieved from the related list on the CI, rather than launching a long search on the Relationship table.
+</p>
+<h2><span class="mw-headline" id="Let_the_Database_Do_the_Work"><span class="mw-headline-number">5.8</span> Let the Database Do the Work</span></h2>
+<p>Whenever possible, leverage the power of the database to retrieve the proper records. For example, if you are checking 1,000,000 incidents to see if at least one record is active, your first solution may look like this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+<span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">inc</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span>
+   <span class="c1">// There is at least one active record</span>
+</pre></div>
+<p>However, if there are 250,000 active records, the <tt>query()</tt> method has to retrieve all those records. That can take time. Instead, use the <tt>setLimit()</tt> method to instruct the database to return only one record. Returning one record is much faster than returning all the records.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+<span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">inc</span><span class="p">.</span><span class="nx">setLimit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>  <span class="c1">// Tell the database to only retrieve a maximum of 1 record</span>
+<span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">inc</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span>
+   <span class="c1">// There is at least one active record</span>
+</pre></div>
+<h2><span class="mw-headline" id="Avoid_Dynamic_JEXL_Expressions_in_an_Evaluate"><span class="mw-headline-number">5.9</span> Avoid Dynamic JEXL Expressions in an Evaluate</span></h2>
+<p>When writing Jelly code, avoid using dynamic JEXL expressions inside the Jelly tag <a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax.html#.3Cg:evaluate.3E" title="Extensions to Jelly Syntax"><tt>&lt;g:evaluate&gt;</tt></a> (or <tt>&lt;g2:evaluate&gt;</tt> for <a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax.html#Phases" title="Extensions to Jelly Syntax">phase two</a>). While the code appears to work, it affects a memory resource (called PermGen) in the Java Virtual Machine, which can lead to performance issues and even system outages over time. The exception to using JEXL expressions inside <tt>&lt;g:evaluate&gt;</tt> tags is with static values, including: <tt>${AMP}</tt>, <tt>${AND}</tt>, <tt>${GT}</tt>, <tt>${LT}</tt>, and <tt>${SP}</tt> (and their phase two counterparts: <tt>$[AMP]</tt>, <tt>$[AND]</tt>, and so on).
+</p><p>A better way to use Jelly variables inside <tt>&lt;g:evaluate&gt;</tt> tags is to include the attribute <tt>jelly="true"</tt>, then reference a copy of the variable with the <tt>jelly.</tt> prefix. 
+</p><p><b>Incorrect</b>:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="o">&lt;</span><span class="nx">j</span><span class="o">:</span><span class="nx">set</span> <span class="kd">var</span><span class="o">=</span><span class="s2">&quot;jvar_userid&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;46d44a23a9fe19810012d100cca80666&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">evaluate</span><span class="o">&gt;</span>
+    <span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;assigned_to&#39;</span><span class="p">,</span> <span class="s1">&#39;${jvar_userid}&#39;</span><span class="p">);</span>
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">{</span><span class="nx">sysparm_priority</span><span class="p">});</span>
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="o">&lt;</span><span class="err">/g:evaluate&gt;</span>
+</pre></div>
+<p><b>Correct</b>:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="o">&lt;</span><span class="nx">j</span><span class="o">:</span><span class="nx">set</span> <span class="kd">var</span><span class="o">=</span><span class="s2">&quot;jvar_userid&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;46d44a23a9fe19810012d100cca80666&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">evaluate</span> <span class="nx">jelly</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;</span>
+    <span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;assigned_to&#39;</span><span class="p">,</span> <span class="nx">jelly</span><span class="p">.</span><span class="nx">jvar_userid</span><span class="p">);</span>
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="nx">jelly</span><span class="p">.</span><span class="nx">sysparm_priority</span><span class="p">);</span>
+    <span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="o">&lt;</span><span class="err">/g:evaluate&gt;</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Using <tt>jelly="true"</tt> passes a copy of the Jelly variables to JavaScript. Changing the values of variables starting with <tt>jelly.</tt> inside the <tt>&lt;g:evaluate&gt;</tt> tag does not affect the value of the corresponding Jelly variable outside the <tt>&lt;g:evaluate&gt;</tt> tag. In the example above, <tt>${jvar_userid}</tt> requires quotes because the phase 1 processor replaces the text exactly, whereas <tt>jelly.jvar_userid</tt> does not require quotes. Similarly, <tt>${sysparm_priority}</tt> does not require quotes because it is an integer value.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Avoid_eval_Function"><span class="mw-headline-number">5.10</span> Avoid eval Function</span></h2>
+<p>The <i>eval()</i> function evaluates or executes an argument. Improper use of <i>eval()</i> opens up your code for injection attacks and debugging can be more challenging, as no line numbers are displayed with an error, for example.
+</p><p>Consider the following code to achieve the same outcome:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">GlideEvaluator</span><span class="p">.</span><span class="nx">evaluateString</span><span class="p">(</span><span class="s2">&quot;gs.log(&#39;Hello World&#39;);&quot;</span><span class="p">);</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The </i>GlideEvaluator<i> scriptable object described above is valid only for instances running <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a> and subsequent versions.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Use_GlideAggregate_for_Simple_Record_Counting"><span class="mw-headline-number">5.11</span> Use GlideAggregate for Simple Record Counting</span></h2>
+<p>If you need to count rows, you have two options: the <tt>getRowCount()</tt> method from GlideRecord, or GlideAggregate. Using GlideRecord to count rows can cause scalability issues as tables grow over time, because it retrieves every record with the query and then counts them. GlideAggregate gets its result from built-in database functionality, which is much quicker and doesn’t suffer from the scalability issues that GlideRecord does.
+</p><p>Bad example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cm">/*</span>
+<span class="cm"> * countInactiveIncidents - return the number of closed incidents</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param - none</span>
+<span class="cm"> * @returns integer - number of records found</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">countInactiveIncidents</span><span class="p">()</span> <span class="p">{</span>
+
+     <span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="err">‘</span><span class="nx">incident</span><span class="err">’</span><span class="p">);</span>
+
+     <span class="nx">inc</span><span class="p">.</span><span class="nx">addInactiveQuery</span><span class="p">();</span>
+     <span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+     <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">inc</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
+     <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="err">‘</span> <span class="nx">inactive</span> <span class="nx">incidents</span> <span class="nx">found</span><span class="err">’</span><span class="p">);</span>
+
+     <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Good example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cm">/*</span>
+<span class="cm"> * countInactiveIncidents - return the number of closed incidents</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param - none</span>
+<span class="cm"> * @returns integer - number of records found</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">countInactiveIncidents</span><span class="p">()</span> <span class="p">{</span>
+
+     <span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAggregate</span><span class="p">(</span><span class="err">‘</span><span class="nx">incident</span><span class="err">’</span><span class="p">);</span>
+
+     <span class="nx">inc</span><span class="p">.</span><span class="nx">addAggregate</span><span class="p">(</span><span class="err">‘</span><span class="nx">COUNT</span><span class="err">’</span><span class="p">)</span>
+     <span class="nx">inc</span><span class="p">.</span><span class="nx">addInactiveQuery</span><span class="p">();</span>
+     <span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+     <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">inc</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span>
+          <span class="nx">count</span> <span class="o">=</span> <span class="nx">inc</span><span class="p">.</span><span class="nx">getAggregate</span><span class="p">(</span><span class="err">‘</span><span class="nx">COUNT</span><span class="err">’</span><span class="p">);</span>
+
+     <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="err">‘</span> <span class="nx">inactive</span> <span class="nx">incidents</span> <span class="nx">found</span><span class="err">’</span><span class="p">);</span>
+
+     <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you plan to process the records (for example, getting or setting values) as part of your functionality, it makes more sense to use the <tt>GlideRecord’s getRowCount()</tt> method because the records must be retrieved to do the processing regardless. Using GlideAggregate to get a row count, processing records with a <tt>while</tt> loop of GlideRecord operations would have no benefit. </i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201222513
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.666 seconds
+Real time usage: 12.835 seconds
+Preprocessor visited node count: 395/1000000
+Preprocessor generated node count: 982/1000000
+Post‐expand include size: 3876/2097152 bytes
+Template argument size: 1411/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 12437.250      1 - -total
+  0.77%   96.315      1 - Template:Technical_Best_Practices
+  0.66%   81.710      1 - Template:Topic
+  0.08%    9.909      4 - Template:Note
+  0.07%    9.232      1 - Embedded:Technical_Best_Practices
+  0.06%    7.923      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:18113-0!*!0!1!en!5!* and timestamp 20171201222500 and revision id 245936
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Coding_Best_Practices&amp;oldid=245936.html">http://wiki.servicenow.com/index.php?title=Coding_Best_Practices&amp;oldid=245936</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Technical+Best+Practices.html" title="Category:Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_18113"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="18113" data-vote-the-vote="5" data-vote-id="18113" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_18113_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="18113" data-vote-the-vote="1" data-vote-id="18113" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_18113_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Coding+Best+Practices&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Coding+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Coding+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Coding_Best_Practices.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Coding_Best_Practices&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Coding+Best+Practices.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Coding+Best+Practices&amp;returnto=Coding+Best+Practices&amp;oldid=245936&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCoding_Best_Practices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FCoding_Best_Practices.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;oldid=245936.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Coding_Best_Practices&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 23:48, 15 April 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1328});});</script></body></html>

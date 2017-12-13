@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Scripting for Email Notifications - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scripting_for_Email_Notifications","wgTitle":"Scripting for Email Notifications","wgCurRevisionId":250853,"wgRevisionId":250853,"wgArticleId":2149,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Email Integrations","Server Scripting","Notification Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scripting_for_Email_Notifications","wgRelevantArticleId":2149,"wgRequestId":"7f4b2998fe3c228c6ba12c4b","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170908204501"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Scripting_for_Email_Notifications"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Scripting for Email Notifications"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Notification Administration"/>
+<meta name="category" content="Notification Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Scripting_for_Email_Notifications.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Scripting for Email Notifications"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170908204501"/>
+
+	<meta property="article:published_time" content="20170908204501"/>
+
+	<meta property="article:modified_time" content="20170908204501"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Notification Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Scripting_for_Email_Notifications"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scripting_for_Email_Notifications rootpage-Scripting_for_Email_Notifications skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scripting for Email Notifications</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Scripting for Email Notifications</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/server-scripting/concept/c_ScriptingForEmailNotifications.html">Scripting for E-mail Notifications</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+ <div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Notifications.html" title="Notifications">Notifications</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21219d1e7aat'></div><script type="text/javascript">window.tamOnload_tam5a21219d1e7aat=[];tree = new dTree('tam5a21219d1e7aat');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21219d1e7aat = tree;
+                                               tam5a21219d1e7aat.add(1, 0, 'Introduction');
+
+tam5a21219d1e7aat.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Mailboxes\&quot;" title=\"System Mailboxes\">System Mailboxes</a>');
+tam5a21219d1e7aat.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Introduction_to_Email_Controls\&quot;" title=\"Introduction to Email Controls\">Email Controls</a>');
+tam5a21219d1e7aat.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Baseline_Email_Notifications\&quot;" title=\"Baseline Email Notifications\">Baseline Email Notifications</a> ');
+tam5a21219d1e7aat.add(5, 0, 'Setup');
+tam5a21219d1e7aat.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Email\&quot;" title=\"Configuring Email\">Configuring Email</a> ');
+tam5a21219d1e7aat.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Notifications\&quot;" title=\"Email Notifications\">Email Notifications</a>');
+tam5a21219d1e7aat.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Events_and_Email_Notification\&quot;" title=\"Events and Email Notification\">Events and Email Notification</a>');
+tam5a21219d1e7aat.add(9, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Templates\&quot;" title=\"Email Templates\">Email Templates</a>');
+tam5a21219d1e7aat.add(10, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Constructing_an_Email_Message\&quot;" title=\"Constructing an Email Message\">Constructing an Email Message</a>');
+tam5a21219d1e7aat.add(11, 5, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Properties\&quot;" title=\"Email Properties\">Email Properties</a>');
+tam5a21219d1e7aat.add(12, 5, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Attachment_Limits\&quot;" title=\"Email Attachment Limits\" class=\"mw-redirect\">Email Attachment Limits</a>');
+tam5a21219d1e7aat.add(13, 0, 'Configuration Options');
+tam5a21219d1e7aat.add(14, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_the_Email_Client\&quot;" title=\"Enabling the Email Client\">Enabling the Email Client</a>');
+tam5a21219d1e7aat.add(15, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Accounts\&quot;" title=\"Email Accounts\">Email Accounts</a>');
+tam5a21219d1e7aat.add(16, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Email_Authentication\&quot;" title=\"OAuth Email Authentication\">OAuth Email Authentication</a>');
+tam5a21219d1e7aat.add(17, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Filters\&quot;" title=\"Email Filters\">Email Filters</a>');
+tam5a21219d1e7aat.add(18, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Notification_Examples\&quot;" title=\"Notification Examples\">Notification Examples</a>  ');
+tam5a21219d1e7aat.add(19, 13, '<strong class=\"selflink\">Scripting for Email Notifications</strong>');
+tam5a21219d1e7aat.add(20, 0, 'Performing Tasks from Inbound Email');
+tam5a21219d1e7aat.add(21, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_Email_Actions\&quot;" title=\"Inbound Email Actions\">Inbound Email Actions</a>');
+tam5a21219d1e7aat.add(22, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Order_Email_Processing\&quot;" title=\"Order Email Processing\" class=\"mw-redirect\">Order Email Processing</a>');
+tam5a21219d1e7aat.add(23, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Examples_of_Inbound_Email_Actions\&quot;" title=\"Examples of Inbound Email Actions\">Examples of Inbound Email Actions</a>');
+tam5a21219d1e7aat.add(24, 0, 'Subscribing to Notifications');
+tam5a21219d1e7aat.add(25, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subscription_Based_Notifications\&quot;" title=\"Subscription Based Notifications\">Subscription Based Notifications</a> ');
+tam5a21219d1e7aat.add(26, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Subscription_Based_Notifications\&quot;" title=\"Setting Up Subscription Based Notifications\">Setting Up Subscription Based Notifications</a>');
+tam5a21219d1e7aat.add(27, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subscription_Based_Notifications\&quot;" title=\"Using Subscription Based Notifications\">Using Subscription Based Notifications</a>');
+
+                                               document.getElementById('5a21219d1e7aat').innerHTML = tam5a21219d1e7aat.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21219d1e7aat) { window.tamOnload_tam5a21219d1e7aat[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> <center><b><a href="index.php%3Ftitle=Book:Notifications.html" title="Book:Notifications"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Notifications.html" title="Book:Notifications">Get the Book</a></b></center>
+</th></tr>
+<tr>
+<td>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Using_JavaScript_in_Emails"><span class="tocnumber">2</span> <span class="toctext">Using JavaScript in Emails</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Parm1_and_Parm2"><span class="tocnumber">2.1</span> <span class="toctext">Parm1 and Parm2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Enabling_Links_to_ServiceNow_Records"><span class="tocnumber">3</span> <span class="toctext">Enabling Links to ServiceNow Records</span></a>
+<ul>
+<li class="toclevel-2"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Changing_the_Link_Text"><span class="tocnumber">3.1</span> <span class="toctext">Changing the Link Text</span></a></li>
+<li class="toclevel-2"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Linking_to_Related_Records"><span class="tocnumber">3.2</span> <span class="toctext">Linking to Related Records</span></a></li>
+<li class="toclevel-2"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Linking_to_Content_Pages"><span class="tocnumber">3.3</span> <span class="toctext">Linking to Content Pages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Simple_Text_String"><span class="tocnumber">4.1</span> <span class="toctext">Simple Text String</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Summary_of_Requested_Items"><span class="tocnumber">4.2</span> <span class="toctext">Summary of Requested Items</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Overriding_Email_Fields"><span class="tocnumber">4.3</span> <span class="toctext">Overriding Email Fields</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Attachments_Sent_in_Notifications"><span class="tocnumber">4.4</span> <span class="toctext">Attachments Sent in Notifications</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Adding_CC_and_BCC_Recipients"><span class="tocnumber">4.5</span> <span class="toctext">Adding CC and BCC Recipients</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html#Mail_Script_API"><span class="tocnumber">5</span> <span class="toctext">Mail Script API</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/script/server-scripting/concept/c_ScriptingForEmailNotifications.html">Mail scripts</a> allow for business rule-like scripting within an outbound email message. With mail scripts, you can dynamically change the email output of your system based on different criteria. Mail scripts allow you to perform simple tasks, such as displaying incident data, and complex ones, such as making advanced database queries. 
+</p><p>Create mail scripts in <b>System Policy &gt; Email &gt; Notification Email Script</b> starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. Then add a <tt>${mail_script:<i>script name</i>}</tt> embedded script tag to the body of the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/administer/notification/reference/notifications.html">email notification</a> or <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/administer/notification/concept/c_EmailTemplates.html">template</a>, replacing <tt><i>script name</i></tt> with the name of the script you created.  This makes it easy to use the same scripts in multiple email notifications or templates. 
+</p><p>Mail scripts are added directly in the <b>Message</b> field when creating <a href="index.php%3Ftitle=Email_Notifications.html" title="Email Notifications">email notifications</a> or <a href="index.php%3Ftitle=Email_Templates.html" title="Email Templates">email templates</a> in versions prior to Eureka.
+</p>
+<h1><span class="mw-headline" id="Using_JavaScript_in_Emails"><span class="mw-headline-number">2</span> Using JavaScript in Emails</span></h1>
+<p>To embed JavaScript in the Email Notification form, use <tt>${mail_script:script name}</tt>, and refer to the notification script. To print text into the body of the message, use the <tt>template.print("a string")</tt> function. 
+</p><p><a href="index.php%3Ftitle=File:JavaScript_in_Templates.png.html" class="image" title="JavaScript in Templates.png"><img alt="JavaScript in Templates.png" src="images/thumb/6/63/JavaScript_in_Templates.png/900px-JavaScript_in_Templates.png" width="900" height="356" srcset="/images/thumb/6/63/JavaScript_in_Templates.png/1350px-JavaScript_in_Templates.png 1.5x, /images/6/63/JavaScript_in_Templates.png 2x" /></a> <br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Parm1_and_Parm2"><span class="mw-headline-number">2.1</span> Parm1 and Parm2</span></h2>
+<p>The <tt>event.parm1</tt> and <tt>event.parm2</tt> parameters that come from the originating event can also be used within the <tt>&lt;mail_script&gt;</tt>. To use these, enter <tt>event.parm1</tt> or <tt>event.parm2</tt> in the mail script.
+</p><p><br />
+</p><p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/server-scripting/concept/c_EnableLinksToServiceNowRecords.html">Enabling Links to Records</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Enabling_Links_to_ServiceNow_Records"><span class="mw-headline-number">3</span> Enabling Links to ServiceNow Records</span></h1>
+<p>Adding the special <tt>${URI}</tt> parameter to an outbound email body or template creates a link to a specific ServiceNow record. When a user clicks on the word LINK, the instance prompts the user to log in if not already logged in, and then redirects the user to the record specified in the URI.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:302px;"><a href="index.php%3Ftitle=File:EmailURI.jpg.html" class="image"><img alt="" src="images/a/a4/EmailURI.jpg" width="300" height="88" class="thumbimage" /></a>  <div class="thumbcaption">Link displayed by ${URI} parameter</div></div></div> <br style="clear:both;" />
+<p>The <tt>${URI}</tt> parameter has an extension called the <tt>${URI+}</tt> format to specify additional arguments in the email link, such as sysparm terms, in addition to the automatically created URI. For example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">$</span><span class="p">{</span><span class="nx">URI</span><span class="o">+&amp;</span><span class="nx">sysparm_scriptlet</span><span class="o">=</span><span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span><span class="o">=</span><span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="nx">sysparm_scriptlet_condition</span><span class="o">=</span><span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span><span class="p">.</span><span class="nx">nil</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="nx">sysparm_view</span><span class="o">=</span><span class="nx">incident_active</span><span class="p">}</span>
+</pre></div> 
+<p>This example executes the JavaScript:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span><span class="o">=</span><span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">()</span>
+</pre></div>
+<p>when the condition of
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">current</span><span class="p">.</span><span class="nx">assigned_to</span><span class="p">.</span><span class="nx">nil</span><span class="p">()</span>
+</pre></div>
+<p>is satisfied. Additionally, the script sets the view to <b>incident_active</b>.
+</p>
+<h2><span class="mw-headline" id="Changing_the_Link_Text"><span class="mw-headline-number">3.1</span> Changing the Link Text</span></h2>
+<p>To show the <i>display value</i> of the record as the link text instead of the word <b>LINK</b>, use the <tt>${URI_REF}</tt> parameter instead of the <tt>${URI}</tt> parameter.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:302px;"><a href="index.php%3Ftitle=File:EmailURIREF.jpg.html" class="image"><img alt="" src="images/0/06/EmailURIREF.jpg" width="300" height="93" class="thumbimage" /></a>  <div class="thumbcaption">Link displayed by <tt>${URI_REF}</tt> parameter</div></div></div> <br style="clear:both;" />
+<p>For example, if the URL displays an incident record, the link text is the incident number, which is the display value for incidents. If the URL displays a user record, then the link text is the user name.
+</p>
+<h2><span class="mw-headline" id="Linking_to_Related_Records"><span class="mw-headline-number">3.2</span> Linking to Related Records</span></h2>
+<p>A notification can link to a related record by specifying a reference field in front of the ${URI} or ${URI_REF} parameters. Format the related record link as follows:
+</p>
+<ul><li> <tt>${<i>&lt;reference field that contains the related record you want to display&gt;</i>.URI}</tt></li>
+<li> <tt>${<i>&lt;reference field that contains the related record you want to display&gt;</i>.URI_REF}</tt></li></ul>
+<p>For example:
+</p>
+<table class="standard">
+
+<tr>
+<th> Related Record to Provide Link to
+</th>
+<th> Notification record table
+</th>
+<th> Reference Field
+</th>
+<th> Samples
+</th></tr>
+<tr>
+<td> Related task record to be approved from an approval notification
+</td>
+<td> Approval [sysapproval_approver]
+</td>
+<td> Approval for [sysapproval]
+</td>
+<td>
+<ul><li> ${sysapproval.URI}</li>
+<li> ${sysapproval.URI_REF}</li></ul>
+</td></tr>
+<tr>
+<td> Related problem record in an incident notification
+</td>
+<td> Incident
+</td>
+<td> Problem [problem_id]
+</td>
+<td>
+<ul><li> ${problem_id.URI}</li>
+<li> ${problem_id.URI_REF}</li></ul>
+</td></tr></table>
+<p>For example, the following notification template produces the email links in the picture below:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Click here to view Incident: ${URI_REF}
+Click here to view Related Problem: ${problem_id.URI_REF}
+</pre></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:287px;"><a href="index.php%3Ftitle=File:Related_record_link.png.html" class="image"><img alt="" src="images/a/ab/Related_record_link.png" width="285" height="37" class="thumbimage" /></a>  <div class="thumbcaption">Example related record links</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Linking_to_Content_Pages"><span class="mw-headline-number">3.3</span> Linking to Content Pages</span></h2>
+<p>You can create links to content management pages using the following format:
+</p>
+<dl><dd><tt>${CMS_URI+&lt;site&gt;/&lt;page&gt;}</tt></dd></dl>
+<p>For example, to link the email recipient to a page called <b>Incident</b> in the content site <b>ESS</b>, with the current incident as the target document, use the following format:
+</p>
+<dl><dd><tt>${CMS_URI+ess/incident_detail}</tt></dd></dl>
+<p>The resulting email URL has this format:
+</p>
+<dl><dd><tt>https://&lt;instance name&gt;.service-now.com/ess/incident_detail.do?sysparm_document_key=incident,46e18c0fa9fe19810066a0083f76bd56</tt></dd></dl>
+<h1><span class="mw-headline" id="Examples"><span class="mw-headline-number">4</span> Examples</span></h1>
+<h2><span class="mw-headline" id="Simple_Text_String"><span class="mw-headline-number">4.1</span> Simple Text String</span></h2>
+<p>A simple text string is the most basic example of the way a mail script works. This script prints out "Incident number - INC00001".
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>   <span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Incident number - &quot;</span> <span class="o">+</span> <span class="nx">current</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="Summary_of_Requested_Items"><span class="mw-headline-number">4.2</span> Summary of Requested Items</span></h2>
+<p>More advanced scripts, like the one below, can be found by browsing through the base system email templates. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Summary of Requested items:&quot;</span><span class="p">);</span>  
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sc_req_item&quot;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;request&quot;</span><span class="p">,</span> <span class="nx">current</span><span class="p">.</span><span class="nx">sysapproval</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="k">while</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">nicePrice</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">price</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nicePrice</span> <span class="o">!=</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">nicePrice</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">nicePrice</span><span class="p">);</span>
+        <span class="nx">nicePrice</span> <span class="o">=</span> <span class="nx">nicePrice</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="s2">&quot;:  &quot;</span> <span class="o">+</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">+</span> <span class="s2">&quot; X &quot;</span> <span class="o">+</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">cat_item</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; at $&quot;</span> <span class="o">+</span> <span class="nx">nicePrice</span> <span class="o">+</span> <span class="s2">&quot; each&quot;</span><span class="p">);</span>
+    <span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;    Options:&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">variables</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">variables</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getQuestion</span><span class="p">().</span><span class="nx">getLabel</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">template</span><span class="p">.</span><span class="nx">space</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+         <span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;     &#39;</span> <span class="o">+</span>  <span class="nx">v</span><span class="p">.</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getQuestion</span><span class="p">().</span><span class="nx">getLabel</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; = &quot;</span> <span class="o">+</span> <span class="nx">v</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">());</span>  
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Overriding_Email_Fields"><span class="mw-headline-number">4.3</span> Overriding Email Fields</span></h2>
+<p>To dynamically change field values within an email, use the following functions within &lt;mail_script&gt; syntax: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">...</span>
+<span class="nx">email</span><span class="p">.</span><span class="nx">setFrom</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>
+<span class="nx">email</span><span class="p">.</span><span class="nx">setReplyTo</span><span class="p">(</span><span class="s2">&quot;joe.employee@yourcompany.com&quot;</span><span class="p">);</span>
+<span class="nx">email</span><span class="p">.</span><span class="nx">setSubject</span><span class="p">(</span><span class="s2">&quot;This is the new subject line&quot;</span><span class="p">);</span>
+<span class="nx">email</span><span class="p">.</span><span class="nx">setBody</span><span class="p">(</span><span class="s2">&quot;This is the new body&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+<h2><span class="mw-headline" id="Attachments_Sent_in_Notifications"><span class="mw-headline-number">4.4</span> Attachments Sent in Notifications</span></h2>
+<p>Using the instance_name property ensures that the notification still works when migrated between instances.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">dothis</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">dothis</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_attachment&#39;</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;table_sys_id&#39;</span><span class="p">,</span><span class="nx">current</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Attachment: &lt;a href=&quot;https://&#39;</span> <span class="o">+</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;instance_name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span>
+<span class="s1">            .service-now.com/sys_attachment.do?sys_id=&#39;</span> <span class="o">+</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">sys_id</span> <span class="o">+</span> <span class="s1">&#39;&quot;&gt;&#39;</span> <span class="o">+</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">file_name</span> <span class="o">+</span> <span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Adding_CC_and_BCC_Recipients"><span class="mw-headline-number">4.5</span> Adding CC and BCC Recipients</span></h2>
+<p>You can specify copied and blind copied recipients by using the <b>email</b> object within a mail script.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    <span class="c1">//email.addAddress(type, address, displayname);</span>
+    <span class="nx">email</span><span class="p">.</span><span class="nx">addAddress</span><span class="p">(</span><span class="s2">&quot;cc&quot;</span><span class="p">,</span> <span class="s2">&quot;john.copy@example.com&quot;</span><span class="p">,</span><span class="s2">&quot;John Roberts&quot;</span><span class="p">);</span>
+    <span class="nx">email</span><span class="p">.</span><span class="nx">addAddress</span><span class="p">(</span><span class="s2">&quot;bcc&quot;</span><span class="p">,</span> <span class="s2">&quot;john.secret@example.com&quot;</span><span class="p">,</span><span class="s2">&quot;John Roberts&quot;</span><span class="p">);</span>
+</pre></div>
+<p>The following is an example script to add users from <b>watch_list</b> as copied recipients.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">current</span><span class="p">.</span><span class="nx">watch_list</span><span class="p">.</span><span class="nx">nil</span><span class="p">())</span> <span class="p">{</span>
+   <span class="c1">//get watch list addresses and add to cc</span>
+   <span class="kd">var</span> <span class="nx">watcherIds</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">watch_list</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">);</span>
+ 
+   <span class="c1">//get user records</span>
+   <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span>
+   <span class="nx">user</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;sys_id&quot;</span><span class="p">,</span> <span class="nx">watcherIds</span><span class="p">);</span>
+   <span class="nx">user</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;notification&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">//email</span>
+   <span class="nx">user</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;!=&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+   <span class="nx">user</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+ 
+   <span class="k">while</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+      <span class="c1">//add to cc list    </span>
+      <span class="nx">email</span><span class="p">.</span><span class="nx">addAddress</span><span class="p">(</span><span class="s2">&quot;cc&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">());</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Mail_Script_API"><span class="mw-headline-number">5</span> Mail Script API</span></h1>
+<p>The following variables are available when processing <tt>mail_script</tt> scripts.
+</p>
+<table class="standard">
+
+<tr>
+<th> Variable
+</th>
+<th> Object Description
+</th></tr>
+<tr>
+<td>template
+</td>
+<td>Handles printing from the mail script to the email message. <br />
+<p><tt>template.print("message");</tt> //outputs message to the email body.<br />
+<tt>template.space("number of spaces");</tt> //outputs spaces to the email body. 
+</p>
+</td></tr>
+<tr>
+<td>email_action
+</td>
+<td>GlideRecord object for the email notification (<tt>sysevent_email_action</tt>).
+</td></tr>
+<tr>
+<td>event
+</td>
+<td>GlideRecord object for the event that fired the notification (<tt>sysevent</tt>).
+</td></tr>
+<tr>
+<td>email
+</td>
+<td>EmailOutbound object <br />
+<p>Available methods:
+</p>
+<ul><li><b>addAddress(String type, String address, String displayname):</b> type can be <b>cc</b> or <b>bcc</b>. <br /></li>
+<li><b>setFrom(String address):</b> override the sender address. <br /></li>
+<li><b>setReplyTo(String address):</b> override the reply to address. <br /></li>
+<li><b>setSubject(String subject):</b> override the subject of the message. <br /></li>
+<li><b>setBody</b>(String message): override the body of the message. <br /></li></ul>
+<p>The email address that is passed by <b>setFrom</b> and <b>setReplyTo</b> needs to be in a valid form such as 'helpdesk@sn.com' or 'Display Name &lt;helpdesk@sn.com&gt;'. If the email address includes a 'Display Name', then that value overrides the instance's display name.
+</p>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201093217
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.391 seconds
+Real time usage: 4.393 seconds
+Preprocessor visited node count: 159/1000000
+Preprocessor generated node count: 452/1000000
+Post‐expand include size: 6335/2097152 bytes
+Template argument size: 1077/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1664.470      1 - -total
+ 93.73% 1560.170      1 - Embedded:Specifying_a_URI_Field
+  5.63%   93.746      1 - Template:Email
+  5.20%   86.615      1 - Template:Topic
+  0.55%    9.076      2 - Template:Note
+  0.42%    7.033      1 - Embedded:Email
+  0.32%    5.291      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2149-0!*!0!1!en!5!* and timestamp 20171201093213 and revision id 250853
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html">http://wiki.servicenow.com/index.php?title=Scripting_for_Email_Notifications&amp;oldid=250853</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Email+Integrations.html" title="Category:Email Integrations">Email Integrations</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notification+Administration.html" title="Category:Notification Administration">Notification Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notification+Administration.html" title="Category:Notification Administration">Notification Administration</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Email+Integrations.html" title="Category:Email Integrations">Email Integrations</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2149"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2149" data-vote-the-vote="5" data-vote-id="2149" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2149_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2149" data-vote-the-vote="1" data-vote-id="2149" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2149_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Scripting+for+Email+Notifications&amp;returntoquery=oldid%3D250853" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Scripting+for+Email+Notifications&amp;returntoquery=oldid%3D250853" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Scripting_for_Email_Notifications.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Scripting+for+Email+Notifications.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Scripting+for+Email+Notifications&amp;returnto=Scripting+for+Email+Notifications&amp;oldid=250853&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FScripting_for_Email_Notifications.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Scripting_for_Email_Notifications" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;oldid=250853.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Scripting_for_Email_Notifications&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:45, 8 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":997});});</script></body></html>

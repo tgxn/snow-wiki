@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Setting Up Subscription Based Notifications - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Setting_Up_Subscription_Based_Notifications","wgTitle":"Setting Up Subscription Based Notifications","wgCurRevisionId":247869,"wgRevisionId":247869,"wgArticleId":6320,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Email Integrations","Notification Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Setting_Up_Subscription_Based_Notifications","wgRelevantArticleId":6320,"wgRequestId":"f91aa6e756d02b56f3e36865","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150918180747"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Setting_Up_Subscription_Based_Notifications"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Setting Up Subscription Based Notifications"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Notification Administration"/>
+<meta name="category" content="Notification Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Setting Up Subscription Based Notifications"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150918180747"/>
+
+	<meta property="article:published_time" content="20150918180747"/>
+
+	<meta property="article:modified_time" content="20150918180747"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Notification Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Setting_Up_Subscription_Based_Notifications"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Setting_Up_Subscription_Based_Notifications rootpage-Setting_Up_Subscription_Based_Notifications skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Setting Up Subscription Based Notifications</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Service_Administration.html" title="Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Notifications.html" title="Notifications">Notifications</a> &gt; Setting Up Subscription Based Notifications</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Notifications.html" title="Notifications">Notifications</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a1feb84d4334t'></div><script type="text/javascript">window.tamOnload_tam5a1feb84d4334t=[];tree = new dTree('tam5a1feb84d4334t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a1feb84d4334t = tree;
+                                               tam5a1feb84d4334t.add(1, 0, 'Introduction');
+
+tam5a1feb84d4334t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Mailboxes\&quot;" title=\"System Mailboxes\">System Mailboxes</a>');
+tam5a1feb84d4334t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Introduction_to_Email_Controls\&quot;" title=\"Introduction to Email Controls\">Email Controls</a>');
+tam5a1feb84d4334t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Baseline_Email_Notifications\&quot;" title=\"Baseline Email Notifications\">Baseline Email Notifications</a> ');
+tam5a1feb84d4334t.add(5, 0, 'Setup');
+tam5a1feb84d4334t.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Email\&quot;" title=\"Configuring Email\">Configuring Email</a> ');
+tam5a1feb84d4334t.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Notifications\&quot;" title=\"Email Notifications\">Email Notifications</a>');
+tam5a1feb84d4334t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Events_and_Email_Notification\&quot;" title=\"Events and Email Notification\">Events and Email Notification</a>');
+tam5a1feb84d4334t.add(9, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Templates\&quot;" title=\"Email Templates\">Email Templates</a>');
+tam5a1feb84d4334t.add(10, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Constructing_an_Email_Message\&quot;" title=\"Constructing an Email Message\">Constructing an Email Message</a>');
+tam5a1feb84d4334t.add(11, 5, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Properties\&quot;" title=\"Email Properties\">Email Properties</a>');
+tam5a1feb84d4334t.add(12, 5, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Attachment_Limits\&quot;" title=\"Email Attachment Limits\" class=\"mw-redirect\">Email Attachment Limits</a>');
+tam5a1feb84d4334t.add(13, 0, 'Configuration Options');
+tam5a1feb84d4334t.add(14, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_the_Email_Client\&quot;" title=\"Enabling the Email Client\">Enabling the Email Client</a>');
+tam5a1feb84d4334t.add(15, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Accounts\&quot;" title=\"Email Accounts\">Email Accounts</a>');
+tam5a1feb84d4334t.add(16, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Email_Authentication\&quot;" title=\"OAuth Email Authentication\">OAuth Email Authentication</a>');
+tam5a1feb84d4334t.add(17, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Email_Filters\&quot;" title=\"Email Filters\">Email Filters</a>');
+tam5a1feb84d4334t.add(18, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Notification_Examples\&quot;" title=\"Notification Examples\">Notification Examples</a>  ');
+tam5a1feb84d4334t.add(19, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_for_Email_Notifications\&quot;" title=\"Scripting for Email Notifications\">Scripting for Email Notifications</a>');
+tam5a1feb84d4334t.add(20, 0, 'Performing Tasks from Inbound Email');
+tam5a1feb84d4334t.add(21, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_Email_Actions\&quot;" title=\"Inbound Email Actions\">Inbound Email Actions</a>');
+tam5a1feb84d4334t.add(22, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Order_Email_Processing\&quot;" title=\"Order Email Processing\" class=\"mw-redirect\">Order Email Processing</a>');
+tam5a1feb84d4334t.add(23, 20, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Examples_of_Inbound_Email_Actions\&quot;" title=\"Examples of Inbound Email Actions\">Examples of Inbound Email Actions</a>');
+tam5a1feb84d4334t.add(24, 0, 'Subscribing to Notifications');
+tam5a1feb84d4334t.add(25, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subscription_Based_Notifications\&quot;" title=\"Subscription Based Notifications\">Subscription Based Notifications</a> ');
+tam5a1feb84d4334t.add(26, 24, '<strong class=\"selflink\">Setting Up Subscription Based Notifications</strong>');
+tam5a1feb84d4334t.add(27, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subscription_Based_Notifications\&quot;" title=\"Using Subscription Based Notifications\">Using Subscription Based Notifications</a>');
+
+                                               document.getElementById('5a1feb84d4334t').innerHTML = tam5a1feb84d4334t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a1feb84d4334t) { window.tamOnload_tam5a1feb84d4334t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> <center><b><a href="index.php%3Ftitle=Book:Notifications.html" title="Book:Notifications"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Notifications.html" title="Book:Notifications">Get the Book</a></b></center>
+</th></tr>
+<tr>
+<td>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Accessing_the_Interface"><span class="tocnumber">2</span> <span class="toctext">Accessing the Interface</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Related_Links_-_Notification_Preferences"><span class="tocnumber">2.1</span> <span class="toctext">Related Links - Notification Preferences</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Related_Lists"><span class="tocnumber">2.2</span> <span class="toctext">Related Lists</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Add_Related_Lists_to_User_Forms"><span class="tocnumber">2.2.1</span> <span class="toctext">Add Related Lists to User Forms</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Add_Related_Lists_to_Task_Forms"><span class="tocnumber">2.2.2</span> <span class="toctext">Add Related Lists to Task Forms</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Making_a_Notification_Mandatory"><span class="tocnumber">3</span> <span class="toctext">Making a Notification Mandatory</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Adding_an_Unsubscribe_Link_to_an_Email_Message"><span class="tocnumber">4</span> <span class="toctext">Adding an <i>Unsubscribe </i>Link to an Email Message</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Selecting_a_Service_Provider"><span class="tocnumber">5</span> <span class="toctext">Selecting a Service Provider</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Advanced_Notification_Scripts"><span class="tocnumber">5.1</span> <span class="toctext">Advanced Notification Scripts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Notification_Filters"><span class="tocnumber">6</span> <span class="toctext">Notification Filters</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Before your users can manage the notifications that are sent to them, you must create <a href="index.php%3Ftitle=Email_Notifications.html" title="Email Notifications">email notifications</a> to which users can subscribe, select service providers for delivery devices, and create the filters users can select to control how and when certain messages are delivered. You can also configure mandatory notifications that users cannot block.<br /> 
+</p><p>After installing the plug-in, perform the following procedures, based on your organization's needs. 
+</p>
+<h1><span class="mw-headline" id="Accessing_the_Interface"><span class="mw-headline-number">2</span> Accessing the Interface</span></h1>
+<p>You can access the subscription based notifications interface from a user record (<i>User Administration &gt; Users</i>) using either of two methods: 
+</p>
+<ul><li><b>Related Links</b>: The <i>Notification Preferences</i> interface features simplified navigation and streamlined controls that provide more at-a-glance information than the previous method. </li>
+<li><b>Related Lists</b>: You can still access your subscription based notification records from two standard ServiceNow related lists: Notification Device and Notification Messages. To use this method, you must <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">configure</a> your user forms to use these related lists.</li></ul>
+<h2><span class="mw-headline" id="Related_Links_-_Notification_Preferences"><span class="mw-headline-number">2.1</span> Related Links - Notification Preferences</span></h2>
+<p>Select <b>Related Links &gt; Notification Preferences</b> in a user record to view or configure that user's preferences. Click <b>New Device</b> to create a notification device for this user. For detailed instruction on using this interface, see <a href="index.php%3Ftitle=Using_Subscription_Based_Notifications.html" title="Using Subscription Based Notifications">Using Subscription Based Notifications</a>. 
+</p><p><br />
+The following shows notification preferences starting with the Fuji release.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:552px;"><a href="index.php%3Ftitle=File:User_notificationsUI15.png.html" class="image"><img alt="" src="images/thumb/b/b2/User_notificationsUI15.png/550px-User_notificationsUI15.png" width="550" height="276" class="thumbimage" srcset="/images/thumb/b/b2/User_notificationsUI15.png/825px-User_notificationsUI15.png 1.5x, /images/thumb/b/b2/User_notificationsUI15.png/1100px-User_notificationsUI15.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:User_notificationsUI15.png.html" class="internal" title="Enlarge"></a></div>Notification preferences starting with the Fuji release</div></div></div><br style="clear:both;" />
+<p>You can perform the following notification tasks in this screen:
+</p>
+<ul><li><b>View all notifications</b>: All notifications sent to this user and subscribed to by this user appear in this screen, listed under the appropriate delivery devices. </li>
+<li><b>Add or remove notifications</b>: Click the remove icon to unsubscribe the user from that notification. Notifications that were sent to you or that are mandatory are marked with a gray <b>X</b> and cannot be deleted.</li>
+<li><b>Add or edit devices</b>: Click <b>New Device</b> to add a new notification device. Click an existing device to edit that device. All users receive a <b>Primary email</b> device by default.</li>
+<li><b>Apply schedules and filters</b>: Click an individual notification to set or edit its schedule and filter. </li>
+<li><b>Unsubscribe from notifications</b>: To unsubscribe from a notification, click the toggle to the off position. Users cannot unsubscribe from a mandatory (locked) notification when they access this form.</li></ul>
+<p>The following shows notification preferences prior to the Fuji release. 
+</p>
+<table class="table collapsible collapsed">
+
+<tr>
+<th> Click the plus icon to see the preferences prior to Fuji.
+</th></tr>
+<tr>
+<td>
+<div class="thumb tleft"><div class="thumbinner" style="width:852px;"><a href="index.php%3Ftitle=File:Notification_Preferences_New1.png.html" class="image"><img alt="" src="images/thumb/9/97/Notification_Preferences_New1.png/850px-Notification_Preferences_New1.png" width="850" height="311" class="thumbimage" srcset="/images/9/97/Notification_Preferences_New1.png 1.5x, /images/9/97/Notification_Preferences_New1.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Notification_Preferences_New1.png.html" class="internal" title="Enlarge"></a></div>Notification preferences for versions prior to Fuji</div></div></div><br style="clear:both;" />
+<p>You can perform the same tasks as you can for the Fuji release, with these exceptions or differences:
+</p>
+<ul><li><b>Add or remove notifications</b>: Click a red <b>X</b> to remove the notification from that user. Notifications that were sent to you or that are mandatory are marked with a gray <b>X</b> and cannot be removed.</li>
+<li><b>Unsubscribe from notifications</b>: To unsubscribe from a notification, click the <b>Off </b>button.</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Related_Lists"><span class="mw-headline-number">2.2</span> Related Lists</span></h2>
+<p>To enable Related Lists for subscription-based notifications, you must <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">configure the User form</a> and your task forms.
+</p>
+<h3><span class="mw-headline" id="Add_Related_Lists_to_User_Forms"><span class="mw-headline-number">2.2.1</span> Add Related Lists to User Forms</span></h3>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you are using </i>Notification Preferences<i> from </i>Related Links<i> to manage notifications, this step is not necessary.</i>
+</td></tr></table>
+<p><br />
+To use Related Lists for subscription-based notifications, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">add</a> the <b>Notification Devices</b> and <b>Notification Messages</b> lists to your user form.
+</p>
+<h3><span class="mw-headline" id="Add_Related_Lists_to_Task_Forms"><span class="mw-headline-number">2.2.2</span> Add Related Lists to Task Forms</span></h3>
+<p><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">Add</a> any of the following related lists to your task forms: <b>Affected CIs</b>, <b>Affected Cost Centers</b>, <b>Affected Groups</b>, <b>Affected Locations</b>
+</p>
+<h1><span class="mw-headline" id="Making_a_Notification_Mandatory"><span class="mw-headline-number">3</span> Making a Notification Mandatory</span></h1>
+<p>You can flag a notification message as being mandatory, which will prevent users from manipulating the message with notification preferences. To make a notification mandatory: 
+</p>
+<ol><li>Navigate to <b>System Policy &gt; Email &gt; Notifications</b>. </li>
+<li>Open the appropriate notification, and select the <b>Mandatory</b> check box. 
+<dl><dd>That notification is now locked in user preferences, preventing the user from unsubscribing to the notification, filtering it, or changing the schedule. In <i>Related Links &gt; Notification Preferences</i>, the control button for the mandatory notification is disabled and set to <b>On</b>.</dd></dl></li></ol>
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Mandatory_preference.png.html" class="image"><img alt="" src="images/thumb/7/7e/Mandatory_preference.png/600px-Mandatory_preference.png" width="600" height="166" class="thumbimage" srcset="/images/7/7e/Mandatory_preference.png 1.5x, /images/7/7e/Mandatory_preference.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Mandatory_preference.png.html" class="internal" title="Enlarge"></a></div>A locked notification that cannot be turned off or deleted</div></div></div><br style="clear:both;" /></dd></dl>
+<h1><span class="mw-headline" id="Adding_an_Unsubscribe_Link_to_an_Email_Message"><span class="mw-headline-number">4</span> Adding an <i>Unsubscribe </i>Link to an Email Message</span></h1>
+<p>You can add an <b>Unsubscribe</b> link to the bottom of any email body by pasting in the following text. Be sure to change the values in arrow brackets to suit your environment. For instructions on creating email messages, see <a href="index.php%3Ftitle=Email_Notifications.html" title="Email Notifications">Email Notifications</a> and <a href="index.php%3Ftitle=Email_Templates.html" title="Email Templates">Email Templates</a>.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="o">&lt;</span><span class="nx">mail_script</span><span class="o">&gt;</span>
+<span class="nx">template</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;&#39;</span> <span class="o">+</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;glide.servlet.uri&#39;</span><span class="p">)</span>  <span class="o">+</span> <span class="s1">&#39;unsubscribe.do?sysparm_notification=&#39;</span> <span class="o">+</span> <span class="nx">email_action</span><span class="p">.</span><span class="nx">sys_id</span>  <span class="o">+</span> <span class="s1">&#39;&quot;&gt; Unsubscribe &lt;/a&gt;&lt;br /&gt;\n&#39;</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="err">/mail_script&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Selecting_a_Service_Provider"><span class="mw-headline-number">5</span> Selecting a Service Provider</span></h1>
+<p>You can configure service providers for your SMS devices and associate them with a user's device notification preference. Administrators have the option of configuring how a device's service provider affects the construction of the device's email address. 
+</p><p>To configure a service provider: 
+</p>
+<ol><li>Navigate to <b>User Administration &gt; Users</b> and open any user's record.</li>
+<li>Click <b>Notification Preferences</b>, and then then click an SMS notification device.</li>
+<li>If no SMS device is present, click <b>New Device</b> and <a href="index.php%3Ftitle=Using_Subscription_Based_Notifications.html#Setting_up_Notification_Devices" title="Using Subscription Based Notifications">configure one</a>.</li>
+<li>Select the appropriate service provider, and then click the reference icon for the <b>Service provider</b> field. The service providers are saved in the Notification Service Provider [cmn_notif_service_provider] table. Only active providers are visible.
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Notification_Device_Cell.png.html" class="image" title="Cell phone record for notifications"><img alt="Cell phone record for notifications" src="images/thumb/7/79/Notification_Device_Cell.png/850px-Notification_Device_Cell.png" width="850" height="209" srcset="/images/7/79/Notification_Device_Cell.png 1.5x, /images/7/79/Notification_Device_Cell.png 2x" /></a></dd>
+<dd><br /> </dd>
+<dd>This opens the Notification Service Provider record from the Notification Service Provider table.</dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Notification_Service_Provider.png.html" class="image" title="Notification service provider record"><img alt="Notification service provider record" src="images/thumb/e/e1/Notification_Service_Provider.png/850px-Notification_Service_Provider.png" width="850" height="207" srcset="/images/e/e1/Notification_Service_Provider.png 1.5x, /images/e/e1/Notification_Service_Provider.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>The Notification Service Provider form provides the following fields: </dd></dl></li></ol>
+<p><br />
+</p>
+<table cellspacing="1" cellpadding="3" border="1" width="870px">
+
+<tr>
+<td bgcolor="#dfdbdc" width="175px"> <b>Field</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Input Value</b>
+</td></tr>
+<tr>
+<td>  Name
+</td>
+<td> Configured name of the service provider.
+</td></tr>
+<tr>
+<td>  Type
+</td>
+<td> Type of device - in this case <b>SMS</b>.
+</td></tr>
+<tr>
+<td>  Active
+</td>
+<td> Enables or disables this notification device.
+</td></tr>
+<tr>
+<td>  Advanced notification
+</td>
+<td> Removes all the previous options and displays the <b>Advanced script</b> field.
+</td></tr>
+<tr>
+<td>  Advanced script
+</td>
+<td> Used for custom notifications that run a script rather than construct a traditional SMS/email. This is generally used when all outbound SMS messages must run through a central SMS hub, as opposed to being sent directly from the ServiceNow instance to the SMS provider. Advanced users can construct a script in this field that will send a notification to an old style numeric pager that cannot receive SMS communications. This field is rarely used and employs advanced scripts. See <a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html#Advanced_Notification_Scripts">Advanced Notification Scripts</a> for examples of what you can use in the script.
+</td></tr>
+<tr>
+<td>  Construct address manually
+</td>
+<td> Removes the prefix and suffix options and displays the <b>Construction script</b> field
+</td></tr>
+<tr>
+<td>  Construction script
+</td>
+<td> Allows you to script the email address construction as you would in a business rule. For example, <i>abc + current.phone_number + def@text.att.net</i> would construct an email address of <i>abc2223334444def@text.att.net</i>.
+<p>NOTE: <i>Current</i> is a reference to the device, not the service provider, hence the <i>current.phone_number</i> variable that uses the device's <i>phone_number</i> value. 
+</p>
+</td></tr>
+<tr>
+<td>  SMS Provider Email Prefix
+</td>
+<td> Places the provided text before the device's specified phone number (e.g. PREFIX2223334444@text.att.net).
+</td></tr>
+<tr>
+<td>  SMS Provider Email suffix
+</td>
+<td> Places the provided text after '@' sign (e.g. 2223334444@SUFFIX)
+</td></tr>
+<tr>
+<td>  Notification Device Variables
+</td>
+<td> Additional, optional attributes of an SMS device used inside an SMS service provider's <b>Advanced script</b>. This is generally used to deliver SMS notifications to an internal SMS distribution technology. This is an advanced scripting procedure and is not necessary for configuring external SMS providers.
+</td></tr></table>
+<h2><span class="mw-headline" id="Advanced_Notification_Scripts"><span class="mw-headline-number">5.1</span> Advanced Notification Scripts</span></h2>
+<p>You can use these objects and their attributes in your advanced notification scripts:
+</p>
+<table class="standard">
+<tr>
+<th> Object
+</th>
+<th> Example attributes
+</th></tr>
+<tr>
+<td> current
+</td>
+<td>
+<ul><li>current.number</li>
+<li>current.assigned_to</li>
+<li>current.company</li>
+<li>current.state</li></ul>
+</td></tr>
+<tr>
+<td> email
+</td>
+<td>
+<ul><li>email.notify</li>
+<li>email.sourceTable</li>
+<li>email.contentType</li>
+<li>email.attachments</li>
+<li>email.HTML</li>
+<li>email.dataVersionHeader</li>
+<li>email.UID</li>
+<li>email.allowSavingNoRecipientEmail</li>
+<li>email.recipients</li>
+<li>email.ignore</li>
+<li>email.save</li>
+<li>email.headers</li>
+<li>email.sysID</li>
+<li>email.attachmentLimits</li>
+<li>email.class</li>
+<li>email.sysId</li>
+<li>email.textBody</li>
+<li>email.hashCode</li>
+<li>email.weight</li>
+<li>email.equals</li>
+<li>email.logEmail</li>
+<li>email.reset</li>
+<li>email.wait</li>
+<li>email.body</li>
+<li>email.SMSText</li>
+<li>email.watermark</li>
+<li>email.textBodyLegacy</li>
+<li>email.sourceHeader</li>
+<li>email.subject</li>
+<li>email.instance</li>
+<li>email.importance</li></ul>
+</td></tr>
+<tr>
+<td> device
+</td>
+<td>
+<ul><li>device.service_provider</li>
+<li>device.group</li>
+<li>device.order</li>
+<li>device.sys_id</li>
+<li>device.sys_updated_by</li>
+<li>device.sys_created_by</li>
+<li>device.primary_email</li>
+<li>device.schedule</li>
+<li>device.name</li>
+<li>device.sys_created_on</li>
+<li>device.email_address</li>
+<li>device.active</li>
+<li>device.phone_number</li>
+<li>device.sys_mod_count</li>
+<li>device.sys_updated_on</li>
+<li>device.user</li>
+<li>device.sys_meta</li>
+<li>device.type</li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Notification_Filters"><span class="mw-headline-number">6</span> Notification Filters</span></h1>
+<p>Notification filters enable a user to control the delivery of messages by creating special conditions on multiple tables in a single, reusable filter. For example, you can create a filter that controls message delivery when active incidents, problems, and change requests for network issues reach a critical state. Notification filters are available for selection in the <b>Filter</b> field of a user's <a href="index.php%3Ftitle=Using_Subscription_Based_Notifications.html#Subscribing_to_Messages_and_Configuring_Preferences" title="Using Subscription Based Notifications">Notification Preferences</a> form. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The system applies the user's filter conditions after the administrator's conditions have been evaluated. If the administrator's conditions fail, the system ignores notification filters.</i>
+</td></tr></table>
+<p><br />
+To create a notification filter:
+</p>
+<ol><li>Navigate to <b>System Policy &gt; Email &gt; Notification Filters</b> and create a new record.</li>
+<li>In the <b>Notification conditions</b> related list of the new record, create and submit filter conditions on one or more tables.
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Notification_Condition2.png.html" class="image" title="Creating a condition for a notification filter"><img alt="Creating a condition for a notification filter" src="images/thumb/d/d1/Notification_Condition2.png/550px-Notification_Condition2.png" width="550" height="182" srcset="/images/d/d1/Notification_Condition2.png 1.5x, /images/d/d1/Notification_Condition2.png 2x" /></a></dd>
+<dd><br /> </dd></dl></li>
+<li>Repeat the procedure to create additional conditions on other tables for this filter.
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Notification_Filter2.png.html" class="image" title="Creating a notification filter"><img alt="Creating a notification filter" src="images/thumb/e/e9/Notification_Filter2.png/750px-Notification_Filter2.png" width="750" height="228" srcset="/images/e/e9/Notification_Filter2.png 1.5x, /images/e/e9/Notification_Filter2.png 2x" /></a></dd></dl></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130112909
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.228 seconds
+Real time usage: 0.606 seconds
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 311/1000000
+Post‐expand include size: 2174/2097152 bytes
+Template argument size: 580/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  383.295      1 - -total
+ 21.57%   82.666      1 - Template:Email
+ 20.36%   78.031      1 - Template:Topic
+  2.05%    7.842      2 - Template:Note
+  1.64%    6.302      2 - Template:T
+  1.20%    4.603      1 - Embedded:Email
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6320-0!*!0!1!en!5!* and timestamp 20171130112908 and revision id 247869
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications&amp;oldid=247869.html">http://wiki.servicenow.com/index.php?title=Setting_Up_Subscription_Based_Notifications&amp;oldid=247869</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Email+Integrations.html" title="Category:Email Integrations">Email Integrations</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notification+Administration.html" title="Category:Notification Administration">Notification Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notification+Administration.html" title="Category:Notification Administration">Notification Administration</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Email+Integrations.html" title="Category:Email Integrations">Email Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6320"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6320" data-vote-the-vote="5" data-vote-id="6320" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6320_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6320" data-vote-the-vote="1" data-vote-id="6320" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6320_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Setting+Up+Subscription+Based+Notifications.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Setting+Up+Subscription+Based+Notifications.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Setting_Up_Subscription_Based_Notifications.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Setting+Up+Subscription+Based+Notifications.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Setting+Up+Subscription+Based+Notifications&amp;returnto=Setting+Up+Subscription+Based+Notifications&amp;oldid=247869&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSetting_Up_Subscription_Based_Notifications.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Setting_Up_Subscription_Based_Notifications" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications&amp;oldid=247869.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Setting_Up_Subscription_Based_Notifications&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:07, 18 September 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":766});});</script></body></html>

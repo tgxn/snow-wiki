@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Custom Table - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_Custom_Table","wgTitle":"Creating a Custom Table","wgCurRevisionId":250252,"wgRevisionId":250252,"wgArticleId":1292,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Table Administration","Applications"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_Custom_Table","wgRelevantArticleId":1292,"wgRequestId":"d1ab302ebf4cdcc098114c9d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170818175729"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_a_Custom_Table"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating a Custom Table"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Applications"/>
+<meta name="category" content="Applications"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_a_Custom_Table.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating a Custom Table"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170818175729"/>
+
+	<meta property="article:published_time" content="20170818175729"/>
+
+	<meta property="article:modified_time" content="20170818175729"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Applications"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_a_Custom_Table"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_Custom_Table rootpage-Creating_a_Custom_Table skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Custom Table</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Build.html" title="Build">Build</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html" title="Applications">Applications</a> &gt; Creating a Custom Table</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/table-administration/task/t_CreateATable.html">Create a Table</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Table_Administration.html" title="Table Administration">Table Administration</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><strong class="selflink">Creating a Custom Table</strong> </li>
+<li><a href="index.php%3Ftitle=Tables_and_Classes.html" title="Tables and Classes">Tables and Classes</a> </li>
+<li><a href="index.php%3Ftitle=Schema_Map_for_Tables.html" title="Schema Map for Tables">Schema Map for Tables</a></li>
+<li><a href="index.php%3Ftitle=Tables_and_Columns_Module.html" title="Tables and Columns Module">Tables &amp; Columns Module</a></li>
+<li><a href="index.php%3Ftitle=Deleting_a_Table.html" title="Deleting a Table">Deleting a Table</a> </li>
+<li><a href="index.php%3Ftitle=Deleting_a_Table%2527s_Records.html" title="Deleting a Table's Records" class="mw-redirect">Deleting a Table's Records</a> </li>
+<li><a href="index.php%3Ftitle=Turning_on_Auditing_(History)_for_a_Table.html" title="Turning on Auditing (History) for a Table">Turning on Auditing (History) for a Table</a> 
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Understanding+the+sys+audit+Table&amp;oldid=0.html" title="Understanding the sys audit Table">Understanding the sys_audit Table</a> </li>
+<li><a href="index.php%3Ftitle=Viewing_a_Record%2527s_Change_History.html" title="Viewing a Record's Change History">Viewing a Record's Change History</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=History+Sets&amp;oldid=0.html" title="History Sets">History Sets</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Unique_Index.html" title="Unique Index">Unique Index</a></li>
+<li><a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">Unique Record Identifier</a></li>
+<li><a href="index.php%3Ftitle=Restoring_Deleted_Records.html" title="Restoring Deleted Records">Restoring Deleted Records</a></li>
+<li><a href="index.php%3Ftitle=Restoring_Deleted_Records_and_References.html" title="Restoring Deleted Records and References" class="mw-redirect">Restoring Deleted Records and References</a></li>
+<li><a href="index.php%3Ftitle=Creating_a_Many-to-Many_Relationship.html" title="Creating a Many-to-Many Relationship">Creating a Many-to-Many Relationship</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Tables"><span class="tocnumber">2</span> <span class="toctext">Creating Tables</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Adding_Columns"><span class="tocnumber">3</span> <span class="toctext">Adding Columns</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Global_Default_Fields"><span class="tocnumber">3.1</span> <span class="toctext">Global Default Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Modules_for_Tables"><span class="tocnumber">4</span> <span class="toctext">Creating Modules for Tables</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Adding_Record_Numbering"><span class="tocnumber">5</span> <span class="toctext">Adding Record Numbering</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Removing_Record_Numbering"><span class="tocnumber">5.1</span> <span class="toctext">Removing Record Numbering</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Security_Rules_for_Tables"><span class="tocnumber">6</span> <span class="toctext">Creating Security Rules for Tables</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Extending_a_Table"><span class="tocnumber">7</span> <span class="toctext">Extending a Table</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Example:_Enabling_Workflows_for_Tables_that_Extend_Task"><span class="tocnumber">7.1</span> <span class="toctext">Example: Enabling Workflows for Tables that Extend Task</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Example:_Creating_a_New_CMDB_Class"><span class="tocnumber">7.2</span> <span class="toctext">Example: Creating a New CMDB Class</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Record_Producers_for_Tables"><span class="tocnumber">8</span> <span class="toctext">Creating Record Producers for Tables</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Adding_a_Database_Index"><span class="tocnumber">9</span> <span class="toctext">Adding a Database Index</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>You can create custom tables as well as application menus, modules, and security rules that allow users to work with data in the tables. You can also create service catalog record producers directly from a table record. Creating tables is a core part of creating an application (see <a href="index.php%3Ftitle=Creating_Custom_Applications.html" title="Creating Custom Applications">Creating Custom Applications</a>).
+</p><p>You must have the admin role to create custom tables.
+</p>
+<h1><span class="mw-headline" id="Creating_Tables"><span class="mw-headline-number">2</span> Creating Tables</span></h1>
+<p>Create or modify a table from the Table form. In versions prior to the Fuji release, the form does not have sections, and the <b>Application</b> field and the fields in the <b>Application Access</b> section are not available.
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li> Click <b>New</b>.</li>
+<li> Define the table by completing the fields on the form (see table).</li>
+<li> In the <b>Columns</b> section, use the <b>Table Columns</b> embedded list to <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Adding_Columns">add columns to the table</a>.</li>
+<li> In the <b>Controls</b> section, define additional table options (see table).</li>
+<li> In the <b>Application Access</b> section, <a href="index.php%3Ftitle=Application_Scope.html#Defining_Scope_Protection_for_Tables" title="Application Scope">define the scope protection</a> for the table.</li>
+<li> Click <b>Submit</b> to create the table, or click <b>Cancel</b> to close the Table form without creating a new table.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Sample_table_record.png.html" class="image"><img alt="" src="images/thumb/3/3b/Sample_table_record.png/600px-Sample_table_record.png" width="600" height="510" class="thumbimage" srcset="/images/thumb/3/3b/Sample_table_record.png/900px-Sample_table_record.png 1.5x, /images/3/3b/Sample_table_record.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Sample_table_record.png.html" class="internal" title="Enlarge"></a></div>Sample table record</div></div></div> <br clear="all" />
+<table class="standard">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Label
+</td>
+<td> Enter a unique label for the table. The label appears on list and form views for the table. Updating the <b>Label</b> field also updates the label record in the language file for the current language. See <a href="index.php%3Ftitle=Data_Dictionary_Tables.html#Field_Labels" title="Data Dictionary Tables">Field Labels</a>.
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> Edit the table name, which is automatically populated based on the table label and a prefix as follows:
+<ul><li> For a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">table in a scoped application</a>, the name is prefixed with a namespace identifier to indicate that it is part of an application (starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>).</li>
+<li> For a table in a global application and for versions prior to Fuji, custom tables have a name prefixed with  the string <b>u_</b> to indicate this is a custom table. For example, if you enter <b>Marketing Event</b> as the table label, the table name defaults to <b>u_marketing_event</b>.</li></ul>
+<p>You cannot modify the prefix; however, you can modify the rest of the table name. The name can contain only lowercase, alphanumeric ASCII characters and underscores (_). 
+</p>
+</td></tr>
+<tr>
+<td> Extends Table
+</td>
+<td> [Optional] Select the table to <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Extending_a_Table">extend</a>. Extending a base table incorporates all of the fields of the original table and creates system fields for the new table. You can extend tables that are marked as extensible if they are in the same scope or if they allow configuration from other scopes.
+<p>This option is available only when creating a table.
+</p>
+</td></tr>
+<tr>
+<td> Application
+</td>
+<td> [Read only] Displays the application associated with this table. If you are working on an application or are creating a table from an application record, the field defaults to that application. Otherwise, the field defaults to <b>Global</b>. Any records that are created from the table record, such as modules and security rules, are assigned to this application by default. See <a href="index.php%3Ftitle=Managing_Applications.html#Select_the_Current_Application" title="Managing Applications">Selecting the Current Application</a>.
+</td></tr>
+<tr>
+<td> Create module
+</td>
+<td> [Optional] Select the check box and then complete the <b>Add module to menu</b> field to <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Modules_for_Tables">create a list module</a> in the application menu.
+<p>This option is available only when creating a table.
+</p>
+</td></tr>
+<tr>
+<td> Add module to menu
+</td>
+<td> Select an existing menu or select <b>Create new</b> and enter a new menu name. This option is available only when the <b>Create module</b> check box is selected.
+</td></tr>
+<tr>
+<th colspan="2"> Columns
+</th></tr>
+<tr>
+<td> Column label
+</td>
+<td> Define a unique label for the column. The label appears on list headers and form fields for the column.
+<ul><li> When you update the <b>Column label</b> field, the system also updates the label in the language file for the current language. See <a href="index.php%3Ftitle=Data_Dictionary_Tables.html#Field_Labels" title="Data Dictionary Tables">Field Labels</a>.</li>
+<li> When you create a new column, the column name is automatically populated based on the label. The name is automatically prefixed with <b>u_</b> to indicate that it is custom. For example, if you enter <b>Activity Description</b> as the column label, the column name defaults to <b>u_activity_description</b>.</li></ul>
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> [Mandatory] Define the field type for the column. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields">Introduction to Fields</a>. To preserve existing data, only change fields between the same basic type (for example, <b>Choice</b> and <b>String</b>). A warning appears if a change to a custom field will result in data loss. For a base system field, you cannot make a change that will result in data loss.
+</td></tr>
+<tr>
+<td> Reference
+</td>
+<td> Make the field into a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Reference+Fields&amp;oldid=0.html" title="Reference Fields">reference field</a> by entering the referenced table name.
+<p><b>Note:</b> Dynamic reference creation is enabled for this field. So, if you enter a table name that does not match an existing table, a new table is created when you save changes to the current table record. If the current table has a module in the application navigator, then a module for the newly created table is automatically created in the same application menu.
+</p>
+</td></tr>
+<tr>
+<td> Max length
+</td>
+<td> [String fields only] Limit the length of the field. A length of under 254 appears as a single-line text field. Anything 255 characters or over appears as a multi-line text box.
+<p><b>Note:</b>
+</p>
+<ul><li>You can only change this value if the <b>Type</b> of the field is <b>String</b>. Changes for any other type of field are ignored. </li>
+<li>Users on an Oracle instance cannot increase the maximum length of a string field to anything greater than 4000 through the application UI because this requires the CLOB datatype in Oracle. To increase beyond this size, log an incident with ServiceNow <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html" title="Technical Support" class="mw-redirect">Technical Support</a> to request the change.</li>
+<li>To prevent data from being lost, only decrease the length of a string field when you are developing a new application and not when a field contains data. A warning appears if a change to a custom field will result in data loss. For a base system field, you cannot make a change that will result in data loss.</li></ul>
+</td></tr>
+<tr>
+<td> Default value
+</td>
+<td> Specify the default value of the field for any new record. Ensure that this value uses the correct field type. For example, an integer field can use a default value of <b>2</b> but cannot use a default value of <b>two</b>. These values can be overridden with <a href="index.php%3Ftitle=Dictionary_Overrides.html" title="Dictionary Overrides">dictionary overrides</a>.
+</td></tr>
+<tr>
+<td> Display
+</td>
+<td> Indicate whether this field is the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Reference+Fields&amp;oldid=0.html#Display_Values" title="Reference Fields">display value for reference fields</a> (appears on records that reference this table).
+<p><b>Note:</b> This option does <i>not</i> control whether or not this field is displayed on lists or forms.
+</p>
+</td></tr>
+<tr>
+<th colspan="2"> Controls
+</th></tr>
+<tr>
+<td> Extensible
+</td>
+<td> [Optional] Select the check box to allow other tables to extend this table. Clear the check box to prevent the creation of additional child tables; existing child tables remain unchanged.
+</td></tr>
+<tr>
+<td> Live feed
+</td>
+<td> [Optional] Select the check box to <a href="index.php%3Ftitle=Live_Feed.html" title="Live Feed">enable record feeds</a> for the table (these are called document feeds in versions prior to Fuji). This option adds the <b>Show Live Feed</b> button (<a href="index.php%3Ftitle=File:Live_company_feed.png.html" class="image"><img alt="Live company feed.png" src="images/thumb/2/22/Live_company_feed.png/20px-Live_company_feed.png" width="20" height="20" style="vertical-align: top" srcset="/images/thumb/2/22/Live_company_feed.png/30px-Live_company_feed.png 1.5x, /images/thumb/2/22/Live_company_feed.png/40px-Live_company_feed.png 2x" /></a>) in the form header.
+</td></tr>
+<tr>
+<td> Auto-number
+</td>
+<td> [Optional] Select the check box, and then define the number format to <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Adding_Record_Numbering">add an auto-numbered field</a> to the table. The check box is available only when a number format does not exist for the table. Otherwise, you can edit the existing number format.
+</td></tr>
+<tr>
+<td> Create access controls
+</td>
+<td> [Optional] Select the check box and then complete the <b>User role</b> field to <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Security_Rules_for_Tables">create basic security rules for the table</a>.
+</td></tr>
+<tr>
+<td> User role
+</td>
+<td> Enter a new name or select an existing user role that is required to access this table. This option is available only when the <b>Create access controls</b> check box is selected.
+</td></tr>
+<tr>
+<th colspan="2"> Application Access
+</th></tr>
+<tr>
+<td> Can read
+</td>
+<td> Select the check box to allow script objects from other application scopes to read records stored in this table. This option offers runtime protection. For example, a script in another application can query data on this table. You must first select read access to grant any other API record operation.
+</td></tr>
+<tr>
+<td> Can write
+</td>
+<td> Select the check box to allow script objects from other application scopes to modify records stored in this table. This option offers runtime protection. For example, a script in another application can modify a field value on this table. This option is available only when the <b>Can read</b> check box is selected.
+<p>Clear the check box to prevent script objects from other application scopes from modifying data stored in this table.
+</p>
+</td></tr>
+<tr>
+<td> Can create
+</td>
+<td> Select the check box to to allow script objects from other application scopes to create records in this table. This option offers runtime protection. For example, a script in another application can insert a new record in this table. This option is available only when the <b>Can read</b> check box is selected.
+<p>Clear the check box to prevent script objects from other application scopes from creating records in this table.
+</p>
+</td></tr>
+<tr>
+<td> Can delete
+</td>
+<td> Select the check box to to allow script objects from other application scopes to delete records from this table. This option offers runtime protection. For example, a script in another application can remove a record from this table. This option is available only when the <b>Can read</b> check box is selected.
+<p>Clear the check box to prevent script objects from other application scopes from deleting records from this table.
+</p>
+</td></tr>
+<tr>
+<td> Allow access to this table via web services
+</td>
+<td> Select the check box to allow users to make inbound <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">web service</a> queries to this table. This option offers both design-time and runtime protection. The user performing the query must have the correct permissions to access this table, even when this check box is selected.
+<p>Clear the check box to prevent users from making web service queries to this table.
+</p><p><br />
+</p>
+</td></tr>
+<tr>
+<td> Allow configuration
+</td>
+<td> Select the check box to allow applications from other application scopes to create configuration records for this table that change its functionality. For example, an application designer can select this table from the <b>Tables</b> list on business rules, client scripts, or UI actions. This option offers design-time protection. For more information about creating configuration records for an application in a private scope, see <a href="index.php%3Ftitle=Application_Access_Settings.html" title="Application Access Settings">Application Access Settings</a>.
+<p>Clear the check box to prevent application designers from selecting this table when creating configuration records.
+</p>
+</td></tr></table>
+<h1><span class="mw-headline" id="Adding_Columns"><span class="mw-headline-number">3</span> Adding Columns</span></h1>
+<p>You can add database columns (fields) when creating a new table or when editing an existing table. You can add fields on tables that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the field and on other tables that allow applications in another scope to add fields on them (starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>). To learn more about creating fields, see <a href="index.php%3Ftitle=Creating_New_Fields.html" title="Creating New Fields">Creating New Fields</a>.
+</p><p>To add columns from the table record:
+</p>
+<ol><li> Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li> Create a new table or open an existing table record.</li>
+<li> In the <b>Table Columns</b> embedded list, double-click <b>Insert a new row</b>.</li>
+<li> Define the column by completing the fields in the row (<a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Creating_Tables">see table</a>).
+<ul><li> [Existing tables only] You can create a column with advanced settings or create a column on a <a href="index.php%3Ftitle=Application_Scope.html#Defining_Scope_Protection_for_Tables" title="Application Scope">table in a different scope</a> by clicking <b>New</b> (starting with the Fuji release). See <a href="index.php%3Ftitle=System_Dictionary.html#Modifying_Dictionary_Entries" title="System Dictionary">Modifying Dictionary Entries</a>.
+<dl><dd>In versions prior to Fuji, you can create a column with advanced settings by right-clicking the form header and selecting <b>Create Advanced Column</b>. </dd></dl></li>
+<li>The <b>Table Columns</b> embedded list provides list filtering, searching, and sorting in addition to standard embedded list functions.</li></ul></li>
+<li> Repeat steps 3&#8211;4 for each column being added.
+<ul><li>To delete a field, click the red <b>X</b> beside the row. This option is available only for custom fields.</li>
+<li>To save column changes, save the form. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Lists&amp;oldid=0.html#Embedded_Lists" title="Using Lists">Using Embedded Lists</a>.</li></ul></li>
+<li> Click <b>Submit</b> or <b>Update</b>.</li>
+<li>[Optional] To customize the form layout for the new fields, open the table record, click the <b>Layout Form</b> related link (<b>Personalize Form</b> in versions prior to the Eureka release), and then <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configure the form</a>.
+<dl><dd>New fields are automatically added to the default form view. If a default form view already exists, new fields are added at the end of the first section.</dd></dl></li>
+<li>[Optional] To customize the list layout for the new fields, open the table record, click the <b>Layout List</b> related link (<b>Personalize List</b> in versions prior to the Eureka release), and then <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Lists&amp;oldid=0.html#Configuring_Lists" title="Configuring Lists">configure the list</a>.</li></ol>
+<h2><span class="mw-headline" id="Global_Default_Fields"><span class="mw-headline-number">3.1</span> Global Default Fields</span></h2>
+<p>When you create a new custom table, several fields appear in the <b>Table Columns</b> embedded list. For all tables, required system fields are added automatically. You cannot delete or modify these fields.
+</p><p>For tables that <a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html#Extending_a_Table">extend another table</a>, fields on the parent table also appear on the <b>Table Columns</b> embedded list for the current table. If you modify these fields, remember that all changes to fields on the parent table also affect all child tables, not just the current table.
+</p><p><br />
+These required system fields are added to all tables:
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Class [sys_class_name]
+</td>
+<td> System Class Name
+</td>
+<td> If the table is extensible, a string field that indicates which child table contains the record.
+</td></tr>
+<tr>
+<td> Created [sys_created_on]
+</td>
+<td> Date/Time
+</td>
+<td> A time-stamp field that indicates when a record was created.
+</td></tr>
+<tr>
+<td> Created by [sys_created_by]
+</td>
+<td> String
+</td>
+<td> A string field that indicates the user who created the record.
+</td></tr>
+<tr>
+<td> Sys_id [sys_id]
+</td>
+<td> Sys ID
+</td>
+<td> The <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">unique record identifier</a> for the record.
+</td></tr>
+<tr>
+<td> Updates [sys_mod_count]
+</td>
+<td> Integer
+</td>
+<td> A numeric field that counts the number of updates for this record since record creation.
+</td></tr>
+<tr>
+<td> Updated by [sys_updated_by]
+</td>
+<td> String
+</td>
+<td> A string field that indicates the user who most recently updated the record.
+</td></tr>
+<tr>
+<td> Updated [sys_updated]
+</td>
+<td> Date/Time
+</td>
+<td> A time-stamp field that indicates the date and time of the most recent update.
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_Modules_for_Tables"><span class="mw-headline-number">4</span> Creating Modules for Tables</span></h1>
+<p>Modules allow users to access the table from the application navigator. For more information about modules, see <a href="index.php%3Ftitle=Administering_Application_Menus_and_Modules.html#Creating_Modules" title="Administering Application Menus and Modules">Creating Modules</a>. To learn about mobile device modules for instances that use the smartphone interface, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Configuring+the+Smartphone+Interface&amp;oldid=0.html#Defining_Smartphone_Application_Menus_and_Modules" title="Configuring the Smartphone Interface">Defining Smartphone Application Menus and Modules</a>.
+</p><p>When you are creating a table, you can quickly create a default module for the standard browser and the mobile UI.
+</p>
+<ol><li>In the table record, select the <b>Create module</b> check box. The <b>Add module to menu</b> field appears.</li>
+<li>Select an existing menu or select <b>Create new</b> and enter a new menu name.
+<ul><li>If you are <a href="index.php%3Ftitle=Creating_a_Custom_Application.html#Working_on_Applications" title="Creating a Custom Application" class="mw-redirect">working on an application</a>, the primary menu is selected by default.</li>
+<li>If you are not working on an application, <b>Create new</b> is selected and the menu name defaults to the table label.</li></ul></li>
+<li>Define the table and save the record.
+<ul><li> A new module is created with the following values:
+<ul><li> <b>Table:</b> current table</li>
+<li> <b>Title:</b> plural of the table label</li>
+<li> <b>Link type</b>: <i>List of Records</i></li>
+<li> <b>Application menu:</b> selected menu</li>
+<li><b>Device type:</b> <i>Any</i> (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a> for instances that do not use the smartphone interface)</li></ul></li>
+<li> If you selected <b>Create new</b> in step 2, a new application menu is created. The <b>Default device type</b> is set to <b>Any</b> (starting with the Dublin release for instances that do not use the <a href="index.php%3Ftitle=Smartphone_Interface.html#Smartphone_Interface" title="Smartphone Interface">smartphone interface</a>).</li>
+<li>For instances that use the smartphone interface, a new mobile module and a new mobile application menu are created.</li></ul></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:CreateModule.png.html" class="image"><img alt="" src="images/thumb/a/a4/CreateModule.png/500px-CreateModule.png" width="500" height="209" class="thumbimage" srcset="/images/a/a4/CreateModule.png 1.5x, /images/a/a4/CreateModule.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:CreateModule.png.html" class="internal" title="Enlarge"></a></div>Create a default module</div></div></div><br style="clear:both;" />
+<p><br />
+To create additional modules, for example, a filtered list view:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b> and open the Table form.</li>
+<li>Scroll down to the <b>Modules</b> related list, and click <b>New</b>.</li>
+<li>Define the module by completing the Module form. See <a href="index.php%3Ftitle=Administering_Application_Menus_and_Modules.html#Creating_Modules" title="Administering Application Menus and Modules">Creating a Module</a>.
+<ul><li> The <b>Table</b> field defaults to the current table and the <b>Link type</b> defaults to <b>List of Records</b>.</li>
+<li> The <b>Device type</b> field defaults to <b>Any</b> (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a> for instances that do not use the smartphone interface).</li>
+<li> You must enter the <b>Application menu</b> and <b>Title</b>.</li></ul></li></ol>
+<p><br />
+To create additional modules for the mobile UI, for instances that use the smartphone interface only:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b> and open the Table form.</li>
+<li>Scroll down to the <b>Mobile Modules</b> related list, and click <b>New</b>.</li>
+<li>Define the module by completing the Module form. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Configuring+the+Smartphone+Interface&amp;oldid=0.html#Defining_Smartphone_Application_Menus_and_Modules" title="Configuring the Smartphone Interface">Defining Smartphone Application Menus and Modules</a>.
+<ul><li> The <b>Table</b> field defaults to the current table.</li>
+<li> You must enter the <b>Application menu</b> and other module information.</li></ul></li></ol>
+<h1><span class="mw-headline" id="Adding_Record_Numbering"><span class="mw-headline-number">5</span> Adding Record Numbering</span></h1>
+<p>You can quickly create a number field and define the number format for records on the table. To learn about additional numbering options, see <a href="index.php%3Ftitle=Managing_Record_Numbering.html" title="Managing Record Numbering">Managing Record Numbering</a>.
+</p><p>To add record numbering to a table that does not have a number format defined:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li>Create a new table or open an existing table record.</li>
+<li>Select the <b>Auto-number</b> check box. The number format fields appear on the form.
+<dl><dd> <b>Note:</b> The check box is available only when a number format has not yet been defined. You can define only one number format per table.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:AutoNumber.png.html" class="image"><img alt="" src="images/thumb/9/9d/AutoNumber.png/600px-AutoNumber.png" width="600" height="180" class="thumbimage" srcset="/images/9/9d/AutoNumber.png 1.5x, /images/9/9d/AutoNumber.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:AutoNumber.png.html" class="internal" title="Enlarge"></a></div>Add record numbering</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>[Optional] Modify the number format by updating the fields (see table).</li>
+<li>Click <b>Submit</b>. 
+<ul><li> The number format is automatically created for the table.</li>
+<li> If an auto-numbered field does not already exist, a new field is automatically created on the table with the following values:
+<ul><li> <b>Label:</b> <i>Number</i></li>
+<li> <b>Name:</b> <i>u_number</i></li>
+<li> <b>Default value:</b> <tt>javascript:getNextObjNumberPadded();</tt></li></ul></li></ul></li></ol>
+<table class="standard">
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Prefix
+</td>
+<td>Enter a prefix for every number in the table (for example, <b>INC</b> for Incident). The default value is the first three letters of the table label.
+</td></tr>
+<tr>
+<td>Number
+</td>
+<td>Enter the base number for this table (default value is <b>1000</b>). Record numbers are automatically incremented, and the next number is maintained in the Counter [sys_number_counter] table.
+<p>If you set the base number to a value higher than the current counter, the next record number uses the new base number. Otherwise the next record number uses the current counter. The counter does not reset to a base number lower than itself. 
+</p>
+</td></tr>
+<tr>
+<td>Number of digits
+</td>
+<td>Enter the minimum number of digits to use after the prefix (default value is <b>7</b>).
+<ul><li>Leading zeros are added to auto-numbers, if necessary. For example, <b>INC0001001</b> contains three leading zeros.</li>
+<li>The number of digits can exceed the minimum length. For example, if <b>Number of digits</b> is <b>2</b> and more than 99 records are created on the table, the numbers continue past 100 (such as <b>INC101</b>).</li></ul>
+<p><b>Warning:</b> Changing this field may update all number values for existing records on a table. Take care when changing this field on a production instance. See <a href="index.php%3Ftitle=Managing_Record_Numbering.html#Renumbering_Records" title="Managing Record Numbering">Renumbering Records</a>.
+</p>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>To change the default values for new number formats, change the <b>Default value</b> field on the <a href="index.php%3Ftitle=System_Dictionary.html" title="System Dictionary">system dictionary record</a> for the <b>Number</b> or <b>Number of digits</b> field. These fields are on the Number table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Removing_Record_Numbering"><span class="mw-headline-number">5.1</span> Removing Record Numbering</span></h2>
+<p>To remove record numbering from a table, delete the number format and the auto-numbered field.
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Number Maintenance</b>.</li>
+<li>Click a table name to open the number record for that table.</li>
+<li>Click <b>Delete</b>.</li>
+<li>Navigate to <b>System Definition &gt; Tables</b> and open the Table form.</li>
+<li>Click the red <b>X</b> beside the auto-numbered field.</li>
+<li>Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Creating_Security_Rules_for_Tables"><span class="mw-headline-number">6</span> Creating Security Rules for Tables</span></h1>
+<p>You can quickly create basic security rules for a table. To learn more about security rules, see <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">Using Access Control Rules</a>.
+</p><p>To create security rules from the table record:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li>Create a new table or open an existing table record.</li>
+<li>Select the <b>Create access controls</b> check box. The <b>User role</b> field appears on the form.</li>
+<li>Enter a new name or select an existing user role that is required to access the table.
+<dl><dd>If you are working on an application or a table that is part of an application, the default user role for the application is automatically populated. Otherwise, the field is automatically populated based on the table label.</dd>
+<dd><div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:TableSecurity.png.html" class="image"><img alt="" src="images/thumb/2/23/TableSecurity.png/600px-TableSecurity.png" width="600" height="180" class="thumbimage" srcset="/images/2/23/TableSecurity.png 1.5x, /images/2/23/TableSecurity.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:TableSecurity.png.html" class="internal" title="Enlarge"></a></div>Add table security</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li> Click <b>Submit</b> or <b>Update</b>.
+<ul><li> If the user role does not match an existing role, a new role is created.</li>
+<li> Security rules are created that grant the user role full access to the table&#8212;read, write, create, and delete.</li></ul></li>
+<li>[Optional] Reopen the table record and scroll down to the <b>Access Controls</b> related list to create new or modify existing access control list (ACL) rules.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You can repeat the procedure to grant full access to a different role. The new role is created and the original role is replaced for every ACL on the table. The original role is not changed for ACLs on other tables or objects, and any other roles or scripts on the ACLs are not changed.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Extending_a_Table"><span class="mw-headline-number">7</span> Extending a Table</span></h1>
+<p>You can create a new table that stands alone or that extends a base table. Extending a base table incorporates all of the fields of the original table and creates new fields for the new table. This inheritance is used to create subcategories of data. Examples include the Incident, Problem, and Change tables, which are all subcategories of the Task table.
+</p><p>To extend a table, select the table to extend in the <b>Extends Table</b> field on the table record. This option is available only when you are creating a table.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>For a table that extends another table, the <b>Table Columns</b> embedded list shows columns on both the child table and the table it extends. To improve sorting and filtering, consider <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Personal+Lists&amp;oldid=0.html" title="Creating Personal Lists">customizing the list</a> to add the <b>Table</b> field. You cannot change the table for a field. You can add columns only to the current table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:ExtendTable.png.html" class="image"><img alt="" src="images/thumb/e/ec/ExtendTable.png/600px-ExtendTable.png" width="600" height="268" class="thumbimage" srcset="/images/e/ec/ExtendTable.png 1.5x, /images/e/ec/ExtendTable.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:ExtendTable.png.html" class="internal" title="Enlarge"></a></div>Customize <b>Table Columns</b> list to sort fields by Incident or Task</div></div></div><br style="clear:both;" />
+<p>To make a table extensible:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li>Click the table that you want to extend.</li>
+<li>Select the <b>Extensible</b> check box.
+<dl><dd>The table is now available in the <b>Extends Table</b> field.</dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You cannot extend system tables (such as sys_audit) or database view tables.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Example:_Enabling_Workflows_for_Tables_that_Extend_Task"><span class="mw-headline-number">7.1</span> Example: Enabling Workflows for Tables that Extend Task</span></h2>
+<p>To create a table of task records, similar to the Incident, Problem, or Change table, create a new table that extends the Task table. To allow workflows to operate on the table: 
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b> and open the new table record.</li>
+<li>Right-click the form header and select <b>Show Dictionary Record</b>.</li>
+<li> Add the following to the attribute:</li></ol>
+<dl><dd><table>
+
+<tr>
+<td><pre>hasWorkflow</pre>
+</td></tr></table></dd></dl>
+<dl><dd>The new table now has fields from the Task table and supports workflows.</dd></dl>
+<h2><span class="mw-headline" id="Example:_Creating_a_New_CMDB_Class"><span class="mw-headline-number">7.2</span> Example: Creating a New CMDB Class</span></h2>
+<p>Each CMDB class is its own table, so creating new classes requires creating new tables.
+</p><p>To create a new class (such as <b>Laptops</b> or <b>Thin Clients</b>):
+</p>
+<ol><li><a href="index.php%3Ftitle=Creating_a_Custom_Table.html#Creating_Tables" title="Creating a Custom Table">Create a new table</a> (see following table for specific values).</li>
+<li>[Optional] If you want other CMDB classes to extend the new one, select the <b>Extensible</b> check box. You can also select this field after the table is created.  </li>
+<li>Use the <b>Table Columns</b> embedded list to add any class-specific columns. For example, the following image shows a way to create a new CMDB class for laptops. 
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:NewCMDBclass.png.html" class="image"><img alt="" src="images/thumb/0/0e/NewCMDBclass.png/600px-NewCMDBclass.png" width="600" height="300" class="thumbimage" srcset="/images/0/0e/NewCMDBclass.png 1.5x, /images/0/0e/NewCMDBclass.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:NewCMDBclass.png.html" class="internal" title="Enlarge"></a></div><b>Example: CMDB class for laptops</b></div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Submit</b>.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">Add any related lists</a>. Refer to the existing classes (such as Workstations) for examples. </li>
+<li>Position the new module in the correct location in the application navigator.
+<dl><dd>In the <b>Laptops</b> example, the new class belongs next to the <b>Workstations</b> module, under the <b>Base Items</b> heading. 
+<ol><li>Right-click <b>Configuration</b> in the application navigator and select <b>Edit Application</b>. </li>
+<li>Locate the <b>Workstations</b> module in the list and note the value in the <b>Order</b> column. </li>
+<li>Open the new <b>Laptops</b> module and give it an order value one number greater or less than the order number of the <b>Workstations</b> module. </li>
+<li>Click <b>Update</b>.</li></ol></dd></dl></li></ol>
+<table class="standard">
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Label
+</td>
+<td>Enter the name of the new class (such as <b>Laptops</b> or <b>Thin Clients</b>).
+</td></tr>
+<tr>
+<td>Name
+</td>
+<td>Preface the name of the table with <b>u_cmdb_ci_</b> to make it similar to the other CMDB classes (for example, <b>u_cmdb_ci_laptop</b>).
+</td></tr>
+<tr>
+<td>Extensible
+</td>
+<td>Select the check box to allow other tables to extend this table.
+</td></tr>
+<tr>
+<td>Extends Table
+</td>
+<td>Select the parent table for the new class. For example, if the new class is <b>Laptops</b>, which is a subclass of <b>Computers</b>, select the <i>cmdb_ci_computer</i> table. If the new class is a top-level class, select the <i>cmdb_ci</i> table.
+</td></tr>
+<tr>
+<td>Add module to menu
+</td>
+<td>Select the check box and then select the <b>Configuration</b> application to create a list module for the new class in the same application with the other classes.
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_Record_Producers_for_Tables"><span class="mw-headline-number">8</span> Creating Record Producers for Tables</span></h1>
+<p>To save time, you can create service catalog record producers directly from a table record (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>).
+</p><p>To create a record producer from a table record:
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b> and open the table record.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>When using a workflow with a Record producer, set the condition to <b>Run the workflow</b>.</i>
+</td></tr></table>
+<ol><li>Under <b>Related Links</b>, click <b>Add to Service Catalog</b>.</li>
+<li>Complete the <b>Name</b>, <b>Short Description</b>, and <b>Category</b> fields as you would for <a href="index.php%3Ftitle=Defining_Catalog_Items.html" title="Defining Catalog Items">service catalog items</a>.</li>
+<li>Use the slushbucket to select the fields and the order in which you want them to appear. To <a href="index.php%3Ftitle=Variable_Types.html#Container_Start.2C_Container_End" title="Variable Types">use container variables</a>, select <b>|- container start -|</b> and  <b>|- container end -|</b>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:RecordProducer.png.html" class="image"><img alt="" src="images/thumb/9/92/RecordProducer.png/600px-RecordProducer.png" width="600" height="424" class="thumbimage" srcset="/images/9/92/RecordProducer.png 1.5x, /images/9/92/RecordProducer.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:RecordProducer.png.html" class="internal" title="Enlarge"></a></div>Record producer</div></div></div><br style="clear:both;" /></dd></dl></li>
+<li>Click <b>Save and Open</b> to open the record producer and <a href="index.php%3Ftitle=Record_Producer.html#Defining_Record_Producers_in_the_Service_Catalog" title="Record Producer">define additional options</a>. Alternatively, click <b>Save</b> to return to the table record.
+<ul><li>A record producer is created with these values:
+<ul><li> <b>Table name:</b> table record opened in step 1</li>
+<li> <b>Name</b>, <b>Short Description</b>, and <b>Category:</b> information entered in step 3</li></ul></li>
+<li>A variable is created for each of the selected fields with these values:
+<ul><li><b>Name:</b> <b>Column name</b> of the field</li>
+<li><b>Type:</b> variable type that <a href="index.php%3Ftitle=Record_Producer.html#Creating_Variables_for_Field_Types" title="Record Producer">corresponds to the field type</a></li>
+<li><b>Order:</b> position selected in the slushbucket (for example, <b>100</b> for the first field and <b>200</b> for the second field)</li>
+<li><b>Question:</b> <b>Column label</b> of the field</li></ul></li>
+<li>If the field type is <b>Choice</b>, a corresponding question choice is created for each field choice.</li>
+<li>The new record producer is added to the  <b>Record Producers</b> related list on the table record.</li></ul></li></ol>
+<h1><span class="mw-headline" id="Adding_a_Database_Index"><span class="mw-headline-number">9</span> Adding a Database Index</span></h1>
+<p>As an administrator, you can define database indexes for tables starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> This is an advanced procedure and should only be performed by an administrator familiar with database management.
+</td></tr></table>
+<ol><li>Navigate to <b>System Definition &gt; Tables</b>.</li>
+<li>Select the table you want to add an index to.</li>
+<li>Right-click the form header and select <b>Configure &gt; Related Lists</b>.</li>
+<li>Add the <b>Database Indexes &gt; Reference Table</b> related list.</li>
+<li>Click <b>Save</b>.</li>
+<li>In the <b>Database Indexes</b> related list, click <b>New</b>.</li>
+<li>Select one or more columns to index.</li>
+<li>Specify an <b>Index Name</b>.</li>
+<li>[Optional] If the selected column should contain a <a href="index.php%3Ftitle=Unique_Index.html" title="Unique Index">unique value for each row</a>, select <b>Use Unique Index</b>.</li>
+<li>Click <b>Create Index</b>.
+<dl><dd>The <b>Create a New Index</b> dialog appears.</dd></dl></li>
+<li>Enter an email address in the <b>Email me</b> field, or select <b>Do not notify me</b>.</li>
+<li>Click <b>OK</b>.</li></ol>
+<p>The index is not created immediately. If you specify an email, the instance sends a notification when finished adding the index.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130152347
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.337 seconds
+Real time usage: 0.445 seconds
+Preprocessor visited node count: 146/1000000
+Preprocessor generated node count: 515/1000000
+Post‐expand include size: 14164/2097152 bytes
+Template argument size: 2243/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   79.580      1 - -total
+ 28.18%   22.425      1 - Template:Table_Admin
+ 22.80%   18.146      1 - Template:Topic
+ 13.93%   11.088      1 - Template:Number_Formats
+ 10.58%    8.423      1 - Template:Record_Producers_from_Tables
+  8.94%    7.111      6 - Template:Note
+  8.16%    6.493      1 - Template:Fields_Runtime_Access
+  6.84%    5.443      1 - Template:Fields_Design_Access
+  6.80%    5.413      1 - Template:Warning
+  6.25%    4.974      1 - Embedded:Creating_a_New_CMDB_Class
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:1292-0!*!0!1!en!5!* and timestamp 20171130152346 and revision id 250252
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_a_Custom_Table&amp;oldid=250252.html">http://wiki.servicenow.com/index.php?title=Creating_a_Custom_Table&amp;oldid=250252</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Table+Administration.html" title="Category:Table Administration">Table Administration</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Applications.html" title="Category:Applications">Applications</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Table+Administration.html" title="Category:Table Administration">Table Administration</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Applications.html" title="Category:Applications">Applications</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_1292"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="1292" data-vote-the-vote="5" data-vote-id="1292" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_1292_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="1292" data-vote-the-vote="1" data-vote-id="1292" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_1292_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_a_Custom_Table.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+a+Custom+Table&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+a+Custom+Table&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_a_Custom_Table.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_a_Custom_Table&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Creating+a+Custom+Table.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+a+Custom+Table&amp;returnto=Creating+a+Custom+Table&amp;oldid=250252&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_a_Custom_Table.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FCreating_a_Custom_Table.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;oldid=250252.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_a_Custom_Table&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:57, 18 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":730});});</script></body></html>

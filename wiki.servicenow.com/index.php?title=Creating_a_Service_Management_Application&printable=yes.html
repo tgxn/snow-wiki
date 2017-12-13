@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Service Management Application - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_Service_Management_Application","wgTitle":"Creating a Service Management Application","wgCurRevisionId":243722,"wgRevisionId":243722,"wgArticleId":23740,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Service Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_Service_Management_Application","wgRelevantArticleId":23740,"wgRequestId":"c2c3851bb7cb3d3dd4062a55","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150206221417"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_a_Service_Management_Application"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating a Service Management Application"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Service Management"/>
+<meta name="category" content="Service Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_a_Service_Management_Application.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating a Service Management Application"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150206221417"/>
+
+	<meta property="article:published_time" content="20150206221417"/>
+
+	<meta property="article:modified_time" content="20150206221417"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Service Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_a_Service_Management_Application"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_Service_Management_Application rootpage-Creating_a_Service_Management_Application skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Service+Management+Application.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+a+Service+Management+Application&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Service Management Application</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=IT_Services_Applications.html" title="IT Services Applications">IT Services</a> &gt; <a href="index.php%3Ftitle=Service_Management.html" title="Service Management">Service Management</a> &gt; Creating a Service Management Application</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Service_Management.html" title="Service Management">Service Management</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20a053acf44t'></div><script type="text/javascript">window.tamOnload_tam5a20a053acf44t=[];tree = new dTree('tam5a20a053acf44t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20a053acf44t = tree;
+                                               tam5a20a053acf44t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Service_Order_Templates\&quot;" title=\"Creating Service Order Templates\">Creating Service Order Templates</a>');
+
+tam5a20a053acf44t.add(2, 0, '<strong class=\"selflink\">Creating SM Applications</strong>');
+tam5a20a053acf44t.add(3, 2, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Management_Application_Designer\&quot;" title=\"Service Management Application Designer\">SM Application Designer</a>');
+tam5a20a053acf44t.add(4, 2, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Groups_in_SM_Applications\&quot;" title=\"Using Groups in SM Applications\">Using Groups in SM Applications</a>');
+tam5a20a053acf44t.add(5, 2, 'SM Applications');
+tam5a20a053acf44t.add(6, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Facilities_Service_Automation\&quot;" title=\"Facilities Service Automation\" class=\"mw-redirect\">Facilities</a>');
+tam5a20a053acf44t.add(7, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Service_Automation\&quot;" title=\"Field Service Automation\" class=\"mw-redirect\">Field Service</a>');
+tam5a20a053acf44t.add(8, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Finance_Service_Automation\&quot;" title=\"Finance Service Automation\" class=\"mw-redirect\">Finance</a>');
+tam5a20a053acf44t.add(9, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Human_Resources_Service_Automation\&quot;" title=\"Human Resources Service Automation\" class=\"mw-redirect\">HR</a>');
+tam5a20a053acf44t.add(10, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Legal_Service_Automation\&quot;" title=\"Legal Service Automation\" class=\"mw-redirect\">Legal</a>');
+tam5a20a053acf44t.add(11, 5, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Marketing_Service_Automation\&quot;" title=\"Marketing Service Automation\" class=\"mw-redirect\">Marketing</a>');
+tam5a20a053acf44t.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SM_States\&quot;" title=\"SM States\">SM States</a>');
+
+                                               document.getElementById('5a20a053acf44t').innerHTML = tam5a20a053acf44t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20a053acf44t) { window.tamOnload_tam5a20a053acf44t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#SM_Application_Types"><span class="tocnumber">2</span> <span class="toctext">SM Application Types</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Creating_SM_Applications"><span class="tocnumber">3</span> <span class="toctext">Creating SM Applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Generating_an_SM_Application_With_the_Default_Settings"><span class="tocnumber">3.1</span> <span class="toctext">Generating an SM Application With the Default Settings</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Configuring_an_SM_Application_Prior_to_Generation"><span class="tocnumber">3.2</span> <span class="toctext">Configuring an SM Application Prior to Generation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Customizing_an_SM_Application"><span class="tocnumber">4</span> <span class="toctext">Customizing an SM Application</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Service Management (SM) application designer allows you to create custom applications that use a similar service management workflow.
+</p>
+<h1><span class="mw-headline" id="SM_Application_Types"><span class="mw-headline-number">2</span> SM Application Types</span></h1>
+<p>Use the SM application designer to create basic, intermediate, or advanced applications, each with a different set of capabilities and default configurations.
+</p>
+<table class="sortable striped standard">
+<tr>
+<th width="10%">Type
+</th>
+<th> Description
+</th>
+<th width="50%">Default Configuration
+</th></tr>
+<tr>
+<td> Basic
+</td>
+<td> Basic applications use a <i>request driven</i> process. This process allows parent records, such as work orders, facilities requests, and HR cases, that contain a single task to streamline the request process by displaying information from the parent and task records on the same form.
+</td>
+<td>
+<ul><li>Requests are assigned via auto-assignment.</li>
+<li>Requests are created using a dedicated catalog.</li>
+<li>Templates automatically create catalog items.</li>
+<li>A dedicated knowledge base is available   </li></ul>
+</td></tr>
+<tr>
+<td> Intermediate
+</td>
+<td> Intermediate applications use a <i>task driven</i> process that is useful for requests that contain multiple tasks.
+</td>
+<td>
+<ul><li>Approvals are required for new requests, and the <b>Approval Workflow for SM</b> is used.</li>
+<li>Tasks are assigned via auto-assignment.</li>
+<li>Requests are created using a dedicated catalog.</li>
+<li>Templates automatically create catalog items.</li>
+<li>A dedicated knowledge base is available.</li>
+<li>Managed documents are used.</li></ul>
+</td></tr>
+<tr>
+<td> Advanced
+</td>
+<td> Advanced applications use a <i>task driven</i> process that is useful for requests that contain multiple tasks.
+</td>
+<td>
+<ul><li>Approvals are required for new requests, and the <b>Approval Workflow for SM</b> is used..</li>
+<li>Tasks are assigned via auto-assignment.</li>
+<li>After tasks are assigned, they must be accepted or rejected by agents.</li>
+<li>Part requirements are needed by agents.</li>
+<li>Requests are created using a dedicated catalog.</li>
+<li>Templates automatically create catalog items.</li>
+<li>A dedicated knowledge base is available.</li>
+<li>Managed documents are used.</li>
+<li>Time tracking is used.</li>
+<li>The new application uses dispatch queue.</li></ul>
+</td></tr></table>
+<p>You can modify the configuration prior to the application generation process or after. You can even convert a basic application to an intermediate or advanced application, or create a hybrid application.
+</p>
+<h1><span class="mw-headline" id="Creating_SM_Applications"><span class="mw-headline-number">3</span> Creating SM Applications</span></h1>
+<p>You can create SM applications by:
+</p>
+<ul><li><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Generating_an_SM_Application_With_the_Default_Settings">Generating an application using the default settings</a>.  This method involves simply entering an application name and scope, and clicking a single button.</li>
+<li><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Configuring_an_SM_Application_Prior_to_Generation">Configuring an application prior to generating it</a>.  This allows you to tailor the application to your needs.</li></ul>
+<h2><span class="mw-headline" id="Generating_an_SM_Application_With_the_Default_Settings"><span class="mw-headline-number">3.1</span> Generating an SM Application With the Default Settings</span></h2>
+<ol><li>Navigate to <b>System Applications &gt; Applications</b>.</li>
+<li>In the <b>Develop</b> tab, click <b>New</b>.  The <b>Getting Started</b> screen opens.
+<dl><dd><a href="index.php%3Ftitle=File:Launch_app_creator.png.html" class="image"><img alt="Launch app creator.png" src="images/thumb/7/79/Launch_app_creator.png/700px-Launch_app_creator.png" width="700" height="293" srcset="/images/7/79/Launch_app_creator.png 1.5x, /images/7/79/Launch_app_creator.png 2x" /></a></dd></dl></li>
+<li>Next to <b>Start from a template</b>, click <b>Create</b>.
+<dl><dd><a href="index.php%3Ftitle=File:Sm_create.png.html" class="image"><img alt="Sm create.png" src="images/thumb/8/8a/Sm_create.png/900px-Sm_create.png" width="900" height="311" srcset="/images/thumb/8/8a/Sm_create.png/1350px-Sm_create.png 1.5x, /images/8/8a/Sm_create.png 2x" /></a></dd></dl></li>
+<li>Enter a unique <b>Application name</b> for this application.  The application name can be a maximum of 20 characters. Only letters, digits, spaces, and underscores (_) are valid.  
+<dl><dd>If you enter the name of an existing application, you will be asked to select a different name.</dd></dl></li>
+<li>The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications"><b>Application scope</b></a> field defaults to an <b>x</b> prefix that identifies this as a custom application, an optional instance vendor prefix that identifies your company, followed by the application name.  You can accept the default or change it, if needed. 
+<dl><dd>If you enter the application scope of an existing application, you will be asked to select a different name after you click <b>Create</b>.</dd></dl></li>
+<li>Click <b>Create</b> in the section that identifies the type of application you want to create.
+<dl><dd>A confirmation box opens and displays the default configuration settings that the new application will inherit. The screen below is for a <b>Basic</b> application. </dd>
+<dd><a href="index.php%3Ftitle=File:Confirm_application_basic.png.html" class="image"><img alt="Confirm application basic.png" src="images/8/8b/Confirm_application_basic.png" width="400" height="272" /></a></dd></dl></li>
+<li>Click <b>OK</b>.
+<dl><dd>A confirmation box appears.</dd>
+<dd><a href="index.php%3Ftitle=File:App_created.png.html" class="image"><img alt="App created.png" src="images/thumb/d/db/App_created.png/400px-App_created.png" width="400" height="130" srcset="/images/d/db/App_created.png 1.5x, /images/d/db/App_created.png 2x" /></a></dd></dl></li>
+<li>Click <b>View App</b>.
+<dl><dd>All of the files you need to run the application, including <a href="index.php%3Ftitle=Service_Management_Application_Designer.html#Elements_in_a_Generated_Service_Management_Application" title="Service Management Application Designer">tables, roles, properties, ACLs, and navigation menus</a> are created, and the new application appears. </dd>
+<dd><a href="index.php%3Ftitle=File:Generated_app.png.html" class="image"><img alt="Generated app.png" src="images/thumb/3/30/Generated_app.png/700px-Generated_app.png" width="700" height="452" srcset="/images/thumb/3/30/Generated_app.png/1050px-Generated_app.png 1.5x, /images/3/30/Generated_app.png 2x" /></a></dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Click the annotation icon (<a href="index.php%3Ftitle=File:Annotation_icon.png.html" class="image"><img alt="Annotation icon.png" src="images/thumb/7/72/Annotation_icon.png/25px-Annotation_icon.png" width="25" height="24" srcset="/images/7/72/Annotation_icon.png 1.5x, /images/7/72/Annotation_icon.png 2x" /></a>) in the header to view on-screen descriptions of each of the fields.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Configuring_an_SM_Application_Prior_to_Generation"><span class="mw-headline-number">3.2</span> Configuring an SM Application Prior to Generation</span></h2>
+<ol><li>Navigate to <b>System Applications &gt; Create Application</b>.</li>
+<li>Next to <b>Start from a template</b>, click <b>Create</b>.</li>
+<li>Enter a unique <b>Application name</b> for this application.  The application name can be a maximum of 20 characters. Only letters, digits, spaces, and underscores (_) are valid.  
+<dl><dd>If you enter the name of an existing application, you will be asked to select a different name.  </dd></dl></li>
+<li>The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications"><b>Application scope</b></a> field defaults to the application name preceded by an <b>x</b> prefix, which identifies this as a custom application, and a prefix that identifies your company.  You can accept the default or change it, if needed. </li>
+<li>Click <b>Configure</b> in the section that identifies the type of applications you want to create. 
+<dl><dd>The default configuration settings for the specified application type appear (see table for field descriptions).  The following screen shows the settings for a <b>Basic</b> application.</dd>
+<dd><a href="index.php%3Ftitle=File:Sm_configure.png.html" class="image"><img alt="Sm configure.png" src="images/thumb/2/21/Sm_configure.png/700px-Sm_configure.png" width="700" height="699" srcset="/images/2/21/Sm_configure.png 1.5x, /images/2/21/Sm_configure.png 2x" /></a></dd></dl></li>
+<li>Change any of the default settings, as needed (see table).</li>
+<li>When you are done, click <b>Create</b>.
+<dl><dd>A confirmation box opens and displays your settings.</dd></dl></li>
+<li>Click <b>OK</b>.
+<dl><dd>A confirmation box appears.</dd>
+<dd><a href="index.php%3Ftitle=File:New_app_confirm.png.html" class="image"><img alt="New app confirm.png" src="images/d/d9/New_app_confirm.png" width="600" height="193" /></a></dd></dl></li>
+<li>Click <b>View App</b>.
+<dl><dd>All of the files you need to run the application, including <a href="index.php%3Ftitle=Service_Management_Application_Designer.html#Elements_in_a_Generated_Service_Management_Application" title="Service Management Application Designer">tables, roles, properties, ACLs, and navigation menus</a> are created, and the new application appears. </dd>
+<dd><a href="index.php%3Ftitle=File:Generated_app.png.html" class="image"><img alt="Generated app.png" src="images/thumb/3/30/Generated_app.png/700px-Generated_app.png" width="700" height="452" srcset="/images/thumb/3/30/Generated_app.png/1050px-Generated_app.png 1.5x, /images/3/30/Generated_app.png 2x" /></a></dd></dl></li></ol>
+<table class="sortable striped standard">
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Application settings</b>
+</td></tr>
+<tr>
+<th width="25%">Field
+</th>
+<th> Description
+</th>
+<th> Configuration Defaults by Type
+</th></tr>
+<tr>
+<td> Application scope
+</td>
+<td> The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">application scope</a> determines where an application runs and what resources from other applications it can access. This field displays the application name you entered on the <b>Create Application from a Template</b> screen with an <b>sn</b> prefix.
+</td>
+<td> All types
+</td></tr>
+<tr>
+<td> Request number prefix
+</td>
+<td> The prefix applied to all request numbers created using your application. This field defaults to a prefix based on the application name, followed by an <b>R</b> for request. For example, if your application name is Legal Matters, the request number prefix will be <b>LMR</b>.  If you have another application that already uses this prefix, you must change it. This prefix will be applied to all request numbers created using your application.
+</td>
+<td> All types
+</td></tr>
+<tr>
+<td> Task number prefix
+</td>
+<td> The prefix applied to all task numbers created using your application. This field defaults to a prefix based on the application name, followed by a <b>T</b> for task. For example, if your application name is Legal Matters, the request number prefix will be <b>LMT</b>.  If you have another application that already uses this prefix for tasks, you must change it. This prefix will be applied to all task numbers created using your application.
+</td>
+<td> All types
+</td></tr>
+<tr>
+<td> User role prefix
+</td>
+<td> The prefix applied to all user roles defined for the application. This field defaults to the application name. If you have another application that already uses this prefix for user roles, you must change it.
+</td>
+<td> All types
+</td></tr>
+<tr>
+<td> Create CMS pages
+</td>
+<td> Creates an icon for your application to be added to the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Content+Management&amp;oldid=0.html#The_Shared_Service_Automation_Portal" title="Content Management">Shared Service CMS Portal</a>. This switch appears only if you have first activated the <a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins"><b>CMS User Interface - Service Management Core</b> plugin</a>.  If you do not activate the plugin, the switch will not be displayed and the icon for your application will not appear on the CMS portal.
+</td>
+<td> All types
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Business Process</b>
+</td></tr>
+<tr>
+<td> Request lifecycle is
+</td>
+<td> Select <b>request driven</b> if you want tasks to be assigned to users in an assignment group. Users can still add tasks to requests; however, closing all tasks will not automatically close the request. Select <b>task driven</b> if you do not want to require tasks to fulfill requests.
+</td>
+<td> All types set to <b>request driven</b>
+</td></tr>
+<tr>
+<td> Tasks are assigned
+</td>
+<td> Select the assignment method:
+<ul><li><b>via auto-assignment:</b> For more information, see <a href="index.php%3Ftitle=Using_Auto-Assignment.html" title="Using Auto-Assignment">Using Auto-Assignment</a>.</li>
+<li><b>via a workflow:</b> You will be prompted to select the workflow you want to use for dispatching.</li>
+<li><b>manually:</b>  For more information, see <a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks.html#Dispatching_Tasks_from_the_Queue" title="Dispatching Work Order Tasks">Dispatching Tasks from the Queue</a>.</li></ul>
+</td>
+<td> All types set to <b>via auto-assignment</b>
+</td></tr>
+<tr>
+<td> Use this workflow to dispatch tasks
+</td>
+<td> Click the link and select the workflow you want to use for dispatching orders. This field is displayed if you select <b>via a workflow</b> as the method for dispatching tasks.
+<p>If you do not select a workflow, the default workflow,<b>Dispatch Workflow for SM</b> will be used. This example workflow evaluates each agent in the assignment group for the task and assigns the task to the agent that has the most matching skills.
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Approval is required or not required for new requests
+</td>
+<td> Select <b>required</b> to require requests to be approved before moving to the next state. If this option is set to <b>not required</b>, any requests in the <b>Awaiting Approval</b> state will be automatically approved.
+</td>
+<td> All types set to <b>not required</b>
+</td></tr>
+<tr>
+<td> Use this workflow for approvals
+</td>
+<td> Click the <b>select a workflow</b> link and select the approval workflow you want to use for requests.  This field is displayed if you select <b>Approval is required for new requests</b>.
+<p>If you do not select a workflow, the default workflow, <b>Approval Workflow for SM</b>, will be used. This workflow requests an approval from all users with an approver role. 
+</p><p>An approver must provide one of the following approval responses before requests can move to the next state:
+</p>
+<ul><li>Approved</li>
+<li>Rejected</li>
+<li>More information required</li>
+<li>Duplicate</li></ul>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> After tasks are assigned, they must be or cannot be accepted or rejected by agents
+</td>
+<td> Select <b>cannot be accepted or rejected</b> to have agents <i>automatically accept</i> tasks. When tasks must be accepted or rejected, agents must click <b>Accept</b> on tasks to begin work or click <b>Reject</b> to return the task to the <b>Pending Dispatch</b> or <b>Pending Assignment</b> state.
+<p><b>Note:</b> If tasks are dispatched <b>via a workflow</b> or <b>via auto-assignment</b>, rejected tasks will be automatically re-assigned.
+</p>
+</td>
+<td> Advanced type set to <b>cannot</b>
+</td></tr>
+<tr>
+<td> Agent travel time will be or will not be tracked
+</td>
+<td> Select will be tracked to enable time cards on tasks.
+</td>
+<td> Advanced type set to <b>will not</b>
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Additional options</b>
+</td></tr>
+<tr>
+<td>Part requirements are needed or are not needed by agents
+</td>
+<td> Select <b>are not needed</b> to hide modules, related lists, and other UI components related to part requirements. Select <b>are needed</b> to enable parts and part sourcing.
+</td>
+<td> Advanced type set to <b>are not needed</b>
+</td></tr>
+<tr>
+<td>Requests are created using the New Application
+</td>
+<td> Select <b>regular form only</b> to deactivate the catalog and disable automatic publishing of templates to the catalog. Select <b>catalog or regular form</b> to activate the work management catalog and enable automatic publishing of templates to the catalog.
+</td>
+<td> All types set to <b>catalog or regular form</b>
+</td></tr>
+<tr>
+<td>Templates will or will not create a dedicated catalog item
+</td>
+<td> Select <b>will</b> to activate automatic publishing of catalog items for the new application.
+</td>
+<td> All types set to <b>will</b>
+</td></tr>
+<tr>
+<td>A dedicated knowledge base is available or is not available for searching
+</td>
+<td> Select <b>is available</b> to activate the knowledge base for the new application.
+</td>
+<td> All types set to <b>is available</b>
+</td></tr>
+<tr>
+<td> Managed Documents
+</td>
+<td> Select <b>will be used</b> to add a related list to managed documents.  This feature requires <a href="index.php%3Ftitle=Managed_Documents.html#Installing_the_Plugin" title="Managed Documents">Managed Documents</a>.
+</td>
+<td> All types set to <b>will not be used</b> do not require users to manage documents.
+</td></tr>
+<tr>
+<td> New Application will or will not use the dispatch queue
+</td>
+<td> This field is displayed if you select the <b>Request lifecycle is task driven</b> option. Select <b>will</b> to require the new application to use the dispatch queue. A user with a qualifier role must provide a dispatch group for tasks before they can be ready for assigned or dispatched.
+<p>If <b>will not</b> is selected, all dispatch-related modules will be removed from the navigation pane, and all dispatch-related fields will be removed from the new application's screens.
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Task work notes will or will not update the request work notes
+</td>
+<td> Select <b>will</b> to synchronize task work notes with the work notes on the request.  So when work notes in the task are added, the same work notes appear in the request.
+</td>
+<td> All types set to <b>will not</b>
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Assignment options</b>
+</td></tr>
+<tr>
+<td> Selection of groups will or will not consider group's covered location
+</td>
+<td> Select <b>will</b> to limit the selection of groups from the <b>Dispatch group</b>, <b>Qualification group</b>, and <b>Assignment group</b> fields to groups that cover the location of the task.
+</td>
+<td> Intermediate and Advanced types set to <b>will</b>
+</td></tr>
+<tr>
+<td> Auto-selection of agents will or will not consider agent or task schedules
+</td>
+<td> This field is displayed if you select the <b>Request lifecycle is task driven</b> option.  Select <b>will not</b> if you do not want auto-assignment to use the schedules of the agents or tasks to determine who can be assigned to each task. Additionally, the <b>Estimated work duration</b> field is not mandatory when this configuration option is set to <b>will not</b>.
+</td>
+<td>
+</td></tr>
+<tr>
+<td> Auto-selection of agents will or will not consider location of agents
+</td>
+<td> Select <b>will</b> to use the agent and location when determining who to assign the task to.  Agents closer to the task location get preference.
+</td>
+<td> Intermediate and Advanced types set to <b>will</b>
+</td></tr>
+<tr>
+<td> Auto-selection of agents requires them to have all or some of the required skills for the task
+</td>
+<td> This option determines the degree to which skills must be matched to a task when determining auto-assignment.
+<ul><li>Select <b>all</b> to require that an assigned agent must have all of the skills to perform the task.  An agent who lacks any of the skills is eliminated.</li>
+<li>Select <b>some</b> if you want agents who have most of the skills needed to perform the task.  </li>
+<li>Select <b>none</b> if you want to auto-assign agents without taking skills into account. </li></ul>
+</td>
+<td> Intermediate and Advanced types set to <b>all</b>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>For any option that is not already set to its default, you can click <b>[Reset to default]</b> to return the option to its default setting.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Customizing_an_SM_Application"><span class="mw-headline-number">4</span> Customizing an SM Application</span></h1>
+<p>After you have generated an SM application, you can continue to customize the application by navigating to <b>(Application name) &gt; Administration &gt; Configuration</b>. The options displayed are the same ones that are displayed when you are creating an <b>Advanced</b> application.  This gives you the ability to turn a Basic or Intermediate application into an Advanced application by turning on additional options.  
+</p><p>To customize a generated application:
+</p>
+<ol><li>Navigate to the menus and modules for your new SM application.</li>
+<li>Click <b>Configuration</b>.</li>
+<li>Make changes to the configuration, as needed.  For field descriptions, see <a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html#Configuring_an_SM_Application_Prior_to_Generation">Configuring an SM Application Prior to Generation</a>.</li>
+<li>When you are done, click <b>Save</b>.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201002036
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.286 seconds
+Real time usage: 0.417 seconds
+Preprocessor visited node count: 48/1000000
+Preprocessor generated node count: 226/1000000
+Post‐expand include size: 930/2097152 bytes
+Template argument size: 318/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.608      1 - -total
+ 87.71%   54.034      1 - Template:Service_Management
+ 72.66%   44.765      1 - Template:Topic
+  9.45%    5.820      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23740-0!*!0!1!en!5!* and timestamp 20171201002035 and revision id 243722
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;oldid=243722.html">http://wiki.servicenow.com/index.php?title=Creating_a_Service_Management_Application&amp;oldid=243722</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Management.html" title="Category:Service Management">Service Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Management.html" title="Category:Service Management">Service Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23740"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23740" data-vote-the-vote="5" data-vote-id="23740" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23740_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23740" data-vote-the-vote="1" data-vote-id="23740" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23740_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+a+Service+Management+Application&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+a+Service+Management+Application&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_a_Service_Management_Application.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Service+Management+Application.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+a+Service+Management+Application&amp;returnto=Creating+a+Service+Management+Application&amp;oldid=243722&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_a_Service_Management_Application.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_a_Service_Management_Application" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;oldid=243722.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_a_Service_Management_Application&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 22:14, 6 February 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1103});});</script></body></html>

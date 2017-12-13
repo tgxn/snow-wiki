@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>External Authentication (Single Sign-On - SSO) - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"External_Authentication_(Single_Sign-On_-_SSO)","wgTitle":"External Authentication (Single Sign-On - SSO)","wgCurRevisionId":251108,"wgRevisionId":251108,"wgArticleId":2769,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Single Sign-On"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"External_Authentication_(Single_Sign-On_-_SSO)","wgRelevantArticleId":2769,"wgRequestId":"dd26b6678163c3fc99c2666c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170925192523"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=External_Authentication_(Single_Sign-On_-_SSO)"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="External Authentication (Single Sign-On - SSO)"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Single Sign-On"/>
+<meta name="category" content="Single Sign-On"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO).html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:External Authentication (Single Sign-On - SSO)"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170925192523"/>
+
+	<meta property="article:published_time" content="20170925192523"/>
+
+	<meta property="article:modified_time" content="20170925192523"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Single Sign-On"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=External_Authentication_(Single_Sign-On_-_SSO)"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-External_Authentication_Single_Sign-On_-_SSO rootpage-External_Authentication_Single_Sign-On_-_SSO skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=External+Authentication+%2528Single+Sign-On+-+SSO%2529.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=External+Authentication+%2528Single+Sign-On+-+SSO%2529&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">External Authentication (Single Sign-On - SSO)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <strong class="selflink">Single Sign-On</strong> &gt; External Authentication (Single Sign-On - SSO)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/single-sign-on/concept/c_Authentication.html">Authentication</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <strong class="selflink">Single Signon (SSO)</strong>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a212963cc716t'></div><script type="text/javascript">window.tamOnload_tam5a212963cc716t=[];tree = new dTree('tam5a212963cc716t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a212963cc716t = tree;
+                                               tam5a212963cc716t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Unencrypted_HTTP_Header\&quot;" title=\"Unencrypted HTTP Header\">Unencrypted HTTP Header </a> ');
+
+tam5a212963cc716t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies\&quot;" title=\"Sample ASP.NET with C Sharp Redirect with Cookies\">Sample ASP.NET with C Sharp Redirect with Cookies</a> ');
+tam5a212963cc716t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_ASP_Script_for_Unencrypted_Single_Sign-On\&quot;" title=\"Sample ASP Script for Unencrypted Single Sign-On\">Sample ASP Script for Unencrypted Single Sign-On</a> ');
+tam5a212963cc716t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Digest_Token_Authentication\&quot;" title=\"Digest Token Authentication\">Digest Token Authentication</a> ');
+tam5a212963cc716t.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_Java_Digest_Algorithm_for_Encryption\&quot;" title=\"Sample Java Digest Algorithm for Encryption\">Sample Java Digest Algorithm for Encryption</a> ');
+tam5a212963cc716t.add(6, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sample_C\&quot;" title=\"Sample C\">Sample C</a>');
+tam5a212963cc716t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_1.1_Browser_POST_Profile\&quot;" title=\"SAML 1.1 Browser POST Profile\">SAML 1.1 Browser POST Profile</a> ');
+tam5a212963cc716t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Web_Browser_SSO_Profile\&quot;" title=\"SAML 2.0 Web Browser SSO Profile\">SAML 2.0 Web Browser SSO Profile</a>');
+tam5a212963cc716t.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Setup\&quot;" title=\"SAML 2.0 Setup\">SAML 2.0 Setup</a>');
+tam5a212963cc716t.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_ADFS_2.0_to_Communicate_with_SAML_2.0\&quot;" title=\"Configuring ADFS 2.0 to Communicate with SAML 2.0\" class=\"mw-redirect\">Configuring ADFS 2.0 to Communicate with SAML 2.0</a>');
+tam5a212963cc716t.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SAML_2.0_Troubleshooting\&quot;" title=\"SAML 2.0 Troubleshooting\">Troubleshooting SAML 2.0</a>');
+tam5a212963cc716t.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Applications\&quot;" title=\"OAuth Applications\">OAuth Applications</a>');
+tam5a212963cc716t.add(13, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Setup\&quot;" title=\"OAuth Setup\">OAuth Setup</a>');
+tam5a212963cc716t.add(14, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_OAuth_Tokens\&quot;" title=\"Generating OAuth Tokens\">Generating OAuth Tokens</a>');
+tam5a212963cc716t.add(15, 12, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OAuth_Client_API_Reference\&quot;" title=\"OAuth Client API Reference\">OAuth Client API Reference</a>');
+tam5a212963cc716t.add(16, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OpenID\&quot;" title=\"OpenID\">Stateless OpenID with signature verification</a>');
+tam5a212963cc716t.add(17, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=OKTA_SSO_Integration\&quot;" title=\"OKTA SSO Integration\">Okta SSO Integration</a>');
+tam5a212963cc716t.add(18, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Multiple_Provider_Single_Sign-On\&quot;" title=\"Multiple Provider Single Sign-On\">Multi-Provider Single Sign-On</a>');
+
+                                               document.getElementById('5a212963cc716t').innerHTML = tam5a212963cc716t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a212963cc716t) { window.tamOnload_tam5a212963cc716t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Functionality described in this integration is not available by default. This integration involves post-deployment customization performed by an experienced administrator or by ServiceNow's professional services consultants.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#SSO_Techniques"><span class="tocnumber">2</span> <span class="toctext">SSO Techniques</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Enabling_External_Authentication"><span class="tocnumber">3</span> <span class="toctext">Enabling External Authentication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Bypassing_External_Authentication"><span class="tocnumber">3.1</span> <span class="toctext">Bypassing External Authentication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Typical_Process_Flow_.28diagram.29"><span class="tocnumber">4</span> <span class="toctext">Typical Process Flow (diagram)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Forcing_Login_via_SSO_Only"><span class="tocnumber">5</span> <span class="toctext">Forcing Login via SSO Only</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Redirection_Properties"><span class="tocnumber">5.1</span> <span class="toctext">Redirection Properties</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Restricting_Local_Login"><span class="tocnumber">5.2</span> <span class="toctext">Restricting Local Login</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Email_Links_with_SSO"><span class="tocnumber">6</span> <span class="toctext">Email Links with SSO</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Supplying_Referring_URL_information_to_SSO_Provider"><span class="tocnumber">7</span> <span class="toctext">Supplying Referring URL information to SSO Provider</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Monitoring_the_Event_Queue_for_Login_Failures"><span class="tocnumber">8</span> <span class="toctext">Monitoring the Event Queue for Login Failures</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Examples"><span class="tocnumber">9</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Unencrypted_HTTP_example_using_ASP_in_IIS"><span class="tocnumber">9.1</span> <span class="toctext">Unencrypted HTTP example using ASP in IIS</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Unencrypted_cookie_example_using_ASP_.NET_with_C.23"><span class="tocnumber">9.2</span> <span class="toctext">Unencrypted cookie example using ASP .NET with C#</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Digest_encryption_example"><span class="tocnumber">9.3</span> <span class="toctext">Digest encryption example</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Visual_Studio_2005_SSO_solution"><span class="tocnumber">9.4</span> <span class="toctext">Visual Studio 2005 SSO solution</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>External Authentication, also referred to as SSO (Single Sign-on), is a method of access control that enables a user to log in once and gain access to the resources of multiple software systems without being prompted to log in again. It lets end users login to their company portal page and be directed to their ServiceNow instance pre-authenticated, without having to enter a user name and password again. This is very beneficial in large corporate environments where managing multiple user databases is prohibitive.
+</p><p><br /> 
+</p><p><a href="index.php%3Ftitle=File:SSO_Flow1.png.html" class="image" title="Image:SSO_Flow1.png"><img alt="Image:SSO_Flow1.png" src="images/b/b5/SSO_Flow1.png" width="468" height="244" /></a> 
+</p><p><br />
+</p><p>In the following sections we describe best-practice methods for Single Sign-On that are standards-based and provide a great deal of flexibility for implementing various SSO schemes and integration with major SSO products.
+</p>
+<h1><span class="mw-headline" id="SSO_Techniques"><span class="mw-headline-number">2</span> SSO Techniques</span></h1>
+<p>Before you enable <b>External Authentication</b> in your instance, you must decide how you want to pass authentication information to the ServiceNow system. It does not matter which SSO product you use, or whether your organization has written their own SSO solution. The ServiceNow system can integrate with any solution that uses one of the following techniques: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Unencrypted_HTTP_Header.html" title="Unencrypted HTTP Header">Unencrypted HTTP Header</a> </li>
+<li><a href="index.php%3Ftitle=Digest_Token_Authentication.html" title="Digest Token Authentication">Digest Token Authentication</a> </li>
+<li><a href="index.php%3Ftitle=SAML_1.1_Browser_POST_Profile.html" title="SAML 1.1 Browser POST Profile">SAML 1.1 Browser POST Profile</a></li>
+<li><a href="index.php%3Ftitle=SAML_2.0_Web_Browser_SSO_Profile.html" title="SAML 2.0 Web Browser SSO Profile">SAML 2.0 Web Browser SSO Profile</a> </li>
+<li><a href="index.php%3Ftitle=OpenID.html" title="OpenID">Stateless Open ID with signature verification</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Multiple+Provider+Single+Sign-On&amp;oldid=0.html" title="Multiple Provider Single Sign-On">Multiple Provider Single Sign-On</a></li></ul>
+<p>Customers are successfully using SiteMinder, WebLogic, and their own internal solutions to integrate to the ServiceNow system using single sign-on.
+</p>
+<h1><span class="mw-headline" id="Enabling_External_Authentication"><span class="mw-headline-number">3</span> Enabling External Authentication</span></h1>
+<p>To start using External Authentication you will need to: 
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Installation Exits</b>.</li>
+<li>Activate the <b>ExternalAuthentication</b> installation exit.
+<dl><dd><b>Note:</b> If you are using the Digest authentication method, you must also enable the <b>DigestSingleSignOn</b> installation exit. </dd></dl></li>
+<li>Navigate to <b>System Properties &gt; Single Sign-on</b>.</li>
+<li>Select <b>Enable external authentication</b>.</li>
+<li>Click <b>Save</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:401px;"><a href="index.php%3Ftitle=File:Sys_property.jpg.html" class="image"><img alt="" src="images/2/2a/Sys_property.jpg" width="399" height="56" class="thumbimage" /></a>  <div class="thumbcaption">Enable external authentication</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Bypassing_External_Authentication"><span class="mw-headline-number">3.1</span> Bypassing External Authentication</span></h2>
+<p>Administrators may need to bypass external authentication when testing an SSO integration. Administrators can use the following URL to bypass external authentication and log in with a local ServiceNow user. Note that a logged-in user cannot access this page. Attempting to access this page while logged in produces a page not found error.
+</p><p><b>http://&lt;your-instance&gt;.service-now.com/side_door.do</b>
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You can still log in as an inactive user if the user is not locked out. See <a href="index.php%3Ftitle=Managing_User_Sessions.html#Marking_a_User_Inactive" title="Managing User Sessions">Making a User Inactive</a> for more information.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Typical_Process_Flow_.28diagram.29"><span class="mw-headline-number">4</span> Typical Process Flow (diagram)</span></h1>
+<p><br />
+</p><p><a href="index.php%3Ftitle=File:SSO_Standard.png.html" class="image" title="Image:SSO_Standard.png"><img alt="Image:SSO_Standard.png" src="images/b/b8/SSO_Standard.png" width="672" height="448" /></a> 
+</p>
+<h1><span class="mw-headline" id="Forcing_Login_via_SSO_Only"><span class="mw-headline-number">5</span> Forcing Login via SSO Only</span></h1>
+<p>When single sign-on is enabled, it is often desired that a user never sees the ServiceNow login page and is never able to login locally.&#160; In other words, if a user attempts to go to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://customerX.service-now.com">https://customerX.service-now.com</a>, they wish for the internal company portal to be displayed instead of the default ServiceNow login page.&#160; Likewise, when a user logs out of the application, they wish for the browser to be redirected to a specific internal page as well.&#160; This can be accomplished by setting a few redirection properties within the ServiceNow system. 
+</p>
+<h2><span class="mw-headline" id="Redirection_Properties"><span class="mw-headline-number">5.1</span> Redirection Properties</span></h2>
+<p>When a user logs out, or if there is a failed SSO attempt, you can define where the user will be taken next, such as a main portal page, a knowledge base article with SSO login information, etc. This is done through the following properties where you specify the URLs. If one of these properties does not exist in your instance, you can create the property. The related properties are as follows: 
+</p>
+<ul><li><b>glide.authenticate.failed_requirement_redirect</b> - When a user attempts to access a page that is private (to view an incident, etc) and SSO credentials are not present, they will be redirected to the URL specified in this property.&#160; This is typically set to a customer's login portal (ex. <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://portal.companya.com/">http://portal.companya.com/</a>). </li>
+<li><b>glide.authenticate.failed_redirect</b> - URL to redirect users after a failed SSO attempt. You can even redirect to a public knowledge article that describes the error and has helpful links (ex. <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://portal.companya.com/error">http://portal.companya.com/error</a>). </li>
+<li><b>glide.authenticate.external.logout_redirect</b> - URL to redirect users after logout, typically back to the portal that enabled the SSO.(ex. <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://portal.companya.com/logout">http://portal.companya.com/logout</a>) </li>
+<li><b>glide.authentication.external.disable_local_login</b> - When set to true requires SSO credentials even for the main ServiceNow login page. Defaults to false.&#160; This property needs to be used in conjunction with the 'glide.authenticate.failed_requirement_redirect' property.</li></ul>
+<p>The following table shows the relationship between the <a href="index.php%3Ftitle=Installation_Exits.html" title="Installation Exits">Installation Exit</a> return values, the properties, and the expected behavior. 
+</p><p><br />
+</p>
+<table cellspacing="0" cellpadding="5" border="1" width="80%">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Return value</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Property</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Behavior</b>
+</td></tr>
+<tr>
+<td> failed_missing_requirement
+</td>
+<td> glide.authenticate.failed_requirement_redirect
+</td>
+<td> When this value is returned, it indicates that the required SSO credentials are not present in the session. Login fails and the session is redirected to the URL specified by the property. This is usually the URL for the SSO provider where login is challenged and credentials are collected.
+</td></tr>
+<tr>
+<td> failed_authentication
+</td>
+<td> glide.authenticate.failed_redirect
+</td>
+<td> When this value is returned, it indicates that the supplied SSO credentials failed authentication, the user does not exist, or the user is locked out. Login fails and the session is redirected to the URL specified by the property. This is usually the URL for the SSO provider where login is challenged and credentials are collected.
+</td></tr>
+<tr>
+<td> &lt;user_id&gt;
+</td>
+<td> N/A
+</td>
+<td> Login authorized for the user specified by &lt;user_id&gt;. This value matches with the field name defined in the SSO property <b>glide.authenticate.header.value</b> ("ServiceNow field name to match against the incoming header")
+</td></tr></table>
+<h2><span class="mw-headline" id="Restricting_Local_Login"><span class="mw-headline-number">5.2</span> Restricting Local Login</span></h2>
+<p>As a security precaution, it is advisable to do more than to simply rely on the redirection properties to prohibit logging in locally.&#160; If a user should <i>never</i> log in locally and will always be authenticated by your internal SSO, then a random password should be assigned to each user that is imported into the ServiceNow instance.&#160; The random password is most easily set at the time of the user import.&#160; If the user data is imported into your system through an import set, then a simple piece of code can be added to accomplish this goal.&#160; Create an onBefore transform script using the following code (of course, this may be tweaked to fit your needs): 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Random</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Long</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">nextLong</span><span class="p">()),</span> <span class="mi">36</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Long</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">nextLong</span><span class="p">()),</span> <span class="mi">36</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">newPass</span> <span class="o">=</span> <span class="nx">str1</span> <span class="o">+</span> <span class="nx">str2</span><span class="p">;</span>
+
+<span class="nx">source</span><span class="p">.</span><span class="nx">user_password</span> <span class="o">=</span> <span class="nx">newPass</span><span class="p">;</span>
+
+<span class="c1">//password now set to a random string like this: qvm81zdrn7cwwylpvw94eebk</span>
+</pre></div>
+<h1><span class="mw-headline" id="Email_Links_with_SSO"><span class="mw-headline-number">6</span> Email Links with SSO</span></h1>
+<p>When using External Authentication (or SSO) that requires URL parameter additions, you will need to establish how you want links in email notifications to be handled. The out-of-box links simply contain a URL that directs you to a specific location in the instance, like an Incident or Change Request, without incorporating SSO credentials. Below are examples for directing the user to the location in the instance without them having to login on the instance login page. 
+</p><p><br /> 
+</p>
+<ul><li>For the unencrypted HTTP technique, the following is an example URL to simply connect to the /demo instance (it does NOT navigate to specific record):</li></ul>
+<pre>https://&lt;instance name&gt;.service-now.com/?SM_USER=user_name&amp;DE_USER=lQjIVp7aRJtyPx5+2O/vgU24tbE=</pre>   
+<ul><li>The link (in an email notification) back to a specific ServiceNow record should appear as follows, so that the user first goes to the company's own login portal:</li></ul>
+<pre>https://login.company_portal_page.com/nav_to.do?uri=incident.do?sys_id=009f8eda0a0a0b2b01ab4eb094223466%26sysparm_stack=incident_list.do%3Fsysparm_query=active=true</pre>  
+<p>To set this up you will need to set the "glide.email.override.url" property in your instance to contain the URL of the company portal page. If this property does not exist, you can create it.  
+</p>
+<ul><li>The company portal must then take that URL and construct the redirect URL to ServiceNow as follows, preserving the segment necessary to access the specific record, and adding the SSO credentials to the end of the URL:</li></ul>
+<pre>https://&lt;instance name&gt;.service-now.com/nav_to.do?uri=incident.do?sys_id=009f8eda0a0a0b2b01ab4eb094223466%26sysparm_stack=incident_list.do%3Fsysparm_query=active=true&amp;SM_USER=user_name&amp;DE_USER=lQjIVp7aRJtyPx5+2O/vgU24tbE=</pre>
+<h1><span class="mw-headline" id="Supplying_Referring_URL_information_to_SSO_Provider"><span class="mw-headline-number">7</span> Supplying Referring URL information to SSO Provider</span></h1>
+<p>During a login challenge resulting from a URL link into the instance that requires an SSO session, often times, the referring URL needs to be supplied to the SSO provider so that after authentication, it can be passed back to our instance and linked to the correct resource. 
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:SSO_Target_Redirect.png.html" class="image" title="Image:SSO_Target_Redirect.png"><img alt="Image:SSO_Target_Redirect.png" src="images/3/31/SSO_Target_Redirect.png" width="786" height="551" /></a>
+</p><p><br /> 
+</p><p>Installation exit return values have been enhanced to pass a URL instead of, or in addition to the URL defined by the properties (see <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html#Redirection_Properties">Redirection Properties</a>). Usually, you would return a username or a predefined string value to control authorize or challenge the SSO session. The following examples show the extended behavior of passing a URL. 
+</p>
+<pre>return "failed_missing_requirement:%26amp;TARGET=https://instance.service-now.com/nav_to.do?uri=incident.do?sys_id=12345";
+</pre>
+The example above passes the URL <b><pre>https://instance.service-now.com/nav_to.do?uri=incident.do?sys_id=12345</pre></b> to the SSO provider in the form of a URL parameter named <b>TARGET</b>.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>It is assumed that the SSO provider will use that information in the <b>TARGET</b> parameter to redirect back to ServiceNow when the user credentials have been collected and authentication passed.</i>
+</td></tr></table>
+<p><br />
+Notice the usage of <b>:</b> to demarcate the two return values, and the usage of an encoded <b>&amp;</b> (%26amp;) to conacatenate the URL defined in the property <b>glide.authenticate.failed_missing_requirement</b> and the <b>TARGET</b> parameter.
+</p>
+<h1><span class="mw-headline" id="Monitoring_the_Event_Queue_for_Login_Failures"><span class="mw-headline-number">8</span> Monitoring the Event Queue for Login Failures</span></h1>
+<p>Every single sign-on integration creates the following <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for login activities. You can use these events to monitor for login failures and determine if there are any security concerns to address.
+</p>
+<table class="standard">
+
+<tr>
+<th> Event Name
+</th>
+<th> Description
+</th>
+<th> Record
+</th>
+<th> Parameter 1
+</th>
+<th> Parameter 2
+</th></tr>
+<tr>
+<td> external.authentication.succeeded
+</td>
+<td> External authentication succeeded and the user accessed the instance URL.
+</td>
+<td> Session ID
+</td>
+<td> User ID of user who successfully logged in
+</td>
+<td> The URL the user accessed (which may be a <a href="index.php%3Ftitle=Scripting_for_Email_Notifications.html#Enabling_Links_to_ServiceNow_Records" title="Scripting for Email Notifications">deep link</a>)
+</td></tr>
+<tr>
+<td> external.authentication.failed
+</td>
+<td> The single sign-on requirements are not present or are missing.
+</td>
+<td> &#160;
+</td>
+<td> Session ID
+</td>
+<td> The missing authentication requirements
+</td></tr>
+<tr>
+<td> external.authentication.failed
+</td>
+<td> The user does not exist in the User [sys_user] table
+</td>
+<td> &#160;
+</td>
+<td> User ID
+</td>
+<td> The string, "User does not exist"
+</td></tr>
+<tr>
+<td> external.authentication.failed
+</td>
+<td> The user is locked out.
+</td>
+<td> &#160;
+</td>
+<td> User ID
+</td>
+<td> The string, "User locked out."
+</td></tr></table>
+<h1><span class="mw-headline" id="Examples"><span class="mw-headline-number">9</span> Examples</span></h1>
+<h2><span class="mw-headline" id="Unencrypted_HTTP_example_using_ASP_in_IIS"><span class="mw-headline-number">9.1</span> Unencrypted HTTP example using ASP in IIS</span></h2>
+<p>The following article is an example using ASP running in IIS to redirect to a ServiceNow instance, supplying URL parameters for SSO: 
+</p><p><a href="index.php%3Ftitle=Sample_ASP_Script_for_Unencrypted_Single_Sign-On.html" title="Sample ASP Script for Unencrypted Single Sign-On">Sample ASP Script for Unencrypted Single Sign-OnSample ASP Script For Unencrypted SSO</a> 
+</p>
+<h2><span class="mw-headline" id="Unencrypted_cookie_example_using_ASP_.NET_with_C.23"><span class="mw-headline-number">9.2</span> Unencrypted cookie example using ASP .NET with C#</span></h2>
+<p>The following article is an example using ASP .NET with C# to redirect to a instance while supplying the necessary credentials for External Authentication in a cookie: 
+</p><p><a href="index.php%3Ftitle=Sample_ASP.NET_with_C_Sharp_Redirect_with_Cookies.html" title="Sample ASP.NET with C Sharp Redirect with Cookies">Sample ASP.NET with C Sharp Redirect with Cookies</a> 
+</p>
+<h2><span class="mw-headline" id="Digest_encryption_example"><span class="mw-headline-number">9.3</span> Digest encryption example</span></h2>
+<p>The following article shows a sample Java program using the Digest algorithm to <i>encrypt</i> a user name: 
+</p><p><a href="index.php%3Ftitle=Sample_Java_Digest_Algorithm_for_Encryption.html" title="Sample Java Digest Algorithm for Encryption">Sample Java Digest Algorithm for Encryption</a> 
+</p><p><a href="index.php%3Ftitle=Sample_C.html" title="Sample C">Sample C</a> 
+</p>
+<h2><span class="mw-headline" id="Visual_Studio_2005_SSO_solution"><span class="mw-headline-number">9.4</span> Visual Studio 2005 SSO solution</span></h2>
+<p>Download the following .zip file, extract to your hard drive, and you will get a folder containing a Visual Studio 2005 solution project. You can use this to help you develop your own Single Sign-on portal locally. 
+</p><p><a href="images/f/fb/Solution.zip" class="internal" title="Solution.zip">Visual Studio 2005 SSO solution</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201100524
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.384 seconds
+Real time usage: 0.759 seconds
+Preprocessor visited node count: 167/1000000
+Preprocessor generated node count: 460/1000000
+Post‐expand include size: 2990/2097152 bytes
+Template argument size: 1068/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  396.087      1 - -total
+ 22.89%   90.673      1 - Template:SSO
+ 19.48%   77.154      1 - Template:Topic
+  3.13%   12.379      4 - Template:Note
+  2.08%    8.249      1 - Embedded:SSO
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2769-0!*!0!1!en!5!* and timestamp 20171201100523 and revision id 251108
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;oldid=251108.html">http://wiki.servicenow.com/index.php?title=External_Authentication_(Single_Sign-On_-_SSO)&amp;oldid=251108</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2769"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2769" data-vote-the-vote="5" data-vote-id="2769" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2769_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2769" data-vote-the-vote="1" data-vote-id="2769" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2769_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO).html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=External+Authentication+%2528Single+Sign-On+-+SSO%2529&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=External+Authentication+%2528Single+Sign-On+-+SSO%2529&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=External_Authentication_(Single_Sign-On_-_SSO).html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=External+Authentication+%2528Single+Sign-On+-+SSO%2529.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=External+Authentication+%2528Single+Sign-On+-+SSO%2529&amp;returnto=External+Authentication+%2528Single+Sign-On+-+SSO%2529&amp;oldid=251108&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FExternal_Authentication_(Single_Sign-On_-_SSO).html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/External_Authentication_(Single_Sign-On_-_SSO)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;oldid=251108.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO)&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:25, 25 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":752});});</script></body></html>

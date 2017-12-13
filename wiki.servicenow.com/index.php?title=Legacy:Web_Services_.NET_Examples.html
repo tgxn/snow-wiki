@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Legacy:Web Services .NET Examples - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Legacy:Web_Services_.NET_Examples","wgTitle":"Legacy:Web Services .NET Examples","wgCurRevisionId":100300,"wgRevisionId":100300,"wgArticleId":2895,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Web_Services_.NET_Examples","wgRelevantArticleId":2895,"wgRequestId":"7e07ebdfdfbc077024343887","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20120116202741"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Legacy:Web Services .NET Examples"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Legacy:Web Services .NET Examples"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20120116202741"/>
+
+	<meta property="article:published_time" content="20120116202741"/>
+
+	<meta property="article:modified_time" content="20120116202741"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Legacy_Web_Services_NET_Examples rootpage-Legacy_Web_Services_NET_Examples skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%3AWeb+Services+.NET+Examples" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=add_article&amp;arttitle=Legacy%3AWeb+Services+.NET+Examples&amp;oldid=0" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Web Services .NET Examples</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Legacy:Web Services .NET Examples</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a253b7a78b7et'></div><script type="text/javascript">window.tamOnload_tam5a253b7a78b7et=[];tree = new dTree('tam5a253b7a78b7et');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a253b7a78b7et = tree;
+                                               tam5a253b7a78b7et.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API\&quot;" title=\"REST API\">Inbound REST</a>');
+
+tam5a253b7a78b7et.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_REST\&quot;" title=\"Getting Started with REST\">Getting Started with REST</a>');
+tam5a253b7a78b7et.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Table_API\&quot;" title=\"Table API\">Table API</a>');
+tam5a253b7a78b7et.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_API\&quot;" title=\"Import Set API\">Import Set API</a>');
+tam5a253b7a78b7et.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API\&quot;" title=\"Aggregate API\">Aggregate API</a>');
+tam5a253b7a78b7et.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API_Examples\&quot;" title=\"Aggregate API Examples\">Aggregate API Examples</a>');
+tam5a253b7a78b7et.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API_Explorer\&quot;" title=\"REST API Explorer\">REST API Explorer</a>');
+tam5a253b7a78b7et.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Web_Service\&quot;" title=\"SOAP Web Service\">Inbound SOAP</a>');
+tam5a253b7a78b7et.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Direct_Web_Service_API\&quot;" title=\"SOAP Direct Web Service API\">Direct SOAP API</a>');
+tam5a253b7a78b7et.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_SOAP_Web_Service_Security\&quot;" title=\"Inbound SOAP Web Service Security\">Inbound SOAP Security</a>');
+tam5a253b7a78b7et.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting_Related_Records_Using_SOAP\&quot;" title=\"Inserting Related Records Using SOAP\">Inserting Related Records</a>');
+tam5a253b7a78b7et.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AttachmentCreator_SOAP_Web_Service\&quot;" title=\"AttachmentCreator SOAP Web Service\">Attachment Creator Web Service</a>');
+tam5a253b7a78b7et.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ECC_Queue_Retry_Policy\&quot;" title=\"ECC Queue Retry Policy\">ECC Queue Retry Policy</a>');
+tam5a253b7a78b7et.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Session_Management_and_Reporting\&quot;" title=\"SOAP Session Management and Reporting\">SOAP Session Management and Reporting</a>');
+tam5a253b7a78b7et.add(15, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Long-Running_SOAP_Request_Support\&quot;" title=\"Long-Running SOAP Request Support\">Long-Running SOAP Request Support</a>');
+tam5a253b7a78b7et.add(16, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Static_WSDL\&quot;" title=\"Creating a Static WSDL\">Creating a Static WSDL</a>');
+tam5a253b7a78b7et.add(17, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_Integrations_Best_Practices\&quot;" title=\"Web Services Integrations Best Practices\">Web Services Integrations Best Practices</a>');
+tam5a253b7a78b7et.add(18, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API\&quot;" title=\"Perl API\">Perl API</a>');
+tam5a253b7a78b7et.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_ServiceNow\&quot;" title=\"Perl API ServiceNow\">Perl ServiceNow Module</a>');
+tam5a253b7a78b7et.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_GlideRecord\&quot;" title=\"Perl API GlideRecord\">GlideRecord</a>');
+tam5a253b7a78b7et.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Task\&quot;" title=\"Perl API Task\">Task</a>');
+tam5a253b7a78b7et.add(22, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Incident\&quot;" title=\"Perl API Incident\">Incident</a>');
+tam5a253b7a78b7et.add(23, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Problem\&quot;" title=\"Perl API Problem\">Problem</a>');
+tam5a253b7a78b7et.add(24, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Change\&quot;" title=\"Perl API Change\">Change</a>');
+tam5a253b7a78b7et.add(25, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Request\&quot;" title=\"Perl API Request\">Request</a>');
+tam5a253b7a78b7et.add(26, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_RequestedItem\&quot;" title=\"Perl API RequestedItem\">RequestedItem</a>');
+tam5a253b7a78b7et.add(27, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_SC_Task\&quot;" title=\"Perl API SC Task\">SC_Task</a>');
+tam5a253b7a78b7et.add(28, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Ticket\&quot;" title=\"Perl API Ticket\">Ticket</a>');
+tam5a253b7a78b7et.add(29, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Approval\&quot;" title=\"Perl API Approval\">Approval</a>');
+tam5a253b7a78b7et.add(30, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Dictionary\&quot;" title=\"Perl API Dictionary\">Dictionary</a>');
+tam5a253b7a78b7et.add(31, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Configuration\&quot;" title=\"Perl API Configuration\">Configuration</a>');
+tam5a253b7a78b7et.add(32, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Attachment\&quot;" title=\"Perl API Attachment\">Attachment</a>');
+tam5a253b7a78b7et.add(33, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Driver\&quot;" title=\"ODBC Driver\">ODBC Driver</a>');
+tam5a253b7a78b7et.add(34, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_ODBC\&quot;" title=\"Getting Started with ODBC\">ODBC Quick Start Guide</a>');
+tam5a253b7a78b7et.add(35, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installing_the_ODBC_Driver\&quot;" title=\"Installing the ODBC Driver\">Installing the Driver</a>');
+tam5a253b7a78b7et.add(36, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_the_ODBC_Driver\&quot;" title=\"Configuring the ODBC Driver\">Configuring the Driver</a>');
+tam5a253b7a78b7et.add(37, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Testing_the_ODBC_Driver\&quot;" title=\"Testing the ODBC Driver\">Testing the Driver</a>');
+tam5a253b7a78b7et.add(38, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver\&quot;" title=\"Using the ODBC Driver\">Using the Driver</a>');
+tam5a253b7a78b7et.add(39, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a>');
+tam5a253b7a78b7et.add(40, 33, 'ODBC Client Configuration');
+tam5a253b7a78b7et.add(41, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=HTTP_Client_Connection_Management\&quot;" title=\"HTTP Client Connection Management\">HTTP Client Connection Management</a>');
+tam5a253b7a78b7et.add(42, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Interactive_SQL_With_ODBC\&quot;" title=\"Using Interactive SQL With ODBC\">Running Interactive SQL (ODBC)</a>');
+tam5a253b7a78b7et.add(43, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Excel_2010\&quot;" title=\"Using the ODBC Driver in Excel 2010\" class=\"mw-redirect\">Using the ODBC Driver in Excel 2010</a>');
+tam5a253b7a78b7et.add(44, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Crystal_Reports_2008\&quot;" title=\"Using the ODBC Driver in Crystal Reports 2008\" class=\"mw-redirect\">Using the ODBC Driver in Crystal Reports 2008</a>');
+tam5a253b7a78b7et.add(45, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ODBC_Driver_in_SQL_Server_2008\&quot;" title=\"Using ODBC Driver in SQL Server 2008\" class=\"mw-redirect\">Using ODBC Driver in SQL Server 2008</a>');
+tam5a253b7a78b7et.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Additional Direct Web Services</a>');
+tam5a253b7a78b7et.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CSV_Web_Service\&quot;" title=\"CSV Web Service\">CSV</a> ');
+tam5a253b7a78b7et.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EXCEL_Web_Service\&quot;" title=\"EXCEL Web Service\">EXCEL</a>');
+tam5a253b7a78b7et.add(49, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSONv2_Web_Service\&quot;" title=\"JSONv2 Web Service\">JSONv2</a>');
+tam5a253b7a78b7et.add(50, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Web_Service\&quot;" title=\"PDF Web Service\">PDF</a>');
+tam5a253b7a78b7et.add(51, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=XML_Web_Service\&quot;" title=\"XML Web Service\">XML</a>');
+tam5a253b7a78b7et.add(52, 46, 'RSS ');
+tam5a253b7a78b7et.add(53, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Generator\&quot;" title=\"RSS Feed Generator\">RSS Feed Generator</a> ');
+tam5a253b7a78b7et.add(54, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Reader\&quot;" title=\"RSS Feed Reader\">RSS Feed Reader</a>');
+tam5a253b7a78b7et.add(55, 0, 'Inbound Examples');
+tam5a253b7a78b7et.add(56, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Java_Apache_Axis2_Web_Services_Client_Examples\&quot;" title=\"Java Apache Axis2 Web Services Client Examples\">Java Apache Axis2 Client</a>');
+tam5a253b7a78b7et.add(57, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_.NET_Web_Services_Client_Examples\&quot;" title=\"Microsoft .NET Web Services Client Examples\">Microsoft .NET Client</a>');
+tam5a253b7a78b7et.add(58, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_Web_Services_Client_Examples\&quot;" title=\"Perl Web Services Client Examples\">Perl Client</a>');
+tam5a253b7a78b7et.add(59, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Python_Web_Services_Client_Examples\&quot;" title=\"Python Web Services Client Examples\">Python Client</a>');
+tam5a253b7a78b7et.add(60, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Retrieving_A_Large_Number_Of_Records_Using_SOAP\&quot;" title=\"Retrieving A Large Number Of Records Using SOAP\">Retrieving A Large Number Of Records</a>');
+tam5a253b7a78b7et.add(61, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_C_Sharp_.NET_End_to_End_Tutorial\&quot;" title=\"Web Services C Sharp .NET End to End Tutorial\">C Sharp .NET End to End</a>');
+tam5a253b7a78b7et.add(62, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Service_Tutorial\&quot;" title=\"Scripted Web Service Tutorial\">Scripted Web Service</a>');
+tam5a253b7a78b7et.add(63, 0, 'Outbound Web Services');
+tam5a253b7a78b7et.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service\&quot;" title=\"Outbound REST Web Service\">Outbound REST</a>');
+tam5a253b7a78b7et.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_SOAP_Web_Service\&quot;" title=\"Outbound SOAP Web Service\">Outbound SOAP</a>');
+tam5a253b7a78b7et.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_Web_Services_Mutual_Authentication\&quot;" title=\"Outbound Web Services Mutual Authentication\">Outbound Mutual Authentication</a>');
+tam5a253b7a78b7et.add(67, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_REST\&quot;" title=\"Scripting Outbound REST\">Scripting Outbound REST</a>');
+tam5a253b7a78b7et.add(68, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP\&quot;" title=\"Scripting Outbound SOAP\">Scripting Outbound SOAP</a>');
+tam5a253b7a78b7et.add(69, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP_-_Versions_Prior_to_Fuji\&quot;" title=\"Scripting Outbound SOAP - Versions Prior to Fuji\">Scripting Outbound SOAP Prior to Fuji</a>');
+tam5a253b7a78b7et.add(70, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service_-_Versions_Prior_to_Fuji\&quot;" title=\"Outbound REST Web Service - Versions Prior to Fuji\">Outbound REST Prior to Fuji</a>');
+tam5a253b7a78b7et.add(71, 63, 'Outbound APIs');
+tam5a253b7a78b7et.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessage</a>');
+tam5a253b7a78b7et.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponse</a>');
+tam5a253b7a78b7et.add(74, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessage</a>');
+tam5a253b7a78b7et.add(75, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponse</a>');
+tam5a253b7a78b7et.add(76, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Direct Web Services</a>');
+tam5a253b7a78b7et.add(77, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Service_Import_Sets\&quot;" title=\"Web Service Import Sets\">Web Service Import Sets</a>');
+tam5a253b7a78b7et.add(78, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Services\&quot;" title=\"Scripted Web Services\">Scripted Web Services</a>');
+
+                                               document.getElementById('5a253b7a78b7et').innerHTML = tam5a253b7a78b7et.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a253b7a78b7et) { window.tamOnload_tam5a253b7a78b7et[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The Web Service Name as reflected in WSDL has been changed from <b>Glide</b> to <b>ServiceNow</b> after Summer 2008 Stable 2 release.  If you have previously created a proxy with <b>Glide</b> and have been upgraded to Summer 2008 Stable 2 release or newer you do not need to recreate your proxies, they will still work.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#End-to-end_Tutorial"><span class="tocnumber">1</span> <span class="toctext">End-to-end Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#Working_with_Reference_Fields"><span class="tocnumber">2</span> <span class="toctext">Working with Reference Fields</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#Working_with_Date_Fields"><span class="tocnumber">3</span> <span class="toctext">Working with Date Fields</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#Get_with_GetResponse"><span class="tocnumber">4</span> <span class="toctext">Get with GetResponse</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#GetRecords_with_GetRecordsResponseGetRecordsResult.5B.5D"><span class="tocnumber">5</span> <span class="toctext">GetRecords with GetRecordsResponseGetRecordsResult[]</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#GetKeys_with_GetKeysResponse"><span class="tocnumber">6</span> <span class="toctext">GetKeys with GetKeysResponse</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#ECC_Queue_GetRecords_with_GetRecordsResponseGetRecordsResult.5B.5D"><span class="tocnumber">7</span> <span class="toctext">ECC_Queue GetRecords with GetRecordsResponseGetRecordsResult[]</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#ECC_Queue_Payload.3DIncident_Insert_with_InsertResponse"><span class="tocnumber">8</span> <span class="toctext">ECC_Queue Payload=Incident Insert with InsertResponse</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html#Using_the_glide.soap.return_displayValue_Property"><span class="tocnumber">9</span> <span class="toctext">Using the glide.soap.return_displayValue Property</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="End-to-end_Tutorial"><span class="mw-headline-number">1</span> End-to-end Tutorial</span></h1>
+<p>For an end-to-end tutorial on sending a web service to ServiceNow using C# .NET, see this wiki tutorial:&#160;<a href="index.php%3Ftitle=Web_Services_C_Sharp_.NET_End_to_End_Tutorial.html" title="Web Services C Sharp .NET End to End Tutorial">Web_Services_C_Sharp_.NET_End_to_End_Tutorial</a> 
+</p>
+<h1><span class="mw-headline" id="Working_with_Reference_Fields"><span class="mw-headline-number">2</span> Working with Reference Fields</span></h1>
+<p>When querying for a reference field such as Assigned To or Caller Id you will need to use the sys_id for the record in the sys_user table and not the display value of the record. 
+</p>
+<h1><span class="mw-headline" id="Working_with_Date_Fields"><span class="mw-headline-number">3</span> Working with Date Fields</span></h1>
+<p>When querying for date fields you will need to make sure the date format used in the condition is the same format specified in System Properties as shown below. 
+</p><p><a href="index.php%3Ftitle=File:Date_Format.jpg.html" class="image"><img alt="Date Format.jpg" src="images/d/d2/Date_Format.jpg" width="777" height="185" /></a> 
+</p>
+<h1><span class="mw-headline" id="Get_with_GetResponse"><span class="mw-headline-number">4</span> Get with GetResponse</span></h1>
+<pre>localhost.get get = new localhost.get();
+localhost.getResponse getResponse = new localhost.getResponse();
+get.sys_id = "9d385017c611228701d22104cc95c371"; 
+getResponse = proxy.get(get);
+</pre> 
+<h1><span class="mw-headline" id="GetRecords_with_GetRecordsResponseGetRecordsResult.5B.5D"><span class="mw-headline-number">5</span> GetRecords with GetRecordsResponseGetRecordsResult[]</span></h1>
+<pre>localhost.getRecords record = new WSCompany2.localhost.getRecords();
+record.sys_updated_on = " &gt;= 2006-01-01";
+record.closed_at = " &lt;= 2006-02-01";
+record.incident_state = "1";
+record.caller_id = "f298d2d2c611227b0106c6be7f154bc8";
+localhost.getRecordsResponseGetRecordsResult[] r = proxyUser.getRecords(record);
+
+for (int i = 0; i &lt; r.Length; i++)
+{
+  string sys_id = r[i].sys_id;
+  string shortDesc = r[i].short_description;
+  string openedAt = r[i].opened_at;
+}
+</pre> 
+<h1><span class="mw-headline" id="GetKeys_with_GetKeysResponse"><span class="mw-headline-number">6</span> GetKeys with GetKeysResponse</span></h1>
+<p>Note: The field userGetKeys.activeSpecified must be set to true when setting userGetKeys.active to any value. 
+</p>
+<pre>localhost.getKeys userGetKeys = new localhost.getKeys();
+localhost.getKeysResponse userGetKeysResponse = new localhost.getKeysResponse();
+userGetKeys.active = true; 
+userGetKeys.activeSpecified = true; 
+userGetKeysResponse = proxyUser.getKeys(userGetKeys);
+</pre> 
+<h1><span class="mw-headline" id="ECC_Queue_GetRecords_with_GetRecordsResponseGetRecordsResult.5B.5D"><span class="mw-headline-number">7</span> ECC_Queue GetRecords with GetRecordsResponseGetRecordsResult[]</span></h1>
+<pre>// Create proxy and methods
+eccQueue.ServiceNow proxy = new ECC_QUEUE_GET_RECORD.eccQueue.ServiceNow();
+eccQueue.getRecords get = new ECC_QUEUE_GET_RECORD.eccQueue.getRecords();
+
+// Only get the records for today
+get.sys_created_on = " &gt; 2008-01-30";
+eccQueue.getRecordsResponseGetRecordsResult[] getResults = proxy.getRecords(get);
+
+// Print the results to the console
+foreach (eccQueue.getRecordsResponseGetRecordsResult r in getResults)
+{
+   Console.WriteLine("Agent: " + r.agent);
+   Console.WriteLine("Topic: " + r.topic);
+   Console.WriteLine("Topic: " + r.topic);
+   Console.WriteLine("Source: " + r.source);
+   Console.WriteLine("Response to: " + r.response_to);
+   Console.WriteLine("Queue: " + r.queue);
+   Console.WriteLine("State: " + r.state);
+   Console.WriteLine("Created: " + r.sys_created_on);
+   Console.WriteLine("Processed: " + r.processed);
+   Console.WriteLine("Sequence: " + r.sequence);
+   Console.WriteLine("Payload: " + r.payload);
+   Console.WriteLine();
+ }
+ Console.ReadLine();
+</pre> 
+<h1><span class="mw-headline" id="ECC_Queue_Payload.3DIncident_Insert_with_InsertResponse"><span class="mw-headline-number">8</span> ECC_Queue Payload=Incident Insert with InsertResponse</span></h1>
+<pre>// Create proxy and methods
+ecc_incident.ServiceNow proxy = new ecc_incident.ServiceNow();
+ecc_incident.insert insert = new ecc_incident.insert();
+ecc_incident.insertResponse insertResponse = new ecc_incident.insertResponse();
+ecc_incident.insertPayload payload = new ecc_incident.insertPayload();
+ecc_incident.insertPayloadIncident incident = new ecc_incident.insertPayloadIncident();
+
+// Required Conditions in "Process Web Service Automap Business rule
+insert.agent = "Web Service Automap";
+insert.queue = "input";
+insert.state = "ready";
+
+// Incident field Value
+incident.location = "108752c8c611227501d4ab0e392ba97f";
+incident.assigned_to = "97000fcc0a0a0a6e0104ca999f619e5b";
+incident.caller_id = "5137153cc611227c000bbd1bd8cd2007";
+incident.category = "hardware";
+incident.short_description = "Testing ecc_queue Incident insert.";
+incident.problem_id = "9d4f87a3c6112287010ed0a5ccdcba04";
+payload.incident  = incident;
+insert.payload = payload;
+insertResponse = proxy.insert(insert);
+
+// Get the Incident Number of created Incident
+// The map coalesces on the number field so a update will now be done
+incident.number = insertResponse.number;
+incident.location = "dc86690e0a0a0a65017c5ffcddbf224f";
+payload.incident = incident;
+insert.payload = payload;
+insertResponse = proxy.insert(insert);
+Console.WriteLine("Response: " + insertResponse.sys_id);
+</pre> 
+<h1><span class="mw-headline" id="Using_the_glide.soap.return_displayValue_Property"><span class="mw-headline-number">9</span> Using the glide.soap.return_displayValue Property</span></h1>
+<p>The glide.soap.return_displayValue property will specify how reference fields are returned. When this property is set to true all reference fields returned from a request will be returned with the display value rather than the sys_id. The property is set to false by default. There are two different ways to set the property to true. 
+</p>
+<ol><li>Put in a request on /hi to have the property added to your instance with a value set to true. </li>
+<li>Add the property to the request URL as follows:</li></ol>
+<dl><dd><a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://localhost:8080/snc/sys_user.do?displayvalue=true&amp;WSDL">http://localhost:8080/snc/sys_user.do?displayvalue=true&amp;WSDL</a></dd></dl>
+<p>The following example demonstrates the use of the glide.soap.return_displayValue property. 
+</p>
+<pre> 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Net;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Create_Incident
+{
+   public partial class NewIncident&#160;: Form
+   {
+       System.Net.ICredentials cred = new System.Net.NetworkCredential("cmitch", "cmitch");
+
+       Properties.ServiceNow proxyProp = new Create_Incident.Properties.ServiceNow();
+       Properties.get getProperties = new Create_Incident.Properties.get();
+       Properties.getResponse getPropertiesResponse = new Create_Incident.Properties.getResponse();
+       Properties.getKeys getPropertiesKeys = new Create_Incident.Properties.getKeys();
+       Properties.getKeysResponse getPropertiesKeysResponse = new Create_Incident.Properties.getKeysResponse();
+
+       Choice.ServiceNow proxyChoice = new Choice.ServiceNow();
+       CI.ServiceNow proxyCI = new CI.ServiceNow();
+       Incident.ServiceNow proxyIncident = new Incident.ServiceNow();
+       Locations.ServiceNow proxyLoc = new Locations.ServiceNow();
+       User.ServiceNow proxyUser = new User.ServiceNow();
+
+       CI.getRecords getCIRecords = new CI.getRecords();
+       Choice.getRecords getChoiceRecords = new Choice.getRecords();
+       Incident.getRecords iRecord = new Incident.getRecords();
+       User.getRecords getUserRecords = new User.getRecords();
+       Locations.getRecords getLocRecords = new Locations.getRecords();
+
+       Incident.insert newIncident;
+       Incident.update updateIncident;
+       Incident.get getIncident = new Incident.get();
+       Incident.getResponse getIncidentResponse = new Incident.getResponse();
+       Incident.insertResponse iResponse = new Incident.insertResponse();
+       Incident.updateResponse uResponse = new Incident.updateResponse();
+
+       private string sysId = "";
+
+       public NewIncident()
+       {
+           InitializeComponent();
+       }
+
+       private void NewIncident_Load(object sender, EventArgs e)
+       {
+           // Set all the credetials
+           proxyProp.Credentials = cred;
+           proxyChoice.Credentials = cred;
+           proxyCI.Credentials = cred;
+           proxyIncident.Credentials = cred;
+           proxyLoc.Credentials = cred;
+           proxyUser.Credentials = cred;
+
+           //// Verify the glide.soap.return_displayValue property is set to true for these requests
+           //getPropertiesKeys.name = "glide.soap.return_displayValue";
+           //getPropertiesKeysResponse = proxyProp.getKeys(getPropertiesKeys);
+           //getProperties.sys_id = getPropertiesKeysResponse.sys_id[0];
+           //getPropertiesResponse = proxyProp.get(getProperties);
+           //if (getPropertiesResponse.value&#160;!= "true")
+           //    return;
+
+           // Set all name combo box's
+           getUserRecords.active = true;
+           User.getRecordsResponseGetRecordsResult[] userRecords = proxyUser.getRecords(getUserRecords);
+           callerBox.Items.Add("");
+           openBox.Items.Add("");
+           assignBox.Items.Add("");
+           uassignBox.Items.Add("");
+           for (int i = 0; i &lt; userRecords.Length; i++)
+           {
+               callerBox.Items.Add(userRecords[i].name);
+               openBox.Items.Add(userRecords[i].name);
+               if (userRecords[i].accumulated_roles.Contains("itil"))
+               {
+                   assignBox.Items.Add(userRecords[i].name);
+                   uassignBox.Items.Add(userRecords[i].name);
+               }
+           }
+
+           // Set the Location combo box
+           Locations.getRecordsResponseGetRecordsResult[] locRecords = proxyLoc.getRecords(getLocRecords);
+           locBox.Items.Add("");
+           ulocBox.Items.Add("");
+           for (int i = 0; i &lt; locRecords.Length; i++)
+           {
+               locBox.Items.Add(locRecords[i].name);
+               ulocBox.Items.Add(locRecords[i].name);
+           }
+
+           // Set the Category Choice combo box
+           getChoiceRecords.name = "incident";
+           getChoiceRecords.element = "category";
+           Choice.getRecordsResponseGetRecordsResult[] choiceRecords = proxyChoice.getRecords(getChoiceRecords);
+           categoryBox.Items.Add("");
+           ucategoryBox.Items.Add("");
+           for (int i = 0; i &lt; choiceRecords.Length; i++)
+           {
+               categoryBox.Items.Add(choiceRecords[i].label);
+               ucategoryBox.Items.Add(choiceRecords[i].label); 
+           }
+
+           // Set the Priority Choice combo box
+           getChoiceRecords.name = "task";
+           getChoiceRecords.element = "priority";
+           choiceRecords = proxyChoice.getRecords(getChoiceRecords);
+           priorityBox.Items.Add("");
+           upriorityBox.Items.Add("");
+           for (int i = 0; i &lt; choiceRecords.Length; i++)
+           {
+               priorityBox.Items.Add(choiceRecords[i].label);
+               upriorityBox.Items.Add(choiceRecords[i].label);
+           }
+
+           // Set the CI combo box
+           CI.getRecordsResponseGetRecordsResult[] ciRecords = proxyCI.getRecords(getCIRecords);
+           configBox.Items.Add("");
+           uconfigBox.Items.Add("");
+           for (int i = 200; i &lt; 220; i++) //temp.Length; i++)
+           {
+               configBox.Items.Add(ciRecords[i].name);
+               uconfigBox.Items.Add(ciRecords[i].name);
+           }
+       }
+
+       private void createBut_Click(object sender, EventArgs e)
+       {
+           newIncident = new Incident.insert();
+           newIncident.assigned_to = assignBox.Text;
+           newIncident.caller_id = callerBox.Text;
+           newIncident.location = locBox.Text;
+           newIncident.cmdb_ci = configBox.Text;
+           newIncident.opened_by = openBox.Text;
+           newIncident.due_date = dateBox.Value.ToString();
+           newIncident.category = categoryBox.Text.ToLower();
+           newIncident.priority = priorityBox.Text;
+           newIncident.short_description = descBox.Text;
+           newIncident.comments = commentBox.Text;
+           newIncident.u_soap_request = "no";
+        
+           iResponse = proxyIncident.insert(newIncident);
+
+           getIncident.sys_id = iResponse.sys_id;
+           getIncidentResponse = proxyIncident.get(getIncident);
+
+           incidentCreatedLabel.Text = "Incident " + getIncidentResponse.number + " was created.";
+
+           clearBut_Click(sender, e);
+       }
+
+       private void updateBut_Click(object sender, EventArgs e)
+       {
+           updateIncident = new Incident.update();
+
+           if (unumberBox.Text == "")
+           {
+               MessageBox.Show("You must have an Incident number for an Update.", "Update Error", MessageBoxButtons.OK);
+           }
+           else
+           {
+               updateIncident.sys_id = sysId;
+               updateIncident.assigned_to = uassignBox.Text;
+               updateIncident.priority = upriorityBox.Text;
+               updateIncident.location = ulocBox.Text;
+               updateIncident.category = ucategoryBox.Text.ToLower();
+               updateIncident.due_date = uduedateBox.Text;
+               updateIncident.comments = ucommentBox.Text;
+               
+               uResponse = proxyIncident.update(updateIncident);
+           }
+       }
+
+       private void clearBut_Click(object sender, EventArgs e)
+       {
+           assignBox.Text = "";
+           callerBox.Text = "";
+           locBox.Text = "";
+           configBox.Text = "";
+           openBox.Text = "";
+           dateBox.Text = DateTime.Now.ToLongDateString();
+           priorityBox.Text = "";
+           categoryBox.Text = "";
+           descBox.Clear();
+           commentBox.Clear();
+
+           unumberBox.Clear();
+           uassignBox.Text = "";
+           ulocBox.Text = "";
+           upriorityBox.Text = "";
+           uduedateBox.Text = "";
+           ucategoryBox.Text = "";
+           ucommentBox.Clear();
+           callerBox.Focus();
+       }
+
+       private void exitBut_Click(object sender, EventArgs e)
+       {
+           this.Close();
+       }
+
+       private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+       {
+           if (tabControl1.SelectedIndex == 0)
+           {
+               this.AcceptButton = createBut;
+               this.incidentCreatedLabel.Text = "";
+           }
+           else if (tabControl1.SelectedIndex == 1)
+           {
+               this.AcceptButton = updateBut;
+           }
+       }
+
+       private void unumberBox_KeyPress(object sender, KeyPressEventArgs e)
+       {
+           if (char.IsLetter(e.KeyChar))
+           {
+               e.Handled = true;
+           }
+       }
+
+       private void lookUpBut_Click(object sender, EventArgs e)
+       {
+           iRecord.active = true;
+           iRecord.number = "INC" + unumberBox.Text.ToString();
+
+           Incident.getRecordsResponseGetRecordsResult[] incRec = proxyIncident.getRecords(iRecord);
+
+           if (incRec[0].sys_id&#160;!= "")
+           {
+               sysId = incRec[0].sys_id;
+               uassignBox.Enabled = true;
+               uassignBox.Text = incRec[0].assigned_to;
+               ulocBox.Enabled = true;
+               ulocBox.Text = incRec[0].location;
+               upriorityBox.Enabled = true;
+               upriorityBox.Text = incRec[0].priority;
+               uconfigBox.Enabled = true;
+               uconfigBox.Text = incRec[0].cmdb_ci;
+               uduedateBox.Enabled = true;
+               uduedateBox.Text = incRec[0].due_date;
+               ucategoryBox.Enabled = true;
+               ucategoryBox.Text = incRec[0].category;
+               ucommentBox.Enabled = true;
+               ucommentBox.Text = incRec[0].comments;
+               uduedateBox.Enabled = true;
+               uduedateBox.Text = incRec[0].due_date;
+               updateBut.Enabled = true;
+           }
+       }
+   }
+}</pre>
+
+<!-- 
+NewPP limit report
+Cached time: 20171204121138
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.372 seconds
+Real time usage: 0.467 seconds
+Preprocessor visited node count: 102/1000000
+Preprocessor generated node count: 340/1000000
+Post‐expand include size: 793/2097152 bytes
+Template argument size: 375/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  193.193      1 - -total
+ 93.93%  181.457      1 - Template:Web_Services
+ 81.35%  157.166      1 - Template:Topic
+  5.44%   10.510      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2895-0!*!0!1!en!5!* and timestamp 20171204121138 and revision id 100300
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;oldid=100300">http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;oldid=100300</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2895"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2895" data-vote-the-vote="5" data-vote-id="2895" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2895_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2895" data-vote-the-vote="1" data-vote-id="2895" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2895_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Legacy:Web_Services_.NET_Examples.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Legacy%3AWeb+Services+.NET+Examples" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Legacy%3AWeb+Services+.NET+Examples" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://wiki.servicenow.com/index.php?title=Special:Book/render_article/&amp;arttitle=Legacy:Web_Services_.NET_Examples">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;printable=yes">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%3AWeb+Services+.NET+Examples">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Legacy%3AWeb+Services+.NET+Examples&amp;returnto=Legacy%3AWeb+Services+.NET+Examples&amp;oldid=100300&amp;writer=rl">Download as PDF</a></li>
+											<li id="t-print"><a href="http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="http://wiki.servicenow.com/index.php?title=Special:WhatLinksHere/Legacy:Web_Services_.NET_Examples" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Legacy:Web_Services_.NET_Examples" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;oldid=100300" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="http://wiki.servicenow.com/index.php?title=Legacy:Web_Services_.NET_Examples&amp;action=info" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:27, 16 January 2012.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1298});});</script></body></html>

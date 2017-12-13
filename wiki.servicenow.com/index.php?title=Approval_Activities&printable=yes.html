@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Approval and Rollback Activities - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Approval_and_Rollback_Activities","wgTitle":"Approval and Rollback Activities","wgCurRevisionId":250517,"wgRevisionId":250517,"wgArticleId":8842,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Workflow Activities"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Approval_and_Rollback_Activities","wgRelevantArticleId":8842,"wgRequestId":"8c87531fa4440f687ba1f317","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Approval_Activities","wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/index.php?title=Approval_and_Rollback_Activities\u0026printable=yes"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170830163508"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Approval_and_Rollback_Activities"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Approval and Rollback Activities"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Workflow Activities"/>
+<meta name="category" content="Workflow Activities"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<link rel="canonical" href="index.php%3Ftitle=Approval_and_Rollback_Activities.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Approval_and_Rollback_Activities.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Approval and Rollback Activities"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170830163508"/>
+
+	<meta property="article:published_time" content="20170830163508"/>
+
+	<meta property="article:modified_time" content="20170830163508"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Workflow Activities"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Approval_and_Rollback_Activities"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Approval_and_Rollback_Activities rootpage-Approval_and_Rollback_Activities skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Approval+and+Rollback+Activities.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Approval+and+Rollback+Activities&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Approval and Rollback Activities</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow</a> &gt; Workflow Activities &gt; Approval and Rollback Activities (Redirected from <a href="index.php%3Ftitle=Approval_Activities&amp;redirect=no.html" title="Approval Activities">Approval Activities</a>)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Workflows.html" title="Workflows">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Workflows&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21286d83bfat'></div><script type="text/javascript">window.tamOnload_tam5a21286d83bfat=[];tree = new dTree('tam5a21286d83bfat');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21286d83bfat = tree;
+                                               tam5a21286d83bfat.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Resources\&quot;" title=\"Workflow Resources\">Resources</a>');
+
+tam5a21286d83bfat.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Concepts\&quot;" title=\"Workflow Concepts\">Concepts</a>');
+tam5a21286d83bfat.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Operations_Dashboard\&quot;" title=\"Workflow Operations Dashboard\">Operations Dashboard</a>');
+tam5a21286d83bfat.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Editor\&quot;" title=\"Using the Workflow Editor\">Workflow Editor</a>');
+tam5a21286d83bfat.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Graphical_Workflow_Editor_-_Versions_Prior_to_Fuji\&quot;" title=\"Using the Graphical Workflow Editor - Versions Prior to Fuji\">Workflow Editor - Prior to Fuji</a>');
+tam5a21286d83bfat.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Workflow\&quot;" title=\"Creating a Workflow\">Creating a Workflow</a>');
+tam5a21286d83bfat.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Workflow_Activities\&quot;" title=\"Using Workflow Activities\">Using Activities</a>');
+tam5a21286d83bfat.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Activities\&quot;" title=\"Condition Activities\">Condition</a>');
+tam5a21286d83bfat.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Notification_Activities\&quot;" title=\"Notification Activities\">Notification</a>');
+tam5a21286d83bfat.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subflow_Activities\&quot;" title=\"Subflow Activities\">Subflow</a>');
+tam5a21286d83bfat.add(11, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Timer_Activities\&quot;" title=\"Timer Activities\">Timer</a>');
+tam5a21286d83bfat.add(12, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Task_Activities\&quot;" title=\"Task Activities\">Task</a>');
+tam5a21286d83bfat.add(13, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Utility_Activities\&quot;" title=\"Utility Activities\">Utility</a>');
+tam5a21286d83bfat.add(14, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Scratchpad\&quot;" title=\"Using the Workflow Scratchpad\">Scratchpad</a>');
+tam5a21286d83bfat.add(15, 7, '<strong class=\"selflink\">Approvals and Rollbacks</strong>');
+tam5a21286d83bfat.add(16, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Transitions_for_the_Approval_-_User_Activity\&quot;" title=\"Custom Transitions for the Approval - User Activity\">Approval - User Activity</a>');
+tam5a21286d83bfat.add(17, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Selecting_a_Rollback_Activity\&quot;" title=\"Selecting a Rollback Activity\">Selecting a Rollback Activity</a>');
+tam5a21286d83bfat.add(18, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Designing_Workflows_with_Rollback_To\&quot;" title=\"Designing Workflows with Rollback To\">Designing Workflows with Rollback To</a>');
+tam5a21286d83bfat.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subflows\&quot;" title=\"Using Subflows\">Using Subflows</a>');
+tam5a21286d83bfat.add(20, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Variables_in_a_Workflow\&quot;" title=\"Using Variables in a Workflow\">Using Variables</a>');
+tam5a21286d83bfat.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Events\&quot;" title=\"Workflow Events\">Events</a>');
+tam5a21286d83bfat.add(22, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stages\&quot;" title=\"Workflow Stages\">Stages</a>');
+tam5a21286d83bfat.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Sets\&quot;" title=\"Workflow Stage Sets\" class=\"mw-redirect\">Stage Sets</a>');
+tam5a21286d83bfat.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Fields\&quot;" title=\"Workflow Stage Fields\">Stage Fields</a>');
+tam5a21286d83bfat.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Displaying_Stage_Icons\&quot;" title=\"Displaying Stage Icons\">Stage Icons</a>');
+tam5a21286d83bfat.add(26, 0, 'Administering Workflows');
+tam5a21286d83bfat.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_Workflow_Contexts\&quot;" title=\"Administering Workflow Contexts\">Workflow Contexts</a>');
+tam5a21286d83bfat.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_a_Workflow\&quot;" title=\"Scheduling a Workflow\">Scheduling</a>');
+tam5a21286d83bfat.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Workflow_Security\&quot;" title=\"Configuring Workflow Security\">Security</a>');
+tam5a21286d83bfat.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Moving_Workflows_with_Update_Sets\&quot;" title=\"Moving Workflows with Update Sets\">Using Update Sets</a>');
+tam5a21286d83bfat.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Timelines\&quot;" title=\"Workflow Timelines\">Timelines</a>');
+tam5a21286d83bfat.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Error_Handling\&quot;" title=\"Workflow Error Handling\">Error Handling</a>');
+tam5a21286d83bfat.add(33, 26, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Run_Time_Metrics\&quot;" title=\"Workflow Run Time Metrics\">Run Time Metrics</a>');
+tam5a21286d83bfat.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Troubleshooting_Workflows\&quot;" title=\"Troubleshooting Workflows\">Troubleshooting</a>');
+tam5a21286d83bfat.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation\&quot;" title=\"Workflow Validation\">Workflow Validation</a>');
+tam5a21286d83bfat.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation_Report\&quot;" title=\"Workflow Validation Report\">Reports</a>');
+tam5a21286d83bfat.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validators\&quot;" title=\"Workflow Validators\">Validators</a>');
+tam5a21286d83bfat.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionOut\&quot;" title=\"Workflow Validator - ValidateTransitionOut\">Exit Transition</a>');
+tam5a21286d83bfat.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionIn\&quot;" title=\"Workflow Validator - ValidateTransitionIn\">Inbound Transition</a>');
+tam5a21286d83bfat.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateDanglingTransition\&quot;" title=\"Workflow Validator - ValidateDanglingTransition\">Dangling Transition</a> ');
+tam5a21286d83bfat.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSubflows\&quot;" title=\"Workflow Validator - ValidateSubflows\">Subflows</a> ');
+tam5a21286d83bfat.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateScriptForCurrentDotUpdate\&quot;" title=\"Workflow Validator - ValidateScriptForCurrentDotUpdate\">current.update()</a>');
+tam5a21286d83bfat.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateLowestCommonTable\&quot;" title=\"Workflow Validator - ValidateLowestCommonTable\">Lowest Common Table</a>');
+tam5a21286d83bfat.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTableChange\&quot;" title=\"Workflow Validator - ValidateTableChange\"> Table Change</a>');
+tam5a21286d83bfat.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateParentFlow\&quot;" title=\"Workflow Validator - ValidateParentFlow\">Parent Flow</a>');
+tam5a21286d83bfat.add(46, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSingleEnd\&quot;" title=\"Workflow Validator - ValidateSingleEnd\">Multiple Ends</a>');
+tam5a21286d83bfat.add(47, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetDependencies\">Update Sets - Dependencies</a>');
+tam5a21286d83bfat.add(48, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetParentDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetParentDependencies\">Update Sets - Parent Dependencies</a>');
+tam5a21286d83bfat.add(49, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateInputVarUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateInputVarUpdateSetDependencies\">Update Sets - Variable Dependencies</a>');
+
+                                               document.getElementById('5a21286d83bfat').innerHTML = tam5a21286d83bfat.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21286d83bfat) { window.tamOnload_tam5a21286d83bfat[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+VMWare+Support+Plugin&amp;oldid=0.html" title="Orchestration VMWare Support Plugin" class="mw-redirect">Orchestration VMWare Support</a></li>
+<li><a href="index.php%3Ftitle=Service_Catalog_Workflows.html" title="Service Catalog Workflows">Service Catalog Workflows</a> <div class='dtree' id='5a21286d9ae17t'></div><script type="text/javascript">window.tamOnload_tam5a21286d9ae17t=[];tree = new dTree('tam5a21286d9ae17t');</li></ul>
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21286d9ae17t = tree;
+                                               tam5a21286d9ae17t.add(1, 0, 'Workflow Examples');
+
+tam5a21286d9ae17t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_an_SLA_Workflow\&quot;" title=\"Creating an SLA Workflow\">SLA</a>');
+tam5a21286d9ae17t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Service_Catalog_Workflow\&quot;" title=\"Defining a Service Catalog Workflow\">Service Catalog</a>');
+tam5a21286d9ae17t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Problem_Management_Workflow\&quot;" title=\"Defining a Problem Management Workflow\">Problem</a>');
+tam5a21286d9ae17t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Change_Management_Workflow\&quot;" title=\"Defining a Change Management Workflow\">Change</a>');
+tam5a21286d9ae17t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Management_Workflows_Plugin\&quot;" title=\"Change Management Workflows Plugin\" class=\"mw-redirect\">Change Workflows Plugin</a>');
+tam5a21286d9ae17t.add(7, 0, 'Approval Case Study');
+tam5a21286d9ae17t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_1)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 1)\">Part One</a>');
+tam5a21286d9ae17t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_2)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 2)\">Part Two</a>');
+
+                                               document.getElementById('5a21286d9ae17t').innerHTML = tam5a21286d9ae17t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21286d9ae17t) { window.tamOnload_tam5a21286d9ae17t[i](); }</script>
+
+
+<center><a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow">Get the Book</a></center>
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/workflow-activities/concept/c_ApprovalAndRollbackActivities.html">Approval and Rollback Workflow Activities</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a>.</i>
+<p><b>The ServiceNow wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="toclimit-1"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_-_Group"><span class="tocnumber">2</span> <span class="toctext">Approval - Group</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Result_Values"><span class="tocnumber">2.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables"><span class="tocnumber">2.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions"><span class="tocnumber">2.3</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States"><span class="tocnumber">2.4</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_-_User"><span class="tocnumber">3</span> <span class="toctext">Approval - User</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Results"><span class="tocnumber">3.1</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_2"><span class="tocnumber">3.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions_2"><span class="tocnumber">3.3</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_2"><span class="tocnumber">3.4</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_Action"><span class="tocnumber">4</span> <span class="toctext">Approval Action</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Results_2"><span class="tocnumber">4.1</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_3"><span class="tocnumber">4.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions_3"><span class="tocnumber">4.3</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_3"><span class="tocnumber">4.4</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_Coordinator"><span class="tocnumber">5</span> <span class="toctext">Approval Coordinator</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Result_Values_2"><span class="tocnumber">5.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_4"><span class="tocnumber">5.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions_4"><span class="tocnumber">5.3</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_4"><span class="tocnumber">5.4</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Generate"><span class="tocnumber">6</span> <span class="toctext">Generate</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_5"><span class="tocnumber">6.1</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_5"><span class="tocnumber">6.2</span> <span class="toctext">States</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Example"><span class="tocnumber">6.3</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Manual_Approvals"><span class="tocnumber">7</span> <span class="toctext">Manual Approvals</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_6"><span class="tocnumber">7.1</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions_5"><span class="tocnumber">7.2</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_6"><span class="tocnumber">7.3</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Rollback"><span class="tocnumber">8</span> <span class="toctext">Rollback</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Input_Variables_7"><span class="tocnumber">8.1</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_7"><span class="tocnumber">8.2</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Rollback_To"><span class="tocnumber">9</span> <span class="toctext">Rollback To</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Conditions_6"><span class="tocnumber">9.1</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#States_8"><span class="tocnumber">9.2</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Activities Approvals allow workflows to generate and manage approvals while driving a record to fulfillment. 
+By default, Activities Approvals provide the <b><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_-_User">Approval - User</a></b> and the <b><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_Action">Approval Action</a></b> options. 
+However, if a workflow uses a <a href="index.php%3Ftitle=Creating_a_Custom_Table.html#Example:_Enabling_Workflows_for_Tables_that_Extend_Task" title="Creating a Custom Table">table that extends Task</a>, additional options, such as <b><a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Approval_-_Group">Approval - Group</a></b> are available.
+</p>
+<h1><span class="mw-headline" id="Approval_-_Group"><span class="mw-headline-number">2</span> Approval - Group</span></h1>
+<p>The <b>Approval - Group</b> activity creates approval records for each member of a specified group. The group approval is approved or rejected based on the user approvals, according to the logic specified in the <b>Wait For</b> field. 
+</p>
+<h2><span class="mw-headline" id="Result_Values"><span class="mw-headline-number">2.1</span> Result Values</span></h2>
+<p>The workflow designer can assign a result value using <i>activity.result</i> from within a script field of the activity. By default, the result value is the final approval disposition. This disposition depends on the approval actions take by the approvers and the approval conditions specified in the <b>Wait for</b> or <b>When Anyone Rejects</b> fields. Possible result values are: 
+</p>
+<ul><li>Approved</li>
+<li>Rejected</li>
+<li>Deleted</li>
+<li>Cancelled</li></ul>
+<h2><span class="mw-headline" id="Input_Variables"><span class="mw-headline-number">2.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Condition
+</td>
+<td> Conditions which, if met, cause the Group Approval to be generated. If the conditions are not met, the approval is skipped.
+</td></tr>
+<tr>
+<td> Groups
+</td>
+<td> The groups whose approval will be requested. A particular group or the tree icon that lists available fields in bold. The bold field names, which reference the <tt>Group</tt> table, can be used to select a group field from the current record. A user approval for each member of the group is automatically created when a Group approval record is created. If no group is selected, the activity automatically sets the approval to <b>Approved</b>.
+</td></tr>
+<tr>
+<td> Wait for
+</td>
+<td> A choice between different approval logics to determine which individual approvals or rejections result in approval or rejection of the activity's approval. Options are:
+<ul><li><b>An approval from each group</b> - Any user from each group can approve and the first approval from each group causes the activity to complete with a result of <b>approved</b> (see below for how a rejection is handled)</li>
+<li><b>An approval from any group</b> - Any user from any group can approve and the first approval from any group causes the activity to complete with a result of <b>approved</b></li>
+<li><b>An approval from everyone from all groups</b> - All users from all groups must approve to cause the activity to complete with a result of <b>approved</b> (see below for how a rejection is handled)</li>
+<li><b>First response from each group</b> - The first approval or rejection from any user in each group is used to indicate the state of the group approval (see below for how a rejection is handled)</li>
+<li><b>First response from any group</b> - The first approval or rejection from any user in any group causes the activity to complete with a result of <b>approved</b> or <b>rejected</b></li>
+<li><b>Condition based on script</b> - Each time a user approves or rejects, the Approval Script is called to determine if the activity should complete.</li></ul>
+<p>Indicate what happens when any user rejects their approval request. Options are: 
+</p>
+<ul><li><b>Reject the approval</b> - Immediately complete the activity with a result of <b>rejected</b></li>
+<li><b>Wait for other responses before deciding</b> - Wait until we get other responses before making an approval or rejection decision.</li></ul>
+<p>This allows users to change their mind until a decision is made. In addition, if <b>Wait for</b> is set to <b>An approval from any group</b> then a single approval will cause the activity to complete with a result of <b>approved</b> even if one or more users from other groups reject. 
+</p>
+</td></tr>
+<tr>
+<td> When anyone rejects
+</td>
+<td> A choice between different approval logics to determine which individual rejections result in rejection of the activity's approval. Options are:
+<ul><li><b>Reject the approval</b> - Immediately complete the activity with a result of <b>rejected</b></li>
+<li><b>Wait for other responses before deciding</b> - Wait until we get other responses before making an approval or rejection decision. This allows users to change their mind until a decision is made. </li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If <b>Wait for</b> is set to <b>Anyone to approve</b>, then a single approval causes the activity to complete with a result of <b>approved</b>, even if one or more users reject.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Advanced
+</td>
+<td> Check this checkbox to write a script for determining additional users to request approvals from. Use the <b>Additional groups script</b> box to customize group approvals.
+</td></tr>
+<tr>
+<td> Due date based on
+</td>
+<td> The due date fields are used to determine the values to use for setting <i>Expected Start Time</i> and <i>Due Date</i> for the approval. The type determines how the due date is computed:
+<ul><li><b>A user specified duration</b> - The duration is based on a user specified value</li>
+<li><b>A relative duration</b> - The duration is calculated from a relative duration (such as End of Next Business Day)</li>
+<li><b>A date/time or duration field</b> - The duration is based on the value of a field on the current record</li>
+<li><b>Script</b> - The duration is returned by a script</li></ul>
+</td></tr>
+<tr>
+<td> Duration
+</td>
+<td> The user specified duration when the type is <b>A user specified duration</b>.
+</td></tr>
+<tr>
+<td> Schedule based on
+</td>
+<td>  A choice of where to draw a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Schedules&amp;oldid=0.html" title="Schedules" class="mw-redirect">schedule</a> from, to calculate the duration. If a schedule is provided, the duration will only be considered for times that are specified on the schedule. For example, if the time is 2 hours and the duration begins at 4:00pm on a schedule that is 8am - 5pm, then the duration ends at 9:00am the next day on the schedule. Options are:
+<ul><li>This workflow's schedule</li>
+<li>A specified schedule </li>
+<li>A schedule field</li></ul>
+</td></tr>
+<tr>
+<td> Schedule
+</td>
+<td> The specific schedule to use when <b>Schedule based on</b> is <b>A specific schedule</b>.
+</td></tr>
+<tr>
+<td> Schedule field
+</td>
+<td> The field in <i>current</i> that identifies the schedule to use when <b>Schedule based on</b> is <b>A schedule field</b>.
+</td></tr>
+<tr>
+<td> Time zone based on
+</td>
+<td> A choice of where to draw the time zone from, to use when calculating the duration. Options are:
+<ul><li>A specific time zone </li>
+<li>A time zone field</li></ul>
+</td></tr>
+<tr>
+<td> Time zone
+</td>
+<td> The specific time zone to use when <b>Time zone based on</b> is <b>A specific time zone</b>.
+</td></tr>
+<tr>
+<td> Time zone field
+</td>
+<td> The field in <i>current</i> that identifies the time zone to use when <b>Time zone based on</b> is <b>A time zone field</b>.
+</td></tr>
+<tr>
+<td> Additional groups script
+</td>
+<td> If the <b>Advanced</b> checkbox is checked, this script is called to determine any additional group approvals to be created. The script needs to set the variable 'answer' to a comma-separated list of group ids or an array of group ids to add as approver groups. For example:
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>       <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+       <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">);</span>
+       <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;id2&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> Approval script
+</td>
+<td> If the <b>Wait for</b> variable is set to <b>Condition based on script</b> this script is called to determine how to handle an approval or rejection. The script needs to set the variable 'answer' to <i>, 'approved' or 'rejected' to indicate the overall approval status for this approval.</i>
+<p>This script is responsible for setting the approval state for each group that is part of this approval activity before returning the overall approval state for all of the group(s). 
+</p><p>When called, the following variables are available to the script as part of this approval activity: 
+</p>
+<pre>
+          counts.total = total number of groups that are part of this approval
+          counts.approved = # of groups that approved so far
+          counts.rejected = # of groups that rejected so far
+          counts.requested = # of groups that are pending approval
+          counts.not_requested = # of groups that are not pending approval
+          counts.not_required = # of groups that approval is not required
+</pre> 
+<p>And for each group: 
+</p>
+<pre>
+           groups[group_id].total = total number of users that are part of this group's approval
+           groups[group_id].approved = # of users that approved so far
+           groups[group_id].rejected = # of users that rejected so far
+           groups[group_id].requested = # of users that are pending approval
+           groups[group_id].not_requested = # of users that are not pending approval
+           groups[group_id].not_required = # of users that approval is not required
+           groups[group_id].approvalIDs[state] = array of user ids that are at the specified approval state
+</pre> 
+<p>Note: Iterate the groups using: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>       <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">id</span> <span class="k">in</span> <span class="nx">groups</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="nx">groups</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
+          <span class="p">...</span> <span class="nx">group</span><span class="p">.</span><span class="nx">total</span> <span class="p">...</span>
+       <span class="p">}</span>
+</pre></div> 
+<p>Note: Get group object using the following code (to get things like the group name being iterated on): 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">objGroup</span> <span class="o">=</span> <span class="nx">fncGetGroupObj</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">strGroupName</span> <span class="o">=</span> <span class="nx">objGroup</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">fncGetGroupObj</span><span class="p">(</span><span class="nx">sidGroupApproval</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">objGroupApproval</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sysapproval_group&#39;</span><span class="p">);</span>
+	<span class="nx">objGroupApproval</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">sidGroupApproval</span><span class="p">);</span>
+	
+	<span class="kd">var</span> <span class="nx">objGroup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user_group&#39;</span><span class="p">);</span>
+	<span class="nx">objGroup</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">objGroupApproval</span><span class="p">.</span><span class="nx">assignment_group</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+	
+	<span class="k">return</span> <span class="nx">objGroup</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Approval scrips also allow computations. For example, if only half of the approvals are required:  
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">counts</span><span class="p">.</span><span class="nx">approved</span><span class="o">/</span><span class="nx">counts</span><span class="p">.</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="p">.</span><span class="mi">49</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">answer</span> <span class="o">=</span> <span class="s1">&#39;approved&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">counts</span><span class="p">.</span><span class="nx">rejected</span><span class="o">/</span><span class="nx">counts</span><span class="p">.</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="p">.</span><span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">answer</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+<h2><span class="mw-headline" id="Conditions"><span class="mw-headline-number">2.3</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity.
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Approved
+</td>
+<td> The users from the groups have approved the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Rejected
+</td>
+<td> The users from the groups have rejected the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States"><span class="mw-headline-number">2.4</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Approval_-_User"><span class="mw-headline-number">3</span> Approval - User</span></h1>
+<p>The <b>Approval - User</b> activity creates one or more individual user approvals.
+</p>
+<h2><span class="mw-headline" id="Results"><span class="mw-headline-number">3.1</span> Results</span></h2>
+<p>The result value is the final approval disposition. This disposition depends on the approval actions take by the approvers and the approval conditions specified in the <b>Wait for</b> or <b>When Anyone Rejects</b> fields. Possible result values are: 
+</p>
+<ul><li>Approved</li>
+<li>Rejected</li>
+<li>Deleted</li>
+<li>Cancelled</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_2"><span class="mw-headline-number">3.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Condition
+</td>
+<td> Conditions which, if met, cause the Individual Approval to be generated. If the conditions are not met, the approval is skipped.
+</td></tr>
+<tr>
+<td> Users
+</td>
+<td> The users for the approval. You must specify all required users before starting the workflow. After starting the workflow, newly added approvals do not affect the workflow context. Use the tree icon that lists fields that reference the <tt>User</tt> table, such as <tt>${assigned_to}</tt>. If no user is selected, the activity automatically sets the approval to <b>Approved</b>.
+</td></tr>
+<tr>
+<td> Approval Column
+</td>
+<td> A string field for the name of the approval field on the table the workflow is running on. The default value is <b>approval</b>, which is the field on the Task table.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Use the field's name, not its label.</i>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If using any custom approval column fields and approval column journals, use Set Value activities in the workflow to set the custom Approval column fields.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Approval History
+</td>
+<td> A string field for the name of the field that records approval history on the table the workflow is running on. The default value is <b>approval_history</b>, which is the field on the Task table.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Use the field's name, not its label.</i>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If using any custom approval column fields and approval column journals, use Set Value activities in the workflow to set the custom Approval column fields.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Groups
+</td>
+<td> Groups whose members should also receive approvals. Note that this is different than the <b>Approval - Group</b> activity, which creates a Group Approval in addition to the individual approvals. Use the tree icon that lists fields that reference the <tt>Group</tt> table, such as <tt>${assignment_group}</tt>.
+</td></tr>
+<tr>
+<td> Wait for
+</td>
+<td> A choice between different approval logics to determine which individual approvals result in approval of the activity's approval. Options are:
+<ul><li><b>Anyone to approve</b> - Any user can approve and the first approval causes the activity to complete with a result of <b>approved</b>.</li>
+<li><b>Everyone to approve</b> - All users must approve (see below for how a rejection is handled)</li>
+<li><b>First response from anyone</b> - The first approval or rejection from any user causes the activity to complete</li>
+<li><b>Condition based on script</b> - Each time a user approves or rejects, the Approval Script is called to determine if the activity should complete.</li></ul>
+</td></tr>
+<tr>
+<td> When anyone rejects
+</td>
+<td> A choice between different approval logics to determine which individual rejections result in rejection of the activity's approval. Options are:
+<ul><li><b>Reject the approval</b> - Immediately complete the activity with a result of <b>rejected</b></li>
+<li><b>Wait for other responses before deciding</b> - Wait until we get other responses before making an approval or rejection decision. This allows users to change their mind until a decision is made. </li></ul>
+<p>Note that if <b>Wait for</b> is set to <b>Anyone to approve</b> then a single approval will cause the activity to complete with a result of <b>approved</b> even if one or more users reject. 
+</p>
+</td></tr>
+<tr>
+<td> Advanced
+</td>
+<td> Check this checkbox to write a script for determining additional users to request approvals from.
+</td></tr>
+<tr>
+<td> Due date based on
+</td>
+<td> The due date fields determine the values to use for the <i>Expected Start Time</i> and <i>Due Date</i> of the approval. The type determines how the due date is computed:
+<ul><li><b>A user specified duration</b> - The duration is based on a user specified value</li>
+<li><b>A relative duration</b> - The duration is calculated from a relative duration (such as End of Next Business Day)</li>
+<li><b>A date/time or duration field</b> - The duration is based on the value of a field on the current record</li>
+<li><b>Script</b> - The duration is returned by a script</li></ul>
+</td></tr>
+<tr>
+<td> Duration
+</td>
+<td> The user specified duration (when the type is <i>A user specified duration</i>).
+</td></tr>
+<tr>
+<td> Relative duration
+</td>
+<td> The relative duration (when the type is <i>A relative duration</i>).
+</td></tr>
+<tr>
+<td> Due date field
+</td>
+<td> The date/time or duration field (when the type is <i>A date/time or duration field</i>).
+</td></tr>
+<tr>
+<td> Due date script
+</td>
+<td> The script that sets 'answer' to the number of seconds for the duration.
+</td></tr>
+<tr>
+<td> Schedule based on
+</td>
+<td> A choice of where to draw a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Schedules&amp;oldid=0.html" title="Schedules" class="mw-redirect">schedule</a> from, to calculate the duration. If a schedule is provided, the duration will only be considered for times that are specified on the schedule. For example, if the time is 2 hours and the duration begins at 4:00pm on a schedule that is 8am - 5pm, then the duration ends at 9:00am the next day on the schedule. Options are:
+<ul><li>A specified schedule </li>
+<li>A schedule field</li></ul>
+</td></tr>
+<tr>
+<td> Schedule
+</td>
+<td> The specific schedule to use when <b>Schedule based on</b> is <b>A specific schedule</b>.
+</td></tr>
+<tr>
+<td> Schedule field
+</td>
+<td> The field in <i>current</i> that identifies the schedule to use when <b>Schedule based on</b> is <b>A schedule field</b>.
+</td></tr>
+<tr>
+<td> Time zone based on
+</td>
+<td> A choice of where to draw the time zone from, to use when calculating the duration. Options are:
+<ul><li>A specific time zone </li>
+<li>A time zone field</li></ul>
+</td></tr>
+<tr>
+<td> Time zone
+</td>
+<td> The specific time zone to use when <b>Time zone based on</b> is <b>A specific time zone</b>.
+</td></tr>
+<tr>
+<td> Time zone field
+</td>
+<td> The field in <i>current</i> that identifies the time zone to use when <b>Time zone based on</b> is <b>A time zone field</b>.
+</td></tr>
+<tr>
+<td> Additional approvers script
+</td>
+<td> If the <b>Advanced</b> checkbox is checked, this script is called to determine any additional user approvals to be created. The script needs to set the variable 'answer' to a comma-separated list of user ids and/or group ids or an array of user/group ids to add as approvers. For example: <div class="mw-highlight mw-content-ltr" dir="ltr"><pre>       <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+       <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">);</span>
+       <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;id2&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> Approval Script
+</td>
+<td> If the <b>Wait for</b> variable is set to <b>Condition based on script</b> this script is called to determine how to handle an approval or rejection. The script needs to set the variable 'answer' to, 'approved' or 'rejected' to indicate the approval status for this approval. When called, the following information is available:
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    <span class="nx">counts</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span> <span class="nx">number</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">are</span> <span class="nx">part</span> <span class="k">of</span> <span class="k">this</span> <span class="nx">approval</span>
+    <span class="nx">counts</span><span class="p">.</span><span class="nx">approved</span> <span class="o">=</span> <span class="err">#</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">approved</span> <span class="nx">so</span> <span class="nx">far</span>
+    <span class="nx">counts</span><span class="p">.</span><span class="nx">rejected</span> <span class="o">=</span> <span class="err">#</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">rejected</span> <span class="nx">so</span> <span class="nx">far</span>
+    <span class="nx">counts</span><span class="p">.</span><span class="nx">requested</span> <span class="o">=</span> <span class="err">#</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">are</span> <span class="nx">pending</span> <span class="nx">approval</span>
+    <span class="nx">counts</span><span class="p">.</span><span class="nx">not_requested</span> <span class="o">=</span> <span class="err">#</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">are</span> <span class="nx">not</span> <span class="nx">pending</span> <span class="nx">approval</span>
+    <span class="nx">counts</span><span class="p">.</span><span class="nx">not_required</span> <span class="o">=</span> <span class="err">#</span> <span class="k">of</span> <span class="nx">users</span> <span class="nx">that</span> <span class="nx">approval</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">required</span>
+</pre></div>
+</td></tr></table>
+<h2><span class="mw-headline" id="Conditions_2"><span class="mw-headline-number">3.3</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity. For instruction on creating custom transitions for this activity, see <a href="index.php%3Ftitle=Custom_Transitions_for_the_Approval_-_User_Activity.html" title="Custom Transitions for the Approval - User Activity"><b>Custom Transitions for the Approval - User Activity</b></a>.
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Approved
+</td>
+<td> The users approved the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Rejected
+</td>
+<td> The users rejected the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_2"><span class="mw-headline-number">3.4</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Approval_Action"><span class="mw-headline-number">4</span> Approval Action</span></h1>
+<p>The <b>Approval Action</b> activity sets an approval action on the current task. Use this activity to mark the current task record as approved or rejected.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>When an Approval Action activity is used to mark a task approved, the activity marks all pending approvals as <b>No Longer Required</b>. This activity behaves differently from <b>Set Values</b> or <b>Run Script</b> when used to set the <b>Approval</b> field's value.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Results_2"><span class="mw-headline-number">4.1</span> Results</span></h2>
+<p>The result value of the activity is the final approval disposition selected by the approver. The result value can be <b>Approved</b> or <b>Rejected</b>. A workflow designer can assign a result value using the <tt>activity.result</tt> variable from within a script field of the activity.
+</p>
+<h2><span class="mw-headline" id="Input_Variables_3"><span class="mw-headline-number">4.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Action
+</td>
+<td> The action to perform on the task. Options are:
+<ul><li><b>Mark task approved</b></li>
+<li><b>Mark task rejected</b></li>
+<li><b>Mark task requested</b></li>
+<li><b>Disregard pending approvals</b></li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Conditions_3"><span class="mw-headline-number">4.3</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity.
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Always
+</td>
+<td> The event or condition that causes the approval to move to the next workflow step.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_3"><span class="mw-headline-number">4.4</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Approval_Coordinator"><span class="mw-headline-number">5</span> Approval Coordinator</span></h1>
+<p>The <b>Approval Coordinator</b> activity is used as a container for one or more <b>Approval - User</b>, <b>Approval - Group</b> and <b>Manual Approval</b> activities. The <b>Approval Coordinator</b> is then responsible for waiting for the approval activities that are contained within it before deciding of it should complete with a result of <b>approved</b> or <b>rejected</b>. 
+</p><p>When the <b>Approval Coordinator</b> activity completes, all pending approvals that were created by any of the <b>Approval Coordinator</b> approval activities are immediately set to <b>No Longer Required</b>. If a single user is called as an approver twice by the same workflow, such as when a single user is both a product approver and an executive approver, any approvals for that user after the first are skipped.
+</p>
+<h2><span class="mw-headline" id="Result_Values_2"><span class="mw-headline-number">5.1</span> Result Values</span></h2>
+<p>The result value of the <b>Approval Coordinator</b> activity depends on the approval actions taken by the approvers and the approval conditions specified in the <b>Wait for</b> field. 
+Possible result values are:
+</p>
+<ul><li>Approved</li>
+<li>Rejected</li>
+<li>Deleted</li>
+<li>Cancelled</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_4"><span class="mw-headline-number">5.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+
+<tr>
+<td> Wait for
+</td>
+<td> Indicate what to wait for to indicate that the approval activity is approved or rejected. Options are:
+<ul><li><b>Any child activity to be approved</b> - Any child activity (User, Group or Manual Approval) that completes with a result of <b>approved</b> causes the <b>Approval Coordinator</b> activity to complete with a result of <b>approved</b></li>
+<li><b>All child activities to be approved</b> - All child activities of the <b>Approval Coordinator</b> activity must complete with a a result of <b>approved</b> to cause the <b>Approval Coordinator</b> activity to complete with a result of <b>approved</b> (see below for how a rejection is handled)</li>
+<li><b>The first approval or rejection from any child activity</b> - The first child activity that completes with a result of <b>approved</b> or <b>rejected</b> causes the <b>Approval Coordinator</b> activity to complete with the same result. Indicate what happens when any of the child activities completes with a result of <b>rejected</b>. Options are: 
+<ul><li><b>Reject the approval</b> - Immediately complete the Approval Coordinator activity with a result of <b>rejected</b></li>
+<li><b>Wait for other responses before deciding</b> - Wait until we get other responses from other child activities before making an approval or rejection decision.</li></ul></li></ul>
+<p>This allows users to change their mind until a decision is made. In addition, if <b>Wait for</b> is set to <b>Any child activity to approve</b> then a single child activity completion with a result of <b>approved</b> will cause the <b>Approval Coordinator</b> activity to complete with a result of <b>approved</b> even if other child activities have completed with a result of <b>rejected</b>. 
+</p>
+</td></tr>
+<tr>
+<td> Approval script
+</td>
+<td> If the <b>Wait for</b> variable is set to <b>Condition based on script</b> this script is called to determine how to handle an approval or rejection. The script needs to set the variable 'answer' to <i>, 'approved' or 'rejected' to indicate the overall approval status for this approval.</i> When called, the following variable is available to the script: <pre>      counts.total = total number of child approval activities that are part of this approval
+      counts.approved = # of child approval activities that approved so far
+      counts.rejected = # of child approval activities that rejected so far
+      counts.requested = # of child approval activities that are pending approval
+</pre>
+</td></tr></table>
+<h2><span class="mw-headline" id="Conditions_4"><span class="mw-headline-number">5.3</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity:
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Approved
+</td>
+<td> The users have approved the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Rejected
+</td>
+<td> The users have rejected the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Cancelled
+</td>
+<td> The users have rejected the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_4"><span class="mw-headline-number">5.4</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Generate"><span class="mw-headline-number">6</span> Generate</span></h1>
+<p>The <b>Generate</b> activity immediately creates task or approval records from any task or approval activities placed after the Generate activity in the workflow execution path. By default, the workflow does not create any tasks or approvals until it reaches them in the workflow. The <b>Generate</b> activity does the following:
+</p>
+<ol><li>Follows all transitions through the workflow to each activity. For each activity:
+<ul><li>If it is a Task activity, creates the Task and sets: 
+<ul><li>The State to <b>Pending</b> </li>
+<li>The Expected Start Date</li>
+<li>The Due Date </li></ul></li>
+<li>If it is an Approval activity, creates the Approvals and sets: 
+<ul><li>The Approval State to <i>Not Requested</i> </li>
+<li>The Expected Start Date </li>
+<li>The Due Date</li></ul></li></ul></li></ol>
+<p>Expected Start Dates and Due Dates are calculated based on the Expected Durations of all of the tasks and approvals between the <b>Generate</b> activity and the activity being updated. In the case of a branched path (between a <b>Branch</b> and <b>Join</b> activity), the longer duration will be used for any post-branch activities.
+</p><p>The <b>Generate</b> activity can be used more than once, and any tasks or approvals will be refreshed with updated information. This is useful in situations where the list of approvers or other important information is still editable while the workflow is in process, and it may be necessary to update/correct the generated approvals or tasks.
+</p><p>To exclude a set of activities from the <b>Generate</b> activity, check the <b>Skip during generate</b> checkbox on any Condition and its transitions will not be followed during the generate process. By default, the following conditions have the <b>Skip during generate</b> check box checked: 
+</p>
+<ul><li><b>Rejected</b> (for any of the approval activities) </li>
+<li><b>No</b> condition of <b>If</b> activity </li>
+<li><b>Continue</b> condition of <b>Turnstile</b> activity </li>
+<li><b>Incomplete</b> condition of <b>Join</b> activity</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_5"><span class="mw-headline-number">6.1</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Generate approvals
+</td>
+<td> If checked, approvals are created when running the Generate activity. If not checked, the approvals are used to compute their estimated duration but no approvals are created.
+</td></tr>
+<tr>
+<td> Generate tasks
+</td>
+<td> If checked, tasks are created when running the Generate activity. If not checked, the tasks are used to compute their estimated duration but no tasks are created.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_5"><span class="mw-headline-number">6.2</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr></table>
+<h2><span class="mw-headline" id="Example"><span class="mw-headline-number">6.3</span> Example</span></h2>
+<p><a href="index.php%3Ftitle=File:Workflow_Generate.png.html" class="image" title="Image:Workflow_Generate.png"><img alt="Image:Workflow_Generate.png" src="images/e/e9/Workflow_Generate.png" width="730" height="360" /></a> 
+</p><p>In this example, the following approvals are generated: 
+</p>
+<ul><li>Approval-2 </li>
+<li>Approval-3</li></ul>
+<p>Approval-4 is skipped since the Rejected Condition of Approval-3 has <i>Skip during generate</i> checked. 
+</p><p>Here is an example of using the Generate Activity that describes the Expected Start and Due Dates: 
+</p><p><a href="index.php%3Ftitle=File:Workflow_Generate_Join.png.html" class="image" title="Image:Workflow_Generate_Join.png"><img alt="Image:Workflow_Generate_Join.png" src="images/8/88/Workflow_Generate_Join.png" width="954" height="175" /></a> 
+</p><p>In this example, if the <b>Generate</b> activity is run on Jan 1, 2011. The following Expected Start Dates and Due Dates would be set for the generated Tasks: 
+</p>
+<table border="1">
+
+<tr>
+<th> Task
+</th>
+<th> Expected Start Date
+</th>
+<th> Reason
+</th>
+<th> Due Date
+</th></tr>
+<tr>
+<td> Task 1 (1 day)
+</td>
+<td> Jan. 1, 2011
+</td>
+<td>
+</td>
+<td> Jan. 2, 2011
+</td></tr>
+<tr>
+<td> Task 2 (1 day)
+</td>
+<td> Jan. 2, 2011
+</td>
+<td> Task 1 is 1 day
+</td>
+<td> Jan. 3, 2011
+</td></tr>
+<tr>
+<td> Task 3 (2 days)
+</td>
+<td> Jan. 1, 2011
+</td>
+<td>
+</td>
+<td> Jan. 3, 2011
+</td></tr>
+<tr>
+<td> Task 4 (1 day)
+</td>
+<td> Jan. 3, 2011
+</td>
+<td> Task 3 is 2 days
+</td>
+<td> Jan. 4, 2011
+</td></tr>
+<tr>
+<td> Task 5 (1 day)
+</td>
+<td> Jan. 4, 2011
+</td>
+<td> Task 4 ends the latest before the Join
+</td>
+<td> Jan. 5, 2011
+</td></tr></table>
+<p>Notice that <b>Task 5</b> starts on Jan. 4, 2011 since the longest path (based on Due Dates) to the Join is Task 3/Task 4.
+</p>
+<h1><span class="mw-headline" id="Manual_Approvals"><span class="mw-headline-number">7</span> Manual Approvals</span></h1>
+<p>The <b>Manual Approvals</b> activity watches and manages any approvals that users add manually outside of the workflow process. If there are no pending manual approvals when this activity executes, the activity will immediately complete with a result of <b>approved</b>. Approvals manually created after the activity has started executing are not watched. This activity does not create approval records. 
+</p><p>Use this activity to pause the workflow when a user adds a manual approval to a record with an associated workflow. The workflow waits for the approval to be closed before proceeding. 
+</p>
+<h2><span class="mw-headline" id="Input_Variables_6"><span class="mw-headline-number">7.1</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+
+<tr>
+<td> Wait for
+</td>
+<td> Indicate what to wait for to indicate that the approval activity is approved or rejected. Options are:
+<ul><li><b>Any manual user or group approval</b> - Any user can approve and the first approval causes the activity to complete with a result of <b>approved</b></li>
+<li><b>All manual user or group approvals</b> - All users must approve (see below for how a rejection is handled)</li>
+<li><b>First response from any manual approval</b> - The first approval or rejection from any user causes the activity to complete</li></ul>
+</td></tr>
+<tr>
+<td> When anyone rejects
+</td>
+<td> Indicate what happens when any user rejects their approval request. Options are:
+<ul><li><b>Reject the approval</b> - Immediately complete the activity with a result of <b>rejected</b></li>
+<li><b>Wait for other responses before deciding</b> - Wait until we get other responses before making an approval or rejection decision.</li></ul>
+<p>This allows users to change their mind until a decision is made. In addition, if <b>Wait for</b> is set to <b>Anyone to approve</b> then a single approval will cause the activity to complete with a result of <b>approved</b> even if one or more users reject. 
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Conditions_5"><span class="mw-headline-number">7.2</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity:
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Approved
+</td>
+<td> The users approved the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Rejected
+</td>
+<td> The users rejected the request based on the <b>Wait for</b> rules.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_6"><span class="mw-headline-number">7.3</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Rollback"><span class="mw-headline-number">8</span> Rollback</span></h1>
+<p>The <b>Rollback</b> activity transitions to an earlier activity, and updates all approvals and tasks executed after that point. Approvals are reset to <b>Not Requested</b>, and tasks are reset to <b>Open</b>. The workflow then resumes from that earlier activity. <b>Rollback</b> updates all activities that have executed between the rollback and the <i>transitioned to</i> activity, including those not directly joined by transition lines. As a result, processing might rollback farther than expected, because activities do not always execute in a predictable order. The best practice for using this activity is for workflows that have only one rollback. Using this activity with multiple rollbacks can result in task and approval activities being left in an unresolved state. For a detailed discussion of the differences between <b>Rollback</b> and <b>Rollback To</b>, see <a href="index.php%3Ftitle=Selecting_a_Rollback_Activity.html" title="Selecting a Rollback Activity">Selecting a Rollback Activity</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The <b>Rollback</b> activity does not reset <b>Manual Approval</b> activities. When the workflow moves through the Manual Approval stage the second time, it automatically approves or rejects based on the approval's state. If the <b>Manual Approval</b> activity is followed by a <b>Rollback</b> directly, this causes a loop.</i>
+</td></tr></table>
+<p><br />
+The <b>Rollback</b> activity is deprecated starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. Use the <a href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html#Rollback_To"><b>Rollback To</b></a> activity instead.
+</p>
+<h2><span class="mw-headline" id="Input_Variables_7"><span class="mw-headline-number">8.1</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Comment field
+</td>
+<td> The rollback comment is written to this field in the current task.
+</td></tr>
+<tr>
+<td> Comment
+</td>
+<td> This comment is written to the <b>Comment field</b> in the current task and is typically used to indicate that a rollback has occurred.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_7"><span class="mw-headline-number">8.2</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity, was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+<h1><span class="mw-headline" id="Rollback_To"><span class="mw-headline-number">9</span> Rollback To</span></h1>
+<p>The <b>Rollback To</b> activity transitions directly to the activity specified by the transition line arrow and has more predictable results than the <b>Rollback</b> activity. <b>Rollback To</b> determines which activities to reset based on the actual workflow sequence (transition line attachments) of activities between itself and the <i>transitioned to</i> activity, not the execution order. <b>Rollback To</b> then marks all the Approvals that have transitioned between the rollback and the <i>transitioned to</i> activity as <b>Not Yet Requested</b> and the Tasks as either <b>Open</b> or <b>Pending</b>. Use the <b>Rollback To</b> activity for all workflows in which multiple rollbacks are required. <b>Rollback To</b> has no variables.
+</p><p>For a detailed discussion of the differences between <b>Rollback</b> and <b>Rollback To</b>, see <a href="index.php%3Ftitle=Selecting_a_Rollback_Activity.html" title="Selecting a Rollback Activity">Selecting a Rollback Activity</a>. For sample workflows that use <b>Rollback To</b>, see <a href="index.php%3Ftitle=Designing_Workflows_with_Rollback_To.html" title="Designing Workflows with Rollback To">Designing Workflows with Rollback To</a>.
+</p>
+<h2><span class="mw-headline" id="Conditions_6"><span class="mw-headline-number">9.1</span> Conditions</span></h2>
+<p>The following conditions determine which transition comes after this activity.
+</p>
+<table class="standard" width="750px">
+
+<tr>
+<th> Condition
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Always
+</td>
+<td> The event or condition that causes the approval to revert to the previous workflow step.
+</td></tr>
+<tr>
+<td> Error
+</td>
+<td> The event or condition that generates an error.
+</td></tr>
+<tr>
+<td> Skipped
+</td>
+<td> The event or condition that allows a skipped approval.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_8"><span class="mw-headline-number">9.2</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine starts the <tt>run</tt> function of the activity.
+</td></tr>
+<tr>
+<td>Waiting
+</td>
+<td>The workflow engine ignores the activity until a specific event to restart the activity is fired.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activity was cancelled.
+</td></tr>
+<tr>
+<td>Error
+</td>
+<td>A JavaScript error occurred. Review the logs for error details.
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201100119
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.459 seconds
+Real time usage: 2.369 seconds
+Preprocessor visited node count: 305/1000000
+Preprocessor generated node count: 692/1000000
+Post‐expand include size: 7553/2097152 bytes
+Template argument size: 2384/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 2075.738      1 - -total
+  6.84%  141.979      1 - Template:Workflow
+  6.45%  133.977      1 - Template:Topic
+  0.53%   10.941      8 - Template:Note
+  0.45%    9.307      1 - Embedded:Workflow
+  0.44%    9.096      2 - Template:T
+  0.33%    6.947      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:8842-0!*!0!1!en!5!* and timestamp 20171201100117 and revision id 250517
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Approval_and_Rollback_Activities&amp;oldid=250517.html">http://wiki.servicenow.com/index.php?title=Approval_and_Rollback_Activities&amp;oldid=250517</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Activities.html" title="Category:Workflow Activities">Workflow Activities</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow.html" title="Category:Workflow">Workflow</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Activities.html" title="Category:Workflow Activities">Workflow Activities</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_8842"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="8842" data-vote-the-vote="5" data-vote-id="8842" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_8842_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="8842" data-vote-the-vote="1" data-vote-id="8842" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_8842_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Approval_and_Rollback_Activities.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Approval+and+Rollback+Activities&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Approval+and+Rollback+Activities&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Approval_Activities.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Approval_Activities&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Approval+and+Rollback+Activities.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Approval+and+Rollback+Activities&amp;returnto=Approval+and+Rollback+Activities&amp;oldid=250517&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FApproval_and_Rollback_Activities.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Approval_and_Rollback_Activities" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Approval_and_Rollback_Activities&amp;oldid=250517.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Approval_and_Rollback_Activities&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:35, 30 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1029});});</script></body></html>

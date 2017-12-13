@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>On-Call Scheduling API - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"On-Call_Scheduling_API","wgTitle":"On-Call Scheduling API","wgCurRevisionId":238086,"wgRevisionId":238086,"wgArticleId":22557,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["On-Call Scheduling"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"On-Call_Scheduling_API","wgRelevantArticleId":22557,"wgRequestId":"654daa26e7c4b8f982663696","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20140909001824"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=On-Call_Scheduling_API"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="On-Call Scheduling API"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="On-Call Scheduling"/>
+<meta name="category" content="On-Call Scheduling"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=On-Call_Scheduling_API.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:On-Call Scheduling API"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20140909001824"/>
+
+	<meta property="article:published_time" content="20140909001824"/>
+
+	<meta property="article:modified_time" content="20140909001824"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="On-Call Scheduling"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=On-Call_Scheduling_API"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-On-Call_Scheduling_API rootpage-On-Call_Scheduling_API skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=On-Call+Scheduling+API.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=On-Call+Scheduling+API&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">On-Call Scheduling API</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=User_Administration.html" title="User Administration">User Administration</a> &gt; <a href="index.php%3Ftitle=On-Call_Scheduling.html" title="On-Call Scheduling">On-Call Scheduling</a> &gt; On-Call Scheduling API</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=On-Call_Scheduling.html" title="On-Call Scheduling">On-Call Scheduling</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a23604e8d4f7t'></div><script type="text/javascript">window.tamOnload_tam5a23604e8d4f7t=[];tree = new dTree('tam5a23604e8d4f7t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a23604e8d4f7t = tree;
+                                               tam5a23604e8d4f7t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrading_to_On-Call_Scheduling\&quot;" title=\"Upgrading to On-Call Scheduling\">Upgrading to On-Call Scheduling</a>');
+
+tam5a23604e8d4f7t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_On-Call_Schedules\&quot;" title=\"Creating On-Call Schedules\">Creating an On-Call Schedule</a>');
+tam5a23604e8d4f7t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_On-Call_Schedules\&quot;" title=\"Managing On-Call Schedules\">Managing On-Call Schedules</a>');
+tam5a23604e8d4f7t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_On-Call_Scheduling\&quot;" title=\"Using On-Call Scheduling\">Using On-Call Scheduling</a>');
+tam5a23604e8d4f7t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_On-Call_Scheduling\&quot;" title=\"Installed with On-Call Scheduling\">Installed Components</a>');
+tam5a23604e8d4f7t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Escalations_with_On-Call_Scheduling\&quot;" title=\"Using Escalations with On-Call Scheduling\">Using Escalations</a>');
+tam5a23604e8d4f7t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Notify_with_On-Call_Scheduling\&quot;" title=\"Using Notify with On-Call Scheduling\">Using Notify</a>');
+tam5a23604e8d4f7t.add(8, 0, '<strong class=\"selflink\">On-Call Scheduling API</strong>');
+
+                                               document.getElementById('5a23604e8d4f7t').innerHTML = tam5a23604e8d4f7t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a23604e8d4f7t) { window.tamOnload_tam5a23604e8d4f7t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Schedules&amp;oldid=0.html" title="Schedules" class="mw-redirect">Schedules</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:On-Call_Scheduling.html" title="Book:On-Call Scheduling"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:On-Call_Scheduling.html" title="Book:On-Call Scheduling">On-Call Scheduling</a> </center>
+</td></tr></table>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The on-call scheduling API provides functionality for managing on-call schedules.
+</p>
+<h2><span class="mw-headline" id="Where_to_Use"><span class="mw-headline-number">1.1</span> Where to Use</span></h2>
+<p>Use this when you want to use on-call scheduling functionality with applications on your system.
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<table class="standard sortable">
+
+<tr>
+<th> Method Summary
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#spansOverlap.28parent.2C_child.2C_timeZone.29"> spansOverlap(parent, child, timeZone) </a>
+</td>
+<td> Checks if there is overlap in time between the parent spans and the child spans.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#getEscalateeAt.28groupId.2C_dateTime.2C_position.29"> getEscalateeAt(groupId, dateTime, position) </a>
+</td>
+<td> Gets an item to escalate to, either a user [sys_user] or notification device [cmn_notif_device], for a group's rota at the specified date and time and at a certain position in the escalation lineup.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#getEscalationPlan.28groupId.2C_dateTime.29"> getEscalationPlan(groupId, dateTime) </a>
+</td>
+<td> Gets a list of objects to escalate to, escalation plans that consists of either a user [sys_user] or notification device [cmn_notif_device], for a group's rota at the specified date and time.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#getEscalationType.28rotaID.29"> getEscalationType(rotaID) </a>
+</td>
+<td> Gets the type of escalation based on a simple calculation.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#getCatchAllType.28rotaID.29"> getCatchAllType(rotaID) </a>
+</td>
+<td> Gets the type of <tt>_catch all_</tt> that lives at the end of the escalation chain. Whenever the escalation chain finishes without any on-call person having been assigned, the <tt>_catch all_</tt> will be the final person the incident is assigned to (if configured).
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html#getCatchAll.28rotaID.29"> getCatchAll(rotaID) </a>
+</td>
+<td> Gets the <tt>sys_id</tt> of the catch all person. Use together with <tt>_getCatchAllType_</tt> to determine the source of the returned id. Gets the <tt>sys_id</tt> of the catch all persons.
+</td></tr></table>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">3</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="spansOverlap.28parent.2C_child.2C_timeZone.29"><span class="mw-headline-number">3.1</span> spansOverlap(parent, child, timeZone)</span></h2>
+<p>Checks if there is overlap in time between the parent spans and the child spans.
+</p>
+<h3><span class="mw-headline" id="Input_Parameters"><span class="mw-headline-number">3.1.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> parent
+</td>
+<td> ArrayList
+</td>
+<td> The parent spans to compare with.
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> child
+</td>
+<td> ArrayList
+</td>
+<td> The child spans to check for overlap.
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> timeZone
+</td>
+<td> String
+</td>
+<td> The time zone.
+</td>
+<td> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Returns"><span class="mw-headline-number">3.1.2</span> Returns</span></h3>
+<p>boolean: whether or not there is overlap between parent and child spans.
+</p>
+<h3><span class="mw-headline" id="Examples"><span class="mw-headline-number">3.1.3</span> Examples</span></h3>
+<p><b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">onCall</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">();</span>
+
+<span class="c1">// get a time range we are interested in</span>
+<span class="kd">var</span> <span class="nx">timeZone</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getSession</span><span class="p">().</span><span class="nx">getTimeZoneName</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">dateStart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">dateEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">().</span><span class="nx">addMonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// convert glidedatime to scheduledatetime because it is required</span>
+<span class="c1">// by the function being called below</span>
+<span class="kd">var</span> <span class="nx">scheduleStart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideScheduleDateTime</span><span class="p">(</span><span class="nx">dateStart</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">scheduleEnd</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">GlideScheduleDateTime</span><span class="p">(</span><span class="nx">dateEnd</span><span class="p">);</span>
+<span class="nx">scheduleStart</span><span class="p">.</span><span class="nx">setTimeZone</span><span class="p">(</span><span class="nx">timeZone</span><span class="p">);</span>
+<span class="nx">scheduleEnd</span><span class="p">.</span><span class="nx">setTimeZone</span><span class="p">(</span><span class="nx">timeZone</span><span class="p">);</span>
+
+<span class="c1">// calculate rotation items based on the date and time given</span>
+<span class="c1">// for all the groups the currently logged in user is a member of</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">&quot;OnCallRotationPersonal&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">rotation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OnCallRotationPersonal</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myGroups</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getUser</span><span class="p">().</span><span class="nx">getMyGroups</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">groupIter</span> <span class="o">=</span> <span class="nx">myGroups</span><span class="p">.</span><span class="nx">iterator</span><span class="p">();</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nx">groupIter</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()){</span>
+	<span class="kd">var</span> <span class="nx">rotaItems</span> <span class="o">=</span> <span class="nx">rotation</span><span class="p">.</span><span class="nx">onCallDuringPeriod</span><span class="p">(</span><span class="nx">groupIter</span><span class="p">.</span><span class="nx">next</span><span class="p">(),</span> <span class="nx">scheduleStart</span><span class="p">,</span> <span class="nx">scheduleEnd</span><span class="p">);</span>
+	
+	<span class="c1">// loop through rotation schedules</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rotaItems</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">parentItem</span> <span class="o">=</span> <span class="nx">rotaItems</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+		<span class="kd">var</span> <span class="nx">nextItem</span> <span class="o">=</span> <span class="nx">rotaItems</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+
+		<span class="c1">// check if previous and next time spans overlap</span>
+		<span class="kd">var</span> <span class="nx">overlaps</span> <span class="o">=</span> <span class="nx">onCall</span><span class="p">.</span><span class="nx">spansOverlap</span><span class="p">(</span><span class="nx">parentItem</span><span class="p">.</span><span class="nx">getTimeSpans</span><span class="p">(),</span> <span class="nx">nextItem</span><span class="p">.</span><span class="nx">getTimeSpans</span><span class="p">(),</span> 
+			<span class="nx">gs</span><span class="p">.</span><span class="nx">getSession</span><span class="p">().</span><span class="nx">getTimeZoneName</span><span class="p">());</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getEscalateeAt.28groupId.2C_dateTime.2C_position.29"><span class="mw-headline-number">3.2</span> getEscalateeAt(groupId, dateTime, position)</span></h2>
+<p>Gets an item to escalate to, either a user [sys_user] or notification device [cmn_notif_device], for a group's rota at the specified date and time and at a certain position in the escalation lineup.
+</p><p>The function returns NULL if an invalid position or group is passed as an argument.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You can use the <tt>getTableName()</tt> function to check whether the returning GlideRecord comes from the sys_user or cmn_notif_device table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Input_Parameters_2"><span class="mw-headline-number">3.2.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> groupId
+</td>
+<td> String
+</td>
+<td> The <tt>sys_id</tt> for the group to get the item to escalate to from.
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> dateTime
+</td>
+<td> GlideDateTime
+</td>
+<td> The date and time where the escalation lineup should begin.
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> position
+</td>
+<td> int
+</td>
+<td> The position in the lineup to determine the item to escalate to (1-based, which means the count starts with 1).
+</td>
+<td> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Returns_2"><span class="mw-headline-number">3.2.2</span> Returns</span></h3>
+<p>GlideRecord: for the item to escalate to or null if nothing found.
+</p>
+<h3><span class="mw-headline" id="Examples_2"><span class="mw-headline-number">3.2.3</span> Examples</span></h3>
+<p><b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">oncall</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">escalatee</span> <span class="o">=</span> <span class="nx">oncall</span><span class="p">.</span><span class="nx">getEscalateeAt</span><span class="p">(</span><span class="s2">&quot;287ebd7da9fe198100f92cc8d1d2154e&quot;</span><span class="p">,</span> 
+    <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">(</span><span class="s2">&quot;2013-11-26 09:00:00&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">escalatee</span><span class="p">){</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">escalatee</span><span class="p">.</span><span class="nx">getTableName</span><span class="p">());</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">escalatee</span><span class="p">.</span><span class="nx">getTableName</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getEscalationPlan.28groupId.2C_dateTime.29"><span class="mw-headline-number">3.3</span> getEscalationPlan(groupId, dateTime)</span></h2>
+<p>Gets a list of objects to escalate to, escalation plans that consist of either a user [sys_user] or notification device [cmn_notif_device], for a group's rota at the specified date and time.
+</p><p>The Escalation object contains the following fields:
+</p>
+<ul><li> int order:  the escalation order within the lineup</li>
+<li> String userId: sys_id of the sys_user record or null</li>
+<li> String deviceId: sys_id of the cmn_notif_device record or null</li>
+<li> boolean isDevice: true or false depending on whether the item to escalate to is a device or user</li>
+<li> GlideDuration timeBetweenReminders: the time between reminders being sent</li>
+<li> int reminderNum: number of reminders to be sent for each item to escalate to</li></ul>
+<h3><span class="mw-headline" id="Input_Parameters_3"><span class="mw-headline-number">3.3.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> groupId
+</td>
+<td> String
+</td>
+<td> The <tt>sys_id</tt> for the group to get the to escalate to from.
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> dateTime
+</td>
+<td> GlideDateTime
+</td>
+<td> The date and time when the escalation lineup should begin.
+</td>
+<td> No
+</td></tr>
+</table>
+<h3><span class="mw-headline" id="Returns_3"><span class="mw-headline-number">3.3.2</span> Returns</span></h3>
+<p>List&lt;Escalatee&gt;: a list of objects to escalate to.
+</p>
+<h3><span class="mw-headline" id="Examples_3"><span class="mw-headline-number">3.3.3</span> Examples</span></h3>
+<p><b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">gdt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">();</span>
+<span class="nx">gdt</span><span class="p">.</span><span class="nx">addMonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//Next month </span>
+
+<span class="kd">var</span> <span class="nx">escalationPlan</span> <span class="o">=</span> <span class="nx">rota</span><span class="p">.</span><span class="nx">getEscalationPlan</span><span class="p">(</span><span class="s2">&quot;486ae95aeb201100fcfb858ad106fe40&quot;</span><span class="p">,</span> <span class="nx">gdt</span><span class="p">);</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">size</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">order</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">userId</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span>
+       <span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">deviceId</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span>  <span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">timeBetweenReminders</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span>
+       <span class="nx">escalationPlan</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">reminderNum</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getEscalationType.28rotaID.29"><span class="mw-headline-number">3.4</span> getEscalationType(rotaID)</span></h2>
+<p>Gets the type of escalation based on a simple calculation. If there is one active roster in the rota, rotate through members. If there is more than one active roster in the rota, rotate through rosters. 
+</p>
+<h3><span class="mw-headline" id="Input_Parameters_4"><span class="mw-headline-number">3.4.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> rotaID
+</td>
+<td> String
+</td>
+<td> The <tt>sys_id</tt> for the rota to check for rosters.
+</td>
+<td> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Returns_4"><span class="mw-headline-number">3.4.2</span> Returns</span></h3>
+<ul><li> Member: if there is one roster in the rota.</li>
+<li> Roster: if there is more than one roster in the rota.</li>
+<li> No rosters in this rota: if none of the above.</li></ul>
+<h3><span class="mw-headline" id="Examples_4"><span class="mw-headline-number">3.4.3</span> Examples</span></h3>
+<p><b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">()</span> <span class="c1">//contains one roster</span>
+
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rota</span><span class="p">.</span><span class="nx">getEscalationType</span><span class="p">(</span><span class="s2">&quot;486ae95aeb201100fcfb858ad106fe40&quot;</span><span class="p">));</span> <span class="c1">// logs &#39;member&#39;</span>
+
+<span class="nx">Gets</span> <span class="nx">a</span> <span class="nx">list</span> <span class="k">of</span> <span class="nx">objectsto</span> <span class="nx">escalate</span> <span class="nx">to</span> <span class="p">(</span><span class="nx">escalation</span> <span class="nx">plan</span><span class="p">)</span> <span class="p">(</span><span class="nx">consisting</span> <span class="k">of</span> <span class="nx">either</span> <span class="nx">a</span> <span class="nx">user</span> <span class="p">[</span><span class="nx">sys_user</span><span class="p">]</span> <span class="nx">or</span> <span class="nx">notification</span> <span class="nx">device</span> <span class="p">[</span><span class="nx">cmn_notif_device</span><span class="p">])</span> <span class="k">for</span> <span class="nx">a</span> <span class="nx">group</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">rota</span><span class="p">,</span> <span class="nx">at</span> <span class="nx">the</span> <span class="nx">specified</span> <span class="nx">date</span> <span class="nx">and</span> <span class="nx">time</span><span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getCatchAllType.28rotaID.29"><span class="mw-headline-number">3.5</span> getCatchAllType(rotaID)</span></h2>
+<p>Gets the type of <tt>_catch all_</tt> that lives at the end of the escalation chain. Whenever the escalation chain finishes without any on-call person having been assigned, the <tt>_catch all_</tt> is the final person the incident is assigned to, if configured.
+</p>
+<h3><span class="mw-headline" id="Input_Parameters_5"><span class="mw-headline-number">3.5.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> rotaID
+</td>
+<td> String
+</td>
+<td> The sys_id of the rota.
+</td>
+<td> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Returns_5"><span class="mw-headline-number">3.5.2</span> Returns</span></h3>
+<ul><li> Null: invalid rota id or catch all is not available.</li>
+<li> Group_manager: the manager of the group linked to the rota is the catch all person.</li>
+<li> Individual: a configured user is the catch all person.</li>
+<li> All: all members of the configured roster are the catch all person.</li></ul>
+<h3><span class="mw-headline" id="Examples_5"><span class="mw-headline-number">3.5.3</span> Examples</span></h3>
+<p><b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rotaID</span> <span class="o">=</span> <span class="s2">&quot;...&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">rota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">()</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;catch all: &quot;</span> <span class="o">+</span> <span class="nx">rota</span><span class="p">.</span><span class="nx">catchAll</span><span class="p">(</span><span class="nx">rotaID</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; (type:&quot;</span> <span class="o">+</span> <span class="nx">rota</span><span class="p">.</span><span class="nx">catchAllType</span><span class="p">(</span><span class="nx">rotaID</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getCatchAll.28rotaID.29"><span class="mw-headline-number">3.6</span> getCatchAll(rotaID)</span></h2>
+<p>Gets the <tt>sys_id</tt> of the catch all person. Use together with <tt>_getCatchAllType_</tt> to determine the source of the returned id. Get the <tt>sys_id</tt> of the catch all persons.
+</p>
+<h3><span class="mw-headline" id="Input_Parameters_6"><span class="mw-headline-number">3.6.1</span> Input Parameters</span></h3>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Type
+</th>
+<th> Description
+</th>
+<th> Optional
+</th></tr>
+<tr>
+<td> rotaID
+</td>
+<td> String
+</td>
+<td> The sys_id of the rota.
+</td>
+<td> No
+</td></tr></table>
+<h3><span class="mw-headline" id="Returns_6"><span class="mw-headline-number">3.6.2</span> Returns</span></h3>
+<p>String: containing the sys_id of a sys_user, a cmn_rota_roster (or null).
+</p>
+<h3><span class="mw-headline" id="Examples_6"><span class="mw-headline-number">3.6.3</span> Examples</span></h3>
+<p>.
+<b>Example 1:</b> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">rotaID</span> <span class="o">=</span> <span class="s2">&quot;...&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">rota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">OnCallRotation</span><span class="p">()</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;catch all: &quot;</span> <span class="o">+</span> <span class="nx">rota</span><span class="p">.</span><span class="nx">catchAll</span><span class="p">(</span><span class="nx">rotaID</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; (type:&quot;</span> <span class="o">+</span> <span class="nx">rota</span><span class="p">.</span><span class="nx">catchAllType</span><span class="p">(</span><span class="nx">rotaID</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203022417
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.298 seconds
+Real time usage: 2.714 seconds
+Preprocessor visited node count: 206/1000000
+Preprocessor generated node count: 444/1000000
+Post‐expand include size: 1947/2097152 bytes
+Template argument size: 536/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  478.234      1 - -total
+ 11.85%   56.666      1 - Template:On-Call_Scheduling
+ 10.12%   48.395      1 - Template:Topic
+  1.41%    6.753      1 - Template:Note
+  1.21%    5.786      1 - Embedded:On-Call_Scheduling
+  1.16%    5.562      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22557-0!*!0!1!*!5!* and timestamp 20171203022414 and revision id 238086
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=On-Call_Scheduling_API&amp;oldid=238086.html">http://wiki.servicenow.com/index.php?title=On-Call_Scheduling_API&amp;oldid=238086</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=On-Call+Scheduling.html" title="Category:On-Call Scheduling">On-Call Scheduling</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=User+Administration.html" title="Category:User Administration">User Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=On-Call+Scheduling.html" title="Category:On-Call Scheduling">On-Call Scheduling</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22557"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22557" data-vote-the-vote="5" data-vote-id="22557" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22557_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22557" data-vote-the-vote="1" data-vote-id="22557" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22557_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=On-Call_Scheduling_API.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=On-Call+Scheduling+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=On-Call+Scheduling+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=On-Call_Scheduling_API.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=On-Call_Scheduling_API&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=On-Call+Scheduling+API.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=On-Call+Scheduling+API&amp;returnto=On-Call+Scheduling+API&amp;oldid=238086&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FOn-Call_Scheduling_API.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/On-Call_Scheduling_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;oldid=238086.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=On-Call_Scheduling_API&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:18, 9 September 2014.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":831});});</script></body></html>

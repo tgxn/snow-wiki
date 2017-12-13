@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>LDAP Integration - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LDAP_Integration","wgTitle":"LDAP Integration","wgCurRevisionId":250671,"wgRevisionId":250671,"wgArticleId":2999,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LDAP"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"LDAP_Integration","wgRelevantArticleId":2999,"wgRequestId":"8542b6dac51d1b3b50e7ab85","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831211139"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=LDAP_Integration"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="LDAP Integration"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="LDAP"/>
+<meta name="category" content="LDAP"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:LDAP Integration"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831211139"/>
+
+	<meta property="article:published_time" content="20170831211139"/>
+
+	<meta property="article:modified_time" content="20170831211139"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="LDAP"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=LDAP_Integration"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-LDAP_Integration rootpage-LDAP_Integration skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=LDAP+Integration.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">LDAP Integration</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO).html" title="External Authentication (Single Sign-On - SSO)">Single Sign-On</a> &gt; <strong class="selflink">LDAP</strong> &gt; LDAP Integration</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/ldap/concept/c_LDAPIntegration.html">LDAP Integration</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <strong class="selflink">LDAP Integration</strong>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=LDAP_Integration_Setup.html" title="LDAP Integration Setup">LDAP Integration Setup</a> 
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_LDAP_Integration.html" title="Getting Started with LDAP Integration">Getting Started with LDAP Integration</a></li>
+<li><a href="index.php%3Ftitle=Uploading_a_Certificate.html" title="Uploading a Certificate">Uploading a Certificate</a></li>
+<li><a href="index.php%3Ftitle=Setting_up_the_LDAP_Import_Map.html" title="Setting up the LDAP Import Map">Setting Up the LDAP Transform Map</a></li>
+<li><a href="index.php%3Ftitle=Record_Creation_Options_During_an_LDAP_Transform.html" title="Record Creation Options During an LDAP Transform">Record Creation Options During an LDAP Transform</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Integration_via_MID_Server_Setup.html" title="LDAP Integration via MID Server Setup">Setting up LDAP integration via a MID Server</a></li></ul></li>
+<li><a href="index.php%3Ftitle=LDAP_Integration_Troubleshooting.html" title="LDAP Integration Troubleshooting">LDAP Integration Troubleshooting</a>
+<ul><li><a href="index.php%3Ftitle=LDAP_Error_Codes.html" title="LDAP Error Codes">LDAP Error Codes</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html" title="Active Directory Application Mode (ADAM)">Active Directory (AD) Topics</a>
+<ul><li><a href="index.php%3Ftitle=Configuring_Microsoft_Active_Directory_for_SSL_Access.html" title="Configuring Microsoft Active Directory for SSL Access">Configuring Microsoft Active Directory for SSL Access</a></li>
+<li><a href="index.php%3Ftitle=Using_ADAMSync_To_Populate_ADAM.html" title="Using ADAMSync To Populate ADAM">Using ADAMSync To Populate ADAM</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Using_Global_Catalog.html" title="LDAP Using Global Catalog">LDAP Using Global Catalog</a></li></ul></li>
+<li><a href="index.php%3Ftitle=OpenLDAP_Minor_Schema_Modification.html" title="OpenLDAP Minor Schema Modification">OpenLDAP Minor Schema Modification</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Monitor.html" title="LDAP Monitor">LDAP Monitor</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integration Overview</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:LDAP.html" title="Book:LDAP"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:LDAP.html" title="Book:LDAP">Get the Book</a></b></center>
+</td></tr></table>
+</div> 
+ <div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Data_Population_and_Authentication"><span class="tocnumber">2</span> <span class="toctext">Data Population and Authentication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Data_Population"><span class="tocnumber">2.1</span> <span class="toctext">Data Population</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Scheduled_LDAP_Refresh"><span class="tocnumber">2.1.1</span> <span class="toctext">Scheduled LDAP Refresh</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Deleting_records"><span class="tocnumber">2.1.2</span> <span class="toctext">Deleting records</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Authentication"><span class="tocnumber">2.2</span> <span class="toctext">Authentication</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_On-Demand_Login"><span class="tocnumber">2.2.1</span> <span class="toctext">LDAP On-Demand Login</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Integration_Requirements"><span class="tocnumber">3</span> <span class="toctext">LDAP Integration Requirements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Supported_LDAP_Servers"><span class="tocnumber">3.1</span> <span class="toctext">Supported LDAP Servers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Query_Limits"><span class="tocnumber">3.1.1</span> <span class="toctext">LDAP Query Limits</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Configuration_Options"><span class="tocnumber">4</span> <span class="toctext">LDAP Configuration Options</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Secure_Connections"><span class="tocnumber">4.1</span> <span class="toctext">Secure Connections</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Listener"><span class="tocnumber">4.2</span> <span class="toctext">LDAP Listener</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Monitor"><span class="tocnumber">4.2.1</span> <span class="toctext">LDAP Monitor</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Multiple_Domains"><span class="tocnumber">4.3</span> <span class="toctext">Multiple Domains</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Enhancements"><span class="tocnumber">5</span> <span class="toctext">Enhancements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Fuji"><span class="tocnumber">5.1</span> <span class="toctext">Fuji</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Eureka"><span class="tocnumber">5.2</span> <span class="toctext">Eureka</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Dublin"><span class="tocnumber">5.3</span> <span class="toctext">Dublin</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><br />
+</p><p>The latest release this documentation applies to is Fuji. For the Geneva release, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/integrate/ldap/concept/c_LDAPIntegration.html">LDAP integration</a>. Documentation for later releases is also on <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://docs.servicenow.com">docs.servicenow.com</a>. 
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Administrators integrate with a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Ldap">Lightweight Directory Access Protocol (LDAP)</a> directory to streamline the user login process and to automate administrative tasks such as creating users and assigning them roles. An LDAP integration allows the ServiceNow system to use your existing LDAP servers as the master source of user data. Typically, an LDAP integration is also part of a <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO).html" title="External Authentication (Single Sign-On - SSO)">single sign-on</a> implementation.
+</p><p>The integration uses the LDAP service account credentials to retrieve the user distinguished name (DN) from the LDAP server. Given the DN value for the user, the integration then rebinds with LDAP with the user's DN and password. The password that the user enters is contained entirely in the HTTPS session. The integration never stores LDAP passwords.
+</p><p>The integration uses a read-only connection that never writes to the LDAP directory. The integration only queries for information, and then updates its internal database accordingly.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This page gives general information about the LDAP integration.  For detailed information about setting up the integration, see <a href="index.php%3Ftitle=LDAP_Integration_Setup.html" title="LDAP Integration Setup">LDAP Integration Setup</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If your instance is using an LDAP integration and the Active Directory settings require users to reset their password upon login, your users will not be able to log in the instance. The instance cannot change any user's active directory password.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Data_Population_and_Authentication"><span class="mw-headline-number">2</span> Data Population and Authentication</span></h1>
+<p>There are two aspects to the integration:
+</p>
+<ul><li><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Data_Population">Data population</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Authentication">Authentication</a></li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Functionality described in this integration is not available by default. This integration involves post-deployment customization performed by an experienced administrator or by ServiceNow professional services consultants.</i>
+</td></tr></table>
+<h2><span class="mw-headline" id="Data_Population"><span class="mw-headline-number">2.1</span> Data Population</span></h2>
+<p>An integration to the LDAP servers allows you to quickly and easily populate the ServiceNow database with user records from the existing LDAP database. To prevent data inconsistencies, <a href="index.php%3Ftitle=Record_Creation_Options_During_an_LDAP_Transform.html" title="Record Creation Options During an LDAP Transform">configuration settings</a> provide the ability to create, ignore, or skip incoming LDAP records. 
+</p><p>You can also limit the data the integration imports by specifying LDAP attributes, thereby importing only the data that you want to expose to an instance. Typically, the LDAP attributes you specify become part of the integration <a href="index.php%3Ftitle=LDAP_Integration_Configuration.html#Step_9._Select_or_Create_a_Transform_Map_for_LDAP_Data" title="LDAP Integration Configuration" class="mw-redirect">transform map</a>. If you do not specify any LDAP attributes, the integration imports all available object attributes from the LDAP server. The instance stores imported LDAP data in temporary import set tables, so the more attributes you import, the longer the import time. For more information, see <a href="index.php%3Ftitle=LDAP_Integration_Configuration.html#Specify_Attributes_for_Better_Performance_or_Security_Considerations" title="LDAP Integration Configuration" class="mw-redirect">Specify Attributes for Better Performance or Security Considerations</a>.
+</p>
+<h3><span class="mw-headline" id="Scheduled_LDAP_Refresh"><span class="mw-headline-number">2.1.1</span> Scheduled LDAP Refresh</span></h3>
+<p>It is recommended that you run a scheduled scan of the LDAP server once a night. The scan queries all applicable user records' attributes and compares them to accounts on your instances. If the scan identifies a difference, the integration modifies the instance user record with the changed attribute. The load placed on the LDAP server during the refresh depends on how many records are queried and the number of attributes being compared. 
+</p><p>Schedule the refresh during off-peak hours at a time that minimizes conflicts. A large refresh operation can affect other scheduled operations, such as running reports.
+</p>
+<h3><span class="mw-headline" id="Deleting_records"><span class="mw-headline-number">2.1.2</span> Deleting records</span></h3>
+<p>By default, the ServiceNow system does not delete any entries after they disappear from LDAP. This is because deleting an entry also deletes the entire history and references to the deleted entry. 
+</p><p>For example, configuration items (CIs), SLA agreements, software licenses, purchase orders, and service catalog entries all have a reference to <b>Department</b>, and if a department is deleted, then the integration clears all references to the department. Also, deleting a user results in losing all history of what that user did. Decide whether to retain or <a href="index.php%3Ftitle=Deleting_a_Table%2527s_Records.html" title="Deleting a Table's Records" class="mw-redirect">manually delete</a> LDAP entries according to your organization's needs.
+</p>
+<h2><span class="mw-headline" id="Authentication"><span class="mw-headline-number">2.2</span> Authentication</span></h2>
+<p>When a user enters network domain credentials in the ServiceNow login page, the instance passes those credentials to each defined LDAP server. The LDAP server responds with an <i>authorized</i> or <i>unauthorized</i> message that the ServiceNow system uses to determine whether access should be granted. By authenticating against your LDAP server, users access the ServiceNow platform with the same credentials that they use for other internal resources on your network domain. Also, you can reuse any existing password and security policies that are already in place. For example, the LDAP server may already have account lockout and password expiration policies.
+</p><p>When you enable LDAP, the ServiceNow system updates user records with these fields.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Source
+</td>
+<td> Identifies whether or not LDAP is used to validate a user. If the source starts with <i>ldap</i>, then the user is validated via LDAP. If the source does not start with <i>ldap</i>, then the password on the user record is used to validate the user upon login.
+</td></tr>
+<tr>
+<td> LDAP Server
+</td>
+<td> Identifies which LDAP server authenticates the user when there are multiple LDAP servers.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The ServiceNow system does not support LDAP password authentication through a <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a>. A ServiceNow instance must be able to directly connect with an LDAP server to support password authentication.</i>
+</td></tr></table>
+<h3><span class="mw-headline" id="LDAP_On-Demand_Login"><span class="mw-headline-number">2.2.1</span> LDAP On-Demand Login</span></h3>
+<p>After an LDAP integration is established, the instance can allow new users to log in to the system even if they do not yet have an account on the instance. When a new user attempts to log in to the instance, the integration checks to see if this user has a ServiceNow account. If the integration does not find an existing user account, it automatically queries the LDAP server for the username that was entered. If a matching LDAP account is found, the integration tries to authenticate with the password the user entered. If the password is valid, the instance creates an account for the user, populates the account with all applicable LDAP information, and logs the user in to the instance.
+</p><p>On-demand login uses the <b>LDAP User Import</b> transform map. For more information on transform map requirements, see <a href="index.php%3Ftitle=LDAP_Integration_Setup.html#Step_9._Select_or_Create_a_Transform_Map_for_LDAP_Data" title="LDAP Integration Setup">Select or Create a Transform Map for LDAP Data</a>.
+</p>
+<h1><span class="mw-headline" id="LDAP_Integration_Requirements"><span class="mw-headline-number">3</span> LDAP Integration Requirements</span></h1>
+<p>The LDAP integration requires:
+</p>
+<ul><li> An LDAP v3 compliant directory services server 
+<ul><li> Allows inbound network access through the firewall (ServiceNow to LDAP)</li>
+<li> [Optional] Accepts anonymous login</li>
+<li> [Optional] Supports paging for large LDAP queries</li></ul></li>
+<li> The external IP address or fully-qualified domain name of the LDAP server</li>
+<li> A read-only LDAP account of your choosing</li>
+<li> For multiple domains, network access for each domain controller</li>
+<li> For LDAPS, a PKI certificate</li>
+<li> For LDAP listener, a Microsoft Active Directory server that supports persistent queries (ADNotify)</li></ul>
+<h2><span class="mw-headline" id="Supported_LDAP_Servers"><span class="mw-headline-number">3.1</span> Supported LDAP Servers</span></h2>
+<p>Using JNDI to interface with the LDAP server, the ServiceNow platform has successfully integrated with:
+</p>
+<ul><li>Microsoft Active Directory</li>
+<li>Novell</li>
+<li>Domino (Lotus Notes)</li>
+<li>Open LDAP</li></ul>
+<h3><span class="mw-headline" id="LDAP_Query_Limits"><span class="mw-headline-number">3.1.1</span> LDAP Query Limits</span></h3>
+<p>By default, Active Directory 2000/2003 has an LDAP query limit (<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://support.microsoft.com/kb/315071">maxPageSize</a>) of 1000 objects to prevent excessive loads and denial of service attacks. The ServiceNow system has two methods of dealing with this limit. The default method is to break up the query to return fewer than 1000 objects at a time. For example, query only for objects starting with the letter <i>a</i>, then query for <i>b</i> objects. 
+</p><p>The more efficient method for large environments is to enable paging, which is supported by default on all Microsoft Active Directory servers. Paging automatically splits the results into multiple result sets so the integration does not have to split up the query into multiple requests.
+</p>
+<h1><span class="mw-headline" id="LDAP_Configuration_Options"><span class="mw-headline-number">4</span> LDAP Configuration Options</span></h1>
+<p>The LDAP integration offers these configuration options:
+</p>
+<ul><li> <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Secure_Connections">Secure connections</a></li>
+<li> <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#LDAP_Listener">LDAP listener</a></li>
+<li> <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Multiple_Domains">Multiple domains</a></li></ul>
+<h2><span class="mw-headline" id="Secure_Connections"><span class="mw-headline-number">4.1</span> Secure Connections</span></h2>
+<p>The LDAP integration ensures security by connecting from a single machine that uses a fixed IP address through a specific port on the firewall. Furthermore, the connection requires a read-only LDAP account of your choosing for authentication. If you need additional protection for the LDAP integration, you can use one of these security features:
+</p>
+<ul><li> <b>MID Server:</b> To shield your LDAP server from external network traffic, install a <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> on the local network and configure the ServiceNow system to communicate with the MID Server over a secure channel.</li>
+<li> <b>LDAPS:</b> To establish an encrypted LDAPS connection, load the public side of your LDAP server's <a href="index.php%3Ftitle=Uploading_an_LDAP_Certificate.html" title="Uploading an LDAP Certificate" class="mw-redirect">SSL certificate</a>. The integration uses the certificate to encrypt all communication between the LDAP server and the ServiceNow system. </li>
+<li> <b>VPN:</b> To secure the LDAP server with an encrypted <a href="index.php%3Ftitle=VPN.html" title="VPN" class="mw-redirect">point-to-point IPSEC VPN tunnel</a>, speak to your ServiceNow account manager for details and pricing.</li></ul>
+<p>For more information about VPNs, Mid Servers, and LDAP integrations, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://community.servicenow.com/community/blogs/blog/2014/11/25/you-dont-need-a-vpn">You Don't Need A VPN Part I</a> on the ServiceNow Community.
+</p>
+<h2><span class="mw-headline" id="LDAP_Listener"><span class="mw-headline-number">4.2</span> LDAP Listener</span></h2>
+<p>A listener is a dedicated process that periodically searches for changes to users and groups on the LDAP server. The listener can be deployed on a Microsoft Active Directory server that supports persistent queries (ADNotify), or on an LDAP server that supports persistent search request control (with OID 2.16.840.1.113730.3.4.3), which is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p><p>If the LDAP server supports a persistent search, the LDAP listener recognizes any user and group changes made to any of the applicable LDAP accounts and forwards them to your instance within approximately 10 seconds. This allows ServiceNow to have a nearly real-time copy of your users' account details without having to wait for the next scheduled refresh. The LDAP listener can only synchronize objects that map to the User [sys_users] and Group [sys_user_group] tables.
+</p><p>To enable a listener on an LDAP server record, see <a href="index.php%3Ftitle=LDAP_Integration_Setup.html#Enable_a_Listener" title="LDAP Integration Setup">Enable a Listener</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If a user is added via the listener, but the user does not meet the requirements as defined by the OU filter, then the instance ignores the record on the LDAP server. If it meets the criteria, the user is added to the instance.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="LDAP_Monitor"><span class="mw-headline-number">4.2.1</span> LDAP Monitor</span></h3>
+<p>The <a href="index.php%3Ftitle=LDAP_Monitor.html" title="LDAP Monitor">LDAP monitor</a> provides the current status of the LDAP listener (starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release)</a>.  
+</p><p><a href="index.php%3Ftitle=File:LDAP_monitor.png.html" class="image"><img alt="LDAP monitor.png" src="images/thumb/3/30/LDAP_monitor.png/600px-LDAP_monitor.png" width="600" height="189" srcset="/images/thumb/3/30/LDAP_monitor.png/900px-LDAP_monitor.png 1.5x, /images/thumb/3/30/LDAP_monitor.png/1200px-LDAP_monitor.png 2x" /></a>
+</p><p>The available states are:
+</p>
+<ul><li>Active</li>
+<li>Inactive</li>
+<li>Error</li>
+<li>Active (Shutting down...)</li>
+<li>Error (Shutting down...)</li></ul>
+<p>In addition to its current state, the monitor also shows:
+</p>
+<ul><li>The last message detected by the listener, such as <b>waiting for LDAP changes</b>, <b>error connecting</b>, and so forth.</li>
+<li>The last LDAP user change, such as <b>new user</b>, <b>updated user</b>, and so forth.</li>
+<li>The last error that occurred.</li></ul>
+<h2><span class="mw-headline" id="Multiple_Domains"><span class="mw-headline-number">4.3</span> Multiple Domains</span></h2>
+<p>You can establish multiple network domains within the same forest or for completely non-trusted domains. The recommended method is to create a separate <a href="index.php%3Ftitle=LDAP_Integration_Configuration.html#Step_3._Define_the_LDAP_Server" title="LDAP Integration Configuration" class="mw-redirect">LDAP server</a> record for each domain. Each LDAP server record must point to a domain controller for that domain. This means the local network must allow connections to each of the domain controllers. 
+</p><p>After expanding to more than one network domain, it is critical that you identify unique LDAP attributes for the application user names and import coalesce values. A common unique coalesce attribute for Active Directory is <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms679024(v=vs.85).aspx">objectSid</a>. Unique user names may vary based on the LDAP data design. Common attributes are <tt>email</tt> or <tt>userPrincipalName</tt>.
+</p>
+<h1><span class="mw-headline" id="Enhancements"><span class="mw-headline-number">5</span> Enhancements</span></h1>
+<h2><span class="mw-headline" id="Fuji"><span class="mw-headline-number">5.1</span> Fuji</span></h2>
+<ul><li> Improves the way administrators can add and manage <a href="index.php%3Ftitle=LDAP_Integration_Setup.html#Specify_Redundant_LDAP_Servers" title="LDAP Integration Setup">redundant LDAP servers</a>.</li>
+<li> Automatically changes the <a href="index.php%3Ftitle=LDAP_Integration_Setup.html#Automatic_Operational_Status_Update" title="LDAP Integration Setup">operational status</a> of servers to up or down depending on the results of connection tests.</li></ul>
+<h2><span class="mw-headline" id="Eureka"><span class="mw-headline-number">5.2</span> Eureka</span></h2>
+<ul><li> An <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html#LDAP_Monitor" title="LDAP Integration">LDAP monitor</a> reports on the current status of LDAP listeners and servers. </li>
+<li>The LDAP listener functionality is available on the MID Server and supports Microsoft Active Directory servers and LDAP servers with persistent search request control.</li></ul>
+<h2><span class="mw-headline" id="Dublin"><span class="mw-headline-number">5.3</span> Dublin</span></h2>
+<ul><li> ServiceNow can connect to an LDAP server using a <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a>. See <a href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html#Secure_Connections">Secure Connections</a>.</li>
+<li> ServiceNow automatically tests the connection to the LDAP server every time the LDAP Server form is opened and every time the <b>LDAP Connection Test</b> scheduled job runs the test. By default, the scheduled job tests the connection every 15 minutes, but administrators can modify this value.</li>
+<li> To better notify administrators when the LDAP server connection fails, the following items were added:
+<ul><li>The <b>LDAP Admins</b> user group. Administrators should add the necessary LDAP administrators to this group.</li>
+<li>The <b>LDAP Connection Failed</b> email notification, which automatically sends email to the LDAP Admins group when a connection failure occurs.  </li>
+<li>The <b>LDAP Connection Test</b> scheduled job, which creates the connection failure event, triggering the <b>LDAP Connection Failed</b> email notification.</li></ul></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201101109
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.120 seconds
+Real time usage: 0.168 seconds
+Preprocessor visited node count: 161/1000000
+Preprocessor generated node count: 422/1000000
+Post‐expand include size: 6371/2097152 bytes
+Template argument size: 2681/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   30.685      1 - -total
+ 69.59%   21.353      1 - Template:LDAP
+ 59.14%   18.146      1 - Template:Topic
+ 16.74%    5.137      4 - Template:T
+ 12.79%    3.926      6 - Template:Note
+ 10.34%    3.174      1 - Template:LimitedTOC
+  8.56%    2.627      1 - Embedded:LDAP
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2999-0!*!0!1!en!5!* and timestamp 20171201101109 and revision id 250671
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=LDAP_Integration&amp;oldid=250671.html">http://wiki.servicenow.com/index.php?title=LDAP_Integration&amp;oldid=250671</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=LDAP.html" title="Category:LDAP">LDAP</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=LDAP.html" title="Category:LDAP">LDAP</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2999"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2999" data-vote-the-vote="5" data-vote-id="2999" data-vote-action="5" data-vote-rating="4.43" data-vote-voted="0" id="rating_2999_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2999" data-vote-the-vote="1" data-vote-id="2999" data-vote-action="5" data-vote-rating="4.43" data-vote-voted="0" id="rating_2999_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=LDAP+Integration&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=LDAP+Integration&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=LDAP_Integration.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=LDAP_Integration&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=LDAP+Integration.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=LDAP+Integration&amp;returnto=LDAP+Integration&amp;oldid=250671&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FLDAP_Integration.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/LDAP_Integration" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=LDAP_Integration&amp;oldid=250671.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=LDAP_Integration&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 21:11, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":895});});</script></body></html>

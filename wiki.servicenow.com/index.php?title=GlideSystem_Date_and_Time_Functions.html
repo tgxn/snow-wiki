@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>GlideSystem Date and Time Functions - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"GlideSystem_Date_and_Time_Functions","wgTitle":"GlideSystem Date and Time Functions","wgCurRevisionId":250607,"wgRevisionId":250607,"wgArticleId":7566,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Glide Server APIs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"GlideSystem_Date_and_Time_Functions","wgRelevantArticleId":7566,"wgRequestId":"e44791d39ff697d7686e8472","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831184025"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=GlideSystem_Date_and_Time_Functions"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="GlideSystem Date and Time Functions"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Glide Server APIs"/>
+<meta name="category" content="Glide Server APIs"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:GlideSystem Date and Time Functions"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831184025"/>
+
+	<meta property="article:published_time" content="20170831184025"/>
+
+	<meta property="article:modified_time" content="20170831184025"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Glide Server APIs"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=GlideSystem_Date_and_Time_Functions"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-GlideSystem_Date_and_Time_Functions rootpage-GlideSystem_Date_and_Time_Functions skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=GlideSystem+Date+and+Time+Functions.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=GlideSystem+Date+and+Time+Functions&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">GlideSystem Date and Time Functions</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Server_API_Reference.html" title="Server API Reference">Server APIs</a>  &gt; Glide Server APIs &gt; GlideSystem Date and Time Functions</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#column-one">navigation</a>, <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/time/reference/r_UseDateAndTimeFields.html">Date and Time Fields</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a212a1a1111ft'></div><script type="text/javascript">window.tamOnload_tam5a212a1a1111ft=[];tree = new dTree('tam5a212a1a1111ft');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a212a1a1111ft = tree;
+                                               tam5a212a1a1111ft.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a212a1a1111ft.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a212a1a1111ft.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a212a1a1111ft.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a212a1a1111ft.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a212a1a1111ft.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a212a1a1111ft.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a212a1a1111ft.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a212a1a1111ft.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a212a1a1111ft.add(10, 0, 'Jelly');
+tam5a212a1a1111ft.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extensions_to_Jelly_Syntax\&quot;" title=\"Extensions to Jelly Syntax\">Extensions to Jelly Syntax</a> ');
+tam5a212a1a1111ft.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a212a1a1111ft.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a212a1a1111ft.add(14, 0, 'Debugging');
+tam5a212a1a1111ft.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a212a1a1111ft.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a212a1a1111ft.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a212a1a1111ft.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a212a1a1111ft.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a212a1a1111ft.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a212a1a1111ft.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a212a1a1111ft.add(22, 0, 'Client-Side Glide Reference');
+tam5a212a1a1111ft.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a212a1a1111ft.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a212a1a1111ft.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a212a1a1111ft.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a212a1a1111ft.add(27, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Side_GlideRecord\&quot;" title=\"Client Side GlideRecord\">Client-side GlideRecord</a>');
+tam5a212a1a1111ft.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a212a1a1111ft.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a212a1a1111ft.add(30, 0, 'Server-Side Glide Reference');
+tam5a212a1a1111ft.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a212a1a1111ft.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a212a1a1111ft.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a212a1a1111ft.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a212a1a1111ft.add(35, 34, '<strong class=\"selflink\">Date and Time Functions</strong> ');
+tam5a212a1a1111ft.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a212a1a1111ft.add(37, 0, 'Script Helpers');
+tam5a212a1a1111ft.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a212a1a1111ft.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a212a1a1111ft.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a212a1a1111ft.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a212a1a1111ft.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a212a1a1111ft.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a212a1a1111ft.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a212a1a1111ft.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a212a1a1111ft.add(46, 0, 'Script Objects');
+tam5a212a1a1111ft.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a212a1a1111ft.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a212a1a1111ft.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a212a1a1111ft').innerHTML = tam5a212a1a1111ft.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a212a1a1111ft) { window.tamOnload_tam5a212a1a1111ft[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(102, 205, 0); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Note:</b> This functionality requires a knowledge of <b>Javascript</b>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/script/glide-server-apis/concept/c_GlideSystem.html">GlideSystem</a> class provides methods for working with a number of system-level utilities. The methods on this page are the GlideSystem methods related to calculating dates and times. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The global Glide APIs are not available in scoped scripts. There are scoped Glide APIs for use in scoped scripts. The scoped Glide APIs provide a subset of the global Glide API methods. For information on scoped applications see <a href="index.php%3Ftitle=Application_Scope.html" title="Application Scope">Application Scope</a>,  <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications.html" title="Scripting in Scoped Applications">scripting in scoped applications</a>, and the <a href="index.php%3Ftitle=List_of_Scoped_Scriptable_Objects.html" title="List of Scoped Scriptable Objects">list of scoped APIs</a>.</i>
+</td></tr></table>
+<p><br />
+For the full list of GlideSystem methods, see <a href="index.php%3Ftitle=GlideSystem.html" title="GlideSystem">GlideSystem</a>. There are also date and time functions provided via the <a href="index.php%3Ftitle=DateTimeUtils.html" title="DateTimeUtils">DateTimeUtils</a> script include.
+</p>
+<table cellspacing="1" cellpadding="3" border="1" width="550px" class="sortable">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Method Summary</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfLastMonth.28.29" title="GlideSystem Date and Time Functions">beginningOfLastMonth()</a>
+</td>
+<td>  Gets the date and time for the beginning of last month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfLastWeek.28.29" title="GlideSystem Date and Time Functions">beginningOfLastWeek()</a>
+</td>
+<td>  Gets the date and time for the beginning of last week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfNextWeek.28.29" title="GlideSystem Date and Time Functions">beginningOfNextWeek()</a>
+</td>
+<td>  Gets the date and time for the beginning of next week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfNextMonth.28.29" title="GlideSystem Date and Time Functions">beginningOfNextMonth()</a>
+</td>
+<td>  Gets the date and time for the beginning of next month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfNextYear.28.29" title="GlideSystem Date and Time Functions">beginningOfNextYear()</a>
+</td>
+<td>  Gets the date and time for the beginning of next year in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfThisMonth.28.29" title="GlideSystem Date and Time Functions">beginningOfThisMonth()</a>
+</td>
+<td>  Gets the date and time for the beginning of this month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfThisQuarter.28.29" title="GlideSystem Date and Time Functions">beginningOfThisQuarter()</a>
+</td>
+<td>  Gets the date and time for the beginning of this quarter in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfThisWeek.28.29" title="GlideSystem Date and Time Functions">beginningOfThisWeek()</a>
+</td>
+<td>  Gets the date and time for the beginning of this week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfThisYear.28.29" title="GlideSystem Date and Time Functions">beginningOfThisYear()</a>
+</td>
+<td>  Gets the date and time for the beginning of this week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfToday.28.29" title="GlideSystem Date and Time Functions">beginningOfToday()</a>
+</td>
+<td>  Gets the date and time for the beginning of today in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#beginningOfYesterday.28.29" title="GlideSystem Date and Time Functions">beginningOfYesterday()</a>
+</td>
+<td>  Gets the date and time for the beginning of yesterday in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#calDateDiff.28String.2C_String.2C_boolean.29" title="GlideSystem Date and Time Functions">calDateDiff(String, String, boolean)</a>
+</td>
+<td>  Calculate the difference between two dates using the default calendar. <b>Note:</b> Calendars are now legacy. If Schedules are being used, see <a href="index.php%3Ftitle=Calculate_Duration_Given_a_Schedule.html" title="Calculate Duration Given a Schedule">Calculate Duration Given a Schedule</a>.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#dateDiff.28String.2C_String.2C_boolean.29" title="GlideSystem Date and Time Functions">dateDiff(String, String, boolean)</a>
+</td>
+<td>  Calculates the difference between two dates. The parameters must be in the user/system date time format.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#dateGenerate.28String.2C_String.29" title="GlideSystem Date and Time Functions">dateGenerate(String, String)</a>
+</td>
+<td>  Generates a date and time for the specified date in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#daysAgo.28int.29" title="GlideSystem Date and Time Functions">daysAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of days ago. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#daysAgoEnd.28int.29" title="GlideSystem Date and Time Functions">daysAgoEnd(int)</a>
+</td>
+<td>  Gets a date and time for end of the day a certain number of days ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#daysAgoStart.28int.29" title="GlideSystem Date and Time Functions">daysAgoStart(int)</a>
+</td>
+<td>  Gets a date and time for beginning of the day a certain number of days ago.  The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfLastMonth.28.29" title="GlideSystem Date and Time Functions">endOfLastMonth()</a>
+</td>
+<td>  Gets the date and time for the end of last month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfLastWeek.28.29" title="GlideSystem Date and Time Functions">endOfLastWeek()</a>
+</td>
+<td>  Gets the date and time for the end of last week in GMT, in the format <b>yyyy-mm-dd hh:mm:ss.</b>
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfLastYear.28.29" title="GlideSystem Date and Time Functions">endOfLastYear()</a>
+</td>
+<td>  Gets the date and time for the end of last year in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfNextMonth.28.29" title="GlideSystem Date and Time Functions">endOfNextMonth()</a>
+</td>
+<td>  Gets the date and time for the end of next month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfNextWeek.28.29" title="GlideSystem Date and Time Functions">endOfNextWeek()</a>
+</td>
+<td>  Gets the date and time for the end of next week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfNextYear.28.29" title="GlideSystem Date and Time Functions">endOfNextYear()</a>
+</td>
+<td>  Gets the date and time for the end of next year in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfThisMonth.28.29" title="GlideSystem Date and Time Functions">endOfThisMonth()</a>
+</td>
+<td>  Gets the date and time for the end of this month in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfThisQuarter.28.29" title="GlideSystem Date and Time Functions">endOfThisQuarter()</a>
+</td>
+<td>  Gets the date and time for the end of this quarter in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfThisWeek.28.29" title="GlideSystem Date and Time Functions">endOfThisWeek()</a>
+</td>
+<td>  Gets the date and time for the beginning of this week in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfThisYear.28.29" title="GlideSystem Date and Time Functions">endOfThisYear()</a>
+</td>
+<td>  Gets the date and time for the end of this year in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfToday.28.29" title="GlideSystem Date and Time Functions">endOfToday()</a>
+</td>
+<td>  Gets the date and time for the end of today in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#endOfYesterday.28.29" title="GlideSystem Date and Time Functions">endOfYesterday()</a>
+</td>
+<td>  Gets the date and time for the end of yesterday in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#hoursAgo.28int.29" title="GlideSystem Date and Time Functions">hoursAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of hours ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#hoursAgoEnd.28int.29" title="GlideSystem Date and Time Functions">hoursAgoEnd(int)</a>
+</td>
+<td>  Gets a date and time for the end of the hour a certain number of hours ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#hoursAgoStart.28int.29" title="GlideSystem Date and Time Functions">hoursAgoStart(int)</a>
+</td>
+<td>  Gets a date and time for the start of the hour a certain number of hours ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#lastWeek.28.29" title="GlideSystem Date and Time Functions">lastWeek()</a>
+</td>
+<td>  Date and time one week ago in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#minutesAgo.28int.29" title="GlideSystem Date and Time Functions">minutesAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of minutes ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#minutesAgo.28int.29" title="GlideSystem Date and Time Functions">minutesAgoEnd(int)</a>
+</td>
+<td>  Gets a date and time for the end of the minute a certain number of minutes ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#minutesAgo.28int.29" title="GlideSystem Date and Time Functions">minutesAgoStart(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of minutes ago. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#monthsAgo.28int.29" title="GlideSystem Date and Time Functions">monthsAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of months ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#monthsAgoEnd.28int.29" title="GlideSystem Date and Time Functions">monthsAgoEnd(int)</a>
+</td>
+<td>  Gets a date and time for the last day of the month a certain number of months ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#monthsAgoStart.28int.29" title="GlideSystem Date and Time Functions">monthsAgoStart(int)</a>
+</td>
+<td>  Gets a date and time for the first day of the month a certain number of months ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#now.28.29" title="GlideSystem Date and Time Functions">now()</a>
+</td>
+<td>  Gets the current date using GMT date time.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#nowNoTZ.28.29" title="GlideSystem Date and Time Functions">nowNoTZ()</a>
+</td>
+<td>  Gets the current GMT date time.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#nowDateTime.28.29" title="GlideSystem Date and Time Functions">nowDateTime()</a>
+</td>
+<td>  Gets the current date and time in the user's time zone.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#quartersAgo.28int.29" title="GlideSystem Date and Time Functions">quartersAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of quarters ago. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#quartersAgoEnd.28int.29" title="GlideSystem Date and Time Functions">quartersAgoEnd(int)</a>
+</td>
+<td>  Gets a date and time for the last day of the quarter a certain number of quarters ago. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#quartersAgoStart.28int.29" title="GlideSystem Date and Time Functions">quartersAgoStart(int)</a>
+</td>
+<td>  Gets a date and time for the first day of the quarter a certain number of quarters ago. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#yearsAgo.28int.29" title="GlideSystem Date and Time Functions">yearsAgo(int)</a>
+</td>
+<td>  Gets a date and time for a certain number of years ago.The result is expressed in GMT.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#yesterday.28.29" title="GlideSystem Date and Time Functions">yesterday()</a>
+</td>
+<td>  Gets yesterday's time. The result is expressed in GMT.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isFirstDayOfMonth.28Object.29" title="GlideSystem Date and Time Functions">isFirstDayOfMonth(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the first day of the month.
+</p>
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isFirstDayOfWeek.28Object.29" title="GlideSystem Date and Time Functions">isFirstDayOfWeek(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the first day of the week. This uses the ISO standard of Monday being the first day of the week.
+</p>
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isFirstDayOfYear.28Object.29" title="GlideSystem Date and Time Functions">isFirstDayOfYear(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the first day of the year
+</p>
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isLastDayOfMonth.28Object.29" title="GlideSystem Date and Time Functions">isLastDayOfMonth(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the last day of the month.
+</p>
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isLastDayOfWeek.28Object.29" title="GlideSystem Date and Time Functions">isLastDayOfWeek(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the last day of the week.
+</p>
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html#isLastDayOfYear.28Object.29" title="GlideSystem Date and Time Functions">isLastDayOfYear(Object)</a>
+</td>
+<td>
+<p>Checks whether the date is the last day of the year.
+</p>
+</td></tr></table>
+<h1><span class="mw-headline" id="Examples"><span class="mw-headline-number">2</span> Examples</span></h1>
+<h2><span class="mw-headline" id="Creating_a_GlideDateTime_object_from_a_GlideDate_object"><span class="mw-headline-number">2.1</span> Creating a GlideDateTime object from a GlideDate object</span></h2>
+<p>You can create a GlideDateTime object from a GlideDate object by passing in the GlideDate object as a parameter to the GlideDateTime constructor.
+</p>
+<table>
+
+<tr>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDate</span><span class="p">();</span>
+<span class="nx">gDate</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">gDate</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">gDT</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">(</span><span class="nx">gDate</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">gDT</span><span class="p">);</span>
+</pre></div>
+<p><b>Output:</b> 
+</p>
+<pre>
+2015-01-01
+2015-01-01 00:00:00
+</pre>
+</td></tr></table>
+<h1><span class="mw-headline" id="GlideSystem_Date_and_Time"><span class="mw-headline-number">3</span> GlideSystem Date and Time</span></h1>
+<h2><span class="mw-headline" id="beginningOfLastMonth.28.29"><span class="mw-headline-number">3.1</span> beginningOfLastMonth()</span></h2>
+<p>Gets the date and time for the beginning of last month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields"><span class="mw-headline-number">3.1.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of last month, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfLastWeek.28.29"><span class="mw-headline-number">3.2</span> beginningOfLastWeek()</span></h2>
+<p>Gets the date and time for the beginning of last week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_2"><span class="mw-headline-number">3.2.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of last week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfNextWeek.28.29"><span class="mw-headline-number">3.3</span> beginningOfNextWeek()</span></h2>
+<p>Gets the date and time for the beginning of next week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_3"><span class="mw-headline-number">3.3.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of next week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfNextMonth.28.29"><span class="mw-headline-number">3.4</span> beginningOfNextMonth()</span></h2>
+<p>Gets the date and time for the beginning of next month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_4"><span class="mw-headline-number">3.4.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of next month, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfNextYear.28.29"><span class="mw-headline-number">3.5</span> beginningOfNextYear()</span></h2>
+<p>Gets the date and time for the beginning of next year in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_5"><span class="mw-headline-number">3.5.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of next year, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfThisMonth.28.29"><span class="mw-headline-number">3.6</span> beginningOfThisMonth()</span></h2>
+<p>Gets the date and time for the beginning of this month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_6"><span class="mw-headline-number">3.6.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of this month, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfThisQuarter.28.29"><span class="mw-headline-number">3.7</span> beginningOfThisQuarter()</span></h2>
+<p>Gets the date and time for the beginning of this quarter in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_7"><span class="mw-headline-number">3.7.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of this quarter, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfThisWeek.28.29"><span class="mw-headline-number">3.8</span> beginningOfThisWeek()</span></h2>
+<p>Gets the date and time for the beginning of this week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_8"><span class="mw-headline-number">3.8.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of this week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfThisYear.28.29"><span class="mw-headline-number">3.9</span> beginningOfThisYear()</span></h2>
+<p>Gets the date and time for the beginning of this week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_9"><span class="mw-headline-number">3.9.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of this week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfToday.28.29"><span class="mw-headline-number">3.10</span> beginningOfToday()</span></h2>
+<p>Gets the date and time for the beginning of today in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_10"><span class="mw-headline-number">3.10.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of today, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="beginningOfYesterday.28.29"><span class="mw-headline-number">3.11</span> beginningOfYesterday()</span></h2>
+<p>Gets the date and time for the beginning of yesterday in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_11"><span class="mw-headline-number">3.11.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of yesterday, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="calDateDiff.28String.2C_String.2C_boolean.29"><span class="mw-headline-number">3.12</span> calDateDiff(String, String, boolean)</span></h2>
+<p>Calculate the difference between two dates using the default calendar. <b>Note:</b> Calendars are now legacy. If Schedules are being used, see <a href="index.php%3Ftitle=Calculate_Duration_Given_a_Schedule.html" title="Calculate Duration Given a Schedule">Calculate Duration Given a Schedule</a>.
+</p>
+<h3><span class="mw-headline" id="Input_Fields"><span class="mw-headline-number">3.12.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>startDate</b> - a starting date to compare, in the current user's date format</li>
+<li><b>endDate</b> - an ending date to compare, in the current user's date format </li>
+<li><b>boolean numericValue</b> - if true, the return will be formatted in number of seconds; if false, the return will be formatted ddd hh:mm:ss.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_12"><span class="mw-headline-number">3.12.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> if the numericValue boolean parameter is true, returns the difference between the two dates as an integer number of seconds; if false, returns the difference between the two dates in the format ddd hh:mm:ss. 
+</p>
+<h2><span class="mw-headline" id="dateDiff.28String.2C_String.2C_boolean.29"><span class="mw-headline-number">3.13</span> dateDiff(String, String, boolean)</span></h2>
+<p>Calculates the difference between two dates. This method expects the earlier date as the first parameter and the later date as the second parameter; otherwise, the method returns the difference as a negative value. <b>Note:</b> Use getDisplayValue() to convert the strings to the expected format.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_2"><span class="mw-headline-number">3.13.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>startDate</b> - a starting date to compare, in the current user's date format. </li>
+<li><b>endDate</b> - an ending date to compare, in the current user's date format. </li>
+<li><b>boolean bnumericValue</b> - true to return difference in number of seconds as a string, false to return difference in the format ddd hh:mm:ss.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_13"><span class="mw-headline-number">3.13.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> if boolean bnumericValue is true, the difference in number of seconds; if false, the difference in the format ddd hh:mm:ss. 
+</p>
+<h3><span class="mw-headline" id="Example"><span class="mw-headline-number">3.13.3</span> Example</span></h3>
+<p>For more examples, see <a href="index.php%3Ftitle=Setting_the_Duration_Field_Value.html" title="Setting the Duration Field Value">Setting the Duration Field Value</a>. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Given two date/times as DateTime objects</span>
+<span class="c1">// Set the values this way to ensure a consistent input time</span>
+<span class="kd">var</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">();</span>
+<span class="nx">date1</span><span class="p">.</span><span class="nx">setDisplayValueInternal</span><span class="p">(</span><span class="s1">&#39;2014-01-01 12:00:00&#39;</span><span class="p">);</span>
+<span class="nx">date2</span><span class="p">.</span><span class="nx">setDisplayValueInternal</span><span class="p">(</span><span class="s1">&#39;2014-01-01 13:00:00&#39;</span><span class="p">);</span>
+
+<span class="c1">// Determine the difference as number of seconds (returns a string)</span>
+<span class="c1">// Use getDisplayValue() to convert the string to the format expected by dateDiff()</span>
+<span class="kd">var</span> <span class="nx">diffSeconds</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">dateDiff</span><span class="p">(</span><span class="nx">date1</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">(),</span> <span class="nx">date2</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">(),</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// JavaScript will coerce diffSeconds from a string to a number</span>
+<span class="c1">// since diffSeconds is being compared to a number</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="p">(</span><span class="nx">diffSeconds</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="s1">&#39; is on or after &#39;</span> <span class="o">:</span> <span class="s1">&#39; is before &#39;</span><span class="p">;</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">date1</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">()</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="nx">date2</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">())</span>
+</pre></div>
+<h2><span class="mw-headline" id="dateGenerate.28String.2C_String.29"><span class="mw-headline-number">3.14</span> dateGenerate(String, String)</span></h2>
+<p>Generates a date and time for the specified date in GMT. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_3"><span class="mw-headline-number">3.14.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>Date</b> - format: yyyy-mm-dd </li>
+<li><b>Range</b> - <b>start</b>, <b>end</b>, or a time in the 24 hour format <b>hh:mm:ss</b>.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_14"><span class="mw-headline-number">3.14.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> a date and time in the format yyyy-mm-dd hh:mm:ss. If range is <b>start</b>, the returned value is yyyy-mm-dd 00:00:00; If range is <b>end</b> the return value is yyyy-mm-dd 23:59:59. 
+</p>
+<h2><span class="mw-headline" id="daysAgo.28int.29"><span class="mw-headline-number">3.15</span> daysAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_4"><span class="mw-headline-number">3.15.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_15"><span class="mw-headline-number">3.15.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) beginning of the days that was the specified number of days ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h3><span class="mw-headline" id="Example_2"><span class="mw-headline-number">3.15.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">contractNoticeDue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;contract&quot;</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;u_contract_status&quot;</span><span class="p">,</span> <span class="s2">&quot;Active&quot;</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_termination_date</span> <span class="o">&lt;=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_duration</span> <span class="o">==</span> <span class="s2">&quot;Long&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_status</span> <span class="o">=</span> <span class="s2">&quot;In review&quot;</span><span class="p">;</span>
+        <span class="p">}</span> 
+        <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_termination_date</span> <span class="o">&lt;=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_duration</span> <span class="o">==</span> <span class="s2">&quot;Medium&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_status</span> <span class="o">=</span> <span class="s2">&quot;In review&quot;</span><span class="p">;</span>
+        <span class="p">}</span> 
+        <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_termination_date</span> <span class="o">&lt;=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_duration</span> <span class="o">==</span> <span class="s2">&quot;Short&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">gr</span><span class="p">.</span><span class="nx">u_contract_status</span> <span class="o">=</span> <span class="s2">&quot;In review&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="daysAgoEnd.28int.29"><span class="mw-headline-number">3.16</span> daysAgoEnd(int)</span></h2>
+<p>Gets a date and time for end of the day a certain number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_5"><span class="mw-headline-number">3.16.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_16"><span class="mw-headline-number">3.16.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the day that was the specified number of days ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="daysAgoStart.28int.29"><span class="mw-headline-number">3.17</span> daysAgoStart(int)</span></h2>
+<p>Gets a date and time for beginning of the day a certain number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_6"><span class="mw-headline-number">3.17.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of days ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_17"><span class="mw-headline-number">3.17.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) start of the day that was the specified number of days ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b>
+</p>
+<h3><span class="mw-headline" id="Example_3"><span class="mw-headline-number">3.17.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sysapproval_approver&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;requested&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;sys_updated_on&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgoStart</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+</pre></div>
+<h2><span class="mw-headline" id="endOfLastMonth.28.29"><span class="mw-headline-number">3.18</span> endOfLastMonth()</span></h2>
+<p>Gets the date and time for the end of last month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_18"><span class="mw-headline-number">3.18.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of last month, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfLastWeek.28.29"><span class="mw-headline-number">3.19</span> endOfLastWeek()</span></h2>
+<p>Gets the date and time for the end of last week in GMT, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_19"><span class="mw-headline-number">3.19.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of last week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfLastYear.28.29"><span class="mw-headline-number">3.20</span> endOfLastYear()</span></h2>
+<p>Gets the date and time for the end of last year in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_20"><span class="mw-headline-number">3.20.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of last year, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfNextMonth.28.29"><span class="mw-headline-number">3.21</span> endOfNextMonth()</span></h2>
+<p>Gets the date and time for the end of next month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_21"><span class="mw-headline-number">3.21.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of next month, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfNextWeek.28.29"><span class="mw-headline-number">3.22</span> endOfNextWeek()</span></h2>
+<p>Gets the date and time for the end of next week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_22"><span class="mw-headline-number">3.22.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of next week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfNextYear.28.29"><span class="mw-headline-number">3.23</span> endOfNextYear()</span></h2>
+<p>Gets the date and time for the end of next year in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_23"><span class="mw-headline-number">3.23.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of next year, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfThisMonth.28.29"><span class="mw-headline-number">3.24</span> endOfThisMonth()</span></h2>
+<p>Gets the date and time for the end of this month in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_24"><span class="mw-headline-number">3.24.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of this month, in the format (yyyy-mm-dd huh:mm:ss) 
+</p>
+<h2><span class="mw-headline" id="endOfThisQuarter.28.29"><span class="mw-headline-number">3.25</span> endOfThisQuarter()</span></h2>
+<p>Gets the date and time for the end of this quarter in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_25"><span class="mw-headline-number">3.25.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of this quarter, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfThisWeek.28.29"><span class="mw-headline-number">3.26</span> endOfThisWeek()</span></h2>
+<p>Gets the date and time for the beginning of this week in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_26"><span class="mw-headline-number">3.26.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT beginning of this week, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfThisYear.28.29"><span class="mw-headline-number">3.27</span> endOfThisYear()</span></h2>
+<p>Gets the date and time for the end of this year in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_27"><span class="mw-headline-number">3.27.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of this year, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfToday.28.29"><span class="mw-headline-number">3.28</span> endOfToday()</span></h2>
+<p>Gets the date and time for the end of today in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_28"><span class="mw-headline-number">3.28.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of today, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="endOfYesterday.28.29"><span class="mw-headline-number">3.29</span> endOfYesterday()</span></h2>
+<p>Gets the date and time for the end of yesterday in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_29"><span class="mw-headline-number">3.29.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the GMT end of yesterday, in the format (yyyy-mm-dd huh:mm:ss). 
+</p>
+<h2><span class="mw-headline" id="hoursAgo.28int.29"><span class="mw-headline-number">3.30</span> hoursAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_7"><span class="mw-headline-number">3.30.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_30"><span class="mw-headline-number">3.30.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) time that was the specified number of hours ago,in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h3><span class="mw-headline" id="Example_4"><span class="mw-headline-number">3.30.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">operation</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;insert&#39;</span><span class="p">)</span> <span class="p">{</span>
+ <span class="c1">// If no due date was specified, calculate a default</span>
+ <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">due_date</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+ 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">urgency</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Set due date to 4 hours ahead of current time</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">due_date</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">hoursAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+  <span class="p">}</span>
+ 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">urgency</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Set due date to 2 days ahead of current time</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">due_date</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+  <span class="p">}</span>
+ 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">urgency</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Set due date to 7 days ahead of current time</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">due_date</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">);</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> 
+<h2><span class="mw-headline" id="hoursAgoEnd.28int.29"><span class="mw-headline-number">3.31</span> hoursAgoEnd(int)</span></h2>
+<p>Gets a date and time for the end of the hour a certain number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_8"><span class="mw-headline-number">3.31.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_31"><span class="mw-headline-number">3.31.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the hour that was the specified number of hours ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="hoursAgoStart.28int.29"><span class="mw-headline-number">3.32</span> hoursAgoStart(int)</span></h2>
+<p>Gets a date and time for the start of the hour a certain number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_9"><span class="mw-headline-number">3.32.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of hours ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_32"><span class="mw-headline-number">3.32.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) start of the hour that was the specified number of hours ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="lastWeek.28.29"><span class="mw-headline-number">3.33</span> lastWeek()</span></h2>
+<p>Date and time one week ago in GMT. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_33"><span class="mw-headline-number">3.33.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the date and time one week ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="minutesAgo.28int.29"><span class="mw-headline-number">3.34</span> minutesAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_10"><span class="mw-headline-number">3.34.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_34"><span class="mw-headline-number">3.34.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) time that was the specified number of minutes ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h3><span class="mw-headline" id="Example_5"><span class="mw-headline-number">3.34.3</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//</span>
+<span class="c1">// Check to see if the user has failed to login too many times</span>
+<span class="c1">// when the limit is reached, lock the user out of the system</span>
+<span class="c1">//</span>
+  <span class="c1">//Check failed logins in the last 15 minutes</span>
+  <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sysevent&#39;</span><span class="p">);</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;login.failed&#39;</span><span class="p">);</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;parm1&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">parm1</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;sys_created_on&#39;</span><span class="p">,</span><span class="s1">&#39;&gt;=&#39;</span><span class="p">,</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">minutesAgo</span><span class="p">(</span><span class="mi">15</span><span class="p">));</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">rowCount</span> <span class="o">=</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">getRowCount</span><span class="p">();</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">rowCount</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">){</span>
+      <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span>
+      <span class="nx">gr</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;user_name&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">parm1</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+      <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+           <span class="nx">gr</span><span class="p">.</span><span class="nx">locked_out</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+           <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+           <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User &quot;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">parm1</span> <span class="o">+</span> <span class="s2">&quot; locked out due to too many invalid login attempts&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div> 
+<h2><span class="mw-headline" id="minutesAgoEnd.28int.29"><span class="mw-headline-number">3.35</span> minutesAgoEnd(int)</span></h2>
+<p>Gets a date and time for the end of the minute a certain number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_11"><span class="mw-headline-number">3.35.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_35"><span class="mw-headline-number">3.35.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the minute that was the specified number of minutes ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="minutesAgoStart.28int.29"><span class="mw-headline-number">3.36</span> minutesAgoStart(int)</span></h2>
+<p>Gets a date and time for the start of the minute a certain number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_12"><span class="mw-headline-number">3.36.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_36"><span class="mw-headline-number">3.36.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) start of the minute that was the specified number of minutes ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="monthsAgo.28int.29"><span class="mw-headline-number">3.37</span> monthsAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of months ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_13"><span class="mw-headline-number">3.37.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of months ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_37"><span class="mw-headline-number">3.37.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> A value (GMT) on the current (today's) date of the specified month, in the format <b>yyyy-mm-dd hh:mm:ss.</b>
+</p>
+<h2><span class="mw-headline" id="monthsAgoEnd.28int.29"><span class="mw-headline-number">3.38</span> monthsAgoEnd(int)</span></h2>
+<p>Gets a date and time for the last day of the month a certain number of months ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_14"><span class="mw-headline-number">3.38.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of months ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_38"><span class="mw-headline-number">3.38.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the month that was the specified number of months ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="monthsAgoStart.28int.29"><span class="mw-headline-number">3.39</span> monthsAgoStart(int)</span></h2>
+<p>Gets a date and time for the start of the minute a certain number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_15"><span class="mw-headline-number">3.39.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of minutes ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_39"><span class="mw-headline-number">3.39.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) start of the minute that was the specified number of minutes ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="now.28.29"><span class="mw-headline-number">3.40</span> now()</span></h2>
+<p>Gets the current date using GMT.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_40"><span class="mw-headline-number">3.40.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> The current date in the user defined format, according to GMT.
+</p>
+<h3><span class="mw-headline" id="Example_6"><span class="mw-headline-number">3.40.2</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// When the user password changes then set the u_password_last_reset field</span>
+<span class="c1">// to now so we know when to force another update</span>
+
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">parm1</span><span class="p">.</span><span class="nx">toString</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="c1">// Do something based on the Password Changing</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The user password changed so do something else...&quot;</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">u_password_last_reset</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="nowNoTZ.28.29"><span class="mw-headline-number">3.41</span> nowNoTZ()</span></h2>
+<p>Gets the current date and time in UTC format.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_41"><span class="mw-headline-number">3.41.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> the current UTC date time.
+</p>
+<h3><span class="mw-headline" id="Example_7"><span class="mw-headline-number">3.41.2</span> Example</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// When the user password changes then set the u_password_last_reset field</span>
+<span class="c1">// to now so we know when to force another update</span>
+
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">parm1</span><span class="p">.</span><span class="nx">toString</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="c1">// Do something based on the Password Changing</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The user password changed so do something else...&quot;</span><span class="p">);</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">u_password_last_reset</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">nowNoTZ</span><span class="p">();</span>
+    <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="nowDateTime.28.29"><span class="mw-headline-number">3.42</span> nowDateTime()</span></h2>
+<p>Gets the current date and time in the user-defined format. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_42"><span class="mw-headline-number">3.42.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> The current date and time in the user-defined format.<br /> 
+</p>
+<h3><span class="mw-headline" id="Example_8"><span class="mw-headline-number">3.42.2</span> Example</span></h3>
+<p>The following script sets the field <b>u_target_date</b> to the current date and time:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">current</span><span class="p">.</span><span class="nx">u_target_date</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">nowDateTime</span><span class="p">();</span>
+</pre></div> 
+<p>After the script is run, the <b>u_target_date</b> field will hold the date and time of the moment the script is run, in the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Date+and+Time+Fields&amp;oldid=0.html#System_Defaults" title="Using Date and Time Fields">system format</a>.
+</p>
+<h3><span class="mw-headline" id="Example_2_2"><span class="mw-headline-number">3.42.3</span> Example  2</span></h3>
+<p>When setting a variable in a workflow script to the current date and time, use the <a href="index.php%3Ftitle=GlideDateTime.html#setDisplayValue" title="GlideDateTime">setDisplayValue</a> method. The following script sets the workflow variable <b>end_date</b> to the current date and time:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">current</span><span class="p">.</span><span class="nx">variables</span><span class="p">.</span><span class="nx">end_date</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="nx">gs</span><span class="p">.</span><span class="nx">nowDateTime</span><span class="p">());</span>
+</pre></div> 
+<p>After the script is run, the <b>end_date</b> field will hold the date and time of the moment the script is run, in the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Date+and+Time+Fields&amp;oldid=0.html#System_Defaults" title="Using Date and Time Fields">system format</a>.
+</p>
+<h2><span class="mw-headline" id="quartersAgo.28int.29"><span class="mw-headline-number">3.43</span> quartersAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_16"><span class="mw-headline-number">3.43.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_43"><span class="mw-headline-number">3.43.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) beginning of the quarter that was the specified number of quarters ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="quartersAgoEnd.28int.29"><span class="mw-headline-number">3.44</span> quartersAgoEnd(int)</span></h2>
+<p>Gets a date and time for the last day of the quarter a certain number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_17"><span class="mw-headline-number">3.44.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_44"><span class="mw-headline-number">3.44.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the quarter that was the specified number of quarters ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="quartersAgoStart.28int.29"><span class="mw-headline-number">3.45</span> quartersAgoStart(int)</span></h2>
+<p>Gets a date and time for the first day of the quarter a certain number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_18"><span class="mw-headline-number">3.45.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of quarters ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_45"><span class="mw-headline-number">3.45.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) end of the month that was the specified number of quarters ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="yearsAgo.28int.29"><span class="mw-headline-number">3.46</span> yearsAgo(int)</span></h2>
+<p>Gets a date and time for a certain number of years ago. 
+</p>
+<h3><span class="mw-headline" id="Input_Fields_19"><span class="mw-headline-number">3.46.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> An integer number of years ago. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_46"><span class="mw-headline-number">3.46.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) beginning of the years that was the specified number of years ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b> 
+</p>
+<h2><span class="mw-headline" id="yesterday.28.29"><span class="mw-headline-number">3.47</span> yesterday()</span></h2>
+<p>Gets yesterday's time. 
+</p>
+<h3><span class="mw-headline" id="Output_Fields_47"><span class="mw-headline-number">3.47.1</span> Output Fields</span></h3>
+<p><b>Returns:</b> The (GMT) for 24 hours ago, in the format <b>yyyy-mm-dd hh:mm:ss.</b>
+</p>
+<h2><span class="mw-headline" id="isFirstDayOfMonth.28Object.29"><span class="mw-headline-number">3.48</span> isFirstDayOfMonth(Object)</span></h2>
+<p>Checks whether the date is the first day of the month.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_20"><span class="mw-headline-number">3.48.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_48"><span class="mw-headline-number">3.48.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the first day of the month, false if it is not.
+</p>
+<h2><span class="mw-headline" id="isFirstDayOfWeek.28Object.29"><span class="mw-headline-number">3.49</span> isFirstDayOfWeek(Object)</span></h2>
+<p>Checks whether the date is the first day of the week. This uses the ISO standard of Monday being the first day of the week.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_21"><span class="mw-headline-number">3.49.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_49"><span class="mw-headline-number">3.49.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the first day of the week, false if it is not.
+</p>
+<h2><span class="mw-headline" id="isFirstDayOfYear.28Object.29"><span class="mw-headline-number">3.50</span> isFirstDayOfYear(Object)</span></h2>
+<p>Checks whether the date is the first day of the year.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_22"><span class="mw-headline-number">3.50.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_50"><span class="mw-headline-number">3.50.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the first day of the year, false if it is not.
+</p>
+<h2><span class="mw-headline" id="isLastDayOfMonth.28Object.29"><span class="mw-headline-number">3.51</span> isLastDayOfMonth(Object)</span></h2>
+<p>Checks whether the date is the last day of the month.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_23"><span class="mw-headline-number">3.51.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_51"><span class="mw-headline-number">3.51.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the last day of the month, false if it is not. This uses the ISO standard of Sunday being the last day of the week.
+</p>
+<h2><span class="mw-headline" id="isLastDayOfWeek.28Object.29"><span class="mw-headline-number">3.52</span> isLastDayOfWeek(Object)</span></h2>
+<p>Checks whether the date is the last day of the week.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_24"><span class="mw-headline-number">3.52.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_52"><span class="mw-headline-number">3.52.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the last day of the week, false if it is not.
+</p>
+<h2><span class="mw-headline" id="isLastDayOfYear.28Object.29"><span class="mw-headline-number">3.53</span> isLastDayOfYear(Object)</span></h2>
+<p>Checks whether the date is the last day of the year.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_25"><span class="mw-headline-number">3.53.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> date object.
+</p>
+<h3><span class="mw-headline" id="Output_Fields_53"><span class="mw-headline-number">3.53.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> true if date is the last day of the year, false if it is not.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201100830
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.494 seconds
+Real time usage: 4.791 seconds
+Preprocessor visited node count: 253/1000000
+Preprocessor generated node count: 690/1000000
+Post‐expand include size: 32567/2097152 bytes
+Template argument size: 1152/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 4421.287      1 - -total
+ 89.58% 3960.531      1 - Embedded:GS_Date_Time_Doc
+  1.98%   87.406      1 - Template:General_Script
+  1.86%   82.418      1 - Template:Topic
+  0.18%    7.997      1 - Embedded:GS_Date_Time_Table
+  0.17%    7.465      1 - Embedded:General_Script
+  0.13%    5.723      2 - Template:Note
+  0.11%    4.942      2 - Template:T
+  0.10%    4.428      1 - Template:Knowledge
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:7566-0!*!0!1!*!5!* and timestamp 20171201100826 and revision id 250607
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions&amp;oldid=250607.html">http://wiki.servicenow.com/index.php?title=GlideSystem_Date_and_Time_Functions&amp;oldid=250607</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Glide+Server+APIs.html" title="Category:Glide Server APIs">Glide Server APIs</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+APIs.html" title="Category:Server APIs">Server APIs</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Glide+Server+APIs.html" title="Category:Glide Server APIs">Glide Server APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_7566"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="7566" data-vote-the-vote="5" data-vote-id="7566" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_7566_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="7566" data-vote-the-vote="1" data-vote-id="7566" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_7566_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=GlideSystem+Date+and+Time+Functions.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=GlideSystem+Date+and+Time+Functions.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=GlideSystem_Date_and_Time_Functions.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=GlideSystem+Date+and+Time+Functions.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=GlideSystem+Date+and+Time+Functions&amp;returnto=GlideSystem+Date+and+Time+Functions&amp;oldid=250607&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FGlideSystem_Date_and_Time_Functions.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/GlideSystem_Date_and_Time_Functions" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions&amp;oldid=250607.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=GlideSystem_Date_and_Time_Functions&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:40, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":753});});</script></body></html>

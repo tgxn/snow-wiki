@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Data Lookup and Record Matching Support - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Data_Lookup_and_Record_Matching_Support","wgTitle":"Data Lookup and Record Matching Support","wgCurRevisionId":250480,"wgRevisionId":250480,"wgArticleId":13221,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Field Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Data_Lookup_and_Record_Matching_Support","wgRelevantArticleId":13221,"wgRequestId":"a7f2069c305baaa362c490bf","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170829194818"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Data_Lookup_and_Record_Matching_Support"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Data Lookup and Record Matching Support"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Field Administration"/>
+<meta name="category" content="Field Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Data Lookup and Record Matching Support"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170829194818"/>
+
+	<meta property="article:published_time" content="20170829194818"/>
+
+	<meta property="article:modified_time" content="20170829194818"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Field Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Data_Lookup_and_Record_Matching_Support"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Data_Lookup_and_Record_Matching_Support rootpage-Data_Lookup_and_Record_Matching_Support skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Data Lookup and Record Matching Support</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields">Field Administration</a> &gt; Data Lookup and Record Matching Support</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/field-administration/concept/c_DataLookRecMatchSupport.html">Data Lookup and Record Matching Support</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields"><b>Fields</b></a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20f022634aft'></div><script type="text/javascript">window.tamOnload_tam5a20f022634aft=[];tree = new dTree('tam5a20f022634aft');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20f022634aft = tree;
+                                               tam5a20f022634aft.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_New_Fields\&quot;" title=\"Creating New Fields\">Creating New Fields</a> ');
+
+tam5a20f022634aft.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_HTML_Fields\&quot;" title=\"Modifying HTML Fields\">HTML Fields</a>');
+tam5a20f022634aft.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Image_Fields\&quot;" title=\"Using Image Fields\">Image Fields</a>');
+tam5a20f022634aft.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Journal_Fields\&quot;" title=\"Using Journal Fields\">Journal Fields</a> ');
+tam5a20f022634aft.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Percent_Complete_Field\&quot;" title=\"Creating a Percent Complete Field\">Percent Complete</a>');
+tam5a20f022634aft.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Phone_Number_Fields\&quot;" title=\"Using Phone Number Fields\">Phone Number Fields</a> ');
+tam5a20f022634aft.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Wiki_Fields\&quot;" title=\"Wiki Fields\">Wiki Fields</a>');
+tam5a20f022634aft.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Choice_Lists\&quot;" title=\"Customizing Choice Lists\">Choice Lists</a>');
+tam5a20f022634aft.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Label_Help\&quot;" title=\"Field Label Help\">Field Label Help</a>');
+tam5a20f022634aft.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Field_Styles\&quot;" title=\"Defining Field Styles\">Defining Field Styles</a>');
+tam5a20f022634aft.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Record_Numbering\&quot;" title=\"Managing Record Numbering\">Record Numbering</a> ');
+tam5a20f022634aft.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Spell_Check_to_a_Field\&quot;" title=\"Adding Spell Check to a Field\">Field Spell Check</a> ');
+tam5a20f022634aft.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Count_Widget\&quot;" title=\"Condition Count Widget\">Condition Count Widget</a>');
+tam5a20f022634aft.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Fields\&quot;" title=\"Reference Fields\">Reference Fields</a>');
+tam5a20f022634aft.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auto-Complete_for_Reference_Fields\&quot;" title=\"Auto-Complete for Reference Fields\">Auto-Complete</a>');
+tam5a20f022634aft.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_Reference_Icon\&quot;" title=\"Customizing the Reference Icon\">Reference Icon</a>');
+tam5a20f022634aft.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Qualifiers\&quot;" title=\"Reference Qualifiers\">Reference Qualifiers</a> ');
+tam5a20f022634aft.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Document_ID_Field\&quot;" title=\"Creating a Document ID Field\">Document ID Fields</a>');
+tam5a20f022634aft.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Normalization\&quot;" title=\"Field Normalization\">Field Normalization</a>');
+tam5a20f022634aft.add(20, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Normalization_Field_Types\&quot;" title=\"Normalization Field Types\">Normalization Field Types</a>');
+tam5a20f022634aft.add(21, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Normalizing_a_Field\&quot;" title=\"Normalizing a Field\">Normalizing a Field</a>');
+tam5a20f022634aft.add(22, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Transformations\&quot;" title=\"Field Transformations\">Field Transformations</a>');
+tam5a20f022634aft.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Definitions\&quot;" title=\"Transform Definitions\">Transform Definitions</a>');
+tam5a20f022634aft.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Categories\&quot;" title=\"Transform Categories\">Transform Categories</a>');
+tam5a20f022634aft.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Regular_Expressions_and_Patterns_in_Field_Normalization_Rules\&quot;" title=\"Regular Expressions and Patterns in Field Normalization Rules\">Regular Expressions and Patterns in Field Normalization Rules</a>');
+tam5a20f022634aft.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Policy\&quot;" title=\"Data Policy\">Data Policy</a>');
+tam5a20f022634aft.add(27, 0, '<strong class=\"selflink\">Data Lookup and Record Matching</strong>');
+tam5a20f022634aft.add(28, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Forms\&quot;" title=\"Configuring Forms\">Configuring Forms</a>');
+
+                                               document.getElementById('5a20f022634aft').innerHTML = tam5a20f022634aft.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20f022634aft) { window.tamOnload_tam5a20f022634aft[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Workflow_Stage_Fields.html" title="Workflow Stage Fields">Workflow Stage Fields</a>
+</td></tr>
+<tr>
+<th>  Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration">Field Administration</a></center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Creating_Custom_Data_Lookups"><span class="tocnumber">2</span> <span class="toctext">Creating Custom Data Lookups</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_1._Create_a_Custom_Data_Lookup_Table"><span class="tocnumber">2.1</span> <span class="toctext">Step 1. Create a Custom Data Lookup Table</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_2._Add_Data_Lookup_Values_to_the_Data_Lookup_Table"><span class="tocnumber">2.2</span> <span class="toctext">Step 2. Add Data Lookup Values to the Data Lookup Table</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_3._Create_a_Data_Lookup_Definition_Record"><span class="tocnumber">2.3</span> <span class="toctext">Step 3. Create a Data Lookup Definition Record</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Data_Lookup_Definitions_Fields"><span class="tocnumber">2.3.1</span> <span class="toctext">Data Lookup Definitions Fields</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Matcher_Field_Definitions_Fields"><span class="tocnumber">2.3.2</span> <span class="toctext">Matcher Field Definitions Fields</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Setter_Field_Definitions_Fields"><span class="tocnumber">2.3.3</span> <span class="toctext">Setter Field Definitions Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_4._Create_a_Data_Lookup_Module"><span class="tocnumber">2.4</span> <span class="toctext">Step 4. Create a Data Lookup Module</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Troubleshooting"><span class="tocnumber">3</span> <span class="toctext">Troubleshooting</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Activating_the_Plugin"><span class="tocnumber">4</span> <span class="toctext">Activating the Plugin</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The data lookup and record matching feature enables administrators to define rules that automatically set one or more field values when certain conditions are met. For example, on Incident forms, the priority lookup rules sample data automatically sets the incident <b>Priority</b> based on the incident <b>Impact</b> and <b>Urgency</b> values. Data lookup rules allow administrators to specify the conditions and fields where they want data lookups to occur.
+</p>
+<h1><span class="mw-headline" id="Creating_Custom_Data_Lookups"><span class="mw-headline-number">2</span> Creating Custom Data Lookups</span></h1>
+<p>Creating new data lookups involves several steps.
+</p>
+<ol><li><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_1._Create_a_Custom_Data_Lookup_Table">Create a custom data lookup table.</a></li>
+<li><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_2._Add_Data_Lookup_Values_to_the_Data_Lookup_Table">Add data lookup values to the data lookup table.</a></li>
+<li><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_3._Create_a_Data_Lookup_Definition_Record">Create a Data Lookup Definition record.</a></li>
+<li><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Step_4._Create_a_Data_Lookup_Module">[Optional] Create a data lookup module.</a></li></ol>
+<h2><span class="mw-headline" id="Step_1._Create_a_Custom_Data_Lookup_Table"><span class="mw-headline-number">2.1</span> Step 1. Create a Custom Data Lookup Table</span></h2>
+<p><a href="index.php%3Ftitle=Creating_a_Custom_Table.html" title="Creating a Custom Table">Create a custom table</a> to store lookup data. The custom table must extend the Data Lookup Matcher Rules [dl_matcher] table. For example, this custom lookup table stores information about VIP callers and incident assignments.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Sample Value
+</th></tr>
+<tr>
+<td> Label
+</td>
+<td> VIP Caller Lookup
+</td></tr>
+<tr>
+<td> Table name
+</td>
+<td> u_vip_caller_lookup
+</td></tr>
+<tr>
+<td> Extends base table
+</td>
+<td> dl_matcher
+</td></tr>
+<tr>
+<td> Create new module
+</td>
+<td> True
+</td></tr>
+<tr>
+<td> Add module to menu
+</td>
+<td> System Policy
+</td></tr></table>
+<h2><span class="mw-headline" id="Step_2._Add_Data_Lookup_Values_to_the_Data_Lookup_Table"><span class="mw-headline-number">2.2</span> Step 2. Add Data Lookup Values to the Data Lookup Table</span></h2>
+<p>The columns of a data lookup table contain both matcher and setter field data. Each data lookup is a query that searches for a row containing values that match the matcher fields. The data lookup then returns the value listed in the setter fields. For example, this Priority Data Lookup [dl_u_priority] table lists the combinations of impact and urgency (matcher fields) that produce a particular priority value (setter field).
+</p>
+<table class="standard">
+
+<tr>
+<th colspan="2"> Matcher fields
+</th>
+<th> Setter field
+</th></tr>
+<tr>
+<th> Impact
+</th>
+<th> Urgency
+</th>
+<th> Priority
+</th></tr>
+<tr>
+<td> 1 - High
+</td>
+<td> 1 - High
+</td>
+<td> 1 - Critical
+</td></tr>
+<tr>
+<td> 1 - High
+</td>
+<td> 2 - Medium
+</td>
+<td> 2 - High
+</td></tr>
+<tr>
+<td> 1 - High
+</td>
+<td> 3 - Low
+</td>
+<td> 3 - Moderate
+</td></tr>
+<tr>
+<td> 2 - Medium
+</td>
+<td> 1 - High
+</td>
+<td> 2 - High
+</td></tr>
+<tr>
+<td> 2 - Medium
+</td>
+<td> 2 - Medium
+</td>
+<td> 3 - Moderate
+</td></tr>
+<tr>
+<td> 2 - Medium
+</td>
+<td> 3 - Low
+</td>
+<td> 4 - Low
+</td></tr>
+<tr>
+<td> 3 - Low
+</td>
+<td> 1 - High
+</td>
+<td> 3 - Moderate
+</td></tr>
+<tr>
+<td> 3 - Low
+</td>
+<td> 2 - Medium
+</td>
+<td> 4 - Low
+</td></tr>
+<tr>
+<td> 3 - Low
+</td>
+<td> 3 - Low
+</td>
+<td> 5 - Planning
+</td></tr></table>
+<p>To add values to your lookup table:
+</p>
+<ol>
+<li>In the navigation filter, enter the name of the new custom lookup table. For example, enter <tt>u_vip_caller_lookup.list</tt>.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Lists&amp;oldid=0.html#Configuring_Lists" title="Configuring Lists">Configure the list</a> and create new fields as appropriate. For this example, create the following new fields:
+
+<table class="standard">
+
+<tr>
+<th> Name
+</th>
+<th> Type
+</th>
+<th> Field length or Table to reference
+</th></tr>
+<tr>
+<td> Caller
+</td>
+<td> Reference
+</td>
+<td> User [sys_user]
+</td></tr>
+<tr>
+<td> Priority
+</td>
+<td> Integer
+</td>
+<td> &#160;
+</td></tr>
+<tr>
+<td> Assignment Group
+</td>
+<td> Reference
+</td>
+<td> Group [sys_user_group]
+</td></tr></table>
+</li>
+<li>From the table list, click <b>New</b> and enter appropriate matcher and setter field values. For example:
+
+<table class="standard">
+
+<tr>
+<th> Matcher field
+</th>
+<th colspan="2"> Setter fields
+</th></tr>
+<tr>
+<th> Caller
+</th>
+<th> Priority
+</th>
+<th> Assignment Group
+</th></tr>
+<tr>
+<td> Beth Anglin
+</td>
+<td> 2
+</td>
+<td> VIP Issues
+</td></tr>
+<tr>
+<td> Fred Luddy
+</td>
+<td> 1
+</td>
+<td> VIP Issues
+</td></tr></table>
+</li>
+</ol>
+<p><a href="index.php%3Ftitle=File:Custom_lookup_values.png.html" class="image" title="custom_lookup_values.png"><img alt="custom_lookup_values.png" src="images/5/5a/Custom_lookup_values.png" width="668" height="138" class="thumbborder" /></a><br style="clear:both;" />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Each row in a data lookup table must be unique.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Step_3._Create_a_Data_Lookup_Definition_Record"><span class="mw-headline-number">2.3</span> Step 3. Create a Data Lookup Definition Record</span></h2>
+<ol><li>Navigate to <b>System Policy &gt; Rules &gt; Data Lookup Definitions</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Click <b>Data Lookup Rule</b>.</li>
+<li>Fill in the fields on the form, as appropriate (see table). </li>
+<li>Right-click the form header and click <b>Save</b>.</li>
+<li>From the <b>Matcher Field Definitions</b> related list, click <b>New</b>.</li>
+<li>Fill in the <a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Matcher_Field_Definitions_Fields">Matcher Field Definitions fields</a>. </li>
+<li>Click <b>Submit</b>.</li>
+<li>From the <b>Setter Field Definitions</b> related list, click <b>New</b>.</li>
+<li>Fill in the <a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html#Setter_Field_Definitions_Fields">Setter Field Definitions fields</a>.</li>
+<li>Click <b>Submit</b>.</li>
+<li>Click <b>Update</b>.</li></ol>
+<p>For example, the following data lookup definition assigns incidents to the VIP Issues group based on the <b>Caller</b> field. In addition, the incidents are set to critical or high priority based on the caller.
+</p><p><a href="index.php%3Ftitle=File:Datalookup_definition.png.html" class="image"><img alt="Datalookup definition.png" src="images/6/61/Datalookup_definition.png" width="842" height="508" class="thumbborder" /></a> <br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="Data_Lookup_Definitions_Fields"><span class="mw-headline-number">2.3.1</span> Data Lookup Definitions Fields</span></h3>
+<table class="standard">
+
+<tr>
+<th>  Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Enter a unique name to identify the definition record.
+</td></tr>
+<tr>
+<td> Source Table
+</td>
+<td> Select the table containing the fields you want to automatically update with lookup values. Data Lookup Definitions are not inherited by extension tables. For example, a Data Lookup Definition on the <b>Task</b> table cannot match values on the <b>Incident</b> incident table.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the data lookup definition (starting with the Fuji release).</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Matcher Table
+</td>
+<td> Select the table containing the lookup values. This table should always start with a <b>u_</b> prefix.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the data lookup definition (starting with the Fuji release).</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Select this check box to run this data lookup rule. Clear the check box to ignore this data lookup rule.
+</td></tr>
+<tr>
+<td> Run on form change
+</td>
+<td> Select this check box to automatically look up values whenever a user or onChange client script changes a field value on a source table form. <br />
+<p><b>Note:</b> This does not include changes automatically made by other data lookup rules, such as the Priority Lookup Rules.
+</p>
+</td></tr>
+<tr>
+<td> Run on insert
+</td>
+<td> Select this check box to automatically look up values whenever a user creates a new record.
+</td></tr>
+<tr>
+<td> Run on update
+</td>
+<td> Select this check box to automatically look up values whenever a user saves or updates a record.
+</td></tr></table>
+<h3><span class="mw-headline" id="Matcher_Field_Definitions_Fields"><span class="mw-headline-number">2.3.2</span> Matcher Field Definitions Fields</span></h3>
+<p>The matcher field definitions determine when a data lookup occurs. A data lookup only occurs on fields with matcher field definitions. The data lookup uses the values of the source table fields to look up one or more values from the matcher table. Note that data lookup does not work with <b>Journal</b> type fields.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Data Lookup
+</td>
+<td> Displays the name of the parent data lookup definition record.
+</td></tr>
+<tr>
+<td> Source table field
+</td>
+<td> Select the field from the source table that contains the data to match.
+</td></tr>
+<tr>
+<td> Matcher table field
+</td>
+<td> Select the field from the matcher table that contains the data to match.
+</td></tr>
+<tr>
+<td> Exact lookup match
+</td>
+<td> Select this check box to require the matcher table to contain a matching row for every possible combination of values (including blank values). Clearing this check box means that any blank values in the matcher table match any value. For example, suppose the <b>Priority</b> field is blank in the matcher table. When this check box is selected, there is a match only when the <b>Priority</b> value is blank in the source table row. When this check box is cleared, the blank matcher field value matches any value in the source table field.
+<p><b>Note:</b> If the lookup does not require an exact match, matcher table rows containing blank values are treated as wild cards, matching all values.
+</p>
+</td></tr></table>
+<h3><span class="mw-headline" id="Setter_Field_Definitions_Fields"><span class="mw-headline-number">2.3.3</span> Setter Field Definitions Fields</span></h3>
+<p>The setter field definitions determine what fields the data lookup changes when the matching conditions are true.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Data Lookup
+</td>
+<td> Displays the name of the parent data lookup definitions record.
+</td></tr>
+<tr>
+<td> Source table field
+</td>
+<td> Select the field from the source table that the data lookup updates.
+</td></tr>
+<tr>
+<td> Matcher table field
+</td>
+<td> Select the field from the matcher table that provides the new value for the update.
+</td></tr>
+<tr>
+<td> Always replace
+</td>
+<td> Select this check box to replace any existing value with a value from the data lookup. Clear this check box to ignore the update if the field has an existing value.
+</td></tr></table>
+<h2><span class="mw-headline" id="Step_4._Create_a_Data_Lookup_Module"><span class="mw-headline-number">2.4</span> Step 4. Create a Data Lookup Module</span></h2>
+<p>Optionally, you can <a href="index.php%3Ftitle=Administering_Applications_and_Modules.html#Defining_a_Module" title="Administering Applications and Modules" class="mw-redirect">create a new module</a> for the data lookup table you created in Step 2 to simplify access to the matcher table records. The module must have these properties:
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Required Value
+</th></tr>
+<tr>
+<td> Table
+</td>
+<td> Select the data lookup table you created in Step 2. For example <b>u_vip_caller_lookup</b>.
+</td></tr>
+<tr>
+<td> Link type
+</td>
+<td> List of Records
+</td></tr></table>
+<h1><span class="mw-headline" id="Troubleshooting"><span class="mw-headline-number">3</span> Troubleshooting</span></h1>
+<p>If the custom data lookup definition rules are not behaving as expected, check for the following conditions.
+</p>
+<ul><li> Verify that the data lookup definition is set to run on the appropriate events.</li>
+<li> Verify that the matcher field is not read-only. Since users cannot change read-only fields, user interactions cannot trigger an on form change event for read-only fields.</li>
+<li> Verify a client script is not changing a field value. Client scripts can trigger <b>Run on form change</b> events even on read-only fields.</li>
+<li> Verify that the data in the matcher table is correct.</li>
+<li> If the lookup requires an exact match, verify that there is a matcher table row for each possible combination (including blank values). The lookup fails if cannot find a matching value.</li>
+<li> Verify that you have not created a recursive rule, such as: 
+<dl><dd> If Field A = 1, then Field B =2. If Field B = 2, then Field A = 2</dd></dl></li></ul>
+<h1><span class="mw-headline" id="Activating_the_Plugin"><span class="mw-headline-number">4</span> Activating the Plugin</span></h1>
+<p>The plugin is automatically active. Customers who upgrade from a previous version can manually activate the Data Lookup and Record Matching Support plugin.
+</p>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand instructions for activating a plugin.</b>
+</th></tr>
+<tr>
+<td>
+<p>If you have the admin role, use the following steps to activate the plugin.
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Plugins</b>.</li>
+<li>Right-click the plugin name on the list and select <b>Activate/Upgrade</b>.
+<dl><dd>If the plugin depends on other plugins, these plugins are listed along with their activation status.</dd>
+<dd></dd></dl></li>
+<li>[Optional] If available, select the <b>Load demo data</b> check box.
+<dl><dd> Some plugins include demo data&#8212;sample records that are designed to illustrate plugin features for common use cases. Loading demo data is a good policy when you first activate the plugin on a development or test instance. You can load demo data after the plugin is activated by repeating this process and selecting the check box.</dd></dl></li>
+<li>Click <b>Activate</b>.</li></ol>
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Activating the plugin replaces the caclulatePriority business rule with a priority data lookup definition but does <b>not</b> transfer any custom logic. Customers who manually activate the plugin must recreate any custom business logic using the priority lookup rules.</i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201060106
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.251 seconds
+Real time usage: 0.317 seconds
+Preprocessor visited node count: 127/1000000
+Preprocessor generated node count: 389/1000000
+Post‐expand include size: 6460/2097152 bytes
+Template argument size: 1573/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  115.065      1 - -total
+ 74.97%   86.264      1 - Template:Field_Admin
+ 71.03%   81.726      1 - Template:Topic
+ 12.03%   13.839      1 - Embedded:Field_Admin
+  8.06%    9.271      1 - Template:Activating_the_Plugin
+  7.85%    9.028      1 - Embedded:Field_Normalization
+  7.72%    8.887      5 - Template:Note
+  5.89%    6.778      2 - Template:TableScopeNote
+  5.22%    6.004      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:13221-0!*!0!1!en!5!* and timestamp 20171201060106 and revision id 250480
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support&amp;oldid=250480.html">http://wiki.servicenow.com/index.php?title=Data_Lookup_and_Record_Matching_Support&amp;oldid=250480</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_13221"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="13221" data-vote-the-vote="5" data-vote-id="13221" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_13221_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="13221" data-vote-the-vote="1" data-vote-id="13221" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_13221_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Data+Lookup+and+Record+Matching+Support.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Data+Lookup+and+Record+Matching+Support.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Data_Lookup_and_Record_Matching_Support.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Data+Lookup+and+Record+Matching+Support.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Data+Lookup+and+Record+Matching+Support&amp;returnto=Data+Lookup+and+Record+Matching+Support&amp;oldid=250480&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FData_Lookup_and_Record_Matching_Support.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Data_Lookup_and_Record_Matching_Support" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support&amp;oldid=250480.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:48, 29 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":697});});</script></body></html>

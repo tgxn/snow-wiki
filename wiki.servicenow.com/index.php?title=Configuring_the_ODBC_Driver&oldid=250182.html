@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Configuring the ODBC Driver - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Configuring_the_ODBC_Driver","wgTitle":"Configuring the ODBC Driver","wgCurRevisionId":250182,"wgRevisionId":250182,"wgArticleId":22884,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["ODBC Driver"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Configuring_the_ODBC_Driver","wgRelevantArticleId":22884,"wgRequestId":"37dd95c14492c194d778a75e","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170816202904"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Configuring_the_ODBC_Driver"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Configuring the ODBC Driver"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="ODBC Driver"/>
+<meta name="category" content="ODBC Driver"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Configuring_the_ODBC_Driver.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Configuring the ODBC Driver"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170816202904"/>
+
+	<meta property="article:published_time" content="20170816202904"/>
+
+	<meta property="article:modified_time" content="20170816202904"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="ODBC Driver"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Configuring_the_ODBC_Driver"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Configuring_the_ODBC_Driver rootpage-Configuring_the_ODBC_Driver skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+the+ODBC+Driver.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Configuring+the+ODBC+Driver&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Configuring the ODBC Driver</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Configuring the ODBC Driver</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/odbc-driver/concept/c_ODBCDriver.html">ODBC Driver</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table> <div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a219bca0b996t'></div><script type="text/javascript">window.tamOnload_tam5a219bca0b996t=[];tree = new dTree('tam5a219bca0b996t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a219bca0b996t = tree;
+                                               tam5a219bca0b996t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API\&quot;" title=\"REST API\">Inbound REST</a>');
+
+tam5a219bca0b996t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_REST\&quot;" title=\"Getting Started with REST\">Getting Started with REST</a>');
+tam5a219bca0b996t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Table_API\&quot;" title=\"Table API\">Table API</a>');
+tam5a219bca0b996t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_API\&quot;" title=\"Import Set API\">Import Set API</a>');
+tam5a219bca0b996t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API\&quot;" title=\"Aggregate API\">Aggregate API</a>');
+tam5a219bca0b996t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API_Examples\&quot;" title=\"Aggregate API Examples\">Aggregate API Examples</a>');
+tam5a219bca0b996t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API_Explorer\&quot;" title=\"REST API Explorer\">REST API Explorer</a>');
+tam5a219bca0b996t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Web_Service\&quot;" title=\"SOAP Web Service\">Inbound SOAP</a>');
+tam5a219bca0b996t.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Direct_Web_Service_API\&quot;" title=\"SOAP Direct Web Service API\">Direct SOAP API</a>');
+tam5a219bca0b996t.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_SOAP_Web_Service_Security\&quot;" title=\"Inbound SOAP Web Service Security\">Inbound SOAP Security</a>');
+tam5a219bca0b996t.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting_Related_Records_Using_SOAP\&quot;" title=\"Inserting Related Records Using SOAP\">Inserting Related Records</a>');
+tam5a219bca0b996t.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AttachmentCreator_SOAP_Web_Service\&quot;" title=\"AttachmentCreator SOAP Web Service\">Attachment Creator Web Service</a>');
+tam5a219bca0b996t.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ECC_Queue_Retry_Policy\&quot;" title=\"ECC Queue Retry Policy\">ECC Queue Retry Policy</a>');
+tam5a219bca0b996t.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Session_Management_and_Reporting\&quot;" title=\"SOAP Session Management and Reporting\">SOAP Session Management and Reporting</a>');
+tam5a219bca0b996t.add(15, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Long-Running_SOAP_Request_Support\&quot;" title=\"Long-Running SOAP Request Support\">Long-Running SOAP Request Support</a>');
+tam5a219bca0b996t.add(16, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Static_WSDL\&quot;" title=\"Creating a Static WSDL\">Creating a Static WSDL</a>');
+tam5a219bca0b996t.add(17, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_Integrations_Best_Practices\&quot;" title=\"Web Services Integrations Best Practices\">Web Services Integrations Best Practices</a>');
+tam5a219bca0b996t.add(18, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API\&quot;" title=\"Perl API\">Perl API</a>');
+tam5a219bca0b996t.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_ServiceNow\&quot;" title=\"Perl API ServiceNow\">Perl ServiceNow Module</a>');
+tam5a219bca0b996t.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_GlideRecord\&quot;" title=\"Perl API GlideRecord\">GlideRecord</a>');
+tam5a219bca0b996t.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Task\&quot;" title=\"Perl API Task\">Task</a>');
+tam5a219bca0b996t.add(22, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Incident\&quot;" title=\"Perl API Incident\">Incident</a>');
+tam5a219bca0b996t.add(23, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Problem\&quot;" title=\"Perl API Problem\">Problem</a>');
+tam5a219bca0b996t.add(24, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Change\&quot;" title=\"Perl API Change\">Change</a>');
+tam5a219bca0b996t.add(25, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Request\&quot;" title=\"Perl API Request\">Request</a>');
+tam5a219bca0b996t.add(26, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_RequestedItem\&quot;" title=\"Perl API RequestedItem\">RequestedItem</a>');
+tam5a219bca0b996t.add(27, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_SC_Task\&quot;" title=\"Perl API SC Task\">SC_Task</a>');
+tam5a219bca0b996t.add(28, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Ticket\&quot;" title=\"Perl API Ticket\">Ticket</a>');
+tam5a219bca0b996t.add(29, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Approval\&quot;" title=\"Perl API Approval\">Approval</a>');
+tam5a219bca0b996t.add(30, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Dictionary\&quot;" title=\"Perl API Dictionary\">Dictionary</a>');
+tam5a219bca0b996t.add(31, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Configuration\&quot;" title=\"Perl API Configuration\">Configuration</a>');
+tam5a219bca0b996t.add(32, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Attachment\&quot;" title=\"Perl API Attachment\">Attachment</a>');
+tam5a219bca0b996t.add(33, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Driver\&quot;" title=\"ODBC Driver\">ODBC Driver</a>');
+tam5a219bca0b996t.add(34, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_ODBC\&quot;" title=\"Getting Started with ODBC\">ODBC Quick Start Guide</a>');
+tam5a219bca0b996t.add(35, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installing_the_ODBC_Driver\&quot;" title=\"Installing the ODBC Driver\">Installing the Driver</a>');
+tam5a219bca0b996t.add(36, 33, '<strong class=\"selflink\">Configuring the Driver</strong>');
+tam5a219bca0b996t.add(37, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Testing_the_ODBC_Driver\&quot;" title=\"Testing the ODBC Driver\">Testing the Driver</a>');
+tam5a219bca0b996t.add(38, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver\&quot;" title=\"Using the ODBC Driver\">Using the Driver</a>');
+tam5a219bca0b996t.add(39, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a>');
+tam5a219bca0b996t.add(40, 33, 'ODBC Client Configuration');
+tam5a219bca0b996t.add(41, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=HTTP_Client_Connection_Management\&quot;" title=\"HTTP Client Connection Management\">HTTP Client Connection Management</a>');
+tam5a219bca0b996t.add(42, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Interactive_SQL_With_ODBC\&quot;" title=\"Using Interactive SQL With ODBC\">Running Interactive SQL (ODBC)</a>');
+tam5a219bca0b996t.add(43, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Excel_2010\&quot;" title=\"Using the ODBC Driver in Excel 2010\" class=\"mw-redirect\">Using the ODBC Driver in Excel 2010</a>');
+tam5a219bca0b996t.add(44, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Crystal_Reports_2008\&quot;" title=\"Using the ODBC Driver in Crystal Reports 2008\" class=\"mw-redirect\">Using the ODBC Driver in Crystal Reports 2008</a>');
+tam5a219bca0b996t.add(45, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ODBC_Driver_in_SQL_Server_2008\&quot;" title=\"Using ODBC Driver in SQL Server 2008\" class=\"mw-redirect\">Using ODBC Driver in SQL Server 2008</a>');
+tam5a219bca0b996t.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Additional Direct Web Services</a>');
+tam5a219bca0b996t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CSV_Web_Service\&quot;" title=\"CSV Web Service\">CSV</a> ');
+tam5a219bca0b996t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EXCEL_Web_Service\&quot;" title=\"EXCEL Web Service\">EXCEL</a>');
+tam5a219bca0b996t.add(49, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSONv2_Web_Service\&quot;" title=\"JSONv2 Web Service\">JSONv2</a>');
+tam5a219bca0b996t.add(50, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Web_Service\&quot;" title=\"PDF Web Service\">PDF</a>');
+tam5a219bca0b996t.add(51, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=XML_Web_Service\&quot;" title=\"XML Web Service\">XML</a>');
+tam5a219bca0b996t.add(52, 46, 'RSS ');
+tam5a219bca0b996t.add(53, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Generator\&quot;" title=\"RSS Feed Generator\">RSS Feed Generator</a> ');
+tam5a219bca0b996t.add(54, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Reader\&quot;" title=\"RSS Feed Reader\">RSS Feed Reader</a>');
+tam5a219bca0b996t.add(55, 0, 'Inbound Examples');
+tam5a219bca0b996t.add(56, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Java_Apache_Axis2_Web_Services_Client_Examples\&quot;" title=\"Java Apache Axis2 Web Services Client Examples\">Java Apache Axis2 Client</a>');
+tam5a219bca0b996t.add(57, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_.NET_Web_Services_Client_Examples\&quot;" title=\"Microsoft .NET Web Services Client Examples\">Microsoft .NET Client</a>');
+tam5a219bca0b996t.add(58, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_Web_Services_Client_Examples\&quot;" title=\"Perl Web Services Client Examples\">Perl Client</a>');
+tam5a219bca0b996t.add(59, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Python_Web_Services_Client_Examples\&quot;" title=\"Python Web Services Client Examples\">Python Client</a>');
+tam5a219bca0b996t.add(60, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Retrieving_A_Large_Number_Of_Records_Using_SOAP\&quot;" title=\"Retrieving A Large Number Of Records Using SOAP\">Retrieving A Large Number Of Records</a>');
+tam5a219bca0b996t.add(61, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_C_Sharp_.NET_End_to_End_Tutorial\&quot;" title=\"Web Services C Sharp .NET End to End Tutorial\">C Sharp .NET End to End</a>');
+tam5a219bca0b996t.add(62, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Service_Tutorial\&quot;" title=\"Scripted Web Service Tutorial\">Scripted Web Service</a>');
+tam5a219bca0b996t.add(63, 0, 'Outbound Web Services');
+tam5a219bca0b996t.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service\&quot;" title=\"Outbound REST Web Service\">Outbound REST</a>');
+tam5a219bca0b996t.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_SOAP_Web_Service\&quot;" title=\"Outbound SOAP Web Service\">Outbound SOAP</a>');
+tam5a219bca0b996t.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_Web_Services_Mutual_Authentication\&quot;" title=\"Outbound Web Services Mutual Authentication\">Outbound Mutual Authentication</a>');
+tam5a219bca0b996t.add(67, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_REST\&quot;" title=\"Scripting Outbound REST\">Scripting Outbound REST</a>');
+tam5a219bca0b996t.add(68, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP\&quot;" title=\"Scripting Outbound SOAP\">Scripting Outbound SOAP</a>');
+tam5a219bca0b996t.add(69, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP_-_Versions_Prior_to_Fuji\&quot;" title=\"Scripting Outbound SOAP - Versions Prior to Fuji\">Scripting Outbound SOAP Prior to Fuji</a>');
+tam5a219bca0b996t.add(70, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service_-_Versions_Prior_to_Fuji\&quot;" title=\"Outbound REST Web Service - Versions Prior to Fuji\">Outbound REST Prior to Fuji</a>');
+tam5a219bca0b996t.add(71, 63, 'Outbound APIs');
+tam5a219bca0b996t.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessage</a>');
+tam5a219bca0b996t.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponse</a>');
+tam5a219bca0b996t.add(74, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessage</a>');
+tam5a219bca0b996t.add(75, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponse</a>');
+tam5a219bca0b996t.add(76, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Direct Web Services</a>');
+tam5a219bca0b996t.add(77, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Service_Import_Sets\&quot;" title=\"Web Service Import Sets\">Web Service Import Sets</a>');
+tam5a219bca0b996t.add(78, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Services\&quot;" title=\"Scripted Web Services\">Scripted Web Services</a>');
+
+                                               document.getElementById('5a219bca0b996t').innerHTML = tam5a219bca0b996t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a219bca0b996t) { window.tamOnload_tam5a219bca0b996t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Configuring_the_Driver"><span class="tocnumber">2</span> <span class="toctext">Configuring the Driver</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Global_Default"><span class="tocnumber">2.1</span> <span class="toctext">Global Default</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Creating_a_New_DSN"><span class="tocnumber">2.2</span> <span class="toctext">Creating a New DSN</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Using_a_Connection_String"><span class="tocnumber">2.3</span> <span class="toctext">Using a Connection String</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Configuring_ODBC_to_Use_Proxy_Servers"><span class="tocnumber">3</span> <span class="toctext">Configuring ODBC to Use Proxy Servers</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Setting_Properties"><span class="tocnumber">4</span> <span class="toctext">Setting Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#ODBC_Administrator_Properties"><span class="tocnumber">4.1</span> <span class="toctext">ODBC Administrator Properties</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#ODBC_Management_Console_Properties"><span class="tocnumber">4.2</span> <span class="toctext">ODBC Management Console Properties</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Service_JVM_Options"><span class="tocnumber">4.2.1</span> <span class="toctext">Service JVM Options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Instance_Properties"><span class="tocnumber">4.3</span> <span class="toctext">Instance Properties</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Testing_the_ODBC_Driver"><span class="tocnumber">5</span> <span class="toctext">Testing the ODBC Driver</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>After <a href="index.php%3Ftitle=Installing_the_ODBC_Driver.html" title="Installing the ODBC Driver">installing the ODBC driver</a>, configure it to connect to your ServiceNow instance and to communicate through a proxy server if applicable, and set properties to control ODBC behavior.
+</p>
+<h1><span class="mw-headline" id="Configuring_the_Driver"><span class="mw-headline-number">2</span> Configuring the Driver</span></h1>
+<p>After the driver is installed, configure it for your instance. The driver is preconfigured to connect to <b>https://demoodbc.service-now.com</b> using the DSN <b>ServiceNow</b>. There are two ways to configure connectivity for the driver. 
+</p>
+<ul><li><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Global_Default">Configure the global default used by all newly created DSNs</a>.</li>
+<li><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#Creating_a_New_DSN">Configure each new DSN with its own connection</a>.</li></ul>
+<h2><span class="mw-headline" id="Global_Default"><span class="mw-headline-number">2.1</span> Global Default</span></h2>
+<p>A default DSN is preloaded with the ODBC driver installation <b>ServiceNow</b> data source. This preloaded DSN connects using the default connection URL, which is set to <b>https://demo.service-now.com</b>. To change the global default for the instance URL: 
+</p>
+<ol><li>In Windows, navigate to <b>Start &gt; Programs &gt; ServiceNow ODBC &gt; Management Console</b>. </li>
+<li>Expand the Console Root tree using the following path: 
+<dl><dd><i>OpenAccess SDK 6.0 Manager\&lt;installation location&gt;\Services\ServiceNow_ODBC\Data Source Settings\ServiceNow\IP Parameters</i> </dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Odbc_management_console.png.html" class="image"><img alt="Odbc management console.png" src="images/thumb/7/7a/Odbc_management_console.png/700px-Odbc_management_console.png" width="700" height="286" srcset="/images/7/7a/Odbc_management_console.png 1.5x, /images/7/7a/Odbc_management_console.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Double-click the <b>DataSourceIPProperties</b> attribute for the <b>ServiceNow</b> data source setting to open the Properties dialog box. </li>
+<li>Change the value to the URL of your instance, using the following format, and then click <b>OK</b>: 
+<dl><dd><b>https://&lt;your instance&gt;.service-now.com</b></dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Odbc_management_console2.png.html" class="image"><img alt="Odbc management console2.png" src="images/9/9f/Odbc_management_console2.png" width="354" height="289" /></a> <br style="clear:both;" /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Creating_a_New_DSN"><span class="mw-headline-number">2.2</span> Creating a New DSN</span></h2>
+<p>Using the ODBC driver and the <b>ServiceNow</b> data source, you can create an unlimited number of DSNs configured to connect with different instance URLs. This allows the flexibility of selecting the target instance for your ODBC connection by DSN name. As an option during installation or upgrade, you can elect to keep the DSNs when you uninstall. 
+</p>
+<ol><li>In Windows, navigate to <b>Start &gt; Programs &gt; Service-now ODBC &gt; ODBC Administrator</b>. 
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Odbc_dsn.png.html" class="image" title="odbc_dsn.png"><img alt="odbc_dsn.png" src="images/a/a6/Odbc_dsn.png" width="459" height="376" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>To create a system DSN, select the <b>System DSN</b> tab, and then click <b>Add</b>. 
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Odbc_dsn_add.png.html" class="image" title="odbc_dsn_add.png"><img alt="odbc_dsn_add.png" src="images/5/5d/Odbc_dsn_add.png" width="467" height="345" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Select <b>Service-now ODBC Driver 32-bit</b> from the list, and then click <b>Finish</b>. </li>
+<li>Configure the driver and its connection URL by specifying the <a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#ODBC_Administrator"><b>url=</b></a> parameter value in the <b>Custom Properties</b> field. For example: 
+<dl><dd><tt>url=https://myinstance.service-now.com</tt> </dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:Odbc_dsn_conf_driver.png.html" class="image" title="odbc_dsn_conf_driver.png"><img alt="odbc_dsn_conf_driver.png" src="images/1/16/Odbc_dsn_conf_driver.png" width="474" height="346" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Click <b>OK</b>. 
+<dl><dd>You can now use the new driver.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Using_a_Connection_String"><span class="mw-headline-number">2.3</span> Using a Connection String</span></h2>
+<p>You can specify a connection string instead of defining a DSN. The connection string must follow this format:
+</p>
+<pre>
+Driver=ServiceNow ODBC Driver 32-bit;ServiceName=ServiceNow_ODBC;UID=youruser;PWD=yourpassword;ServerDataSource=ServiceNow;CustomProperties=url=https://&lt;instance&gt;.service-now.com
+</pre>
+<p>The driver name varies depending on if you use the 32-bit or 64-bit version of the ODBC driver. To determine your driver version:
+</p>
+<ol><li>In Windows, navigate to <b>Start &gt; Programs &gt; Service-now ODBC &gt; ODBC Administrator</b>.</li>
+<li>Select the <b>System DSN</b> tab.</li>
+<li>Note value in the <b>Driver</b> column for the ServiceNow data source.</li></ol>
+<h1><span class="mw-headline" id="Configuring_ODBC_to_Use_Proxy_Servers"><span class="mw-headline-number">3</span> Configuring ODBC to Use Proxy Servers</span></h1>
+<p>The ODBC driver can be configured to route its HTTP SOAP requests via an HTTP proxy server. Setting up a proxy server gives you the option to control access to the ServiceNow instance from the proxy server, and potentially allows a network configuration that can monitor usage statistics. However, because the proxy server intercepts the ODBC driver's requests to your ServiceNow instance, it will degrade the performance of the driver. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This feature is recommended for use with ODBC driver builds dated 7/15/2011 or later.</i>
+</td></tr></table>
+<p><br />
+To enable the use of proxy servers, the custom properties for proxy server settings must be defined first for the data source. After that, these properties can be overridden by specific ODBC DSNs. To do this, run the ODBC Management Console. 
+</p><p><a href="index.php%3Ftitle=File:Odbc_proxy.jpg.html" class="image"><img alt="Odbc proxy.jpg" src="images/thumb/c/ca/Odbc_proxy.jpg/700px-Odbc_proxy.jpg.png" width="700" height="436" srcset="/images/c/ca/Odbc_proxy.jpg 1.5x, /images/c/ca/Odbc_proxy.jpg 2x" /></a>  <br style="clear:both;" /> 
+</p><p>The following custom properties configure the ODBC proxy server.
+</p>
+<table class="standard">
+
+<tr>
+<th> Property name
+</th>
+<th> Description
+</th>
+<th> Example
+</th></tr>
+<tr>
+<td> proxy_host
+</td>
+<td> The proxy server host name or IP address.
+</td>
+<td> proxy.company.com
+</td></tr>
+<tr>
+<td> proxy_port
+</td>
+<td> The proxy server port number.
+</td>
+<td> 8080
+</td></tr>
+<tr>
+<td> proxy_user_name
+</td>
+<td> The proxy server user name or id, used in an authenticating proxy configuration.
+</td>
+<td> odbc_user
+</td></tr>
+<tr>
+<td> proxy_user_password
+</td>
+<td> The proxy server user password, used with the proxy_name value in an authenticating proxy configuration.
+</td>
+<td> *****
+</td></tr></table>
+<h1><span class="mw-headline" id="Setting_Properties"><span class="mw-headline-number">4</span> Setting Properties</span></h1>
+<p>The following properties customize connectivity and optimize the query behavior of the ODBC driver. 
+</p>
+<h2><span class="mw-headline" id="ODBC_Administrator_Properties"><span class="mw-headline-number">4.1</span> ODBC Administrator Properties</span></h2>
+<p>These properties are specified in the ODBC Data Source Administrator for the DSN or in the <b>Custom Properties</b> field of the login dialog box. 
+</p>
+<table class="standard">
+
+<tr>
+<th> Property Name
+</th>
+<th> Description
+</th>
+<th> Default
+</th></tr>
+<tr>
+<td> BatchSize
+</td>
+<td> During fetching of results from the instance, this batch size configures the number of records to fetch for every request. Typically, the default is an optimal number for normal sized rows. If an error occurs during fetching of records that indicates this value should be lowered, you can modify it to optimize memory usage versus performance.
+</td>
+<td> 2000
+</td></tr>
+<tr>
+<td> url
+</td>
+<td> This is the ServiceNow instance URL or endpoint. It should indicate the URL to the ServiceNow instance you want to connect to.
+</td>
+<td> https://demo.service-now.com
+</td></tr>
+<tr>
+<td> EnablePassThrough
+</td>
+<td> During processing of aggregate functions, enabling pass through mode allows directly calling <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Direct+Web+Service+API+Functions&amp;oldid=0.html#aggregate" title="Direct Web Service API Functions" class="mw-redirect">Aggregate Web Service</a> for optimized and speedy response. Whenever possible, this mode should be left enabled.
+</td>
+<td> true
+</td></tr>
+<tr>
+<td> debug
+</td>
+<td> By default, debugging messages are <i>not</i> produced. Set <b>debug</b> to <b>true</b> when you operate the ODBC driver from the ISQL console window to write all HTTP-related network communication traffic to the console window. When using this option, set <b>gzip</b> to <b>false</b> so that data is not compressed. Otherwise, the data is unreadable.
+</td>
+<td> false
+</td></tr>
+<tr>
+<td> gzip
+</td>
+<td> By default, data sent over the network is compressed. Set <b>gzip</b> to <b>false</b> when using the <b>debug</b> parameter to write network communication to the ISQL console so that data is not compressed.
+</td>
+<td> true
+</td></tr>
+<tr>
+<td> timeout
+</td>
+<td> Specifies the socket inactivity timeout value in seconds.
+</td>
+<td> 175
+</td></tr>
+<tr>
+<td> retries
+</td>
+<td> Number of times to retry the failing request in the event of a socket timeout error.
+</td>
+<td> 0
+</td></tr>
+<tr>
+<td> mode
+</td>
+<td> The query mode used to parse complex <i>where</i> clauses. You can configure the ODBC driver query mode to use either AND or OR operators. The AND operator is available starting with the <a href="index.php%3Ftitle=ODBC_Driver_Release_Notes_-_1.0.8.html" title="ODBC Driver Release Notes - 1.0.8">ODBC 1.0.8 release</a>. While the OR operator provides the greatest compatibility with complex queries, the AND operator is usually more efficient and results in fewer database operations.
+</td>
+<td> or
+</td></tr></table>
+<p>If you need to use more than one of these properties in your connection, concatenate the settings with a semicolon (;) delimiter. For example, the following string sets the URL to a specific instance and changes the batch size to 200 records. 
+</p>
+<dl><dd><tt>url=https://demo1234.service-now.com;BatchSize=200</tt></dd></dl>
+<h2><span class="mw-headline" id="ODBC_Management_Console_Properties"><span class="mw-headline-number">4.2</span> ODBC Management Console Properties</span></h2>
+<p>You can access these properties from the ODBC Management Console available in the Windows Start menu at <b>ServiceNow ODBC &gt; Management Console</b>. 
+</p>
+<table class="standard">
+
+<tr>
+<th> Property name
+</th>
+<th> Description
+</th>
+<th> Default
+</th></tr>
+<tr>
+<td> ServiceJVMOptions <br /><br />(Services\Service Settings\IP Parameters)
+</td>
+<td> JVM command line properties and option. For example, to change the maximum Java heap size, modify the -Xmx150m parameter.
+</td>
+<td> -Xms64m -Xmx150m
+</td></tr>
+<tr>
+<td> DataSourceIPProperties <br /><br />(OpenAccess SDK 6.0 Manager\&lt;installation location&gt;\Services\ServiceNow_ODBC\Data Source Settings\ServiceNow\IP Parameters)
+</td>
+<td> Global default of the instance URL for all ODBC connections. For more flexibility, you may also create new DSNs with default URL configurations. See <a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html#ODBC_Administrator_Properties">ODBC Administrator Properties</a>.
+</td>
+<td> https://demo.service-now.com
+</td></tr></table>
+<h3><span class="mw-headline" id="Service_JVM_Options"><span class="mw-headline-number">4.2.1</span> Service JVM Options</span></h3>
+<p>You can specify these values within the ServiceJVMOptions parameter in addition to standard JVM arguments such as -Xmx.
+</p>
+<table class="standard">
+<tr>
+<th width="15%">Property name
+</th>
+<th>Description
+</th>
+<th>Default
+</th></tr>
+<tr>
+<td> -DLOG_FILE_NAME
+</td>
+<td> The location of the ODBC log file. This property is available starting with the ODBC Driver 1.0.7.1 release.
+</td>
+<td> ${user.home}\AppData\Local\ServiceNow\odbc\logging\odbc.log
+</td></tr>
+<tr>
+<td> -DLOG_LEVEL
+</td>
+<td> The logging level used when writing to the ODBC log file. You can specify the logging level using <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://logback.qos.ch/">Logback</a> levels, such as TRACE, INFO, or ERROR. This property is available starting with the <a href="index.php%3Ftitle=ODBC_Driver_Release_Notes_-_1.0.8.html" title="ODBC Driver Release Notes - 1.0.8">ODBC 1.0.8 release</a>.
+</td>
+<td> INFO
+</td></tr></table>
+<h2><span class="mw-headline" id="Instance_Properties"><span class="mw-headline-number">4.3</span> Instance Properties</span></h2>
+<p>An administrator can configure these properties by <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">adding a property</a> or modifying an existing one in the ServiceNow instance. 
+</p>
+<table class="standard">
+
+<tr>
+<th> Property name
+</th>
+<th> Description
+</th>
+<th> Default
+</th></tr>
+<tr>
+<td> glide.db.max.aggregates
+</td>
+<td> The maximum number of rows returned by aggregate functions.
+</td>
+<td> 100000
+</td></tr>
+<tr>
+<td> glide.db.max_view_records
+</td>
+<td> The maximum number of rows returned by a database view.
+</td>
+<td> 10000
+</td></tr></table>
+<h1><span class="mw-headline" id="Testing_the_ODBC_Driver"><span class="mw-headline-number">5</span> Testing the ODBC Driver</span></h1>
+<p>After configuring the ODBC driver, <a href="index.php%3Ftitle=Testing_the_ODBC_Driver.html" title="Testing the ODBC Driver">test the configuration</a> to ensure that you can connect to the instance and perform queries.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201181330
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.471 seconds
+Real time usage: 0.563 seconds
+Preprocessor visited node count: 146/1000000
+Preprocessor generated node count: 414/1000000
+Post‐expand include size: 1118/2097152 bytes
+Template argument size: 497/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  172.230      1 - -total
+ 92.15%  158.715      1 - Template:Web_Services
+ 81.86%  140.987      1 - Template:Topic
+  4.60%    7.929      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22884-0!*!0!1!en!5!* and timestamp 20171201181329 and revision id 250182
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html">http://wiki.servicenow.com/index.php?title=Configuring_the_ODBC_Driver&amp;oldid=250182</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=ODBC+Driver.html" title="Category:ODBC Driver">ODBC Driver</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=ODBC+Driver.html" title="Category:ODBC Driver">ODBC Driver</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22884"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22884" data-vote-the-vote="5" data-vote-id="22884" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22884_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22884" data-vote-the-vote="1" data-vote-id="22884" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22884_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Configuring+the+ODBC+Driver&amp;returntoquery=oldid%3D250182" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Configuring+the+ODBC+Driver&amp;returntoquery=oldid%3D250182" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Configuring_the_ODBC_Driver.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+the+ODBC+Driver.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Configuring+the+ODBC+Driver&amp;returnto=Configuring+the+ODBC+Driver&amp;oldid=250182&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FConfiguring_the_ODBC_Driver.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Configuring_the_ODBC_Driver" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;oldid=250182.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Configuring_the_ODBC_Driver&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:29, 16 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1080});});</script></body></html>

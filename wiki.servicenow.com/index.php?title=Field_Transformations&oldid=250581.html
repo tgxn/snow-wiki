@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Field Transformations - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Field_Transformations","wgTitle":"Field Transformations","wgCurRevisionId":250581,"wgRevisionId":250581,"wgArticleId":10196,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Field Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Field_Transformations","wgRelevantArticleId":10196,"wgRequestId":"a455eaf1e7fe74cba684ae84","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831165406"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Field_Transformations"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Field Transformations"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Field Administration"/>
+<meta name="category" content="Field Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Field_Transformations.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Field Transformations"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831165406"/>
+
+	<meta property="article:published_time" content="20170831165406"/>
+
+	<meta property="article:modified_time" content="20170831165406"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Field Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Field_Transformations"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Field_Transformations rootpage-Field_Transformations skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Field+Transformations.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Field+Transformations&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Field Transformations</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Field Transformations</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/field-administration/concept/c_FieldTransformations.html">Field Transformations</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields"><b>Fields</b></a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2370dfacd2at'></div><script type="text/javascript">window.tamOnload_tam5a2370dfacd2at=[];tree = new dTree('tam5a2370dfacd2at');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2370dfacd2at = tree;
+                                               tam5a2370dfacd2at.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_New_Fields\&quot;" title=\"Creating New Fields\">Creating New Fields</a> ');
+
+tam5a2370dfacd2at.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_HTML_Fields\&quot;" title=\"Modifying HTML Fields\">HTML Fields</a>');
+tam5a2370dfacd2at.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Image_Fields\&quot;" title=\"Using Image Fields\">Image Fields</a>');
+tam5a2370dfacd2at.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Journal_Fields\&quot;" title=\"Using Journal Fields\">Journal Fields</a> ');
+tam5a2370dfacd2at.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Percent_Complete_Field\&quot;" title=\"Creating a Percent Complete Field\">Percent Complete</a>');
+tam5a2370dfacd2at.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Phone_Number_Fields\&quot;" title=\"Using Phone Number Fields\">Phone Number Fields</a> ');
+tam5a2370dfacd2at.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Wiki_Fields\&quot;" title=\"Wiki Fields\">Wiki Fields</a>');
+tam5a2370dfacd2at.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Choice_Lists\&quot;" title=\"Customizing Choice Lists\">Choice Lists</a>');
+tam5a2370dfacd2at.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Label_Help\&quot;" title=\"Field Label Help\">Field Label Help</a>');
+tam5a2370dfacd2at.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Field_Styles\&quot;" title=\"Defining Field Styles\">Defining Field Styles</a>');
+tam5a2370dfacd2at.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Record_Numbering\&quot;" title=\"Managing Record Numbering\">Record Numbering</a> ');
+tam5a2370dfacd2at.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Spell_Check_to_a_Field\&quot;" title=\"Adding Spell Check to a Field\">Field Spell Check</a> ');
+tam5a2370dfacd2at.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Count_Widget\&quot;" title=\"Condition Count Widget\">Condition Count Widget</a>');
+tam5a2370dfacd2at.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Fields\&quot;" title=\"Reference Fields\">Reference Fields</a>');
+tam5a2370dfacd2at.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auto-Complete_for_Reference_Fields\&quot;" title=\"Auto-Complete for Reference Fields\">Auto-Complete</a>');
+tam5a2370dfacd2at.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_Reference_Icon\&quot;" title=\"Customizing the Reference Icon\">Reference Icon</a>');
+tam5a2370dfacd2at.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Qualifiers\&quot;" title=\"Reference Qualifiers\">Reference Qualifiers</a> ');
+tam5a2370dfacd2at.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Document_ID_Field\&quot;" title=\"Creating a Document ID Field\">Document ID Fields</a>');
+tam5a2370dfacd2at.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Normalization\&quot;" title=\"Field Normalization\">Field Normalization</a>');
+tam5a2370dfacd2at.add(20, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Normalization_Field_Types\&quot;" title=\"Normalization Field Types\">Normalization Field Types</a>');
+tam5a2370dfacd2at.add(21, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Normalizing_a_Field\&quot;" title=\"Normalizing a Field\">Normalizing a Field</a>');
+tam5a2370dfacd2at.add(22, 19, '<strong class=\"selflink\">Field Transformations</strong>');
+tam5a2370dfacd2at.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Definitions\&quot;" title=\"Transform Definitions\">Transform Definitions</a>');
+tam5a2370dfacd2at.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Categories\&quot;" title=\"Transform Categories\">Transform Categories</a>');
+tam5a2370dfacd2at.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Regular_Expressions_and_Patterns_in_Field_Normalization_Rules\&quot;" title=\"Regular Expressions and Patterns in Field Normalization Rules\">Regular Expressions and Patterns in Field Normalization Rules</a>');
+tam5a2370dfacd2at.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Policy\&quot;" title=\"Data Policy\">Data Policy</a>');
+tam5a2370dfacd2at.add(27, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Lookup_and_Record_Matching_Support\&quot;" title=\"Data Lookup and Record Matching Support\">Data Lookup and Record Matching</a>');
+tam5a2370dfacd2at.add(28, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Forms\&quot;" title=\"Configuring Forms\">Configuring Forms</a>');
+
+                                               document.getElementById('5a2370dfacd2at').innerHTML = tam5a2370dfacd2at.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2370dfacd2at) { window.tamOnload_tam5a2370dfacd2at[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Workflow_Stage_Fields.html" title="Workflow Stage Fields">Workflow Stage Fields</a>
+</td></tr>
+<tr>
+<th>  Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration">Field Administration</a></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#What_Field_Transformation_Does"><span class="tocnumber">2</span> <span class="toctext">What Field Transformation Does</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Scripting_and_Transformation"><span class="tocnumber">2.1</span> <span class="toctext">Scripting and Transformation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Normalized_Queries"><span class="tocnumber">2.2</span> <span class="toctext">Normalized Queries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Data_Job"><span class="tocnumber">3</span> <span class="toctext">Data Job</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Testing_Mode"><span class="tocnumber">4</span> <span class="toctext">Testing Mode</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Transforming_a_Field"><span class="tocnumber">5</span> <span class="toctext">Transforming a Field</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_1:_Create_the_Transformation_Record"><span class="tocnumber">5.1</span> <span class="toctext">Task 1: Create the Transformation Record</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_2:_Select_a_Transform_Type"><span class="tocnumber">5.2</span> <span class="toctext">Task 2: Select a Transform Type</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_3:_Test_the_Transform"><span class="tocnumber">5.3</span> <span class="toctext">Task 3: Test the Transform</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_4:_Run_the_Data_Job"><span class="tocnumber">5.4</span> <span class="toctext">Task 4: Run the Data Job</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Running_Single_Jobs"><span class="tocnumber">5.4.1</span> <span class="toctext">Running Single Jobs</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Running_Multiple_Jobs"><span class="tocnumber">5.4.2</span> <span class="toctext">Running Multiple Jobs</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Creating_a_Raw_Field"><span class="tocnumber">6</span> <span class="toctext">Creating a Raw Field</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Identifying_Transformed_Fields"><span class="tocnumber">7</span> <span class="toctext">Identifying Transformed Fields</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Field transformations enable an administrator to transform raw field input into standardized values that are more meaningful to an organization. Transformations are controlled by rules and can be configured for use in queries.
+</p>
+<h1><span class="mw-headline" id="What_Field_Transformation_Does"><span class="mw-headline-number">2</span> What Field Transformation Does</span></h1>
+<p>Field <i>transformation</i> standardizes a value in a specific field using rules. Examples of this might be a name format that removes designations such as <b>Jr.</b> and <b>II</b> from names, or a mode that rounds the amount of computer RAM detected by Discovery to a useful interval (4112 MB to 4000 MB). Transform records make up the rules that define how a field transformation is executed. Order values determine the order in which each rule is evaluated, and a check box on each transform enables an administrator to determine where processing stops when a rule evaluates to <i>true</i>.
+</p>
+<h2><span class="mw-headline" id="Scripting_and_Transformation"><span class="mw-headline-number">2.1</span> Scripting and Transformation</span></h2>
+<p>Scripts that update records or insert records into the database (<a href="index.php%3Ftitle=GlideRecord.html" title="GlideRecord">GlideRecord</a>) are also normalized. For example, if a script to insert a CI record contains a RAM size of <b>4112</b>, the script will be transformed to insert the CI with a RAM size of <b>4000</b> instead. Scripts that query the database for transformed field values return the normal value (such as <b>4000</b>) rather than the original (<i>raw</i>) value.
+</p>
+<h2><span class="mw-headline" id="Normalized_Queries"><span class="mw-headline-number">2.2</span> Normalized Queries</span></h2>
+<p>An administrator can <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_1:_Create_the_Transformation_Record"><b>configure</b></a> transformations to apply to queries issued against transformed fields in lists. In the list, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Filters+and+Breadcrumbs&amp;oldid=0.html" title="Using Filters and Breadcrumbs"><b>create a filter</b></a> using the original (raw) value for the transformed field in the query condition. Normalized queries for field transformations only work for <b>is</b> or <b>is not</b> queries.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Transformation_Filter1.png.html" class="image" title="Transformation_Filter1.png‎"><img alt="Transformation_Filter1.png‎" src="images/f/f6/Transformation_Filter1.png" width="604" height="96" /></a>
+</p><p><br />
+</p><p>The filtered list returns records with the transformed value substituted for the raw value. However, the breadcrumbs for the filter display the original query conditions (raw value).
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Transformation_Filter2.png.html" class="image" title="Transformation_Filter2.png‎"><img alt="Transformation_Filter2.png‎" src="images/4/49/Transformation_Filter2.png" width="1006" height="185" /></a>
+</p>
+<h1><span class="mw-headline" id="Data_Job"><span class="mw-headline-number">3</span> Data Job</span></h1>
+<p>When a Transform is created, a <b>Transform application</b> data job is also created. This job can only be executed manually and applies the transform to all the appropriate fields in the database.  Data jobs have a roll back feature that allows you to undo a transformation before committing changes that affect the entire database. Data jobs cannot be started when the Transformation record is in the <b>Test</b> mode. When testing is complete, change the <b>Mode</b> setting in the Transformation record to <b>Active</b> to enable the controls for the data job. See <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_4:_Run_the_Data_Job"><b>Task 4: Run the Data Job</b></a> for details about running data jobs.
+</p>
+<h1><span class="mw-headline" id="Testing_Mode"><span class="mw-headline-number">4</span> Testing Mode</span></h1>
+<p>Transformation is a powerful tool that can cause data issues if used incautiously. Test all transformations before committing the changes to the CMDB.  All transformation records open in <b>Test</b> mode by default, which blocks administrators from running manual data jobs that apply changes to existing data. Only users with the <b>normalization_tester</b> role can transform data when a record is in the <b>Test</b> mode. This is limited to new records opened by the tester or records in which the transformed field is updated by the tester. To apply transformations to the CMDB after testing, change the mode to <b>Active</b> in the transformation record and run the appropriate data job. For information on testing transforms, see <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_3:_Test_the_Transform"><b>Task 3: Test the Transform</b></a>.
+</p>
+<h1><span class="mw-headline" id="Transforming_a_Field"><span class="mw-headline-number">5</span> Transforming a Field</span></h1>
+<p>To transform a field, perform the following tasks in order:
+</p>
+<ul><li>Task 1: Create the Transformation Record</li>
+<li><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_2:_Select_a_Transform_Type">Task 2: Select a Transform Type</a></li>
+<li><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_3:_Test_the_Transform">Task 3: Test the Transform</a></li>
+<li><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Task_4:_Run_the_Data_Job">Task 4: Run the Data Job</a></li></ul>
+<h2><span class="mw-headline" id="Task_1:_Create_the_Transformation_Record"><span class="mw-headline-number">5.1</span> Task 1: Create the Transformation Record</span></h2>
+<ol><li><a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins"><b>Activate</b></a> the Field Normalization plugin.</li>
+<li>Navigate to <i>Field Normalization &gt; Configurations &gt; Transformations</i>.</li>
+<li>Click <b>New</b>.</li>
+<li>Create a transformation record using the following fields:
+<ul><li><b>Name</b>: Unique name for this transformation record. This value is for reference only and is not used in any processing.</li>
+<li><b>Table</b>: Select the ServiceNow table containing the field being transformed. It is important to understand the table hierarchy when setting up a field transform. For example, if you configure transformation for a field in the <i>Computer [cmdb_ci_computer]</i> table, that field will be transformed for all workstation machines, Windows servers, Linux servers, and UNIX servers.</li>
+<li><b>Field</b>: Select the field to transform. The list presented contains only those field types (integer and string) from the table selected that can be transformed.</li>
+<li><b>Mode</b>: The three available modes are <b>Off</b>, <b>Test</b>, and <b>Active</b>. All transformation records are created in the test mode by default. Do not change the mode until you have thoroughly tested the transformation. When testing is complete, change the mode to <b>Active</b>. To disable this transformation, switch the mode to <b>Off</b>.</li>
+<li><b>Normalize query</b>: Select this check box to apply the field value transformed by this record to all queries involving this field. Queries issued with the raw (original) field value will be edited to use the transformation value.</li>
+<li><b>Raw field</b>: Select the field to use to display the original input (non-normalized) values on a form in which a field value has been normalized. For the selection to appear in the drop-down list, add a custom field to the form for the table selected. For instructions on adding a field for raw data, see <a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html#Creating_a_Raw_Field"><b>Creating a Raw Field</b></a>.</li></ul></li>
+<li>Click <b>Submit</b>.
+<dl><dd>The <b>Transforms</b> and <b>Data Jobs</b> Related Lists appear on the form.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Task_2:_Select_a_Transform_Type"><span class="mw-headline-number">5.2</span> Task 2: Select a Transform Type</span></h2>
+<ol><li>In the Transformation record, select the <b>Transforms</b> Related List.</li>
+<li>Click <b>New</b>.
+<dl><dd>A selection list of <a href="index.php%3Ftitle=Transform_Definitions.html#Definitions_Included_with_Field_Transformation" title="Transform Definitions"><b>transform types</b></a> appears, displaying only those transformations appropriate for the field type selected.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Type.png.html" class="image" title="Transformation_Type.png‎"><img alt="Transformation_Type.png‎" src="images/thumb/2/28/Transformation_Type.png/600px-Transformation_Type.png" width="600" height="265" srcset="/images/2/28/Transformation_Type.png 1.5x, /images/2/28/Transformation_Type.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Select a transform type and provide the appropriate parameters.</li>
+<li>Select an <b>Order</b> number for this transform.
+<dl><dd>The conditions for the transforms are executed according to the order numbers assigned.</dd></dl></li>
+<li>Select the <b>Final</b> check box to stop processing with this transform if the condition evaluates to <i>true</i>.</li>
+<li>Select the <b>Case sensitive</b> check box to force case sensitivity in the condition statement.</li>
+<li>To create a condition that uses <a href="index.php%3Ftitle=Regular_Expressions_and_Patterns_in_Field_Normalization_Rules.html" title="Regular Expressions and Patterns in Field Normalization Rules"><b>regular expressions or pattern matching</b></a>, select the correct operator.
+<ul><li>For regular expressions, select <b>matches regex</b>.</li>
+<li>For pattern matching, select <b>matches pattern</b>.</li></ul>
+<dl><dd>The following transform example replaces the <b>INC</b> at the beginning of an incident number with the string <b>ENG</b> if the assignment group is <b>ITSM Engineering</b>.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Record4.png.html" class="image" title="Transformation_Record4.png‎"><img alt="Transformation_Record4.png‎" src="images/thumb/6/6d/Transformation_Record4.png/850px-Transformation_Record4.png" width="850" height="247" srcset="/images/6/6d/Transformation_Record4.png 1.5x, /images/6/6d/Transformation_Record4.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd>The new Transform appears in the Related List of the Transformation record.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Record2.png.html" class="image" title="Transformation_Record2.png‎"><img alt="Transformation_Record2.png‎" src="images/thumb/2/26/Transformation_Record2.png/850px-Transformation_Record2.png" width="850" height="331" srcset="/images/2/26/Transformation_Record2.png 1.5x, /images/2/26/Transformation_Record2.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>When the Transform is created, a <b>Transformation application</b> data job is also created. This data job applies this transform to appropriate records in the entire database and should <i>not</i> be run until testing is complete.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Extant_Data_Job.png.html" class="image" title="Transformation_Extant_Data_Job.png‎"><img alt="Transformation_Extant_Data_Job.png‎" src="images/thumb/b/b0/Transformation_Extant_Data_Job.png/850px-Transformation_Extant_Data_Job.png" width="850" height="123" srcset="/images/b/b0/Transformation_Extant_Data_Job.png 1.5x, /images/b/b0/Transformation_Extant_Data_Job.png 2x" /></a></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Task_3:_Test_the_Transform"><span class="mw-headline-number">5.3</span> Task 3: Test the Transform</span></h2>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Users must have the <b>normalization_tester</b> role to create test records.</i>
+</td></tr></table>
+<p><br />
+New transformation records open in the <b>Test</b> mode by default, enabling administrators to test transforms thoroughly before applying them to the existing records in the database. In the test mode, the <b>Start</b> controls are not available for the <b>Transform application</b> data job.  There are two methods for testing transforms before committing the transformations to existing data.
+</p>
+<ul><li>Create or update records: In the test mode, only records that have been created or updated by a user with the <b>normalization_tester</b> role are transformed. Grant the <b>normalizer</b> and <b>normalization_tester</b> roles to the same user or grant them to separate users. </li>
+<li>Test transforms utility: This feature enables a normalization tester to transform field values on the fly without opening or updating records. This utility tests <i>all</i> the transforms configured for this field.</li></ul>
+<ol><li>Open a Transformation record.</li>
+<li>Click the <b>Test transforms</b> Related Link.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Test1.png.html" class="image" title="Transformation_Test1.png"><img alt="Transformation_Test1.png" src="images/thumb/0/04/Transformation_Test1.png/800px-Transformation_Test1.png" width="800" height="290" srcset="/images/0/04/Transformation_Test1.png 1.5x, /images/0/04/Transformation_Test1.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>A dialog box appears for testing field values.</dd></dl></li>
+<li>Enter a value to transform in the <b>Raw data</b> field.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Test2.png.html" class="image" title="Transformation_Test2.png"><img alt="Transformation_Test2.png" src="images/7/73/Transformation_Test2.png" width="303" height="109" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>OK</b>.
+<dl><dd>The platform transforms the raw value in the <b>Transformed data</b> field.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Test3.png.html" class="image" title="Transformation_Test3.png"><img alt="Transformation_Test3.png" src="images/6/65/Transformation_Test3.png" width="303" height="109" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Enter new raw data to test other transforms.</li>
+<li>Click <b>Cancel</b> to end the test.</li>
+<li>When testing is complete, change the <b>Mode</b> to <b>Active</b> and run the data job.</li></ol>
+<h2><span class="mw-headline" id="Task_4:_Run_the_Data_Job"><span class="mw-headline-number">5.4</span> Task 4: Run the Data Job</span></h2>
+<p>After successfully testing the transform, start the <b>Transform application</b> data job to apply the transform to all the appropriate records in the database. 
+</p>
+<h3><span class="mw-headline" id="Running_Single_Jobs"><span class="mw-headline-number">5.4.1</span> Running Single Jobs</span></h3>
+<ol><li>Open the Transformation record and switch the <b>Mode</b> to <b>Active</b>.</li>
+<li>Select the <b>Data Jobs</b> Related List.</li>
+<li>Run the data job using one of the following methods.
+<ul><li>In the list of data jobs, select the check box of the job you want to run, and then select <b>Start</b> from the <b>Actions</b> menu.</li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Extant_Data_Job1.png.html" class="image" title="Transformation_Extant_Data_Job1.png"><img alt="Transformation_Extant_Data_Job1.png" src="images/thumb/0/05/Transformation_Extant_Data_Job1.png/800px-Transformation_Extant_Data_Job1.png" width="800" height="303" srcset="/images/0/05/Transformation_Extant_Data_Job1.png 1.5x, /images/0/05/Transformation_Extant_Data_Job1.png 2x" /></a></dd>
+<dd><br /></dd></dl>
+<ul><li>Click on the link in the Created column to open the data job, and then click the <b>Start</b> Related Link</li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Extant_Data_Job3.png.html" class="image" title="Transformation_Extant_Data_Job3.png‎"><img alt="Transformation_Extant_Data_Job3.png‎" src="images/thumb/d/d7/Transformation_Extant_Data_Job3.png/850px-Transformation_Extant_Data_Job3.png" width="850" height="196" srcset="/images/d/d7/Transformation_Extant_Data_Job3.png 1.5x, /images/d/d7/Transformation_Extant_Data_Job3.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>The <b>State</b> of the jobs turns to <b>Queued</b> as it runs and to <b>Completed</b> when it finishes successfully.</dd></dl></li>
+<li>This is how the data job appears in the Transformation record after completion.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Transformation_Extant_Data_Job2.png.html" class="image" title="Transformation_Extant_Data_Job2.png‎"><img alt="Transformation_Extant_Data_Job2.png‎" src="images/thumb/5/5a/Transformation_Extant_Data_Job2.png/850px-Transformation_Extant_Data_Job2.png" width="850" height="118" srcset="/images/5/5a/Transformation_Extant_Data_Job2.png 1.5x, /images/5/5a/Transformation_Extant_Data_Job2.png 2x" /></a></dd>
+<dd><br /></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Running_Multiple_Jobs"><span class="mw-headline-number">5.4.2</span> Running Multiple Jobs</span></h3>
+<p>To run data jobs for multiple field transformations:
+</p>
+<ol><li>Navigate to <i>Field Normalization &gt; Data Jobs &gt; All</i>.</li>
+<li>Select the check boxes for the jobs you want to start.
+<dl><dd>These jobs must have the <b>Mode</b> set to <b>Active</b>.</dd></dl></li>
+<li>Select <b>Start</b> from the <b>Actions</b> menu.
+<dl><dd>The platform only runs data jobs from Active transformations. The Action menu indicates the number of Active data jobs that can run. For example, the menu might display <b>Start (3 of 4)</b>.</dd></dl></li></ol>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Creating_a_Raw_Field"><span class="mw-headline-number">6</span> Creating a Raw Field</span></h1>
+<p>A <b>Raw field</b> is a custom field created by an administrator to show the original (raw) input in a field on a form after it has been normalized or transformed. 
+</p>
+<ol><li>In the form containing the field that is being normalized or transformed, right-click in the header bar.</li>
+<li>Select the appropriate option for your version:
+<ul><li> <b><a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a> or later:</b> Configure &gt; Form Layout</li>
+<li> <b><a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka</a> or earlier:</b> Personalize &gt; Form Layout</li></ul></li>
+<li>Complete the <b>Create new field</b> form at the bottom of the page, and then click <b>Add</b>:
+<ul><li><b>Name</b>: Type the field label. In this case, use <b>Raw</b> + &lt;<i>field label</i>&gt;. </li>
+<li><b>Type</b>: Select a data type from the list for this field.</li>
+<li><b>Field length</b>: Select the character limit for this field. The default is 40.</li></ul></li>
+<li>Move the new field adjacent to the normalized field using the direction arrows in the slushbucket.</li>
+<li>Click <b>Save</b>.</li></ol>
+<p><br />
+</p>
+<dl><dd><dl><dd><a href="index.php%3Ftitle=File:Transformation_Raw_Field1.png.html" class="image" title="Transformation_Raw_Field1.png‎"><img alt="Transformation_Raw_Field1.png‎" src="images/a/ad/Transformation_Raw_Field1.png" width="407" height="135" /></a></dd></dl></dd></dl>
+<h1><span class="mw-headline" id="Identifying_Transformed_Fields"><span class="mw-headline-number">7</span> Identifying Transformed Fields</span></h1>
+<p>Transformed fields in ServiceNow records are marked with an icon that links to different targets, depending on the user's role. Users with the <b>normalizer</b> role can click on the icon for direct access to the transformation configuration record for that field. When a user without the <b>normalizer</b> role clicks the link, a Wiki page appears that provides help on the form. A <a href="index.php%3Ftitle=Field_Normalization.html#Preferences" title="Field Normalization"><b>preference</b></a>, called <b>Restrict to roles</b>, enables an administrator to define the roles that are permitted to see the icon. If no roles are specified, then the icon is visible to all roles.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Transformation_Icon.png.html" class="image" title="Transformation_Icon.png"><img alt="Transformation_Icon.png" src="images/3/3c/Transformation_Icon.png" width="423" height="301" /></a>
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171203033456
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.307 seconds
+Real time usage: 0.403 seconds
+Preprocessor visited node count: 114/1000000
+Preprocessor generated node count: 304/1000000
+Post‐expand include size: 4568/2097152 bytes
+Template argument size: 944/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  113.644      1 - -total
+ 77.56%   88.146      1 - Template:Field_Admin
+ 72.15%   81.996      1 - Template:Topic
+ 13.80%   15.686      1 - Embedded:Creating_a_Raw_Field
+  9.77%   11.103      1 - Embedded:Field_Admin
+  7.38%    8.383      4 - Template:T
+  6.28%    7.142      2 - Template:Note
+  4.41%    5.015      1 - Embedded:Field_Normalization
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:10196-0!*!0!1!en!5!* and timestamp 20171203033455 and revision id 250581
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html">http://wiki.servicenow.com/index.php?title=Field_Transformations&amp;oldid=250581</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_10196"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="10196" data-vote-the-vote="5" data-vote-id="10196" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_10196_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="10196" data-vote-the-vote="1" data-vote-id="10196" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_10196_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Field_Transformations.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Field+Transformations&amp;returntoquery=oldid%3D250581" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Field+Transformations&amp;returntoquery=oldid%3D250581" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Field_Transformations.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Field_Transformations&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Field+Transformations.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Field+Transformations&amp;returnto=Field+Transformations&amp;oldid=250581&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Field_Transformations&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FField_Transformations.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Field_Transformations" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Field_Transformations&amp;oldid=250581.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Field_Transformations&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:54, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1753});});</script></body></html>

@@ -1,0 +1,3461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Business Rules in the Base System - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Business_Rules_in_the_Base_System","wgTitle":"Business Rules in the Base System","wgCurRevisionId":243634,"wgRevisionId":243634,"wgArticleId":7103,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Out-of-Box Appendix","Business Rules"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Business_Rules_in_the_Base_System","wgRelevantArticleId":7103,"wgRequestId":"a871bba6807792190395013d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150206154747"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Business_Rules_in_the_Base_System"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Business Rules in the Base System"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Business Rules"/>
+<meta name="category" content="Business Rules"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Business_Rules_in_the_Base_System.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Business Rules in the Base System"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150206154747"/>
+
+	<meta property="article:published_time" content="20150206154747"/>
+
+	<meta property="article:modified_time" content="20150206154747"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Business Rules"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Business_Rules_in_the_Base_System"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Business_Rules_in_the_Base_System rootpage-Business_Rules_in_the_Base_System skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Business+Rules+in+the+Base+System.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Business+Rules+in+the+Base+System&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Business Rules in the Base System</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Business Rules in the Base System</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;oldid=243634.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;oldid=243634.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">Business Rules</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Scripting_in_Business_Rules.html" title="Scripting in Business Rules">Scripting in Business Rules</a></li>
+<li><a href="index.php%3Ftitle=Debugging_Business_Rules.html" title="Debugging Business Rules">Debugging Business Rules</a></li>
+<li><a href="index.php%3Ftitle=Business_Rules_Best_Practices.html" title="Business Rules Best Practices">Business Rules Best Practices</a></li></ul>
+</td></tr></table>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The table on this page includes a description of each business rule included in the base ServiceNow system and a short description of what it it does. Depending on the version of ServiceNow you are using, some business rules on this list might not be present or might operate in a slightly different way. This list includes business rules installed by plugins that are installed by default, but does not include business rules that come with optional plugins.<br />
+</p>
+<h1><span class="mw-headline" id="Business_Rules"><span class="mw-headline-number">2</span> Business Rules</span></h1>
+<table class="standard sortable" width="75%">
+
+<tr>
+<th> Business Rules
+</th>
+<th> Table
+</th>
+<th> When
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Add Approver If Process Guide running
+</td>
+<td>  Approval [sysapproval_approver]
+</td>
+<td>  before
+</td>
+<td>  This business rule adds the approvals if a process guide is running.
+</td></tr>
+<tr>
+<td>  Adjust install counts for licenses
+</td>
+<td>  Software [cmdb_ci_spkg]
+</td>
+<td>  after
+</td>
+<td>  Updates the install counts on the Software table for all licenses with non-discoverable keys.
+</td></tr>
+<tr>
+<td>  Affected ci notifications
+</td>
+<td>  Task [task]
+</td>
+<td>  async
+</td>
+<td>  Notifies subscribers when CIs are affected by an incident.
+<p><b>Note:</b> The <a href="index.php%3Ftitle=Email_Properties.html#Additional_Properties" title="Email Properties"><tt>NotifyAffectedCI.max_rel_level</tt></a> property influences the behavior of this business rule (starting with the <a href="index.php%3Ftitle=Release:Dublin_Patch_2.html" title="Release:Dublin Patch 2">Dublin Patch 2 release</a>).
+</p>
+</td></tr>
+<tr>
+<td>  Affected cost center notifications
+</td>
+<td>  Task [task]
+</td>
+<td>  async
+</td>
+<td>  Notifies cost center subscribers when CIs related to the cost center are affected by an incident.
+</td></tr>
+<tr>
+<td>  Affected group notifications
+</td>
+<td>  Task [task]
+</td>
+<td>  async
+</td>
+<td>  Notifies group subscribers when CIs assigned to the group are affected by an incident.
+</td></tr>
+<tr>
+<td>  Affected location notifications
+</td>
+<td>  Task [task]
+</td>
+<td>  async
+</td>
+<td>  Notifies location subscribers when CIs in a specific location are affected by an incident.
+</td></tr>
+<tr>
+<td>  Allow either workflow or delivery plan
+</td>
+<td>  Catalog Item [sc_cat_item]
+</td>
+<td>  before
+</td>
+<td>  If a workflow is specified, the Delivery Plan field will be emptied, because both cannot be used.
+</td></tr>
+<tr>
+<td>  approval events
+</td>
+<td>  Approval [sysapproval_approver]
+</td>
+<td>  after
+</td>
+<td>  Generates all of the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> in the approval process. Important for driving email notifications based on approvals.
+</td></tr>
+<tr>
+<td>  approval query
+</td>
+<td>  Approval [sysapproval_approver]
+</td>
+<td>  before
+</td>
+<td>  approver changes
+</td></tr>
+<tr>
+<td>  Asset Adjust License Count
+</td>
+<td>  Software License [ast_license_base]
+</td>
+<td>  after
+</td>
+<td>  Updates the install counts on the Software License table for all licenses with non-discoverable keys.
+</td></tr>
+<tr>
+<td>  Asset Adjust Used License Count
+</td>
+<td>  Software License Instance [ast_license_instance]
+</td>
+<td>  after
+</td>
+<td>  Updates the install counts on the Software License Instance table for all licenses with non-discoverable keys.
+</td></tr>
+<tr>
+<td>  Assign from Stock
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  after
+</td>
+<td>  If a requested item's Configuration Item is changed to an existing CI record, the business rule will update the CI record to indicate that it is being assigned to the requester.
+</td></tr>
+<tr>
+<td>  Attach Delivery Plan
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  after
+</td>
+<td>  If a change request does not have a delivery plan attached, this business rule will attach a delivery plan.
+</td></tr>
+<tr>
+<td>  Attachment events
+</td>
+<td>  Attachments [sys_attachment]
+</td>
+<td>  after
+</td>
+<td>  Generates <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> based on an attachment being attached to a record.
+</td></tr>
+<tr>
+<td>  Audit Relationship Changes
+</td>
+<td>  Group Relationships [cmdb_rel_group]
+</td>
+<td>  after
+</td>
+<td>  Audits the group relationships in the CMDB.
+</td></tr>
+<tr>
+<td>  Audit Relationship Changes
+</td>
+<td>  People Relationships [cmdb_rel_person]
+</td>
+<td>  after
+</td>
+<td>  Audits the people relationships in the CMDB.
+</td></tr>
+<tr>
+<td>  Audit Relationship Changes
+</td>
+<td>  CI Relationships [cmdb_rel_ci]
+</td>
+<td>  after
+</td>
+<td>  Audits the CI relationships in the CMDB.
+</td></tr>
+<tr>
+<td>  Auto Close On Approval
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  before
+</td>
+<td>  Auto-closes the current change task if it is marked as approved as part of an existing delivery plan.
+</td></tr>
+<tr>
+<td>  Auto Close On Approval
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  before
+</td>
+<td>  Auto-closes the current catalog task if it is marked as approved as part of an existing delivery plan.
+</td></tr>
+<tr>
+<td>  Auto set workflow from workflow version
+</td>
+<td>  Workflow Context [wf_context]
+</td>
+<td>  before
+</td>
+<td>  Enforces that the Workflow Version's Workflow field matches the Workflow Context's Workflow field.
+</td></tr>
+<tr>
+<td>  Auto start on context
+</td>
+<td>  Workflow Context [wf_context]
+</td>
+<td>  after
+</td>
+<td>  If the <b>auto_start</b> flag is true on a workflow context, this business rule drives the auto start.
+</td></tr>
+<tr>
+<td>  automation synchronizer
+</td>
+<td>  Scheduled Job [sysauto]
+</td>
+<td>  after
+</td>
+<td>  Synchronizes the scheduled jobs.
+</td></tr>
+<tr>
+<td>  Boolean Protection
+</td>
+<td>  Dictionary [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Prevents users from changing boolean fields to non-boolean fields.
+</td></tr>
+<tr>
+<td>  Build Connection URL
+</td>
+<td>  Data Source [sys_data_source]
+</td>
+<td>  before
+</td>
+<td>  Generates the connection URL for the data source.
+</td></tr>
+<tr>
+<td>  Calc SLAs on Display
+</td>
+<td>  Task [task]
+</td>
+<td>  display
+</td>
+<td>  Calculates the stage and elapsed time of an SLA affected by an incident when the incident form displays.
+</td></tr>
+<tr>
+<td>  Calculate Article Rating
+</td>
+<td>  Knowledge Feedback [kb_feedback]
+</td>
+<td>  async
+</td>
+<td>  Calculates the article rating based on the aggregates all of the ratings cast.
+</td></tr>
+<tr>
+<td>  Calculate expires in days
+</td>
+<td>  X.509 Certificate [sys_certificate]
+</td>
+<td>  before
+</td>
+<td>  Calculates the amount of time left before the X.509 Certificate expires.
+</td></tr>
+<tr>
+<td>  Calculate Request Item Due Date
+</td>
+<td>  Requested Item [sc_request_item]
+</td>
+<td>  before
+</td>
+<td>  Calculates the due date of the request item by adding the delivery time to the time that the record was assigned.
+</td></tr>
+<tr>
+<td>  Calculate Total Delivery Time
+</td>
+<td>  Execution Plan Task [sc_cat_item_delivery_task]
+</td>
+<td>  before
+</td>
+<td>  Calculates the total delivery time for an execution plan.
+</td></tr>
+<tr>
+<td>  calculatePriority
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Calculates the priority level used for priority fields.
+</td></tr>
+<tr>
+<td>  Cancel Workflows Upon Cancellation
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  If the task State changes to Closed Incomplete (4), cancel related workflows so that tasks do not remain active.
+</td></tr>
+<tr>
+<td>  Cascade Request Approval to Request Item
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  after
+</td>
+<td>  Cascades any changes made to the approval field of a service catalog request to the requested items attached to that request.
+</td></tr>
+<tr>
+<td>  certificate events
+</td>
+<td>  X.509 Certificate [sys_certificate]
+</td>
+<td>  before
+</td>
+<td>  Generates <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> based on changes to the X.509 Certificates.
+</td></tr>
+<tr>
+<td>  change events
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  before
+</td>
+<td>  Generates <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> related to Change Requests.
+</td></tr>
+<tr>
+<td>  Change Own Profile
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  If a user changes their Time, Date, or Timezone formatting in their user profile, this business rule updates their current session to match the new settings.
+</td></tr>
+<tr>
+<td>  Change Phase Events
+</td>
+<td>  Change Phase [change_phase]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> related to Change Phases after the Change Phase is loaded.
+</td></tr>
+<tr>
+<td>  Change Phase Events Before
+</td>
+<td>  Change Phase [change_phase]
+</td>
+<td>  before
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> related to Change Phases before the Change Phase is loaded.
+</td></tr>
+<tr>
+<td>  Change state on closed Insert
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Updates the state field in the Task table to match the incident_state field when the incident is closed.
+</td></tr>
+<tr>
+<td>  change reopen
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  before
+</td>
+<td>  If the state is changed on a Change Request that was previously closed, this business rule returns the Request to <b>active</b>.
+</td></tr>
+<tr>
+<td>  Check max_length
+</td>
+<td>  Variables [var_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Enforces a maximum length on variables of 40 characters.
+</td></tr>
+<tr>
+<td>  Choice Events
+</td>
+<td>  Choices [sys_choice]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> related to Choices before the Choice is loaded.
+</td></tr>
+<tr>
+<td>  Choices unload
+</td>
+<td>  Choices [sys_choice]
+</td>
+<td>  after
+</td>
+<td>  Unloads choices.
+</td></tr>
+<tr>
+<td>  Clear JDBC table name
+</td>
+<td>  Data Source [sys_data_source]
+</td>
+<td>  after
+</td>
+<td>  If the data source's type is <b>JDBC</b>, the table value is cleared.
+</td></tr>
+<tr>
+<td>  Close Parent if Required
+</td>
+<td>  Requested Item [sc_request_item]
+</td>
+<td>  after
+</td>
+<td>  If a requested item is either cancelled or delivered, the business rule checks to see if there are other active requested items attached to the parent request. If there are none, then the parent request is updated with the same state.
+</td></tr>
+<tr>
+<td>  Close Tasks Due to Cancellations
+</td>
+<td>  Requested Item [sc_request_item]
+</td>
+<td>  after
+</td>
+<td>  If a requested item is cancelled, all of the tasks created by that requested item are closed.
+</td></tr>
+<tr>
+<td>  Close Ticket
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  before
+</td>
+<td>  If the Change Task is marked either as complete or cancelled, the business rule closes the ticket and populates fields related to closure (e.g. Work End).
+</td></tr>
+<tr>
+<td>  Close Ticket
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  before
+</td>
+<td>  If the Catalog Task is marked either as complete or cancelled, the business rule closes the ticket and populates fields related to closure (e.g. Work End).
+</td></tr>
+<tr>
+<td>  cmdb synch event
+</td>
+<td>  Configuration Item [cmdb_ci]
+</td>
+<td>  after
+</td>
+<td>  Generates a roll-up event every time a CI is changed.
+</td></tr>
+<tr>
+<td>  cmdbCIChildren
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A script which lists all of the children of a configuration item.
+</td></tr>
+<tr>
+<td>  cmdb_rel_ci synch event
+</td>
+<td>  CI Relationship [cmdb_rel_ci]
+</td>
+<td>  after
+</td>
+<td>  Generates a roll-up event every time a CI is changed.
+</td></tr>
+<tr>
+<td>  cmdb_rel_suggest_relationshipGetChoices
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A script which lists all of the choices for suggested relationships.
+</td></tr>
+<tr>
+<td>  Company Projection
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Populates the company field with the caller's company field if an incident has a caller listed but no company listed.
+</td></tr>
+<tr>
+<td>  Condition Field validation
+</td>
+<td>  Condition Checks [cmn_condition_check]
+</td>
+<td>  before
+</td>
+<td>  Enforces the requirement that the condition field is a reference to cmn_condition_checker
+</td></tr>
+<tr>
+<td>  Contain Changes
+</td>
+<td>  Contained Role [sys_user_role_contains]
+</td>
+<td>  after
+</td>
+<td>  Applies changes in the Contained Role table to the role manager.
+</td></tr>
+<tr>
+<td>  Contract Instance
+</td>
+<td>  Lease Instance [ast_contract_instance]
+</td>
+<td>  before
+</td>
+<td>  Populates the Contract Instance with information from the Contract record, and from the CI record.
+</td></tr>
+<tr>
+<td>  Convert to Reference Currency
+</td>
+<td>  Price [fx_price]
+</td>
+<td>  before
+</td>
+<td>  Converts the price to a reference currency.
+</td></tr>
+<tr>
+<td>  Create activity
+</td>
+<td>  Workflow Instance [wf_workflow_instance]
+</td>
+<td>  before
+</td>
+<td>  If there is no activity in the instance of a workflow, this business rule generates the next activity in the workflow instance based on the workflow itself.
+</td></tr>
+<tr>
+<td>  Create default conditions
+</td>
+<td>  Workflow Activity [wf_activity]
+</td>
+<td>  after
+</td>
+<td>  Generates default conditions for each workflow activity if the activity has no parent.
+</td></tr>
+<tr>
+<td>  Create External Dependencies
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  after
+</td>
+<td>  Generates external dependencies.
+</td></tr>
+<tr>
+<td>  Create Flip Side
+</td>
+<td>  Suggested Relationship [cmdb_rel_type_suggest]
+</td>
+<td>  after
+</td>
+<td>  Generates the mirror relationship for the current relationship.
+</td></tr>
+<tr>
+<td>  Create Inventory Item
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  after
+</td>
+<td>  When a requested item's stage reaches <b>Complete</b>, it generates a CMDB record for the requested item.
+</td></tr>
+<tr>
+<td>  Create module table
+</td>
+<td>  Module [sys_app_module]
+</td>
+<td>  after
+</td>
+<td>  When a module is inserted, it checks if there is a table already tied to the module. If not, it creates a table.
+</td></tr>
+<tr>
+<td>  Create or Remove Text Index
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  If the attribute text_index is changed, the business rule either requests a text index or disposes of the existing text index, as appropriate. Note that the business rule <b>Create Text Index</b> actually performs the text index creation.
+</td></tr>
+<tr>
+<td>  Create Request Item Child Tasks
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  after
+</td>
+<td>  When a requested item is created, this business rule generates the execution plan tasks based on the item's execution plan.
+</td></tr>
+<tr>
+<td>  Create Text Index
+</td>
+<td>  Text Search Tables [ts_table]
+</td>
+<td>  after
+</td>
+<td>  If text_index is set to <b>true</b> in the System Dictionary, this business rule will index the text within all of the records for use in the global text search.
+</td></tr>
+<tr>
+<td>  CreateElement
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Creates an Element in the Dictionary.
+</td></tr>
+<tr>
+<td>  CTI Processing
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Parses the payload from a URL generated by CTI. For more information, see <a href="index.php%3Ftitle=Computer_Telephony_Integration_(CTI).html" title="Computer Telephony Integration (CTI)" class="mw-redirect">Computer Telephony Integration (CTI)</a>.
+</td></tr>
+<tr>
+<td>  Currency Filter
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Filters the display of currencies.
+</td></tr>
+<tr>
+<td>  Date Globals
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Establishes the javascript functions now() nowDateTime() and lastweek()
+</td></tr>
+<tr>
+<td>  Delegates
+</td>
+<td>  Delegate [sys_user_delegate]
+</td>
+<td>  before
+</td>
+<td>  Prevents users from assigning other user delegates unless they are an administrator.
+</td></tr>
+<tr>
+<td>  Delete databases on change
+</td>
+<td>  Round Robin Definition [jrobin_definition]
+</td>
+<td>  after
+</td>
+<td>  If a Round Robin Definition changes, this business rule deletes any databases that were using it.
+</td></tr>
+<tr>
+<td>  Delete databases on change
+</td>
+<td>  Round Robin Archive [jrobin_archive]
+</td>
+<td>  after
+</td>
+<td>  If a Round Robin Archive changes, this business rule deletes any databases that were using it.
+</td></tr>
+<tr>
+<td>  Delete Impacted Services
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Deletes affected services when the task is deleted.
+</td></tr>
+<tr>
+<td>  Delete parent workflow
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  after
+</td>
+<td>  If the last remaining workflow version of a parent workflow is deleted, this business rule deletes the parent workflow.
+</td></tr>
+<tr>
+<td>  Delete software license instance
+</td>
+<td>  Software Instance [cmdb_software_instance]
+</td>
+<td>  after
+</td>
+<td>  If the software instance is deleted from the CMDB table, this business rule deletes the software license from the asset table.
+</td></tr>
+<tr>
+<td>  Delete table column
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Deletes a table column.
+</td></tr>
+<tr>
+<td>  Delete Tasks for Deleted Requested Item
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  before
+</td>
+<td>  If requested items are deleted, any tasks generated by the requested items are deleted as well. It also rebalances the request's price to reflect the change.
+</td></tr>
+<tr>
+<td>  Delete Text Index
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Queues the text index for deletion.
+</td></tr>
+<tr>
+<td>  deleteAllRecords
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function for deleting all records from a particular table.
+</td></tr>
+<tr>
+<td>  Dictionary change
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Flushes the system's cache after a change in the dictionary.
+</td></tr>
+<tr>
+<td>  Dictionary change length
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Changes the maximum length of fields.
+</td></tr>
+<tr>
+<td>  Dictionary change rationally
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Prevents dictionary field truncation.
+</td></tr>
+<tr>
+<td>  dynamicUserCreation
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function for creating a user from a string value. It splits the value at the space, and then properly capitalizes the first and last names.
+</td></tr>
+<tr>
+<td>  ECC Queue - mark outputs processed
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  after
+</td>
+<td>  Marks outputs of the ECC Queue as "processed."
+</td></tr>
+<tr>
+<td>  ECC Queue - mark outputs state
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Marks the state of the outputs of the ECC Queue.
+</td></tr>
+<tr>
+<td>  ECC Queue Reader
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  async
+</td>
+<td>  Reads the input of the ECC Queue.
+</td></tr>
+<tr>
+<td>  Email Style Verification
+</td>
+<td>  Stationery [sysevent_email_style]
+</td>
+<td>  before
+</td>
+<td>  Checks the style field of an email to ensure that ${body} appears in the style field.
+</td></tr>
+<tr>
+<td>  emailsToUsers
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  This function converts an email address to user names. If <b>glide.ui.activity.email.use_display</b> is set to true, this function is called in the activity headers of emails.
+</td></tr>
+<tr>
+<td>  Ensure unique target field
+</td>
+<td>  Field Map [sys_transform_entry]
+</td>
+<td>  before
+</td>
+<td>  Enforces target field uniqueness when building a transform map.
+</td></tr>
+<tr>
+<td>  Ensure Valid Schedule
+</td>
+<td>  Schedule Item [sys_trigger]
+</td>
+<td>  before
+</td>
+<td>  Validates the schedule for the schedule item.
+</td></tr>
+<tr>
+<td>  Expand Roles
+</td>
+<td>  User Role [sys_user_has_role]
+</td>
+<td>  after
+</td>
+<td>  Updates the roles for a user on change.
+</td></tr>
+<tr>
+<td>  Field Deletion Cleanup
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  When a field is deleted from the dictionary, this business rule deletes all onChange() Client Scripts and UI Policy Actions that applied to the field.
+</td></tr>
+<tr>
+<td>  Flush Form Cache
+</td>
+<td>  Client Script [sys_script_client]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache every time a client script is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush Form Cache
+</td>
+<td>  UI Policy [sys_ui_policy]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache every time a UI Policy is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush Form Cache
+</td>
+<td>  UI Policy Action [sys_ui_policy_action]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache every time a UI Policy Action is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush RealForm Cache
+</td>
+<td>  Module [sys_app_module]
+</td>
+<td>  after
+</td>
+<td>  Flushes the realform cache every time a module is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush RealForm Cache
+</td>
+<td>  Application [sys_app_application]
+</td>
+<td>  after
+</td>
+<td>  Flushes the realform cache every time an application is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush RealForm Cache
+</td>
+<td>  UI View [sys_ui_view]
+</td>
+<td>  after
+</td>
+<td>  Flushes the realform cache every time a UI View is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush the activity definition cache
+</td>
+<td>  Workflow Activity Definition [wf_activity_definition]
+</td>
+<td>  before
+</td>
+<td>  Flushes the activity definition cache every time an activity definition is changed or updated.
+</td></tr>
+<tr>
+<td>  Flush Variables Cache
+</td>
+<td>  Variables [var_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache every time a variable is changed or updated.
+</td></tr>
+<tr>
+<td>  Force Priority Calc
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Forces calculation of priority based on impact and urgency using the calculatePriority() function in the calculatePriority business rule.
+</td></tr>
+<tr>
+<td>  Format last run datetime
+</td>
+<td>  Data Source [sys_data_source]
+</td>
+<td>  before
+</td>
+<td>  Formats the <b>last_run_datetime</b> field in the data source.
+</td></tr>
+<tr>
+<td>  genChangePlanURL
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function for generating a URL for the change plan.
+</td></tr>
+<tr>
+<td>  Generate activity sequences
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  before
+</td>
+<td>  Generates a list of sys_ids for each path through the workflow, which is used to check if an activity has been skipped.
+</td></tr>
+<tr>
+<td>  Generate prices
+</td>
+<td>  Price [fx_price]
+</td>
+<td>  after
+</td>
+<td>  Generates the price after a change.
+</td></tr>
+<tr>
+<td>  Generic ECC Queue Update
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  after
+</td>
+<td>  Updates records on the ECC Queue.
+</td></tr>
+<tr>
+<td>  Geocode Address
+</td>
+<td>  Map Page [cmn_map_page]
+</td>
+<td>  before
+</td>
+<td>  Converts an address to latitude and longitude coordinates.
+</td></tr>
+<tr>
+<td>  Get Attributes
+</td>
+<td>  X.509 Certificate [sys_certificate]
+</td>
+<td>  before
+</td>
+<td>  Parses the certificate to get the attributes.
+</td></tr>
+<tr>
+<td>  Get Display Value
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function for getting the display value of a sys id.
+</td></tr>
+<tr>
+<td>  Get Number
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the next number in a series of numbers. Used for <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>.
+</td></tr>
+<tr>
+<td>  getDefaultDeliveryPlan
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the default execution plan.
+</td></tr>
+<tr>
+<td>  GetGroupFilter
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Performs a lookup on the group type display values and returns a query condition that will query on the group type sys_id values.
+</td></tr>
+<tr>
+<td>  getGroupMembersM2M
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>  Gets the list of users who are members of a particular group.
+</td></tr>
+<tr>
+<td>  GetIDValue
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the sys_id and the display values for a given table.
+</td></tr>
+<tr>
+<td>  getLDAPSources
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the list of LDAP Sources.
+</td></tr>
+<tr>
+<td>  getMYApprovals
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the list of the current user's approvals and assignments.
+</td></tr>
+<tr>
+<td>  getNextObjNumberPadded
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the next number in a series with the padding specified by the <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a> settings.
+</td></tr>
+<tr>
+<td>  getNodesInSameCluster
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the nodes in the same cluster.
+</td></tr>
+<tr>
+<td>  getQuestionOrder
+</td>
+<td>  Question Choices [question_choice]
+</td>
+<td>  before_display
+</td>
+<td>  Gets the order for question choices.
+</td></tr>
+<tr>
+<td>  GetReasonForChange
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Displays the reason for a change.
+</td></tr>
+<tr>
+<td>  getRelatedRecords
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Displays records related to a record.
+</td></tr>
+<tr>
+<td>  getResourcesInSameCluster
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Looks up other nodes in the same cluster.
+</td></tr>
+<tr>
+<td>  getRoledUsers
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Returns an array of sys_ids of users that have at least one role. Has optional parameters to allow the exclusion of certain roles, or inclusion of only certain particular roles.
+<p>Optional: queryCondition 'IN' or 'NOT IN' to include or exclude. Optional: roleList - a comma separated list of role names. 
+</p>
+</td></tr>
+<tr>
+<td>  getTasksWithSameParentM2M
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the list of tasks with the same parent.
+</td></tr>
+<tr>
+<td>  getUserDashboards
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the list of dashboards that belong to a user.
+</td></tr>
+<tr>
+<td>  getUserHomepages
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets the list of homepages that belong to a user.
+</td></tr>
+<tr>
+<td>  get_lat_long
+</td>
+<td>  Location [cmn_location]
+</td>
+<td>  async
+</td>
+<td>  Gets the latitude and longitude of an address for a location record.
+</td></tr>
+<tr>
+<td>  get_lat_long
+</td>
+<td>  Company [core_company]
+</td>
+<td>  async
+</td>
+<td>  Gets the latitude and longitude of an address for a company record.
+</td></tr>
+<tr>
+<td>  global events
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Generates events that apply globally.
+</td></tr>
+<tr>
+<td>  Google Map API
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Generates the API used to communicate with Google Maps.
+</td></tr>
+<tr>
+<td>  Group Member Add
+</td>
+<td>  Group Member [sys_user_grmember]
+</td>
+<td>  after
+</td>
+<td>  When a user is added to a group, this business rule adds all of the roles that group members should inherit.
+</td></tr>
+<tr>
+<td>  Group Member Delete
+</td>
+<td>  Group Member [sys_user_grmember]
+</td>
+<td>  after
+</td>
+<td>  When a user is removed from a group, this business rule removes all of the roles that group members had inherited.
+</td></tr>
+<tr>
+<td>  group query
+</td>
+<td>  Group [sys_user_group]
+</td>
+<td>  after
+</td>
+<td>  Checks to see if a user is a member of a group.
+</td></tr>
+<tr>
+<td>  Group Role Changed
+</td>
+<td>  Group Role [sys_group_has_role]
+</td>
+<td>  after
+</td>
+<td>  If a role is either marked or unmarked Inherited, this business rule applies the role to all group members or removes the role from all group members.
+</td></tr>
+<tr>
+<td>  Group Role Deleted
+</td>
+<td>  Group Role [sys_group_has_role]
+</td>
+<td>  after
+</td>
+<td>  If a role is deleted, this business rule deletes the role from members and from child groups.
+</td></tr>
+<tr>
+<td>  groups, banners
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Prevents recursive company loops.
+</td></tr>
+<tr>
+<td>  incident autoclose
+</td>
+<td>  Incident [incident]
+</td>
+<td>  after
+</td>
+<td>  Automatically closes incidents that are resolved and have not been updated, based on the glide.ui.autoclose.time property.
+</td></tr>
+<tr>
+<td>  Incident Create Knowledge
+</td>
+<td>  Incident [incident]
+</td>
+<td>  after
+</td>
+<td>  Creates a knowledge article from the incident and formats the output if the "Create Knowledge" checkbox is selected.
+</td></tr>
+<tr>
+<td>  incident events
+</td>
+<td>  Incident [incident]
+</td>
+<td>  after
+</td>
+<td>  Generates the events related to incident.
+</td></tr>
+<tr>
+<td>  incident functions
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Defines three useful functions for Incidents:
+<ul><li><b>incidentGetViewName()</b> </li>
+<li><b>incidentGetCaller()</b> </li>
+<li><b>sys_userGetEmailAddress</b></li></ul>
+</td></tr>
+<tr>
+<td>  incident query
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Queries the incident if the user has the itil role. Enables ESS users on the watch list to see Incidents.
+</td></tr>
+<tr>
+<td>  incident reopen
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Reopens an incident if the state changes to anything other than closed.
+</td></tr>
+<tr>
+<td>  Incident Time Worked
+</td>
+<td>  Incident [incident]
+</td>
+<td>  after
+</td>
+<td>  Updates the <b>Time Worked</b> field every time the incident record is worked on.
+</td></tr>
+<tr>
+<td>  Insert Change Phases
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  after
+</td>
+<td>  Generates the change phases based on the change request.
+</td></tr>
+<tr>
+<td>  insert_change
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Change Request (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  insert_change
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Incident (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  insert_incident
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Creates a new incident and increments the identification number sequentially, using the configured prefix and padding.
+</td></tr>
+<tr>
+<td>  insert_lease
+</td>
+<td>  Lease [ast_lease]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Lease (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  insert_problem
+</td>
+<td>  Problem [problem]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Problem (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  insert_service
+</td>
+<td>  Service Contract [ast_service]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Service Contract (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  insert_warranty
+</td>
+<td>  Warranty [ast_warranty]
+</td>
+<td>  before
+</td>
+<td>  Generates a new number for a new Warranty (see <a href="index.php%3Ftitle=Number_Maintenance.html" title="Number Maintenance" class="mw-redirect">Number Maintenance</a>).
+</td></tr>
+<tr>
+<td>  isAdvancedUI
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  This function checks whether the value of the property <b>glide.ui.advanced</b>. If this property is true, it enable the advanced UI.
+</td></tr>
+<tr>
+<td>  itil appointment
+</td>
+<td>  Appointment [itil_appointment]
+</td>
+<td>  after
+</td>
+<td>  Creates events for updates or inserts on the Appointment table.
+</td></tr>
+<tr>
+<td>  KB Events Article
+</td>
+<td>  KB Submission [kb_submission]
+</td>
+<td>  after
+</td>
+<td>  Creates events for an article being created from a submission.
+</td></tr>
+<tr>
+<td>  KB Events Duplicate
+</td>
+<td>  KB Submission [kb_submission]
+</td>
+<td>  after
+</td>
+<td>  Creates events for an article being closed as a duplicate.
+</td></tr>
+<tr>
+<td>  KB Events Invalid
+</td>
+<td>  KB Submission [kb_submission]
+</td>
+<td>  after
+</td>
+<td>  Creates events for an article being closed for being invalid.
+</td></tr>
+<tr>
+<td>  KB Events New Submission
+</td>
+<td>  KB Submission [kb_submission]
+</td>
+<td>  after
+</td>
+<td>  Creates events for an article being submitted.
+</td></tr>
+<tr>
+<td>  Kill User Session
+</td>
+<td>  Logged in User [v_user_session]
+</td>
+<td>  before
+</td>
+<td>  Kills a user session when a Logged in User record is deleted.
+</td></tr>
+<tr>
+<td>  Label Auto Assignment
+</td>
+<td>  Label auto [label_auto]
+</td>
+<td>  before
+</td>
+<td>  Assigns labels automatically.
+</td></tr>
+<tr>
+<td>  Kill User Session
+</td>
+<td>  Logged in User [v_user_session]
+</td>
+<td>  before
+</td>
+<td>  Kills a user session when a Logged in User record is deleted.
+</td></tr>
+<tr>
+<td>  load ajax globals
+</td>
+<td>  AJAX Script [sys_script_ajax]
+</td>
+<td>  after
+</td>
+<td>  Reloads AJAX global scripts when they are changed.
+</td></tr>
+<tr>
+<td>  load globals
+</td>
+<td>  Business Rule [sys_script]
+</td>
+<td>  after
+</td>
+<td>  Reloads global business rules when they are changed.
+</td></tr>
+<tr>
+<td>  Location - generate full name
+</td>
+<td>  Location [cmn_location]
+</td>
+<td>  after
+</td>
+<td>  Calls HeirarchicalReference to generate the full location name.
+</td></tr>
+<tr>
+<td>  Lock Out Inactive Users
+</td>
+<td>  User [sys_user]
+</td>
+<td>  after
+</td>
+<td>  If a user record is set to active = false, this business rule sets locked_out = true.
+</td></tr>
+<tr>
+<td>  Lock Out User
+</td>
+<td>  User [sys_user]
+</td>
+<td>  after
+</td>
+<td>  If locked_out = true, it kills any sessions initiated by the locked out user.
+</td></tr>
+<tr>
+<td>  mark closed
+</td>
+<td>  Task [task]
+</td>
+<td>  before
+</td>
+<td>  If the state changes to Closed, Active is set to false.
+</td></tr>
+<tr>
+<td>  Mark Request Closed
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  before
+</td>
+<td>  If a request moves to closed, this business rule sets the end-time values and marks the request as inactive.
+</td></tr>
+<tr>
+<td>  Mark Submission Closed
+</td>
+<td>  KB Submission [kb_submission]
+</td>
+<td>  before
+</td>
+<td>  If the status is set to closed, the active flag is set to false.
+</td></tr>
+<tr>
+<td>  mark_closed
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  If the incident state is set to Closed, the incident is set to Inactive, the closed_by and closed time values are set, and the duration is calculated.
+</td></tr>
+<tr>
+<td>  mark_closed
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  before
+</td>
+<td>  If the change state is set to closed, the active flag is set to false.
+</td></tr>
+<tr>
+<td>  mark_closed
+</td>
+<td>  Problem [problem]
+</td>
+<td>  before
+</td>
+<td>  If the problem is set to closed, the active flag is set to false, and the closed_by and closed_at values are set.
+</td></tr>
+<tr>
+<td>  Metric definition
+</td>
+<td>  CI Metric [cmdb_metric]
+</td>
+<td>  after
+</td>
+<td>  Defines the metrics. See <a href="index.php%3Ftitle=Metric_Definition_Plugin.html" title="Metric Definition Plugin" class="mw-redirect">Metric Definition Plugin</a>.
+</td></tr>
+<tr>
+<td>  Metric population
+</td>
+<td>  CI Metric [cmdb_metric]
+</td>
+<td>  after
+</td>
+<td>  Populates the defined metrics. See <a href="index.php%3Ftitle=Metric_Definition_Plugin.html" title="Metric Definition Plugin" class="mw-redirect">Metric Definition Plugin</a>.
+</td></tr>
+<tr>
+<td>  metrics events
+</td>
+<td>  Task [task]
+</td>
+<td>  before
+</td>
+<td>  Creates events related to Metric Definitions.
+</td></tr>
+<tr>
+<td>  metrics instance - set display value
+</td>
+<td>  Metric [metric_instance]
+</td>
+<td>  before
+</td>
+<td>  Sets the display value for the metric field.
+</td></tr>
+<tr>
+<td>  Monitor - Process NMAP IP Range Events
+</td>
+<td>  Event [ecc_event]
+</td>
+<td>  before
+</td>
+<td>  Processes NMAP IP range events.
+</td></tr>
+<tr>
+<td>  Monitor - SSH Processor
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  after
+</td>
+<td>  Processes SSH in the ECC Queue.
+</td></tr>
+<tr>
+<td>  Moot Approvals Upon Cancellation
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Marks group and individual approvals as inactive if a task is cancelled.
+</td></tr>
+<tr>
+<td>  No Duplicates
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Enforces dictionary entry uniqueness.
+</td></tr>
+<tr>
+<td>  Notification Device View Filter
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Filters notification devices based on role.
+</td></tr>
+<tr>
+<td>  Outage Calculations
+</td>
+<td>  Outage [cmdb_ci_outage]
+</td>
+<td>  before
+</td>
+<td>  If beginning and end times are present, calculates the outage duration.
+</td></tr>
+<tr>
+<td>  Package Adjust Install Count
+</td>
+<td>  Software License Instance [ast_license_package_instance]
+</td>
+<td>  after
+</td>
+<td>  Adjusts the install count of software.
+</td></tr>
+<tr>
+<td>  Pad Numbers
+</td>
+<td>  Sys number [sys_number]
+</td>
+<td>  async
+</td>
+<td>  When the maximum digit changes, this business rule adds padding to the number.
+</td></tr>
+<tr>
+<td>  Parent Bumper
+</td>
+<td>  Plan Sequencing [sc_cat_item_dt_mtom]
+</td>
+<td>  after
+</td>
+<td>  Updates the delivery plan based on the delivery plan tasks.
+</td></tr>
+<tr>
+<td>  Parent changes
+</td>
+<td>  Group [sys_user_group]
+</td>
+<td>  after
+</td>
+<td>  If a group changes parent groups, this business rule applies the appropriate roles.
+</td></tr>
+<tr>
+<td>  Post Outage to News
+</td>
+<td>  Business Service [cmdb_ci_service]
+</td>
+<td>  after
+</td>
+<td>  If an outage occurs, it creates a new news article.
+</td></tr>
+<tr>
+<td> Prevent Creation of 2nd Default
+</td>
+<td> Update Set [sys_update_set]
+</td>
+<td> Before
+</td>
+<td> Prevents users from creating an update set called "Default" when there is an existing update set of that name.
+</td></tr>
+<tr>
+<td>  Prevent Recursion
+</td>
+<td>  Table class [sys_db_object]
+</td>
+<td>  before
+</td>
+<td>  Prevents recursion when a table's super_class changes.
+</td></tr>
+<tr>
+<td>  Prevent Recursion
+</td>
+<td>  Category [sc_category]
+</td>
+<td>  before
+</td>
+<td>  Prevents recursion when a category's parent changes.
+</td></tr>
+<tr>
+<td>  Prevent Recursion
+</td>
+<td>  Group [sys_user_group]
+</td>
+<td>  before
+</td>
+<td>  Prevents recursion when a group's parent changes.
+</td></tr>
+<tr>
+<td>  Prevent removal/update of primary CI
+</td>
+<td>  Task [task_ci]
+</td>
+<td>  before
+</td>
+<td>  To keep information synchronized, this business rule prevents removal of an affected CI if it is for the CI on the task form.
+</td></tr>
+<tr>
+<td> Prevent Update of Default
+</td>
+<td> Update Set [sys_update_set]
+</td>
+<td> Before
+</td>
+<td> Prevents users from renaming or deleting the Default update set record.
+</td></tr>
+<tr>
+<td>  problem events
+</td>
+<td>  Problem [problem]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> related to problems.
+</td></tr>
+<tr>
+<td>  problem_reopen
+</td>
+<td>  Problem [problem]
+</td>
+<td>  before
+</td>
+<td>  If a problem moves from a closed state to another state, this business rule marks the active flag as true.
+</td></tr>
+<tr>
+<td>  Process Get Stock Quote
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Gets current stock prices.
+</td></tr>
+<tr>
+<td>  Process Rejection
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  after
+</td>
+<td>  Responds to a rejected change task.
+</td></tr>
+<tr>
+<td>  Process Rejection
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  after
+</td>
+<td>  Responds to a rejected catalog task.
+</td></tr>
+<tr>
+<td>  Process SLAs
+</td>
+<td>  Task [task]
+</td>
+<td>  async
+</td>
+<td>  Looks for new SLAs to start, then processes active SLAs for this task.
+</td></tr>
+<tr>
+<td>  Process Web Service Automap
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Processes web services using the automap.
+</td></tr>
+<tr>
+<td>  Properties change
+</td>
+<td>  System Property [sys_properties]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache and applies any changes to properties.
+</td></tr>
+<tr>
+<td>  Properties track css
+</td>
+<td>  System Property [sys_properties]
+</td>
+<td>  after
+</td>
+<td>  Updates CSS version.
+</td></tr>
+<tr>
+<td>  reassignment counter
+</td>
+<td>  Incident [incident]
+</td>
+<td>  before
+</td>
+<td>  Increments the Reassignment Count field each time a task is reassigned.
+</td></tr>
+<tr>
+<td>  Reference allow invalid
+</td>
+<td>  Variables [var_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Allows invalid variables.
+</td></tr>
+<tr>
+<td>  Reference Protection
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Prevents setting a reference type field without referencing a table.
+</td></tr>
+<tr>
+<td>  Reject Parent
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  after
+</td>
+<td>  If a catalog task is rejected, the parent request is rejected as well.
+</td></tr>
+<tr>
+<td>  Reload import sets
+</td>
+<td>  Import Set [sys_import_set]
+</td>
+<td>  after
+</td>
+<td>  Sets all import sets to pending, so that they will be reloaded.
+</td></tr>
+<tr>
+<td>  Reminder Runner
+</td>
+<td>  Reminder [reminder]
+</td>
+<td>  after
+</td>
+<td>  Generates a reminder.
+</td></tr>
+<tr>
+<td>  Reminder Runner
+</td>
+<td>  Reminder [reminder]
+</td>
+<td>  after
+</td>
+<td>  Generates a reminder.
+</td></tr>
+<tr>
+<td>  Report Helpers
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Defines a series of functions to help with generating reports:
+<ul><li><b>getGroupMembers</b> - Returns an array of all the users that are in any of the groups specified. </li>
+<li><b>getGroupMembersGivenGroupName</b> - Add members of a specified group into an array. </li>
+<li><b>getGroupMembersGivenGroupID</b> - Add members of a specified group into an array. </li>
+<li><b>getAllMembersOfMyGroups</b> - Gets an array of all users that belong to the same groups that the current user belongs to.</li></ul>
+</td></tr>
+<tr>
+<td>  Report Title
+</td>
+<td>  Report [sys_report]
+</td>
+<td>  before
+</td>
+<td>  Adds a report title if none is specified.
+</td></tr>
+<tr>
+<td>  request closure
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  after
+</td>
+<td>  If a catalog request is closed, this business rule closes child requests, requested items, and cancels approvals.
+</td></tr>
+<tr>
+<td>  Request item handling
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  before
+</td>
+<td>  Sets up the workflow version to handle requested items correctly.
+</td></tr>
+<tr>
+<td>  Request reopened
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  before
+</td>
+<td>  If the user changed the state to be not closed, this business rule reopens the request by setting it active.
+</td></tr>
+<tr>
+<td>  Reset Binding
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  before
+</td>
+<td>  Resets the state binding on a change task when it is re-entered.
+</td></tr>
+<tr>
+<td>  Reset Binding
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  before
+</td>
+<td>  Resets the state binding on a catalog task when it is re-entered.
+</td></tr>
+<tr>
+<td>  sc req item events
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for requested items.
+</td></tr>
+<tr>
+<td>  sc req events
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for requests.
+</td></tr>
+<tr>
+<td>  Schedule Item validate
+</td>
+<td>  Schedule Entry [cmn_schedule_span]
+</td>
+<td>  after
+</td>
+<td>  Validates the schedule item.
+</td></tr>
+<tr>
+<td>  sc_req_item_stageGetChoices
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Returns the stages for a Request Item as a choice list.
+</td></tr>
+<tr>
+<td>  sc_task_events
+</td>
+<td>  Catalog Task [sc_task]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for catalog tasks.
+</td></tr>
+<tr>
+<td>  Search Group Delete
+</td>
+<td>  Text Search Groups [ts_group]
+</td>
+<td>  before
+</td>
+<td>  Deletes a search group.
+</td></tr>
+<tr>
+<td>  Search Table Info for Group
+</td>
+<td>  Text Search Tables [ts_table]
+</td>
+<td>  after
+</td>
+<td>  Generates table information for the search groups.
+</td></tr>
+<tr>
+<td>  Search Table Preference
+</td>
+<td>  Text Search Tables [ts_table]
+</td>
+<td>  after
+</td>
+<td>  Applies the users' preferences on search groups.
+</td></tr>
+<tr>
+<td>  Set Active Flag
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  before
+</td>
+<td>  If a requested item is set to complete, this unmarks the active flag and cancels any currently running workflows.
+</td></tr>
+<tr>
+<td>  Set default start
+</td>
+<td>  Wizard Panel [expert_panel]
+</td>
+<td>  after
+</td>
+<td>  Sets a panel to be the default first panel.
+</td></tr>
+<tr>
+<td>  Set Details
+</td>
+<td>  Suggested Relationship [cmdb_rel_type_suggest]
+</td>
+<td>  before
+</td>
+<td>  Sets the details of the current relationship.
+</td></tr>
+<tr>
+<td>  Set Flag
+</td>
+<td>  Knowledge [kb_knowledge]
+</td>
+<td>  before
+</td>
+<td>  If a knowledge article is flagged, this business rule makes a note of the fact on the feedback table.
+</td></tr>
+<tr>
+<td>  Set Flagged Status
+</td>
+<td>  Knowledge Feedback [kb_feedback]
+</td>
+<td>  after
+</td>
+<td>  Ensures that the flag on the knowledge article matches the flag on the feedback table.
+</td></tr>
+<tr>
+<td>  Set from field
+</td>
+<td>  Workflow Transition [wf_transition]
+</td>
+<td>  before
+</td>
+<td>  Sets activity condition from a field.
+</td></tr>
+<tr>
+<td>  Set Inbox
+</td>
+<td>  Email [sys_email]
+</td>
+<td>  before
+</td>
+<td>  Sets a new email inbox.
+</td></tr>
+<tr>
+<td>  Set info from activity definition
+</td>
+<td>  Workflow Activity [wf_activity]
+</td>
+<td>  before
+</td>
+<td>  Sets the default width, height, and is_parent flag on an activity.
+</td></tr>
+<tr>
+<td>  Set javascript class name
+</td>
+<td>  Workflow Activity [wf_activity]
+</td>
+<td>  before
+</td>
+<td>  Enforces propercase for Javascript class name in the activity.
+</td></tr>
+<tr>
+<td>  Set label and help
+</td>
+<td>  Variables [var_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Deletes related entries, and updates the related documentation entries.
+</td></tr>
+<tr>
+<td>  Set Parent
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  before
+</td>
+<td>  Sets the Change Request as the Change Task's parent.
+</td></tr>
+<tr>
+<td>  set pretty name
+</td>
+<td>  Field Setter [expert_panel_t_fields]
+</td>
+<td>  before
+</td>
+<td>  Gives a pretty name to a field.
+</td></tr>
+<tr>
+<td>  Set Request State
+</td>
+<td>  Request [sc_request]
+</td>
+<td>  before
+</td>
+<td>  Sets the state of the catalog request.
+</td></tr>
+<tr>
+<td>  Set Resolved Checkbox
+</td>
+<td>  Knowledge Feedback [kb_feedback]
+</td>
+<td>  before
+</td>
+<td>  If a knowledge article is unflagged, the business rule marks the resolved checkbox.
+</td></tr>
+<tr>
+<td>  Set selected color
+</td>
+<td>  Graph Line [jrobin_graph_line]
+</td>
+<td>  before
+</td>
+<td>  Sets the graph line according to the color picker.
+</td></tr>
+<tr>
+<td>  Set State
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Sets the state of queue items after processing.
+</td></tr>
+<tr>
+<td>  Set System Flag
+</td>
+<td>  User Preference [sys_user_preference]
+</td>
+<td>  before
+</td>
+<td>  Sets the system flag on null users or global users.
+</td></tr>
+<tr>
+<td>  Set wait_for to workflow
+</td>
+<td>  Group Approval [sysapproval_group]
+</td>
+<td>  before
+</td>
+<td>  Sets the <b>wait_for</b> field to be 'workflow' if this approval was created by a workflow activity
+</td></tr>
+<tr>
+<td>  Set workflow scheduler
+</td>
+<td>  Workflow Schedule [wf_workflow_schedule]
+</td>
+<td>  before
+</td>
+<td>  Sets the workflow scheduler.
+</td></tr>
+<tr>
+<td>  SNC - Create user approvals for group
+</td>
+<td>  Group Approval [sysapproval_group]
+</td>
+<td>  before
+</td>
+<td>  Creates user approvals for approvals assigned to a group.
+</td></tr>
+<tr>
+<td>  SNC - Database View Documentation
+</td>
+<td>  Database View [sys_db_view]
+</td>
+<td>  after
+</td>
+<td>  Creates a language entry for database views.
+</td></tr>
+<tr>
+<td>  SNC - Delete user approvals for group
+</td>
+<td>  Group approval [sysapproval_group]
+</td>
+<td>  after
+</td>
+<td>  Deletes the user approvals for a group when the group is deleted.
+</td></tr>
+<tr>
+<td>  SNC - ITIL - Close Related
+</td>
+<td>  Problem [problem]
+</td>
+<td>  after
+</td>
+<td>  Closes any incidents that are related to the current problem.
+</td></tr>
+<tr>
+<td>  SNC - ITIL - Close Related
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  after
+</td>
+<td>  Find related problems for a change_request and close them.
+</td></tr>
+<tr>
+<td>  SNC - ITIL - Close Related
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Find related tasks for the current task and close them.
+</td></tr>
+<tr>
+<td>  SNC - ITIL - Close Related
+</td>
+<td>  Incident [incident]
+</td>
+<td>  after
+</td>
+<td>  Finds related incidents for the current incident and closes them.
+</td></tr>
+<tr>
+<td>  SNC - Match state to approval
+</td>
+<td>  Group approval [sysapproval_group]
+</td>
+<td>  before
+</td>
+<td>  Makes sure the state matches the approval value.
+</td></tr>
+<tr>
+<td>  SNC - Moot user approval
+</td>
+<td>  Group approval [sysapproval_group]
+</td>
+<td>  after
+</td>
+<td>  Set all of the pending user approvals for this group approval to <b>Not Required</b>.
+</td></tr>
+<tr>
+<td>  SNC - Run parent workflows
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Restarts a running parent workflow, when the current task is completed.
+</td></tr>
+<tr>
+<td>  SNC - Run parent workflows
+</td>
+<td>  Approval [sysapproval_approver]
+</td>
+<td>  after
+</td>
+<td>  Run any workflows so the approval's state can be checked.
+</td></tr>
+<tr>
+<td>  SNC - Run parent workflows
+</td>
+<td>  Group Approval [sysapproval_group]
+</td>
+<td>  after
+</td>
+<td>  Run any workflows so the group approval's state can be checked.
+</td></tr>
+<tr>
+<td>  SNC Approval - Reset conditions
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  before
+</td>
+<td>  The reset conditions for approvals. <b>Note:</b> this business rule is inactive by default. The business rule provides instructions for activating the business rule within the comments of the script.
+</td></tr>
+<tr>
+<td>  SNC Baseline Filter
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function to get a filter for the baseline.
+</td></tr>
+<tr>
+<td>  SNC Baseline Globals
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function to check proposed changes globally.
+</td></tr>
+<tr>
+<td>  SNC Create Baseline
+</td>
+<td>  CMDB Baseline [cmdb_baseline]
+</td>
+<td>  after
+</td>
+<td>  Schedules a create baseline scheduled job.
+</td></tr>
+<tr>
+<td>  SNC Create Unique Index
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  after
+</td>
+<td>  Creates a unique index entry.
+</td></tr>
+<tr>
+<td>  SNC Dictionary
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Defines two functions for getting values from the dictionary:
+<ul><li><b>doesEntryFloat</b> </li>
+<li><b>getDictionaryEntry</b></li></ul>
+</td></tr>
+<tr>
+<td>  SNC Global Listener
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Gets control for each field that has an attribute of "listen". If a change has not been authorized then a problem record will be cut for the change.
+</td></tr>
+<tr>
+<td>  SNC Invalidate LDAP
+</td>
+<td>  Import Export Map [sys_impex_map]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache after an update of the import/export map.
+</td></tr>
+<tr>
+<td>  SNC Invalidate LDAP1
+</td>
+<td>  Field Map [sys_impex_entry]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache after an update of the import/export map.
+</td></tr>
+<tr>
+<td>  SNC label query
+</td>
+<td>  Label [label]
+</td>
+<td>  before
+</td>
+<td>  Checks user to generate user-specific labels.
+</td></tr>
+<tr>
+<td>  SNC ManyToMany Create
+</td>
+<td>  Many to Many Definition [sys_m2m]
+</td>
+<td>  before
+</td>
+<td>  Creates a many-to-many table.
+</td></tr>
+<tr>
+<td>  SNC Release Complete
+</td>
+<td>  Release [release_project]
+</td>
+<td>  async
+</td>
+<td>  Completes a release by closing all related problems and posting all of the records to Definitive Software Library.
+</td></tr>
+<tr>
+<td>  SNC Release Delete Phases
+</td>
+<td>  Release [release_project]
+</td>
+<td>  async
+</td>
+<td>  Deletes release phases upon completion.
+</td></tr>
+<tr>
+<td>  SNC Release feature
+</td>
+<td>  Feature [release_feature]
+</td>
+<td>  before
+</td>
+<td>  Verifies that:
+<ul><li>The feature is part of a product and is part of a release </li>
+<li>The release is part of a product </li>
+<li>The release and the feature are part of the same product</li></ul>
+</td></tr>
+<tr>
+<td>  SNC Release feature events
+</td>
+<td>  Feature [release_feature]
+</td>
+<td>  before
+</td>
+<td>  Creates a release feature.
+</td></tr>
+<tr>
+<td>  SNC Release Insert Phases
+</td>
+<td>  Release [release_project]
+</td>
+<td>  async
+</td>
+<td>  Creates a release phases based on the release.
+</td></tr>
+<tr>
+<td>  SNC Release phase
+</td>
+<td>  Release Phase [release_phase]
+</td>
+<td>  before
+</td>
+<td>  Sets the start and end dates based on the approval.
+</td></tr>
+<tr>
+<td>  SNC Release phase - new
+</td>
+<td>  Release Phase [release_phase]
+</td>
+<td>  before
+</td>
+<td>  Links new release phases.
+</td></tr>
+<tr>
+<td>  SNC Release phase events
+</td>
+<td>  Release Phase [release_phase]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for release phases.
+</td></tr>
+<tr>
+<td>  SNC Release project - feature
+</td>
+<td>  Release [release_project]
+</td>
+<td>  after
+</td>
+<td>  Applies changes in state to child features.
+</td></tr>
+<tr>
+<td>  SNC Release Project - New
+</td>
+<td>  Release [release_project]
+</td>
+<td>  before
+</td>
+<td>  Set the release manager equal to the related product manager.
+</td></tr>
+<tr>
+<td>  SNC Release project complete
+</td>
+<td>  Release [release_project]
+</td>
+<td>  before
+</td>
+<td>  If state changes to complete, then mark release inactive.
+</td></tr>
+<tr>
+<td>  SNC Release project events
+</td>
+<td>  Release [release_project]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for releases.
+</td></tr>
+<tr>
+<td>  SNC Release task events
+</td>
+<td>  Feature Task [release_task]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for feature tasks.
+</td></tr>
+<tr>
+<td>  SNC Report Clean
+</td>
+<td>  Report [sys_report]
+</td>
+<td>  after
+</td>
+<td>  Cleans superfluous reports.
+</td></tr>
+<tr>
+<td>  SNC Template Group Qual
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  A function to gets a reference qualifier for a template group.
+</td></tr>
+<tr>
+<td>  SNC Template Query
+</td>
+<td>  Template [sys_template]
+</td>
+<td>  before
+</td>
+<td>  Filters the templates by user, so that users will only see templates that are available for them wherever they are in the system. Deactivating the <b>SNC Template Query</b> business rule has the effect of allowing users to see all templates. The Read ACL for sys_template and the template query business rules ensure that users can see applicable templates.
+</td></tr>
+<tr>
+<td>  SNC Transaction History
+</td>
+<td>  Sys trend [sys_trend]
+</td>
+<td>  after
+</td>
+<td>  Send transaction history records back to /hi periodically.
+</td></tr>
+<tr>
+<td>  SOAPClient
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Parses SOAP packages.
+</td></tr>
+<tr>
+<td>  Stamp Approvals
+</td>
+<td>  Task [task]
+</td>
+<td>  before
+</td>
+<td>  Marks approvals with a timestamp when the approval status changes.
+</td></tr>
+<tr>
+<td>  Start Change Tasks
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  after
+</td>
+<td>  Starts the change tasks when the change is approved.
+</td></tr>
+<tr>
+<td>  Start Peer Tasks (change_task)
+</td>
+<td>  Change Task [change_task]
+</td>
+<td>  after
+</td>
+<td>  When a change task ends, this business rule starts the next change task.
+</td></tr>
+<tr>
+<td>  Start Tasks
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  after
+</td>
+<td>  When a requested item is approved, this begins the first catalog task.
+</td></tr>
+<tr>
+<td>  Start Workflow
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  before
+</td>
+<td>  When a requested item is approved, this initializes the workflow, and puts the variables from the requested item into the workflow if the names match.
+</td></tr>
+<tr>
+<td>  String class extensions
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  String functions
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Removes the white space in strings.
+</td></tr>
+<tr>
+<td>  Survey Reference Responses
+</td>
+<td>  Survey Responses [survey_response]
+</td>
+<td>  before
+</td>
+<td>  Gets display value for survey responses.
+</td></tr>
+<tr>
+<td>  Sys language updates
+</td>
+<td>  Field Label [sys_documentation]
+</td>
+<td>  after
+</td>
+<td>  Flushes the cache when the field labels are updated.
+</td></tr>
+<tr>
+<td>  Sync CI answers with CI modules
+</td>
+<td>  sys_wizard_answer
+</td>
+<td>  after
+</td>
+<td>  Along with the Sync Interceptor Answers with CI Modules business rule, synchronizes roles and active fields for table-specific CMDB modules with their corresponding cmdb_ci.do interceptor answers. This behavior is controlled by a new property, <i>glide.ecmdb.synch_modules_with_interceptor</i>, which is set to true by default.
+</td></tr>
+<tr>
+<td>  Sync CI with Affected CIs
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Copies the CI on the form to the Affected CIs related list. To keep information synchronized, if the CI on the form changes, the old one is removed from the related list and the new one is added.
+</td></tr>
+<tr>
+<td>  Sync Interceptor Answers with CI Modules
+</td>
+<td>  sys_app_module
+</td>
+<td>  after
+</td>
+<td>  Along with the Sync CI answers with CI modules business rule, synchronizes roles and active fields for table-specific CMDB modules with their corresponding cmdb_ci.do interceptor answers. This behavior is controlled by a new property, <i>glide.ecmdb.synch_modules_with_interceptor</i>, which is set to true by default.
+</td></tr>
+<tr>
+<td>  System Deploy Approved
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  async
+</td>
+<td>  Begins a ServiceNow deployment when approved.
+</td></tr>
+<tr>
+<td>  System Deploy Confirm
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  async
+</td>
+<td>  Parses a system deployment confirmation.
+</td></tr>
+<tr>
+<td>  System Deploy Create
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  async
+</td>
+<td>
+</td></tr>
+<tr>
+<td>  System Deploy Request
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  async
+</td>
+<td>  Requests a new instance from /hi.
+</td></tr>
+<tr>
+<td>  system property events
+</td>
+<td>  System Property [sys_properties]
+</td>
+<td>  after
+</td>
+<td>  Generates the <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">events</a> for properties.
+</td></tr>
+<tr>
+<td>  system property schedulers
+</td>
+<td>  System Property [sys_properties]
+</td>
+<td>  after
+</td>
+<td>  Restarts the scheduler if <b>glide.sys.schedulers</b> is modified.
+</td></tr>
+<tr>
+<td>  System Update Confirm
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  async
+</td>
+<td>  Confirms a system update.
+</td></tr>
+<tr>
+<td>  sys_dictionary
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Prevent changing the table and element names on an existing dictionary item.
+</td></tr>
+<tr>
+<td>  task closer
+</td>
+<td>  Task [task]
+</td>
+<td>  before
+</td>
+<td>  Sets the task state to Closed if the task has been closed.
+</td></tr>
+<tr>
+<td>  task events
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Generates the events for a task when an approval is rejected or approved.
+</td></tr>
+<tr>
+<td>  task reopener
+</td>
+<td>  Task [task]
+</td>
+<td>  before
+</td>
+<td>  Sets the task state to Active if the task has been reopened.
+</td></tr>
+<tr>
+<td>  task survey events
+</td>
+<td>  Task [task]
+</td>
+<td>  after
+</td>
+<td>  Updates tasks and checks the survey conditions table to see if a survey related to this task should be sent.
+</td></tr>
+<tr>
+<td>  Test Variables
+</td>
+<td>  Requested Item [sc_req_item]
+</td>
+<td>  before
+</td>
+<td>  Prints a list of variables from the current items' variable pool.
+</td></tr>
+<tr>
+<td>  Toggle type
+</td>
+<td>  Other Schedule [sc_req_item]
+</td>
+<td>  action_list_contextmenu
+</td>
+<td>  Switches the type.
+</td></tr>
+<tr>
+<td>  Transform Validator
+</td>
+<td>  Table Transform Map [sys_transform_map]
+</td>
+<td>  before
+</td>
+<td>  Verifies that the source and target tables are not the same for a transform map.
+</td></tr>
+<tr>
+<td>  Truncate table name length to 30
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Truncates all of the physical table names to 30 characters.
+</td></tr>
+<tr>
+<td>  Truncate table name length to 30
+</td>
+<td>  Dictionary Entry [sys_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Truncates all of the physical table names to 30 characters.
+</td></tr>
+<tr>
+<td>  Unload Workflow Version
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  after
+</td>
+<td>  If the published flag changes, the workflow version is unloaded. If the version is set to <b>published</b>, then the version and all its related entries (activities, conditions, transitions, stages). If the version is set to <b>unpublished</b> then only the version itself is unloaded. The unload is handled by the class <b>WorkflowVersionSynchronizer</b>.
+</td></tr>
+<tr>
+<td>  Unpublish other workflow versions
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  after
+</td>
+<td>  When a workflow version is published, this business rule marks other published workflow versions for this workflow as unpublished. This enforces the rule that only one workflow version can be published at any one time.
+</td></tr>
+<tr>
+<td>  Update Descriptions
+</td>
+<td>  Customer Update [sys_update_xml]
+</td>
+<td>  before
+</td>
+<td>  Set the description fields for the update, generating informational data that helps a user determine what hte update is for.
+</td></tr>
+<tr>
+<td>  Update Import Set Complete
+</td>
+<td>  Transform History [sys_import_set_run]
+</td>
+<td>  after
+</td>
+<td>  Once an import set is complete, this business rule sets the state of the import set to <b>Processed</b>.
+</td></tr>
+<tr>
+<td>  Update sys_certificate attributes
+</td>
+<td>  Attachment [sys_attachment]
+</td>
+<td>  after
+</td>
+<td>  When an attachment is made on the table <b>sys_certificate</b>, updates the sys_certificate attributes.
+</td></tr>
+<tr>
+<td>  Update Tomcat Connector Name
+</td>
+<td>  Tomcat Connector [cmdb_ci_tomcat_connector]
+</td>
+<td>  before
+</td>
+<td>  When the port of the Tomcat Connector changes, the name of the port changes to match.
+</td></tr>
+<tr>
+<td>  Update Variables Model Information
+</td>
+<td>  Variables [var_dictionary]
+</td>
+<td>  before
+</td>
+<td>  Sets the table based on the variable model.
+<p>The model field exists in the variable table that extends var_dictionary, but the business rule applies to the var_table so that any variables tables will get properly set up without having to copy this business rule for each variables table. 
+</p>
+</td></tr>
+
+<tr>
+<td>  UpdateSync
+</td>
+<td>  Data Source [sys_data_source]
+</td>
+<td>  after
+</td>
+<td>  Updates the sync based on the data source.
+</td></tr>
+<tr>
+<td>  Use source script
+</td>
+<td>  Field Map [sys_transform_entry]
+</td>
+<td>  before
+</td>
+<td>  When the <b>Use Source Script</b> field changes to <b>true</b>, it uses the source script.
+</td></tr>
+<tr>
+<td>  User Deactivate
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Prevents a user from deactivating their own user record.
+</td></tr>
+<tr>
+<td>  User Delete
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Sets a global Rhino variable with the deleted user's name.
+</td></tr>
+<tr>
+<td>  User Delete Self
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Prevents a user from deleting their own user record.
+</td></tr>
+<tr>
+<td>  User self-lockout prevention
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Prevents users with the admin role from getting locked out when they have a valid session established.
+<p><b>Note:</b> If you are a Life Science Customer, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://hi.service-now.com/kb_view.do?sysparm_article=KB0547061">KB0547061</a> for requirements for this business rule.
+</p>
+</td></tr>
+<tr>
+<td>  User preference change
+</td>
+<td>  User Preference [sys_user_preference]
+</td>
+<td>  after
+</td>
+<td>  Saves the system level changes.
+</td></tr>
+<tr>
+<td>  user query
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Queries the active and true fields.
+</td></tr>
+<tr>
+<td>  Validate Guest Domain
+</td>
+<td>  User [sys_user]
+</td>
+<td>  before
+</td>
+<td>  Requires the guest user to be in the global domain.
+</td></tr>
+<tr>
+<td>  Validate Scripts
+</td>
+<td>  Business Rule [sys_script]
+</td>
+<td>  before
+</td>
+<td>  Validates business rule scripts.
+</td></tr>
+<tr>
+<td>  Validate Spans
+</td>
+<td>  Day [sys_cal_day]
+</td>
+<td>  before
+</td>
+<td>  Checks time spans on calendars, ensuring that start times and end times are specified and that the end time comes after the start time. It also ensures that the times come between 00:00:00 and 24:00:00
+</td></tr>
+<tr>
+<td>  validate_only_one_primary
+</td>
+<td>  Company [core_company]
+</td>
+<td>  before
+</td>
+<td>  Ensures that only one company is defined as <b>Primary</b>.
+</td></tr>
+<tr>
+<td>  validate_variable_name
+</td>
+<td>  Variable [item_option_new]
+</td>
+<td>  before
+</td>
+<td>  Validates the names of variables.
+</td></tr>
+<tr>
+<td>  Virtual Computer Check
+</td>
+<td>  Computer [cmdb_ci_computer]
+</td>
+<td>  before
+</td>
+<td>  Validates computer records.
+</td></tr>
+<tr>
+<td>  Workflow Activity Changed
+</td>
+<td>  Workflow Activity [wf_activity]
+</td>
+<td>  after
+</td>
+<td>  Updates the workflow version based on changes in the Workflow Activity.
+</td></tr>
+<tr>
+<td>  Workflow check hasWorkflow
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  after
+</td>
+<td>  Checks that the workflow version has the Boolean attribute HAS_WORKFLOW.
+</td></tr>
+<tr>
+<td>  Workflow initialize
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  before
+</td>
+<td>  When a new workflow is created, this business rule creates the Begin and End activities and connects them to each other.
+</td></tr>
+<tr>
+<td>  Workflow Item Variables
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Defines a function <b>wf_variables()</b> that generates a list of all unique names of variables for each item that is using the current workflow. If no items currently have the workflow attached, then all available variable names are shown.
+</td></tr>
+<tr>
+<td>  Workflow Release Lock
+</td>
+<td>  Change Request [change_request]
+</td>
+<td>  after
+</td>
+<td>  Releases the lock on current that might have been placed during a workflow reset from the business rule <b>SNC Approval - Reset Conditions</b>.
+</td></tr>
+<tr>
+<td>  Workflow rename
+</td>
+<td>  Workflow Version [wf_workflow_version]
+</td>
+<td>  before
+</td>
+<td>  Renames the workflow if the name was changed for a workflow version.
+</td></tr>
+<tr>
+<td>  Workflow Transition Changed
+</td>
+<td>  Workflow Transition [wf_transition]
+</td>
+<td>  after
+</td>
+<td>  Applies changes made to the workflow transition to the workflow.
+</td></tr>
+<tr>
+<td>  workflowTaskTemplateReferenceQualifier
+</td>
+<td>  Global [global]
+</td>
+<td>
+</td>
+<td>  Defines the function <b>workflowTaskTemplateReferenceQualifier()</b> that qualifies the template to only include the task table and any tables that extends it.
+</td></tr>
+<tr>
+<td>  WSDLClient
+</td>
+<td>  Queue [ecc_queue]
+</td>
+<td>  before
+</td>
+<td>  Parses WSDL in the ECC Queue.
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202225126
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.279 seconds
+Real time usage: 0.306 seconds
+Preprocessor visited node count: 19/1000000
+Preprocessor generated node count: 174/1000000
+Post‐expand include size: 559/2097152 bytes
+Template argument size: 214/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   16.961      1 - -total
+100.00%   16.961      1 - Template:Business_Rules
+ 63.46%   10.764      1 - Template:Topic
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:7103-0!*!0!1!*!*!* and timestamp 20171202225126 and revision id 243634
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;oldid=243634.html">http://wiki.servicenow.com/index.php?title=Business_Rules_in_the_Base_System&amp;oldid=243634</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Out-of-Box+Appendix.html" title="Category:Out-of-Box Appendix">Out-of-Box Appendix</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Business+Rules.html" title="Category:Business Rules">Business Rules</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Core+Configuration.html" title="Category:Core Configuration">Core Configuration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Out-of-Box+Appendix.html" title="Category:Out-of-Box Appendix">Out-of-Box Appendix</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Business+Rules.html" title="Category:Business Rules">Business Rules</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_7103"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="7103" data-vote-the-vote="5" data-vote-id="7103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_7103_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="7103" data-vote-the-vote="1" data-vote-id="7103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_7103_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Business_Rules_in_the_Base_System.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Business+Rules+in+the+Base+System&amp;returntoquery=oldid%3D243634" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Business+Rules+in+the+Base+System&amp;returntoquery=oldid%3D243634" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Business_Rules_in_the_Base_System.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Business+Rules+in+the+Base+System.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Business+Rules+in+the+Base+System&amp;returnto=Business+Rules+in+the+Base+System&amp;oldid=243634&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FBusiness_Rules_in_the_Base_System.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Business_Rules_in_the_Base_System" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;oldid=243634.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Business_Rules_in_the_Base_System&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:47, 6 February 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1237});});</script></body></html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Catalog Client Script - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_Catalog_Client_Script","wgTitle":"Creating a Catalog Client Script","wgCurRevisionId":251213,"wgRevisionId":251213,"wgArticleId":3504,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Service Catalog Management","Client Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_Catalog_Client_Script","wgRelevantArticleId":3504,"wgRequestId":"75cb7eb5571576b219decdcf","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20171130201537"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_a_Catalog_Client_Script"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating a Catalog Client Script"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Client Scripts"/>
+<meta name="category" content="Client Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_a_Catalog_Client_Script.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating a Catalog Client Script"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20171130201537"/>
+
+	<meta property="article:published_time" content="20171130201537"/>
+
+	<meta property="article:modified_time" content="20171130201537"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Client Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_a_Catalog_Client_Script"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_Catalog_Client_Script rootpage-Creating_a_Catalog_Client_Script skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Catalog+Client+Script.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+a+Catalog+Client+Script&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Catalog Client Script</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Creating a Catalog Client Script</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/client-scripts/concept/c_CatalogClientScriptCreation.html">Catalog client script creation</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Service_Catalog_Management.html" title="Service Catalog Management">Service Catalog Management</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2066e989cd9t'></div><script type="text/javascript">window.tamOnload_tam5a2066e989cd9t=[];tree = new dTree('tam5a2066e989cd9t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2066e989cd9t = tree;
+                                               tam5a2066e989cd9t.add(1, 0, ' Setup');
+
+tam5a2066e989cd9t.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Multiple_Service_Catalogs\&quot;" title=\"Managing Multiple Service Catalogs\">Multiple Catalogs</a>');
+tam5a2066e989cd9t.add(3, 2, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrading_to_Multiple_Service_Catalogs\&quot;" title=\"Upgrading to Multiple Service Catalogs\">Upgrading</a>');
+tam5a2066e989cd9t.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_the_Homepage_for_a_Catalog\&quot;" title=\"Managing the Homepage for a Catalog\">Homepage</a> ');
+tam5a2066e989cd9t.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Categories\&quot;" title=\"Service Catalog Categories\">Categories</a> ');
+tam5a2066e989cd9t.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Catalog_Items\&quot;" title=\"Defining Catalog Items\">Catalog Items</a>');
+tam5a2066e989cd9t.add(7, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Order_Guides\&quot;" title=\"Service Catalog Order Guides\">Order Guides</a> ');
+tam5a2066e989cd9t.add(8, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Running_Order_Guides_Automatically\&quot;" title=\"Running Order Guides Automatically\">Automatic Order Guides</a>');
+tam5a2066e989cd9t.add(9, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Record_Producer\&quot;" title=\"Record Producer\">Record Producers</a> ');
+tam5a2066e989cd9t.add(10, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Content_Items_to_Service_Catalog\&quot;" title=\"Adding Content Items to Service Catalog\">Content Items</a>');
+tam5a2066e989cd9t.add(11, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Catalog_Item_Designer\&quot;" title=\"Catalog Item Designer\">Item Designer</a>');
+tam5a2066e989cd9t.add(12, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_the_Catalog_Item_Designer\&quot;" title=\"Administering the Catalog Item Designer\">Admin</a>');
+tam5a2066e989cd9t.add(13, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Catalog_Item_Designer\&quot;" title=\"Using the Catalog Item Designer\">Using</a>');
+tam5a2066e989cd9t.add(14, 11, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Catalog_Item_Designer\&quot;" title=\"Installed with Catalog Item Designer\">Installed components</a>');
+tam5a2066e989cd9t.add(15, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Request_Fulfillment\&quot;" title=\"Managing Request Fulfillment\">Fulfillment</a> ');
+tam5a2066e989cd9t.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Workflows\&quot;" title=\"Service Catalog Workflows\">Workflows</a>  ');
+tam5a2066e989cd9t.add(17, 16, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Service_Catalog_Workflow\&quot;" title=\"Defining a Service Catalog Workflow\">Defining</a>');
+tam5a2066e989cd9t.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Execution_Plans\&quot;" title=\"Using Execution Plans\">Execution Plans</a> ');
+tam5a2066e989cd9t.add(19, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_an_Execution_Plan\&quot;" title=\"Creating an Execution Plan\">Creating</a>');
+tam5a2066e989cd9t.add(20, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Execution_Plan_Tasks\&quot;" title=\"Creating Execution Plan Tasks\">Tasks</a>');
+tam5a2066e989cd9t.add(21, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Applying_Conditions_to_Execution_Plan_Tasks\&quot;" title=\"Applying Conditions to Execution Plan Tasks\">Conditions</a> ');
+tam5a2066e989cd9t.add(22, 18, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Execution_Plan_Approval_Tasks\&quot;" title=\"Execution Plan Approval Tasks\">Approvals</a>');
+tam5a2066e989cd9t.add(23, 0, ' Configuration');
+tam5a2066e989cd9t.add(24, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Access_Controls\&quot;" title=\"Service Catalog Access Controls\" class=\"mw-redirect\">Access Controls</a> ');
+tam5a2066e989cd9t.add(25, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Hiding_Prices_in_the_Service_Catalog\&quot;" title=\"Hiding Prices in the Service Catalog\">Hiding Prices</a>');
+tam5a2066e989cd9t.add(26, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Localizing_Price_in_the_Service_Catalog\&quot;" title=\"Localizing Price in the Service Catalog\">Localizing Prices</a>');
+tam5a2066e989cd9t.add(27, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_UI_Policy\&quot;" title=\"Service Catalog UI Policy\">UI Policy</a>');
+tam5a2066e989cd9t.add(28, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Service_Catalog_Renderers\&quot;" title=\"Using Service Catalog Renderers\">Using Renderers</a>');
+tam5a2066e989cd9t.add(29, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Data_Lookup\&quot;" title=\"Service Catalog Data Lookup\">Data Lookup</a>');
+tam5a2066e989cd9t.add(30, 23, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Properties\&quot;" title=\"Service Catalog Properties\">Properties</a>');
+tam5a2066e989cd9t.add(31, 23, ' Cart');
+tam5a2066e989cd9t.add(32, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Cart_Layouts\&quot;" title=\"Configuring Cart Layouts\">Cart Layout</a>');
+tam5a2066e989cd9t.add(33, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_a_Two-Step_Checkout\&quot;" title=\"Enabling a Two-Step Checkout\">2-Step Checkout</a>');
+tam5a2066e989cd9t.add(34, 31, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enabling_Bulk_Requests\&quot;" title=\"Enabling Bulk Requests\">Bulk Requests</a> ');
+tam5a2066e989cd9t.add(35, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variables\&quot;" title=\"Service Catalog Variables\">Variables</a>');
+tam5a2066e989cd9t.add(36, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Service_Catalog_Variables\&quot;" title=\"Using Service Catalog Variables\">Using</a>');
+tam5a2066e989cd9t.add(37, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Variable_Types\&quot;" title=\"Variable Types\">Types</a>');
+tam5a2066e989cd9t.add(38, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variable_Sets\&quot;" title=\"Service Catalog Variable Sets\">Sets</a>');
+tam5a2066e989cd9t.add(39, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Qualifiers_for_Service_Catalog_Variables\&quot;" title=\"Reference Qualifiers for Service Catalog Variables\">Qualifiers</a>');
+tam5a2066e989cd9t.add(40, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Variable_Pricing\&quot;" title=\"Service Catalog Variable Pricing\">Pricing</a>');
+tam5a2066e989cd9t.add(41, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auditable_Service_Catalog_Variables\&quot;" title=\"Auditable Service Catalog Variables\">Auditable</a>');
+tam5a2066e989cd9t.add(42, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scriptable_Service_Catalog_Variables\&quot;" title=\"Scriptable Service Catalog Variables\">Scriptable</a> ');
+tam5a2066e989cd9t.add(43, 35, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Service_Catalog_Variables\&quot;" title=\"Reporting on Service Catalog Variables\">Reporting</a>');
+tam5a2066e989cd9t.add(44, 0, ' Scripting');
+tam5a2066e989cd9t.add(45, 44, ' <strong class=\"selflink\">Creating a Script</strong>');
+tam5a2066e989cd9t.add(46, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Currency_and_Price_Fields\&quot;" title=\"Scripting Currency and Price Fields\">Currency</a>');
+tam5a2066e989cd9t.add(47, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Catalog_Script_API\&quot;" title=\"Service Catalog Script API\">Script API</a> ');
+tam5a2066e989cd9t.add(48, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Custom_Shopping_Cart\&quot;" title=\"Creating a Custom Shopping Cart\" class=\"mw-redirect\">Custom Cart</a>');
+tam5a2066e989cd9t.add(49, 44, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scriptable_Assignment_of_Execution_Plans\&quot;" title=\"Scriptable Assignment of Execution Plans\">Execution Plans</a>');
+
+                                               document.getElementById('5a2066e989cd9t').innerHTML = tam5a2066e989cd9t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2066e989cd9t) { window.tamOnload_tam5a2066e989cd9t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=ITIL_Implementation_Guide.html" title="ITIL Implementation Guide" class="mw-redirect">ITIL Implementation Guide</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:Service_Catalog_Administration.html" title="Book:Service Catalog Administration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Service_Catalog_Administration.html" title="Book:Service Catalog Administration">Service Catalog Admin</a>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Differences"><span class="tocnumber">2</span> <span class="toctext">Differences</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Considerations"><span class="tocnumber">3</span> <span class="toctext">Considerations</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Creating_a_Catalog_Client_Script"><span class="tocnumber">4</span> <span class="toctext">Creating a Catalog Client Script</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Script_Samples"><span class="tocnumber">5</span> <span class="toctext">Script Samples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Get_the_Value_of_a_Variable"><span class="tocnumber">5.1</span> <span class="toctext">Get the Value of a Variable</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Restrict_the_Number_of_Characters_a_User_Can_Type_in_a_Variable"><span class="tocnumber">5.2</span> <span class="toctext">Restrict the Number of Characters a User Can Type in a Variable</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Update_a_Cart"><span class="tocnumber">5.3</span> <span class="toctext">Update a Cart</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html#Retrieve_a_Cart_ID"><span class="tocnumber">5.4</span> <span class="toctext">Retrieve a Cart ID</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Client-side scripts can add dynamic effects and validation to forms. Scripts can apply to service catalog <a href="index.php%3Ftitle=Defining_Catalog_Items.html" title="Defining Catalog Items">items</a> or <a href="index.php%3Ftitle=Service_Catalog_Variable_Sets.html" title="Service Catalog Variable Sets">variable sets</a>, allowing administrators to use the same functionality that is available on other forms. 
+</p><p>You can use client side scripts to:
+</p>
+<ul><li> Get or set variable values.</li>
+<li> Hide or display variables.</li>
+<li> Make variables mandatory or not.</li>
+<li> Validate form submission.</li>
+<li> Add something to the cart.</li>
+<li> Order something immediately.</li></ul>
+<h1><span class="mw-headline" id="Differences"><span class="mw-headline-number">2</span> Differences</span></h1>
+<p>Catalog client scripts are very similar to <a href="index.php%3Ftitle=Client_Scripts.html" title="Client Scripts">standard client scripts</a>, with these important differences: 
+</p>
+<ul><li>Instead of selecting a table such as Incident for the script, select a catalog item or variable set. As your system may have a large number of catalog items, you should select a catalog item or variable set using a reference field instead of the choice list that the standard Client Script form uses. </li>
+<li>When using an <tt>onChange()</tt> catalog client script, it is linked to a particular variable instead of a field. The system automatically populates the variable name selection list with any named variables from the catalog item or variable set selected.</li></ul>
+<h1><span class="mw-headline" id="Considerations"><span class="mw-headline-number">3</span> Considerations</span></h1>
+<p>When you create catalog client scripts, be aware of the following:
+</p>
+<ul><li> Catalog client scripts run when a user orders an item from the service catalog. Catalog client scripts can also run when variables or variable sets for a catalog item are displayed when a user requests that item. </li>
+<li> For a variable to be accessible using a catalog client script, it must have a variable name. Variables without names do not appear in the list of available variables. </li>
+<li> When using standard client scripts on a Requested Item or Catalog Task form, make a note of fields with the same name as variables. If a table field and a variable of the same name are both present on a form, the table field is matched when it is accessed using a script. If this happens, specifically address the variable by naming it <b>variables.&lt;variable name&gt;</b>. For example: <tt>g_form.setValue('variables.replacement', 'false');</tt></li>
+<li> If you are using <a href="index.php%3Ftitle=Record_Producer.html" title="Record Producer">record producers</a> to pass variables from the service catalog to other types of records, these variables are made visible in those records with a variable editor, such as the Change Variable Editor <a href="index.php%3Ftitle=Creating_a_Formatter.html" title="Creating a Formatter">UI formatter</a> on Change request forms. You can manipulate these variables using standard client script methods, such as <tt>setDisplay</tt>, <tt>setMandatory</tt>, <tt>setValue</tt>, and <tt>getValue</tt>.</li>
+<li>Catalog client scripts can be used for catalog items included in a <a href="index.php%3Ftitle=Wizards.html" title="Wizards">wizard</a>, starting with the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>.</li></ul>
+<h1><span class="mw-headline" id="Creating_a_Catalog_Client_Script"><span class="mw-headline-number">4</span> Creating a Catalog Client Script</span></h1>
+<ol><li> Navigate to <b>Service Catalog &gt; Catalog Policy &gt; Catalog Client Scripts</b>. 
+<dl><dd>A list of current custom catalog client scripts appears.</dd></dl></li>
+<li> Click <b>New</b>.
+<dl><dd> <a href="index.php%3Ftitle=File:Service_catalog_client_script.png.html" class="image"><img alt="Service catalog client script.png" src="images/0/0c/Service_catalog_client_script.png" width="656" height="495" /></a>  </dd></dl></li>
+<li> Fill in the fields, as appropriate (see table).</li>
+<li> Click <b>Submit</b>.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Enter a unique name for the catalog client script.
+</td></tr>
+<tr>
+<td> Applies to
+</td>
+<td> Select the item type this client script applies to:
+<ul><li><b>A Catalog Item:</b> enables the <b>Catalog item</b> field.</li>
+<li><b>A Variable Set:</b> enables the <b>Variable set</b> field.</li></ul>
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Select the check box to enable the client script. Clear the check box to disable the script.
+</td></tr>
+<tr>
+<td> UI Type
+</td>
+<td> Whether to apply this to desktop, mobile, or both.
+</td></tr>
+<tr>
+<td> Script
+</td>
+<td> Enter the client script that should run on the service catalog item.
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> Select when the script should run, such as <b>onLoad</b> or <b>onSubmit</b>.
+</td></tr>
+<tr>
+<td> Catalog item or Variable set
+</td>
+<td> Select a catalog item or variable set from the list. The field name and options available depend on the selection in the <b>Applies to</b> field.
+</td></tr>
+<tr>
+<td> Applies on a Catalog Item view
+</td>
+<td> Select the check box to apply the catalog client script to catalog items displayed within the order screen on the service catalog. Available starting with <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary</a>.
+</td></tr>
+<tr>
+<td> Applies on Requested Items
+</td>
+<td> Select the check box to apply the catalog client script on a Requested Item form, after the item is requested. Available starting with Calgary.
+</td></tr>
+<tr>
+<td> Applies on Catalog Tasks
+</td>
+<td> Select the check box to apply the catalog client script when a Catalog Task form for the item is being displayed. Available starting with Calgary.
+</td></tr></table>
+<h1><span class="mw-headline" id="Script_Samples"><span class="mw-headline-number">5</span> Script Samples</span></h1>
+<p>Here are some examples of client scripts to perform common actions. 
+</p>
+<h2><span class="mw-headline" id="Get_the_Value_of_a_Variable"><span class="mw-headline-number">5.1</span> Get the Value of a Variable</span></h2>
+<p>Use the following syntax to obtain the value of a catalog variable. Note that the variable must have a name. Replace <tt>variable_name</tt> with the name of the variable. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;variable_name&#39;</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="Restrict_the_Number_of_Characters_a_User_Can_Type_in_a_Variable"><span class="mw-headline-number">5.2</span> Restrict the Number of Characters a User Can Type in a Variable</span></h2>
+<p>This is an example of a script that runs when the variable is displayed, rather than when the item is ordered. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onLoad</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">sd</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getControl</span><span class="p">(</span><span class="s1">&#39;short_description&#39;</span><span class="p">);</span>
+  <span class="nx">sd</span><span class="p">.</span><span class="nx">maxLength</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Update_a_Cart"><span class="mw-headline-number">5.3</span> Update a Cart</span></h2>
+<p>To access and update cart contents, use the <a href="index.php%3Ftitle=GlideAjax.html" title="GlideAjax">GlideAjax</a> CartAjaxProcessor class.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Do not update the shopping cart using the client side implementation of <a href="index.php%3Ftitle=GlideRecord.html" title="GlideRecord">GlideRecord</a> to directly access the database and make cart updates, as this bypasses business rules to check whether the cart already existed. If you use GlideRecord, each cart update generates a new cart instead of updating the relevant cart, creating multiple duplicate carts.</i>
+</td></tr></table>
+<p><br />
+The following example shows how you can use GlideAjax to update a user's address stored in a cart:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Get new address from field and pass to method that updates the cart</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isLoading</span> <span class="o">&amp;&amp;</span> <span class="nx">newValue</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span>
+            <span class="o">&amp;&amp;</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;location_listed&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getReference</span><span class="p">(</span><span class="err">’</span><span class="nx">location</span><span class="err">’</span><span class="p">);</span>
+        <span class="nx">updateAddressInCart</span><span class="p">(</span><span class="nx">g_user</span><span class="p">.</span><span class="nx">userID</span><span class="p">,</span> 
+		<span class="nx">loc</span><span class="p">.</span><span class="nx">u_street</span> <span class="o">+</span> <span class="s1">&#39;\n&#39;</span> <span class="o">+</span> <span class="nx">loc</span><span class="p">.</span><span class="nx">u_city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">loc</span><span class="p">.</span><span class="nx">u_state</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">loc</span><span class="p">.</span><span class="nx">u_postal_code</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+ 
+<span class="kd">function</span> <span class="nx">updateAddressInCart</span><span class="p">(</span><span class="nx">userSysId</span><span class="p">,</span> <span class="nx">deliveryAddress</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sc_cart&#39;</span><span class="p">);</span>	<span class="c1">// Client Side GlideRecord</span>
+    <span class="nx">cart</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nx">userSysId</span><span class="p">);</span>		<span class="c1">// pass in user id</span>
+    <span class="nx">cart</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>				<span class="c1">// Execute the query</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">cart</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;CartAjaxProcessor&#39;</span><span class="p">);</span>               <span class="c1">// Class name</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_action&#39;</span><span class="p">,</span> <span class="s1">&#39;set_delivery_address&#39;</span><span class="p">);</span>     <span class="c1">// method name</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_value&#39;</span><span class="p">,</span> <span class="nx">deliveryAddress</span><span class="p">);</span>             <span class="c1">// method arg</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_sys_id&#39;</span><span class="p">,</span> <span class="nx">cart</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>                <span class="c1">// method arg</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">getXMLAnswer</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{},</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>                <span class="c1">// updates cart on server</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Retrieve_a_Cart_ID"><span class="mw-headline-number">5.4</span> Retrieve a Cart ID</span></h2>
+<p>This is the recommended method of obtaining the Cart ID, rather than using the client-side GlideRecord. This function is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">getCartId</span><span class="p">(</span><span class="nx">userSysId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;CartAjaxProcessor&#39;</span><span class="p">);</span>     <span class="c1">// Class name</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_action&#39;</span><span class="p">,</span> <span class="s1">&#39;get_user_cart&#39;</span><span class="p">);</span>  <span class="c1">// method name</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_value&#39;</span><span class="p">,</span> <span class="nx">userSysId</span><span class="p">);</span>         <span class="c1">// method arg</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">DisplayCart</span><span class="p">);</span>                          <span class="c1">// Callback to result</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">DisplayCart</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Var</span> <span class="nx">cartSysId</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span>
+            <span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;sc_cart&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;cart_sysid&quot;</span><span class="p">);</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">cartSysId</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130201539
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.185 seconds
+Real time usage: 1.762 seconds
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 2417/2097152 bytes
+Template argument size: 1201/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1052.448      1 - -total
+ 11.79%  124.093      1 - Template:Service_Catalog_Admin
+ 10.51%  110.655      1 - Template:Topic
+  1.18%   12.368      4 - Template:T
+  0.85%    8.908      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:3504-0!*!0!1!en!5!* and timestamp 20171130201537 and revision id 251213
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html">http://wiki.servicenow.com/index.php?title=Creating_a_Catalog_Client_Script&amp;oldid=251213</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Catalog+Management.html" title="Category:Service Catalog Management">Service Catalog Management</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Catalog+Management.html" title="Category:Service Catalog Management">Service Catalog Management</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_3504"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="3504" data-vote-the-vote="5" data-vote-id="3504" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3504_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="3504" data-vote-the-vote="1" data-vote-id="3504" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3504_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Creating+a+Catalog+Client+Script&amp;returntoquery=oldid%3D251213" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Creating+a+Catalog+Client+Script&amp;returntoquery=oldid%3D251213" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_a_Catalog_Client_Script.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Catalog+Client+Script.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+a+Catalog+Client+Script&amp;returnto=Creating+a+Catalog+Client+Script&amp;oldid=251213&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_a_Catalog_Client_Script.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_a_Catalog_Client_Script" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;oldid=251213.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_a_Catalog_Client_Script&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:15, 30 November 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":2187});});</script></body></html>

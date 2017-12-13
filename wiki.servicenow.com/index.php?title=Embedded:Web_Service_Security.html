@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Embedded:Web Service Security - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Embedded:Web_Service_Security","wgTitle":"Embedded:Web Service Security","wgCurRevisionId":169131,"wgRevisionId":169131,"wgArticleId":11604,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Embedded:Web_Service_Security","wgRelevantArticleId":11604,"wgRequestId":"248f4a9511259c688acd848d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20130708221609"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Embedded:Web Service Security"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Embedded:Web_Service_Security.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Embedded:Web Service Security"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20130708221609"/>
+
+	<meta property="article:published_time" content="20130708221609"/>
+
+	<meta property="article:modified_time" content="20130708221609"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Embedded_Web_Service_Security rootpage-Embedded_Web_Service_Security skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Embedded%3AWeb+Service+Security" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=add_article&amp;arttitle=Embedded%3AWeb+Service+Security&amp;oldid=0" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Embedded:Web Service Security</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Embedded:Web Service Security</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Security"><span class="tocnumber">1</span> <span class="toctext">Security</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Basic_Authentication"><span class="tocnumber">1.1</span> <span class="toctext">Basic Authentication</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Mutual_Authentication"><span class="tocnumber">1.2</span> <span class="toctext">Mutual Authentication</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Creating_the_Key_Store"><span class="tocnumber">1.2.1</span> <span class="toctext">Creating the Key Store</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Setting_up_the_Key_Store"><span class="tocnumber">1.2.2</span> <span class="toctext">Setting up the Key Store</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Specifying_a_Trusted_Server_Certificate"><span class="tocnumber">1.2.3</span> <span class="toctext">Specifying a Trusted Server Certificate</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Processing_Mutual_Authentication_Requests"><span class="tocnumber">1.2.4</span> <span class="toctext">Processing Mutual Authentication Requests</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WS-Security"><span class="tocnumber">1.3</span> <span class="toctext">WS-Security</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WS_Security_Profiles"><span class="tocnumber">1.3.1</span> <span class="toctext">WS Security Profiles</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WSS_X.509_Token_Profile"><span class="tocnumber">1.3.2</span> <span class="toctext">WSS X.509 Token Profile</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WSS_Username_Token_Profile"><span class="tocnumber">1.3.3</span> <span class="toctext">WSS Username Token Profile</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Example_WS-Security_SOAP_Envelope_Headers"><span class="tocnumber">1.3.4</span> <span class="toctext">Example WS-Security SOAP Envelope Headers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Web_Service_User_Roles"><span class="tocnumber">1.4</span> <span class="toctext">Web Service User Roles</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Enforcing_Strict_Security"><span class="tocnumber">1.5</span> <span class="toctext">Enforcing Strict Security</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Security"><span class="mw-headline-number">1</span> Security</span></h1>
+<p>Web service security is enforced using the combination of basic authentication challenge/response for the HTTP protocol, as well as system level access control using the Contextual Security Manager. Additionally, there is a set of web service specific roles that may be granted to the web service user. 
+</p>
+<h2><span class="mw-headline" id="Basic_Authentication"><span class="mw-headline-number">1.1</span> Basic Authentication</span></h2>
+<p>To enforce basic authentication on each request for a WSDL document or posting of SOAP messages, you may set the property <b>glide.basicauth.required</b> to <b>true</b>. If you do so, each <b>WSDL</b> or <b>SOAP</b> request would have to contain the "Authorization" header as specified in the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.w3.org/Protocols/HTTP/1.0/draft-ietf-http-spec.html#BasicAA">Basic Authentication</a> protocol. Because the request is non-interactive, we always require the <b>Authorization</b> header during a request. 
+</p><p>Supplying basic authentication information whether or not it is required has the added advantage that the data created or updated as a result of the Web Service invocation is done on behalf of the user supplied in the basic authentication credentials. As an example, when creating an Incident record, the journal fields will have the user id of the basic authenticated user, instead of the default <b>Guest</b> user. 
+</p>
+<table cellspacing="0" cellpadding="0" class="table collapsible collapsed" style="">
+
+<tr>
+<th height="26" align="left"> <span style="color: blue;"><i>View examples</i></span>
+</th></tr>
+<tr>
+<td>
+<p>To supply basic authentication when using Perl and the SOAP::Lite libraries, you can implement the following function: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">sub </span><span class="nf">SOAP</span><span class="p">::Transport::HTTP::Client::get_basic_credentials {</span>
+   <span class="k">return</span> <span class="s">&#39;user_name&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;password&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> 
+<ul><li>When using C# .NET VS 2005 or older, you can take advantage of the Credentials object, for example:</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">ICredentials</span> <span class="n">cred</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">NetworkCredential</span><span class="p">(</span><span class="s">&quot;user_name&quot;</span><span class="p">,</span> <span class="s">&quot;password&quot;</span><span class="p">);</span>
+ 
+<span class="n">service</span><span class="p">.</span><span class="n">ServiceNow</span> <span class="n">proxy</span> <span class="p">=</span> <span class="k">new</span> <span class="n">service</span><span class="p">.</span><span class="n">ServiceNow</span><span class="p">();</span>
+<span class="n">service</span><span class="p">.</span><span class="k">get</span> <span class="n">getService</span> <span class="p">=</span> <span class="n">newservice</span><span class="p">.</span><span class="k">get</span><span class="p">();</span>
+<span class="n">service</span><span class="p">.</span><span class="n">getResponse</span> <span class="n">getServiceResponse</span> <span class="p">=</span> <span class="k">new</span> <span class="n">service</span><span class="p">.</span><span class="n">getResponse</span><span class="p">();</span>
+ 
+<span class="k">try</span>
+<span class="p">{</span>
+  <span class="n">proxy</span><span class="p">.</span><span class="n">Credentials</span> <span class="p">=</span> <span class="n">cred</span><span class="p">;</span>
+  <span class="n">getService</span><span class="p">.</span><span class="n">sys_id</span> <span class="p">=</span> <span class="s">&quot;bf522c350a0a140701972dbf876f1610&quot;</span><span class="p">;</span>
+  <span class="n">getServiceResponse</span> <span class="p">=</span> <span class="n">proxy</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">getService</span><span class="p">);</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div> 
+<ul><li>When using C# .NET VS 2008, you can take advantage of the ClientCredentials object, for example:</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="n">Demo_Incident</span><span class="p">.</span><span class="n">ServiceNowSoapClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Test08WebService</span><span class="p">.</span><span class="n">Demo_Incident</span><span class="p">.</span><span class="n">ServiceNowSoapClient</span><span class="p">();</span>
+<span class="n">client</span><span class="p">.</span><span class="n">ClientCredentials</span><span class="p">.</span><span class="n">UserName</span><span class="p">.</span><span class="n">UserName</span> <span class="p">=</span> <span class="s">&quot;admin&quot;</span><span class="p">;</span>
+<span class="n">client</span><span class="p">.</span><span class="n">ClientCredentials</span><span class="p">.</span><span class="n">UserName</span><span class="p">.</span><span class="n">Password</span> <span class="p">=</span> <span class="s">&quot;admin&quot;</span><span class="p">;</span>
+</pre></div> 
+<p>Then in your app.config file look for the following and change "None" to "Basic": 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;transport</span> <span class="na">clientCredentialType=</span><span class="s">&quot;None&quot;</span> <span class="na">proxyCredentialType=</span><span class="s">&quot;None&quot;</span> <span class="na">realm=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+</pre></div> 
+<ul><li>When using VB .NET taking advantage of the Credentials object would look like the following:</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    <span class="k">Sub</span> <span class="nf">Main</span><span class="p">()</span>
+        <span class="k">Dim</span> <span class="n">cred</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">NetworkCredential</span><span class="p">(</span><span class="s">&quot;user_name&quot;</span><span class="p">,</span> <span class="s">&quot;password&quot;</span><span class="p">)</span>
+
+        <span class="k">Dim</span> <span class="n">proxy</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">VB_Democm</span><span class="p">.</span><span class="n">incident</span><span class="p">.</span><span class="n">ServiceNow</span>
+        <span class="k">Dim</span> <span class="n">getIncident</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">VB_Democm</span><span class="p">.</span><span class="n">incident</span><span class="p">.</span><span class="n">get</span>
+        <span class="k">Dim</span> <span class="n">getResponse</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">VB_Democm</span><span class="p">.</span><span class="n">incident</span><span class="p">.</span><span class="n">getResponse</span>
+
+        <span class="n">proxy</span><span class="p">.</span><span class="n">Credentials</span> <span class="o">=</span> <span class="n">cred</span>
+
+        <span class="n">getIncident</span><span class="p">.</span><span class="n">sys_id</span> <span class="o">=</span> <span class="s">&quot;[your sysID here]&quot;</span>
+
+        <span class="n">getResponse</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">getIncident</span><span class="p">)</span>
+
+    <span class="k">End</span> <span class="k">Sub</span>
+</pre></div> 
+<p>The resulting response when Basic Authentication is turned on and no credentials are supplied looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>   
+ <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Apache Tomcat/5.0.28 - Error report<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>   
+ <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>   <span class="o">&lt;!</span><span class="nt">--H1</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span><span class="nb">background-color</span><span class="o">:</span><span class="m">#525D76</span><span class="p">;</span><span class="nb">font-size</span><span class="o">:</span><span class="m">22px</span><span class="p">;}</span> 
+  <span class="nt">H2</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span><span class="nb">background-color</span><span class="o">:</span><span class="m">#525D76</span><span class="p">;</span><span class="nb">font-size</span><span class="o">:</span><span class="m">16px</span><span class="p">;}</span> 
+  <span class="nt">H3</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span><span class="nb">background-color</span><span class="o">:</span><span class="m">#525D76</span><span class="p">;</span><span class="nb">font-size</span><span class="o">:</span><span class="m">14px</span><span class="p">;}</span> 
+  <span class="nt">BODY</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">black</span><span class="p">;</span><span class="nb">background-color</span><span class="o">:</span><span class="nb">white</span><span class="p">;}</span> 
+  <span class="nt">B</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span><span class="nb">background-color</span><span class="o">:</span><span class="m">#525D76</span><span class="p">;}</span> 
+  <span class="nt">P</span> <span class="p">{</span><span class="nb">font-family</span><span class="o">:</span><span class="n">Tahoma</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="nb">sans-serif</span><span class="p">;</span><span class="nb">background</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span><span class="nb">color</span><span class="o">:</span><span class="nb">black</span><span class="p">;</span><span class="nb">font-size</span><span class="o">:</span><span class="m">12px</span><span class="p">;}</span>
+  <span class="nt">A</span> <span class="p">{</span><span class="nb">color</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">:</span> <span class="nb">black</span><span class="p">;}</span>
+  <span class="nt">A</span><span class="nc">.name</span> <span class="p">{</span><span class="nb">color</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">:</span> <span class="nb">black</span><span class="p">;}</span>
+  <span class="nt">HR</span> <span class="p">{</span><span class="nb">color</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">:</span> <span class="m">#525D76</span><span class="p">;}</span><span class="nt">--</span><span class="o">&gt;</span>   
+  <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>   
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HTTP Status 401 -\<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">HR</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">noshade</span><span class="o">=</span><span class="s">&quot;noshade&quot;</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>type<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> Status report<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>message<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;&lt;/</span><span class="nt">u</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>description<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> 
+  <span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>This request requires HTTP authentication ().<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">HR</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">noshade</span><span class="o">=</span><span class="s">&quot;noshade&quot;</span><span class="p">&gt;</span>   
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Apache Tomcat/5.0.28<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>   
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>   
+  <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+<h2><span class="mw-headline" id="Mutual_Authentication"><span class="mw-headline-number">1.2</span> Mutual Authentication</span></h2>
+<p>Mutual Authentication establishes trust by exchanging Secure Sockets Layer (SSL) certificates. Before connecting to a server, the client requests an SSL certificate. The server responds by requesting that the client send its own certificate. Both respond by validating the certificates and sending acknowledgments before initiating an HTTPS connection.
+</p><p>Administrators do the preliminary work of setting up a keystore and generating certificates before certification requests are fulfilled.
+</p><p><br />
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> This feature only enables mutual authentication on outbound https connections.  ServiceNow does not support mutual authentication on inbound requests.
+</td></tr></table>
+<h3><span class="mw-headline" id="Creating_the_Key_Store"><span class="mw-headline-number">1.2.1</span> Creating the Key Store</span></h3>
+<p>ServiceNow currently supports uploading a Java keystore file to contain the private key, public certificate pair, and its signed certificates.  
+</p><p>The following steps use commands that allow you to generate a new Java Keytool keystore file, create a certificate signing request (CSR), and import certificates. Any root or intermediate certificates need to be imported before importing the primary certificate for your domain. Type these commands in a command line interface.
+</p>
+<ol><li>Generate a Java keystore and key pair. 
+<dl><dd><pre>keytool -genkey -alias mydomain -keyalg RSA -keystore my.keystore</pre>   </dd></dl></li>
+<li>Generate a CSR for an existing Java keystore.
+<dl><dd><pre>keytool -certreq -alias mydomain -keystore my.keystore -file mydomain.csr</pre></dd></dl></li>
+<li>Import a root or intermediate certificate authority CA certificate to an existing Java keystore.
+<dl><dd><pre>keytool -import -trustcacerts -alias root -file Thawte.crt -keystore my.keystore</pre></dd></dl></li>
+<li>Import a signed primary certificate to an existing Java keystore.
+<dl><dd><pre>keytool -import -trustcacerts -alias mydomain -file mydomain.crt -keystore my.keystore</pre></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Setting_up_the_Key_Store"><span class="mw-headline-number">1.2.2</span> Setting up the Key Store</span></h3>
+<p>Now that the key store has been created, it can be uploaded to the Certificates table. On the <b>System Definition &gt; Certificates</b> page, click <b>New</b> and set the following fields:
+</p>
+<ul><li> Enter a certificate <b>Name</b>.</li>
+<li> Store the key store as <b>Active</b>.</li>
+<li> Set <b>Type = Java Key Store</b>.</li>
+<li> Provide a <b>Key store password</b>. This is the password that was used to create the keystore.</li></ul>
+<p>Click <b>Submit</b> to create the Java Key Store entry.
+</p><p><br />
+<a href="http://wiki.servicenow.com/index.php?title=File:Keystore.png" class="image"><img alt="graphic of the certificate fields." src="images/e/e1/Keystore.png" width="651" height="140" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Specifying_a_Trusted_Server_Certificate"><span class="mw-headline-number">1.2.3</span> Specifying a Trusted Server Certificate</span></h3>
+<p>During an outbound SSL connection, which is an HTTPS Web Service call, it is possible to specify a certificate provided by the service provider that ensures the validity of the service provider during the SSL connection.  For example, a browser attempting to connect to a secure service which identifies itself by a certificate.
+</p><p>By uploading the trusted server certificate, ServiceNow ensures that the service it is connecting to is valid and secure.
+</p><p>Create a new Certificate entry with the type of "Trust Store Cert" and attach a DER formatted certificate, or copy and paste its PEM format into the PEM Certificate field.
+</p><p><br />
+<a href="index.php%3Ftitle=File:TrustedcertBrdr.png.html" class="image"><img alt="graphic of the certificate fields." src="images/f/fd/TrustedcertBrdr.png" width="660" height="461" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Processing_Mutual_Authentication_Requests"><span class="mw-headline-number">1.2.4</span> Processing Mutual Authentication Requests</span></h3>
+<p><br />
+<a href="http://wiki.servicenow.com/index.php?title=File:CertExchange.png" class="image"><img alt="graphic of two-way authentication between a client and server." src="images/c/ce/CertExchange.png" width="596" height="308" /></a>
+</p><p><br />
+</p>
+<ul><li>When a client requests the server certificate for authentication, a certificate signing request (CSR) is generated. </li>
+<li>To respond to a CSR, the server generates two unique cryptographic keys: A public key, which is used to encrypt messages to the server and a private key, which is used to decrypt messages. Both keys are kept in the Key Store. </li></ul>
+<ul><li> Keys are used to decrypt the client secure messages so they can be read by the server. Any outgoing connection that is going to be HTTPS verifies the certification by checking the Key Store, offering its public certification, and uses the trust store certificates to verify mutual trust back.</li></ul>
+<ul><li>To complete the secure link between the client and the server, the server matches the certificate to the corresponding private key. Because only the server has access to the private key, the server can decrypt the data from the client. </li></ul>
+<p><br />
+</p><p>Here is an example of a command that registers MYHTTPS with the com.glide.certificates.DBKeyStoreSocketFactory socket factory on port 443. The database key store factory is used during the SSL exchange process to offer a client certificate for mutual authentication.
+</p>
+<pre>
+glide.httpclient.protocol.myhttps.class = "com.glide.certificates.DBKeyStoreSocketFactory"
+glide.httpclient.protocol.myhttps.port = "4433"
+</pre>
+<p>Having the above configuration will affect any outbound <b>myhttps://host.domain.com/target</b> URL to use the custom socket factory and exchange certificates during SSL.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>if you override the default 'https' protocol socket factory, you will be doing that on a global scale and it will affect every outbound https connection.  This is usually undesirable</i>
+</td></tr></table>
+<p><br />
+The server responds by sending a certificate. Is this a certificate that the client accepts? If yes, a message is sent to the server accepting the certificate and a secure channel is initiated. If the certificate is not accepted, it may mean that the root authority is needed for certification.
+</p>
+<h2><span class="mw-headline" id="WS-Security"><span class="mw-headline-number">1.3</span> WS-Security</span></h2>
+<p>Support for <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wss">WS-Security 1.1</a> in the form of <a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WSS_X.509_Token_Profile">WSS X.509 Token Profile</a> and <a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#WSS_Username_Token_Profile">WSS Username Token Profile</a> is available for incoming SOAP requests. The configuration to use WS-Security is separate from the requirement to enforce <a href="index.php%3Ftitle=Embedded:Web_Service_Security.html#Basic_Authentication">Basic Authentication</a>, and is enforced when the SOAP envelope contains the WS-Security headers.  The following <b>WS Security Profiles</b> module contains configurations for using this feature.
+</p><p><a href="http://wiki.servicenow.com/index.php?title=File:Ws-security.png" class="image"><img alt="Ws-security.png" src="images/9/9e/Ws-security.png" width="234" height="243" /></a> <br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="WS_Security_Profiles"><span class="mw-headline-number">1.3.1</span> WS Security Profiles</span></h3>
+<p>The <b>WS Security Profile</b> module lists the WS-Security profiles that are currently in effect.  The <b>Order</b> of the profiles indicate the order of authentication that will be checked, all profiles will be checked during the incoming SOAP request, when a profile fails authentication, it will not execute the next one in order.  The <b>Bind session</b> checkbox indicates which profile to use to assume the session's identity, there can only be one "bound" session.
+</p><p><a href="index.php%3Ftitle=File:Ws-security-list.png.html" class="image"><img alt="Ws-security-list.png" src="images/4/42/Ws-security-list.png" width="774" height="144" /></a> <br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="WSS_X.509_Token_Profile"><span class="mw-headline-number">1.3.2</span> WSS X.509 Token Profile</span></h3>
+<p>Use the X.509 authentication framework as defined by the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wss">Web Services Security: SOAP Message Security specification</a>.  An X.509 certificate specifies a binding between a public key and a set of attributes that includes (at least) a subject name, issuer name, serial number and validity interval.  An X.509 certificate is used to validate a public key that is used to sign the incoming SOAP message.  Upload the certificate in the <b><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Data+Certification&amp;oldid=0.html" title="Data Certification">Certificate</a></b> module and reference it in the <b>X509 Certificate</b> field.  If this is a bound session, select the user to impersonate when the WS-Security authentication succeeds.
+</p><p><a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf">http://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf</a>
+</p><p><a href="index.php%3Ftitle=File:Ws-x509.png.html" class="image"><img alt="Ws-x509.png" src="images/e/e2/Ws-x509.png" width="709" height="118" /></a> <br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="WSS_Username_Token_Profile"><span class="mw-headline-number">1.3.3</span> WSS Username Token Profile</span></h3>
+<p>In addition to specifying the X.509 Token Profile, a UsernameToken can also be supplied in the SOAP request.  A UsernameToken is used as a means of identifying the requestor by “username”, and optionally using a password (or shared secret, or password equivalent) to authenticate that identity to ServiceNow.  The UsernameToken profile cannot be used independent of the X.509 Token Profile currently.
+</p><p><a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://www.oasis-open.org/committees/download.php/16782/wss-v1.1-spec-os-UsernameTokenProfile.pdf">http://www.oasis-open.org/committees/download.php/16782/wss-v1.1-spec-os-UsernameTokenProfile.pdf</a>
+</p>
+<ol><li>Authenticate using the Username of the incoming SOAP request to lookup a User in ServiceNow by the specified <b>User field to match UserName</b> value.  The password value in the incoming Username Token is used to authenticate the request.  When the <b>Bind session</b> option is selected, the user that authenticates successfully will be used for the session.
+<dl><dd><a href="index.php%3Ftitle=File:Ws-username1.png.html" class="image"><img alt="Ws-username1.png" src="images/a/af/Ws-username1.png" width="777" height="111" /></a> <br style="clear:both;" /></dd></dl></li>
+<li>Authenticate using a separate pair of user name / password that is unrelated to users in the User table. When the <b>Bind session</b> option is selected, the user that is specified in the <b>Run as user</b> field will be used for the session.
+<dl><dd><a href="index.php%3Ftitle=File:Ws-username2.png.html" class="image"><img alt="Ws-username2.png" src="images/9/9e/Ws-username2.png" width="776" height="145" /></a> <br style="clear:both;" /></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Example_WS-Security_SOAP_Envelope_Headers"><span class="mw-headline-number">1.3.4</span> Example WS-Security SOAP Envelope Headers</span></h3>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This sample has been formatted with line returns to fit the content into the frame.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;SOAP-ENV:Header&gt;</span>
+	<span class="nt">&lt;wsse:Security</span>
+		<span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span>
+		<span class="na">SOAP-ENV:mustUnderstand=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;wsse:BinarySecurityToken</span>
+			<span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span>
+			<span class="na">EncodingType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;</span>
+			<span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span>
+			<span class="na">wsu:Id=</span><span class="s">&quot;CertId-2D914AB929A6719E7F13068829874641&quot;</span>
+			<span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span><span class="nt">&gt;</span>
+			MIIEgzCCA2ugAwIBAgILAQAAAAABLOZQMtEwDQYJKoZIhvcNAQ
+			EFBQAwQDEXMBUGA1UEChMOQ3liZXJ0cnVzdCBJbmMxJTAjBg
+			NVBAMTHEN5YmVydHJ1c3QgU3VyZWNyZWRlbnRpYWwgQ0Ew
+			HhcNMTAxMjE0MTgyMjU1WhcNMTECMjE0MTgyMjU1WjB3MQsw
+			CQYDVQQGEwJVUzEUMBIGA1UEChMLU2VydmljZS1Ob3cxKDA
+			mBgkqhkiG9w0BCQEWGWRhdmlkLmxvb0BzZXJ2aWNlLW5vdy5jb
+			20xKDAmBgNVBAMTH1NlcnZpY2UtTm93IFBhcn3uZXIgRGV2ZWx
+			vcG1lbnQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+			AQCvtcRIb6zkGnN9uyhtcSDNSIuCW6FgnTbTDUvw2nGlNA9y9iEV
+			wTp5TG3eELOOFBCuRLeY5x28lN+cJ72v+zCwi/rZcbEPj8oWyLVA
+			OqJThgrzhDabj0vDM/zU8bvAXcw6FoCUDFKkc64WC7Y4HpBdfW4
+			JT7FBgDQ3LEudq80Up+TfETiGwrEA3jRgy9fF92TKD7MN3Vkyhz2
+			xZLOFiN5HJixl9juNJmLWugqqIG04yZSuCutc1gjCy0U+f0NXKgh0Q
+			rRheNpwcqWbbJvLbR9Ybso6l3UAYCQ09hrRnI7VaPvfiueUvuLopap
+			o4Kel6iL8aMUAfEUDtkf1AbqRIIQ5AgMBAAGjggFFMIIBQTAfBgNVH
+			SMEGDAWgBRJTJILzUojts557p5VM2taRMAClTA7BgNVHR8ENDA
+			yMDCgLqAshipodHRwOi8vY3JsLm9tbmlyb290LmNvbS9TdXJlQ3JlZ
+			GVudGlhbC5jcmwwHQYDVR0OBBYEFB+OqlvcdiYmq0enW6mgaV
+			wZp9eaMA8GA1UdEwEB/wQFMAMCAQAwDgYDVR0PAQH/BAQD
+			AgTwMBEGCWCGSAGG+EIBAQQEAwIFoDBJBg3rBgEFBQcBA1Q
+			9MDswOQYIKwYBBQUHMAKGLWh0dHA6Ly9jYWNlcnQub21uaXJv
+			b3QuY29tL3N1cmVjcmVkZW50aWFsLmNydDAkBgNVHREEHTAbg
+			RlkYXZpZC5sb29Ac2VydmljZS1ub3cuY29tMB0GA1UdJQQWMBQG
+			CCsGAQUFBwMCBggrBgEFBQcDBDANBgkqhkiG9w0BAQUFAAO
+			CAQEAmeoP0Bgtx2JN1ldLnnK6WLEqDk25zaHP5wTxqVlFxzJy1zi6
+			A0lk5U0T5LKYjjGWRIOoSeK8iBU0p7Mq4PE8QCETkjYNyuWJd9zm
+			7GPCHdOoL18rQHQRsU8pTDHA10zG+i3zdxAMrHl/H673E4myzvU
+			DkJnxNAZdw4h4Ba/Y1+VFCWhOm2GwZdXtzklyZaKtMp+31qmf3bG
+			OSU34M/dW40pXgfLDqdGD+6YDQPg25aYeCqcNhwg6VlAWG566g
+			aWXYxRaVj0qotSDMdaK8b+7Vlo7KhGGaE62v7f44OSekJeBvTfZCR
+			7zRSK8N+0qUpqP/n8vgDkmYIE5IQrRE0rEWA==
+		<span class="nt">&lt;/wsse:BinarySecurityToken&gt;</span>
+		<span class="nt">&lt;ds:Signature</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span>
+			<span class="na">Id=</span><span class="s">&quot;Signature-2&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;ds:SignedInfo</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;ds:CanonicalizationMethod</span>
+					<span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+				<span class="nt">&lt;ds:SignatureMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;</span>
+					<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+				<span class="nt">&lt;ds:Reference</span> <span class="na">URI=</span><span class="s">&quot;#Timestamp-1&quot;</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;ds:Transforms</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;ds:Transform</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span>
+							<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+					<span class="nt">&lt;/ds:Transforms&gt;</span>
+					<span class="nt">&lt;ds:DigestMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span>
+						<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+					<span class="nt">&lt;ds:DigestValue</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>NIS5sizg8wttGL+aWFQ4003TpPg=<span class="nt">&lt;/ds:DigestValue&gt;</span>
+				<span class="nt">&lt;/ds:Reference&gt;</span>
+				<span class="nt">&lt;ds:Reference</span> <span class="na">URI=</span><span class="s">&quot;#id-3&quot;</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;ds:Transforms</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;ds:Transform</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span>
+							<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+					<span class="nt">&lt;/ds:Transforms&gt;</span>
+					<span class="nt">&lt;ds:DigestMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span>
+						<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="nt">/&gt;</span>
+					<span class="nt">&lt;ds:DigestValue</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>/rXB+nhBT5BXtDErIUIBOyhoh8Y=<span class="nt">&lt;/ds:DigestValue&gt;</span>
+				<span class="nt">&lt;/ds:Reference&gt;</span>
+			<span class="nt">&lt;/ds:SignedInfo&gt;</span>
+			<span class="nt">&lt;ds:SignatureValue</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+				fwjxJRiDNrNxbVsKoHZflsmKlYADldJf0BoN3R2Fx9rjpszFXI2Gp92eXsP+Sl6rmbPXIdKb8lLl
+				+dv8upl8WYPrKJP61KeJ0ZsKNDX474NYC2XEzdJcXbZNktmqY0dSmKwJZzi8rJtmGrbOUAaH51GK
+				oXV2FLJ0AqILoZMyP/SPWKbOUNUCpssY7vRA+tX8ZmrjTwMUvpOZbo+KInPmwfpZ6n/uarOh5zjL
+				NaYJylTCjuuqXDKPZLvDqy48yrsGAWczB901KwLLrE8C+6aPucFrTBytX91vIhaWiLZuba8Nouaz
+				vUkjUk7LM5o87MGrSFx3OwxbaOD7/cMtdg2bxA==
+                        <span class="nt">&lt;/ds:SignatureValue&gt;</span>
+			<span class="nt">&lt;ds:KeyInfo</span> <span class="na">Id=</span><span class="s">&quot;KeyId-2D914AB929A6719E7F13068829875022&quot;</span>
+				<span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;wsse:SecurityTokenReference</span>
+					<span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span>
+					<span class="na">wsu:Id=</span><span class="s">&quot;STRId-2D914AB929A6719E7F13068829875053&quot;</span>
+					<span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;wsse:Reference</span> <span class="na">URI=</span><span class="s">&quot;#CertId-2D914AB929A6719E7F13068829874641&quot;</span>
+						<span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span>
+						<span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span> <span class="nt">/&gt;</span>
+				<span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
+			<span class="nt">&lt;/ds:KeyInfo&gt;</span>
+		<span class="nt">&lt;/ds:Signature&gt;</span>
+		<span class="nt">&lt;wsu:Timestamp</span>
+			<span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span>
+			<span class="na">wsu:Id=</span><span class="s">&quot;Timestamp-1&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;wsu:Created&gt;</span>2011-05-31T23:03:07.454Z<span class="nt">&lt;/wsu:Created&gt;</span>
+			<span class="nt">&lt;wsu:Expires&gt;</span>2011-05-31T23:08:07.454Z<span class="nt">&lt;/wsu:Expires&gt;</span>
+		<span class="nt">&lt;/wsu:Timestamp&gt;</span>
+		<span class="nt">&lt;wsse:UsernameToken&gt;</span>
+			<span class="nt">&lt;wsse:Username&gt;</span>test_user<span class="nt">&lt;/wsse:Username&gt;</span>
+			<span class="nt">&lt;wsse:Password&gt;</span>xxxxxx<span class="nt">&lt;/wsse:Password&gt;</span>
+		<span class="nt">&lt;/wsse:UsernameToken&gt;</span>
+	<span class="nt">&lt;/wsse:Security&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Header&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="Web_Service_User_Roles"><span class="mw-headline-number">1.4</span> Web Service User Roles</span></h2>
+<p>When basic authentication is required for web services, enabling the <i>glide.soap.strict_security</i> property validates the authenticated SOAP user with <a href="index.php%3Ftitle=Contextual_Security.html" title="Contextual Security"><b>Contextual Security</b></a> as well as vaidates the SOAP action with the user assigned roles. The following roles are available for securing any inbound SOAP requests: 
+</p><p><br /> 
+</p>
+<table class="standard">
+
+<tr>
+<th> Role
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> soap
+</td>
+<td> Full query, create, update, and delete access to all tables, as well as execute scripts<br />
+</td></tr>
+<tr>
+<td> soap_query
+</td>
+<td> Query only access to all tables and columns
+</td></tr>
+<tr>
+<td> soap_create
+</td>
+<td> New record creation access to all tables and columns
+</td></tr>
+<tr>
+<td> soap_update
+</td>
+<td> Update only access to existing tables and columns
+</td></tr>
+<tr>
+<td> soap_query_update
+</td>
+<td> Query and update access to all tables and columns
+</td></tr>
+<tr>
+<td> soap_delete
+</td>
+<td> Record deletion access to existing records in all tables and columns
+</td></tr>
+<tr>
+<td> soap_ecc
+</td>
+<td> Query, create and update access to the ECC Queue table only
+</td></tr>
+<tr>
+<td> soap_script
+</td>
+<td> Access to execute <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Scripted+Web+Services&amp;oldid=0.html" title="Scripted Web Services">scripted web services</a>
+</td></tr>
+<tr>
+<td> import_admin
+</td>
+<td> Can manage all aspects of Import Sets and imports. Required for access to the sys_import_set_row table.
+</td></tr>
+<tr>
+<td> Import_transformer
+</td>
+<td> Can manage Import Set Transform Maps and run transforms. Required for access to the sys_import_set_row table.
+</td></tr></table>
+<h2><span class="mw-headline" id="Enforcing_Strict_Security"><span class="mw-headline-number">1.5</span> Enforcing Strict Security</span></h2>
+<p>By default, Web Services basic authentication only determines if a user is authorized to access the instance with a SOAP connection. Once authorized, any user can access any table published as a Web Service. The system property <b>Enforce strict security on incoming SOAP requests</b> changes this behavior and requires users meet <a href="index.php%3Ftitle=Contextual_Security.html" title="Contextual Security">Contextual Security</a> requirements to access instance resources from Web Services. With this property enabled, only users that have the proper SOAP role and also meet the <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">access control rule</a> conditions for a given table and operation can access the resource from a SOAP connection. To enforce strict security for Web Services connections, navigate to <b>System Properties &gt; Web Services</b>.
+</p><p><br />
+<a href="index.php%3Ftitle=File:Ws_strict_security.png.html" class="image" title="System property to enforce strict security on incoming SOAP requests"><img alt="System property to enforce strict security on incoming SOAP requests" src="images/f/f0/Ws_strict_security.png" width="1023" height="116" /></a> <br style="clear:both;" />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>At this time, ServiceNow does not support Digital Certificates, Digital Signatures, or other Digested token methods in the SOAP web service calls</i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202192623
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.327 seconds
+Real time usage: 3.347 seconds
+Preprocessor visited node count: 192/1000000
+Preprocessor generated node count: 404/1000000
+Post‐expand include size: 1402/2097152 bytes
+Template argument size: 560/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  417.708      1 - -total
+  2.28%    9.523      3 - Template:Note
+  1.83%    7.661      1 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:11604-0!*!0!1!en!5!* and timestamp 20171202192620 and revision id 169131
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;oldid=169131">http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;oldid=169131</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_11604"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="11604" data-vote-the-vote="5" data-vote-id="11604" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11604_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="11604" data-vote-the-vote="1" data-vote-id="11604" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11604_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Embedded:Web_Service_Security.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Embedded%3AWeb+Service+Security" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Embedded%3AWeb+Service+Security" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://wiki.servicenow.com/index.php?title=Special:Book/render_article/&amp;arttitle=Embedded:Web_Service_Security">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;printable=yes">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Embedded%3AWeb+Service+Security">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Embedded%3AWeb+Service+Security&amp;returnto=Embedded%3AWeb+Service+Security&amp;oldid=169131&amp;writer=rl">Download as PDF</a></li>
+											<li id="t-print"><a href="http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="http://wiki.servicenow.com/index.php?title=Special:WhatLinksHere/Embedded:Web_Service_Security" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Embedded:Web_Service_Security" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;oldid=169131" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="http://wiki.servicenow.com/index.php?title=Embedded:Web_Service_Security&amp;action=info" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 22:16, 8 July 2013.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1133});});</script></body></html>

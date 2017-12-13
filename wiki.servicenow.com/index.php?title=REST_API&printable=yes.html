@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>REST API - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"REST_API","wgTitle":"REST API","wgCurRevisionId":251121,"wgRevisionId":251121,"wgArticleId":22378,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Web Services APIs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"REST_API","wgRelevantArticleId":22378,"wgRequestId":"1cbc87b1ba21e065484ebd81","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170926152619"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=REST_API"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="REST API"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Web Services APIs"/>
+<meta name="category" content="Web Services APIs"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=REST_API.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:REST API"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170926152619"/>
+
+	<meta property="article:published_time" content="20170926152619"/>
+
+	<meta property="article:modified_time" content="20170926152619"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Web Services APIs"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=REST_API"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-REST_API rootpage-REST_API skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=REST+API.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=REST+API&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">REST API</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a> &gt; REST API</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&amp;id=c_TableAPI">REST API</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://developer.servicenow.com">https://developer.servicenow.com</a></b>
+</p><p><b>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://developer.servicenow.com/app.do#!/home">https://developer.servicenow.com/app.do#!/home</a> for the latest information.</b>
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a21d40fef2fct'></div><script type="text/javascript">window.tamOnload_tam5a21d40fef2fct=[];tree = new dTree('tam5a21d40fef2fct');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21d40fef2fct = tree;
+                                               tam5a21d40fef2fct.add(1, 0, '<strong class=\"selflink\">Inbound REST</strong>');
+
+tam5a21d40fef2fct.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_REST\&quot;" title=\"Getting Started with REST\">Getting Started with REST</a>');
+tam5a21d40fef2fct.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Table_API\&quot;" title=\"Table API\">Table API</a>');
+tam5a21d40fef2fct.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_API\&quot;" title=\"Import Set API\">Import Set API</a>');
+tam5a21d40fef2fct.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API\&quot;" title=\"Aggregate API\">Aggregate API</a>');
+tam5a21d40fef2fct.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API_Examples\&quot;" title=\"Aggregate API Examples\">Aggregate API Examples</a>');
+tam5a21d40fef2fct.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API_Explorer\&quot;" title=\"REST API Explorer\">REST API Explorer</a>');
+tam5a21d40fef2fct.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Web_Service\&quot;" title=\"SOAP Web Service\">Inbound SOAP</a>');
+tam5a21d40fef2fct.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Direct_Web_Service_API\&quot;" title=\"SOAP Direct Web Service API\">Direct SOAP API</a>');
+tam5a21d40fef2fct.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_SOAP_Web_Service_Security\&quot;" title=\"Inbound SOAP Web Service Security\">Inbound SOAP Security</a>');
+tam5a21d40fef2fct.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting_Related_Records_Using_SOAP\&quot;" title=\"Inserting Related Records Using SOAP\">Inserting Related Records</a>');
+tam5a21d40fef2fct.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AttachmentCreator_SOAP_Web_Service\&quot;" title=\"AttachmentCreator SOAP Web Service\">Attachment Creator Web Service</a>');
+tam5a21d40fef2fct.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ECC_Queue_Retry_Policy\&quot;" title=\"ECC Queue Retry Policy\">ECC Queue Retry Policy</a>');
+tam5a21d40fef2fct.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Session_Management_and_Reporting\&quot;" title=\"SOAP Session Management and Reporting\">SOAP Session Management and Reporting</a>');
+tam5a21d40fef2fct.add(15, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Long-Running_SOAP_Request_Support\&quot;" title=\"Long-Running SOAP Request Support\">Long-Running SOAP Request Support</a>');
+tam5a21d40fef2fct.add(16, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Static_WSDL\&quot;" title=\"Creating a Static WSDL\">Creating a Static WSDL</a>');
+tam5a21d40fef2fct.add(17, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_Integrations_Best_Practices\&quot;" title=\"Web Services Integrations Best Practices\">Web Services Integrations Best Practices</a>');
+tam5a21d40fef2fct.add(18, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API\&quot;" title=\"Perl API\">Perl API</a>');
+tam5a21d40fef2fct.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_ServiceNow\&quot;" title=\"Perl API ServiceNow\">Perl ServiceNow Module</a>');
+tam5a21d40fef2fct.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_GlideRecord\&quot;" title=\"Perl API GlideRecord\">GlideRecord</a>');
+tam5a21d40fef2fct.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Task\&quot;" title=\"Perl API Task\">Task</a>');
+tam5a21d40fef2fct.add(22, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Incident\&quot;" title=\"Perl API Incident\">Incident</a>');
+tam5a21d40fef2fct.add(23, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Problem\&quot;" title=\"Perl API Problem\">Problem</a>');
+tam5a21d40fef2fct.add(24, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Change\&quot;" title=\"Perl API Change\">Change</a>');
+tam5a21d40fef2fct.add(25, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Request\&quot;" title=\"Perl API Request\">Request</a>');
+tam5a21d40fef2fct.add(26, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_RequestedItem\&quot;" title=\"Perl API RequestedItem\">RequestedItem</a>');
+tam5a21d40fef2fct.add(27, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_SC_Task\&quot;" title=\"Perl API SC Task\">SC_Task</a>');
+tam5a21d40fef2fct.add(28, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Ticket\&quot;" title=\"Perl API Ticket\">Ticket</a>');
+tam5a21d40fef2fct.add(29, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Approval\&quot;" title=\"Perl API Approval\">Approval</a>');
+tam5a21d40fef2fct.add(30, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Dictionary\&quot;" title=\"Perl API Dictionary\">Dictionary</a>');
+tam5a21d40fef2fct.add(31, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Configuration\&quot;" title=\"Perl API Configuration\">Configuration</a>');
+tam5a21d40fef2fct.add(32, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Attachment\&quot;" title=\"Perl API Attachment\">Attachment</a>');
+tam5a21d40fef2fct.add(33, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Driver\&quot;" title=\"ODBC Driver\">ODBC Driver</a>');
+tam5a21d40fef2fct.add(34, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_ODBC\&quot;" title=\"Getting Started with ODBC\">ODBC Quick Start Guide</a>');
+tam5a21d40fef2fct.add(35, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installing_the_ODBC_Driver\&quot;" title=\"Installing the ODBC Driver\">Installing the Driver</a>');
+tam5a21d40fef2fct.add(36, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_the_ODBC_Driver\&quot;" title=\"Configuring the ODBC Driver\">Configuring the Driver</a>');
+tam5a21d40fef2fct.add(37, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Testing_the_ODBC_Driver\&quot;" title=\"Testing the ODBC Driver\">Testing the Driver</a>');
+tam5a21d40fef2fct.add(38, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver\&quot;" title=\"Using the ODBC Driver\">Using the Driver</a>');
+tam5a21d40fef2fct.add(39, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a>');
+tam5a21d40fef2fct.add(40, 33, 'ODBC Client Configuration');
+tam5a21d40fef2fct.add(41, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=HTTP_Client_Connection_Management\&quot;" title=\"HTTP Client Connection Management\">HTTP Client Connection Management</a>');
+tam5a21d40fef2fct.add(42, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Interactive_SQL_With_ODBC\&quot;" title=\"Using Interactive SQL With ODBC\">Running Interactive SQL (ODBC)</a>');
+tam5a21d40fef2fct.add(43, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Excel_2010\&quot;" title=\"Using the ODBC Driver in Excel 2010\" class=\"mw-redirect\">Using the ODBC Driver in Excel 2010</a>');
+tam5a21d40fef2fct.add(44, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Crystal_Reports_2008\&quot;" title=\"Using the ODBC Driver in Crystal Reports 2008\" class=\"mw-redirect\">Using the ODBC Driver in Crystal Reports 2008</a>');
+tam5a21d40fef2fct.add(45, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ODBC_Driver_in_SQL_Server_2008\&quot;" title=\"Using ODBC Driver in SQL Server 2008\" class=\"mw-redirect\">Using ODBC Driver in SQL Server 2008</a>');
+tam5a21d40fef2fct.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Additional Direct Web Services</a>');
+tam5a21d40fef2fct.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CSV_Web_Service\&quot;" title=\"CSV Web Service\">CSV</a> ');
+tam5a21d40fef2fct.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EXCEL_Web_Service\&quot;" title=\"EXCEL Web Service\">EXCEL</a>');
+tam5a21d40fef2fct.add(49, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSONv2_Web_Service\&quot;" title=\"JSONv2 Web Service\">JSONv2</a>');
+tam5a21d40fef2fct.add(50, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Web_Service\&quot;" title=\"PDF Web Service\">PDF</a>');
+tam5a21d40fef2fct.add(51, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=XML_Web_Service\&quot;" title=\"XML Web Service\">XML</a>');
+tam5a21d40fef2fct.add(52, 46, 'RSS ');
+tam5a21d40fef2fct.add(53, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Generator\&quot;" title=\"RSS Feed Generator\">RSS Feed Generator</a> ');
+tam5a21d40fef2fct.add(54, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Reader\&quot;" title=\"RSS Feed Reader\">RSS Feed Reader</a>');
+tam5a21d40fef2fct.add(55, 0, 'Inbound Examples');
+tam5a21d40fef2fct.add(56, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Java_Apache_Axis2_Web_Services_Client_Examples\&quot;" title=\"Java Apache Axis2 Web Services Client Examples\">Java Apache Axis2 Client</a>');
+tam5a21d40fef2fct.add(57, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_.NET_Web_Services_Client_Examples\&quot;" title=\"Microsoft .NET Web Services Client Examples\">Microsoft .NET Client</a>');
+tam5a21d40fef2fct.add(58, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_Web_Services_Client_Examples\&quot;" title=\"Perl Web Services Client Examples\">Perl Client</a>');
+tam5a21d40fef2fct.add(59, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Python_Web_Services_Client_Examples\&quot;" title=\"Python Web Services Client Examples\">Python Client</a>');
+tam5a21d40fef2fct.add(60, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Retrieving_A_Large_Number_Of_Records_Using_SOAP\&quot;" title=\"Retrieving A Large Number Of Records Using SOAP\">Retrieving A Large Number Of Records</a>');
+tam5a21d40fef2fct.add(61, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_C_Sharp_.NET_End_to_End_Tutorial\&quot;" title=\"Web Services C Sharp .NET End to End Tutorial\">C Sharp .NET End to End</a>');
+tam5a21d40fef2fct.add(62, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Service_Tutorial\&quot;" title=\"Scripted Web Service Tutorial\">Scripted Web Service</a>');
+tam5a21d40fef2fct.add(63, 0, 'Outbound Web Services');
+tam5a21d40fef2fct.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service\&quot;" title=\"Outbound REST Web Service\">Outbound REST</a>');
+tam5a21d40fef2fct.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_SOAP_Web_Service\&quot;" title=\"Outbound SOAP Web Service\">Outbound SOAP</a>');
+tam5a21d40fef2fct.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_Web_Services_Mutual_Authentication\&quot;" title=\"Outbound Web Services Mutual Authentication\">Outbound Mutual Authentication</a>');
+tam5a21d40fef2fct.add(67, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_REST\&quot;" title=\"Scripting Outbound REST\">Scripting Outbound REST</a>');
+tam5a21d40fef2fct.add(68, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP\&quot;" title=\"Scripting Outbound SOAP\">Scripting Outbound SOAP</a>');
+tam5a21d40fef2fct.add(69, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP_-_Versions_Prior_to_Fuji\&quot;" title=\"Scripting Outbound SOAP - Versions Prior to Fuji\">Scripting Outbound SOAP Prior to Fuji</a>');
+tam5a21d40fef2fct.add(70, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service_-_Versions_Prior_to_Fuji\&quot;" title=\"Outbound REST Web Service - Versions Prior to Fuji\">Outbound REST Prior to Fuji</a>');
+tam5a21d40fef2fct.add(71, 63, 'Outbound APIs');
+tam5a21d40fef2fct.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessage</a>');
+tam5a21d40fef2fct.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponse</a>');
+tam5a21d40fef2fct.add(74, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessage</a>');
+tam5a21d40fef2fct.add(75, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponse</a>');
+tam5a21d40fef2fct.add(76, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Direct Web Services</a>');
+tam5a21d40fef2fct.add(77, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Service_Import_Sets\&quot;" title=\"Web Service Import Sets\">Web Service Import Sets</a>');
+tam5a21d40fef2fct.add(78, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Services\&quot;" title=\"Scripted Web Services\">Scripted Web Services</a>');
+
+                                               document.getElementById('5a21d40fef2fct').innerHTML = tam5a21d40fef2fct.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21d40fef2fct) { window.tamOnload_tam5a21d40fef2fct[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div> 
+ <div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#ServiceNow_REST_API_Resources"><span class="tocnumber">2</span> <span class="toctext">ServiceNow REST API Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Available_APIs"><span class="tocnumber">2.1</span> <span class="toctext">Available APIs</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Supported_Methods"><span class="tocnumber">2.2</span> <span class="toctext">Supported Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Roles"><span class="tocnumber">3</span> <span class="toctext">Roles</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#API_Version"><span class="tocnumber">4</span> <span class="toctext">API Version</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Headers"><span class="tocnumber">5</span> <span class="toctext">Headers</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Security"><span class="tocnumber">6</span> <span class="toctext">Security</span></a>
+<ul>
+<li class="toclevel-2"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Table_Access"><span class="tocnumber">6.1</span> <span class="toctext">Table Access</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#OAuth_with_REST"><span class="tocnumber">6.2</span> <span class="toctext">OAuth with REST</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#REST_Response_HTTP_Status_Codes"><span class="tocnumber">7</span> <span class="toctext">REST Response HTTP Status Codes</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Dot-Walking_in_REST_Requests"><span class="tocnumber">8</span> <span class="toctext">Dot-Walking in REST Requests</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Debugging_REST_Queries"><span class="tocnumber">9</span> <span class="toctext">Debugging REST Queries</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Sample_Log_Output"><span class="tocnumber">9.1</span> <span class="toctext">Sample Log Output</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Troubleshooting"><span class="tocnumber">10</span> <span class="toctext">Troubleshooting</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Enhancements"><span class="tocnumber">11</span> <span class="toctext">Enhancements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Fuji"><span class="tocnumber">11.1</span> <span class="toctext">Fuji</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>REST (REpresentational State Transfer) is a simple stateless architecture that generally runs over HTTPS/TLS. The REST style emphasizes that interactions between clients and services are enhanced by having a limited number of operations. Flexibility is provided by assigning resources their own unique universal resource indicators (URIs). Because each operation (GET, POST, PUT, and DELETE) has a specific meaning, REST avoids ambiguity. 
+</p><p>The REST API is active by default in all instances, starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p><p>RESTful web services offer several advantages, including:
+</p>
+<ul><li>Support for different HTTP methods to perform different actions</li>
+<li>Detailed <a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#REST_Response_HTTP_Status_Codes">response codes</a> and header information</li>
+<li><a href="index.php%3Ftitle=Table_API.html#GET_.2Fapi.2Fnow.2Fv1.2Ftable.2F.28tableName.29" title="Table API">Pagination support</a> for large data sets</li>
+<li>Streaming data on GET requests<br /></li></ul>
+<p><br />
+For more information, see <a href="index.php%3Ftitle=Getting_Started_with_REST.html" title="Getting Started with REST">Getting Started with REST</a>.
+</p>
+<h1><span class="mw-headline" id="ServiceNow_REST_API_Resources"><span class="mw-headline-number">2</span> ServiceNow REST API Resources</span></h1>
+<p>To view the the REST API resources available in your instance, along with the correct formats for the supported methods, use the <a href="index.php%3Ftitle=REST_API_Explorer.html" title="REST API Explorer">REST API Explorer</a>. To access the explorer, navigate to <b>System Web Services &gt; REST API Explorer</b>. (Prior to the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>, navigate to <b>System Web Services &gt; APIs</b> to view available REST APIs.)
+</p>
+<h2><span class="mw-headline" id="Available_APIs"><span class="mw-headline-number">2.1</span> Available APIs</span></h2>
+<p>The following REST APIs are available:
+</p>
+<ul><li><b><a href="index.php%3Ftitle=Table_API.html" title="Table API">Table API</a>:</b> used to perform CRUD operations on existing tables.</li>
+<li><b><a href="index.php%3Ftitle=Aggregate_API.html" title="Aggregate API">Aggregate API</a>:</b> used to compute aggregate statistics about existing table and column data.</li>
+<li><b><a href="index.php%3Ftitle=Import_Set_API.html" title="Import Set API">Import Set API</a>:</b> used to provide a REST interface for import set tables.</li>
+<li><b><a href="index.php%3Ftitle=Performance_Analytics_API.html" title="Performance Analytics API">Performance Analytics API</a>:</b> used to query data about <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Performance+Analytics&amp;oldid=0.html" title="Performance Analytics">Performance Analytics</a> scorecards.</li></ul>
+<h2><span class="mw-headline" id="Supported_Methods"><span class="mw-headline-number">2.2</span> Supported Methods</span></h2>
+<p>The following methods conform to the REST standard and are available in ServiceNow:
+</p>
+<ul><li>GET</li>
+<li>POST</li>
+<li>PUT</li>
+<li>PATCH</li>
+<li>DELETE</li></ul>
+<p>Each API may support certain methods. Refer to the documentation for each API to view detailed method information.
+</p>
+<h1><span class="mw-headline" id="Roles"><span class="mw-headline-number">3</span> Roles</span></h1>
+<table class="standard">
+<tr>
+<th> Role name
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> rest_service
+</td>
+<td> Can use the REST API to perform REST web service operations such as querying or inserting records.
+</td></tr>
+<tr>
+<td> web_service_admin
+</td>
+<td> Can access the System Web Services application menu and the REST modules.
+</td></tr></table>
+<h1><span class="mw-headline" id="API_Version"><span class="mw-headline-number">4</span> API Version</span></h1>
+<p>REST API URIs may specify a version number, such as <tt>/api/now/v1/table/(tablename)</tt> or no version number, such as <tt>/api/now/table/(tableName)</tt>. URIs with a version number provide a consistent interface that is guaranteed to maintain backwards compatibility in future ServiceNow releases. For example, if the default response format for a particular HTTP method changes in a release, versioned URIs continue to use the previous format.
+</p><p>By specifying a version number in your URIs, you can ensure that future updates to the REST API do not negatively impact your integration. URIs that do not specify a version number use the most recent REST API behavior available with your instance version, which may change when you upgrade.
+</p>
+<h1><span class="mw-headline" id="Headers"><span class="mw-headline-number">5</span> Headers</span></h1>
+<p>Each of the supported methods can be overridden if you set the <tt>X-http-method-override</tt> header. The <tt>Accept</tt> and <tt>Content-Type</tt> request headers are required for proper data formatting. These request headers have the following valid values:
+</p>
+<ul><li><tt>Accept</tt>: application/json, application/xml</li>
+<li><tt>Content-Type</tt>: application/json, application/xml</li></ul>
+<p>POST, PUT, and PATCH operations require you to provide both headers. The GET and DELETE operations require only the <tt>Accept</tt> header. Failing to provide the required headers results in a <b>400 Bad Request</b> error.
+</p>
+<h1><span class="mw-headline" id="Security"><span class="mw-headline-number">6</span> Security</span></h1>
+<p>By default, you must include user credentials in a REST request. The REST API supports <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.w3.org/Protocols/HTTP/1.0/draft-ietf-http-spec.html#BasicAA">basic authentication</a> and OAuth for enforcing access controls to web resources. The user record that is used for authentication is subject to access control in the same way as an interactive user. Each request requires the proper authentication information. There is no support for mutual authentication for inbound REST requests.
+</p><p>REST supports cookies for binding to the existing session.
+</p>
+<h2><span class="mw-headline" id="Table_Access"><span class="mw-headline-number">6.1</span> Table Access</span></h2>
+<p>All tables, including base system tables, global tables, and scoped tables are accessible via web services by default. You must fulfill any other web service security requirements, such as basic authentication and ACLs to access tables via web services.
+</p><p>You can control direct web service access to tables using the <b>Allow access to this table via web services</b> check box on the table <a href="index.php%3Ftitle=Application_Access_Settings.html" title="Application Access Settings">Application Access settings</a>. This check box must be selected to allow web service interaction with the table.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The application access fields controlling CRUD operations, such as <b>Can read</b> or <b>Can create</b> do not apply to web service requests.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="OAuth_with_REST"><span class="mw-headline-number">6.2</span> OAuth with REST</span></h2>
+<p>Using <a href="index.php%3Ftitle=OAuth_Applications.html" title="OAuth Applications">OAuth</a>, you can pass a user ID and password once, and then use a token for subsequent REST requests instead of submitting credentials with each request. In this way, OAuth can improve system security by reducing the number of times you submit user credentials. You can use OAuth to authenticate REST requests starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. You must enable the OAuth plugin to use this functionality.
+</p>
+<ol><li><a href="index.php%3Ftitle=OAuth_Setup.html" title="OAuth Setup">Enable OAuth</a> in the ServiceNow instance that the external client will connect to.
+<dl><dd> You may need to <a href="index.php%3Ftitle=OAuth_Applications.html#Activating_OAuth" title="OAuth Applications">activate the OAuth plugin</a> and <a href="index.php%3Ftitle=OAuth_Setup.html#Setting_the_OAuth_Property" title="OAuth Setup">set the OAuth property</a> if OAuth is not yet enabled on the instance.</dd></dl></li>
+<li><a href="index.php%3Ftitle=OAuth_Setup.html#Registering_an_Application_on_ServiceNow" title="OAuth Setup">Register a client application and create an endpoint</a>.</li>
+<li>Record the <b>client_id</b> and <b>client_secret</b> values from the previous step to use when requesting an access token.</li>
+<li>To get an access token, use your REST client, such as cURL or Postman, to send a request to the OAuth endpoint (oauth_token.do).
+<dl><dd>Format the request as a URL-encoded HTTP POST body and include the <a href="index.php%3Ftitle=Generating_OAuth_Tokens.html#API_Request_Parameters" title="Generating OAuth Tokens">required parameters</a>.</dd></dl></li>
+<li>Record the access token and refresh token from the response.</li>
+<li>Submit the access token with subsequent REST requests.</li></ol>
+<table class="collapsible collapsed">
+<tr>
+<th> Click the plus to see examples of obtaining and using an OAuth access token.
+</th></tr>
+<tr>
+<td>
+<p>In this example, the OAuth token has a <b>client_id</b> of <b>a329c4515612210071a5e0c298ee2be8</b> and a <b>client_secret</b> of <b>password22</b>.
+</p><p><b>Getting an access token</b>
+</p>
+<dl><dd>curl -d "grant_type=password&amp;client_id=a329c4515612210071a5e0c298ee2be8&amp;client_secret=password22&amp;username=RESTUser&amp;password=RESTUserPassword"  https://&lt;instance&gt;.service-now.com/oauth_token.do</dd></dl>
+<p><b>Sample token response</b>
+</p>
+<dl><dd></dd></dl>
+<p>{
+</p>
+<dl><dd>"scope": "useraccount",</dd>
+<dd>"token_type": "Bearer",</dd>
+<dd>"expires_in": 1799,</dd>
+<dd>"refresh_token": "jZPdkEVrWvtMjrspldNjIS0uWM4D7QV9mgmcQXDVo5Qa_GVvmdR6NOp7OM038EHJnd6nZpWocFer1NcJz4zwdw",</dd>
+<dd>"access_token": "2wRlsRCT2SYjCCJP91kwo2EFzj5qg4O3I3aC09e0-0hz6Ib3YK7If-LMiNorNuglfqbkL4AfkYC92KYHUCcbpQ"</dd></dl>
+<p>}
+</p><p><b>REST request with OAuth token</b>
+</p>
+<dl><dd>curl -H "Accept:application/json" -H "Authorization:Bearer 2wRlsRCT2SYjCCJP91kwo2EFzj5qg4O3I3aC09e0-0hz6Ib3YK7If-LMiNorNuglfqbkL4AfkYC92KYHUCcbpQ"  "https://&lt;instance&gt;.service-now.com/api/now/table/incident"</dd></dl>
+</td></tr></table>
+<h1><span class="mw-headline" id="REST_Response_HTTP_Status_Codes"><span class="mw-headline-number">7</span> REST Response HTTP Status Codes</span></h1>
+<table class="standard">
+<tr>
+<th>Status Code
+</th>
+<th>Message
+</th>
+<th>Details
+</th></tr>
+<tr>
+<td>200
+</td>
+<td>Success
+</td>
+<td>Success with response body.
+</td></tr>
+<tr>
+<td>201
+</td>
+<td>Created
+</td>
+<td>Success with response body.
+</td></tr>
+<tr>
+<td>204
+</td>
+<td>Success
+</td>
+<td>Success with no response body.
+</td></tr>
+<tr>
+<td>400
+</td>
+<td>Bad Request
+</td>
+<td>The request URI does not match the APIs in the system, or the operation failed for unknown reasons.  Invalid headers can also cause this error.
+</td></tr>
+<tr>
+<td>401
+</td>
+<td>Unauthorized
+</td>
+<td>The user is not authorized to use the API.
+</td></tr>
+<tr>
+<td>403
+</td>
+<td>Forbidden
+</td>
+<td>The requested operation is not permitted for the user. This error can also be caused by ACL failures, or business rule or data policy constraints.
+</td></tr>
+<tr>
+<td>404
+</td>
+<td>Not found
+</td>
+<td>The requested resource was not found. This can be caused by an ACL constraint or if the resource does not exist.
+</td></tr>
+<tr>
+<td>405
+</td>
+<td>Method not allowed
+</td>
+<td>The HTTP action is not allowed for the requested REST API, or it is not supported by any API.
+</td></tr></table>
+<h1><span class="mw-headline" id="Dot-Walking_in_REST_Requests"><span class="mw-headline-number">8</span> Dot-Walking in REST Requests</span></h1>
+<p>You can use <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Dot-Walking&amp;oldid=0.html" title="Dot-Walking">dot-walking</a> when specifying the <tt>sysparm_query</tt> or <tt>sysparm_fields</tt> parameters in requests to REST APIs that support those parameters.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The Import Set API does not support dot-walking.</i>
+</td></tr></table>
+<p><br />
+You can filter queries using related record values by dot-walking in the <tt>sysparm_query</tt> parameter. For example, you can retrieve all incident records where the incident <b>Company</b> has a specific <b>Stock symbol</b> value.
+</p>
+<pre>https://&lt;instance&gt;.service-now.com/api/now/table/incident?sysparm_query=company.stock_symbol=NYX 
+</pre>
+<p><br />
+</p><p>You can view field values from multiple tables by dot-walking in the <tt>sysparm_fields</tt> parameter. For example, you can retrieve the <b>Name</b>, <b>Sys_id</b>, and <b>Department</b> of each user that has certain roles, as well as the role <b>Name</b>. 
+</p><p>The request runs on the User Roles [sys_user_has_role] table which defines a many-to-many relationship between users and roles. The response includes field values from the User [sys_user] and Roles [sys_user_role] tables.
+</p>
+<pre>https://&lt;instance&gt;.service-now.com/api/now/table/sys_user_has_role?<br />sysparm_fields=role%2Crole.name%2Cuser%2Cuser.name%2Cuser.sys_id%2Cuser.department&amp;<br />sysparm_query=role%3D3d43716d0f6002003a2d47bce1050e0d%5EORrole%3Dac73b52d0f6002003a2d47bce1050eec&amp;sysparm_display_value=true
+</pre>
+<table class="collapsible collapsed">
+<tr>
+<th>Click the plus (+) to view a sample response including dot-walked fields
+</th></tr>
+<tr>
+<td>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="p">{</span>
+  <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;user.name&quot;</span><span class="o">:</span> <span class="s2">&quot;Fred Johnson&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;user.sys_id&quot;</span><span class="o">:</span> <span class="s2">&quot;f5a3716d0f6002003a2d47bce1050ed4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role.name&quot;</span><span class="o">:</span> <span class="s2">&quot;support&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;user.department&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/cmn_department/5b3b13530f58c2003a2d47bce1050e96&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;role&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;support&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/sys_user_role/3d43716d0f6002003a2d47bce1050e0d&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;Fred Johnson&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/sys_user/f5a3716d0f6002003a2d47bce1050ed4&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;user.name&quot;</span><span class="o">:</span> <span class="s2">&quot;Fred Johnson&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;user.sys_id&quot;</span><span class="o">:</span> <span class="s2">&quot;f5a3716d0f6002003a2d47bce1050ed4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role.name&quot;</span><span class="o">:</span> <span class="s2">&quot;asset_mgmt&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;user.department&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/cmn_department/5b3b13530f58c2003a2d47bce1050e96&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;role&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;asset_mgmt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/sys_user_role/ac73b52d0f6002003a2d47bce1050eec&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;display_value&quot;</span><span class="o">:</span> <span class="s2">&quot;Fred Johnson&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;https://&lt;instance&gt;.service-now.com/api/now/table/sys_user/f5a3716d0f6002003a2d47bce1050ed4&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="Debugging_REST_Queries"><span class="mw-headline-number">9</span> Debugging REST Queries</span></h1>
+<p>When the <a href="index.php%3Ftitle=Available_System_Properties.html" title="Available System Properties"><tt>glide.rest.debug</tt></a> system property is set to <b>true</b>, it logs all REST processing, including processing durations, headers, and the request body.  Prolonged use of this property can affect performance, so it is best to use it while debugging REST processing, and then set the property back to <b>false</b>.  
+</p>
+<h2><span class="mw-headline" id="Sample_Log_Output"><span class="mw-headline-number">9.1</span> Sample Log Output</span></h2>
+<pre>2014-03-19 11:10:37 (633) http-12 New transaction 083A6031D7231100261253B2B252035C #28 /api/now/table/incident
+2014-03-19 11:10:37 (653) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Started initializing REST Request 
+2014-03-19 11:10:37 (653) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Method:POST 
+2014-03-19 11:10:37 (656) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: host:localhost:8080
+2014-03-19 11:10:37 (656) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: user-agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:12.0) Gecko/20100101 Firefox/12.0
+2014-03-19 11:10:37 (656) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: accept:application/json
+2014-03-19 11:10:37 (656) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: accept-encoding:gzip, deflate
+2014-03-19 11:10:37 (656) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: connection:keep-alive
+2014-03-19 11:10:37 (657) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: content-type:application/json; charset=UTF-8
+2014-03-19 11:10:37 (657) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: content-length:31
+2014-03-19 11:10:37 (657) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: cookie:glide_user_route=glide.20e7f4cd6bdc0d444810117aacc0eeae; JSESSIONID=F07CE6ACF8AF237CB239AF43B7F360BF; glide_user="U0N2Mjo0MDNhNjAzMWQ3MjMxMTAwMjYxMjUzYjJiMjUyMDM2OTo2ODE2Zjc5Y2MwYTgwMTY0MDFjNWEzM2JlMDRiZTQ0MQ=="; glide_user_session="U0N2Mjo0MDNhNjAzMWQ3MjMxMTAwMjYxMjUzYjJiMjUyMDM2OTo2ODE2Zjc5Y2MwYTgwMTY0MDFjNWEzM2JlMDRiZTQ0MQ=="
+2014-03-19 11:10:37 (657) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: pragma:no-cache
+2014-03-19 11:10:37 (657) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Request Header: cache-control:no-cache
+2014-03-19 11:10:38 (357) REST API-thread-1 SYSTEM [REST API] RouteRegistry&#160;: Loaded Routes to Cache
+2014-03-19 11:10:38 (357) REST API-thread-1 SYSTEM DEBUG: [REST API] RouteRegistry&#160;: Route loading time 0:00:00.105
+2014-03-19 11:10:38 (357) REST API-thread-1 SYSTEM DEBUG: [REST API] URIHandler&#160;: Resolving URI: /now/table/incident
+2014-03-19 11:10:38 (391) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: URI Resolving Duration 387570:10:38.391
+2014-03-19 11:10:38 (424) REST API-thread-1 SYSTEM DEBUG: [REST API] RESTAPIProcessor&#160;: Finished initializing REST Request
+2014-03-19 11:10:38 (540) REST API-thread-1 083A6031D7231100261253B2B252035C #28 /api/now/table/incident Parameters -------------------------
+api=api
+2014-03-19 11:10:38 (541) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RESTAPIProcessor&#160;: Processing REST Request /api/now/table/incident
+2014-03-19 11:10:38 (541) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RESTAPIProcessor&#160;: Pre-Service processing duration 0:00:00.000
+2014-03-19 11:10:38 (548) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: Invoking Service TableAPIService
+2014-03-19 11:10:38 (552) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] TableAPIService&#160;: Inserting record
+2014-03-19 11:10:38 (560) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RequestDeserializer&#160;: Incoming Request Body:{"short_description":"test me"}
+2014-03-19 11:10:39 (508) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] TableAPIService&#160;: Glide Record Insert Duration 0:00:00.956
+2014-03-19 11:10:39 (508) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] TableAPIService&#160;: Querying for inserted record
+2014-03-19 11:10:39 (513) REST API-thread-1 083A6031D7231100261253B2B252035C #### Compiler Stats ####
+2014-03-19 11:10:39 (514) REST API-thread-1 083A6031D7231100261253B2B252035C Compiles: 600, time: 1,130ms
+2014-03-19 11:10:39 (514) REST API-thread-1 083A6031D7231100261253B2B252035C Cache name: "syscache_expression", max: 8,192, size: 599, seeks: 34,182, hits: 32,980, misses: 1,202, flushed: 0
+2014-03-19 11:10:39 (514) REST API-thread-1 083A6031D7231100261253B2B252035C Total classes: 1,402, bytecode length: 3,263,462
+2014-03-19 11:10:39 (514) REST API-thread-1 083A6031D7231100261253B2B252035C Total loaders created: 601, unloaded: 0, existing: 601
+2014-03-19 11:10:39 (652) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] TableAPIService&#160;: Creating service result for insert request
+2014-03-19 11:10:39 (655) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: End of Service InvocationTableAPIService
+2014-03-19 11:10:39 (655) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: Service Invocation Duration 0:00:01.107
+2014-03-19 11:10:39 (660) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: Serializing Response
+2014-03-19 11:10:39 (706) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: End of Response Serialization
+2014-03-19 11:10:39 (706) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] ServiceHandler&#160;: Response Serialization Duration 0:00:00.046
+2014-03-19 11:10:39 (706) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RESTAPIProcessor&#160;: Service handling duration 0:00:01.165
+2014-03-19 11:10:39 (706) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RESTAPIProcessor&#160;: End of Request Processing
+2014-03-19 11:10:39 (706) REST API-thread-1 083A6031D7231100261253B2B252035C DEBUG: [REST API] RESTAPIProcessor&#160;: REST Request Processing time 0:00:01.165
+2014-03-19 11:10:39 (707) REST API-thread-1 083A6031D7231100261253B2B252035C #28 /api/now/table/incident -- total transaction time: 0:00:02.074, total wait time: 0:00:00.001, session wait: 0:00:00.000, semaphore wait: 0:00:00.001, source: 127.0.0.1
+</pre>
+<h1><span class="mw-headline" id="Troubleshooting"><span class="mw-headline-number">10</span> Troubleshooting</span></h1>
+<p>For troubleshooting information, see knowledge base article <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://hi.service-now.com/kb_view.do?sysparm_article=KB0535048">KB0535048</a>.
+</p>
+<h1><span class="mw-headline" id="Enhancements"><span class="mw-headline-number">11</span> Enhancements</span></h1>
+<h2><span class="mw-headline" id="Fuji"><span class="mw-headline-number">11.1</span> Fuji</span></h2>
+<ul><li>The <a href="index.php%3Ftitle=REST_API_Explorer.html" title="REST API Explorer">REST API Explorer</a> provides an interface for building requests to the REST API.</li>
+<li>You can filter GET queries using key-value pairs.</li>
+<li>The <a href="index.php%3Ftitle=Aggregate_API.html" title="Aggregate API">Aggregate API</a> allows you to query tables and perform aggregate operations on the returned data using REST.</li>
+<li>The DELETE operation does not require the <tt>Content-Type</tt> <a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#Headers">header</a>.</li>
+<li>The <a href="index.php%3Ftitle=Transaction_Quotas.html#Default_Quota_Rules" title="Transaction Quotas">REST Request Timeout transaction quota</a> prevents inbound REST requests from running for longer than 60 seconds.</li>
+<li>REST Requests can use <a href="index.php%3Ftitle=REST_API&amp;printable=yes.html#OAuth_with_REST">OAuth type authentication</a>.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201221336
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.409 seconds
+Real time usage: 0.632 seconds
+Preprocessor visited node count: 149/1000000
+Preprocessor generated node count: 419/1000000
+Post‐expand include size: 1821/2097152 bytes
+Template argument size: 247/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  185.178      1 - -total
+ 82.53%  152.835      1 - Template:Web_Services
+ 71.53%  132.464      1 - Template:Topic
+  8.87%   16.427      1 - Template:REST_API_App_Access
+  4.66%    8.636      2 - Template:Note
+  4.56%    8.437      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22378-0!*!0!1!en!5!* and timestamp 20171201221335 and revision id 251121
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=REST_API&amp;oldid=251121.html">http://wiki.servicenow.com/index.php?title=REST_API&amp;oldid=251121</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services.html" title="Category:Web Services">Web Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22378"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22378" data-vote-the-vote="5" data-vote-id="22378" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_22378_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22378" data-vote-the-vote="1" data-vote-id="22378" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_22378_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=REST_API.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=REST+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=REST+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=REST_API.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=REST_API&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=REST+API.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=REST+API&amp;returnto=REST+API&amp;oldid=251121&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FREST_API.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/REST_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=REST_API&amp;oldid=251121.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=REST_API&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:26, 26 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1010});});</script></body></html>

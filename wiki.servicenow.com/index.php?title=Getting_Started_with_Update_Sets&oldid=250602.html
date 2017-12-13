@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Getting Started with Update Sets - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_with_Update_Sets","wgTitle":"Getting Started with Update Sets","wgCurRevisionId":250602,"wgRevisionId":250602,"wgArticleId":8512,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["System Update Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_with_Update_Sets","wgRelevantArticleId":8512,"wgRequestId":"49a359cda092a0b96bae6152","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831173411"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Getting_Started_with_Update_Sets"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Getting Started with Update Sets"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="System Update Sets"/>
+<meta name="category" content="System Update Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Getting Started with Update Sets"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831173411"/>
+
+	<meta property="article:published_time" content="20170831173411"/>
+
+	<meta property="article:modified_time" content="20170831173411"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="System Update Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Getting_Started_with_Update_Sets"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_with_Update_Sets rootpage-Getting_Started_with_Update_Sets skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Getting+Started+with+Update+Sets.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Getting+Started+with+Update+Sets&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Getting Started with Update Sets</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Getting Started with Update Sets</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-application-development/page/build/system-update-sets/reference/get-started-update-sets.html">Get Started with Update Sets</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table> <div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">System Update Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><strong class="selflink">Getting Started</strong></li>
+<li><a href="index.php%3Ftitle=Administering_Update_Sets.html" title="Administering Update Sets">Administering Update Sets</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Using Update Sets">Using Update Sets</a> </li>
+<li><a href="index.php%3Ftitle=Transferring_Update_Sets.html" title="Transferring Update Sets">Transferring Update Sets</a> </li>
+<li><a href="index.php%3Ftitle=Saving_Customizations_in_a_Single_XML_File.html" title="Saving Customizations in a Single XML File">Saving Customizations in a Single XML File</a></li>
+<li><a href="index.php%3Ftitle=Update_Sets_Best_Practices.html" title="Update Sets Best Practices"> Update Sets Best Practices</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="Importing from Another ServiceNow Instance">Importing from Another ServiceNow Instance</a></li>
+<li> <a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets.html" title="Moving Workflows with Update Sets">Moving Workflows with Update Sets</a></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a></li></ul>
+<center><b><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AUpdate+Sets&amp;oldid=0.html" title="Book:Update Sets">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<p><br /> 
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#When_to_Use_Update_Sets_and_When_to_Use_Another_Deployment_Option"><span class="tocnumber">2</span> <span class="toctext">When to Use Update Sets and When to Use Another Deployment Option</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#Planning_the_Update_Process"><span class="tocnumber">3</span> <span class="toctext">Planning the Update Process</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html#Avoiding_Common_Pitfalls"><span class="tocnumber">4</span> <span class="toctext">Avoiding Common Pitfalls</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Because update sets make changes to an instance, review the following <a href="index.php%3Ftitle=Update_Sets_Best_Practices.html" title="Update Sets Best Practices">best practice information</a> to avoid errors and performance issues. Learn how to plan the update process and avoid common pitfalls.
+</p>
+<h1><span class="mw-headline" id="When_to_Use_Update_Sets_and_When_to_Use_Another_Deployment_Option"><span class="mw-headline-number">2</span> When to Use Update Sets and When to Use Another Deployment Option</span></h1>
+<table class="standard">
+
+<tr>
+<th> Deployment option
+</th>
+<th> Good for
+</th>
+<th> Future considerations
+</th></tr>
+<tr>
+<td> Update Sets
+</td>
+<td>
+<ul><li>Storing changes to a baseline or installed application.</li>
+<li>Storing and applying a particular version of an application.</li>
+<li>Producing a file for export.</li></ul>
+</td>
+<td>
+<ul><li>You can manually create update sets to store a particular application version.</li>
+<li>Use update sets to deploy patches or changes to installed applications.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Avoid using update sets to install applications. Instead, use the application repository or the ServiceNow Store to install applications.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Application Repository
+</td>
+<td>
+<ul><li>Installing and updating applications on all of your instances</li>
+<li>Automatically managing application update sets</li>
+<li>Restricting access to applications to the same company</li>
+<li>Deploying completed applications to end users</li></ul>
+</td>
+<td>
+<ul><li>Consider uploading an application to the ServiceNow Store to share it with other users.</li>
+<li>Allows installation of and update to the latest application version only. Use update sets to store prior application versions.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If used in conjunction with team development, make applications available only from a parent instance.</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Team Development
+</td>
+<td>
+<ul><li>Providing change management across multiple instances</li>
+<li>Allowing multiple developers to work on applications</li>
+<li>Organizations that have access to several sub-production instances</li></ul>
+</td>
+<td>
+<ul><li>Works best when each development team has access to a dedicated development instance.</li>
+<li>Requires developers to manually merge colliding changes.</li>
+<li>Works only for instances owned by the same organization.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If used in conjunction with the application repository, make applications available from a parent instance.</i>
+</td></tr></table>
+</td></tr></table>
+<h1><span class="mw-headline" id="Planning_the_Update_Process"><span class="mw-headline-number">3</span> Planning the Update Process</span></h1>
+<p>Before working with update sets, create a standard process for moving customizations from instance to instance. Review the following items to ensure that there are no problems during the update set process:
+</p>
+<ol><li>Check that both instances are the same version. 
+<dl><dd>Customizations may not work if they rely on code that has changed between versions.</dd></dl></li>
+<li>Determine the changes to make in a single update set. 
+<dl><dd>ServiceNow recommends that you complete your update sets as you finish small to medium-sized tasks. As update sets get larger, it becomes harder to review them, takes longer to identify specific changes within them, increases the risk of conflicts with other update sets, and takes more time to preview and commit them. This is especially true if the update sets contain schema changes or revisions to large workflows or if the set has to be backed out.</dd></dl></li>
+<li>Ensure that all base system records have matching <b>sys_id</b> fields. 
+<dl><dd>Some base system records are created on an instance after provisioning and do not match between different instances, leading to problems with update sets. The best way to avoid this issue is to:</dd></dl>
+<ol><li>Provision production and sub-production instances.</li>
+<li>Clone the production instance onto the sub-production instance.</li></ol></li>
+<li>Identify a common path for update sets to move from instance to instance and maintain that model. 
+<dl><dd>Never migrate the same update set from multiple sources. Best practice is to move update sets from dev to test and then from test to production.</dd></dl></li>
+<li>Plan for when to commit the update set to production. 
+<dl><dd>Avoid committing an update set to a production instance during business hours. The instance may perform slower temporarily as the update set applies.</dd></dl></li>
+<li>Make sure update set names are clear.
+<dl><dd>Create a naming convention to coordinate changes from multiple developers and to reference when committing the changes to another instance. </dd></dl>
+<ul><li>If update sets are being generated as fixes for problems, consider including the problem ticket in the name (for example, <b>PR10005 - Duplicate Email Issues Fix</b>). </li>
+<li>If more than one update set is needed to address a problem, include a sequence number in the naming convention so that update sets are applied in the order that they were created (for example, <b>PR10005 - Duplicate Email Issues Fix</b> and <b>PR10005.2 - Duplicate Email Issues Fix</b>).</li></ul></li>
+<li>Know how update sets work.
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html#Update_Sets_Tables" title="System Update Sets">What records are generated for an update set</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html#Determining_Which_Customizations_Are_Tracked" title="System Update Sets">Which customizations are tracked by update sets</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html#Dictionary_Changes" title="System Update Sets">Which dictionary changes are valid for update sets</a></li>
+<li><a href="index.php%3Ftitle=Transferring_Update_Sets.html#Backing_Out_Update_Sets" title="Transferring Update Sets">Which customizations can be reversed once applied</a></li></ul></li>
+<li>Before making any customizations, double-check that the correct update set is selected.</li></ol>
+<h1><span class="mw-headline" id="Avoiding_Common_Pitfalls"><span class="mw-headline-number">4</span> Avoiding Common Pitfalls</span></h1>
+<p>In addition to planning the process, make sure to avoid common pitfalls:
+</p>
+<ol><li>Do not delete update sets.
+<dl><dd>If an update set is deleted, any updated records may be overwritten in the next update.</dd></dl></li>
+<li>Do not include the <b>system_id</b> field from the ldap_server_config record in an update set. 
+<dl><dd>An update set from a working configuration points to the wrong system_id node for the target instance and does not work.</dd></dl></li>
+<li>Do not back out the Default update set. This action causes damage to the system.</li>
+<li>Never change the update set field value (<i>update_set</i>) in a Customer Update record (<i>sys_update_xml</i>). 
+<dl><dd>If a customization is made in the wrong update set, take the following action:</dd></dl>
+<ol><li>Switch to the desired update set.</li>
+<li>Modify the object (record) that was originally changed. You can make a trivial change, such as adding a field. </li>
+<li>Save the record.</li>
+<li>Back out the change just performed, and then save the record again. 
+<dl><dd>This action ensures that the latest version of the object is included in the desired update set and prevents duplicate updates for the same object in a single update set. </dd></dl></li></ol></li>
+<li>Do not mark an update set as <b>Complete</b> until it is ready to migrate. 
+<dl><dd>Once an update set is complete, do not change it back to <b>In progress</b>. Instead, create another update set for the rest of the changes, and make sure to commit them together in the order that they were created. Naming conventions may help in this case (for example, <b>Performance Enhancements</b> and <b>Performance Enhancements 2</b>).</dd></dl></li>
+<li>Do not manually merge updates into an update set. 
+<dl><dd>Always use the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html#Merging_Update_Sets" title="Using Update Sets"><b>Merge Update Sets</b> module</a>. This tool compares duplicate files between update sets and selects the newest version.</dd></dl></li>
+<li>If a committed update set has a problem in the test instance, build the fix in another update set in the development instance. Commit this set to the test instance, and then make sure both sets are migrated to the production instance and committed in the order they were made.</li>
+<li>Always preview an update set before committing it.</li>
+<li>Set completed update sets on the production instance to <b>ignore</b>. 
+<dl><dd>This state ensures the update set is not reapplied when cloning the instance.</dd></dl></li>
+<li>Keep a to-do list of manual changes and data loads that need to be completed after an update set is applied.</li>
+<li>Do not make too many changes at one time.
+<dl><dd>Verify that the correct changes have been made incrementally.</dd></dl></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201132133
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.123 seconds
+Real time usage: 0.177 seconds
+Preprocessor visited node count: 67/1000000
+Preprocessor generated node count: 268/1000000
+Post‐expand include size: 3602/2097152 bytes
+Template argument size: 1542/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   32.759      1 - -total
+ 82.55%   27.044      1 - Template:Update_Sets
+ 69.55%   22.784      1 - Template:Topic
+ 14.33%    4.694      4 - Template:Note
+ 12.35%    4.047      2 - Template:T
+ 11.71%    3.835      1 - Embedded:Update_Sets
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:8512-0!*!0!1!en!5!* and timestamp 20171201132133 and revision id 250602
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html">http://wiki.servicenow.com/index.php?title=Getting_Started_with_Update_Sets&amp;oldid=250602</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=System+Update+Sets.html" title="Category:System Update Sets">System Update Sets</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_8512"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="8512" data-vote-the-vote="5" data-vote-id="8512" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_8512_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="8512" data-vote-the-vote="1" data-vote-id="8512" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_8512_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Getting+Started+with+Update+Sets&amp;returntoquery=oldid%3D250602" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Getting+Started+with+Update+Sets&amp;returntoquery=oldid%3D250602" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Getting_Started_with_Update_Sets.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Getting+Started+with+Update+Sets.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Getting+Started+with+Update+Sets&amp;returnto=Getting+Started+with+Update+Sets&amp;oldid=250602&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FGetting_Started_with_Update_Sets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Getting_Started_with_Update_Sets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;oldid=250602.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Getting_Started_with_Update_Sets&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:34, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1114});});</script></body></html>

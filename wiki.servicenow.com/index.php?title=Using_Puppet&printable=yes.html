@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Puppet - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Puppet","wgTitle":"Using Puppet","wgCurRevisionId":246701,"wgRevisionId":246701,"wgArticleId":20014,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Configuration Automation"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Puppet","wgRelevantArticleId":20014,"wgRequestId":"40d6ae54b64718a2e9786010","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150602185713"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Puppet"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Puppet"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Configuration Automation"/>
+<meta name="category" content="Configuration Automation"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Puppet&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Puppet"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150602185713"/>
+
+	<meta property="article:published_time" content="20150602185713"/>
+
+	<meta property="article:modified_time" content="20150602185713"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Configuration Automation"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Puppet"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Puppet rootpage-Using_Puppet skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Puppet.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Puppet&amp;oldid=0" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (369 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Puppet</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a> &gt; <a href="index.php%3Ftitle=Puppet_Configuration_Automation.html" title="Puppet Configuration Automation">Configuration Automation</a> &gt; Using Puppet</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuration+Automation&amp;oldid=0.html" title="Configuration Automation">Configuration Automation</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a23d4902827ft'></div><script type="text/javascript">window.tamOnload_tam5a23d4902827ft=[];tree = new dTree('tam5a23d4902827ft');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a23d4902827ft = tree;
+                                               tam5a23d4902827ft.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuration_Automation\&quot;" title=\"Configuration Automation\">Configuration Automation</a>');
+
+tam5a23d4902827ft.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuration_Automation_Overview_Module\&quot;" title=\"Configuration Automation Overview Module\">Overview Module</a>');
+tam5a23d4902827ft.add(3, 0, 'ServiceNow');
+tam5a23d4902827ft.add(4, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ServiceNow_Configuration_Automation\&quot;" title=\"ServiceNow Configuration Automation\">ServiceNow Configuration Automation</a>');
+tam5a23d4902827ft.add(5, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ServiceNow_Provider\&quot;" title=\"Using ServiceNow Provider\">Using ServiceNow Provider</a>');
+tam5a23d4902827ft.add(6, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Change_Management_with_ServiceNow_Provider\&quot;" title=\"Using Change Management with ServiceNow Provider\">Using Change Management</a>');
+tam5a23d4902827ft.add(7, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_ServiceNow_Provider\&quot;" title=\"Installed with ServiceNow Provider\">Installed with ServiceNow Provider</a>');
+tam5a23d4902827ft.add(8, 0, 'Chef');
+tam5a23d4902827ft.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Chef_Configuration_Automation\&quot;" title=\"Chef Configuration Automation\">Chef Configuration Automation</a>');
+tam5a23d4902827ft.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Chef\&quot;" title=\"Setting Up Chef\">Setting Up Chef</a>');
+tam5a23d4902827ft.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Chef\&quot;" title=\"Using Chef\">Using Chef</a>');
+tam5a23d4902827ft.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Chef_with_Cloud_Provisioning\&quot;" title=\"Using Chef with Cloud Provisioning\">Using Chef with Cloud Provisioning</a>');
+tam5a23d4902827ft.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Chef_Activities\&quot;" title=\"Orchestration Chef Activities\">Chef Activities</a>');
+tam5a23d4902827ft.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Chef\&quot;" title=\"Installed with Chef\">Installed with Chef</a>');
+tam5a23d4902827ft.add(15, 0, 'Puppet');
+tam5a23d4902827ft.add(16, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Puppet_Configuration_Automation\&quot;" title=\"Puppet Configuration Automation\">Puppet Configuration Automation</a>');
+tam5a23d4902827ft.add(17, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Puppet\&quot;" title=\"Setting Up Puppet\">Setting Up Puppet</a>');
+tam5a23d4902827ft.add(18, 15, '<strong class=\"selflink\">Using Puppet</strong>');
+tam5a23d4902827ft.add(19, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Puppet_with_Cloud_Provisioning\&quot;" title=\"Using Puppet with Cloud Provisioning\">Using Puppet with Cloud Provisioning</a>');
+tam5a23d4902827ft.add(20, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Puppet_Activities\&quot;" title=\"Orchestration Puppet Activities\">Puppet Activities</a>');
+tam5a23d4902827ft.add(21, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Puppet\&quot;" title=\"Installed with Puppet\">Installed with Puppet</a>');
+tam5a23d4902827ft.add(22, 0, 'Extensions');
+tam5a23d4902827ft.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extending_Configuration_Automation\&quot;" title=\"Extending Configuration Automation\">Extending Configuration Automation</a>');
+tam5a23d4902827ft.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Manager_Script_Include\&quot;" title=\"Change Manager Script Include\">Change Manager Script Include</a>');
+tam5a23d4902827ft.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ConfigAutomationDiffBase_Script_Include\&quot;" title=\"ConfigAutomationDiffBase Script Include\">Diff Base Script Include</a>');
+
+                                               document.getElementById('5a23d4902827ft').innerHTML = tam5a23d4902827ft.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a23d4902827ft) { window.tamOnload_tam5a23d4902827ft[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Working_with_Puppet_Resources"><span class="tocnumber">2</span> <span class="toctext">Working with Puppet Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Discovering_Puppet"><span class="tocnumber">2.1</span> <span class="toctext">Discovering Puppet</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Scheduling_Puppet_Discovery"><span class="tocnumber">2.1.1</span> <span class="toctext">Scheduling Puppet Discovery</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Managing_Puppet_Nodes"><span class="tocnumber">2.2</span> <span class="toctext">Managing Puppet Nodes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Creating_Node_Definitions"><span class="tocnumber">3</span> <span class="toctext">Creating Node Definitions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Declaring_Classes"><span class="tocnumber">3.1</span> <span class="toctext">Declaring Classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Editing_CI-level_Attributes"><span class="tocnumber">4</span> <span class="toctext">Editing CI-level Attributes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Using_Change_Management_with_Puppet"><span class="tocnumber">5</span> <span class="toctext">Using Change Management with Puppet</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Modifying_Puppet_Nodes"><span class="tocnumber">5.1</span> <span class="toctext">Modifying Puppet Nodes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Versions_Prior_to_the_Eureka_Release"><span class="tocnumber">5.1.1</span> <span class="toctext">Versions Prior to the Eureka Release</span></a>
+<ul>
+<li class="toclevel-4 tocsection-12"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Legacy_Modifying_Puppet_Nodes"><span class="tocnumber">5.1.1.1</span> <span class="toctext">Legacy Modifying Puppet Nodes</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Modifying_Node_Definitions"><span class="tocnumber">5.2</span> <span class="toctext">Modifying Node Definitions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Versions_Prior_to_the_Eureka_Release_2"><span class="tocnumber">5.2.1</span> <span class="toctext">Versions Prior to the Eureka Release</span></a>
+<ul>
+<li class="toclevel-4 tocsection-15"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Legacy_Modifying_Node_Definitions"><span class="tocnumber">5.2.1.1</span> <span class="toctext">Legacy Modifying Node Definitions</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Requesting_Changes_Using_the_Service_Catalog"><span class="tocnumber">5.3</span> <span class="toctext">Requesting Changes Using the Service Catalog</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Disabling_Change_Management"><span class="tocnumber">5.4</span> <span class="toctext">Disabling Change Management</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a href="index.php%3Ftitle=Puppet_Configuration_Automation.html" title="Puppet Configuration Automation">Puppet</a> users can request changes to a Linux computer configuration item (CI) assigned to them. Puppet change management ensures that requested changes go through a controlled change process that includes approvals. After a change is approved and the requesting user proceeds with the change, the Puppet Master automatically modifies the computer to bring it to the desired state.
+</p>
+<h1><span class="mw-headline" id="Working_with_Puppet_Resources"><span class="mw-headline-number">2</span> Working with Puppet Resources</span></h1>
+<p>ServiceNow can store data about several Puppet resource types including modules, manifests, classes, and nodes.
+</p>
+<h2><span class="mw-headline" id="Discovering_Puppet"><span class="mw-headline-number">2.1</span> Discovering Puppet</span></h2>
+<p>Puppet module, manifest, and class records are maintained in Puppet and can be viewed in ServiceNow. A Puppet administrator can retrieve these records from a Puppet Master. It is not necessary to activate <a href="index.php%3Ftitle=Discovery.html" title="Discovery">Discovery</a> to discover the Puppet environment. 
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Puppet Masters</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>In the Puppet Master form, enter the <b>Name</b> of the Puppet Master and the <b>IP Address</b> of the host computer.</li>
+<li>Right-click the form header and select <b>Save</b>.</li>
+<li>Click <b>Discover Puppet Details</b> under <b>Related Links</b>.
+<ul><li>ServiceNow detects the Puppet Master and completes the remaining fields in the form.</li>
+<li>ServiceNow discovers the Puppet modules, manifests, and classes, and creates records for them in the respective tables.</li></ul></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:770px;"><a href="index.php%3Ftitle=File:Puppet_discover_server.png.html" class="image"><img alt="" src="images/c/ce/Puppet_discover_server.png" width="768" height="446" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_discover_server.png.html" class="internal" title="Enlarge"></a></div>Discovering a Puppet Master</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="Scheduling_Puppet_Discovery"><span class="mw-headline-number">2.1.1</span> Scheduling Puppet Discovery</span></h3>
+<p>You can configure ServiceNow to automatically discover Puppet modules, manifests, and classes based on a schedule.
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Puppet Masters</b>.</li>
+<li>Select a Puppet Master record.</li>
+<li>In the <b>Scheduled discoveries</b> related list, click <b>New</b>.</li>
+<li>Set the <b>Run</b> and <b>Time</b> fields. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Discovery+Schedules&amp;oldid=0.html#Schedule_Form" title="Discovery Schedules">the Discovery Schedule Form</a> for more information on available fields.</li>
+<li>[Optional] Select <b>Conditional</b> and specify a scripted <b>Condition</b> that must evaluate to true before the scheduled discovery can run.</li>
+<li>Click <b>Submit</b>.</li></ol>
+<p><a href="index.php%3Ftitle=File:Puppet_discover_schedule.png.html" class="image"><img alt="Puppet discover schedule.png" src="images/8/82/Puppet_discover_schedule.png" width="400" height="246" /></a>
+</p><p><br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Managing_Puppet_Nodes"><span class="mw-headline-number">2.2</span> Managing Puppet Nodes</span></h2>
+<p>A Puppet administrator can directly configure Puppet settings for a specific node from the CI form. To view a list of CIs assigned to the logged-in user that use Puppet configuration automation, navigate to <b>Configuration Automation &gt; Managed Nodes</b>. By default, a Puppet user cannot directly modify the Puppet fields on the CI form, and must request changes through a <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Using_Change_Management_with_Puppet">controlled change process</a>. These fields appear on the Configuration Automation related list of the CI form:
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Fully qualified domain name
+</td>
+<td> The fully qualified domain name that Puppet uses to access this CI.
+</td></tr>
+<tr>
+<td> Provider
+</td>
+<td> The configuration automation provider managing this CI.
+</td></tr>
+<tr>
+<td> Management Server
+</td>
+<td> The server managing this CI.
+</td></tr>
+<tr>
+<td> Node definition
+</td>
+<td> The node definition for this CI.
+</td></tr>
+<tr>
+<td> Node Attributes
+</td>
+<td> CI-level attributes defined for this CI (starting with Eureka).
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_Node_Definitions"><span class="mw-headline-number">3</span> Creating Node Definitions</span></h1>
+<p>A node definition groups several classes together. A Puppet administrator must create a node definition before a Puppet user can assign it to Puppet nodes. When a Puppet user assigns a node definition to a Puppet node, the Puppet node uses the classes specified by the node definition.
+</p><p>To create a new node definition, create an editable node definition draft and then publish the draft.
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Node Definitions</b>.</li>
+<li>Click <b>New Draft</b>.</li>
+<li>Complete the form (see table).</li>
+<li>Right-click the form header and select <b>Save</b>.</li>
+<li>Click <b>Publish</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:Puppet_node_definition.png.html" class="image"><img alt="" src="images/thumb/5/53/Puppet_node_definition.png/500px-Puppet_node_definition.png" width="500" height="125" class="thumbimage" srcset="/images/thumb/5/53/Puppet_node_definition.png/750px-Puppet_node_definition.png 1.5x, /images/5/53/Puppet_node_definition.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_node_definition.png.html" class="internal" title="Enlarge"></a></div>A new node definition draft record</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Provider
+</td>
+<td> [Read-only] The configuration automation provider for this definition (starting with Eureka).
+</td></tr>
+<tr>
+<td> Inherits
+</td>
+<td>  [Optional] The parent node definition that contains class declarations to be inherited.
+</td></tr>
+<tr>
+<td> Puppet master
+</td>
+<td> The Puppet Master that manages the nodes that use this definition.
+</td></tr>
+<tr>
+<td> State
+</td>
+<td> [Read-only] The state of the node definition: Draft or Published (starting with Eureka).
+</td></tr>
+<tr>
+<td> Environment
+</td>
+<td> [Optional] An additional parameter that allows you to group Puppet nodes. See <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://docs.puppetlabs.com/guides/environment.html">Puppet Environments documentation</a> for more information.
+</td></tr>
+<tr>
+<td> Replaces
+</td>
+<td> [Read-only] For node definitions draft records, the original node definition record that the draft replaces when published.
+</td></tr>
+<tr>
+<td> Change request
+</td>
+<td> [Read-only] The change request generated when the draft is published (starting with Dublin).
+</td></tr></table>
+<h2><span class="mw-headline" id="Declaring_Classes"><span class="mw-headline-number">3.1</span> Declaring Classes</span></h2>
+<p>A node definition may have <b>Class Declaration</b> related records. Class declarations associate a <b>Class</b> record to a <b>Node definition</b>. You can only add class declarations to draft node definitions. 
+</p><p>The <b>Type</b> selection specifies how Puppet nodes that use this node definition should handle the class. Available <b>Type</b> choices are:
+</p>
+<ul><li><b>Exclude:</b> removes the specified class from the node definition if previously included by a parent node definition. If the parent node definition does not include the class, the <b>Exclude</b> choice has no effect.</li>
+<li><b>Include:</b> adds the specified class to Puppet nodes that use this node definition.</li>
+<li><b>Override:</b> uses the class <b>Parameters</b> from the declared class in place of the existing parameters for that class in the parent node definition. If the parent node definition does not include the class, the <b>Override</b> choice functions as <b>Include</b>.</li></ul>
+<p>For node definitions that extend a parent node definition, the <b>Exclude</b> and <b>Override</b> choices remove or update classes defined by the parent node definition. Node definitions that do not extend another node definition can only <b>Include</b> classes. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:702px;"><a href="index.php%3Ftitle=File:Puppet_declaring_class.png.html" class="image"><img alt="" src="images/thumb/3/38/Puppet_declaring_class.png/700px-Puppet_declaring_class.png" width="700" height="132" class="thumbimage" srcset="/images/3/38/Puppet_declaring_class.png 1.5x, /images/3/38/Puppet_declaring_class.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_declaring_class.png.html" class="internal" title="Enlarge"></a></div>Including MySQL in the node definition for a LAMP server</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h1><span class="mw-headline" id="Editing_CI-level_Attributes"><span class="mw-headline-number">4</span> Editing CI-level Attributes</span></h1>
+<p>Puppet node attributes can be edited at the CI level starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. Editing CI-level attributes overrides the attributes for a specific CI. For example, if you have applied a node definition to several CIs but want to modify an individual CI to use a different timezone, you can add the attribute for that CI. 
+</p><p>To access CI-level attributes, navigate to <b>Configuration Automation &gt; Managed Nodes</b> or <b>Configuration &gt; Servers &gt; Linux</b>, select a server, and click on the <b>Configuration Automation</b> related list. Edit the attributes as necessary and click <b>Update</b>.
+</p>
+<h1><span class="mw-headline" id="Using_Change_Management_with_Puppet"><span class="mw-headline-number">5</span> Using Change Management with Puppet</span></h1>
+<p>By default, ServiceNow only allows changes to Puppet configurations as part of a controlled change management process. With change management, users cannot directly edit Puppet records such as node definitions or the relationships between CIs and node definitions. For all changes to Puppet resources, the requesting user's manager must approve the request. If the user record does not have a value in the <b>Manager</b> field, the request is approved automatically. 
+</p><p>When a user requests a change, each change management approver and the requesting user receive a notification. Additionally, ServiceNow populates the <b>Assigned to</b> field on the change request with the requesting user. This user receives a notification when the request is approved or rejected.
+</p>
+<h2><span class="mw-headline" id="Modifying_Puppet_Nodes"><span class="mw-headline-number">5.1</span> Modifying Puppet Nodes</span></h2>
+<p>An administrator can configure the node definitions and attributes for a specific node directly from the CI form. An individual node can have multiple node definitions associated with it. To view a list of CIs that use ServiceNow configuration automation and are assigned to the logged-in user, navigate to <b>Configuration Automation &gt; Managed Nodes</b>. By default, a ServiceNow user cannot directly modify the ServiceNow fields on the CI form, and must request changes through a <a href="index.php%3Ftitle=Using_Change_Management_with_ServiceNow_Provider.html" title="Using Change Management with ServiceNow Provider">controlled change process</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Updates to a CI reset the <b>Node group assignment state</b> to Ready. The Ready state ensures that assignment rules are applied and that the CIs are re-assigned based on the new values. For example, updating fqdn or IP address might reassign a CI to a different node group.</i>
+</td></tr></table>
+<p><br />
+To update a node:
+</p>
+<ol><li>Navigate to <b>Configuration Automation &gt; Managed Nodes</b> or <b>Configuration &gt; Servers &gt; Linux</b>.</li>
+<li>Open the node to update.</li>
+<li>Edit the fields under the <b>Configuration Automation</b> (see table).</li>
+<li>Click <b>Update</b>.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Fully qualified domain name
+</td>
+<td> The fully qualified domain name that Chef uses to access this CI.
+</td></tr>
+<tr>
+<td> Provider
+</td>
+<td> The configuration automation provider managing this CI.
+</td></tr>
+<tr>
+<td> Management Server
+</td>
+<td> The server managing this CI.
+</td></tr>
+<tr>
+<td> Node group assignment state
+</td>
+<td> The state of automatic assignment of this CI to a node group, as described in the following table.
+</td></tr></table>
+<table class="standard">
+
+<tr>
+<th> State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Ready
+</td>
+<td> Default state for newly discovered CIs. Assignment rules are applied only to CIs in the Ready state.
+</td></tr>
+<tr>
+<td> In Progress
+</td>
+<td> CI is currently experiencing a configuration change.
+</td></tr>
+<tr>
+<td> Assigned
+</td>
+<td> CI is part of one or more node groups.
+</td></tr>
+<tr>
+<td> Processed
+</td>
+<td> Assignment rules have been applied to the CI. There may or may not be a match.
+</td></tr>
+<tr>
+<td> Excluded
+</td>
+<td> Configuration admin role can exclude a CI from being processed by the assignment rules.
+</td></tr></table>
+<p><br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="Versions_Prior_to_the_Eureka_Release"><span class="mw-headline-number">5.1.1</span> Versions Prior to the Eureka Release</span></h3>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand previous version information</b>
+</th></tr>
+<tr>
+<td>
+<h4><span class="mw-headline" id="Legacy_Modifying_Puppet_Nodes"><span class="mw-headline-number">5.1.1.1</span> Legacy Modifying Puppet Nodes</span></h4>
+<p>Change management prevents Puppet users from directly editing the <b>Configuration automation</b> or <b>Node definition</b> fields on the CI form. Additionally, the <b>Modify Puppet Configuration</b> related link appears on the CI form for Puppet node CIs. 
+</p><p>To modify a Puppet node with change management enabled:
+</p>
+<ol><li>Navigate to any Linux CI record that is assigned to the logged-in user.</li>
+<li>Click the <b>Modify Puppet Configuration</b> related link.</li>
+<li>Select <b>Puppet Node Definition</b> from the <b>Configuration Automation</b> choice list.</li>
+<li>Select a <b>Node definition</b>.</li>
+<li>Click <b>Ok</b>.
+<dl><dd>A new Change Request form appears with all values populated automatically except <b>Assignment group</b>.</dd></dl></li>
+<li>Click <b>Submit</b> to complete the change request.
+<ul><li>If there is an active change associated to that CI, the <b>Cancel Change</b> related link replaces <b>Modify Puppet Configuration</b> on the CI form. You can only have one active Puppet change request per CI at any time.</li>
+<li>After the requesting user's <b>Manager</b> approves the request, the <b>Proceed with Change</b> related link appears with the <b>Cancel Change</b> action.</li></ul></li></ol>
+<p>After the user's manager approves the request:
+</p>
+<ol><li>Navigate to the relevant CI record.</li>
+<li>Click the <b>Proceed with Change</b> related link. This link is only available when a change has been approved.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Puppet_modify_CI.png.html" class="image"><img alt="" src="images/thumb/5/50/Puppet_modify_CI.png/800px-Puppet_modify_CI.png" width="800" height="290" class="thumbimage" srcset="/images/5/50/Puppet_modify_CI.png 1.5x, /images/5/50/Puppet_modify_CI.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_modify_CI.png.html" class="internal" title="Enlarge"></a></div>Requesting a change to a Puppet node</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Puppet_modify_CI2.png.html" class="image"><img alt="" src="images/thumb/a/a3/Puppet_modify_CI2.png/800px-Puppet_modify_CI2.png" width="800" height="242" class="thumbimage" srcset="/images/a/a3/Puppet_modify_CI2.png 1.5x, /images/a/a3/Puppet_modify_CI2.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_modify_CI2.png.html" class="internal" title="Enlarge"></a></div>The Puppet tab after submitting the change request</div></div></div>
+<p><br style="clear:both;" />
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Modifying_Node_Definitions"><span class="mw-headline-number">5.2</span> Modifying Node Definitions</span></h2>
+<p>The <b>Checkout Draft</b> related link on the Puppet Node Definitions form creates an editable draft copy of the record.  Before a Puppet user or Puppet administrator can commit changes to a node definition, the user's manager must approve the change request. For information on modifying node definitions prior to Eureka, see <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Versions_Prior_to_the_Eureka_Release_2">Versions Prior to the Eureka Release</a>.
+</p><p>When making a change to a node with one or more <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Declaring_Classes">class declarations</a>, ServiceNow duplicates these related records and associates the duplicates with the new node definition draft record.
+</p><p>To update a node definition:
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Node Definitions</b>.</li>
+<li>Select a published node definition.</li>
+<li>Click <b>Checkout Draft</b>.
+<dl><dd>This related link creates an editable copy of the current record as a draft and opens the form for that record.</dd></dl></li>
+<li>Edit the draft record as appropriate for your change.</li>
+<li>Click the <b>Publish</b> related link. 
+<ul><li>This related link creates a change request record. A draft can have only one active change request at a time.</li>
+<li>After the requesting user's <b>Manager</b> approves the request, the <b>Proceed with Change</b> related link appears on the Puppet Node Definition Draft form. </li></ul></li></ol>
+<p>After the user's manager approves the request:
+</p>
+<ol><li>Navigate to the relevant node definition draft record.</li>
+<li>Click <b>Proceed with Change</b> to push the changes to the original node definition record and delete the draft record.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Puppet_modify_node_definition_eur.png.html" class="image"><img alt="" src="images/thumb/2/21/Puppet_modify_node_definition_eur.png/600px-Puppet_modify_node_definition_eur.png" width="600" height="148" class="thumbimage" srcset="/images/2/21/Puppet_modify_node_definition_eur.png 1.5x, /images/2/21/Puppet_modify_node_definition_eur.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_modify_node_definition_eur.png.html" class="internal" title="Enlarge"></a></div>A node definition draft that replaces a node definition. Clicking <b>Publish</b> creates a change request.</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="Versions_Prior_to_the_Eureka_Release_2"><span class="mw-headline-number">5.2.1</span> Versions Prior to the Eureka Release</span></h3>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand previous version information</b>
+</th></tr>
+<tr>
+<td>
+<h4><span class="mw-headline" id="Legacy_Modifying_Node_Definitions"><span class="mw-headline-number">5.2.1.1</span> Legacy Modifying Node Definitions</span></h4>
+<p>The <b>Checkout Draft</b> related link on the Puppet Node Definition form creates an editable draft copy of the record.  Before a Puppet user or Puppet administrator can commit changes to a node definition, the user's manager must approve the change request. 
+</p><p>When making a change to a node with one or more <a href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html#Declaring_Classes">class declarations</a>, ServiceNow duplicates these related records and associates the duplicates with the new node definition draft record.
+</p><p>To update a node definition:
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Node Definitions</b>.</li>
+<li>Select a record.</li>
+<li>Click <b>Checkout Draft</b>.
+<dl><dd>This related link creates an editable copy of the current record as a draft and opens the form for that record.</dd></dl></li>
+<li>Edit the draft record as appropriate for your change.</li>
+<li>Click the <b>Publish</b> related link. 
+<ul><li>This related link creates a change request record. A draft can have only one active change request at a time.</li>
+<li>After the requesting user's <b>Manager</b> approves the request, the <b>Proceed with Change</b> related link appears on the Puppet Node Definition Draft form. </li></ul></li></ol>
+<p>After the user's manager approves the request:
+</p>
+<ol><li>Navigate to the relevant node definition draft record.</li>
+<li>Click <b>Proceed with Change</b> to push the changes to the original node definition record and delete the draft record.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Puppet_Modify_node_definition.png.html" class="image"><img alt="" src="images/thumb/1/1b/Puppet_Modify_node_definition.png/600px-Puppet_Modify_node_definition.png" width="600" height="158" class="thumbimage" srcset="/images/1/1b/Puppet_Modify_node_definition.png 1.5x, /images/1/1b/Puppet_Modify_node_definition.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Puppet_Modify_node_definition.png.html" class="internal" title="Enlarge"></a></div>A node definition draft that replaces a node definition. Clicking <b>Publish</b> creates a change request.</div></div></div>
+<p><br style="clear:both;" />
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Requesting_Changes_Using_the_Service_Catalog"><span class="mw-headline-number">5.3</span> Requesting Changes Using the Service Catalog</span></h2>
+<p>A user can request a change to a Puppet node through the <a href="index.php%3Ftitle=Service_Catalog.html" title="Service Catalog" class="mw-redirect">service catalog</a>. Changes to nodes through the service catalog require the same change request and approvals as changes made through the CI form.
+</p>
+<ol><li>Navigate to <b>Self-Service &gt; Service Catalog</b>.</li>
+<li>Click <b>Software</b>.</li>
+<li>Click <b>Modify computer configuration</b>.</li>
+<li>Select a <b>Computer</b> to modify.
+<dl><dd>Only computers <b>Assigned to</b> the requesting user can be selected.</dd></dl></li>
+<li>Select <b>Puppet</b> for the <b>Configuration automation provider</b>.</li>
+<li>Select the <b>Node definition to apply</b> to the selected computer.</li>
+<li>Click <b>Order Now</b>.</li></ol>
+<h2><span class="mw-headline" id="Disabling_Change_Management"><span class="mw-headline-number">5.4</span> Disabling Change Management</span></h2>
+<p>Disabling change management with Puppet allows Puppet users to edit and save fields on the Puppet Node Definition form and the Configuration Automation tab on the CI form for Puppet nodes.
+</p><p>To disable change management with Puppet:
+</p>
+<ol><li>Navigate to <b>Puppet &gt; Properties</b> as a Puppet administrator.</li>
+<li>Separately disable change management for either or both of the following properties:
+<ul><li>Enable change management to control any updates to node definitions [glide.node_definition_use_change].</li>
+<li>Enable change management to control any assignments of definitions to CIs [glide.ci_assignment_use_change].</li></ul></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203104016
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.406 seconds
+Real time usage: 0.731 seconds
+Preprocessor visited node count: 97/1000000
+Preprocessor generated node count: 276/1000000
+Post‐expand include size: 1667/2097152 bytes
+Template argument size: 354/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  100.709      1 - -total
+ 88.08%   88.701      1 - Template:Configuration_Automation
+ 78.58%   79.136      1 - Template:Topic
+ 10.57%   10.642      1 - Template:Note
+  8.66%    8.720      1 - Embedded:Configuration_Automation
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:20014-0!*!0!1!en!5!* and timestamp 20171203104016 and revision id 246701
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Puppet&amp;oldid=246701.html">http://wiki.servicenow.com/index.php?title=Using_Puppet&amp;oldid=246701</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Automation.html" title="Category:Configuration Automation">Configuration Automation</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration.html" title="Category:Orchestration">Orchestration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Automation.html" title="Category:Configuration Automation">Configuration Automation</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_20014"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="20014" data-vote-the-vote="5" data-vote-id="20014" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20014_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="20014" data-vote-the-vote="1" data-vote-id="20014" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20014_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Puppet&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Using+Puppet&amp;returntoquery=printable%3Dyes" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Using+Puppet&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Puppet.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Puppet&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Puppet.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Puppet&amp;returnto=Using+Puppet&amp;oldid=246701&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Puppet.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Puppet" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Puppet&amp;oldid=246701.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Puppet&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:57, 2 June 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":638});});</script></body></html>

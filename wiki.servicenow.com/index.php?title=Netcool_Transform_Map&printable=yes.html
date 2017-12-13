@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Netcool Integration Setup - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Netcool_Integration_Setup","wgTitle":"Netcool Integration Setup","wgCurRevisionId":250747,"wgRevisionId":250747,"wgArticleId":23923,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Event Integrations","Incident Integrations"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Netcool_Integration_Setup","wgRelevantArticleId":23923,"wgRequestId":"d084c9d1bbc335e3429ae56d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Netcool_Transform_Map","wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/index.php?title=Netcool_Integration_Setup\u0026printable=yes#Editing_the_Integration_Web_Service"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170905180812"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Netcool_Integration_Setup#Editing_the_Integration_Web_Service"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Netcool Integration Setup"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Incident Integrations"/>
+<meta name="category" content="Incident Integrations"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<link rel="canonical" href="index.php%3Ftitle=Netcool_Integration_Setup.html#Editing_the_Integration_Web_Service"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Netcool_Integration_Setup.html#Editing_the_Integration_Web_Service" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Netcool Integration Setup"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170905180812"/>
+
+	<meta property="article:published_time" content="20170905180812"/>
+
+	<meta property="article:modified_time" content="20170905180812"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Incident Integrations"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Netcool_Integration_Setup#Editing_the_Integration_Web_Service"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Netcool_Integration_Setup rootpage-Netcool_Integration_Setup skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Netcool+Integration+Setup.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Netcool+Integration+Setup&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (424 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Netcool Integration Setup</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=List_of_Available_Integrations.html" title="List of Available Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Incident_Ticketing_Integrations.html" title="Incident Ticketing Integrations">Incident</a> &gt; Netcool Integration Setup (Redirected from <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;redirect=no.html" title="Netcool Transform Map">Netcool Transform Map</a>)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-operations-management/page/product/event-management/task/t_EMUpgradeNetcoolConnector.html">Configure Event Collection from IBM Tool</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Netcool_Integration.html" title="Netcool Integration">IBM Tivoli Netcool/OMNIbus Integration</a>
+</th></tr>
+<tr>
+<td>
+<div class='dtree' id='5a242e8fe960et'></div><script type="text/javascript">window.tamOnload_tam5a242e8fe960et=[];tree = new dTree('tam5a242e8fe960et');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a242e8fe960et = tree;
+                                               tam5a242e8fe960et.add(1, 0, ' <strong class=\"selflink\">Netcool Integration Setup</strong>');
+
+tam5a242e8fe960et.add(2, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Netcool_Impact_Server_Setup\&quot;" title=\"Netcool Impact Server Setup\">Netcool Impact Server Setup</a>');
+tam5a242e8fe960et.add(3, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Netcool_Integration_Administration\&quot;" title=\"Netcool Integration Administration\">Netcool Integration Administration</a>');
+tam5a242e8fe960et.add(4, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Custom_Fields_to_the_Netcool_Integration\&quot;" title=\"Adding Custom Fields to the Netcool Integration\">Adding Custom Fields to the Netcool Integration</a>');
+
+                                               document.getElementById('5a242e8fe960et').innerHTML = tam5a242e8fe960et.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a242e8fe960et) { window.tamOnload_tam5a242e8fe960et[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Netcool_Integration.html" title="Netcool Integration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Netcool_Integration.html" title="Book:Netcool Integration">IBM Tivoli Netcool/OMNIbus Integration</a>
+</td></tr>
+<tr>
+<th> <a href="index.php%3Ftitle=Integrating_Event_Management_Systems.html" title="Integrating Event Management Systems">Event Management Integrations</a>
+</th></tr>
+<tr>
+<td>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Integration_Setup"><span class="tocnumber">2</span> <span class="toctext">Integration Setup</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Selecting_the_Target_Table"><span class="tocnumber">3</span> <span class="toctext">Selecting the Target Table</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Netcool_Integration_Setup_Record"><span class="tocnumber">4</span> <span class="toctext">Creating a Netcool Integration Setup Record</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Enabling_Notifications"><span class="tocnumber">4.1</span> <span class="toctext">Enabling Notifications</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Viewing_Integration_Status"><span class="tocnumber">4.2</span> <span class="toctext">Viewing Integration Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Socket_Monitor_Record"><span class="tocnumber">5</span> <span class="toctext">Creating a Socket Monitor Record</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Automatically_Starting_the_Socket_Writer_Gateway"><span class="tocnumber">5.1</span> <span class="toctext">Automatically Starting the Socket Writer Gateway</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_the_Socket_Writer_Gateway_Map"><span class="tocnumber">5.2</span> <span class="toctext">Updating the Socket Writer Gateway Map</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_Socket_Writer_Gateway_Properties"><span class="tocnumber">5.3</span> <span class="toctext">Updating Socket Writer Gateway Properties</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Manually_Configuring_the_Socket_Writer_Gateway"><span class="tocnumber">5.4</span> <span class="toctext">Manually Configuring the Socket Writer Gateway</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Manually_Starting_the_Socket_Monitor"><span class="tocnumber">5.5</span> <span class="toctext">Manually Starting the Socket Monitor</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_JDBC_Connections"><span class="tocnumber">6</span> <span class="toctext">Adding JDBC Connections</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Editing_the_Integration_Web_Service"><span class="tocnumber">7</span> <span class="toctext">Editing the Integration Web Service</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_a_Custom_Field_to_the_Web_Service"><span class="tocnumber">7.1</span> <span class="toctext">Adding a Custom Field to the Web Service</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_a_Custom_Field_to_the_Transform_Map"><span class="tocnumber">7.2</span> <span class="toctext">Adding a Custom Field to the Transform Map</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Administrators typically enable a Netcool integration to track and manage events from an ObjectServer with a ServiceNow instance. The procedures on this page guide you through the process of setting up a Netcool integration.
+</p>
+<h1><span class="mw-headline" id="Integration_Setup"><span class="mw-headline-number">2</span> Integration Setup</span></h1>
+<p>These steps enable the transfer of events between a Netcool/OMNIbus ObjectServer and a ServiceNow instance.
+</p>
+<ol><li><a href="index.php%3Ftitle=Netcool_Integration.html#Activating_the_Netcool_Integration" title="Netcool Integration">Activate</a> the Integration - IBM Netcool/OMNIbus plugin.</li>
+<li>Identify a local system that has direct JDBC connectivity to the Netcool/OMNIbus ObjectServer, usually over port 4100. Install a <a href="index.php%3Ftitle=MID_Server_Installation.html" title="MID Server Installation">MID Server</a> on this local system.</li>
+<li>Set <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Integration_Properties">integration properties</a>.</li>
+<li>Create a <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Netcool_Integration_Setup_Record">Netcool Integration Setup record.</a></li>
+<li>Create one or more <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_JDBC_Connections">JDBC connections</a> to the MID Server.</li>
+<li>Choose the inbound workflow method.
+<ul><li>Configure a <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Socket_Monitor_Record">Socket Monitor</a> to listen for events from the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/topic/com.ibm.netcool_OMNIbus.doc/gateways/socketgw/socketgw/wip/concept/socketgw_intro.html">Netcool Socket Writer Gateway</a> and automatically send them to the <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC queue</a>.</li>
+<li>Configure a <a href="index.php%3Ftitle=Web_Service_Import_Sets.html" title="Web Service Import Sets">SOAP insert web service</a> to automatically send events directly to the <a href="index.php%3Ftitle=Netcool_Alerts_Status_Web_Service.html" title="Netcool Alerts Status Web Service" class="mw-redirect">Netcool Alerts Status web service</a>.</li></ul></li>
+<li>[Optional] Add <a href="index.php%3Ftitle=Adding_Custom_Fields_to_the_Netcool_Integration.html" title="Adding Custom Fields to the Netcool Integration">custom fields</a> to the integration.</li></ol>
+<h1><span class="mw-headline" id="Selecting_the_Target_Table"><span class="mw-headline-number">3</span> Selecting the Target Table</span></h1>
+<p>By default, the integration transforms incoming events into records in the Incident table. Administrators can instead import incoming events directly into the Event Management table to take advantage of improved <a href="index.php%3Ftitle=Event_Management.html" title="Event Management">event management</a> and alert creation features (starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>).
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Properties</b>.</li>
+<li>From <b>Choose where Netcool events should be redirected to</b>, select the target table for storing incoming events.</li>
+<li>Click <b>Save</b>.</li></ol>
+<h1><span class="mw-headline" id="Creating_a_Netcool_Integration_Setup_Record"><span class="mw-headline-number">4</span> Creating a Netcool Integration Setup Record</span></h1>
+<p>An integration setup record defines the connection and mapping properties necessary to transfer events between an ObjectServer and a ServiceNow instance. A Netcool Integration Setup record allows you to:
+</p>
+<ul><li> Specify the <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> that manages the integration.</li>
+<li> Enable or disable error <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Enabling_Notifications">notifications</a>.</li>
+<li> See the current <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Viewing_MID_Server_Status">status</a> of the integration MID Server.</li>
+<li> Create one or more <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_JDBC_Connections">JDBC connections</a> to send events to the Netcool/OMNIbus ObjectServer.</li>
+<li> [Optional] Create one or more <a href="index.php%3Ftitle=Netcool_Integration.html#Socket_Monitor" title="Netcool Integration">Socket Monitors</a> to receive events from the Netcool/OMNIbus ObjectServer.</li></ul>
+<div class="thumb tleft"><div class="thumbinner" style="width:748px;"><a href="index.php%3Ftitle=File:Netcool_setup.png.html" class="image"><img alt="" src="images/1/1e/Netcool_setup.png" width="746" height="464" class="thumbimage" /></a>  <div class="thumbcaption">Sample Netcool Integration Setup record</div></div></div> <br clear="all" />
+<p>To create an Netcool Integration Record:
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Setup</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Fill in the fields on the form, as appropriate (see table).</li>
+<li>Click <b>Save</b>.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> MID Server
+</td>
+<td> The MID Server managing communications between the ObjectServer and the instance. For more information, see <a href="index.php%3Ftitle=MID_Server_Installation.html" title="MID Server Installation">MID Server Installation</a>.
+</td></tr>
+<tr>
+<td> Notify on error
+</td>
+<td> Option to have the integration send email notifications when errors occur.
+</td></tr>
+<tr>
+<td> Notify user
+</td>
+<td> User who receives notifications. This field is only visible when <b>Notify on error</b> is selected.
+</td></tr>
+<tr>
+<td> Status
+</td>
+<td> Indicator of whether the integration MID Server is up or down.
+</td></tr>
+<tr>
+<td> Netcool JDBC Connections
+</td>
+<td> Related list of available connections to the ObjectServer. The integration uses JDBC connections to update events on the ObjectServer. You can add as many JDBC connection as necessary, but the integration only maintains one active connection at a time. See <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Adding_JDBC_Connections">Adding JDBC Connections</a>
+</td></tr>
+<tr>
+<td> Socket Monitors
+</td>
+<td> Related list of available Socket Monitors listening to Netcool events from a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic=%2Fcom.ibm.netcool_OMNIbus.doc%2Fgateways%2Fsocketgw%2Fsocketgw%2Fwip%2Fconcept%2Fsocketgw_instl_cnfgr_gateway.html">Netcool Socket Writer Gateway</a> on the ObjectServer. See <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Socket_Monitor_Record">Creating a Socket Monitor Record</a>.
+</td></tr></table>
+<h2><span class="mw-headline" id="Enabling_Notifications"><span class="mw-headline-number">4.1</span> Enabling Notifications</span></h2>
+<p>The integration can send email notifications to a specific user when there are connection or Socket Monitor errors.
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Setup.</b></li>
+<li>Click the creation date link for an integration setup record.</li>
+<li>Select the <b>Notify on error</b> check box.</li>
+<li>In the <b>Notify user</b> field, select a user to receive notifications about the MID Server.</li></ol>
+<p>The integration can send an email notification when these conditions occur.
+</p>
+<ul><li> When a JDBC connection changes to an <b>Error</b> state.</li>
+<li> When there are no more JDBC connections available.</li>
+<li> When a Socket Monitor changes to an <b>Error</b> state.</li>
+<li> When a Socket Monitor stops.</li></ul>
+<p>To edit the integration notifications, go to <b>System Policy &gt; Notifications</b>.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:608px;"><a href="index.php%3Ftitle=File:Netcool_email.png.html" class="image"><img alt="" src="images/7/7c/Netcool_email.png" width="606" height="107" class="thumbimage" /></a>  <div class="thumbcaption">Netcool Integration notification records</div></div></div> <br clear="all" />
+<h2><span class="mw-headline" id="Viewing_Integration_Status"><span class="mw-headline-number">4.2</span> Viewing Integration Status</span></h2>
+<p>The integration requires an active MID Server connection to transfer events.
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Setup.</b></li>
+<li>Click the creation date link for an integration setup record.
+<dl><dd>The <b>Status</b> field shows the current state of the integration MID Server. The status is either <b>Up</b> or <b>Down</b>.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Creating_a_Socket_Monitor_Record"><span class="mw-headline-number">5</span> Creating a Socket Monitor Record</span></h1>
+<p>A Socket Monitor record allows the integration to listen for events from the Socket Writer Gateway on the ObjectServer. A Socket Monitor record allows you to:
+</p>
+<ul><li> Specify the <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Netcool_Integration_Setup_Record">port</a> on which it listens for incoming events from the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic=%2Fcom.ibm.netcool_OMNIbus.doc%2Fgateways%2Fsocketgw%2Fsocketgw%2Fwip%2Fconcept%2Fsocketgw_instl_cnfgr_gateway.html">Netcool Socket Writer Gateway</a>.</li>
+<li> [Optional] <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Automatically_Starting_the_Socket_Writer_Gateway">Automatically start</a> the Socket Writer Gateway.
+<ul><li> Specify the path to the Socket Writer Gateway.</li>
+<li> Specify the ObjectServer fields <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_the_Socket_Writer_Gateway_Map">mapped</a> to the integration.</li>
+<li> Specify the integration connection <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_Socket_Writer_Gateway_Properties">properties</a>.</li></ul></li>
+<li> Automatically <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Starting_the_Socket_Monitor">start</a> the Socket Monitor.</li></ul>
+<div class="thumb tleft"><div class="thumbinner" style="width:722px;"><a href="index.php%3Ftitle=File:Netcool_socket_monitor.png.html" class="image"><img alt="" src="images/3/34/Netcool_socket_monitor.png" width="720" height="398" class="thumbimage" /></a>  <div class="thumbcaption">Sample Socket Monitor record</div></div></div> <br clear="all" />
+<p>To create a Socket Monitor:
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Socket Monitors</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Fill in the fields, as appropriate (see table).</li>
+<li>Click <b>Submit</b>.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Port
+</td>
+<td> Communications port number that the Socket Writer Gateway writes to.
+</td></tr>
+<tr>
+<td> Start socket writer
+</td>
+<td> [Optional] Option that allows the Socket Monitor to automatically start the Socket Writer Gateway on the ObjectServer. The <b>Map</b> and <b>Properties</b> fields are visible only if you select this option.
+</td></tr>
+<tr>
+<td> Socket writer gateway
+</td>
+<td> Path to the Socket Writer Gateway executable. Click the suggestion icon (<a href="index.php%3Ftitle=File:Lightbulb.png.html" class="image"><img alt="Lightbulb.png" src="images/6/6f/Lightbulb.png" width="17" height="20" /></a>) to select the correct path for your operating system and installation.
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> Automatically created name to identify this Socket Monitor.
+</td></tr>
+<tr>
+<td> State
+</td>
+<td> Current state of the monitor. The possible states are:
+<ul><li> <b>Ready:</b> ready to start. </li>
+<li> <b>Running:</b> already started and currently running. </li>
+<li> <b>Stopped:</b> stopped. If you manually stop the monitor, then you must also manually stop the Socket Writer Gateway. </li>
+<li> <b>Error:</b> could not start.</li></ul>
+</td></tr>
+<tr>
+<td> Map
+</td>
+<td> Socket Writer Gateway map. The integration uses this map to create an ECC queue message. Typically, you only edit this field to <a href="index.php%3Ftitle=Adding_Custom_Fields_to_the_Netcool_Integration.html" title="Adding Custom Fields to the Netcool Integration">add a custom ObjectServer field</a> to the integration or update a previously added field. See <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_the_Socket_Writer_Gateway_Map">Updating the Socket Writer Gateway Map</a>.<br />
+<p>This field is available only if you select the <b>Start socket writer</b> check box.
+</p>
+</td></tr>
+<tr>
+<td> Properties
+</td>
+<td> Socket Writer Gateway properties such as event update/insert data prefixes and connection behavior. Typically, you only edit this field to change properties of the connection between the ObjectServer and the ServiceNow instance. See <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Updating_Socket_Writer_Gateway_Properties">Updating Socket Writer Gateway Properties</a>.<br />
+<p>This field is available only if you select the <b>Start socket writer</b> check box.
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Automatically_Starting_the_Socket_Writer_Gateway"><span class="mw-headline-number">5.1</span> Automatically Starting the Socket Writer Gateway</span></h2>
+<p>The Socket Monitor can automatically start the Socket Writer Gateway whenever the integration is active.
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Socket Monitors</b>.</li>
+<li>Click the <b>Port</b> link for a Socket Monitor record.</li>
+<li>Select the <b>Start socket writer</b> check box. 
+<dl><dd>The form displays the <b>Socket writer gateway</b>, <b>Map</b>, and <b>Properties</b> fields.</dd></dl></li>
+<li>Enter or select the path to the <b>Socket writer gateway</b> executable. Click the suggestion icon <a href="index.php%3Ftitle=File:Lightbulb.png.html" class="image"><img alt="Lightbulb.png" src="images/6/6f/Lightbulb.png" width="17" height="20" /></a> to select to correct path for your operating system and installation.</li>
+<li> Update the <b>Map</b> field to match the fields you want to include in the integration. Add any <a href="index.php%3Ftitle=Adding_Custom_Fields_to_the_Netcool_Integration.html" title="Adding Custom Fields to the Netcool Integration">custom fields</a> to the map definition.</li>
+<li> Update the <b>Properties</b> field to match the connection properties you want to use for the Socket Writer Gateway.</li></ol>
+<h2><span class="mw-headline" id="Updating_the_Socket_Writer_Gateway_Map"><span class="mw-headline-number">5.2</span> Updating the Socket Writer Gateway Map</span></h2>
+<p>The Socket Writer Gateway uses a map to define the event data sent through the Socket Monitor port. By default, the integration includes mappings for all the default fields in the ObjectServer alerts.status table. There is a one-for-one correspondence between the fields listed in the Socket Writer Gateway map and the web service fields listed in the Netcool Alerts Status web service. Typically, you need to modify the <b>Map</b> field only to include custom fields available from the ObjectServer.
+</p><p><br />
+</p>
+<table class="table collapsible collapsed">
+
+<tr>
+<th> Click the plus to view the default Socket Writer Gateway map
+</th></tr>
+<tr>
+<td>
+<p>The baseline Socket Writer Gateway map has these mappings:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">CREATE</span> <span class="nx">MAPPING</span> <span class="nx">StatusMap</span>
+<span class="p">(</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Identifier&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Serial&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Node&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@NodeAlias&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Manager&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Agent&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@AlertGroup&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@AlertKey&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Severity&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Summary&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@ServerName&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@ServerSerial&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@StateChange&#39;</span> <span class="nx">CONVERT</span> <span class="nx">TO</span> <span class="nx">DATE</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@FirstOccurrence&#39;</span> <span class="nx">CONVERT</span> <span class="nx">TO</span> <span class="nx">DATE</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@LastOccurrence&#39;</span> <span class="nx">CONVERT</span> <span class="nx">TO</span> <span class="nx">DATE</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@InternalLast&#39;</span> <span class="nx">CONVERT</span> <span class="nx">TO</span> <span class="nx">DATE</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Poll&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Type&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Tally&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Class&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Grade&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Location&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@OwnerUID&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@OwnerGID&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Acknowledged&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Flash&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@EventId&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@ExpireTime&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@ProcessReq&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@SuppressEscl&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Customer&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@Service&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@PhysicalSlot&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@PhysicalPort&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@PhysicalCard&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@TaskList&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@NmosSerial&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@NmosObjInst&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@NmosCauseType&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@LocalNodeAlias&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@LocalPriObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@LocalSecObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@LocalRootObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@RemoteNodeAlias&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@RemotePriObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@RemoteSecObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@RemoteRootObj&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@X733EventType&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@X733ProbableCause&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@X733SpecificProb&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@X733CorrNotif&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;&#39;</span> <span class="o">=</span> <span class="s1">&#39;@URL&#39;</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table>
+<h2><span class="mw-headline" id="Updating_Socket_Writer_Gateway_Properties"><span class="mw-headline-number">5.3</span> Updating Socket Writer Gateway Properties</span></h2>
+<p>The Socket Monitor must know the data format of the Socket Writer Gateway in order to properly forward events. If the Socket Monitor automatically starts the Socket Writer Gateway, configure the connection properties in the <b>Properties</b> field. If you manually start the Socket Writer Gateway or run it from a Netcool process agent, modify the gateway's properties file on the ObjectServer accordingly.
+</p><p>The baseline properties file consists of these settings:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">##############################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># Property Name				Default</span>
+<span class="c1">#</span>
+<span class="c1"># Common Netcool/OMNIbus Properties.</span>
+<span class="c1">#</span>
+<span class="c1"># MaxLogFileSize					: 1024 </span>
+<span class="err">MessageLevel</span>						<span class="err">:</span> <span class="err">&#39;debug&#39;</span>
+<span class="c1"># MessageLog						: &#39;$OMNIHOME/log/NCO_GATE.log&#39;</span>
+<span class="c1"># Name								: &#39;NCO_GATE&#39;</span>
+<span class="c1"># PropsFile							: &#39;$OMNIHOME/etc/NCO_GATE.props&#39;</span>
+<span class="c1"># Help								: FALSE</span>
+<span class="c1"># UniqueLog							: FALSE</span>
+<span class="c1"># Version							: FALSE</span>
+<span class="c1">#</span>
+<span class="c1"># Common IPC Properties.</span>
+<span class="c1">#</span>
+<span class="c1"># Ipc.ClientOverrideSybase			: FALSE</span>
+<span class="c1"># Ipc.OpenClientDebug				: FALSE</span>
+<span class="c1"># Ipc.QueueSize						: 1024</span>
+<span class="c1"># Ipc.ServerOverrideSybase			: FALSE</span>
+<span class="c1"># Ipc.SingleThreaded				: FALSE</span>
+<span class="c1"># Ipc.SSLCertificate				: &#39;$OMNIHOME/etc/NCO_GATE.crt&#39;</span>
+<span class="c1"># Ipc.SSLEnable						: FALSE</span>
+<span class="c1"># Ipc.SSLPrivateKeyPassword			: &#39;&#39;</span>
+<span class="c1"># Ipc.StackSize						: 34816</span>
+<span class="c1"># Ipc.Timeout						: 60</span>
+<span class="c1"># Ipc.TruncateVendorLogFile			: TRUE</span>
+<span class="c1"># Ipc.VendorLogFileSize				: 1024</span>
+<span class="c1"># Connections						: 30</span>
+<span class="c1">#</span>
+<span class="c1"># Common Gateway Properties.</span>
+<span class="c1">#</span>
+<span class="c1"># Gate.CacheHashTblSize				: 5023</span>
+<span class="c1"># Gate.MapFile						: &#39;$OMNIHOME\\gates\\socket\\socket.map&#39;</span>
+<span class="err">Gate.StartupCmdFile</span>				<span class="err">:</span> <span class="err">&#39;$OMNIHOME\\gates\\socket\\socket.startup.cmd&#39;</span>
+<span class="err">Gate.Reader.TblReplicateDefFile</span> 	<span class="err">:</span> <span class="err">&#39;$OMNIHOME\\gates\\socket\\socket.reader.tblrep.def&#39;</span>
+<span class="err">Gate.Reader.Username</span>			<span class="err">:</span> <span class="err">&#39;root&#39;</span>
+<span class="err">Gate.Reader.Password</span>			<span class="err">:</span> <span class="err">&#39;root&#39;</span>
+<span class="c1"># Gate.Transfer.FailoverSyncRate	: 60</span>
+<span class="c1"># Gate.NGtkDebug					: TRUE</span>
+<span class="c1"># Gate.PAAware						: 0</span>
+<span class="c1"># Gate.PAAwareName					: &#39;&#39;</span>
+<span class="c1">#</span>
+<span class="c1"># Socket Gateway Properties.</span>
+<span class="c1">#</span>
+<span class="c1"># Gate.Socket.DateFormat			: &#39;%C&#39;</span>
+<span class="c1"># Gate.Socket.DeleteHeader			: &#39;\nStart of delete line\n&#39;</span>
+<span class="c1"># Gate.Socket.DeleteTrailer			: &#39;\nEnd of delete line\n&#39;</span>
+<span class="c1"># Gate.Socket.DoTimestamp			: FALSE</span>
+<span class="err">Gate.Socket.EndString</span>				<span class="err">:</span> <span class="err">&#39;&#39;</span>
+<span class="c1"># Gate.Socket.FailbackEnabled		: TRUE</span>
+<span class="c1"># Gate.Socket.FailbackTimeout		: 30</span>
+<span class="c1"># Gate.Socket.GreetingMessage		: &#39;&#39;</span>
+<span class="c1"># Gate.Socket.Host					: &#39;&#39;</span>
+<span class="err">Gate.Socket.InsertHeader</span>			<span class="err">:</span> <span class="err">&#39;\ninsert|&#39;</span>
+<span class="err">Gate.Socket.InsertTrailer</span>			<span class="err">:</span> <span class="err">&#39;\n&#39;</span>
+<span class="c1"># Gate.Socket.KeepAlive				: FALSE</span>
+<span class="err">Gate.Socket.Port</span>					<span class="err">:</span> <span class="err">4444</span>
+<span class="err">Gate.Socket.ReconnectTimeout</span>		<span class="err">:</span> <span class="err">30</span>
+<span class="c1"># Gate.Socket.SafForwardErrorFatal	: FALSE</span>
+<span class="c1"># Gate.Socket.Separator				: &#39;|&#39;</span>
+<span class="err">Gate.Socket.StartString</span>			<span class="err">:</span> <span class="err">&#39;&#39;</span>
+<span class="c1"># Gate.Socket.StoreAndForward		: FALSE</span>
+<span class="c1"># Gate.Socket.StoreFile				: &#39;$OMNIHOME/var/NCO_GATE_socket_.store&#39;</span>
+<span class="err">Gate.Socket.TimeoutSecs</span>			<span class="err">:</span> <span class="err">30</span>
+<span class="err">Gate.Socket.UpdateHeader</span>			<span class="err">:</span> <span class="err">&#39;\nupdate|&#39;</span>
+<span class="err">Gate.Socket.UpdateTrailer</span>			<span class="err">:</span> <span class="err">&#39;\n&#39;</span>
+<span class="c1">##############################################################################</span>
+</pre></div>
+<h2><span class="mw-headline" id="Manually_Configuring_the_Socket_Writer_Gateway"><span class="mw-headline-number">5.4</span> Manually Configuring the Socket Writer Gateway</span></h2>
+<p>If you choose to run the Socket Writer Gateway manually or allow a Netcool process agent to control it, you must first configure the Socket Writer Gateway map definition and properties files on the ObjectServer.
+</p>
+<ol><li>Log in to the ObjectServer operating system with an administrative account.</li>
+<li>Open the Socket Writer Gateway map definition file in a text editor.
+<dl><dd>By default, the map definition file is available here:</dd></dl>
+<ul><li> <b>UNIX:</b> $OMNIHOME/gates/socket/socket.map</li>
+<li> <b>Windows:</b>&#160;%OMNIHOME%\gates\socket\socket.map</li></ul></li>
+<li>Update the map definition file to match the fields you want to include in the integration. Add any <a href="index.php%3Ftitle=Adding_Custom_Fields_to_the_Netcool_Integration.html" title="Adding Custom Fields to the Netcool Integration">custom fields</a> to the map definition file.</li>
+<li>Save the map definition file.</li>
+<li>Open the Socket Writer Gateway properties file in a text editor.
+<dl><dd>By default, the properties file is available here:</dd></dl>
+<ul><li> <b>UNIX:</b> $OMNIHOME/gates/socket/NCO_GATE.props</li>
+<li> <b>Windows:</b>&#160;%OMNIHOME%\gates\socket\NCO_GATE.props</li></ul></li>
+<li>Update the properties file to match the connection properties you want to use for the Socket Writer Gateway.</li>
+<li>Save the properties file.</li>
+<li>Start the Socket Writer Gateway on the ObjectServer.</li></ol>
+<h2><span class="mw-headline" id="Manually_Starting_the_Socket_Monitor"><span class="mw-headline-number">5.5</span> Manually Starting the Socket Monitor</span></h2>
+<p>The integration requires an active Socket Monitor in order to listen for events from the Socket Writer Gateway.
+</p>
+<ol><li>Log in to the ServiceNow instance.</li>
+<li>Navigate to <b>Integration - Netcool/OMNIbus &gt; Socket Monitors</b>.</li>
+<li>Click the <b>Port</b> link for a Socket Monitor record.</li>
+<li>Click the <b>Start</b> related link.</li></ol>
+<h1><span class="mw-headline" id="Adding_JDBC_Connections"><span class="mw-headline-number">6</span> Adding JDBC Connections</span></h1>
+<p>The integration uses one or more JDBC connections to send outbound events to the ObjectServer. The MID Server caches successful JDBC connections for as long as the MID Server is running. This means that the integration only has to use a single login/connect command per connection during the lifetime of the MID Server or until the connection fails. You can add as many JDBC connections as necessary, but the integration only maintains one active connection at a time. 
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OMNIbus &gt; JDBC Connections</b>.</li>
+<li>In the Netcool JDBC Connections section, click <b>New</b>.</li>
+<li>Fill in the fields, as appropriate (see table).</li>
+<li>Click <b>Submit</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:703px;"><a href="index.php%3Ftitle=File:Netcool_jdbc.png.html" class="image"><img alt="" src="images/d/d3/Netcool_jdbc.png" width="701" height="292" class="thumbimage" /></a>  <div class="thumbcaption">Sample JDBC connection</div></div></div> <br clear="all" />
+<p>The Netcool JDBC Connection form contains the following fields.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> State
+</td>
+<td> The state the JDBC connection is in.
+<ul><li> <b>Ready:</b> ready for use. </li>
+<li> <b>Active:</b> currently connected or have successfully connected at least once to update the ObjectServer. </li>
+<li> <b>Error:</b> did not connect to the ObjectServer. See the <b>Error Message</b> field for details.</li></ul>
+</td></tr>
+<tr>
+<td> Host
+</td>
+<td> The host name or IP address of the MID Server managing the JDBC connection.
+</td></tr>
+<tr>
+<td> Port
+</td>
+<td> The TCP port for the JDBC connection, typically 4100.
+</td></tr>
+<tr>
+<td> Database
+</td>
+<td> The Netcool/OMNIbus ObjectServer name (database name).
+</td></tr>
+<tr>
+<td> User
+</td>
+<td> The user ID that authenticates the JDBC connection.
+</td></tr>
+<tr>
+<td> Password
+</td>
+<td> The password that authenticates the JDBC user ID.
+</td></tr>
+<tr>
+<td> Query timeout
+</td>
+<td> The timeout period, in seconds, before the integration considers the JDBC connection inaccessible and places it in an error state.
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td> The order or priority of the JDBC connection. The integration attempts to connect with the JDBC connection that has the lowest order value. If that connection fails, the integration retries the update on the next connection in order that is in the <b>Ready</b> state. If you specified a notify user in the <a href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html#Creating_a_Netcool_Integration_Setup_Record">Netcool Integration Setup record</a>, the instance also sends email messages whenever a JDBC connection fails.
+</td></tr>
+<tr>
+<td> Driver
+</td>
+<td> The JDBC driver used for the connection (typically, the Sybase JConnect driver).
+</td></tr>
+<tr>
+<td> Driver Jar
+</td>
+<td> The Java JAR file containing the JDBC driver class (typically, the Sybase JConnect JAR file installed with Netcool/OMNIbus). You must specify a JAR file that is appropriate for the operating system on which the MID Server runs. Click the suggestion icon <a href="index.php%3Ftitle=File:Lightbulb.png.html" class="image"><img alt="Lightbulb.png" src="images/6/6f/Lightbulb.png" width="17" height="20" /></a> to select the correct JAR file.
+</td></tr></table>
+<h1><span class="mw-headline" id="Editing_the_Integration_Web_Service"><span class="mw-headline-number">7</span> Editing the Integration Web Service</span></h1>
+<p>If you choose to send ObjectServer events to the ServiceNow instance from a web service, you must create a web service client on the ObjectServer to consume the Netcool Alerts Status web service. A Netcool alerts status record allows you to:
+</p>
+<ul><li> View the name of the <a href="index.php%3Ftitle=SOAP_Web_Service.html" title="SOAP Web Service">SOAP web service</a> for the integration.</li>
+<li> View the name of the <a href="index.php%3Ftitle=Web_Service_Import_Sets.html" title="Web Service Import Sets">import set table</a> for the integration.</li>
+<li> View the endpoint URL to the web service <a href="index.php%3Ftitle=SOAP_Web_Service.html#WSDL" title="SOAP Web Service">WSDL</a> for the integration.</li>
+<li> [Optional] Customize the list of <a href="index.php%3Ftitle=Web_Service_Import_Sets.html#Web_Service_Fields" title="Web Service Import Sets">web service fields</a> for the integration.</li>
+<li> Link to the <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">transform map</a> for the integration.</li></ul>
+<div class="thumb tleft"><div class="thumbinner" style="width:711px;"><a href="index.php%3Ftitle=File:Netcool_alerts_status.png.html" class="image"><img alt="" src="images/7/75/Netcool_alerts_status.png" width="709" height="573" class="thumbimage" /></a>  <div class="thumbcaption">Edit Web Service form</div></div></div> <br clear="all" />
+<p>Administrators typically only need to edit the web service to <a href="index.php%3Ftitle=Adding_Custom_Fields_to_the_Netcool_Integration.html#Direct_Web_Service_Workflow" title="Adding Custom Fields to the Netcool Integration">add custom fields to the integration</a>.
+</p>
+<h2><span class="mw-headline" id="Adding_a_Custom_Field_to_the_Web_Service"><span class="mw-headline-number">7.1</span> Adding a Custom Field to the Web Service</span></h2>
+<p>To add a custom field to the list of web service fields in the NetCool Alerts Status web service record:
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OmniBus &gt; Netcool Alerts Status</b>.</li>
+<li>At the bottom of the Web Service Fields section, double-click <i>Insert a new row</i> .</li>
+<li>Enter the name of the web service label. For example MyCustomField.</li>
+<li>Click the green check mark. The integration automatically converts the label to a lower case field name. For example, u_mycustomfield.
+<dl><dd>The system automatically creates the web service field name based on the label you type. It appends the prefix <i>u_</i> to the beginning of the label and converts the string to all lowercase. Do not include a <i>u_</i> prefix in the label name or the web service field name will start with a duplicate <i>u_u_</i> prefix.</dd>
+<dd><a href="index.php%3Ftitle=File:Add_field_to_web_services_fields.png.html" class="image"><img alt="Add field to web services fields.png" src="images/c/cb/Add_field_to_web_services_fields.png" width="634" height="208" /></a> <br clear="all" /></dd></dl></li>
+<li>Click the save icon.</li>
+<li>Click <b>Update</b>.</li></ol>
+<h2><span class="mw-headline" id="Adding_a_Custom_Field_to_the_Transform_Map"><span class="mw-headline-number">7.2</span> Adding a Custom Field to the Transform Map</span></h2>
+<p>To add the custom field to the Netcool Alerts Status transformation map:
+</p>
+<ol><li>Navigate to <b>Integration - Netcool/OmniBus &gt; Transform Map</b>.</li>
+<li>From the <b>Field Maps</b> related list, click <b>New</b>.</li>
+<li>From the <b>Source field</b>, select the label of the custom field you added to the web service field list. For example, <b>MyCustomField</b>.</li>
+<li>From the <b>Target field</b>, select the field where you want the integration to store the matching event data. For example <b>My custom field</b>.
+<dl><dd><a href="index.php%3Ftitle=File:Map_custom_field.png.html" class="image"><img alt="Map custom field.png" src="images/6/66/Map_custom_field.png" width="1088" height="170" /></a> <br clear="all" /></dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd><a href="index.php%3Ftitle=File:Map_custom_field_02.png.html" class="image"><img alt="Map custom field 02.png" src="images/2/28/Map_custom_field_02.png" width="1084" height="292" /></a> <br clear="all" /></dd></dl></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203170417
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.359 seconds
+Real time usage: 1.156 seconds
+Preprocessor visited node count: 132/1000000
+Preprocessor generated node count: 327/1000000
+Post‐expand include size: 1995/2097152 bytes
+Template argument size: 914/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   80.096      1 - -total
+ 83.04%   66.512      1 - Template:Netcool_Integration_topics
+ 70.91%   56.795      1 - Template:Topic
+ 15.62%   12.512      1 - Template:Note
+ 10.91%    8.738      1 - Embedded:Netcool_Integration_topics
+  9.64%    7.725      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23923-0!*!0!1!en!5!* and timestamp 20171203170415 and revision id 250747
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Netcool_Integration_Setup&amp;oldid=250747.html#Editing_the_Integration_Web_Service">http://wiki.servicenow.com/index.php?title=Netcool_Integration_Setup&amp;oldid=250747#Editing_the_Integration_Web_Service</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23923"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23923" data-vote-the-vote="5" data-vote-id="23923" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23923_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23923" data-vote-the-vote="1" data-vote-id="23923" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23923_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Netcool_Integration_Setup.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Netcool+Integration+Setup&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Netcool+Integration+Setup&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Netcool_Transform_Map.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Netcool_Transform_Map&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Netcool+Integration+Setup.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Netcool+Integration+Setup&amp;returnto=Netcool+Integration+Setup&amp;oldid=250747&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FNetcool_Integration_Setup.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Netcool_Integration_Setup" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Netcool_Integration_Setup&amp;oldid=250747.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Netcool_Integration_Setup&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:08, 5 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":886});});</script></body></html>

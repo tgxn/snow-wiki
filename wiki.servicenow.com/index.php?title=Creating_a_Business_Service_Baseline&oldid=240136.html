@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Business Service Baseline - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_Business_Service_Baseline","wgTitle":"Creating a Business Service Baseline","wgCurRevisionId":240136,"wgRevisionId":240136,"wgArticleId":23739,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Configuration Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_Business_Service_Baseline","wgRelevantArticleId":23739,"wgRequestId":"3cf25554fb113f042474e3b0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150131003016"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_a_Business_Service_Baseline"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating a Business Service Baseline"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Configuration Management"/>
+<meta name="category" content="Configuration Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_a_Business_Service_Baseline.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating a Business Service Baseline"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150131003016"/>
+
+	<meta property="article:published_time" content="20150131003016"/>
+
+	<meta property="article:modified_time" content="20150131003016"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Configuration Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_a_Business_Service_Baseline"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_Business_Service_Baseline rootpage-Creating_a_Business_Service_Baseline skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Business+Service+Baseline.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+a+Business+Service+Baseline&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Business Service Baseline</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Creating a Business Service Baseline</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/product/configuration-management/concept/c_ITILConfigurationManagement.html">Configuration Management</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Introduction_to_Assets_and_Configuration.html" title="Introduction to Assets and Configuration">Assets and Configuration</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a21da280326bt'></div><script type="text/javascript">window.tamOnload_tam5a21da280326bt=[];tree = new dTree('tam5a21da280326bt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21da280326bt = tree;
+                                               tam5a21da280326bt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ITIL_Configuration_Management\&quot;" title=\"ITIL Configuration Management\">ITIL Configuration Management</a>');
+
+tam5a21da280326bt.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enterprise_CMDB\&quot;" title=\"Enterprise CMDB\">Enterprise CMDB</a>');
+tam5a21da280326bt.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CMDB_Data_Model\&quot;" title=\"CMDB Data Model\">CMDB Data Model</a>');
+tam5a21da280326bt.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_CI_Relationships\&quot;" title=\"Defining CI Relationships\">Defining CI Relationships</a> ');
+tam5a21da280326bt.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Suggested_Relationships\&quot;" title=\"Suggested Relationships\">Suggested Relationships</a> ');
+tam5a21da280326bt.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CMDB_and_Extended_CMDB\&quot;" title=\"CMDB and Extended CMDB\">CMDB and Extended CMDB</a>');
+tam5a21da280326bt.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Baseline_CMDB\&quot;" title=\"Baseline CMDB\">Baseline CMDB</a> ');
+tam5a21da280326bt.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_a_CMDB_Baseline_Update\&quot;" title=\"Scheduling a CMDB Baseline Update\">Scheduling a CMDB Baseline Update</a> ');
+tam5a21da280326bt.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Populating_the_CMDB\&quot;" title=\"Populating the CMDB\">Populating the CMDB</a> ');
+tam5a21da280326bt.add(10, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CMDB_Classifications\&quot;" title=\"CMDB Classifications\">CMDB Classifications</a>');
+tam5a21da280326bt.add(11, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Business_Services\&quot;" title=\"Business Services\">Business Services</a>');
+tam5a21da280326bt.add(12, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enterprise_Configuration_Management_Database_(ECMDB)_Action_Icons\&quot;" title=\"Enterprise Configuration Management Database (ECMDB) Action Icons\">ECMDB Action Icons</a>');
+tam5a21da280326bt.add(13, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Useful_Related_Lists_in_CI_Forms\&quot;" title=\"Useful Related Lists in CI Forms\">Useful Related Lists in CI Forms</a> ');
+tam5a21da280326bt.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Help_the_Help_Desk\&quot;" title=\"Help the Help Desk\">Help the Help Desk</a>');
+tam5a21da280326bt.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Help_the_Help_Desk_Login_Script\&quot;" title=\"Help the Help Desk Login Script\">Help the Help Desk Login Script</a>');
+tam5a21da280326bt.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Help_the_Help_Desk_Status\&quot;" title=\"Help the Help Desk Status\">Help the Help Desk Status</a>');
+tam5a21da280326bt.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Collected_by_Help_the_Help_Desk_on_Windows_Computers\&quot;" title=\"Data Collected by Help the Help Desk on Windows Computers\">Data Collected by Help the Help Desk on Windows Computers</a>');
+tam5a21da280326bt.add(18, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ITIL_Asset_Management\&quot;" title=\"ITIL Asset Management\" class=\"mw-redirect\">ITIL Asset Management</a>');
+tam5a21da280326bt.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Software_Asset_Management_Extensions\&quot;" title=\"Software Asset Management Extensions\">Software Asset Management Extensions</a> ');
+tam5a21da280326bt.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Software_License_Counts_and_Compliance_Checking\&quot;" title=\"Software License Counts and Compliance Checking\">Software License Counts and Compliance Checking</a> ');
+tam5a21da280326bt.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Software_Asset_Management\&quot;" title=\"Software Asset Management\">Software Asset Management</a>');
+
+                                               document.getElementById('5a21da280326bt').innerHTML = tam5a21da280326bt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21da280326bt) { window.tamOnload_tam5a21da280326bt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Business+Service+Management+Map&amp;oldid=0.html" title="Business Service Management Map">Business Service Management Map</a></li>
+<li><a href="index.php%3Ftitle=Software_License_Management.html" title="Software License Management">Software License Management</a></li>
+<li><a href="index.php%3Ftitle=Inventory_Management.html" title="Inventory Management">Inventory Management</a></li></ul>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Business_Service_Baseline"><span class="tocnumber">2</span> <span class="toctext">Business Service Baseline</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#View_the_Service_Baseline_Dashboard"><span class="tocnumber">3</span> <span class="toctext">View the Service Baseline Dashboard</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Service_Baseline_Search_Options"><span class="tocnumber">4</span> <span class="toctext">Service Baseline Search Options</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#View_the_Details_of_a_Service_Baseline"><span class="tocnumber">5</span> <span class="toctext">View the Details of a Service Baseline</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Create_an_Initial_Baseline_for_a_Service"><span class="tocnumber">6</span> <span class="toctext">Create an Initial Baseline for a Service</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Manage_the_Baseline_for_a_Business_Service"><span class="tocnumber">7</span> <span class="toctext">Manage the Baseline for a Business Service</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Manage_the_Baseline_When_a_CI_is_Part_of_Multiple_Business_Services"><span class="tocnumber">7.1</span> <span class="toctext">Manage the Baseline When a CI is Part of Multiple Business Services</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Creating_a_Business_Service_Baseline_Exclusion"><span class="tocnumber">8</span> <span class="toctext">Creating a Business Service Baseline Exclusion</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html#Related_Topics"><span class="tocnumber">9</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Business Service baseline feature helps you to understand and control the changes that are made to your business services.
+</p>
+<h1><span class="mw-headline" id="Business_Service_Baseline"><span class="mw-headline-number">2</span> Business Service Baseline</span></h1>
+<p>A business service baseline is a snapshot of the state of a business service that captures the current state of the CIs and relationships that make up that service. When you define a baseline for a service, you define a baseline for all the CIs and relationships that are part of that service.
+</p><p>You can baseline services that have been created by the ServiceWatch module. (These services are tracked in the <b>svc_ci_assoc</b> and <b>svc_rel_assoc</b> tables.)
+Each business service has its own individual baseline. You cannot baseline a group of services. 
+</p><p>A business service baseline is automatically updated to include any changes made to that service from the approved change process, such as with the proposed changes feature.
+</p><p>You can create an <b>exclusion list</b> for the service baseline feature. The exclusion list allows you to exclude certain properties of a CI from the baseline. If an item in the exclusion list is modified, the service is not marked <b>dirty</b>. An example of when this may be useful is for the temperature property of a system. The temperature can change often, and you may not want to know each time.  
+</p><p>The service is marked <b>dirty</b> if either of the following is true:
+</p>
+<ul><li> If any of the elements that are a part of the service have been modified</li>
+<li> If any elements have been added or removed from the service</li></ul>
+<p>The service is marked <b>clean</b> when all elements that make up the service are in the same state as the baseline.
+</p>
+<h1><span class="mw-headline" id="View_the_Service_Baseline_Dashboard"><span class="mw-headline-number">3</span> View the Service Baseline Dashboard</span></h1>
+<p>To view the Service Baseline Dashboard:
+</p>
+<ol><li>Request activation of the <b>Service Model</b> plugin.</li>
+<li>Navigate to <b>Configuration &gt; Baselines &gt; Service Baseline</b></li></ol>
+<p>The Service Baseline Dashboard lists all business services in the left pane.  The business services display in the following order:
+</p>
+<ul><li><b>Dirty:</b> Services that have been changed from their baseline, in alphabetical order.</li>
+<li><b>Clean:</b> Services that have a baseline set, in alphabetical order.</li>
+<li><b>Not Baselined:</b> Services that have not had a baseline set, in alphabetical order.</li></ul>
+<h1><span class="mw-headline" id="Service_Baseline_Search_Options"><span class="mw-headline-number">4</span> Service Baseline Search Options</span></h1>
+<p>To search for a service: <br />
+</p>
+<ul><li>Enter text into the Search box in the Service List pane (left pane) of the Service Baseline Dashboard.  <br /> </li></ul>
+<p>To search within a service: <br />
+</p>
+<ul><li>Enter text into the Search box in the Association List pane (right pane) of the Service Baseline Dashboard.  <br /> 
+<ul><li>You can search all assocation properties, which includes name, class name, CI, relationship, sys_id, changed property name, old value of property, new value of property, relationship type.</li>
+<li>You can limit the search to the name of a class using the <b>Class</b> option in the drop-down menu.</li></ul></li></ul>
+<p><a href="index.php%3Ftitle=File:BaselineServiceSearchByClass.png.html" class="image"><img alt="BaselineServiceSearchByClass.png" src="images/2/21/BaselineServiceSearchByClass.png" width="326" height="56" /></a>
+</p>
+<h1><span class="mw-headline" id="View_the_Details_of_a_Service_Baseline"><span class="mw-headline-number">5</span> View the Details of a Service Baseline</span></h1>
+<p>To view the details of a business service:
+</p>
+<ol><li>Navigate to <b>Configuration &gt; Baselines &gt; Service Baseline</b>.</li>
+<li>Click a Business Service.</li></ol>
+<p>Details of the service that is selected in the left pane displays in the right pane.  The right pane displays elements in the following order:
+</p>
+<ul><li>CIs or Relationships that have been added to the service since the baseline.</li>
+<li>CIs or Relationships that have been removed from the service since the baseline.</li>
+<li>CIs or Relationships that have changed since the baseline.</li>
+<li>Cis or Relationships that are unchanged from the baseline.</li></ul>
+<p>The following notations display on this page:
+</p>
+<table>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineDefined.png.html" class="image"><img alt="BaselineDefined.png" src="images/4/45/BaselineDefined.png" width="128" height="28" /></a>
+</td>
+<td>The service has a baseline defined, and no changes have been made to the baseline outside of the official approval process.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineChangedIndicator.png.html" class="image"><img alt="BaselineChangedIndicator.png" src="images/a/ac/BaselineChangedIndicator.png" width="111" height="28" /></a>
+</td>
+<td>The service has a baseline, and changes have been made to the baseline outside of the official approval process.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineCheckmarkIcon.png.html" class="image"><img alt="BaselineCheckmarkIcon.png" src="images/f/f9/BaselineCheckmarkIcon.png" width="30" height="27" /></a>
+</td>
+<td> The CI or relationship is the same as the defined baseline.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineHollowCircleIcon.png.html" class="image"><img alt="BaselineHollowCircleIcon.png" src="images/e/e2/BaselineHollowCircleIcon.png" width="32" height="30" /></a>
+</td>
+<td>The service, CI or relationship does not have baseline defined.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineEditPencilIconGrey.png.html" class="image"><img alt="BaselineEditPencilIconGrey.png" src="images/a/a3/BaselineEditPencilIconGrey.png" width="69" height="33" /></a>
+</td>
+<td> The CI or relationship of the service has been modified from the defined baseline.  Details of the change display underneath the icon.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselinePlusSignIconGrey.png.html" class="image"><img alt="BaselinePlusSignIconGrey.png" src="images/1/18/BaselinePlusSignIconGrey.png" width="69" height="33" /></a>
+</td>
+<td>The CI or relationship has been added to the service.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselineTrashIconGrey.png.html" class="image"><img alt="BaselineTrashIconGrey.png" src="images/4/4d/BaselineTrashIconGrey.png" width="72" height="36" /></a>
+</td>
+<td>The CI or relationship has been removed from the service.
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=File:BaselinePartOfMultipleCIs.png.html" class="image"><img alt="BaselinePartOfMultipleCIs.png" src="images/8/81/BaselinePartOfMultipleCIs.png" width="379" height="50" /></a>
+</td>
+<td>If the CI is part of multiple business services that are baselined, the other services are listed.
+</td></tr></table>
+<p>You can perform the following actions in the Service Baseline Details form:
+</p>
+<table>
+<tr>
+<th>Task
+</th>
+<th>Action
+</th></tr>
+<tr>
+<td>Filter the list of services in the left navigation
+</td>
+<td>Select one of the following options:
+<ul><li><b>All:</b> Displays all the services.</li>
+<li><b>Dirty:</b> Displays only services that have been modified from the baseline.</li>
+<li><b>Clean:</b> Displays only services that are the same as the baseline.</li>
+<li><b>Not baselined</b>: Displays only services that do not have a baseline defined.</li></ul>
+</td></tr>
+<tr>
+<td>Filter the contents that display in the Service Details form.
+</td>
+<td>Enter text into the Search box.  You can search on any text that displays on the form.  For example, to display only relationships, enter <b>::</b>.
+</td></tr>
+<tr>
+<td>Group the service details form by the type of the change from the baseline
+</td>
+<td>Use the default <b>Change Type</b> option in the drop-down menu.
+</td></tr>
+<tr>
+<td>Group the service details form by the class of the CI
+</td>
+<td>Use the <b>Class</b> option in the drop-down menu.
+</td></tr></table>
+<h1><span class="mw-headline" id="Create_an_Initial_Baseline_for_a_Service"><span class="mw-headline-number">6</span> Create an Initial Baseline for a Service</span></h1>
+<p>When you create a baseline for a business service, the service is monitored.  The Service Baseline Dashboard displays when there are changes to the CIs or the relationships that make up the service.
+</p><p>To create an initial baseline for a business service:
+</p>
+<ol><li>Install the <b>Service Model</b> plugin.</li>
+<li>Navigate to <b>Configuration &gt; Baselines &gt; Service Baseline</b></li>
+<li>Click a business service from the dashboard.</li>
+<li>Click the <b>Create</b> button.</li></ol>
+<h1><span class="mw-headline" id="Manage_the_Baseline_for_a_Business_Service"><span class="mw-headline-number">7</span> Manage the Baseline for a Business Service</span></h1>
+<p>When changes have been made to a CI or relationship, you must approve the changes to add them to the baseline.
+</p><p>To approve the changes:
+</p>
+<ol><li>Click the individual line items to approve, or click the top square to select all line items.</li>
+<li>Click the <b>Update</b> button.</li></ol>
+<p>You can remove the baseline for a business service, which will stop tracking modifications.
+</p><p>To delete the baseline:
+</p>
+<ol><li>Click the business service to delete in the Service List.
+<dl><dd>A <b>Delete Alert</b> window displays.</dd></dl></li>
+<li>Click the <b>Delete</b> button.</li></ol>
+<h2><span class="mw-headline" id="Manage_the_Baseline_When_a_CI_is_Part_of_Multiple_Business_Services"><span class="mw-headline-number">7.1</span> Manage the Baseline When a CI is Part of Multiple Business Services</span></h2>
+<p>When a CI is part of more than one business service, and the CI has been modified, all business services that contain the CI and are baselined are marked to the <b>Dirty</b> state.
+</p><p>If you click the <b>Update</b> button for one of the business services, you receive the following message to warn you that the CI is part of other business services. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:401px;"><a href="index.php%3Ftitle=File:BaselineMessageCIMultipleServices.png.html" class="image"><img alt="BaselineMessageCIMultipleServices.png" src="images/9/97/BaselineMessageCIMultipleServices.png" width="399" height="253" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div> <br style="clear:both;" />
+<p>In this situation, you have the following options:
+</p>
+<table>
+<tr>
+<th width="50%"> Use this option...
+</th>
+<th>For this result...
+</th></tr>
+<tr>
+<td><b>Exclude</b>
+</td>
+<td>This option provides a partial update of the baseline.  The baseline definition is updated with all changes except the CI that is part of multiple business services.  This option allows you to do more research to determine how the update of the CI will affect the other business services. When you use this option, all business services that use this CI remain in the <b>dirty</b> state.
+</td></tr>
+<tr>
+<td><b>OK</b>
+</td>
+<td>This option updates the baseline, including the the CI that is part of multiple business services.  After you use this option, the current business service is in the <b>clean</b> state.  Other business services that contain this CI may also be marked in the <b>clean</b> state, if this CI was the only remaining modification to the other service. Do not use this option unless you are certain of the impact to the other business services.
+</td></tr>
+<tr>
+<td><b>Cancel</b>
+</td>
+<td>This option cancels the baseline update and returns to the Business Service Details page.
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_a_Business_Service_Baseline_Exclusion"><span class="mw-headline-number">8</span> Creating a Business Service Baseline Exclusion</span></h1>
+<p>You can create an exclusion list for the service baseline feature. The exclusion list allows you to exclude certain properties of a CI from the baseline. If an item in the exclusion list is modified, the service is not marked '<i>dirty</i>. For example, consider the temperature property of a system. The temperature can change often and you may not want to know each time it does.
+</p><p>To create a service baseline exclusion:
+</p>
+<ol><li>Navigate to the CI record with the property that you want to exclude.
+<dl><dd><b>Configuration &gt; Business Services</b></dd></dl></li>
+<li>Right-click on the field that you want to exclude.</li>
+<li>Select the <b>Show</b> menu item
+<dl><dd>In the following example, the field name is <b>assigned_to</b>.</dd>
+<dd><a href="index.php%3Ftitle=File:BaselineExclusionGetFieldName.png.html" class="image"><img alt="BaselineExclusionGetFieldName.png" src="images/2/28/BaselineExclusionGetFieldName.png" width="210" height="180" /></a></dd></dl></li>
+<li>In the popup that displays, note the table name in the title. The field name is listed as the <b>Element</b>.
+<dl><dd> In the following example, the table name is <code><b>cmdb_ci_computer</b></code>.</dd>
+<dd><a href="index.php%3Ftitle=File:BaselineExclusionGetTableName.png.html" class="image"><img alt="BaselineExclusionGetTableName.png" src="images/1/1a/BaselineExclusionGetTableName.png" width="324" height="179" /></a></dd></dl></li>
+<li>Navigate to <b>Configuration &gt; Baselines &gt; Service Baseline Exclusion Table</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Fill in the form using the following information:
+<dl><dd><b>Field Name:</b> Enter the label name.</dd>
+<dd><b>Table Name:</b> Enter the table name.</dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h1><span class="mw-headline" id="Related_Topics"><span class="mw-headline-number">9</span> Related Topics</span></h1>
+<p><a href="index.php%3Ftitle=Baseline_CMDB.html" title="Baseline CMDB">CMDB Baseline</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201223936
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.123 seconds
+Real time usage: 0.217 seconds
+Preprocessor visited node count: 74/1000000
+Preprocessor generated node count: 240/1000000
+Post‐expand include size: 3564/2097152 bytes
+Template argument size: 892/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   45.678      1 - -total
+100.00%   45.678      1 - Template:Asset_and_CMDB
+ 83.56%   38.170      1 - Template:Topic
+  7.97%    3.639      1 - Embedded:Asset_and_CMDB
+  7.92%    3.619      2 - Template:T
+  7.37%    3.365      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23739-0!*!0!1!en!5!* and timestamp 20171201223935 and revision id 240136
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html">http://wiki.servicenow.com/index.php?title=Creating_a_Business_Service_Baseline&amp;oldid=240136</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Management.html" title="Category:Configuration Management">Configuration Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Asset+and+Configuration.html" title="Category:Asset and Configuration">Asset and Configuration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Management.html" title="Category:Configuration Management">Configuration Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23739"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23739" data-vote-the-vote="5" data-vote-id="23739" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23739_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23739" data-vote-the-vote="1" data-vote-id="23739" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23739_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Creating+a+Business+Service+Baseline&amp;returntoquery=oldid%3D240136" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Creating+a+Business+Service+Baseline&amp;returntoquery=oldid%3D240136" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_a_Business_Service_Baseline.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Business+Service+Baseline.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+a+Business+Service+Baseline&amp;returnto=Creating+a+Business+Service+Baseline&amp;oldid=240136&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_a_Business_Service_Baseline.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_a_Business_Service_Baseline" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;oldid=240136.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_a_Business_Service_Baseline&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:30, 31 January 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1338});});</script></body></html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Defining an SLA - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Defining_an_SLA","wgTitle":"Defining an SLA","wgCurRevisionId":250494,"wgRevisionId":250494,"wgArticleId":6410,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Service Level Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Defining_an_SLA","wgRelevantArticleId":6410,"wgRequestId":"149dfc986bd5c1bd90b28d1e","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Defining_an_SLA_with_Plugin","wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/index.php?title=Defining_an_SLA"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170829203039"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Defining_an_SLA"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Defining an SLA"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Service Level Management"/>
+<meta name="category" content="Service Level Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<link rel="canonical" href="index.php%3Ftitle=Defining_an_SLA.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Defining_an_SLA.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Defining an SLA"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170829203039"/>
+
+	<meta property="article:published_time" content="20170829203039"/>
+
+	<meta property="article:modified_time" content="20170829203039"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Service Level Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Defining_an_SLA"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Defining_an_SLA rootpage-Defining_an_SLA skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Defining+an+SLA.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Defining+an+SLA&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Defining an SLA</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Planning_and_Policy_Applications.html" title="Planning and Policy Applications">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=ITIL_Service_Level_Management.html" title="ITIL Service Level Management">Service Level Management</a> &gt; Defining an SLA (Redirected from <a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin&amp;redirect=no.html" title="Defining an SLA with Plugin">Defining an SLA with Plugin</a>)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-level-management/reference/service-level-mgmt-landing-page.html">Service Level Management</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=ITIL_Service_Level_Management.html" title="ITIL Service Level Management">ITIL Service Level Management</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Service_Level_Agreements.html" title="Service Level Agreements">Service Level Agreements</a>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_SLAs.html" title="Getting Started with SLAs">Getting Started with SLAs</a> </li>
+<li><strong class="selflink">Defining an SLA</strong> </li>
+<li><a href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" title="Creating an SLA Workflow">Creating an SLA Workflow</a> </li>
+<li><a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a> </li>
+<li><a href="index.php%3Ftitle=Defining_Service_Levels_for_Catalog_Fulfillment.html" title="Defining Service Levels for Catalog Fulfillment">Defining Service Levels for Catalog Fulfillment</a> </li>
+<li><a href="index.php%3Ftitle=Reporting_on_SLAs.html" title="Reporting on SLAs">Reporting on SLAs</a></li>
+<li><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html" title="Modifying SLA Condition Rules">Modifying SLA Condition Rules</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SLA_Contract_Add-on.html" title="SLA Contract Add-on">SLA Contract Add-on</a> 
+<ul><li><a href="index.php%3Ftitle=Defining_a_Service_Contract.html" title="Defining a Service Contract">Defining a Service Contract</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Introduction_to_Tasks.html" title="Introduction to Tasks">Introduction to Tasks</a></li>
+<li><a href="index.php%3Ftitle=Activating_Most_Active_and_Most_Recent_Labels.html" title="Activating Most Active and Most Recent Labels" class="mw-redirect">Task Administration</a></li>
+<li><a href="index.php%3Ftitle=Workflows.html" title="Workflows">Workflows</a></li>
+<li><a href="index.php%3Ftitle=Approval_Engines.html" title="Approval Engines">Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Scriptable_Execution_Plan_Approvals.html" title="Scriptable Execution Plan Approvals">Scripting Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Service_Portfolio_Management_-_SLA_Commitments.html" title="Service Portfolio Management - SLA Commitments">Service Portfolio Management - SLA Commitments</a></li></ul>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#OLAs_and_Underpinning_Contracts"><span class="tocnumber">1.1</span> <span class="toctext">OLAs and Underpinning Contracts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Defining_an_SLA"><span class="tocnumber">2</span> <span class="toctext">Defining an SLA</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Setting_Up_the_SLA"><span class="tocnumber">3.1</span> <span class="toctext">Setting Up the SLA</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Testing_the_Service_Level_Agreement"><span class="tocnumber">3.2</span> <span class="toctext">Testing the Service Level Agreement</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#SLA_Troubleshooting"><span class="tocnumber">4</span> <span class="toctext">SLA Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Why_is_my_SLA_not_attaching.3F"><span class="tocnumber">4.1</span> <span class="toctext">Why is my SLA not attaching?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Condition_count_widget"><span class="tocnumber">4.1.1</span> <span class="toctext">Condition count widget</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Configuration_of_condition_types_in_Service_Level_Management"><span class="tocnumber">4.1.2</span> <span class="toctext">Configuration of condition types in Service Level Management</span></a>
+<ul>
+<li class="toclevel-4 tocsection-11"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Default_condition_type_.28SLAConditionBase.29"><span class="tocnumber">4.1.2.1</span> <span class="toctext">Default condition type (SLAConditionBase)</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Simple_condition_type_.28SLAConditionSimple.29"><span class="tocnumber">4.1.2.2</span> <span class="toctext">Simple condition type (SLAConditionSimple)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Why_do_I_have_cancelled_and_in_progress_SLAs_for_the_same_definition_on_my_task.3F"><span class="tocnumber">4.2</span> <span class="toctext">Why do I have cancelled and in progress SLAs for the same definition on my task?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Configuration_of_condition_types_in_Service_Level_Management_2"><span class="tocnumber">4.2.1</span> <span class="toctext">Configuration of condition types in Service Level Management</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#How_the_Default_and_Simple_condition_types_attach_and_cancel_task_SLAs"><span class="tocnumber">4.2.2</span> <span class="toctext">How the Default and Simple condition types attach and cancel task SLAs</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Default_condition_type_.28SLAConditionBase.29_2"><span class="tocnumber">4.2.2.1</span> <span class="toctext">Default condition type (SLAConditionBase)</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Simple_condition_type_.28SLAConditionSimple.29_2"><span class="tocnumber">4.2.2.2</span> <span class="toctext">Simple condition type (SLAConditionSimple)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Analyze_the_history_of_the_task"><span class="tocnumber">4.2.3</span> <span class="toctext">Analyze the history of the task</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Why_is_my_SLA_canceling.3F"><span class="tocnumber">4.3</span> <span class="toctext">Why is my SLA canceling?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Condition_count_widget_2"><span class="tocnumber">4.3.1</span> <span class="toctext">Condition count widget</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Configuration_of_condition_types_in_Service_Level_Management_3"><span class="tocnumber">4.3.2</span> <span class="toctext">Configuration of condition types in Service Level Management</span></a>
+<ul>
+<li class="toclevel-4 tocsection-22"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Default_condition_type_.28SLAConditionBase.29_3"><span class="tocnumber">4.3.2.1</span> <span class="toctext">Default condition type (SLAConditionBase)</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Simple_condition_type_.28SLAConditionSimple.29_3"><span class="tocnumber">4.3.2.2</span> <span class="toctext">Simple condition type (SLAConditionSimple)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#When_are_SLAs_calculated.3F"><span class="tocnumber">4.4</span> <span class="toctext">When are SLAs calculated?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Scheduled_jobs"><span class="tocnumber">4.4.1</span> <span class="toctext">Scheduled jobs</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Task_updates"><span class="tocnumber">4.4.2</span> <span class="toctext">Task updates</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Task_on-display"><span class="tocnumber">4.4.3</span> <span class="toctext">Task on-display</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-28"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#How_are_actual_and_business_values_calculated.3F"><span class="tocnumber">4.5</span> <span class="toctext">How are actual and business values calculated?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#SLA_engine_properties_that_influence_business_values"><span class="tocnumber">4.5.1</span> <span class="toctext">SLA engine properties that influence business values</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#SLA_Definitions"><span class="tocnumber">4.5.2</span> <span class="toctext">SLA Definitions</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Task_SLAs"><span class="tocnumber">4.5.3</span> <span class="toctext">Task SLAs</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Example_calculations"><span class="tocnumber">4.5.4</span> <span class="toctext">Example calculations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Why_are_my_business_values_not_calculating_correctly.3F"><span class="tocnumber">4.6</span> <span class="toctext">Why are my business values not calculating correctly?</span></a>
+<ul>
+<li class="toclevel-3 tocsection-34"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Schedule_attached_to_the_SLA"><span class="tocnumber">4.6.1</span> <span class="toctext">Schedule attached to the SLA</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="index.php%3Ftitle=Defining_an_SLA_with_Plugin.html#Schedule_entries_associated_with_the_attached_schedule"><span class="tocnumber">4.6.2</span> <span class="toctext">Schedule entries associated with the attached schedule</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-it-service-management/page/product/service-level-management/concept/c_ServiceLevelAgreements.html">Service Level Agreements</a> (SLAs) allow the service desk to track whether or not their representatives are providing a certain level of service. The most common use of SLAs is to ensure that incidents are resolved within a certain amount of time. 
+</p><p>A service offering SLA applies only to service offerings for business services. To define a service offering SLA, navigate to <b>Business Services &gt; Service Offering SLAs &gt; SLAs</b>. This functionality requires <a href="index.php%3Ftitle=Service_Portfolio_Management.html" title="Service Portfolio Management">Service Portfolio Management</a> and <a href="index.php%3Ftitle=Service_Portfolio_Management_-_SLA_Commitments.html" title="Service Portfolio Management - SLA Commitments">Service Portfolio Management - SLA Commitments</a>.
+</p><p>An SLA can be tied to a contract and service performance for a vendor, and credit can be automatically applied in the event of a breach. For more information, see <a href="index.php%3Ftitle=Vendor_Performance.html" title="Vendor Performance">Vendor Performance</a> and <a href="index.php%3Ftitle=Vendor_Credit.html" title="Vendor Credit">Vendor Credit</a>.
+</p>
+<h2><span class="mw-headline" id="OLAs_and_Underpinning_Contracts"><span class="mw-headline-number">1.1</span> OLAs and Underpinning Contracts</span></h2>
+<p>The task SLA engine provided with service level agreements can also be used to define operational level agreements (OLAs) or underpinning contracts in exactly the same way as SLAs. The only difference between SLAs, OLAs, and underpinning contracts is the <b>Type</b> field on the Task SLA form. Changing the type field does not change the behavior of the task SLA. 
+</p><p>For an example of an OLA, see <a href="index.php%3Ftitle=Defining_Service_Levels_for_Catalog_Fulfillment.html#Defining_an_OLA_for_a_Catalog_Task" title="Defining Service Levels for Catalog Fulfillment">Defining an OLA for Catalog Fulfillment</a>.
+</p>
+<h1><span class="mw-headline" id="Defining_an_SLA"><span class="mw-headline-number">2</span> Defining an SLA</span></h1>
+<p>When defining an SLA, the interaction of the <b>Duration</b> and <b>Schedule</b> fields is critical. For example, if you select a duration of 5 days and 2 hours and a 9-5 schedule, the 5 days and 2 hours are considered 122 hours (5 x 24 + 2). The 122 hours are distributed across the 9-5 schedule at 8 hours per day resulting in 15.25 schedule days (122/8 = 15.25).
+</p><p>To define an SLA:
+</p>
+<ol><li>Navigate to <b>Service Level Management &gt; SLA &gt; SLA Definitions</b>.</li>
+<li>Click <b>New</b>. </li>
+<li>Fill in the form, as appropriate (see table). </li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> An identifying name for the SLA.
+</td></tr>
+<tr>
+<td> Type
+</td>
+<td> The type of agreement being defined. This is used for informational purposes and does not affect the behavior of the SLA. Choices are:
+<ul><li>SLA </li>
+<li>OLA </li>
+<li>Underpinning Contract</li></ul>
+</td></tr>
+<tr>
+<td> Table
+</td>
+<td> The table whose records will be tracked by this SLA. This must be a table that extends the <a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task table</a>.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the SLA (starting with the Fuji release).</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Workflow
+</td>
+<td> The SLA workflow that determines what activities occur in response to the SLA. For more information, see <a href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" title="Creating an SLA Workflow">Creating an SLA Workflow</a>.
+</td></tr>
+<tr>
+<td> Retroactive start
+</td>
+<td> Enables an administrator to set a different triggering event for an SLA that is attached to a task after the task was created. If you select the <b>Retroactive start</b> check box, the <b>Set start to</b> field appears, offering options for starting the SLA from various events on the table selected. For example, if an incident's priority is changed to <b>1 - Critical</b> and a Priority 1 SLA is attached at that time, <b>Retroactive start</b> means that the SLA counts from when the incident was first created, rather than from when the incident's priority changed. If <b>Retroactive start</b> is cleared, the SLA starts on the date and time that it was attached to the incident.
+</td></tr>
+<tr>
+<td> Duration type
+</td>
+<td> Method for calculating the duration of the SLA. This can be a <b>User specified duration</b>, or a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Defining+Relative+Durations&amp;oldid=0.html" title="Defining Relative Durations">relative duration</a>, such as <b>End of next business day</b>.
+</td></tr>
+<tr>
+<td> Duration
+</td>
+<td> [Required] The length of time the SLA runs before it is marked <b>Breached</b>. This field appears only when the <b>Duration type</b> selected is <b>User specified duration</b>.
+<p><b>Note:</b> <i>The number of days specified in this field is converted to 24-hour blocks. If the <b>Schedule</b> field identifies a schedule with eight-hour days, a duration of <b>1 Day</b> sets the SLA to breach three business days later.</i> 
+</p>
+</td></tr>
+<tr>
+<td> Schedule
+</td>
+<td> The hours during which the SLA timer runs. The schedule can be taken from SLA definitions or from CIs as defined by on the SLA Properties page. For an example of defining an SLA schedule, see <a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a>. For general information on schedules, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Schedules&amp;oldid=0.html" title="Using Schedules">Using Schedules</a>.
+</td></tr>
+<tr>
+<td> Timezone
+</td>
+<td> Time zone for the SLA if <b>The SLA definition's time zone</b> is selected for the <b>Use the following time zone for SLA</b> property  in <b>Service Level Management &gt; SLA Properties</b>. This value is not used if the property has a different setting. For more information, see <a href="index.php%3Ftitle=Using_Time_Zones.html" title="Using Time Zones">Using Time Zones</a>.
+</td></tr>
+<tr>
+<td> Relative duration works on
+</td>
+<td> For <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Defining+Relative+Durations&amp;oldid=0.html" title="Defining Relative Durations">relative durations</a>, specify the record against which the relative duration should be calculated. Select to use either <b>Task record</b> (the default) or <b>SLA record</b>.
+<p>This field appears only when the <b>Duration type</b> selected is <b>Relative duration</b>.
+</p>
+</td></tr>
+<tr>
+<td> Set start to
+</td>
+<td> The event that triggers the start of this SLA. Options available are based on date and time fields in the selected table. This field is visible only when <b>Retroactive start</b> is selected. You can select vendor events to trigger your SLA, starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>.
+<p>If <a href="index.php%3Ftitle=Vendor_Ticketing.html" title="Vendor Ticketing">vendor ticketing</a> is active, vendor-specific options are available in this field for SLAs on the Incident [incident] table (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>. You can select <b>Vendor open</b>, for example, to start the SLA when the incident <b>State</b> changes to <b>Awaiting vendor</b>. For more information, see <a href="index.php%3Ftitle=Using_Vendor_Ticketing.html" title="Using Vendor Ticketing">Using Vendor Ticketing</a>. 
+</p>
+</td></tr>
+<tr>
+<td> Vendor
+</td>
+<td> The vendor providing the service for this SLA. This field is installed with <a href="index.php%3Ftitle=Vendor_Ticketing.html" title="Vendor Ticketing">vendor ticketing</a>, starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>.
+</td></tr>
+<tr>
+<td> Start condition
+</td>
+<td> Conditions for starting the SLA, defined in the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Condition+Builder&amp;oldid=0.html" title="Condition Builder">condition builder</a>. If these conditions are met, the system attaches an SLA to a task on the <b>Table</b> and begins the timing. All conditions used to define an SLA are case sensitive.
+</td></tr>
+<tr>
+<td> Stop condition
+</td>
+<td> Conditions for stopping the SLA, defined in the condition builder. If these conditions are met, the system stops the SLA timer. If these conditions are met before the end of the duration defined in the <b>Duration type</b> and <b>Duration</b> fields has elapsed, the SLA state is set to <b>Achieved.</b> If these conditions are no longer met, the SLA does not resume. However, if the <b>Start conditions</b> are met again, a new SLA is attached.
+</td></tr>
+<tr>
+<td> Pause condition
+</td>
+<td> Conditions for pausing the SLA, defined in the condition builder. If these conditions are met, the system pauses the SLA timer. Once the conditions are no longer met, the SLA resumes. Pause conditions are not compatible with relative durations.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" align="center" colspan="3"> <i>Related Lists</i>
+</td></tr>
+<tr>
+<td> Service Commitments
+</td>
+<td> List of all <a href="index.php%3Ftitle=Service_Offerings.html#Service_Commitments" title="Service Offerings">service commitments</a> for this service offering. Click <b>New</b> to create a new service commitment. This related list is available starting with the Dublin release.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" align="center" colspan="3"> <i>Fields that can be added by <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configuring the form</a></i>
+</td></tr>
+<tr>
+<td> Condition class
+</td>
+<td> String value of an SLA Condition Rules record to use instead of the global Condition Rules. If blank, the global rules are used. For more information, see <a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html" title="Modifying SLA Condition Rules">Modifying SLA Condition Rules</a>.
+</td></tr>
+<tr>
+<td> Reset conditions
+</td>
+<td> Conditions for resetting the SLA, defined in the condition builder. If these conditions are met, the system completes the current SLA and starts a new one.
+</td></tr></table>
+<p><br />
+</p><p><a href="index.php%3Ftitle=File:SLA_Definition.png.html" class="image" title="Service offering SLA definition form"><img alt="Service offering SLA definition form" src="images/thumb/a/af/SLA_Definition.png/750px-SLA_Definition.png" width="750" height="473" srcset="/images/a/af/SLA_Definition.png 1.5x, /images/a/af/SLA_Definition.png 2x" /></a>
+</p>
+<h1><span class="mw-headline" id="Example"><span class="mw-headline-number">3</span> Example</span></h1>
+<p>This example demonstrates how to create a service level agreement to ensure that critical incidents logged in Paris are handled within 1 business day. This example uses the demo data within the system. 
+</p>
+<h2><span class="mw-headline" id="Setting_Up_the_SLA"><span class="mw-headline-number">3.1</span> Setting Up the SLA</span></h2>
+<p>To define the SLA: 
+</p>
+<ol><li>Navigate to <b>Service Level Management &gt; SLA Definitions</b>.</li>
+<li>Click <b>New</b>. </li>
+<li>Select <b>Contract SLA</b> as the SLA type.
+<dl><dd>This type does not require a service offering with service commitments. The system completes these fields automatically:</dd></dl>
+<ul><li><b>Type:</b> The type is <b>SLA</b>. Although the type does not change the behavior of the SLA, it does help distinguish between agreements with customers, vendors, and internal departments. </li>
+<li><b>Table:</b> Incident [incident] is the default table.</li>
+<li><b>Workflow:</b> The system selects the <b>Default SLA Workflow</b>. To learn how to create a custom workflow for SLAs, see <a href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" title="Creating an SLA Workflow">Creating a Service Level Management Workflow</a>. </li>
+<li><b>Duration type:</b> The default type is <b>User specified duration.</b> </li>
+<li><b>Timezone:</b> The system enters the local timezone.</li></ul></li>
+<li>Enter <b>Priority 1 Incident (Paris)</b> as the <b>Name</b> of this SLA.</li>
+<li>Select a <b>Duration</b> of 1 day.</li>
+<li>In the <b>Schedule</b> field, select <b>8-5 weekdays</b>. 
+<dl><dd>This runs the timer between the hours of 8 am and 5 pm on weekdays.</dd></dl></li>
+<li>Select <b>Microsoft</b> as the vendor for this contract.
+<dl><dd>The <b>Vendor</b> field is added when <a href="index.php%3Ftitle=Vendor_Ticketing.html" title="Vendor Ticketing">vendor ticketing</a> is active (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>).</dd></dl></li>
+<li>Create these conditions:
+<ul><li><b>Start condition:</b> <i>[Location] [is] [Paris]</i>, <i>[Priority] [is] [1 - Critical]</i> AND <i>[Active] [is] [True]</i>. The SLA attaches to active Priority 1 incidents in Paris. </li>
+<li><b>Stop condition:</b> <i>[Active] [is] [False]</i>. When a user closes or resolves the incident, the SLA stops tracking time. </li>
+<li><b>Pause condition:</b> <i>[State] [is one of] [Awaiting Problem, Awaiting User Info, Awaiting Evidence]</i>. This avoids tracking time while the service desk is waiting for outside events.</li></ul></li>
+<li>Click <b>Submit.</b>
+<dl><dd>The completed form looks like this:</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:SLA_Example_Dublin.png.html" class="image" title="Sample SLA"><img alt="Sample SLA" src="images/thumb/2/25/SLA_Example_Dublin.png/750px-SLA_Example_Dublin.png" width="750" height="392" srcset="/images/2/25/SLA_Example_Dublin.png 1.5x, /images/2/25/SLA_Example_Dublin.png 2x" /></a> </dd>
+<dd><br /></dd>
+<dd>Whenever an incident in Paris is listed as being priority 1, the system launches the following workflow. This workflow pauses if the incident is awaiting user information or evidence, and completes if the incident becomes inactive.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:SLA_Workflow.png.html" class="image" title="Default SLA workflow"><img alt="Default SLA workflow" src="images/thumb/f/f0/SLA_Workflow.png/750px-SLA_Workflow.png" width="750" height="348" srcset="/images/thumb/f/f0/SLA_Workflow.png/1125px-SLA_Workflow.png 1.5x, /images/f/f0/SLA_Workflow.png 2x" /></a></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Testing_the_Service_Level_Agreement"><span class="mw-headline-number">3.2</span> Testing the Service Level Agreement</span></h2>
+<ol><li>Navigate to <b>Incident &gt; Create New</b>. </li>
+<li>Complete the form, making sure to select the following values:
+<ul><li>Set the <b>Impact</b> and <b>Urgency</b> to <b>1 - High</b>. These settings change the <b>Priority</b> to <b>1 - Critical</b>.</li>
+<li>Select <b>Paris</b> as the <b>Location</b>. </li></ul>
+<dl><dd>The other data in the form is not used in this test.</dd></dl></li>
+<li>Click <b>Submit.</b>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Test_Incident_Dublin.png.html" class="image" title="Incident starting a priority 1 SLA"><img alt="Incident starting a priority 1 SLA" src="images/thumb/4/42/Test_Incident_Dublin.png/750px-Test_Incident_Dublin.png" width="750" height="498" srcset="/images/4/42/Test_Incident_Dublin.png 1.5x, /images/4/42/Test_Incident_Dublin.png 2x" /></a> </dd>
+<dd><br /></dd></dl></li>
+<li>Select the <b>Task SLAs</b> related list.
+<dl><dd>When you submit the incident, the system starts the <b>Priority 1 Incident (Paris)</b> SLA and the <b>Priority 1 resolution (8 hour)</b>, which is included with SLA demonstration data. This SLA tracks progress for priority 1 incidents with a 1 day duration.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Test_SLA_Dublin.png.html" class="image" title="Contract SLAs started with this incident"><img alt="Contract SLAs started with this incident" src="images/thumb/0/0c/Test_SLA_Dublin.png/750px-Test_SLA_Dublin.png" width="750" height="142" srcset="/images/0/0c/Test_SLA_Dublin.png 1.5x, /images/0/0c/Test_SLA_Dublin.png 2x" /></a> </dd>
+<dd><br /></dd></dl></li>
+<li>Click the reference icon for the <b>Priority 1 Incident (Paris)</b> SLA to display information about this instance of the task SLA.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Test_SLA2_Dublin.png.html" class="image" title="SLA timing information"><img alt="SLA timing information" src="images/thumb/8/82/Test_SLA2_Dublin.png/750px-Test_SLA2_Dublin.png" width="750" height="287" srcset="/images/8/82/Test_SLA2_Dublin.png 1.5x, /images/8/82/Test_SLA2_Dublin.png 2x" /></a> </dd>
+<dd><br /></dd>
+<dd> See <a href="index.php%3Ftitle=Service_Level_Agreements.html#Task_SLA" title="Service Level Agreements">Service Level Agreements</a> for more details about the task SLA.</dd></dl></li>
+<li>Under <b>Related Links</b>, click <b>Show Workflow</b> to display the workflow for this SLA.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Test_Workflow_Dublin.png.html" class="image" title="SLA workflow in progress"><img alt="SLA workflow in progress" src="images/thumb/b/bf/Test_Workflow_Dublin.png/750px-Test_Workflow_Dublin.png" width="750" height="245" srcset="/images/b/bf/Test_Workflow_Dublin.png 1.5x, /images/b/bf/Test_Workflow_Dublin.png 2x" /></a> </dd></dl></li></ol>
+<h1><span class="mw-headline" id="SLA_Troubleshooting"><span class="mw-headline-number">4</span> SLA Troubleshooting</span></h1>
+<h2><span class="mw-headline" id="Why_is_my_SLA_not_attaching.3F"><span class="mw-headline-number">4.1</span> Why is my SLA not attaching?</span></h2>
+<p>To investigate the reason for the SLA not attaching to a task, you must check for the following: 
+</p>
+<ol><li>Condition count widget</li>
+<li>Configuration of condition types in Service Level Management
+<ul><li>Default condition type (SLAConditionBase)</li>
+<li>Simple condition type (SLAConditionSimple)</li></ul></li></ol>
+<h3><span class="mw-headline" id="Condition_count_widget"><span class="mw-headline-number">4.1.1</span> Condition count widget</span></h3>
+<p>If your system is running on the Fuji release or later, you can add an attribute to the condition fields on the SLA Definition table to enable the <a href="index.php%3Ftitle=Condition_Count_Widget.html" title="Condition Count Widget">Condition Count Widget</a>. Enabling this feature will make it easier when troubleshooting.
+</p>
+<h3><span class="mw-headline" id="Configuration_of_condition_types_in_Service_Level_Management"><span class="mw-headline-number">4.1.2</span> Configuration of condition types in Service Level Management</span></h3>
+<p>Condition types are script includes that the SLA engine uses to determine whether to start, stop, pause, cancel or reset a Task SLA.
+</p>
+<dl><dd>To determine how condition types have been configured within Service level management:</dd>
+<dd><b>Note:</b> <i>These instructions only consider the two condition types provided by default. They do not consider customized or new condition types.</i></dd></dl>
+<ol><li>Navigate to the list of SLA Definitions. Personalize the list and add the Condition type field. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the value in the field. For example, either SLAConditionBase or SLAConditionSimple.  If the field is empty continue to step 2 below.</li>
+<li>Replace &lt;your-instance-name&gt; with your instance’s name in the following URL: http://&lt;your-instance-name&gt;.service-now.com/nav_to.do?uri=sys_properties.do?sys_id=956cb8b40a0a2c8941be2324e33ae3a9. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the property value. For example, either SLAConditionBase or SLAConditionSimple.</li></ol>
+<h4><span class="mw-headline" id="Default_condition_type_.28SLAConditionBase.29"><span class="mw-headline-number">4.1.2.1</span> Default condition type (SLAConditionBase)</span></h4>
+<p>When using the Default condition type, Task SLA records only attach when the Start conditions match and the Stop conditions do not match. 
+</p>
+<dl><dd>The following flow diagram demonstrates the process.</dd></dl>
+<p><a href="index.php%3Ftitle=File:DefaultCT.png.html" class="image"><img alt="DefaultCT.png" src="images/thumb/f/fb/DefaultCT.png/500px-DefaultCT.png" width="500" height="261" srcset="/images/thumb/f/fb/DefaultCT.png/750px-DefaultCT.png 1.5x, /images/thumb/f/fb/DefaultCT.png/1000px-DefaultCT.png 2x" /></a>
+</p>
+<ol><li>Check the start conditions.
+<ol><li>If you have enabled the Condition Count widget attribute, click on the link for start conditions. If not, then open a list of incident records and replicate your start conditions.</li>
+<li>Add another condition to your filter that includes a task record (blue 3) that should have a Task SLA attached to it. This will confirm that your Start condition matches the correct task. The list should look similar to the screenshot below.
+<dl><dd><a href="index.php%3Ftitle=File:DefaultCT2.png.html" class="image"><img alt="DefaultCT2.png" src="images/thumb/e/e1/DefaultCT2.png/700px-DefaultCT2.png" width="700" height="223" srcset="/images/thumb/e/e1/DefaultCT2.png/1050px-DefaultCT2.png 1.5x, /images/e/e1/DefaultCT2.png 2x" /></a></dd></dl></li>
+<li>If your filter does not bring up any records, it is likely that your Start condition is the reason SLAs are not attaching. To determine the conditions that are causing the problem:
+<ol><li>In your current list, remove all the conditions except for the one specifying your Task record. Remove conditions for blue 1 and 2 and retain 3.
+<ol><li>Add one of your filter conditions.</li>
+<li>Click Run.</li>
+<li>If your record is no longer in the list, take note of that condition and remove it.</li>
+<li>Repeat steps 1 to 3 until there are no conditions left to add. From the notes you have made of the conditions you removed, these are the ones that do not match your task.</li>
+<li>You must now change your Start conditions in order for it to match correctly.</li></ol></li>
+<li>If your filter brings up a record, your Stop condition must be checked.</li></ol></li></ol></li>
+<li>Check the stop conditions.
+<ol><li>Repeat steps 1.1 and 1.2, this time using the Stop conditions.</li>
+<li>If your filter brings up the same record as in step 1, the problem is that your Start and your Stop conditions match at the same time and this is the reason the SLAs do not attach.</li></ol></li></ol>
+<h4><span class="mw-headline" id="Simple_condition_type_.28SLAConditionSimple.29"><span class="mw-headline-number">4.1.2.2</span> Simple condition type (SLAConditionSimple)</span></h4>
+<p>When using the Simple condition type, Task SLA records will only attach when the Start conditions match. If the Stop Conditions match when a Task SLA is being attached, the Task SLA will still be processed but it will be completed immediately. The following flow diagram demonstrates the process.
+<a href="index.php%3Ftitle=File:SimpleCT.png.html" class="image"><img alt="SimpleCT.png" src="images/thumb/5/5a/SimpleCT.png/500px-SimpleCT.png" width="500" height="261" srcset="/images/thumb/5/5a/SimpleCT.png/750px-SimpleCT.png 1.5x, /images/thumb/5/5a/SimpleCT.png/1000px-SimpleCT.png 2x" /></a>
+</p>
+<ol><li>Check the start conditions.
+<ol><li>If you have enabled the Condition Count widget attribute, click on the link for start conditions. If not, then open a list of incident records and replicate your start conditions.</li>
+<li>Add another condition to your filter that includes a task record (blue 3) that should have a Task SLA attached to it. This will confirm that your Start condition matches the correct task. The list should look similar to the screenshot below.
+<dl><dd><a href="index.php%3Ftitle=File:SimpleCT2.png.html" class="image"><img alt="SimpleCT2.png" src="images/thumb/1/19/SimpleCT2.png/700px-SimpleCT2.png" width="700" height="223" srcset="/images/thumb/1/19/SimpleCT2.png/1050px-SimpleCT2.png 1.5x, /images/1/19/SimpleCT2.png 2x" /></a></dd></dl></li>
+<li>If your filter does not bring up any records, it is likely that your Start condition is the reason SLAs are not attaching. To determine the conditions that are causing the problem:
+<ol><li>In your current list, remove all the conditions except for the one specifying your Task record. Remove conditions for blue 1 and 2 and retain 3.
+<ol><li>Add one of your filter conditions.</li>
+<li>Click Run.</li>
+<li>If your record is no longer in the list, take note of that condition and remove it.</li>
+<li>Repeat steps 1 to 3 until there are no conditions left to add. From the notes you have made of the conditions you removed, these are the ones that do not match your task.</li>
+<li>You must now change your Start conditions in order for it to match correctly.</li></ol></li></ol></li></ol></li></ol>
+<h2><span class="mw-headline" id="Why_do_I_have_cancelled_and_in_progress_SLAs_for_the_same_definition_on_my_task.3F"><span class="mw-headline-number">4.2</span> Why do I have cancelled and in progress SLAs for the same definition on my task?</span></h2>
+<p>To investigate the reason for cancelled and in progress SLAs for the same definition on a task, you must check for the following: 
+</p>
+<ol><li>Configuration of condition types in Service Level Management</li>
+<li>How the Default and Simple condition types attach and cancel task SLAs</li>
+<li>Analyze the history of the task</li></ol>
+<h3><span class="mw-headline" id="Configuration_of_condition_types_in_Service_Level_Management_2"><span class="mw-headline-number">4.2.1</span> Configuration of condition types in Service Level Management</span></h3>
+<p>Condition types are script includes that the SLA engine uses to determine whether to start, stop, pause, cancel or reset a Task SLA.
+</p>
+<dl><dd>To determine how condition types have been configured within Service level management:</dd>
+<dd><b>Note:</b> <i>These instructions only consider the two condition types provided by default. They do not consider customized or new condition types.</i></dd></dl>
+<ol><li>Navigate to the list of SLA Definitions. Personalize the list and add the Condition type field. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the value in the field. For example, either SLAConditionBase or SLAConditionSimple.  If the field is empty continue to step 2 below.</li>
+<li>Replace &lt;your-instance-name&gt; with your instance’s name in the following URL: http:// &lt;your-instance-name&gt;.service-now.com/nav_to.do?uri=sys_properties.do?sys_id=956cb8b40a0a2c8941be2324e33ae3a9. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the property value. For example, either SLAConditionBase or SLAConditionSimple.</li></ol>
+<h3><span class="mw-headline" id="How_the_Default_and_Simple_condition_types_attach_and_cancel_task_SLAs"><span class="mw-headline-number">4.2.2</span> How the Default and Simple condition types attach and cancel task SLAs</span></h3>
+<h4><span class="mw-headline" id="Default_condition_type_.28SLAConditionBase.29_2"><span class="mw-headline-number">4.2.2.1</span> Default condition type (SLAConditionBase)</span></h4>
+<p>When using the Default condition type:
+</p>
+<dl><dd><ul><li>Task SLA records only attach when the Start conditions match and the Stop conditions do not match.</li>
+<li>Task SLA records cancel when a task is updated so that the Start condition no longer matches and the Stop conditions do not match.</li></ul></dd>
+<dd>The following flow diagram demonstrates how a series of updates to a task can result in both a cancelled and an in progress Task SLA record being attached to a task. </dd></dl>
+<p><a href="index.php%3Ftitle=File:DefaultCTProcess.png.html" class="image"><img alt="DefaultCTProcess.png" src="images/thumb/a/ab/DefaultCTProcess.png/500px-DefaultCTProcess.png" width="500" height="425" srcset="/images/thumb/a/ab/DefaultCTProcess.png/750px-DefaultCTProcess.png 1.5x, /images/thumb/a/ab/DefaultCTProcess.png/1000px-DefaultCTProcess.png 2x" /></a>
+</p>
+<h4><span class="mw-headline" id="Simple_condition_type_.28SLAConditionSimple.29_2"><span class="mw-headline-number">4.2.2.2</span> Simple condition type (SLAConditionSimple)</span></h4>
+<p>When using the Simple condition type:
+</p>
+<dl><dd><ul><li>Task SLA records will only attach when the Start conditions match. If the Stop Conditions match when a Task SLA is being attached, the Task SLA will still be processed but it will be completed. </li>
+<li>Task SLA records will cancel when the task is updated so that the start condition no longer matches and the pause condition does not match.</li></ul></dd>
+<dd>The following flow diagram demonstrates how a series of updates to a task can result in both a cancelled and an in progress Task SLA record being attached to a task.</dd></dl>
+<p><a href="index.php%3Ftitle=File:SimpleCTProcess.png.html" class="image"><img alt="SimpleCTProcess.png" src="images/thumb/2/2d/SimpleCTProcess.png/500px-SimpleCTProcess.png" width="500" height="425" srcset="/images/thumb/2/2d/SimpleCTProcess.png/750px-SimpleCTProcess.png 1.5x, /images/thumb/2/2d/SimpleCTProcess.png/1000px-SimpleCTProcess.png 2x" /></a>
+</p>
+<h3><span class="mw-headline" id="Analyze_the_history_of_the_task"><span class="mw-headline-number">4.2.3</span> Analyze the history of the task</span></h3>
+<p>To determine which updates to the task caused the task SLAs to be attached or cancelled, you can use the audit history filtered to only show the field changes that are part of the conditions on the SLA Definition.
+This process of analyzing the history can be used to determine why the Task SLAs linked to a task are in a particular state.
+For example, consider the start and stop conditions in the screenshot below: 
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:SLAAnalysis1.png.html" class="image"><img alt="SLAAnalysis1.png" src="images/thumb/8/80/SLAAnalysis1.png/500px-SLAAnalysis1.png" width="500" height="154" srcset="/images/thumb/8/80/SLAAnalysis1.png/750px-SLAAnalysis1.png 1.5x, /images/thumb/8/80/SLAAnalysis1.png/1000px-SLAAnalysis1.png 2x" /></a></dd></dl>
+<p>The audit history of the Active, Priority, and Incident state fields will enable you to determine when this SLA would attach or cancel.
+To view the history of a task:
+</p>
+<ol><li>Navigate to the Action menu on the form and choose History &gt; List.
+<dl><dd><a href="index.php%3Ftitle=File:SLAAnalysis2.png.html" class="image"><img alt="SLAAnalysis2.png" src="images/thumb/2/2e/SLAAnalysis2.png/500px-SLAAnalysis2.png" width="500" height="515" srcset="/images/2/2e/SLAAnalysis2.png 1.5x, /images/2/2e/SLAAnalysis2.png 2x" /></a></dd></dl></li>
+<li>A list containing details of the updates to all fields on the task is displayed. You can filter by Field as demonstrated in the screenshot below.
+<dl><dd><a href="index.php%3Ftitle=File:SLAAnalysis3.png.html" class="image"><img alt="SLAAnalysis3.png" src="images/thumb/2/2a/SLAAnalysis3.png/650px-SLAAnalysis3.png" width="650" height="245" srcset="/images/thumb/2/2a/SLAAnalysis3.png/975px-SLAAnalysis3.png 1.5x, /images/2/2a/SLAAnalysis3.png 2x" /></a></dd></dl></li>
+<li>The list of field changes enable you to determine when the SLA would have attached or cancelled.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Update number
+</th>
+<th> Matching SLA conditions
+</th>
+<th> SLA action
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Start condition matches
+<p>Stop condition does not match
+</p>
+</td>
+<td> New Task SLA created and attached
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> Start condition does not match
+<p>Stop condition does not match
+</p>
+</td>
+<td> Existing Task SLA cancelled
+</td></tr>
+
+<tr>
+<td> 2
+</td>
+<td> Start condition matches
+<p>Stop condition does not match
+</p>
+</td>
+<td> New Task SLA created and attached
+</td></tr>
+</table>
+<h2><span class="mw-headline" id="Why_is_my_SLA_canceling.3F"><span class="mw-headline-number">4.3</span> Why is my SLA canceling?</span></h2>
+<p>To investigate the reason for the SLA canceling, you must check for the following: 
+</p>
+<ol><li>Condition count widget</li>
+<li>Configuration of condition types in Service Level Management
+<ul><li>Default condition type (SLAConditionBase)</li>
+<li>Simple condition type (SLAConditionSimple)</li></ul></li></ol>
+<h3><span class="mw-headline" id="Condition_count_widget_2"><span class="mw-headline-number">4.3.1</span> Condition count widget</span></h3>
+<p>If your system is running on the Fuji release or later, you can add an attribute to the condition fields on the SLA Definition table to enable the <a href="index.php%3Ftitle=Condition_Count_Widget.html" title="Condition Count Widget">Condition Count Widget</a>. Enabling this feature will make it easier when troubleshooting.
+</p>
+<h3><span class="mw-headline" id="Configuration_of_condition_types_in_Service_Level_Management_3"><span class="mw-headline-number">4.3.2</span> Configuration of condition types in Service Level Management</span></h3>
+<p>Condition types are script includes that the SLA engine uses to determine whether to start, stop, pause, cancel or reset a Task SLA.
+</p>
+<dl><dd>To determine how condition types have been configured within Service level management:</dd>
+<dd><b>Note:</b> <i>These instructions only consider the two condition types provided by default. They do not consider customized or new condition types.</i></dd></dl>
+<ol><li>Navigate to the list of SLA Definitions. Personalize the list and add the Condition type field. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the value in the field. For example, either SLAConditionBase or SLAConditionSimple.  If the field is empty continue to step 2 below.</li>
+<li>Replace &lt;your-instance-name&gt; with your instance’s name in the following URL: http:// &lt;your-instance-name&gt;.service-now.com/nav_to.do?uri=sys_properties.do?sys_id=956cb8b40a0a2c8941be2324e33ae3a9. Go to Default (SLAConditionBase) or Simple (SLAConditionSimple) depending on the property value. For example, either SLAConditionBase or SLAConditionSimple.</li></ol>
+<h4><span class="mw-headline" id="Default_condition_type_.28SLAConditionBase.29_3"><span class="mw-headline-number">4.3.2.1</span> Default condition type (SLAConditionBase)</span></h4>
+<p>When using the Default condition type, task SLA records cancel when the Stop, Reset, and Start conditions do not match.
+</p>
+<dl><dd>The following flow diagram demonstrates the process.</dd></dl>
+<p><a href="index.php%3Ftitle=File:DefaultCTCancel.png.html" class="image"><img alt="DefaultCTCancel.png" src="images/thumb/c/c3/DefaultCTCancel.png/500px-DefaultCTCancel.png" width="500" height="263" srcset="/images/thumb/c/c3/DefaultCTCancel.png/750px-DefaultCTCancel.png 1.5x, /images/thumb/c/c3/DefaultCTCancel.png/1000px-DefaultCTCancel.png 2x" /></a>
+</p>
+<ol><li>Check the start conditions.
+<ol><li>If you have enabled the Condition Count widget attribute, click on the link for start conditions. If not, then open a list of incident records and replicate your start conditions.</li>
+<li>Add another condition to your filter that includes a task record (blue 3) that should have a running Task SLA attached to it. The list should look similar to the screenshot below.
+<dl><dd><a href="index.php%3Ftitle=File:DefaultCTCancel2.png.html" class="image"><img alt="DefaultCTCancel2.png" src="images/thumb/7/7a/DefaultCTCancel2.png/700px-DefaultCTCancel2.png" width="700" height="252" srcset="/images/7/7a/DefaultCTCancel2.png 1.5x, /images/7/7a/DefaultCTCancel2.png 2x" /></a></dd></dl></li>
+<li>If your filter does not bring up any records, your Start condition is the reason SLAs are canceling. To determine the conditions that are causing the problem:
+<ol><li>In your current list, remove all the conditions except for the one specifying your Task record. Remove conditions for blue 1 and 2 and retain 3.
+<ol><li>Add one of your filter conditions.</li>
+<li>Click Run.</li>
+<li>If your record is no longer in the list, take note of that condition and remove it.</li>
+<li>Repeat steps 1 to 3 until there are no conditions left to add. From the notes you have made of the conditions you removed, these are the ones that do not match your task.</li>
+<li>You must now change your Start conditions in order for it to match correctly.</li></ol></li></ol></li></ol></li></ol>
+<h4><span class="mw-headline" id="Simple_condition_type_.28SLAConditionSimple.29_3"><span class="mw-headline-number">4.3.2.2</span> Simple condition type (SLAConditionSimple)</span></h4>
+<p>When using the Simple condition type, Task SLA records cancel when the Stop, Reset, Pause and Start conditions do not match. 
+The following flow diagram demonstrates the process.
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:SimpleCTCancel.png.html" class="image"><img alt="SimpleCTCancel.png" src="images/thumb/5/57/SimpleCTCancel.png/500px-SimpleCTCancel.png" width="500" height="236" srcset="/images/thumb/5/57/SimpleCTCancel.png/750px-SimpleCTCancel.png 1.5x, /images/thumb/5/57/SimpleCTCancel.png/1000px-SimpleCTCancel.png 2x" /></a></dd></dl>
+<ol><li>Check the start conditions.
+<ol><li>If you have enabled the Condition Count widget attribute, click on the link for start conditions. If not, then open a list of incident records and replicate your start conditions.</li>
+<li>Add another condition to your filter that includes a task record (blue 3) that should have a Task SLA attached to it. This will confirm that your Start condition matches the correct task. 
+<dl><dd>The list should look similar to the screenshot below.</dd>
+<dd><a href="index.php%3Ftitle=File:SimpleCTCancel2.png.html" class="image"><img alt="SimpleCTCancel2.png" src="images/thumb/f/f6/SimpleCTCancel2.png/700px-SimpleCTCancel2.png" width="700" height="269" srcset="/images/f/f6/SimpleCTCancel2.png 1.5x, /images/f/f6/SimpleCTCancel2.png 2x" /></a></dd></dl></li>
+<li>If your filter does not bring up any records, your Start condition is the reason SLAs are canceling. 
+<dl><dd>To determine the conditions that are causing the problem:</dd></dl>
+<ol><li>In your current list, remove all the conditions except for the one specifying your Task record. Remove conditions for blue 1 and 2 and retain 3.
+<ol><li>Add one of your filter conditions.</li>
+<li>Click Run.</li>
+<li>If your record is no longer in the list, take note of that condition and remove it.</li>
+<li>Repeat steps 1 to 3 until there are no conditions left to add. From the notes you have made of the conditions you removed, these are the ones that do not match your task.</li>
+<li>You must now change your Start conditions in order for it to match correctly.</li></ol></li></ol></li></ol></li></ol>
+<h2><span class="mw-headline" id="When_are_SLAs_calculated.3F"><span class="mw-headline-number">4.4</span> When are SLAs calculated?</span></h2>
+<p>To determine when SLAs are calculated, check the status of the following:
+</p>
+<ol><li>Scheduled jobs</li>
+<li>Task updates</li>
+<li>Task on-display</li></ol>
+<h3><span class="mw-headline" id="Scheduled_jobs"><span class="mw-headline-number">4.4.1</span> Scheduled jobs</span></h3>
+<p>There are six scheduled jobs that calculate Task SLAs based on how close the SLA is to breaching (reaching its Planned end time).
+</p>
+<ol><li>SLA update (already breached): refreshes the timings in task SLA records that have already breached. This is limited to task SLAs where the breach time is within the last 365 days. This job runs once a day.</li>
+<li>SLA update (breach after 30 days): refreshes the timings in task SLA records where the breach time is more than 30 days away. This is limited to task SLA records where the breach time is within the next 365 days. This job runs every 5 days.</li>
+<li>SLA update (breach within 30 days): refreshes the timings in task SLA records where the breach time is more than 1 day away and less than 30 days away. This job runs once a day.</li>
+<li>SLA update (breach within 1 day): refreshes the timings in task SLA records where the breach time is more than 1 hour away and less than 24 hours away. This job runs every hour.</li>
+<li>SLA update (breach within 1 hour): refreshes the timings in task SLA records where the breach time is more than 10 minutes away and less than 1 hours away. This job runs every 10 minutes.</li>
+<li>SLA update (breach within 10 min): refreshes the timings in task SLA records where the breach time is in the next 10 minutes. This job runs every minute.</li></ol>
+<p>The scheduled jobs calculate all active Task SLA records that are not paused and have a Planned end time that falls into the given breach timeframe
+</p>
+<h3><span class="mw-headline" id="Task_updates"><span class="mw-headline-number">4.4.2</span> Task updates</span></h3>
+<p>Whenever a task such as an incident is updated, the SLA engine processes each of the task SLA records that are linked to it.  This may include a task SLA that has recently attached to the task.
+</p><p>If the updates to the task results in a stage change on a task SLA, the latest timings will be calculated. For example, if  the stage changes from In Progress to Paused, then the latest timings are calculated.
+</p>
+<h3><span class="mw-headline" id="Task_on-display"><span class="mw-headline-number">4.4.3</span> Task on-display</span></h3>
+<p>The system property glide.sla.calculate_on_display enables task SLA records to calculate when the task form is displayed for all active Task SLA records that are not paused. This ensures current Task SLA timings are up to date.
+</p>
+<dl><dd><b>Note:</b> The time taken to load the form increases if the calculate on display property is enabled.</dd></dl>
+<h2><span class="mw-headline" id="How_are_actual_and_business_values_calculated.3F"><span class="mw-headline-number">4.5</span> How are actual and business values calculated?</span></h2>
+<p>Actual and business values are calculated using the following:
+</p>
+<ol><li>SLA engine properties that influence business values</li>
+<li>SLA Definitions</li>
+<li>Task SLAs</li></ol>
+<h3><span class="mw-headline" id="SLA_engine_properties_that_influence_business_values"><span class="mw-headline-number">4.5.1</span> SLA engine properties that influence business values</span></h3>
+<p>The following two SLA properties determine the selection of the schedule and timezone during the creation of Task SLA, thereby influencing the calculation of business fields on a Task SLA.
+</p>
+<ul><li>Use the following schedule (calendar) for SLA (com.snc.sla.schedule.source)</li></ul>
+<dl><dd>This property determines where the schedule is derived from during the creation of an SLA.</dd>
+<dd><b>Note:</b> The default value for this property is The SLA definition’s schedule.</dd>
+<dd>See: <a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a></dd></dl>
+<ul><li>Use the following time zone for SLA (com.snc.sla.timezone.source)</li></ul>
+<dl><dd>This property determines where the time zone is derived from during the creation of an SLA.</dd>
+<dd><b>Note:</b> The default value for this property is The caller’s time zone. This is the time zone of the user selected in the Caller/Opened by field on the Task that the Task SLA record is related to.</dd>
+<dd>See: <a href="index.php%3Ftitle=Using_Time_Zones.html" title="Using Time Zones">Time Zones in Service Level Agreements</a></dd></dl>
+<h3><span class="mw-headline" id="SLA_Definitions"><span class="mw-headline-number">4.5.2</span> SLA Definitions</span></h3>
+<p>A task SLA picks its schedule, by default, from the one specified on the SLA Definition. However, this can be overridden by the Use the following schedule (calendar) for SLA (com.snc.sla.schedule.source) system property
+</p><p>The schedule, which is effectively the working hours, specified on the SLA Definition is typically used during calculation of the values for the business fields on the Task SLAs for that particular definition.
+</p><p>The graphic below demonstrates the effect schedule has on the the calculation of business values.
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:Slacalc.png.html" class="image"><img alt="Slacalc.png" src="images/thumb/b/b2/Slacalc.png/500px-Slacalc.png" width="500" height="234" srcset="/images/thumb/b/b2/Slacalc.png/750px-Slacalc.png 1.5x, /images/b/b2/Slacalc.png 2x" /></a></dd></dl>
+<p>For more information on defining Schedules please see the following topics in the ServiceNow wiki:
+</p>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Schedules&amp;oldid=0.html" title="Using Schedules">Using Schedules</a></li>
+<li><a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a></li></ul>
+<h3><span class="mw-headline" id="Task_SLAs"><span class="mw-headline-number">4.5.3</span> Task SLAs</span></h3>
+<p>When each Task SLA record is created, the SLA engine will determine the appropriate values for the Schedule and Timezone fields based on the choices selected in the two system properties (explained above) respectively and then values taken from a combination of the SLA definition and the Task that the definition has matched with. These properties may then refer to the values in the task that the SLA is attached to. For example, caller’s timezone.
+</p><p>The Schedule and Timezone values in a specific Task SLA record are the ones used to calculate the values in the business fields.
+</p><p>The actual fields always contain the 24 x 7 timings.
+</p><p>The business fields always contain the timings based on the Schedule.  If you have appropriate user access, you can click the Schedule record from the Task SLA and then use the Show Schedule link to see a calendar representation of the same. 
+In addition:
+</p>
+<ul><li>The business fields are not calculated and remain at 0 if the Task SLA record does not have a schedule. </li>
+<li>The timezone is applied to the timing calculations that are performed against the Schedule</li></ul>
+<dl><dd><b>Note:</b> If there is a timezone specified on the Schedule record itself, then this must also be taken into account.  For example a Task SLA that is active between 08:00-17:00 in the Europe/London timezone would only cross over for 1 hour with an 8-5 Schedule that is in the US/Pacific timezone.</dd></dl>
+<ul><li>If the timezone is empty, the system timezone is used.</li></ul>
+<h3><span class="mw-headline" id="Example_calculations"><span class="mw-headline-number">4.5.4</span> Example calculations</span></h3>
+<ul><li>A SLA definition is set up to have a duration of 24 hours with no schedule. An incident is created and the aforementioned SLA is attached to this incident. The incident was created at 11:32 on a Monday morning and was resolved on Tuesday morning at 9:15 am. In this case,
+<ul><li>There is no schedule and hence the business elapsed time is 0.</li>
+<li>The actual elapsed time is 21h 17min.</li></ul></li></ul>
+<ul><li>A SLA definition is set up to have a duration of 24 hours with an 8-5 Weekday schedule. An incident is created and the aforementioned SLA is attached to this incident. The incident was created at 11:32 on a Monday morning and was resolved on Tuesday morning at 9:15 am. In this case,
+<ul><li>The actual elapsed time is still 21h 17min.</li>
+<li>The business elapsed time is not zero in this case since there is a schedule.</li>
+<li>Based on the schedule, the business elapsed time is calculated as follows:
+<ul><li>From 11:32 to 17:00 (end of schedule time) on Monday = 4 hours 28 minutes</li>
+<li>From 08:00 (start of schedule time) to 09:15 (close of incident) = 1 hour 15 minutes</li>
+<li>Total business elapsed time:  5 hours 43 minutes</li></ul></li></ul></li></ul>
+<h2><span class="mw-headline" id="Why_are_my_business_values_not_calculating_correctly.3F"><span class="mw-headline-number">4.6</span> Why are my business values not calculating correctly?</span></h2>
+<p>To investigate the reason for business values not calculating correctly, you must check for the following::
+</p>
+<ol><li>Schedule attached to the SLA </li>
+<li>Schedule entries associated with the attached schedule</li></ol>
+<h3><span class="mw-headline" id="Schedule_attached_to_the_SLA"><span class="mw-headline-number">4.6.1</span> Schedule attached to the SLA</span></h3>
+<p>View the schedules attached to the SLA in calendar view to determine the invalid schedule.
+<b>Note:</b> Child schedules are not displayed in the calendar
+To view the schedule attached to the SLA in calendar view:
+</p>
+<ol><li>Open the specific SLA and verify that there is a valid schedule associated with that SLA.</li>
+<li>Open the associated schedule and select Show Schedule from the Related Links section.</li>
+<li>The calendar view displays all the schedule entries that are associated with the schedule.</li></ol>
+<dl><dd><a href="index.php%3Ftitle=File:SLAschedCal.png.html" class="image"><img alt="SLAschedCal.png" src="images/thumb/8/8f/SLAschedCal.png/650px-SLAschedCal.png" width="650" height="400" srcset="/images/8/8f/SLAschedCal.png 1.5x, /images/8/8f/SLAschedCal.png 2x" /></a></dd>
+<dd>The calendar view displays when the entries are scheduled for and when the entries have ended. In this case, the schedule entry Tuesday – Thursday ends on day 14 of the month and there are no entries from day 19 to 21. Hence, the Tuesday – Thursday schedule entry must be investigated further to validate the values.</dd></dl>
+<h3><span class="mw-headline" id="Schedule_entries_associated_with_the_attached_schedule"><span class="mw-headline-number">4.6.2</span> Schedule entries associated with the attached schedule</span></h3>
+<p>View the details of the schedule entries of the schedule attached to the SLA to check for the repeat until date. This date is used to state how long the schedule entry is valid for. However, the schedule entry becomes invalid when the repeat until date is past the current date. This causes the SLA to not consider the schedule and the business values to calculate incorrectly. 
+</p><p>To view the details of the schedule entry:
+</p>
+<ol><li>Open the schedule entry from the schedule form.</li>
+<li>Check the Repeat until field.</li></ol>
+<dl><dd>If the date entered in the Repeat until field is in the past, then the current schedule entry is invalid to be used for calculations.</dd>
+<dd><a href="index.php%3Ftitle=File:SLArepeatuntil.png.html" class="image"><img alt="SLArepeatuntil.png" src="images/a/a9/SLArepeatuntil.png" width="500" height="187" /></a></dd>
+<dd>In this case, the Tuesday – Thursday schedule entry has a repeat until date of January 28, 2016. Therefore, the calendar view only displays the schedule entries until the last valid Thursday on day 14 of the month and no later.</dd></dl>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201101445
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.428 seconds
+Real time usage: 0.691 seconds
+Preprocessor visited node count: 193/1000000
+Preprocessor generated node count: 395/1000000
+Post‐expand include size: 4419/2097152 bytes
+Template argument size: 1761/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   97.994      1 - -total
+ 75.33%   73.814      1 - Template:Service_Levels
+ 64.90%   63.599      1 - Template:Topic
+ 19.50%   19.106      1 - Embedded:Service_Levels
+ 15.39%   15.077      1 - Template:TableScopeNote
+ 10.82%   10.605      2 - Template:T
+  8.31%    8.142      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6410-0!*!0!1!en!5!* and timestamp 20171201101444 and revision id 250494
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Defining_an_SLA&amp;oldid=250494.html">http://wiki.servicenow.com/index.php?title=Defining_an_SLA&amp;oldid=250494</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Level+Management.html" title="Category:Service Level Management">Service Level Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Planning+and+Policy.html" title="Category:Planning and Policy">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Level+Management.html" title="Category:Service Level Management">Service Level Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6410"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6410" data-vote-the-vote="5" data-vote-id="6410" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6410_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6410" data-vote-the-vote="1" data-vote-id="6410" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6410_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Defining_an_SLA.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Defining+an+SLA.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Defining+an+SLA.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Defining_an_SLA_with_Plugin.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Defining_an_SLA_with_Plugin&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Defining+an+SLA.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Defining+an+SLA&amp;returnto=Defining+an+SLA&amp;oldid=250494&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Defining_an_SLA&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FDefining_an_SLA.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Defining_an_SLA" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Defining_an_SLA&amp;oldid=250494.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Defining_an_SLA&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:30, 29 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1337});});</script></body></html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Modifying SLA Condition Rules - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Modifying_SLA_Condition_Rules","wgTitle":"Modifying SLA Condition Rules","wgCurRevisionId":250331,"wgRevisionId":250331,"wgArticleId":11210,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Modifying_SLA_Condition_Rules","wgRelevantArticleId":11210,"wgRequestId":"baab9ec4f74219a51b3441e1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170823171224"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Modifying_SLA_Condition_Rules"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Modifying SLA Condition Rules"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Modifying SLA Condition Rules"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170823171224"/>
+
+	<meta property="article:published_time" content="20170823171224"/>
+
+	<meta property="article:modified_time" content="20170823171224"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Modifying_SLA_Condition_Rules"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Modifying_SLA_Condition_Rules rootpage-Modifying_SLA_Condition_Rules skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Modifying SLA Condition Rules</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Modifying SLA Condition Rules</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-level-management/concept/c_ConfigureSLAs.html">Configure SLAs</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=ITIL_Service_Level_Management.html" title="ITIL Service Level Management">ITIL Service Level Management</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Service_Level_Agreements.html" title="Service Level Agreements">Service Level Agreements</a>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_SLAs.html" title="Getting Started with SLAs">Getting Started with SLAs</a> </li>
+<li><a href="index.php%3Ftitle=Defining_an_SLA.html" title="Defining an SLA">Defining an SLA</a> </li>
+<li><a href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" title="Creating an SLA Workflow">Creating an SLA Workflow</a> </li>
+<li><a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a> </li>
+<li><a href="index.php%3Ftitle=Defining_Service_Levels_for_Catalog_Fulfillment.html" title="Defining Service Levels for Catalog Fulfillment">Defining Service Levels for Catalog Fulfillment</a> </li>
+<li><a href="index.php%3Ftitle=Reporting_on_SLAs.html" title="Reporting on SLAs">Reporting on SLAs</a></li>
+<li><strong class="selflink">Modifying SLA Condition Rules</strong></li></ul></li>
+<li><a href="index.php%3Ftitle=SLA_Contract_Add-on.html" title="SLA Contract Add-on">SLA Contract Add-on</a> 
+<ul><li><a href="index.php%3Ftitle=Defining_a_Service_Contract.html" title="Defining a Service Contract">Defining a Service Contract</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Introduction_to_Tasks.html" title="Introduction to Tasks">Introduction to Tasks</a></li>
+<li><a href="index.php%3Ftitle=Activating_Most_Active_and_Most_Recent_Labels.html" title="Activating Most Active and Most Recent Labels" class="mw-redirect">Task Administration</a></li>
+<li><a href="index.php%3Ftitle=Workflows.html" title="Workflows">Workflows</a></li>
+<li><a href="index.php%3Ftitle=Approval_Engines.html" title="Approval Engines">Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Scriptable_Execution_Plan_Approvals.html" title="Scriptable Execution Plan Approvals">Scripting Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Service_Portfolio_Management_-_SLA_Commitments.html" title="Service Portfolio Management - SLA Commitments">Service Portfolio Management - SLA Commitments</a></li></ul>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#SLA_Transitions"><span class="tocnumber">1.1</span> <span class="toctext">SLA Transitions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Default_SLA_Condition_Rules"><span class="tocnumber">2</span> <span class="toctext">Default SLA Condition Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#SLAConditionBase"><span class="tocnumber">2.1</span> <span class="toctext">SLAConditionBase</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#SLAConditionSimple"><span class="tocnumber">2.2</span> <span class="toctext">SLAConditionSimple</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Invoking_SLA_Condition_Rules"><span class="tocnumber">3</span> <span class="toctext">Invoking SLA Condition Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Invoking_SLA_Condition_Rules_Globally"><span class="tocnumber">3.1</span> <span class="toctext">Invoking SLA Condition Rules Globally</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Invoking_SLA_Condition_Rules_on_Specific_SLAs"><span class="tocnumber">3.2</span> <span class="toctext">Invoking SLA Condition Rules on Specific SLAs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Defining_New_SLA_Condition_Rules"><span class="tocnumber">4</span> <span class="toctext">Defining New SLA Condition Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Defining_an_SLA_Condition_Class"><span class="tocnumber">4.1</span> <span class="toctext">Defining an SLA Condition Class</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Creating_an_SLA_Condition_Rule"><span class="tocnumber">4.2</span> <span class="toctext">Creating an SLA Condition Rule</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The way that the conditions in an SLA definition are interpreted, to control transitions in state, can be varied using <b>SLA Condition Rules</b>.
+</p><p>SLA Condition Rules are defined globally, and can be overridden for specific SLA definitions.
+</p>
+<h2><span class="mw-headline" id="SLA_Transitions"><span class="mw-headline-number">1.1</span> SLA Transitions</span></h2>
+<p>The following transitions exist for an SLA:
+</p>
+<ul><li><b>Attach:</b> when an SLA is created and bound to a task.</li>
+<li><b>Pause:</b> when an SLA should temporarily stop tracking time.</li>
+<li><b>Complete:</b> when an SLA is marked complete.</li>
+<li><b>Reattach:</b> when an SLA is marked completed and a new copy is reapplied.</li>
+<li><b>Cancel:</b> when an SLA is cancelled.</li></ul>
+<p><a href="index.php%3Ftitle=File:SLAConditionsMethods.png.html" class="image"><img alt="SLAConditionsMethods.png" src="images/8/8d/SLAConditionsMethods.png" width="662" height="431" /></a>
+</p><p>Each of these conditions is defined as a method within a <a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes">Script Include</a>, referenced by an <b>SLA Conditions Rule</b> record.
+</p>
+<h1><span class="mw-headline" id="Default_SLA_Condition_Rules"><span class="mw-headline-number">2</span> Default SLA Condition Rules</span></h1>
+<p>There are two default SLA Condition Rules:
+</p>
+<ul><li><b>SLAConditionBase</b></li>
+<li><b>SLAConditionSimple</b></li></ul>
+<h2><span class="mw-headline" id="SLAConditionBase"><span class="mw-headline-number">2.1</span> SLAConditionBase</span></h2>
+<p>The <b>SLAConditionBase</b> script include implements the <i>default</i> SLA transitions.
+</p><p>The following diagram shows how the transitions work:
+</p><p><a href="index.php%3Ftitle=File:SLAConditionsBase.png.html" class="image"><img alt="SLAConditionsBase.png" src="images/d/df/SLAConditionsBase.png" width="659" height="427" /></a>
+</p>
+<h2><span class="mw-headline" id="SLAConditionSimple"><span class="mw-headline-number">2.2</span> SLAConditionSimple</span></h2>
+<p>The <b>SLAConditionSimple</b> script include provides an alternate, more streamlined set of SLA transitions.
+</p><p>The following diagram shows how the transitions work:
+</p><p><a href="index.php%3Ftitle=File:SLAConditionsSimple.png.html" class="image"><img alt="SLAConditionsSimple.png" src="images/2/2a/SLAConditionsSimple.png" width="653" height="420" /></a>
+</p>
+<h1><span class="mw-headline" id="Invoking_SLA_Condition_Rules"><span class="mw-headline-number">3</span> Invoking SLA Condition Rules</span></h1>
+<h2><span class="mw-headline" id="Invoking_SLA_Condition_Rules_Globally"><span class="mw-headline-number">3.1</span> Invoking SLA Condition Rules Globally</span></h2>
+<p>By default, the <b>SLAConditionBase</b> is used for the SLA Condition Rules. This can be changed by navigating to <b>Service Level Management &gt; SLA Properties</b> and changing the following property:
+</p><p><a href="index.php%3Ftitle=File:SLAConditionsProperty.png.html" class="image"><img alt="SLAConditionsProperty.png" src="images/a/a0/SLAConditionsProperty.png" width="712" height="66" /></a>
+</p>
+<h2><span class="mw-headline" id="Invoking_SLA_Condition_Rules_on_Specific_SLAs"><span class="mw-headline-number">3.2</span> Invoking SLA Condition Rules on Specific SLAs</span></h2>
+<p>In cases where a particular SLA requires that different SLA Condition Rules should be used, navigate to the SLA Definition, <a href="index.php%3Ftitle=Personalizing_Forms.html" title="Personalizing Forms">personalize the form</a> to add the <b>Condition type</b> field to the form, and specify the appropriate SLA Condition Rules name.
+</p>
+<h1><span class="mw-headline" id="Defining_New_SLA_Condition_Rules"><span class="mw-headline-number">4</span> Defining New SLA Condition Rules</span></h1>
+<p>To define a new SLA Condition Rules:
+</p>
+<ol><li><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Defining_an_SLA_Condition_Class">Define an SLA Condition Class</a></li>
+<li><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html#Creating_an_SLA_Condition_Rule">Create an SLA Condition Rule</a> </li></ol>
+<h2><span class="mw-headline" id="Defining_an_SLA_Condition_Class"><span class="mw-headline-number">4.1</span> Defining an SLA Condition Class</span></h2>
+<p>To define an SLA Condition Class, navigate to <b>System Definition &gt; Script Includes</b> and click <b>New</b>.
+</p><p>The <b>Script</b> in the SLA Condition Class needs to provide methods for one or more of the SLA transitions (attach, pause, complete, reattach, cancel). The methods need to test a condition, referencing the condition fields on the SLA Definition form.
+</p><p>For example, including the following method in an SLA Condition Class attaches the SLA if its condition matches the SLA's <b>start_condition</b> field:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>   <span class="nx">attach</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_conditionMatches</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sla</span><span class="p">.</span><span class="nx">start_condition</span><span class="p">));</span>
+   <span class="p">},</span>
+</pre></div>
+<p>The following is an example which shows the format of a script include that would extend the SLAConditionBase class and provide methods for <i>each</i> of the SLA transitions:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">SLAConditionLocal</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+
+<span class="nx">SLAConditionLocal</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extendsObject</span><span class="p">(</span><span class="nx">SLAConditionBase</span><span class="p">,</span> <span class="p">{</span>
+
+   <span class="nx">attach</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// insert script here</span>
+   <span class="p">},</span>
+
+   <span class="nx">pause</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// insert script here</span>
+   <span class="p">},</span>
+
+   <span class="nx">complete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// insert script here</span>
+   <span class="p">},</span>
+
+   <span class="nx">reattach</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// insert script here</span>
+   <span class="p">},</span>
+
+   <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// insert script here</span>
+   <span class="p">},</span>
+<span class="p">});</span>
+</pre></div>
+<h2><span class="mw-headline" id="Creating_an_SLA_Condition_Rule"><span class="mw-headline-number">4.2</span> Creating an SLA Condition Rule</span></h2>
+<p>Once an SLA Condition Class is defined, navigate to <b>Service Level Management &gt; SLA Condition Rules</b> and click <b>New</b>. Name the SLA Condition Rule, and select the Script Include defined above in the <b>Class Name</b> reference field.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201085104
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.334 seconds
+Real time usage: 0.961 seconds
+Preprocessor visited node count: 95/1000000
+Preprocessor generated node count: 282/1000000
+Post‐expand include size: 3679/2097152 bytes
+Template argument size: 1578/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  104.360      1 - -total
+ 82.70%   86.310      1 - Template:Service_Levels
+ 66.01%   68.893      1 - Template:Topic
+ 16.31%   17.020      1 - Template:Note
+ 13.46%   14.049      1 - Embedded:Service_Levels
+  8.70%    9.080      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:11210-0!*!0!1!en!5!* and timestamp 20171201085103 and revision id 250331
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Modifying_SLA_Condition_Rules&amp;oldid=250331.html">http://wiki.servicenow.com/index.php?title=Modifying_SLA_Condition_Rules&amp;oldid=250331</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_11210"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="11210" data-vote-the-vote="5" data-vote-id="11210" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11210_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="11210" data-vote-the-vote="1" data-vote-id="11210" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11210_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Modifying+SLA+Condition+Rules.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Modifying+SLA+Condition+Rules.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Modifying_SLA_Condition_Rules.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Modifying_SLA_Condition_Rules&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Modifying+SLA+Condition+Rules.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Modifying+SLA+Condition+Rules&amp;returnto=Modifying+SLA+Condition+Rules&amp;oldid=250331&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FModifying_SLA_Condition_Rules.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Modifying_SLA_Condition_Rules" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules&amp;oldid=250331.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:12, 23 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":808});});</script></body></html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Importing Data Using Import Sets - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Importing_Data_Using_Import_Sets","wgTitle":"Importing Data Using Import Sets","wgCurRevisionId":250635,"wgRevisionId":250635,"wgArticleId":3069,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Import Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Importing_Data_Using_Import_Sets","wgRelevantArticleId":3069,"wgRequestId":"70cc6f11e18483d0b88249ab","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831192847"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Importing_Data_Using_Import_Sets"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Importing Data Using Import Sets"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Import Sets"/>
+<meta name="category" content="Import Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Importing_Data_Using_Import_Sets.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Importing Data Using Import Sets"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831192847"/>
+
+	<meta property="article:published_time" content="20170831192847"/>
+
+	<meta property="article:modified_time" content="20170831192847"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Import Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Importing_Data_Using_Import_Sets"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Importing_Data_Using_Import_Sets rootpage-Importing_Data_Using_Import_Sets skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Importing+Data+Using+Import+Sets.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Importing+Data+Using+Import+Sets&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Importing Data Using Import Sets</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">Import Sets</a> &gt; Importing Data Using Import Sets</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/import-sets/concept/c_ImportDataUsingImportSets.html">Importing Data Using Import Sets</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">Import Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><strong class="selflink">Importing Data Using Import Sets</strong> </li>
+<li><a href="index.php%3Ftitle=Using_the_Coalesce_Field.html" title="Using the Coalesce Field">Using the Coalesce Field</a> </li>
+<li><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="Importing from Another ServiceNow Instance">Importing from Another ServiceNow Instance</a> </li>
+<li><a href="index.php%3Ftitle=Data_Sources.html" title="Data Sources">Data Sources</a>
+<ul><li><a href="index.php%3Ftitle=Adding_JDBC_Drivers_for_Data_Sources_not_Supported_in_Out-of-Box_Systems.html" title="Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems" class="mw-redirect">Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SQL_Server_Integrated_Authentication_for_Windows.html" title="SQL Server Integrated Authentication for Windows">SQL Server Integrated Authentication for Windows</a> </li>
+<li><a href="index.php%3Ftitle=Viewing_the_Import_Log.html" title="Viewing the Import Log">Viewing the Import Log</a></li>
+<li><a href="index.php%3Ftitle=Import_Run_History.html" title="Import Run History">Import Run History</a> </li>
+<li><a href="index.php%3Ftitle=Scheduling_Data_Imports.html" title="Scheduling Data Imports">Scheduling Data Imports</a> </li>
+<li><a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Creating New Transform Maps</a></li>
+<li><a href="index.php%3Ftitle=Transform_Map_Scripts.html" title="Transform Map Scripts">Transform Map Scripts</a></li>
+<li><a href="index.php%3Ftitle=Import_Set_Scheduled_Cleanup.html" title="Import Set Scheduled Cleanup">Import Set Scheduled Cleanup</a></li>
+<li><a href="index.php%3Ftitle=Troubleshooting_Import_Set_Performance.html" title="Troubleshooting Import Set Performance">Troubleshooting Import Set Performance</a></li>
+<li><a href="index.php%3Ftitle=Easy_Import.html" title="Easy Import">Easy Import</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Maximum_Row_Size"><span class="tocnumber">2</span> <span class="toctext">Maximum Row Size</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Creating_a_New_Import_Table_or_Adding_to_an_Existing_One"><span class="tocnumber">3</span> <span class="toctext">Creating a New Import Table or Adding to an Existing One</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Supported_Import_Formats"><span class="tocnumber">3.1</span> <span class="toctext">Supported Import Formats</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Preserving_Leading_Spaces_in_Excel_Imports"><span class="tocnumber">3.2</span> <span class="toctext">Preserving Leading Spaces in Excel Imports</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Ignoring_Bad_Data_Rows_in_CSV_Files"><span class="tocnumber">3.3</span> <span class="toctext">Ignoring Bad Data Rows in CSV Files</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Reviewing_the_Import_Set"><span class="tocnumber">4</span> <span class="toctext">Reviewing the Import Set</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Controlling_Import_Table_Dictionary_Entries"><span class="tocnumber">4.1</span> <span class="toctext">Controlling Import Table Dictionary Entries</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Setting_the_Import_Log_Level"><span class="tocnumber">4.2</span> <span class="toctext">Setting the Import Log Level</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Creating_a_Transform_Map"><span class="tocnumber">5</span> <span class="toctext">Creating a Transform Map</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Run_Import"><span class="tocnumber">6</span> <span class="toctext">Run Import</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Cancelling_an_Import_Set"><span class="tocnumber">7</span> <span class="toctext">Cancelling an Import Set</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Posting_CSV_or_Excel_Files_Directly_to_an_Import_Set"><span class="tocnumber">8</span> <span class="toctext">Posting CSV or Excel Files Directly to an Import Set</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Perl_Example"><span class="tocnumber">8.1</span> <span class="toctext">Perl Example</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Java_Example"><span class="tocnumber">8.2</span> <span class="toctext">Java Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Enhancements"><span class="tocnumber">9</span> <span class="toctext">Enhancements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Dublin"><span class="tocnumber">9.1</span> <span class="toctext">Dublin</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Calgary"><span class="tocnumber">9.2</span> <span class="toctext">Calgary</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<div class="thumb tleft"><div class="thumbinner" style="width:603px;"><a href="index.php%3Ftitle=File:ImportsetTable.jpg.html" class="image"><img alt="" src="images/c/cd/ImportsetTable.jpg" width="601" height="414" class="thumbimage" /></a>  <div class="thumbcaption">Importing Data Data Flow</div></div></div> <br style="clear:both;" />
+<p>An import set acts as a staging table to store raw data from an external source. The import process uses a <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">transform map</a> to add or update data from the import set to an existing ServiceNow table such as incident or problem.
+</p><p>Use import sets to:
+</p>
+<ul><li> Manually import data from a file on your local system</li>
+<li> Manually import data from a data source</li>
+<li> Periodically import data from a data source with a scheduled import</li>
+<li> Programmatically import data from a file with a script</li>
+<li> Programmatically import data from a web service</li></ul>
+<h1><span class="mw-headline" id="Maximum_Row_Size"><span class="mw-headline-number">2</span> Maximum Row Size</span></h1>
+<p>A single row in a database may not contain more than 8126 bytes of data. The size of each row is determined by the amount of content in all fields, as well as the character set for text fields. For example, a row with 10 text fields each containing 1000 characters using a French character set takes 15360 bytes. 
+</p><p>Attempting to import more data to a single row than the maximum size causes the import to skip that row. Any rows that were skipped for this reason are listed in the import log.
+</p>
+<h1><span class="mw-headline" id="Creating_a_New_Import_Table_or_Adding_to_an_Existing_One"><span class="mw-headline-number">3</span> Creating a New Import Table or Adding to an Existing One</span></h1>
+<p>From the left navigation menu, go to: <b>System Import Sets &gt; Load Data</b> 
+</p><p>The second step is to create or load an Import Set table by uploading an Excel or CSV file, or from a predefined Data Source. For file imports, the CSV file format is preferred, due to occasional import issues with the way that Excel can alter data format.&#160; The label is used to determine the name for the Import Set table that data will be loaded into. It is also possible to choose an existing Import Set table to use for loading data from the same source, or data that has the same field/column designations. When an existing Import Set table is chosen the table columns are added when the incoming source of data contains fields/columns that do not exist. 
+</p><p>It is also necessary to choose a data source. It is possible at this point to define a new data source by browsing for a file to import. Supported formats are XLS and CSV. It is also necessary to specify the parameters of the file that is being imported. From here it is also possible to select an existing data source for use in the import operation.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>By default, up to 20 records of the source data are sampled to determine the import set field length. If the field is empty in all the sampled records, the default length of 40 is used. Any data loaded that exceeds the import set table field length is truncated.  To prevent the truncation of fields and enable "dynamic" field resize, set the "<a href="index.php%3Ftitle=Additional_Glide_Properties.html" title="Additional Glide Properties" class="mw-redirect">com.glide.loader.verify_target_field_size</a>" property to "true."</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Supported_Import_Formats"><span class="mw-headline-number">3.1</span> Supported Import Formats</span></h2>
+<p>ServiceNow can import the following file formats.
+</p>
+<table class="standard">
+
+<tr>
+<th> Format
+</th>
+<th> Limitations
+</th></tr>
+<tr>
+<td> CSV
+</td>
+<td> CSV files must comply with the proposed CSV standard in <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://tools.ietf.org/pdf/rfc4180.pdf">RFC4180</a>. In particular, this means that double quotes may not appear inside fields. The first row of data in an imported CSV file becomes the header row and defines the columns for that import set.
+</td></tr>
+<tr>
+<td> Excel
+</td>
+<td> Excel files must have the XLS extension. Excel files with the XLSX extension will produce an error.
+</td></tr>
+<tr>
+<td> XML
+</td>
+<td> XML files must have a consistent XPath for each data row. If you are trying to load an <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">update set</a> XML file, see <a href="index.php%3Ftitle=Saving_Customizations_in_a_Single_XML_File.html#Loading_Customizations_from_a_Single_XML_File" title="Saving Customizations in a Single XML File">Loading Customizations from a Single XML File</a> instead.
+</td></tr></table>
+<p>In addition, ServiceNow can import data from the following external data sources.
+</p>
+<table class="standard">
+
+<tr>
+<th> Data Source
+</th>
+<th> Limitations
+</th></tr>
+<tr>
+<td> JDBC
+</td>
+<td> Some network configurations may require a <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a>.
+</td></tr>
+<tr>
+<td> LDAP
+</td>
+<td> LDAP imports require a valid <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">transform map</a>.
+</td></tr></table>
+<h2><span class="mw-headline" id="Preserving_Leading_Spaces_in_Excel_Imports"><span class="mw-headline-number">3.2</span> Preserving Leading Spaces in Excel Imports</span></h2>
+<p>Use the system property <tt>glide.import_set.preserve.leading.spaces</tt> to preserve leading spaces when importing data from Excel.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The import process always removes trailing spaces from Excel data cells.</i>
+</td></tr></table>
+<p><br />
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> glide.import_set.preserve.leading.spaces
+</td>
+<td> Specifies whether the import process preserves leading spaces in Excel data cells. When false, the import process removes leading spaces from Excel data cells. When true, the import process preserves leading spaces.
+<ul><li><b>Type:</b> true | false</li>
+<li><b>Default value:</b> false</li>
+<li><b>Location:</b> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add</a> to the System Properties [sys_properties] table</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Ignoring_Bad_Data_Rows_in_CSV_Files"><span class="mw-headline-number">3.3</span> Ignoring Bad Data Rows in CSV Files</span></h2>
+<p>Use the system property <tt>com.glide.csv.loader.ignore_non_parseable_lines</tt> to ignore data rows in CSV files that ServiceNow cannot parse. By default, imports cannot ignore bad data rows in CSV files and fail on the first error.
+</p><p>To allow an import to ignore one or more rows of bad data, set the system property <tt>com.glide.csv.loader.ignore_non_parseable_lines</tt> to <b>true</b>. To specify the maximum number lines (rows) that an instance can ignore before the import fails, set the system property <tt>com.glide.csv.loader.max_errors_allowed</tt>.
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> com.glide.csv.loader.ignore_non_parseable_lines
+</td>
+<td> Allows an instance to ignore one or more lines (rows) that contain bad data (such as a row that is missing a column of data).
+<ul><li><b>Type:</b> true | false</li>
+<li><b>Default value:</b> false</li>
+<li><b>Location:</b> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add the property</a></li></ul>
+</td></tr>
+<tr>
+<td> com.glide.csv.loader.max_errors_allowed
+</td>
+<td> Specify the maximum number of lines (rows) that an import can ignore before failing. If the import succeeds, the import lists the number of rows the import ignored due to errors.
+<ul><li><b>Type:</b> integer </li>
+<li><b>Default value:</b> 100 </li>
+<li><b>Location:</b> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add the property</a></li></ul>
+</td></tr></table>
+<h1><span class="mw-headline" id="Reviewing_the_Import_Set"><span class="mw-headline-number">4</span> Reviewing the Import Set</span></h1>
+<p>Even if no errors were reported by the progress indicator it is still probably a good idea see how your new data was inputted into the new import set. To do so click on the link for "View imported data." There are several fields that will be visible in the table that were not part of the original data source, these are system rows can be used to facilitate scripted import operations. When you are finished reviewing the data, return to the previous page. The next step is to create a transform map to associate with this Import Set by clicking the link to do so. 
+</p>
+<h2><span class="mw-headline" id="Controlling_Import_Table_Dictionary_Entries"><span class="mw-headline-number">4.1</span> Controlling Import Table Dictionary Entries</span></h2>
+<p>Use the system property <tt>glide.import_set_row.dynamically_add_fields</tt> to control whether an import can automatically change the dictionary entries for staging tables. In previous releases, allowing imports (such as LDAP) to automatically update staging tables sometimes resulted in an instances becoming unresponsive. Set the system property to false to prevent an import from changing a staging table's dictionary entry.
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> glide.import_set_row.dynamically_add_fields
+</td>
+<td> Specifies whether an import set can add new columns to the staging table (true) or not (false). Instances that contain large numbers of import sets can sometimes become unresponsive when an import adds a column because the instance must alter every row in the staging table. In some cases, the database alter table action causes an outage. Setting this property to false prevents an import set from adding columns to the staging table and produces a log message. As a workaround, administrators can manually add a column to the staging table by creating a new dictionary entry and then reimporting the import set.
+<ul><li><b>Type:</b> true | false</li>
+<li><b>Default value:</b> true</li>
+<li><b>Location:</b> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add</a> to the System Properties [sys_properties] table</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Setting_the_Import_Log_Level"><span class="mw-headline-number">4.2</span> Setting the Import Log Level</span></h2>
+<p>Use the system property <tt></tt> to control the log level for import sets.
+</p>
+<table class="standard">
+
+<tr>
+<th> Property
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> com.glide.import_set.importlog_level
+</td>
+<td> Specifies how much information import sets add to the log. Possible values are INFO, WARNING, and ERROR. You can set this to INFO in dev environment and change it to WARNING or ERROR in production to reduce amount of logging noise traffic to the database.
+<ul><li><b>Type:</b> string</li>
+<li><b>Default value:</b> INFO</li>
+<li><b>Location:</b> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">Add</a> to the System Properties [sys_properties] table</li></ul>
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_a_Transform_Map"><span class="mw-headline-number">5</span> Creating a Transform Map</span></h1>
+<p>A <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Transform Map</a> determines how data is mapped onto a ServiceNow table. 
+</p><p>First, it is necessary to specify a destination table and select a method of mapping. Under the right circumstances, where field names in the Import Set and the destination table are identical or nearly identical, this is as simple as clicking the <b>Auto map from matching fields</b> button. If any fields are not mapped by the auto matching utility, it is also possible to specify mapping relationships using a simple drag-and-drop interface by clicking the <b>Mapping assist</b> button. When using this utility, it is possible to match one source field to multiple destination fields.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>When there are no transform field mappings or row scripts (for example, onBefore or onAfter scripts) defined in a transform map, row transformation will be skipped, instead of cycling through every source record.  All import source rows will remain in the Pending state, the transform total row count will be zero, and the transform history state will be complete. The onStart and onComplete scripts will still get executed, if defined.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Run_Import"><span class="mw-headline-number">6</span> Run Import</span></h1>
+<p>From a Transform Map, you can click Run Import to do just that. When the import is done, you'll see a link to go straight to the target table containing your imported records. The amount of time that it takes to run an import varies depending on the number of record to be imported and may take as long as several hours for very large import operations (tens of thousands of records). 
+</p><p>At this point, you may click on the link View the imported data to see the loaded import set table, Create transform map to create a new transform map to transform the data in the import set table to its target table, or Run import to execute an existing transform map for the loaded data. 
+</p><p>Here is the result of viewing the import set data (you may also click on the application module that is automatically created when the import set is created): 
+</p><p>Three things to note at this point: 
+</p>
+<ul><li>The spreadsheet was imported, and a new table was created to hold the data. </li>
+<li>Within that table, the imported records are designated with their own "Set" value (in this case, "ISET10004"). </li>
+<li>A new module was created in the System Import Sets application for the new table.</li></ul>
+<h1><span class="mw-headline" id="Cancelling_an_Import_Set"><span class="mw-headline-number">7</span> Cancelling an Import Set</span></h1>
+<p>You can stop a scheduled import that is taking too much time.
+</p><p>To cancel an import in progress:
+</p>
+<ol><li>Navigate to <b>System Import Sets &gt; Advanced &gt; Progress</b>. </li>
+<li>Open the Progress Worker that must be canceled.</li>
+<li>Click the <b>Cancel job</b> Related Link.
+<dl><dd><a href="index.php%3Ftitle=File:Import_Sets_Cancel.png.html" class="image" title="Import_Sets_Cancel.png‎"><img alt="Import_Sets_Cancel.png‎" src="images/thumb/9/98/Import_Sets_Cancel.png/550px-Import_Sets_Cancel.png" width="550" height="312" srcset="/images/9/98/Import_Sets_Cancel.png 1.5x, /images/9/98/Import_Sets_Cancel.png 2x" /></a> <br style="clear:both;" /></dd></dl></li></ol>
+<p>To cancel the transformation of a running import set:
+</p>
+<ol><li>Navigate to <b>System Import Sets &gt; Advanced &gt; Import Sets</b>.</li>
+<li>Select the import set with a state of <b>Loaded</b>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:983px;"><a href="index.php%3Ftitle=File:Import_set_loaded.png.html" class="image"><img alt="" src="images/6/69/Import_set_loaded.png" width="981" height="148" class="thumbimage" /></a>  <div class="thumbcaption">Select a loaded import set</div></div></div> <br style="clear:both;" /></dd></dl></li>
+<li>Select the import set run with a state of <b>Running</b>.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:631px;"><a href="index.php%3Ftitle=File:Import_set_running.png.html" class="image"><img alt="" src="images/f/ff/Import_set_running.png" width="629" height="555" class="thumbimage" /></a>  <div class="thumbcaption">Select a running import set</div></div></div> <br style="clear:both;" /></dd></dl></li>
+<li>Click the <b>Cancel transform</b> related link.
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:1456px;"><a href="index.php%3Ftitle=File:Transform_history_cancel.png.html" class="image"><img alt="" src="images/5/53/Transform_history_cancel.png" width="1454" height="581" class="thumbimage" /></a>  <div class="thumbcaption">Cancel transform related link</div></div></div> <br style="clear:both;" /></dd></dl></li></ol>
+<h1><span class="mw-headline" id="Posting_CSV_or_Excel_Files_Directly_to_an_Import_Set"><span class="mw-headline-number">8</span> Posting CSV or Excel Files Directly to an Import Set</span></h1>
+<p>An administrator can post CSV or Excel files directly to instance using the following post syntax:
+</p><p><tt>
+https://instance.service-now.com/sys_import.do?sysparm_import_set_tablename=table_name&amp;sysparm_transform_after_load=true&amp;uploadfile=path/to/file.csv
+</tt>
+</p><p>The <b>sys_import.do</b> target lets you dynamically upload a CSV or Excel file into the import set table specified by the <b>sysparm_import_set_tablename</b> parameter. You must specify a name that matches an existing import set table name, if it does not exist, pre-create it by doing a manual import.  The <b>sysparm_transform_after_load=true</b> parameter makes the CSV transform execute immediately, if a transform map exists.
+</p>
+<h2><span class="mw-headline" id="Perl_Example"><span class="mw-headline-number">8.1</span> Perl Example</span></h2>
+<p>The following is an example of using perl to post a CSV file with basic auth credentials. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1"># file: uploadafile.pl</span>
+<span class="c1"># call me like this:</span>
+<span class="c1"># uploadafile.pl --url=&quot;https://instance.service-now.com/sys_import.do?sysparm_import_set_tablename=dloo_test&amp;sysparm_transform_after_load=true&quot; </span>
+<span class="c1"># --uploadfile=/Users/davidloo/Desktop/test_files/test_users.csv</span>
+<span class="c1">#</span>
+<span class="c1"># the &quot;sysparm_transform_after_load=true&quot; parameter instructs the import set to transform immediately after loading</span>
+<span class="c1">#</span>
+<span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">LWP::</span><span class="n">UserAgent</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">HTTP::Request::</span><span class="n">Common</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">Getopt::</span><span class="n">Long</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">File::</span><span class="n">Basename</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="p">(</span> <span class="nv">$o_url</span><span class="p">,</span> <span class="nv">$o_fqn</span> <span class="p">);</span>
+<span class="n">GetOptions</span><span class="p">(</span>
+    <span class="s">&quot;url=s&quot;</span>        <span class="o">=&gt;</span> <span class="o">\</span><span class="nv">$o_url</span><span class="p">,</span>
+    <span class="s">&quot;uploadfile=s&quot;</span> <span class="o">=&gt;</span> <span class="o">\</span><span class="nv">$o_fqn</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="c1"># mandatory arguments: url</span>
+<span class="o">&amp;</span><span class="n">usage</span> <span class="k">unless</span> <span class="p">(</span> <span class="nv">$o_url</span> <span class="o">&amp;&amp;</span> <span class="nv">$o_fqn</span> <span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$url</span>   <span class="o">=</span> <span class="nv">$o_url</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$fname</span> <span class="o">=</span> <span class="nv">$o_fqn</span><span class="p">;</span>
+
+<span class="c1"># put timeouts, proxy etc into the useragent if needed</span>
+<span class="k">my</span> <span class="nv">$ua</span>  <span class="o">=</span> <span class="nn">LWP::</span><span class="n">UserAgent</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">();</span>
+
+<span class="c1"># setup basic authentication credentials</span>
+<span class="nv">$ua</span><span class="o">-&gt;</span><span class="n">credentials</span><span class="p">(</span>
+  <span class="s">&#39;demo.service-now.com:443&#39;</span><span class="p">,</span>
+  <span class="s">&#39;Service-now&#39;</span><span class="p">,</span>
+  <span class="s">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;admin&#39;</span>
+<span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$req</span> <span class="o">=</span> <span class="n">POST</span> <span class="nv">$url</span><span class="p">,</span> <span class="n">Content_Type</span> <span class="o">=&gt;</span> <span class="s">&#39;form-data&#39;</span><span class="p">,</span>
+        <span class="n">Content</span>      <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="n">submit</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="n">upfile</span> <span class="o">=&gt;</span>  <span class="p">[</span> <span class="nv">$fname</span> <span class="p">]</span>
+        <span class="p">];</span>
+<span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$ua</span><span class="o">-&gt;</span><span class="n">request</span><span class="p">(</span><span class="nv">$req</span><span class="p">);</span>
+
+
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="n">is_success</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">print</span> <span class="s">&quot;OK: &quot;</span><span class="p">,</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">print</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="n">as_string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">exit</span><span class="p">;</span>
+
+<span class="k">sub </span><span class="nf">usage</span> <span class="p">{</span>
+        <span class="nb">printf</span> <span class="s">&quot;usage:&amp;nbsp;%s --url=%s --uploadfile=%s\\n&quot;</span><span class="p">,</span>
+                <span class="n">basename</span><span class="p">(</span><span class="nv">$0</span><span class="p">),</span><span class="s">&#39;https://....&#39;</span><span class="p">,</span><span class="s">&#39;c:/data/test.csv&#39;</span><span class="p">;</span>
+        <span class="nb">exit</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Java_Example"><span class="mw-headline-number">8.2</span> Java Example</span></h2>
+<p>The following is a Java example using Apache's HttpClient class.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The Apache HttpClient may limit the amount of data you can import in a single transaction. This example is meant as a starting point and should not be used in production.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="n">HttpClient</span> <span class="n">httpclient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpClient</span><span class="o">();</span>
+<span class="n">PostMethod</span> <span class="n">post</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PostMethod</span><span class="o">(</span><span class="s">&quot;https://instance-name.service-now.com/sys_import.do?sysparm_import_set_tablename=u_test_upload&amp;sysparm_transform_after_load=true&quot;</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+  <span class="n">Credentials</span> <span class="n">defaultcreds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UsernamePasswordCredentials</span><span class="o">(</span><span class="s">&quot;admin&quot;</span><span class="o">,</span> <span class="s">&quot;admin&quot;</span><span class="o">);</span>
+  <span class="n">httpclient</span><span class="o">.</span><span class="na">getState</span><span class="o">().</span><span class="na">setCredentials</span><span class="o">(</span><span class="n">AuthScope</span><span class="o">.</span><span class="na">ANY</span><span class="o">,</span> <span class="n">defaultcreds</span><span class="o">);</span> <span class="c1">// Prepare HTTP post</span>
+  <span class="n">httpClient</span><span class="o">.</span><span class="na">getParams</span><span class="o">().</span><span class="na">setAuthenticationPreemptive</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+  <span class="n">File</span> <span class="n">targetFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;/Users/davidloo/Desktop/test_files/nodeinfo2736820198834983863.csv&quot;</span><span class="o">);</span>
+  <span class="n">Part</span><span class="o">[]</span> <span class="n">parts</span> <span class="o">=</span> <span class="o">{</span> <span class="k">new</span> <span class="n">FilePart</span><span class="o">(</span><span class="n">targetFile</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">targetFile</span><span class="o">)</span> <span class="o">};</span>
+
+  <span class="n">post</span><span class="o">.</span><span class="na">setRequestEntity</span><span class="o">(</span><span class="k">new</span> <span class="n">MultipartRequestEntity</span><span class="o">(</span><span class="n">parts</span><span class="o">,</span> <span class="n">post</span><span class="o">.</span><span class="na">getParams</span><span class="o">()));</span>
+ 
+  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">httpclient</span><span class="o">.</span><span class="na">executeMethod</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
+ 
+  <span class="c1">// Display status code</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Response status code: &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="o">);</span>
+ 
+  <span class="c1">// Display response</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Response body: &quot;</span><span class="o">+</span><span class="n">post</span><span class="o">.</span><span class="na">getResponseBodyAsString</span><span class="o">());</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+  <span class="c1">// Release current connection to the connection pool</span>
+  <span class="c1">// once you are done</span>
+  <span class="n">post</span><span class="o">.</span><span class="na">releaseConnection</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Enhancements"><span class="mw-headline-number">9</span> Enhancements</span></h1>
+<h2><span class="mw-headline" id="Dublin"><span class="mw-headline-number">9.1</span> Dublin</span></h2>
+<ul><li> A new system property <tt>com.glide.import_set.importlog_level</tt> specifies the <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Setting_the_Import_Log_Level">logging level</a> for import sets.</li>
+<li> You can <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Cancelling_an_Import_Set">cancel the transformation of a running import set</a> from the transform history.</li>
+<li> When there are no transform field mappings or row scripts (for example, onBefore or onAfter scripts) defined in a transform map, row transformation will be skipped, instead of cycling through every source record.</li>
+<li> ServiceNow includes the Oracle 11g JDBC driver. This driver allows SSL communication with new versions of Oracle software.</li></ul>
+<h2><span class="mw-headline" id="Calgary"><span class="mw-headline-number">9.2</span> Calgary</span></h2>
+<p>The following enhancements are available as of the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>.
+</p>
+<ul><li> A new system property <tt>glide.import_set.preserve.leading.spaces</tt> specifies whether the import process <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Preserving_Leading_Spaces_in_Excel_Imports">preserves leading spaces in Excel data cells</a>.</li>
+<li> A new system property <tt>glide.import_set_row.dynamically_add_fields</tt> controls whether an import can automatically change the <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Controlling_Import_Table_Dictionary_Entries">dictionary entries for staging tables</a>.</li>
+<li> A new system property <tt>com.glide.csv.loader.ignore_non_parseable_lines</tt> allows imports to <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Ignoring_Bad_Data_Rows_in_CSV_Files">ignore data rows in CSV files that ServiceNow cannot parse</a>.</li>
+<li> A new system property <tt>com.glide.csv.loader.max_errors_allowed</tt> specifies the <a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html#Ignoring_Bad_Data_Rows_in_CSV_Files">maximum number of lines (rows) that an import can ignore before failing</a>.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201104432
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.294 seconds
+Real time usage: 1.061 seconds
+Preprocessor visited node count: 174/1000000
+Preprocessor generated node count: 460/1000000
+Post‐expand include size: 5289/2097152 bytes
+Template argument size: 2406/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  410.419      1 - -total
+  9.21%   37.810      1 - Template:Import_Sets
+  7.12%   29.226      1 - Template:Topic
+  2.25%    9.249      5 - Template:Note
+  1.86%    7.629      1 - Embedded:Import_Sets
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:3069-0!*!0!1!en!5!* and timestamp 20171201104431 and revision id 250635
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;oldid=250635.html">http://wiki.servicenow.com/index.php?title=Importing_Data_Using_Import_Sets&amp;oldid=250635</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_3069"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="3069" data-vote-the-vote="5" data-vote-id="3069" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_3069_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="3069" data-vote-the-vote="1" data-vote-id="3069" data-vote-action="5" data-vote-rating="4.20" data-vote-voted="0" id="rating_3069_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Importing+Data+Using+Import+Sets&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Importing+Data+Using+Import+Sets&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Importing_Data_Using_Import_Sets.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Importing+Data+Using+Import+Sets.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Importing+Data+Using+Import+Sets&amp;returnto=Importing+Data+Using+Import+Sets&amp;oldid=250635&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FImporting_Data_Using_Import_Sets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Importing_Data_Using_Import_Sets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;oldid=250635.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:28, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1141});});</script></body></html>

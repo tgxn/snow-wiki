@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Chef - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Chef","wgTitle":"Using Chef","wgCurRevisionId":246690,"wgRevisionId":246690,"wgArticleId":22416,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Configuration Automation"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Chef","wgRelevantArticleId":22416,"wgRequestId":"001f38216972c47a02109dd1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150602154722"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Chef"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Chef"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Configuration Automation"/>
+<meta name="category" content="Configuration Automation"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Chef&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Chef"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150602154722"/>
+
+	<meta property="article:published_time" content="20150602154722"/>
+
+	<meta property="article:modified_time" content="20150602154722"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Configuration Automation"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Chef"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Chef rootpage-Using_Chef skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Chef.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="http://wiki.servicenow.com/index.php?title=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Chef&amp;oldid=0" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (368 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Chef</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Using Chef</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuration+Automation&amp;oldid=0.html" title="Configuration Automation">Configuration Automation</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a23d48d0fa44t'></div><script type="text/javascript">window.tamOnload_tam5a23d48d0fa44t=[];tree = new dTree('tam5a23d48d0fa44t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a23d48d0fa44t = tree;
+                                               tam5a23d48d0fa44t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuration_Automation\&quot;" title=\"Configuration Automation\">Configuration Automation</a>');
+
+tam5a23d48d0fa44t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuration_Automation_Overview_Module\&quot;" title=\"Configuration Automation Overview Module\">Overview Module</a>');
+tam5a23d48d0fa44t.add(3, 0, 'ServiceNow');
+tam5a23d48d0fa44t.add(4, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ServiceNow_Configuration_Automation\&quot;" title=\"ServiceNow Configuration Automation\">ServiceNow Configuration Automation</a>');
+tam5a23d48d0fa44t.add(5, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ServiceNow_Provider\&quot;" title=\"Using ServiceNow Provider\">Using ServiceNow Provider</a>');
+tam5a23d48d0fa44t.add(6, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Change_Management_with_ServiceNow_Provider\&quot;" title=\"Using Change Management with ServiceNow Provider\">Using Change Management</a>');
+tam5a23d48d0fa44t.add(7, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_ServiceNow_Provider\&quot;" title=\"Installed with ServiceNow Provider\">Installed with ServiceNow Provider</a>');
+tam5a23d48d0fa44t.add(8, 0, 'Chef');
+tam5a23d48d0fa44t.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Chef_Configuration_Automation\&quot;" title=\"Chef Configuration Automation\">Chef Configuration Automation</a>');
+tam5a23d48d0fa44t.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Chef\&quot;" title=\"Setting Up Chef\">Setting Up Chef</a>');
+tam5a23d48d0fa44t.add(11, 8, '<strong class=\"selflink\">Using Chef</strong>');
+tam5a23d48d0fa44t.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Chef_with_Cloud_Provisioning\&quot;" title=\"Using Chef with Cloud Provisioning\">Using Chef with Cloud Provisioning</a>');
+tam5a23d48d0fa44t.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Chef_Activities\&quot;" title=\"Orchestration Chef Activities\">Chef Activities</a>');
+tam5a23d48d0fa44t.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Chef\&quot;" title=\"Installed with Chef\">Installed with Chef</a>');
+tam5a23d48d0fa44t.add(15, 0, 'Puppet');
+tam5a23d48d0fa44t.add(16, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Puppet_Configuration_Automation\&quot;" title=\"Puppet Configuration Automation\">Puppet Configuration Automation</a>');
+tam5a23d48d0fa44t.add(17, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Puppet\&quot;" title=\"Setting Up Puppet\">Setting Up Puppet</a>');
+tam5a23d48d0fa44t.add(18, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Puppet\&quot;" title=\"Using Puppet\">Using Puppet</a>');
+tam5a23d48d0fa44t.add(19, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Puppet_with_Cloud_Provisioning\&quot;" title=\"Using Puppet with Cloud Provisioning\">Using Puppet with Cloud Provisioning</a>');
+tam5a23d48d0fa44t.add(20, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Puppet_Activities\&quot;" title=\"Orchestration Puppet Activities\">Puppet Activities</a>');
+tam5a23d48d0fa44t.add(21, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Puppet\&quot;" title=\"Installed with Puppet\">Installed with Puppet</a>');
+tam5a23d48d0fa44t.add(22, 0, 'Extensions');
+tam5a23d48d0fa44t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extending_Configuration_Automation\&quot;" title=\"Extending Configuration Automation\">Extending Configuration Automation</a>');
+tam5a23d48d0fa44t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Manager_Script_Include\&quot;" title=\"Change Manager Script Include\">Change Manager Script Include</a>');
+tam5a23d48d0fa44t.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ConfigAutomationDiffBase_Script_Include\&quot;" title=\"ConfigAutomationDiffBase Script Include\">Diff Base Script Include</a>');
+
+                                               document.getElementById('5a23d48d0fa44t').innerHTML = tam5a23d48d0fa44t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a23d48d0fa44t) { window.tamOnload_tam5a23d48d0fa44t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Working_with_Chef_Resources"><span class="tocnumber">2</span> <span class="toctext">Working with Chef Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Discovering_Chef_Servers"><span class="tocnumber">2.1</span> <span class="toctext">Discovering Chef Servers</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Managing_Chef_Nodes"><span class="tocnumber">2.2</span> <span class="toctext">Managing Chef Nodes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Creating_Node_Definitions"><span class="tocnumber">2.3</span> <span class="toctext">Creating Node Definitions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Adding_and_Editing_Chef_Node_Attributes"><span class="tocnumber">2.4</span> <span class="toctext">Adding and Editing Chef Node Attributes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Adding_Chef_Node_Attributes"><span class="tocnumber">2.4.1</span> <span class="toctext">Adding Chef Node Attributes</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Editing_Chef_Node_Attributes"><span class="tocnumber">2.4.2</span> <span class="toctext">Editing Chef Node Attributes</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Choosing_the_Discovered_Chef_Node_Attributes"><span class="tocnumber">2.4.3</span> <span class="toctext">Choosing the Discovered Chef Node Attributes</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Editing_CI-level_Attributes"><span class="tocnumber">2.4.4</span> <span class="toctext">Editing CI-level Attributes</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Using_Change_Management_with_Chef"><span class="tocnumber">3</span> <span class="toctext">Using Change Management with Chef</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Modifying_Chef_Nodes"><span class="tocnumber">3.1</span> <span class="toctext">Modifying Chef Nodes</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Modifying_node_definitions"><span class="tocnumber">3.2</span> <span class="toctext">Modifying node definitions</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Requesting_Changes_Using_the_Service_Catalog"><span class="tocnumber">3.3</span> <span class="toctext">Requesting Changes Using the Service Catalog</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Disabling_Change_Management"><span class="tocnumber">3.4</span> <span class="toctext">Disabling Change Management</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a href="index.php%3Ftitle=Chef_Configuration_Automation.html" title="Chef Configuration Automation">Chef</a> users can request changes to a Linux computer configuration item (CI) assigned to them. Chef change management ensures that requested changes go through a controlled change process that includes approvals. After a change is approved and the requesting user proceeds with the change, the Chef server automatically modifies the computer to bring it to the desired state.
+</p>
+<h1><span class="mw-headline" id="Working_with_Chef_Resources"><span class="mw-headline-number">2</span> Working with Chef Resources</span></h1>
+<p>The ServiceNow system can store data about several Chef resource types including environments, cookbooks, roles, recipes, and attributes.
+</p>
+<h2><span class="mw-headline" id="Discovering_Chef_Servers"><span class="mw-headline-number">2.1</span> Discovering Chef Servers</span></h2>
+<p>Chef discovery is the process by which a Chef server and Chef resources, including environments, cookbooks, roles, recipes, and attributes, are imported into a ServiceNow instance. Discovery is accomplished by the Discover Chef workflow, which can be executed using the <b>Discover Chef Details</b> related link, which is available on the Chef Server form.
+</p><p>Chef resources are maintained in Chef and can be viewed in ServiceNow. A Chef administrator can retrieve these records from a Chef server. It is not necessary to activate ServiceNow Discovery to discover the Chef environment.
+</p>
+<ol><li>Navigate to <b>Chef &gt; Chef Servers</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Fill in the fields, as appropriate (see table).</li>
+<li>Right-click the form header and select <b>Save</b>.</li>
+<li>Click <b>Discover Chef Details</b> under <b>Related Links</b>.
+<ul><li>ServiceNow detects the Chef server and completes the remaining fields in the form.</li>
+<li>ServiceNow discovers the Chef resources and creates records for them in the appropriate tables.</li></ul></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_discover_server.png.html" class="image"><img alt="" src="images/thumb/f/f8/Chef_discover_server.png/800px-Chef_discover_server.png" width="800" height="494" class="thumbimage" srcset="/images/f/f8/Chef_discover_server.png 1.5x, /images/f/f8/Chef_discover_server.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_discover_server.png.html" class="internal" title="Enlarge"></a></div>Discovering a Chef server</div></div></div> <br clear="all" />
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> [Required] A name to identify the Chef server.
+</td></tr>
+<tr>
+<td> Description
+</td>
+<td> A description of the Chef server.
+</td></tr>
+<tr>
+<td> Hosted Chef
+</td>
+<td> Check box that indicates whether the Chef server is within the Chef hosted environment (selected) or outside of the Chef hosted environment (deselected).
+</td></tr>
+<tr>
+<td> IP address
+</td>
+<td> The IP address of the server. This field is required if the <b>Hosted Chef</b> field is <i>not</i> selected.
+</td></tr>
+<tr>
+<td> Organization
+</td>
+<td> The name of the organization hosting the Chef server. This field is required if the <b>Hosted Chef</b> field is selected.
+</td></tr>
+<tr>
+<td> User
+</td>
+<td> [Required] A user who has been set up to access the Chef server. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Setting+Up+Chef&amp;oldid=0.html#Setting_Up_a_User_Account" title="Setting Up Chef">Setting Up a User Account</a>.
+</td></tr></table>
+<h2><span class="mw-headline" id="Managing_Chef_Nodes"><span class="mw-headline-number">2.2</span> Managing Chef Nodes</span></h2>
+<p>An administrator can configure the node definitions and attributes for a specific node directly from the CI form. An individual node can have multiple node definitions associated with it. To view a list of CIs that use ServiceNow configuration automation and are assigned to the logged-in user, navigate to <b>Configuration Automation &gt; Managed Nodes</b>. By default, a ServiceNow user cannot directly modify the ServiceNow fields on the CI form, and must request changes through a <a href="index.php%3Ftitle=Using_Change_Management_with_ServiceNow_Provider.html" title="Using Change Management with ServiceNow Provider">controlled change process</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Updates to a CI reset the <b>Node group assignment state</b> to Ready. The Ready state ensures that assignment rules are applied and that the CIs are re-assigned based on the new values. For example, updating fqdn or IP address might reassign a CI to a different node group.</i>
+</td></tr></table>
+<p><br />
+To update a node:
+</p>
+<ol><li>Navigate to <b>Configuration Automation &gt; Managed Nodes</b> or <b>Configuration &gt; Servers &gt; Linux</b>.</li>
+<li>Open the node to update.</li>
+<li>Edit the fields under the <b>Configuration Automation</b> (see table).</li>
+<li>Click <b>Update</b>.</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Fully qualified domain name
+</td>
+<td> The fully qualified domain name that Chef uses to access this CI.
+</td></tr>
+<tr>
+<td> Provider
+</td>
+<td> The configuration automation provider managing this CI.
+</td></tr>
+<tr>
+<td> Management Server
+</td>
+<td> The server managing this CI.
+</td></tr>
+<tr>
+<td> Node group assignment state
+</td>
+<td> The state of automatic assignment of this CI to a node group, as described in the following table.
+</td></tr></table>
+<table class="standard">
+
+<tr>
+<th> State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Ready
+</td>
+<td> Default state for newly discovered CIs. Assignment rules are applied only to CIs in the Ready state.
+</td></tr>
+<tr>
+<td> In Progress
+</td>
+<td> CI is currently experiencing a configuration change.
+</td></tr>
+<tr>
+<td> Assigned
+</td>
+<td> CI is part of one or more node groups.
+</td></tr>
+<tr>
+<td> Processed
+</td>
+<td> Assignment rules have been applied to the CI. There may or may not be a match.
+</td></tr>
+<tr>
+<td> Excluded
+</td>
+<td> Configuration admin role can exclude a CI from being processed by the assignment rules.
+</td></tr></table>
+<h2><span class="mw-headline" id="Creating_Node_Definitions"><span class="mw-headline-number">2.3</span> Creating Node Definitions</span></h2>
+<p>Chef node definitions can be composed of environments, cookbooks, roles, recipes, and attributes. A Chef node definition needs to be associated with a specific management server.
+</p>
+<ol><li>Navigate to <b>Chef &gt; Node Definitions</b>.</li>
+<li>Click <b>New Draft</b>.</li>
+<li>Fill in the form, as appropriate (see table).</li>
+<li>Right-click the form header and select <b>Save</b>.</li>
+<li>To add an environment, select the environment in the <b>Environment</b> field.</li>
+<li>To edit node components, click <b>Edit</b> in the <b>Chef Node Components</b> related list and make any changes on the form.
+<dl><dd>The slushbucket shows up to 100 available components. If you do not see a component in the <b>Collection</b> list, search for the component name.</dd></dl></li>
+<li>To <a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html#Adding_and_Editing_Chef_Node_Attributes">add or modify attributes</a>, click <b>New</b> or <b>Edit</b> under the <b>Chef Node Attribute</b> related list, and update the form.</li>
+<li>To create a managed node, click <b>New</b> under the <b>Managed Node</b> related list, and fill out the form.</li>
+<li>Click <b>Publish</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_node_definition_draft.png.html" class="image"><img alt="" src="images/thumb/1/11/Chef_node_definition_draft.png/800px-Chef_node_definition_draft.png" width="800" height="591" class="thumbimage" srcset="/images/1/11/Chef_node_definition_draft.png 1.5x, /images/1/11/Chef_node_definition_draft.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_node_definition_draft.png.html" class="internal" title="Enlarge"></a></div>A new node definition draft record</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> The name to identify the Chef node definition.
+</td></tr>
+<tr>
+<td> Environment
+</td>
+<td> The Chef environment.
+</td></tr>
+<tr>
+<td> Provider
+</td>
+<td> [Read-only] The provider, in this case Chef.
+</td></tr>
+<tr>
+<td> Change Request
+</td>
+<td> [Read-only] The change request for this change, if any.
+</td></tr>
+<tr>
+<td> Chef Server
+</td>
+<td> The Chef server that manages the nodes that use this definition.
+</td></tr>
+<tr>
+<td> State
+</td>
+<td> [Read-only] The state of the node definition: <b>Draft</b> or <b>Published</b>.
+</td></tr>
+<tr>
+<td> Replaces
+</td>
+<td> [Read-only] For node definition draft records, the original node definition record that the draft replaces when published.
+</td></tr></table>
+<h2><span class="mw-headline" id="Adding_and_Editing_Chef_Node_Attributes"><span class="mw-headline-number">2.4</span> Adding and Editing Chef Node Attributes</span></h2>
+<p>Chef node attributes are discovered from the Chef server. You can add additional attributes within the ServiceNow instance. Attributes that you have created inside a ServiceNow instance are editable; however, you cannot edit discovered Chef attributes.
+</p>
+<h3><span class="mw-headline" id="Adding_Chef_Node_Attributes"><span class="mw-headline-number">2.4.1</span> Adding Chef Node Attributes</span></h3>
+<p>In a node definition draft, click <b>New</b> from the <b>Chef Node Attribute</b> related list and fill out the form (see table). If there is an existing attribute with the same path and name as the newly created attribute, the new attribute replaces the old attribute.
+<br style="clear:both;" />
+</p>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> [Required] A name to identify the attribute.
+</td></tr>
+<tr>
+<td> Data Type
+</td>
+<td> The attribute's data type&#8212;<b>Array</b>, <b>Number</b>, <b>Boolean</b>, <b>Object</b>, or <b>String</b>.
+</td></tr>
+<tr>
+<td> Attribute level
+</td>
+<td> The attribute level&#8212;<b>Default</b>, <b>Force Default</b>, <b>Normal</b>, <b>Override</b>, or <b>Force Override</b>.
+</td></tr>
+<tr>
+<td> Path
+</td>
+<td> The attribute path. Use "." to separate path elements. For example, "mysql.password" matches the Chef attribute ["mysql"]["password"].
+</td></tr>
+<tr>
+<td> Value
+</td>
+<td> The attribute value. The format is  JSON and should match the data type. For example, if the data type is boolean, the value can be only true or false.
+</td></tr></table>
+<h3><span class="mw-headline" id="Editing_Chef_Node_Attributes"><span class="mw-headline-number">2.4.2</span> Editing Chef Node Attributes</span></h3>
+<p>To edit attributes that you have created within the ServiceNow instance, click <b>Edit</b> from the <b>Chef Node Attribute</b> related list In a node definition draft. Then, edit the form and click <b>Submit</b>.
+</p>
+<h3><span class="mw-headline" id="Choosing_the_Discovered_Chef_Node_Attributes"><span class="mw-headline-number">2.4.3</span> Choosing the Discovered Chef Node Attributes</span></h3>
+<p>You can choose which discovered attributes to include in a node definition. In a node definition draft, click <b>Edit</b> under the <b>Chef Node Attribute</b> related list. Select the attributes from the discovered collection in the <a href="index.php%3Ftitle=Slushbucket.html" title="Slushbucket">slushbucket</a>, and then click <b>Save</b>. 
+</p><p>If you select multiple attributes with the same path and name, only the first is added to the node definition.
+</p>
+<h3><span class="mw-headline" id="Editing_CI-level_Attributes"><span class="mw-headline-number">2.4.4</span> Editing CI-level Attributes</span></h3>
+<p>Chef node attributes can be edited at the CI level. Editing CI-level attributes overrides the attributes for a specific CI. For example, if you have applied a node definition to several CIs but want to modify an individual CI to use a different timezone, you can edit the attribute for that CI. 
+</p><p>To access CI-level attributes:
+</p>
+<ol><li> Navigate to <b>Configuration Automation &gt; Managed Nodes</b> or <b>Configuration &gt; Servers &gt; Linux</b>.</li>
+<li> Open a server.</li>
+<li> In the <b>Configuration Automation</b> related list, edit the fields as necessary.</li>
+<li> Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Using_Change_Management_with_Chef"><span class="mw-headline-number">3</span> Using Change Management with Chef</span></h1>
+<p>By default, the ServiceNow system only allows changes to Chef configurations as part of a controlled change management process. With change management, users cannot directly edit Chef records such as node definitions or the relationships between CIs and node definitions. For all changes to Chef resources, the requesting user's manager must approve the request. If the user record does not have a value in the <b>Manager</b> field, the request is approved automatically. 
+</p><p>When a user requests a change, each change management approver and the requesting user receive a notification. Additionally, the <b>Assigned to</b> field on the change request is populated with the requesting user. This user receives a notification when the request is approved or rejected.
+</p>
+<h2><span class="mw-headline" id="Modifying_Chef_Nodes"><span class="mw-headline-number">3.1</span> Modifying Chef Nodes</span></h2>
+<p>Change management prevents Chef users from directly editing the <b>Configuration automation</b> or <b>Node definition</b> fields on the CI form. Additionally, the <b>Create New Configuration Change</b> related link appears on the CI form for Chef node CIs. 
+</p><p>To modify a Chef node with change management enabled:
+</p>
+<ol><li>Navigate to <b>Configuration &gt; Servers &gt; Linux</b>.</li>
+<li>Select a Linux CI record that is assigned to the logged-in user.</li>
+<li>Go to the <b>Configuration Automation</b> section to view the current configuration automation settings.</li>
+<li>Click the <b>Create New Configuration Change</b> related link.
+<dl><dd>A new Configuration Automation Change form appears.</dd></dl></li>
+<li>Edit the fields, as necessary (see table).</li>
+<li>Click the <b>Request Change</b> related link.</li>
+<li>Click <b>OK</b>.</li>
+<li>Click <b>Update</b>.
+<ul><li>If there is an active change associated to that CI, the <b>Cancel Change</b> related link replaces <b>Create New Configuration Change</b> on the CI form. You can only have one active Chef change request per CI at any time.</li>
+<li>After the requesting user's <b>Manager</b> approves the request, the <b>Proceed with Change</b> related link appears with <b>Cancel Change</b>.</li></ul></li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_configuration_automation_change_warning.png.html" class="image"><img alt="" src="images/thumb/0/07/Chef_configuration_automation_change_warning.png/800px-Chef_configuration_automation_change_warning.png" width="800" height="534" class="thumbimage" srcset="/images/0/07/Chef_configuration_automation_change_warning.png 1.5x, /images/0/07/Chef_configuration_automation_change_warning.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_configuration_automation_change_warning.png.html" class="internal" title="Enlarge"></a></div>Initiating a change request for modifying a server configuration</div></div></div><br style="clear:both;" />
+<p>After the user's manager approves the request:
+</p>
+<ol><li>Navigate to the relevant CI record.</li>
+<li>Click the <b>Proceed with Change</b> related link. This link is available only when a change has been approved.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_configuration_automation_change.png.html" class="image"><img alt="" src="images/thumb/b/ba/Chef_configuration_automation_change.png/800px-Chef_configuration_automation_change.png" width="800" height="535" class="thumbimage" srcset="/images/b/ba/Chef_configuration_automation_change.png 1.5x, /images/b/ba/Chef_configuration_automation_change.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_configuration_automation_change.png.html" class="internal" title="Enlarge"></a></div>Requesting a change to a Chef node</div></div></div><br style="clear:both;" />
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Phase
+</td>
+<td> The phase of the configuration automation change: <b>Draft</b>, <b>Requested</b>, <b>Approved</b>, <b>Rejected</b>, <b>In Progress</b>, <b>Completed</b>, <b>Canceled</b>, or <b>Error</b>.
+</td></tr>
+<tr>
+<td> Computer
+</td>
+<td> The CI affected by the change.
+</td></tr>
+<tr>
+<td> Fully qualified domain name
+</td>
+<td> The fully qualified domain name that Chef uses to access this CI.
+</td></tr>
+<tr>
+<td> Provider
+</td>
+<td> The configuration automation provider managing this CI.
+</td></tr>
+<tr>
+<td> Management server
+</td>
+<td> The server managing this CI.
+</td></tr>
+<tr>
+<td> Node definition
+</td>
+<td> The node definition for this CI.
+</td></tr>
+<tr>
+<td> Change request
+</td>
+<td> The change request number.
+</td></tr>
+<tr>
+<td> Requested CI Node attributes
+</td>
+<td> Node attributes included in this change request.
+</td></tr></table>
+<h2><span class="mw-headline" id="Modifying_node_definitions"><span class="mw-headline-number">3.2</span> Modifying node definitions</span></h2>
+<p>The <b>Checkout Draft</b> related link on the Chef Node Definition form creates an editable draft copy of the record.  Before a Chef user or Chef administrator can commit changes to a node definition, the user's manager must approve the change request. 
+</p><p>When making a change to a node with one or more associated components and attributes, ServiceNow duplicates these related records and associates the duplicates with the new node definition draft record. Roles, recipes, and attributes can be added to or removed from Chef node definition using the <a href="index.php%3Ftitle=Slushbucket.html" title="Slushbucket">slushbucket</a>.
+</p><p>To update a node definition:
+</p>
+<ol><li>Navigate to <b>Chef &gt; Node Definitions</b> or <b>Configuration Automation &gt; Node Definitions</b>.</li>
+<li>Select a published node definition.</li>
+<li>Click the <b>Checkout Draft</b> related link.
+<dl><dd>This creates an editable copy of the current record as a draft and opens the form for that record.</dd></dl></li>
+<li>Edit the draft record, as appropriate for the change.</li>
+<li>Click the <b>Publish</b> related link. 
+<ul><li>This related link creates a change request record. A draft can have only one active change request at a time.</li>
+<li>After the requesting user's <b>Manager</b> approves the request, the <b>Proceed with Change</b> related link appears on the Chef Node Definition Draft form. </li></ul></li></ol>
+<p>After the user's manager approves the request:
+</p>
+<ol><li>Navigate to the relevant node definition draft record.</li>
+<li>Click <b>Proceed with Change</b> to push the changes to the original node definition record and delete the draft record.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_Modify_node_definition.png.html" class="image"><img alt="" src="images/thumb/f/f4/Chef_Modify_node_definition.png/800px-Chef_Modify_node_definition.png" width="800" height="184" class="thumbimage" srcset="/images/f/f4/Chef_Modify_node_definition.png 1.5x, /images/f/f4/Chef_Modify_node_definition.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_Modify_node_definition.png.html" class="internal" title="Enlarge"></a></div>A node definition draft that replaces a node definition. Clicking <b>Publish</b> creates a change request.</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Requesting_Changes_Using_the_Service_Catalog"><span class="mw-headline-number">3.3</span> Requesting Changes Using the Service Catalog</span></h2>
+<p>A user can request a change to a Chef node through the <a href="index.php%3Ftitle=Service_Catalog.html" title="Service Catalog" class="mw-redirect">service catalog</a>. Changes to nodes through the service catalog require the same change requests and approvals as changes made through the CI form.
+</p>
+<ol><li>Navigate to <b>Self-Service &gt; Service Catalog</b>.</li>
+<li>Click <b>Software</b>.</li>
+<li>Click <b>Modify computer configuration</b>.</li>
+<li>Select a <b>Computer</b> to modify.
+<dl><dd>Only computers <b>Assigned to</b> the requesting user can be selected.</dd>
+<dd>The <b>Configuration automation provider</b> and <b>Management server</b> are automatically inserted.</dd></dl></li>
+<li>Select the <b>Node definition</b> to apply to the selected computer.</li>
+<li>Click <b>Order Now</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Chef_Service_Catalog_EUR.png.html" class="image"><img alt="" src="images/thumb/a/a8/Chef_Service_Catalog_EUR.png/800px-Chef_Service_Catalog_EUR.png" width="800" height="305" class="thumbimage" srcset="/images/a/a8/Chef_Service_Catalog_EUR.png 1.5x, /images/a/a8/Chef_Service_Catalog_EUR.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Chef_Service_Catalog_EUR.png.html" class="internal" title="Enlarge"></a></div>Chef Service Catalog</div></div></div>
+<p><br style="clear:both;" />
+When the request is approved, a <b>Proceed with change</b> related link is displayed on the computer's CI form.
+</p>
+<h2><span class="mw-headline" id="Disabling_Change_Management"><span class="mw-headline-number">3.4</span> Disabling Change Management</span></h2>
+<p>Disabling change management with Chef allows Chef users to make and save changed on the Chef Node Definition form and the Configuration Automation section of the CI form for Chef nodes.
+</p><p>A Chef administrator can disable change management with Chef:
+</p>
+<ol><li>Navigate to <b>Chef &gt; Properties</b>.</li>
+<li>Separately disable change management for either or both of the following properties:
+<ul><li>Enable change management to control any updates to node definitions [glide.config_auto.chef.node_definition.use_change].</li>
+<li>Enable change management to control any assignments of Chef definitions to CIs [glide.config_auto.chef.ci_assignment_use_change].</li></ul></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203104013
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.196 seconds
+Real time usage: 0.704 seconds
+Preprocessor visited node count: 87/1000000
+Preprocessor generated node count: 264/1000000
+Post‐expand include size: 1667/2097152 bytes
+Template argument size: 354/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   62.327      1 - -total
+ 86.27%   53.772      1 - Template:Configuration_Automation
+ 69.71%   43.449      1 - Template:Topic
+ 12.85%    8.007      1 - Template:Note
+  8.66%    5.398      1 - Embedded:Configuration_Automation
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22416-0!*!0!1!en!5!* and timestamp 20171203104013 and revision id 246690
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html">http://wiki.servicenow.com/index.php?title=Using_Chef&amp;oldid=246690</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Automation.html" title="Category:Configuration Automation">Configuration Automation</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration.html" title="Category:Orchestration">Orchestration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Configuration+Automation.html" title="Category:Configuration Automation">Configuration Automation</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22416"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22416" data-vote-the-vote="5" data-vote-id="22416" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22416_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22416" data-vote-the-vote="1" data-vote-id="22416" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22416_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Chef&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Using+Chef&amp;returntoquery=oldid%3D246690" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Using+Chef&amp;returntoquery=oldid%3D246690" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Chef.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Chef&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Chef.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Chef&amp;returnto=Using+Chef&amp;oldid=246690&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_Chef&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Chef.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Chef" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Chef&amp;oldid=246690.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Chef&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:47, 2 June 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1050});});</script></body></html>

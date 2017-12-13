@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Domain Separation Setup - Versions Prior to Eureka - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Domain_Separation_Setup_-_Versions_Prior_to_Eureka","wgTitle":"Domain Separation Setup - Versions Prior to Eureka","wgCurRevisionId":249649,"wgRevisionId":249649,"wgArticleId":23363,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Company and Domain Separation"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Domain_Separation_Setup_-_Versions_Prior_to_Eureka","wgRelevantArticleId":23363,"wgRequestId":"4ebb8de1d71dc2a31ede928c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20160718202558"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Domain_Separation_Setup_-_Versions_Prior_to_Eureka"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Domain Separation Setup - Versions Prior to Eureka"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Company and Domain Separation"/>
+<meta name="category" content="Company and Domain Separation"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Domain Separation Setup - Versions Prior to Eureka"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20160718202558"/>
+
+	<meta property="article:published_time" content="20160718202558"/>
+
+	<meta property="article:modified_time" content="20160718202558"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Company and Domain Separation"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Domain_Separation_Setup_-_Versions_Prior_to_Eureka"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Domain_Separation_Setup_-_Versions_Prior_to_Eureka rootpage-Domain_Separation_Setup_-_Versions_Prior_to_Eureka skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Domain+Separation+Setup+-+Versions+Prior+to+Eureka.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Domain+Separation+Setup+-+Versions+Prior+to+Eureka&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Domain Separation Setup - Versions Prior to Eureka</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Security.html" title="Security">Security</a> &gt; <a href="index.php%3Ftitle=Multi_Tenancy_and_Domain_Separation_Options.html" title="Multi Tenancy and Domain Separation Options">Company and Domain Separation</a> &gt; Domain Separation Setup - Versions Prior to Eureka</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Domain_Separation.html" title="Domain Separation">Domain Separation</a>
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Multi_Tenancy_and_Domain_Separation_Options.html" title="Multi Tenancy and Domain Separation Options">Multi Tenancy and Domain Separation Options</a></li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup.html" title="Domain Separation Setup">Domain Separation Setup</a>
+<ul><li> <strong class="selflink">Domain Separation Setup - Versions Prior to Eureka</strong></li>
+<li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Domain+Separation+for+MSPs&amp;oldid=0.html" title="Domain Separation for MSPs">Domain Separation for MSPs</a></li></ul></li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Administration.html" title="Domain Separation Administration">Domain Separation Administration</a> </li></ul>
+</td></tr>
+<tr>
+<th>  Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=User_Administration.html" title="User Administration">User Administration</a></li></ul>
+</td></tr></table>
+</div>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Activating_Domain_Separation"><span class="tocnumber">2</span> <span class="toctext">Activating Domain Separation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Requesting_the_Plugin"><span class="tocnumber">2.1</span> <span class="toctext">Requesting the Plugin</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Configuration_Module"><span class="tocnumber">3</span> <span class="toctext">Configuration Module</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Domain_Separation_Options"><span class="tocnumber">4</span> <span class="toctext">Domain Separation Options</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Adding_a_Domain_Field_to_a_Table"><span class="tocnumber">4.1</span> <span class="toctext">Adding a Domain Field to a Table</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Displaying_Domain_Selection_Menus"><span class="tocnumber">4.2</span> <span class="toctext">Displaying Domain Selection Menus</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Simple_Domain_Picker"><span class="tocnumber">4.2.1</span> <span class="toctext">Simple Domain Picker</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Domain_Reference_Picker"><span class="tocnumber">4.2.2</span> <span class="toctext">Domain Reference Picker</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Restricting_Access_to_Domain_Selection_by_Role"><span class="tocnumber">4.2.3</span> <span class="toctext">Restricting Access to Domain Selection by Role</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Changing_the_Domain_Table"><span class="tocnumber">4.3</span> <span class="toctext">Changing the Domain Table</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Reset_Data_and_Proceed"><span class="tocnumber">4.3.1</span> <span class="toctext">Reset Data and Proceed</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Ignore_Data_and_Proceed"><span class="tocnumber">4.3.2</span> <span class="toctext">Ignore Data and Proceed</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_a_Custom_Table_for_the_Domain_Table"><span class="tocnumber">4.3.3</span> <span class="toctext">Using a Custom Table for the Domain Table</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Selecting_the_Domain_Query_Method"><span class="tocnumber">4.4</span> <span class="toctext">Selecting the Domain Query Method</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_the_Current_Record.27s_Domain_Instead_of_the_Current_User.27s_Domain"><span class="tocnumber">4.5</span> <span class="toctext">Using the Current Record's Domain Instead of the Current User's Domain</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_the_Current_Record.27s_Domain_for_Client_Scripts"><span class="tocnumber">4.5.1</span> <span class="toctext">Using the Current Record's Domain for Client Scripts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Notifying_the_User_When_the_Record.27s_Domain_Determines_the_Domain"><span class="tocnumber">4.6</span> <span class="toctext">Notifying the User When the Record's Domain Determines the Domain</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Providing_a_List_of_Roles_that_Ignore_the_Domain_of_the_Current_Record"><span class="tocnumber">4.7</span> <span class="toctext">Providing a List of Roles that Ignore the Domain of the Current Record</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Adding_Domains_to_a_Visibility_Domains_List"><span class="tocnumber">4.8</span> <span class="toctext">Adding Domains to a Visibility Domains List</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Creating_Contains_Relationships_Between_Domains"><span class="tocnumber">4.9</span> <span class="toctext">Creating Contains Relationships Between Domains</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Creating_Domain-Specific_Choice_Lists"><span class="tocnumber">4.10</span> <span class="toctext">Creating Domain-Specific Choice Lists</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Preventing_Users_from_Seeing_the_Complete_Domain_List"><span class="tocnumber">4.11</span> <span class="toctext">Preventing Users from Seeing the Complete Domain List</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Assigning_Users_and_Records_to_Domains"><span class="tocnumber">5</span> <span class="toctext">Assigning Users and Records to Domains</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Assigning_Users_to_Domains_Automatically"><span class="tocnumber">5.1</span> <span class="toctext">Assigning Users to Domains Automatically</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Company_Domains"><span class="tocnumber">5.1.1</span> <span class="toctext">Company Domains</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Default_Domain"><span class="tocnumber">5.1.2</span> <span class="toctext">Default Domain</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Overriding_the_Company_Domain_with_a_Managed_Domain"><span class="tocnumber">5.1.3</span> <span class="toctext">Overriding the Company Domain with a Managed Domain</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Assigning_Users_and_Records_to_Domains_Manually"><span class="tocnumber">5.2</span> <span class="toctext">Assigning Users and Records to Domains Manually</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>The latest release this documentation applies to is Fuji. For the Geneva release, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/company_and_domain_separation/reference/r_DomainSeparation.html">Domain separation</a>. Documentation for later releases is also on <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://docs.servicenow.com">docs.servicenow.com</a>.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Setting up domain separation requires completing these tasks in versions prior to Eureka: 
+</p>
+<ol><li>Request activation of a <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Activating_Domain_Separation">domain support plugin</a>. </li>
+<li>Configure domain separation options from the <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Configuration_Module">configuration module</a>.</li>
+<li><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Assigning_Users_and_Records_to_Domains">Assign users and records to domains</a>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Customers cannot see the domain support plugin, even when it is active.</i>
+</td></tr></table>
+<p><br />
+Domain separation replaces <a href="index.php%3Ftitle=Legacy:Company_Separation.html" title="Legacy:Company Separation">Company Separation</a>. However, if company separation is already active when you activate domain separation, both plugins are active at the same time. To disable company separation, go to System Properties [sys_properties] table and delete the <tt>glide.db.separation.field</tt> property.
+</p><p>How you set up domain separation depends on the release version your instance is on. This page describes the setup options available in versions prior to the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. It is intended for users who set up domain separation in an earlier release and want to change their domain configuration. If you are setting up domain separation for the first time on an instance running Eureka or later, see <a href="index.php%3Ftitle=Domain_Separation_Setup.html" title="Domain Separation Setup">Domain Separation Setup</a> instead. 
+</p>
+<h1><span class="mw-headline" id="Activating_Domain_Separation"><span class="mw-headline-number">2</span> Activating Domain Separation</span></h1>
+<p>In releases prior to the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>, customers can request one of these <a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html#Requesting_Plugins" title="Activating ServiceNow Plugins">domain support plugins</a> from technical support.
+</p>
+<table class="standard">
+
+<tr>
+<th> Plugin
+</th>
+<th> Default Configuration Options
+</th>
+<th> Plugins Included
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Domain+Separation+for+MSPs&amp;oldid=0.html" title="Domain Separation for MSPs">Domain Support - MSP Extensions Installer</a> <br />
+<p>com.glide.domain.msp_extensions.installer
+</p>
+</td>
+<td>
+<p>Activating MSP Extensions Installer enables these configuration options: 
+</p>
+<ul><li> Domain separation is enabled.</li>
+<li> The system creates a domain for each entry in the Domain [domain] table.</li>
+<li> Delegated administration is enabled.</li>
+<li> The default domain query method uses domain numbering.</li>
+<li> Administrators can upgrade the domain query method to domain paths.</li>
+<li> All existing records become part of the global domain.</li>
+<li> The current user's domain determines the domain to use when viewing or operating on a record in a different domain.</li></ul>
+</td>
+<td>
+<p>Activating this plugin also activates the following plugins:
+</p>
+<ul><li> Domain Number Support</li>
+<li> Domain Support (version 2.0)</li>
+<li> Domain Support - Delegated Administration</li>
+<li> Domain Support - MSP Extensions</li>
+<li> Domain Support - Partitioning (Data separation)</li></ul>
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Domain_Separation.html" title="Domain Separation">Domain Support version 2.0</a> <br />
+<p>com.glide.domain
+</p>
+</td>
+<td>
+<p>Activating Domain Support version 2.0 enables these configuration options: 
+</p>
+<ul><li> Domain separation is enabled.</li>
+<li> The system creates a domain for each entry in the Group [sys_user_group] table.</li>
+<li> Delegated administration is enabled.</li>
+<li> The default domain query method uses domain numbering.</li>
+<li> Administrators can upgrade the domain query method to domain paths.</li>
+<li> All existing records become part of the global domain.</li>
+<li> The current user's domain determines the domain to use when viewing or operating on a record in a different domain.</li></ul>
+</td>
+<td>
+<p>Activating this plugin also activates the following plugins:
+</p>
+<ul><li> Domain Number Support</li>
+<li> Domain Support - Delegated Administration</li>
+<li> Domain Support - Partitioning (Data separation)</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Requesting_the_Plugin"><span class="mw-headline-number">2.1</span> Requesting the Plugin</span></h2>
+<p>Request this plugin from <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html" title="Technical Support" class="mw-redirect">technical support</a>.
+</p>
+<table class="collapsible collapsed">
+<tr>
+<th> Click the plus to expand instructions for requesting a plugin.
+</th></tr>
+<tr>
+<td>
+<ol><li>Navigate to [<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://hi.service-now.com">HI</a>].</li>
+<li>Click <b>Service Catalog</b>.</li>
+<li>Click <b>Request Plugin Activation</b>.
+<dl><dd><ul><li>[Required] In <b>Target Instance</b>, select the instance on which to activate the plugin.</li>
+<li>[Required] In <b>Plugin Name</b>, enter the name of the plugin to activate.</li>
+<li>[Optional] In <b>Date and time would you like the plugin to be enabled?</b>, specify a date and time at least 12 hours in the future. Leave this field empty if you want the plugin activated as soon as possible.</li></ul></dd>
+<dd> <b>Note:</b> Plugins are generally activated during business hours in the Pacific time zone, but can be scheduled for a different time with advance notice. 
+<ul><li>[Optional] In <b>Reason/Comments</b>, add any information that would be helpful for the ServiceNow technical support engineer activating the plugin.</li></ul></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+</td></tr></table>
+<h1><span class="mw-headline" id="Configuration_Module"><span class="mw-headline-number">3</span> Configuration Module</span></h1>
+<p>The <b>Domain Admin &gt; Configuration</b> module is the central location where an administrator enables, configures, and views the status of domain separation support. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:Domain_configuration.png.html" class="image"><img alt="Domain configuration.png" src="images/thumb/b/b4/Domain_configuration.png/800px-Domain_configuration.png" width="800" height="409" class="thumbimage" srcset="/images/b/b4/Domain_configuration.png 1.5x, /images/b/b4/Domain_configuration.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Domain_configuration.png.html" class="internal" title="Enlarge"></a></div></div></div></div> <br clear="all" />
+<p>The Configuration module consists of these fields. 
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Domain Table
+</td>
+<td> Select the table containing domain names for domain separation. You can select an existing or <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_a_Custom_Table_for_the_Domain_Table">custom table</a>. The default domain table depends on the plugin activated.
+<ul><li> The Domain Support - MSP Extensions Installer plugin uses the Domain [domain] table.</li>
+<li> The Domain Support plugin uses the Group [sys_user_group] table.</li></ul>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> No domain can have the name <b>global</b>. Verify that the name global is not used in any of the domain names in the table before saving the domain configuration or changing the configuration to a new table.
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Query Method
+</td>
+<td> A query method allows the instance to quickly filter by a record's domain. The recommended approach is to use the <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#About_Domain_Paths">domain paths</a> query method, which offers the best performance and scalability. Select the <b>Switch to Domain Paths</b> link to enable paths. New deployments should always use paths. You can switch an existing domain numbers implementation to domain paths with a one-time conversion process. Depending on the number of domains, the conversion process may take up to several hours. After the initial conversion, you may switch between domain paths and domain numbers without any additional conversion effort.
+<p>Continue using domain numbers only if you are currently using it successfully and do not yet want to make a change in production. 
+</p><p>This field is no longer available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a> as the query method always uses domain paths.
+</p>
+</td></tr>
+<tr>
+<td> Domain Validation
+</td>
+<td> Lists any current validation issues. Click the <b>More</b> link to see <a href="index.php%3Ftitle=Domain_Separation_Administration.html#Validating_the_Domain_Tree" title="Domain Separation Administration">validation</a> options.
+</td></tr>
+<tr>
+<td> Domain Progress Workers
+</td>
+<td> Lists any currently running conversion or validation processes.
+</td></tr>
+<tr>
+<td> Domain Alerts
+</td>
+<td> Lists any information, warning, or error messages relating to domain separation. You can also find this information in the instance log.
+</td></tr>
+<tr>
+<td> Enable Domain Separation
+</td>
+<td> Select whether to enable or disable domain separation. By default, domain separation is enabled. You can manually disable domain separation with this setting. This option maps to the system property <tt>glide.sys.domain.partitioning</tt>.
+</td></tr>
+<tr>
+<td> Enable Delegated Administration
+</td>
+<td> Select whether to enable or disable <a href="index.php%3Ftitle=Domain_Separation_Support.html#Delegated_Administration" title="Domain Separation Support" class="mw-redirect">delegated administration</a>. By default, delegated administration is enabled. You can manually disable delegated administration with this setting. This option maps to the system property <tt>glide.sys.domain.delegated_administration</tt>.
+</td></tr>
+<tr>
+<td> Use the domain of the record being viewed instead of the user's own
+</td>
+<td> Select whether to use the domain of the current user or the current record being viewed. Activating the plugin automatically enables using the current user's domain. This option maps to the system property <tt>glide.sys.domain.use_record_domain</tt>.
+</td></tr>
+<tr>
+<td> Use the domain value from the record to determine which client scripts are used
+</td>
+<td> Select whether to use the domain of current record to select client scripts. This option is valid only if you are not already using the domain of the record rather than the user's domain. Enabling the property to use the record's domain already includes using the record's domain for client scripts. This option maps to the system property <tt>glide.sys.domain.use_record_domain_for_client_scripts</tt>.
+</td></tr>
+<tr>
+<td> Notify users when the domain of the record they are viewing is used instead of their own
+</td>
+<td> Select whether to notify the current user when the domain used comes from the current record rather than from the current user's domain. Activating the plugin automatically notifies the user whenever the domain used is based on the current record rather than the current user. This option maps to the system property <tt>glide.sys.domain.domain_change_notify</tt>.
+</td></tr>
+<tr>
+<td> List of roles (comma-separated) that will not trigger the automatic change of domain to the domain of the record that is being viewed
+</td>
+<td> Enter a list of roles that ignore the setting to change the domain to that of the current record. Activating the plugin does not provide any roles that ignore the setting to check the current record's domain if it is enabled. This option maps to the system property <tt>glide.sys.domain.no_change_roles</tt>.
+</td></tr>
+<tr>
+<td> Enable verbose domain logging
+</td>
+<td> Select whether to enable additional debugging information for domain separation. Activating the plugin does not enable verbose domain logging. This option maps to the system property <tt>glide.sys.domain.verbose</tt>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Domain_Separation_Options"><span class="mw-headline-number">4</span> Domain Separation Options</span></h1>
+<p>You can set the following domain separation configuration options by navigating to <b>Domain Admin &gt; Configuration</b>: 
+</p>
+<ul><li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Adding_a_Domain_Field_to_a_Table">Add a domain field to a table</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Displaying_Domain_Selection_Menus">Display domain selection menus</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Changing_the_Domain_Table">Change the domain table</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Selecting_the_Domain_Query_Method">Select the domain query method</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_the_Current_Record.27s_Domain_Instead_of_the_Current_User.27s_Domain">Use the current record's domain instead of the current user's domain</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_the_Current_Record.27s_Domain_for_Client_Scripts">Use the current record's domain for client scripts</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Notifying_the_User_When_the_Record.27s_Domain_Determines_the_Domain">Notify the user when the record's domain determines the domain</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Providing_a_List_of_Roles_that_Ignore_the_Domain_of_the_Current_Record">Provide a list of roles that ignore the domain of the current record</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Enabling_Domain_Logging_and_Debug_Messages">Enable domain log and debug messages</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Adding_Domains_to_a_Visibility_Domains_List">Add domains to a visibility domains list</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Creating_Contains_Relationships_Between_Domains">Create a contains relationships between domains</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Creating_Domain-Specific_Choice_Lists">Create domain-specific choice lists</a>.</li>
+<li> <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Preventing_Users_from_Seeing_the_Complete_Domain_List">Prevent users from seeing the complete domain list</a>.</li></ul>
+<h2><span class="mw-headline" id="Adding_a_Domain_Field_to_a_Table"><span class="mw-headline-number">4.1</span> Adding a Domain Field to a Table</span></h2>
+<p>Administrators can domain separate custom tables by adding a <b>sys_domain</b> field to them, as follows.
+</p>
+<ol><li>Navigate to the table's list view. For example, type <b>&lt;<i>table name</i>&gt;.list</b> in the navigation filter.</li>
+<li>Right-click the header bar and select <b>Personalize &gt; List Layout</b>.</li>
+<li>In the <b>Create new field</b> section, enter the following values:
+<ul><li> <b>Name:</b> <i>sys_domain</i></li>
+<li> <b>Type:'<i> </i>Domain ID</b></li></ul></li>
+<li>Click <b>Add</b>.</li>
+<li>Click <b>Save</b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Any other means of creating a field adds a <tt>u_</tt> prefix to the column name. For domain separation to work, the column name must be <tt>sys_domain</tt> without any <tt>u_</tt> prefix.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Displaying_Domain_Selection_Menus"><span class="mw-headline-number">4.2</span> Displaying Domain Selection Menus</span></h2>
+<p>Domain selection is available via two menu formats that are controlled by UI macros. Both domain selection menus are disabled by default. These menus appear on the right side of the welcome banner at the top of the page. 
+</p><p>The available menu formats are: 
+</p>
+<ul><li><b>Simple domain picker:</b> provides a choice list of available domains. </li>
+<li><b>Domain reference picker:</b> enables a reference field that offers filtering and an auto-complete, <i>type-ahead</i>, entry feature. This format is suitable for longer lists.</li></ul>
+<h3><span class="mw-headline" id="Simple_Domain_Picker"><span class="mw-headline-number">4.2.1</span> Simple Domain Picker</span></h3>
+<p>The simple domain picker is a choice list of available domains and does not support the auto-complete, type-ahead feature. Use this menu format for a short list of domains.
+</p><p>To enable the simple domain picker: 
+</p>
+<ol><li>Navigate to <b>System UI &gt; UI Macros</b>. </li>
+<li>Select the <b>domain_select</b> macro. </li>
+<li>Select the <b>Active</b> check box and click <b>Update</b>. </li>
+<li>Refresh the browser. 
+<dl><dd><a href="index.php%3Ftitle=File:Domain_Simple_Picker.png.html" class="image" title="Domain_Simple_Picker.png"><img alt="Domain_Simple_Picker.png" src="images/thumb/b/b0/Domain_Simple_Picker.png/500px-Domain_Simple_Picker.png" width="500" height="294" srcset="/images/b/b0/Domain_Simple_Picker.png 1.5x, /images/b/b0/Domain_Simple_Picker.png 2x" /></a><br style="clear:both;" /></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Domain_Reference_Picker"><span class="mw-headline-number">4.2.2</span> Domain Reference Picker</span></h3>
+<p>Use the domain reference picker for long lists that require excessive scrolling. The reference picker supports auto-complete typing and displays a filterable list of domains.
+</p><p>To activate the domain reference picker: 
+</p>
+<ol><li>Navigate to <b>System UI &gt; UI Macros</b>. </li>
+<li>Select the <b>domain_reference_picker</b> macro. </li>
+<li>Select the <b>Active</b> check box and click <b>Update</b>. </li>
+<li>Refresh the browser. 
+<dl><dd>The domain reference picker appears at the right side of the Welcome banner. </dd>
+<dd><a href="index.php%3Ftitle=File:Domain_Reference_Picker2.png.html" class="image" title="Domain_Reference_Picker2.png"><img alt="Domain_Reference_Picker2.png" src="images/0/0f/Domain_Reference_Picker2.png" width="515" height="37" /></a><br style="clear:both;" /></dd></dl></li>
+<li>Click the reference lookup icon in this field to open a list of domains that can be filtered for easy selection. 
+<dl><dd><a href="index.php%3Ftitle=File:Domain_Reference_Picker.png.html" class="image" title="Domain_Reference_Picker.png"><img alt="Domain_Reference_Picker.png" src="images/thumb/8/80/Domain_Reference_Picker.png/600px-Domain_Reference_Picker.png" width="600" height="476" srcset="/images/8/80/Domain_Reference_Picker.png 1.5x, /images/8/80/Domain_Reference_Picker.png 2x" /></a><br style="clear:both;" /></dd></dl></li>
+<li>To use the auto-complete feature, type a letter in the field. The menu displays all domains beginning with that letter. 
+<dl><dd><a href="index.php%3Ftitle=File:Domain_Reference_Picker3.png.html" class="image" title="Domain_Reference_Picker3.png"><img alt="Domain_Reference_Picker3.png" src="images/0/04/Domain_Reference_Picker3.png" width="432" height="73" /></a><br style="clear:both;" /></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Restricting_Access_to_Domain_Selection_by_Role"><span class="mw-headline-number">4.2.3</span> Restricting Access to Domain Selection by Role</span></h3>
+<p>To restrict access to either domain selection menu format by role:
+</p>
+<ol><li>Navigate to <b>System UI &gt; UI Macros</b>. </li>
+<li>Select either <b>domain_select</b> or <b>domain_reference_picker</b>.</li>
+<li>Locate one of the following lines of code: 
+<ul><li><b>domain_select:</b> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WelcomeWidgetSelectControl</span><span class="p">(</span><span class="s2">&quot;gsft_domain&quot;</span><span class="p">,</span> <span class="s2">&quot;itil&quot;</span><span class="p">,</span> <span class="s2">&quot;Domain&quot;</span><span class="p">,</span><span class="s2">&quot;Domain&quot;</span><span class="p">);</span>
+</pre></div> </li>
+<li><b>domain_reference_picker</b>: <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainPicker</span><span class="p">(</span><span class="s2">&quot;QUERY:JSCRIPT:new DomainSelect().getMyDomainRefQual();&quot;</span><span class="p">,</span> <span class="s2">&quot;itil&quot;</span><span class="p">,</span> <span class="s2">&quot;DomainReference&quot;</span><span class="p">,</span><span class="s2">&quot;Domain&quot;</span><span class="p">);</span>
+</pre></div></li></ul></li>
+<li>Replace the parameter <b>itil</b> with a comma-separated list of roles that can see the domain selection menu.</li></ol>
+<h2><span class="mw-headline" id="Changing_the_Domain_Table"><span class="mw-headline-number">4.3</span> Changing the Domain Table</span></h2>
+<p>You must choose a table to define the domain tree. This becomes the domain table. By default, the domain table is either Domain [domain] or Group [sys_user_group], but administrators can change the domain table to another existing table or <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_a_Custom_Table_for_the_Domain_Table">custom table</a>. 
+</p><p>Typically, you set the domain table when you first enable domain separation. While you can change from an existing domain table to a new domain table, doing so means either resetting all of records back to the global domain, or leaving the data with invalid domain IDs which you then must manually migrate. For this reason, it is best to avoid changing from an existing domain table to a new domain table, if possible. If you must change the domain table on an existing system, the following best practices should improve the change: 
+</p>
+<ul><li> Create a script to automate moving records from the old domain table to the new domain table.</li>
+<li> Schedule the change during off-peak hours to give the instance sufficient resources to rename all affected records.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Any user who is importing records into the domain table must exist in the global domain.</i>
+</td></tr></table>
+<p><br />
+To change the domain table: 
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>Click <b>Change table</b>.
+<dl><dd><a href="index.php%3Ftitle=File:Domain_table_set.png.html" class="image"><img alt="Domain table set.png" src="images/b/bf/Domain_table_set.png" width="600" height="198" /></a> <br style="clear:both;" /> </dd></dl></li>
+<li>Select the table to use for domain separation. For example, Department [cmn_department].
+<dl><dd><a href="index.php%3Ftitle=File:Domain_table_change.png.html" class="image"><img alt="Domain table change.png" src="images/3/32/Domain_table_change.png" width="602" height="344" /></a> <br style="clear:both;" />  </dd></dl></li>
+<li>Click one of these buttons:
+<ul><li><b>Reset Data:</b> resets all domain records to the global domain.</li>
+<li><b>Ignore Data:</b> maintains references to the old domain IDs. You must migrate the sys_domain fields manually after changing the domain table.</li></ul>
+<dl><dd><a href="index.php%3Ftitle=File:Domain_change_confirm_01.png.html" class="image"><img alt="Domain change confirm 01.png" src="images/8/85/Domain_change_confirm_01.png" width="601" height="235" /></a> <br style="clear:both;" /></dd>
+<dd><a href="index.php%3Ftitle=File:Domain_change_confirm_02.png.html" class="image"><img alt="Domain change confirm 02.png" src="images/d/dd/Domain_change_confirm_02.png" width="600" height="219" /></a> <br style="clear:both;" />  </dd></dl></li>
+<li>To confirm your choice, click either <b><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Reset_Data_and_Proceed">Reset Data and Proceed</a></b> or <b><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Ignore_Data_and_Proceed">Ignore Data and Proceed</a></b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you use the Company [core_company] table for domain separation, do not enable the <a href="index.php%3Ftitle=Company_Separation.html" title="Company Separation" class="mw-redirect">Company Separation</a> plugin as well.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Reset_Data_and_Proceed"><span class="mw-headline-number">4.3.1</span> Reset Data and Proceed</span></h3>
+<p>These changes occur when you select <b>Reset All Data and Proceed</b>: 
+</p>
+<ul><li>The domain table changes to the table you selected.</li>
+<li>All existing records with a domain value are reset to the global domain.</li>
+<li>All existing domain overrides are deleted.</li>
+<li>All existing domain contains definitions are deleted.</li>
+<li>All existing domain visibility settings, both user and group, are deleted.</li></ul>
+<h3><span class="mw-headline" id="Ignore_Data_and_Proceed"><span class="mw-headline-number">4.3.2</span> Ignore Data and Proceed</span></h3>
+<p>These changes occur when you select <b>Ignore All Data and Proceed</b>: 
+</p>
+<ul><li>The domain table changes to the table you selected.</li>
+<li>All domain visibility settings, both user and group, <i>are deleted</i>.</li>
+<li>All existing records with a domain value refer to invalid domains until you migrate the domain data.</li>
+<li>All existing domain overrides refer to invalid domains until you migrate the domain data.</li>
+<li>All existing domain contains definitions refer to invalid domains until you migrate the domain data.</li></ul>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> Visibility settings <i>are deleted</i> whenever the domain table reference changes.
+</td></tr></table>
+<p>When you select the ignore option, no existing domain-separated tables are moved to the global domain, and it is your responsibility to migrate the domain records. Until the migration is complete, the domain validator will show warnings about inconsistent domain data. If necessary, you can manually <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Resetting_all_Records_to_the_Global_Domain">reset all domain-separated tables to the global domain</a>.
+</p>
+<h3><span class="mw-headline" id="Using_a_Custom_Table_for_the_Domain_Table"><span class="mw-headline-number">4.3.3</span> Using a Custom Table for the Domain Table</span></h3>
+<p>You can use a custom table as the domain table if the custom table contains a reference field column called <b>parent</b> that refers back to the custom table.
+</p>
+<ol>
+<li>Create a custom table to store the domain information. For example:
+
+<table class="standard">
+
+<tr>
+<th> Table
+</th>
+<th> Column name
+</th>
+<th> Type
+</th>
+<th> Reference
+</th></tr>
+<tr>
+<td> u_organization
+</td>
+<td> u_name
+</td>
+<td> string
+</td>
+<td> &#160;
+</td></tr>
+<tr>
+<td> u_organization
+</td>
+<td> u_description
+</td>
+<td> string
+</td>
+<td> &#160;
+</td></tr>
+<tr>
+<td> u_organization
+</td>
+<td> u_location
+</td>
+<td> reference
+</td>
+<td> cmn_location
+</td></tr></table>
+</li>
+<li>Create a reference field within the custom table that refers back to the custom table. For example:
+
+<table class="standard">
+
+<tr>
+<th> Table
+</th>
+<th> Column name
+</th>
+<th> Type
+</th>
+<th> Reference
+</th></tr>
+<tr>
+<td> u_organization
+</td>
+<td> parent
+</td>
+<td> reference
+</td>
+<td> u_organization
+</td></tr></table>
+<p><br />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Create_parent_field.png.html" class="image"><img alt="" src="images/thumb/3/39/Create_parent_field.png/600px-Create_parent_field.png" width="600" height="404" class="thumbimage" srcset="/images/thumb/3/39/Create_parent_field.png/900px-Create_parent_field.png 1.5x, /images/3/39/Create_parent_field.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Create_parent_field.png.html" class="internal" title="Enlarge"></a></div>Create new reference field</div></div></div> <br style="clear:both;" />
+<p><br />
+</p>
+</li>
+<li>Select the custom the table from the list of tables in the <b>New Domain Table</b> list.<br />
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Select_custom_table.png.html" class="image"><img alt="" src="images/2/2f/Select_custom_table.png" width="600" height="342" class="thumbimage" /></a>  <div class="thumbcaption">Select custom table</div></div></div> <br style="clear:both;" />
+</li>
+</ol>
+<h2><span class="mw-headline" id="Selecting_the_Domain_Query_Method"><span class="mw-headline-number">4.4</span> Selecting the Domain Query Method</span></h2>
+<p>You can use either domain paths (available with the Domain Support version 2 plugin) or domain numbers (legacy) as the domain separation query method in versions prior to the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. Domain numbers are not supported starting with the Eureka release.
+</p><p>Either option can support large numbers of domains, but only the domain paths method prevents the need to renumber domains as you add domains. 
+</p><p>Converting from domain numbers to domain paths requires a one-time background conversion process. This process can take several hours depending on the number of domains to be converted. Consider scheduling the conversion during off-peak hours to minimize the performance impact on users. 
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>From <b>Query Method</b>, select either <b>Enable Domain Paths</b> or <b>More &gt; Enable Domain Numbers</b>. </li>
+<li>Click <b>OK</b> to confirm the selection.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The conversion duration depends upon the current number of domains in the instance. The more domains there are, the longer the conversion takes to add path or number references to the domains.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Using_the_Current_Record.27s_Domain_Instead_of_the_Current_User.27s_Domain"><span class="mw-headline-number">4.5</span> Using the Current Record's Domain Instead of the Current User's Domain</span></h2>
+<p>By default, the instance uses the current user's domain to determine what records the user may view, and to set the domain for new records the user creates. When a user views a record, the instance normally uses the same user's domain to load and execute policies and rules for that record. 
+</p><p>You may, however, want to use the domain of the record being viewed to determine the rules and policies instead of the user's domain. This is often true if users from different domains need to access the same records. Using the record's domain instead of the user's domain causes the instance to use the domain of the record for <i>all</i> domain-related activities such as determining policies, views, and scripts.
+</p><p>To configure the instance to use the domain of the record being viewed rather than the domain of the current user:
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>For <b>Use the domain of the record being viewed instead of the user's own</b>, select the <b>Yes</b> check box.</li>
+<li>Click <b>Save</b>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The record's domain is determined by the last transaction on the record. This means that a transaction occurring outside the current form could unexpectedly change the record's domain.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Using_the_Current_Record.27s_Domain_for_Client_Scripts"><span class="mw-headline-number">4.5.1</span> Using the Current Record's Domain for Client Scripts</span></h3>
+<p>If you want to have the system execute client scripts from a different domain that the user's domain, you can specify that the system use the record's domain. This setting applies only to client scripts. Other policies still use the user's domain.
+</p><p>To use the record's domain to determine only the client script:
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>For <b>Use the domain value from the record to determine which client scripts are used</b>, select the <b>Yes</b> check box.</li>
+<li>Click <b>Save</b>.</li></ol>
+<h2><span class="mw-headline" id="Notifying_the_User_When_the_Record.27s_Domain_Determines_the_Domain"><span class="mw-headline-number">4.6</span> Notifying the User When the Record's Domain Determines the Domain</span></h2>
+<p>By default, the instance notifies the user when the domain in use matches the current record's domain but not the current user's domain. This helps members of multiple domains know what domain a particular event or update applies to. 
+</p><p>To change the notification settings:
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>For <b>Notify users when the domain of the record they are viewing is used instead of their own</b>, select the <b>Yes</b> check box.</li>
+<li>Click <b>Save</b>.</li></ol>
+<p>Whenever a user who is not a member of the <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Providing_a_List_of_Roles_that_Ignore_the_Domain_of_the_Current_Record">ignore domain changes list</a> selects a record from another domain, the instance notifies the user of the change in the active domain.
+</p>
+<h2><span class="mw-headline" id="Providing_a_List_of_Roles_that_Ignore_the_Domain_of_the_Current_Record"><span class="mw-headline-number">4.7</span> Providing a List of Roles that Ignore the Domain of the Current Record</span></h2>
+<p>By default, all roles use the the domain of the current record when <b>Use the domain of the record being viewed instead of the user's own</b> property is true. You can provide a list of roles that ignore this property and always use the user's domain rather than the record's domain. You may want certain roles such as administrators to always work from their own domain rather than use the domain of the record they are viewing. 
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Configuration</b>. </li>
+<li>For <b>List of roles (comma-separated) that will not trigger the automatic change of domain to the domain of the record that is being viewed</b>, enter a comma-separated list of roles that ignore automatic domain change behaviors.</li>
+<li>Click <b>Save</b>.</li></ol>
+<h2><span class="mw-headline" id="Adding_Domains_to_a_Visibility_Domains_List"><span class="mw-headline-number">4.8</span> Adding Domains to a Visibility Domains List</span></h2>
+<p>Adding a visibility domain allows a user or group to see and potentially edit records from another domain regardless of the user or group's normal domain membership. Assigning visibility domains to all members of a group is preferred over granting them to individual users.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Adding a visibility domain does not change the <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">access control rule requirements</a> for a table or record.</i>
+</td></tr></table>
+<p><br />
+To grant visibility domains to a group:
+</p>
+<ol><li>Navigate to <b>User Administration &gt; Groups</b>.</li>
+<li>Select the group you want to provide with visibility domains.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">Configure the form</a> to add the <b>Visibility domains</b> related list.</li>
+<li>In the <b>Visibility domains</b> related list, click <b>Edit</b>.</li>
+<li>Select the domain records you want the group to see.</li>
+<li>Click <b>Save</b>, and then click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Visibility_domains_group.png.html" class="image"><img alt="" src="images/thumb/a/a0/Visibility_domains_group.png/600px-Visibility_domains_group.png" width="600" height="122" class="thumbimage" srcset="/images/a/a0/Visibility_domains_group.png 1.5x, /images/a/a0/Visibility_domains_group.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Visibility_domains_group.png.html" class="internal" title="Enlarge"></a></div>List of visibility domains for a group</div></div></div><br style="clear:both;" />
+<p>To grant visibility domains to an individual user:
+</p>
+<ol><li>Navigate to <b>User Administration &gt; Users</b>.</li>
+<li>Select the user you want to provide with visibility domains.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Adding_a_Related_List" title="Configuring Forms">Configure the form</a> to add the <b>Visibility domains</b> related list.</li>
+<li>From the <b>Visibility Domains</b> related list, click <b>Edit</b>.</li>
+<li>Select the domains whose records you want the user to see.</li>
+<li>Click <b>Save</b>, and then click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Visibility_domains_user.png.html" class="image"><img alt="" src="images/thumb/e/e7/Visibility_domains_user.png/600px-Visibility_domains_user.png" width="600" height="139" class="thumbimage" srcset="/images/e/e7/Visibility_domains_user.png 1.5x, /images/e/e7/Visibility_domains_user.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Visibility_domains_user.png.html" class="internal" title="Enlarge"></a></div>List of visibility domains for an individual user</div></div></div><br style="clear:both;" />
+<p>The Visibility domain related list contains the following fields.
+</p>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Domain
+</td>
+<td> Domain that is visible to the group or user.
+</td></tr>
+<tr>
+<td> Inherited
+</td>
+<td> Whether the domain is inherited from domain visibility or a parent domain.
+</td></tr>
+<tr>
+<td> Granted By
+</td>
+<td> Name of the group that granted domain visibility.
+</td></tr>
+<tr>
+<td> Parent visibility
+</td>
+<td> Name of the parent domain. This value is used for grouping records. If the parent record is deleted, then all records with the same parent are deleted as well.
+</td></tr></table>
+<h2><span class="mw-headline" id="Creating_Contains_Relationships_Between_Domains"><span class="mw-headline-number">4.9</span> Creating Contains Relationships Between Domains</span></h2>
+<p>Creating a contains relationship between domains changes the domain hierarchy. Domains in a contains relationship inherit the visibility settings of the containing domain. The containing domain allows users to see data in the contained domain as well as any of its children. Processes are unaffected by a contains relationship.
+</p>
+<ol><li>Navigate to the domain table.</li>
+<li>Select the domain record that will be the container domain, also called the <i>parent</i> domain, of the new contains relationship.</li>
+<li>In the <b>Contains Domains</b> related list, click <b>Edit</b>.</li>
+<li>Select the domain records that will be the contained domains, also called the <i>child</i> domains, of the contains relationship.</li>
+<li>Click <b>Save</b>, and then click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Contains_domains.png.html" class="image"><img alt="" src="images/thumb/3/3e/Contains_domains.png/600px-Contains_domains.png" width="600" height="115" class="thumbimage" srcset="/images/3/3e/Contains_domains.png 1.5x, /images/3/3e/Contains_domains.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Contains_domains.png.html" class="internal" title="Enlarge"></a></div>List of contains domains for a group or domain</div></div></div><br style="clear:both;" />
+<h2><span class="mw-headline" id="Creating_Domain-Specific_Choice_Lists"><span class="mw-headline-number">4.10</span> Creating Domain-Specific Choice Lists</span></h2>
+<p>Administrators can customize choice lists to contain entries specific to a particular domain.
+</p>
+<ol><li>From <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Displaying_Domain_Selection_Menus">domain picker</a>, select the domain where the choice should be added.</li>
+<li>Right-click the field and select <b>Personalize Choices</b>.</li>
+<li>Update or add <a href="index.php%3Ftitle=Customizing_Choice_Lists.html#Defining_Options_for_Choice_Lists" title="Customizing Choice Lists">choices</a>.</li>
+<li>Push changes through the normal change process, such as <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html" title="Using Update Sets">update sets</a>.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Administrators should ensure that choices are unique across domains to prevent administrative confusion in the global domain.</i>
+</td></tr></table>
+<p><br />
+If an administrator adds a new choice from the global domain, then users from domains lower in the hierarchy see the new choice at the end of their current choice lists. If the new choice is not active at the global level, then it is available to the domain users via <b>Personalize Choices</b>, but does not show as an active choice.
+</p>
+<h2><span class="mw-headline" id="Preventing_Users_from_Seeing_the_Complete_Domain_List"><span class="mw-headline-number">4.11</span> Preventing Users from Seeing the Complete Domain List</span></h2>
+<p>By default, a reference field to a domain table displays all domain records. Users can use the domain table reference field to see that other domains exist and can, if allowed, change the domain value. After changing the domain value, the user might not have visibility to the reassigned record. For example, in the <a href="index.php%3Ftitle=Domain_Separation.html#Data_Separation" title="Domain Separation">sample domain hierarchy</a> David Loo could reassign a ticket from <b>NY DB</b> to <b>Database Atlanta</b> (a domain he cannot normally access).
+</p><p>To prevent users from changing the domain value to a domain they cannot see, add a domain field to the domain table. Adding a domain field enforces <a href="index.php%3Ftitle=Domain_Separation.html#Data_Separation" title="Domain Separation">data separation</a> rules. These rules ensure users can only see domain values for the domains they are allowed to see.
+</p><p>To add a domain field to a custom domain table:
+</p>
+<ol><li><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Using_a_Custom_Table_for_the_Domain_Table">Create a custom table</a> to be the domain table.</li>
+<li>Add a <b>sys_domain</b> field to the new domain table.</li>
+<li>Select a domain for the domain table.</li>
+<li><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Changing_the_Domain_Table">Change the domain table</a> to the new table.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You cannot add a domain field to a system table, such as Group [sys_user_group] table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Assigning_Users_and_Records_to_Domains"><span class="mw-headline-number">5</span> Assigning Users and Records to Domains</span></h1>
+<p>By default, all users and records are part of the global domain and are therefore not data separated by domain. To use <a href="index.php%3Ftitle=Domain_Separation.html#Data_Separation" title="Domain Separation">data separation</a> and <a href="index.php%3Ftitle=Domain_Separation.html#Delegated_Administration" title="Domain Separation">delegated administration</a>, you must first assign users and their relevant records to one or more domains.
+</p>
+<h2><span class="mw-headline" id="Assigning_Users_to_Domains_Automatically"><span class="mw-headline-number">5.1</span> Assigning Users to Domains Automatically</span></h2>
+<p>The Domain Support - MSP Extensions plugin allows administrators to quickly assign users to a domain by assigning them to a company. After users are assigned to a domain, records can inherit the user's domain. Administrators may also manually assign records to domains if needed.
+</p><p>Administrators can automatically assign users to domains:
+</p>
+<ul><li> Based on a company record</li>
+<li> Based on a default domain</li></ul>
+<p>For example, assigning Bow Ruggeri to the ACME company automatically assigns him to the ACME domain. Assigning Don Goodliffe to the Initech company automatically assigns him to the Initech domain. Any records they create are automatically added to the appropriate domain.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:994px;"><a href="index.php%3Ftitle=File:Add_user_to_msp_domain.png.html" class="image"><img alt="" src="images/0/04/Add_user_to_msp_domain.png" width="992" height="207" class="thumbimage" /></a>  <div class="thumbcaption">Adding a user to a domain by setting the company</div></div></div> <br style="clear:both;" />
+<h3><span class="mw-headline" id="Company_Domains"><span class="mw-headline-number">5.1.1</span> Company Domains</span></h3>
+<p>By default, users inherit the domain of the company they belong to. Typically, administrators assign all users to a company. Activating the Domain Support - MSP Extensions plugin automatically adds the <b>Company</b> field to the User form and makes it mandatory.
+</p>
+<h3><span class="mw-headline" id="Default_Domain"><span class="mw-headline-number">5.1.2</span> Default Domain</span></h3>
+<p>The default domain is the domain to which the system automatically assigns task and user records that are not already assigned to a domain. The instance checks for a domain value whenever someone creates or updates task or user records. If the record would otherwise be a member of the global domain, the instance automatically assigns it instead to the default domain.
+</p><p>There can only be one default domain at a time. If an administrator select another domain as the default, any new records unassigned to another domain use the new default domain.
+</p>
+<ol><li>Navigate to <b>Domain Admin &gt; Domains</b>.</li>
+<li>Open the domain you want to be the default domain. For example, <b>Default</b>.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">Configure</a> the form layout to add the <b>Default</b> field.</li>
+<li>Select the <b>Default</b> check box.</li>
+<li>Click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:734px;"><a href="index.php%3Ftitle=File:MSP_default_domain.png.html" class="image"><img alt="" src="images/a/a5/MSP_default_domain.png" width="732" height="637" class="thumbimage" /></a>  <div class="thumbcaption">Setting the default domain</div></div></div> <br style="clear:both;" />
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If you do not set a default domain, then new tasks and user records are placed in the <b>global</b> domain.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Overriding_the_Company_Domain_with_a_Managed_Domain"><span class="mw-headline-number">5.1.3</span> Overriding the Company Domain with a Managed Domain</span></h3>
+<p>By default, the system automatically assigns a domain based on the user's company record. In some cases, however, domain administrators want to manually manage what domain a given record belongs to. The <b>Managed domain</b> field allows administrators to manually select a domain other than the domain assigned automatically from the company record. The <b>Managed domain</b> field is available on these record types.
+</p>
+<ul><li> User records</li>
+<li> Group records</li>
+<li> Department records</li>
+<li> Location records</li>
+<li> CI records</li></ul>
+<p>To override an automatically assigned domain value:
+</p>
+<ol><li>Navigate to the record you want to manually manage.</li>
+<li>Select the <b>Managed domain</b> check box.</li>
+<li>From the <b>Domain</b> field, select the domain for the record.</li>
+<li>Click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:785px;"><a href="index.php%3Ftitle=File:Managed_domain_field.png.html" class="image"><img alt="" src="images/c/c5/Managed_domain_field.png" width="783" height="352" class="thumbimage" /></a>  <div class="thumbcaption">The Managed domain field controls whether the Domain field is visible</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Assigning_Users_and_Records_to_Domains_Manually"><span class="mw-headline-number">5.2</span> Assigning Users and Records to Domains Manually</span></h2>
+<p>Customers using the Domain Support (version 2) plugin, must manually set user and record domains. Customers using the Domain Support - MSP Extensions plugin can manually set user domains by <a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html#Overriding_the_Company_Domain_with_a_Managed_Domain">overriding the company domain with a managed domain</a>.
+</p><p>To manually assign users to a domain:
+</p>
+<ol><li>Navigate to <b>User Administration &gt; Users.</b></li>
+<li>Select the user you want to assign to a domain.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Personal+Lists&amp;oldid=0.html" title="Creating Personal Lists">Personalize</a> the User list or <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">form</a> to add the <b>Domain</b> field.</li>
+<li>Set the <b>Domain</b> field for the user.</li>
+<li>Click <b>Update</b>.</li></ol>
+<p>For example, assign Bow Ruggeri to the Network domain. Assign Don Goodliffe to the Database domain. Add the Network and Database domains to relevant records such as incidents, configuration items, and requests.
+</p><p>To manually assign records to a domain:
+</p>
+<ol><li>Navigate to record you want to assign to a domain. For example <b>Incident &gt; All.</b></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Personal+Lists&amp;oldid=0.html" title="Creating Personal Lists">Personalize</a> the record's list or <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">form</a> to add the <b>Domain</b> field.</li>
+<li>Set the <b>Domain</b> field for the record.</li>
+<li>Click <b>Update</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:919px;"><a href="index.php%3Ftitle=File:Add_domain.png.html" class="image"><img alt="" src="images/d/dc/Add_domain.png" width="917" height="192" class="thumbimage" /></a>  <div class="thumbcaption">Adding records to a domain</div></div></div> <br style="clear:both;" />
+
+<!-- 
+NewPP limit report
+Cached time: 20171201211232
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.277 seconds
+Real time usage: 0.957 seconds
+Preprocessor visited node count: 261/1000000
+Preprocessor generated node count: 640/1000000
+Post‐expand include size: 5996/2097152 bytes
+Template argument size: 1989/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  621.577      1 - -total
+  3.40%   21.127      1 - Template:Domain
+  3.36%   20.898      2 - Template:Warning
+  2.59%   16.117      1 - Template:Topic
+  1.97%   12.225      1 - Template:Requesting_the_Plugin
+  1.82%   11.285     10 - Template:Note
+  1.09%    6.805      2 - Template:T
+  0.77%    4.794      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23363-0!*!0!1!en!5!* and timestamp 20171201211231 and revision id 249649
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;oldid=249649.html">http://wiki.servicenow.com/index.php?title=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;oldid=249649</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Company+and+Domain+Separation.html" title="Category:Company and Domain Separation">Company and Domain Separation</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Security.html" title="Category:Security">Security</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Company+and+Domain+Separation.html" title="Category:Company and Domain Separation">Company and Domain Separation</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23363"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23363" data-vote-the-vote="5" data-vote-id="23363" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_23363_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23363" data-vote-the-vote="1" data-vote-id="23363" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_23363_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Domain+Separation+Setup+-+Versions+Prior+to+Eureka&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Domain+Separation+Setup+-+Versions+Prior+to+Eureka&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Domain+Separation+Setup+-+Versions+Prior+to+Eureka.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Domain+Separation+Setup+-+Versions+Prior+to+Eureka&amp;returnto=Domain+Separation+Setup+-+Versions+Prior+to+Eureka&amp;oldid=249649&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FDomain_Separation_Setup_-_Versions_Prior_to_Eureka.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Domain_Separation_Setup_-_Versions_Prior_to_Eureka" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;oldid=249649.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Domain_Separation_Setup_-_Versions_Prior_to_Eureka&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:25, 18 July 2016.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":904});});</script></body></html>

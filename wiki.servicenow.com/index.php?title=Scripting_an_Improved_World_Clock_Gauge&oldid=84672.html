@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Scripting an Improved World Clock Gauge - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scripting_an_Improved_World_Clock_Gauge","wgTitle":"Scripting an Improved World Clock Gauge","wgCurRevisionId":84672,"wgRevisionId":84672,"wgArticleId":5342,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Assorted Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scripting_an_Improved_World_Clock_Gauge","wgRelevantArticleId":5342,"wgRequestId":"71a724c0557ce33581d3c9d4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20110721193431"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Scripting_an_Improved_World_Clock_Gauge"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Scripting an Improved World Clock Gauge"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Assorted Scripts"/>
+<meta name="category" content="Assorted Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Scripting an Improved World Clock Gauge"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20110721193431"/>
+
+	<meta property="article:published_time" content="20110721193431"/>
+
+	<meta property="article:modified_time" content="20110721193431"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Assorted Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Scripting_an_Improved_World_Clock_Gauge"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scripting_an_Improved_World_Clock_Gauge rootpage-Scripting_an_Improved_World_Clock_Gauge skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+an+Improved+World+Clock+Gauge.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Scripting+an+Improved+World+Clock+Gauge&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scripting an Improved World Clock Gauge</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Scripting an Improved World Clock Gauge</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table> <div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> Other Scripts
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Transform_Map_Scripts.html" title="Transform Map Scripts">Transform Map Scripts</a> </li>
+<li><strong class="selflink">Scripting an Improved World Clock Gauge</strong> </li>
+<li><a href="index.php%3Ftitle=Overriding_a_Formatter_with_Macros.html" title="Overriding a Formatter with Macros">Overriding a Formatter with Macros</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#Altering_CoolClock_UI_Script"><span class="tocnumber">2.1</span> <span class="toctext">Altering CoolClock UI Script</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#Altering_the_example_cool_clock_UI_Page"><span class="tocnumber">2.2</span> <span class="toctext">Altering the example_cool_clock UI Page</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html#Altering_the_World_Clocks_Widget"><span class="tocnumber">2.3</span> <span class="toctext">Altering the World Clocks Widget</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h2>
+<p>The homepage already has a World Clock gauge, available by clicking <b>Add Content</b>. However, it is possible to configure a more sophisticated world clock through custom scripts applied to the appropriate UI Policy, UI Page, and Widget. 
+</p><p><i><b>To build an improved CoolClock</b></i> 
+</p>
+<ol><li>Navigate to <b>System UI --&gt; UI Scripts</b> and alter the <b>CoolClock</b> UI Script as desired. </li>
+<li>Navigate to <b>System UI --&gt; UI Page</b> and alter the <b>example_cool_clock</b> UI Page as desired. </li>
+<li>Navigate to <b>System UI --&gt; Widgets</b> and alter the <b>World Clocks</b> Widget as desired.</li></ol>
+<p>Below are example scripts for the three steps in the process. 
+</p>
+<h2><span class="mw-headline" id="Example"><span class="mw-headline-number">2</span> Example</span></h2>
+<h3><span class="mw-headline" id="Altering_CoolClock_UI_Script"><span class="mw-headline-number">2.1</span> Altering CoolClock UI Script</span></h3>
+<p>The following script changes the skin of the world clocks. 
+</p><p><br /> Substitute the following for the existing script: 
+</p>
+<pre>window.CoolClock = function(canvasId,displayRadius,skinId,showSecondHand,gmtOffset) {
+	return this.init(canvasId,displayRadius,skinId,showSecondHand,gmtOffset);
+}
+ 
+CoolClock.findAndCreateClocks = function() {
+	var canvases = document.getElementsByTagName("canvas");
+	for (var i=0;i&lt;canvases.length;i++) {
+		var fields = canvases[i].className.split(" ")[0].split(":");
+		if (fields[0] == "CoolClock") {
+			new CoolClock(canvases[i].id,fields[2],fields[1],fields[3]!="noSeconds",fields[4]);
+		}
+	}
+}
+ 
+// borrowed from behaviour.js
+// actually doesn't work right unless it's at the end of html document
+// hence can't have a body onload
+// this is a bug
+// maybe have a setTimeout hack??
+CoolClock.addLoadEvent = function(func){
+	var oldonload = window.onload;
+	if (typeof window.onload&#160;!= 'function')
+		window.onload = func;
+	else
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+}
+ 
+CoolClock.config = {
+	clockTracker: {},
+	tickDelay: 1000,
+	longTickDelay: 15000,
+	defaultRadius: 85,
+	renderRadius: 100,
+	defaultSkin: "modern",
+	skins:	{
+		// try making your own...
+ 
+		swissRail: {
+			outerBorder: { lineWidth: 1, radius:95, color: "black", alpha: 1 },
+			smallIndicator: { lineWidth: 2, startAt: 89, endAt: 93, color: "black", alpha: 1 },
+			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
+			hourHand: { lineWidth: 8, startAt: -15, endAt: 50, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 7, startAt: -15, endAt: 75, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 1, startAt: -20, endAt: 85, color: "red", alpha: 1 },
+			secondDecoration: { lineWidth: 1, startAt: 70, radius: 4, fillColor: "red", color: "red", alpha: 1 }
+		},
+		chunkySwiss: {
+			outerBorder: { lineWidth: 4, radius:97, color: "black", alpha: 1 },
+			smallIndicator: { lineWidth: 4, startAt: 89, endAt: 93, color: "black", alpha: 1 },
+			largeIndicator: { lineWidth: 8, startAt: 80, endAt: 93, color: "black", alpha: 1 },
+			hourHand: { lineWidth: 12, startAt: -15, endAt: 60, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 10, startAt: -15, endAt: 85, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 4, startAt: -20, endAt: 85, color: "red", alpha: 1 },
+			secondDecoration: { lineWidth: 2, startAt: 70, radius: 8, fillColor: "red", color: "red", alpha: 1 }
+		},
+		fancy: {
+			outerBorder: { lineWidth: 5, radius:95, color: "green", alpha: 0.7 },
+			smallIndicator: { lineWidth: 1, startAt: 80, endAt: 93, color: "black", alpha: 0.4 },
+			largeIndicator: { lineWidth: 1, startAt: 30, endAt: 93, color: "black", alpha: 0.5 },
+			hourHand: { lineWidth: 8, startAt: -15, endAt: 50, color: "blue", alpha: 0.7 },
+			minuteHand: { lineWidth: 7, startAt: -15, endAt: 92, color: "red", alpha: 0.7 },
+			secondHand: { lineWidth: 10, startAt: 80, endAt: 85, color: "blue", alpha: 0.3 },
+			secondDecoration: { lineWidth: 1, startAt: 30, radius: 50, fillColor: "blue", color: "red", alpha: 0.15 }
+		},
+		machine: {
+			outerBorder: { lineWidth: 60, radius:55, color: "#dd6655", alpha: 1 },
+			smallIndicator: { lineWidth: 4, startAt: 80, endAt: 95, color: "white", alpha: 1 },
+			largeIndicator: { lineWidth: 14, startAt: 77, endAt: 92, color: "#dd6655", alpha: 1 },
+			hourHand: { lineWidth: 18, startAt: -15, endAt: 40, color: "white", alpha: 1 },
+			minuteHand: { lineWidth: 14, startAt: 24, endAt: 100, color: "#771100", alpha: 0.5 },
+			secondHand: { lineWidth: 3, startAt: 22, endAt: 83, color: "green", alpha: 0 },
+			secondDecoration: { lineWidth: 1, startAt: 52, radius: 26, fillColor: "#ffcccc", color: "red", alpha: 0.5 }
+		},
+ 
+		// these three created by bonstio from http://bonstio(.)net
+		classic/*was gIG*/: {
+			outerBorder: { lineWidth: 185, radius:1, color: "#E5ECF9", alpha: 1 },
+			smallIndicator: { lineWidth: 2, startAt: 89, endAt: 94, color: "#3366CC", alpha: 1 },
+			largeIndicator: { lineWidth: 4, startAt: 83, endAt: 94, color: "#3366CC", alpha: 1 },
+			hourHand: { lineWidth: 5, startAt: 0, endAt: 60, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 4, startAt: 0, endAt: 80, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 1, startAt: -20, endAt: 85, color: "red", alpha: .85 },
+			secondDecoration: { lineWidth: 3, startAt: 0, radius: 2, fillColor: "black", color: "black", alpha: 1 }
+		},
+ 
+		modern/*was gIG2*/: {
+			outerBorder: { lineWidth: 185, radius:1, color: "#E5ECF9", alpha: 1 },
+			smallIndicator: { lineWidth: 5, startAt: 88, endAt: 94, color: "#3366CC", alpha: 1 },
+			largeIndicator: { lineWidth: 5, startAt: 88, endAt: 94, color: "#3366CC", alpha: 1 },
+			hourHand: { lineWidth: 8, startAt: 0, endAt: 60, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 8, startAt: 0, endAt: 80, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 5, startAt: 80, endAt: 85, color: "red", alpha: .85 },
+			secondDecoration: { lineWidth: 3, startAt: 0, radius: 4, fillColor: "black", color: "black", alpha: 1 }
+		},
+ 
+		simple/*was gIG3*/: {
+			outerBorder: { lineWidth: 185, radius:1, color: "#E5ECF9", alpha: 1 },
+			smallIndicator: { lineWidth: 10, startAt: 90, endAt: 94, color: "#3366CC", alpha: 1 },
+			largeIndicator: { lineWidth: 10, startAt: 90, endAt: 94, color: "#3366CC", alpha: 1 },
+			hourHand: { lineWidth: 8, startAt: 0, endAt: 60, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 8, startAt: 0, endAt: 80, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 5, startAt: 80, endAt: 85, color: "red", alpha: .85 },
+			secondDecoration: { lineWidth: 3, startAt: 0, radius: 4, fillColor: "black", color: "black", alpha: 1 }
+		}
+ 
+	}
+};
+ 
+CoolClock.prototype = {
+	init: function(canvasId,displayRadius,skinId,showSecondHand,gmtOffset) {
+		this.canvasId = canvasId;
+		this.displayRadius = displayRadius || CoolClock.config.defaultRadius;
+		this.skinId = skinId || CoolClock.config.defaultSkin;
+		this.showSecondHand = typeof showSecondHand == "boolean"&#160;? showSecondHand&#160;: true;
+		this.tickDelay = CoolClock.config[ this.showSecondHand&#160;? "tickDelay"&#160;: "longTickDelay"];
+ 
+		this.canvas = document.getElementById(canvasId);
+ 
+		this.canvas.setAttribute("width",this.displayRadius*2);
+		this.canvas.setAttribute("height",this.displayRadius*2);
+ 
+		this.canvas.style.width = this.displayRadius*2 + "px";
+		this.canvas.style.height = this.displayRadius*2 + "px";
+ 
+		this.renderRadius = CoolClock.config.renderRadius; 
+ 
+		this.scale = this.displayRadius / this.renderRadius;
+		this.ctx = this.canvas.getContext("2d");
+		this.ctx.scale(this.scale,this.scale);
+ 
+		this.gmtOffset = gmtOffset&#160;!= null&#160;? parseFloat(gmtOffset)&#160;: gmtOffset;
+ 
+		CoolClock.config.clockTracker[canvasId] = this;
+		this.tick();
+		return this;
+	},
+ 
+	fullCircle: function(skin) {
+		this.fullCircleAt(this.renderRadius,this.renderRadius,skin);
+	},
+ 
+	fullCircleAt: function(x,y,skin) {
+		with (this.ctx) {
+			save();
+			globalAlpha = skin.alpha;
+			lineWidth = skin.lineWidth;
+			if (document.all)
+				// excanvas doesn't scale line width so we will do it here
+				lineWidth = lineWidth * this.scale;
+			arc(x, y, skin.radius, 0, 2*Math.PI, false);
+			if (document.all)
+				// excanvas doesn't close the circle so let's color in the gap
+				arc(x, y, skin.radius, -0.1, 0.1, false);
+			if (skin.fillColor) {
+				fillStyle = skin.fillColor
+				fill();
+			}
+			else {
+				// XXX why not stroke and fill
+				if ((this.currentHour &lt;=6) || (this.currentHour &gt;=18)){ //pm
+					strokeStyle = "blue";
+				} else { //am
+					strokeStyle = "yellow";
+				}
+				stroke();
+			}
+			restore();
+		}
+	},
+ 
+	radialLineAtAngle: function(angleFraction,skin) {
+		with (this.ctx) {
+			save();
+			translate(this.renderRadius,this.renderRadius);
+			rotate(Math.PI * (2 * angleFraction - 0.5));
+			globalAlpha = skin.alpha;
+			strokeStyle = skin.color;
+			lineWidth = skin.lineWidth;
+			if (document.all)
+				// excanvas doesn't scale line width so we will do it here
+				lineWidth = lineWidth * this.scale;
+			if (skin.radius) {
+				this.fullCircleAt(skin.startAt,0,skin)
+			}
+			else {
+				beginPath();
+				moveTo(skin.startAt,0)
+				lineTo(skin.endAt,0);
+				stroke();
+			}
+			restore();
+		}
+	},
+ 
+	render: function(hour,min,sec) {
+                this.currentHour = hour;
+		var skin = CoolClock.config.skins[this.skinId];
+		this.ctx.clearRect(0,0,this.renderRadius*2,this.renderRadius*2);
+ 
+		this.fullCircle(skin.outerBorder);
+ 
+		for (var i=0;i&lt;60;i++)
+			this.radialLineAtAngle(i/60,skin[ i%5&#160;? "smallIndicator"&#160;: "largeIndicator"]);
+ 
+		this.radialLineAtAngle((hour+min/60)/12,skin.hourHand);
+		this.radialLineAtAngle((min+sec/60)/60,skin.minuteHand);
+		if (this.showSecondHand) {
+			this.radialLineAtAngle(sec/60,skin.secondHand);
+			if (!document.all)
+				// decoration doesn't render right in IE so lets turn it off
+				this.radialLineAtAngle(sec/60,skin.secondDecoration);
+		}
+	},
+ 
+ 
+	nextTick: function() {
+		setTimeout("CoolClock.config.clockTracker['"+this.canvasId+"'].tick()",this.tickDelay);
+	},
+ 
+	stillHere: function() {
+		return document.getElementById(this.canvasId)&#160;!= null;
+	},
+ 
+	refreshDisplay: function() {
+		var now = new Date();
+		if (this.gmtOffset&#160;!= null) {
+			// use GMT + gmtOffset
+			var offsetNow = new Date(now.valueOf() + (this.gmtOffset * 1000 * 60 * 60));
+			this.render(offsetNow.getUTCHours(),offsetNow.getUTCMinutes(),offsetNow.getUTCSeconds());
+		}
+		else {
+			// use local time
+			this.render(now.getHours(),now.getMinutes(),now.getSeconds());
+		}
+	},
+ 
+	tick: function() {
+		if (this.stillHere()) {
+			this.refreshDisplay()
+			this.nextTick();
+		}
+	}
+}
+ 
+addLoadEvent(CoolClock.findAndCreateClocks);
+</pre> 
+<h3><span class="mw-headline" id="Altering_the_example_cool_clock_UI_Page"><span class="mw-headline-number">2.2</span> Altering the example_cool_clock UI Page</span></h3>
+<p>The following sample script will create six <b>chunkySwiss</b> clocks without seconds, for the time zones Sydney, Sri Lanka, Kiev, London, New York, and San Diego. (The number to the left of 'leftRightPad' is the GMT offset for the clock.) By replacing <b>chunkySwiss</b> with one of the other skins defined in the UI Script. 
+</p><p>Substitute the following script: 
+</p>
+<pre>&lt;j:if test="${RP.isPreview()}"&gt;
+ &lt;center&gt;No preview available&lt;/center&gt;
+&lt;/j:if&gt;
+ 
+&lt;j:if test="${!RP.isPreview()}"&gt;
+  &lt;script language="javascript" src="scripts/excanvas.jsx"/&gt;
+  &lt;script language="javascript" src="CoolClock.jsdbx"/&gt;
+ 
+  &lt;!-- works on IE, but draws different --&gt;
+  &lt;table&gt;&lt;tr&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x4" class="CoolClock:chunkySwiss:30:noSeconds:+11 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;Sydney&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x2" class="CoolClock:chunkySwiss:30:noSeconds:+6 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;Sri Lanka&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x3" class="CoolClock:chunkySwiss:30:noSeconds:+3 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;Kiev&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x6" class="CoolClock:chunkySwiss:30:noSeconds:+1 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;London&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x5" class="CoolClock:chunkySwiss:30:noSeconds:-4 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;New York&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;div&gt;&lt;canvas id="x1" class="CoolClock:chunkySwiss:30:noSeconds:-7 leftRightPad"&gt;&lt;/canvas&gt;&lt;/div&gt;San Diego&lt;/td&gt;
+  &lt;/tr&gt;&lt;/table&gt;
+&lt;/j:if&gt;
+</pre> 
+<h3><span class="mw-headline" id="Altering_the_World_Clocks_Widget"><span class="mw-headline-number">2.3</span> Altering the World Clocks Widget</span></h3>
+<p>The following script fixes a caching issue that allows the world clock to update with each refresh. 
+</p><p>Substitute the following code: 
+</p>
+<pre>function sections() {
+    return {
+      'World Clocks'&#160;: { 'name'&#160;: 'example_cool_clock' }
+    };
+}
+ 
+function render() {
+  var name = renderer.getPreferences().get("name")
+  var gf = new GlideForm(renderer.getGC(), name, 0);
+  gf.setDirect(true);
+  gf.setRenderProperties(renderer.getRenderProperties());
+  return gf.getRenderedPage();
+}
+ 
+function getEditLink() {
+  return "sys_ui_page.do?sysparm_query=name=" + renderer.getPreferences().get("name");
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201022407
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.150 seconds
+Real time usage: 0.176 seconds
+Preprocessor visited node count: 56/1000000
+Preprocessor generated node count: 242/1000000
+Post‐expand include size: 1250/2097152 bytes
+Template argument size: 225/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   23.893      1 - -total
+ 71.99%   17.201      1 - Template:Other_Scripts
+ 47.95%   11.456      1 - Template:Topic
+ 23.68%    5.658      1 - Template:Unsupported
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:5342-0!*!0!1!en!5!* and timestamp 20171201022407 and revision id 84672
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html">http://wiki.servicenow.com/index.php?title=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Assorted+Scripts.html" title="Category:Assorted Scripts">Assorted Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Useful+Scripts.html" title="Category:Useful Scripts">Useful Scripts</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Assorted+Scripts.html" title="Category:Assorted Scripts">Assorted Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_5342"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="5342" data-vote-the-vote="5" data-vote-id="5342" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_5342_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="5342" data-vote-the-vote="1" data-vote-id="5342" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_5342_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Scripting+an+Improved+World+Clock+Gauge&amp;returntoquery=oldid%3D84672" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Scripting+an+Improved+World+Clock+Gauge&amp;returntoquery=oldid%3D84672" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Scripting_an_Improved_World_Clock_Gauge.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+an+Improved+World+Clock+Gauge.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Scripting+an+Improved+World+Clock+Gauge&amp;returnto=Scripting+an+Improved+World+Clock+Gauge&amp;oldid=84672&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FScripting_an_Improved_World_Clock_Gauge.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Scripting_an_Improved_World_Clock_Gauge" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;oldid=84672.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Scripting_an_Improved_World_Clock_Gauge&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:34, 21 July 2011.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1106});});</script></body></html>

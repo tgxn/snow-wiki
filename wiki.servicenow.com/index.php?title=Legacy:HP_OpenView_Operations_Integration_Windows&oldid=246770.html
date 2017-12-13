@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Legacy:HP OpenView Operations Integration Windows - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Legacy:HP_OpenView_Operations_Integration_Windows","wgTitle":"Legacy:HP OpenView Operations Integration Windows","wgCurRevisionId":246770,"wgRevisionId":246770,"wgArticleId":4945,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Event Integrations","Incident Integrations"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:HP_OpenView_Operations_Integration_Windows","wgRelevantArticleId":4945,"wgRequestId":"81b1bb7c529a11ad5b95d5ee","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150604175841"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Legacy:HP_OpenView_Operations_Integration_Windows"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Legacy:HP OpenView Operations Integration Windows"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Incident Integrations"/>
+<meta name="category" content="Incident Integrations"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Legacy:HP OpenView Operations Integration Windows"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150604175841"/>
+
+	<meta property="article:published_time" content="20150604175841"/>
+
+	<meta property="article:modified_time" content="20150604175841"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Incident Integrations"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Legacy:HP_OpenView_Operations_Integration_Windows"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Legacy_HP_OpenView_Operations_Integration_Windows rootpage-Legacy_HP_OpenView_Operations_Integration_Windows skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%253AHP+OpenView+Operations+Integration+Windows.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Legacy%253AHP+OpenView+Operations+Integration+Windows&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:HP OpenView Operations Integration Windows</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Legacy:HP OpenView Operations Integration Windows</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;oldid=246770.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;oldid=246770.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Integrating_Event_Management_Systems.html" title="Integrating Event Management Systems">Event Management Integrations</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Tivoli_Enterprise_Console_(TEC)_Integration_2.0.html" title="Tivoli Enterprise Console (TEC) Integration 2.0">IBM Tivoli TEC</a> </li>
+<li><a href="index.php%3Ftitle=Netcool_Integration.html" title="Netcool Integration">IBM Tivoli Netcool/OMNIbus</a> 
+<ul><li><a href="index.php%3Ftitle=NetCool_Email_Integration.html" title="NetCool Email Integration">IBM Netcool Email Integration</a> </li></ul></li>
+<li><a href="index.php%3Ftitle=Legacy:HP_Openview_Operations_Integration_2.0.html" title="Legacy:HP Openview Operations Integration 2.0">HP OpenView Operations</a> 
+<ul><li><strong class="selflink">HP OpenView Operations for Microsoft Windows</strong> </li></ul></li>
+<li><a href="index.php%3Ftitle=Microsoft_System_Center_Operations_Manager_SCOM_Integration.html" title="Microsoft System Center Operations Manager SCOM Integration">Microsoft System Center Operations Manager (SCOM)</a> 
+<ul><li><a href="index.php%3Ftitle=Microsoft_System_Center_Operations_Manager_SCOM_Integration_2_0.html" title="Microsoft System Center Operations Manager SCOM Integration 2 0">SCOM Integration 2.0</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SilverBack_Integration.html" title="SilverBack Integration">Silverback</a> </li>
+<li><a href="index.php%3Ftitle=Level_Platforms_Integration.html" title="Level Platforms Integration">Level Platforms</a></li>
+<li><a href="index.php%3Ftitle=Business_Enterprise_Server.html" title="Business Enterprise Server">Business Enterprise Server</a></li></ul>
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The following integration is not part of the supported platform.  The integration may require additional customization, typically performed by an experienced administrator or consultant, prior to operating correctly.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h2>
+<p>For HP OVOW integration with Openview running on Microsoft Windows, the only change from normal integration is the usage of a VB script to create <i>Notification</i> records. Please see <b><a href="index.php%3Ftitle=Legacy:HP_Openview_Operations_Integration_2.0.html" title="Legacy:HP Openview Operations Integration 2.0">HP Openview Operations Integration 2.0</a></b> for integration details. 
+</p>
+<h4><span class="mw-headline" id="Download_or_Create_VB_script"><span class="mw-headline-number">1.1</span> Download or Create VB script</span></h4>
+<p>You can download a copy of the required ServiceNow OVO integration Perl script here: <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://wiki.service-now.com/images/1/18/Snc_notify.txt">Snc_notify.txt</a> or a copy of the script may be copied and pasted from the following: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">&#39;</span>
+<span class="c">&#39; Change the following serviceNowInstance URL to match the URL to your Service-now instance</span>
+<span class="c">&#39; Also, change the username/password values to match one that exists on your instance</span>
+<span class="c">&#39;</span>
+
+<span class="n">serviceNowInstance</span> <span class="o">=</span> <span class="s">&quot;http://10.220.105.120:16000&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s">&quot;hpovtest&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s">&quot;hpovtest&quot;</span>
+<span class="n">isDebug</span> <span class="o">=</span> <span class="k">false</span>
+<span class="c">&#39; End of Constants&#39;</span>
+
+<span class="c">&#39; All of the logic is below:</span>
+
+<span class="n">tableName</span> <span class="o">=</span> <span class="s">&quot;imp_notification.do&quot;</span>
+<span class="c">&#39;</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; This is a sample script to forward messages to a notification system</span>
+<span class="c">&#39; It has to be started on the OVO Management Server</span>
+<span class="c">&#39;</span>
+<span class="c">&#39; use cscript to get output on the command prompt: </span>
+<span class="c">&#39; example: </span>
+<span class="c">&#39; </span>
+<span class="c">&#39;   cscript SubmitNS.vbs 6623fda0-0ef8-71d4-1d6e-0f887b3e0000 </span>
+<span class="c">&#39;</span>
+<span class="c">&#39; (c) Copyright 2000, Hewlett-Packard Company</span>
+<span class="c">&#39; All Rights Reserved </span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="k">Sub</span> <span class="nf">Usage</span> <span class="p">()</span>
+  <span class="n">Wscript</span><span class="p">.</span><span class="n">Echo</span> <span class="s">&quot;Usage: SubmitNS &lt;Id&gt;&quot;</span> <span class="o">&amp;</span> <span class="n">CRLF</span> <span class="o">&amp;</span> <span class="n">CRLF</span> <span class="o">&amp;</span>_
+               <span class="s">&quot;       &lt;Id&gt;          = Id of the OV_Message instance &quot;</span> <span class="o">&amp;</span> <span class="n">CRLF</span>                      
+  <span class="n">WScript</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  
+<span class="k">End</span> <span class="k">Sub</span>
+
+<span class="k">Sub</span> <span class="nf">Debug</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">isDebug</span> <span class="o">=</span> <span class="k">true</span> <span class="k">Then</span>
+    <span class="n">Wscript</span><span class="p">.</span><span class="n">Echo</span> <span class="n">data</span>
+  <span class="k">End</span> <span class="k">if</span>
+<span class="k">End</span> <span class="k">Sub</span>
+
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Build XML within an XML element</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="k">Function</span> <span class="nf">Write_element</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+  <span class="c">&#39;Write_element = &quot;&lt;imp:&quot; &amp; label &amp; &quot;&gt;&quot; &amp; value &amp; &quot;&lt;imp:&quot; &amp; label &amp; &quot;&gt;;&quot;</span>
+  <span class="n">Write_element</span> <span class="o">=</span> <span class="s">&quot;&lt;imp:&quot;</span> <span class="o">&amp;</span> <span class="n">label</span> <span class="o">&amp;</span> <span class="s">&quot;&gt;&quot;</span> <span class="o">&amp;</span> <span class="n">xmlEscape</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">&quot;&lt;/imp:&quot;</span> <span class="o">&amp;</span> <span class="n">label</span> <span class="o">&amp;</span> <span class="s">&quot;&gt;&quot;</span>
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="k">Function</span> <span class="nf">xmlEscape</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">Replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&amp;&quot;</span><span class="p">,</span> <span class="s">&quot;&amp;amp;amp;&quot;</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">Replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s">&quot;&amp;amp;lt;&quot;</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">Replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s">&quot;&amp;amp;gt;&quot;</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">Replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span>  <span class="n">Chr</span><span class="p">(</span><span class="mi">34</span><span class="p">),</span> <span class="s">&quot;&amp;quot;&quot;</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">Replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s">&quot;&amp;apos;&quot;</span><span class="p">)</span>
+  <span class="n">xmlEscape</span> <span class="o">=</span> <span class="n">value</span>
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Generate Basic Auth Credentials</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="k">Function</span> <span class="nf">Get_basic_auth</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pass</span><span class="p">)</span>
+  <span class="n">Get_basic_auth</span> <span class="o">=</span> <span class="s">&quot;Basic &quot;</span> <span class="o">&amp;</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">user</span> <span class="o">&amp;</span> <span class="s">&quot;:&quot;</span> <span class="o">&amp;</span> <span class="n">pass</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="k">Function</span> <span class="nf">Base64Encode</span><span class="p">(</span><span class="n">inData</span><span class="p">)</span>
+  <span class="c">&#39;rfc1521</span>
+  <span class="c">&#39;2001 Antonin Foller, Motobit Software, http://Motobit.cz</span>
+  <span class="k">Const</span> <span class="n">Base64</span> <span class="o">=</span> <span class="s">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span>
+  <span class="k">Dim</span> <span class="n">cOut</span><span class="p">,</span> <span class="n">sOut</span><span class="p">,</span> <span class="n">I</span>
+  
+  <span class="c">&#39;For each group of 3 bytes</span>
+  <span class="k">For</span> <span class="n">I</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">Len</span><span class="p">(</span><span class="n">inData</span><span class="p">)</span> <span class="k">Step</span> <span class="mi">3</span>
+    <span class="k">Dim</span> <span class="n">nGroup</span><span class="p">,</span> <span class="n">pOut</span><span class="p">,</span> <span class="n">sGroup</span>
+    
+    <span class="c">&#39;Create one long from this 3 bytes.</span>
+    <span class="n">nGroup</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">H10000</span> <span class="o">*</span> <span class="n">Asc</span><span class="p">(</span><span class="n">Mid</span><span class="p">(</span><span class="n">inData</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> _
+      <span class="o">&amp;</span><span class="n">H100</span> <span class="o">*</span> <span class="n">MyASC</span><span class="p">(</span><span class="n">Mid</span><span class="p">(</span><span class="n">inData</span><span class="p">,</span> <span class="n">I</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">MyASC</span><span class="p">(</span><span class="n">Mid</span><span class="p">(</span><span class="n">inData</span><span class="p">,</span> <span class="n">I</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c">&#39;Oct splits the long To 8 groups with 3 bits</span>
+    <span class="n">nGroup</span> <span class="o">=</span> <span class="n">Oct</span><span class="p">(</span><span class="n">nGroup</span><span class="p">)</span>
+    
+    <span class="c">&#39;Add leading zeros</span>
+    <span class="n">nGroup</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="n">Len</span><span class="p">(</span><span class="n">nGroup</span><span class="p">),</span> <span class="s">&quot;0&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">nGroup</span>
+    
+    <span class="c">&#39;Convert To base64</span>
+    <span class="n">pOut</span> <span class="o">=</span> <span class="n">Mid</span><span class="p">(</span><span class="n">Base64</span><span class="p">,</span> <span class="k">CLng</span><span class="p">(</span><span class="s">&quot;&amp;o&quot;</span> <span class="o">&amp;</span> <span class="n">Mid</span><span class="p">(</span><span class="n">nGroup</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> _
+      <span class="n">Mid</span><span class="p">(</span><span class="n">Base64</span><span class="p">,</span> <span class="k">CLng</span><span class="p">(</span><span class="s">&quot;&amp;o&quot;</span> <span class="o">&amp;</span> <span class="n">Mid</span><span class="p">(</span><span class="n">nGroup</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> _
+      <span class="n">Mid</span><span class="p">(</span><span class="n">Base64</span><span class="p">,</span> <span class="k">CLng</span><span class="p">(</span><span class="s">&quot;&amp;o&quot;</span> <span class="o">&amp;</span> <span class="n">Mid</span><span class="p">(</span><span class="n">nGroup</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> _
+      <span class="n">Mid</span><span class="p">(</span><span class="n">Base64</span><span class="p">,</span> <span class="k">CLng</span><span class="p">(</span><span class="s">&quot;&amp;o&quot;</span> <span class="o">&amp;</span> <span class="n">Mid</span><span class="p">(</span><span class="n">nGroup</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c">&#39;Add the part To OutPut string</span>
+    <span class="n">sOut</span> <span class="o">=</span> <span class="n">sOut</span> <span class="o">+</span> <span class="n">pOut</span>
+    
+    <span class="c">&#39;Add a new line For Each 76 chars In dest (76*3/4 = 57)</span>
+    <span class="c">&#39;If (I + 2) Mod 57 = 0 Then sOut = sOut + vbCrLf</span>
+  <span class="k">Next</span>
+  <span class="k">Select</span> <span class="k">Case</span> <span class="n">Len</span><span class="p">(</span><span class="n">inData</span><span class="p">)</span> <span class="ow">Mod</span> <span class="mi">3</span>
+    <span class="k">Case</span> <span class="mi">1</span><span class="p">:</span> <span class="c">&#39;8 bit final</span>
+      <span class="n">sOut</span> <span class="o">=</span> <span class="n">Left</span><span class="p">(</span><span class="n">sOut</span><span class="p">,</span> <span class="n">Len</span><span class="p">(</span><span class="n">sOut</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;==&quot;</span>
+    <span class="k">Case</span> <span class="mi">2</span><span class="p">:</span> <span class="c">&#39;16 bit final</span>
+      <span class="n">sOut</span> <span class="o">=</span> <span class="n">Left</span><span class="p">(</span><span class="n">sOut</span><span class="p">,</span> <span class="n">Len</span><span class="p">(</span><span class="n">sOut</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span>
+  <span class="k">End</span> <span class="k">Select</span>
+  <span class="n">Base64Encode</span> <span class="o">=</span> <span class="n">sOut</span>
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="k">Function</span> <span class="nf">MyASC</span><span class="p">(</span><span class="n">OneChar</span><span class="p">)</span>
+  <span class="k">If</span> <span class="n">OneChar</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="k">Then</span> <span class="n">MyASC</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Else</span> <span class="n">MyASC</span> <span class="o">=</span> <span class="n">Asc</span><span class="p">(</span><span class="n">OneChar</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Function</span>
+
+
+<span class="c">&#39;On Error resume next</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Check arguments. The message ID is mandatory.</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="n">CRLF</span> <span class="o">=</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">set</span> <span class="n">oArgs</span><span class="o">=</span><span class="n">wscript</span><span class="p">.</span><span class="n">arguments</span>
+<span class="k">If</span> <span class="n">oArgs</span><span class="p">.</span><span class="n">Count</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span> <span class="k">Then</span> 
+  <span class="n">Usage</span> <span class="p">()</span> 
+<span class="k">else</span>
+  <span class="n">MsgId</span> <span class="o">=</span> <span class="n">oArgs</span><span class="p">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">If</span>
+
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Construct the Message ID name and get the object. Get the message parameters</span>
+<span class="c">&#39; similarly to the ones passed on VPO/Unix to a trouble-ticket/notification script.</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="k">Const</span> <span class="n">WMIMsg</span>  <span class="o">=</span> <span class="s">&quot;WinMgmts:{impersonationLevel=impersonate}!root/HewlettPackard/OpenView/Data:OV_Message.Id=&quot;</span>
+<span class="n">MsgPath</span> <span class="o">=</span> <span class="n">WMIMsg</span> <span class="o">&amp;</span> <span class="s">&quot;&quot;&quot;&quot;</span> <span class="o">&amp;</span> <span class="n">MsgId</span> <span class="o">&amp;</span> <span class="s">&quot;&quot;&quot;&quot;</span>
+<span class="k">Set</span> <span class="n">OV_Message</span> <span class="o">=</span> <span class="n">GetObject</span><span class="p">(</span><span class="n">MsgPath</span><span class="p">)</span>
+<span class="c">&#39;-------------------------------------------------------------------------------</span>
+<span class="c">&#39;Debugging lines start here</span>
+<span class="c">&#39;-------------------------------------------------------------------------------</span>
+
+<span class="c">&#39;Debug &quot;MsgPath:&quot; &amp; MsgPath &amp; VbCrLf &amp; VbCrLf &amp; &quot;OV_Message: &quot; &amp; OV_Message </span>
+<span class="k">If</span> <span class="n">OV_Message</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span> 
+<span class="n">Debug</span> <span class="s">&quot;MsgPath is null meaning that no OVO object could be found for the given ID&quot;</span> 
+<span class="n">Wscript</span><span class="p">.</span><span class="n">quit</span> 
+<span class="k">End</span> <span class="k">If</span> 
+<span class="c">&#39;-------------------------------------------------------------------------------</span>
+<span class="c">&#39;Debugging lines end here</span>
+<span class="c">&#39;-------------------------------------------------------------------------------</span>
+
+<span class="n">NodeId</span>       <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">NodeName</span>
+<span class="n">TimeCreated</span>  <span class="o">=</span> <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="s">&quot;:&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">&quot;:&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">DateCreated</span>  <span class="o">=</span> <span class="n">Left</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeCreated</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">TimeReceived</span> <span class="o">=</span> <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="s">&quot;:&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">&quot;:&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">DateReceived</span> <span class="o">=</span> <span class="n">Left</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span>_
+               <span class="n">Mid</span><span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">TimeReceived</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Application</span>  <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">Application</span>
+<span class="n">MsgGroup</span>       <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">MessageGroup</span>
+<span class="kt">Object</span>       <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">Object</span>
+<span class="c">&#39;Users        = &quot;n/a&quot;</span>
+<span class="n">Text</span>         <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">Text</span>
+<span class="c">&#39;MsgID = &quot;&quot;</span>
+<span class="c">&#39;TimeCreated = &quot;10:10:10&quot;</span>
+<span class="c">&#39;DateCreated = &quot;03/03/2009&quot;</span>
+<span class="c">&#39;DateReceived = &quot;03/03/2009&quot;</span>
+<span class="c">&#39;Application = &quot;test application&quot;</span>
+<span class="c">&#39;MsgGroup = &quot;message group&quot;</span>
+<span class="c">&#39;Object = &quot;the object&quot;</span>
+<span class="c">&#39;Text = &quot;This is the text.  &lt; and &gt; as well as &amp; and should be escaped&quot;</span>
+
+<span class="k">If</span> <span class="p">(</span><span class="n">OV_Message</span><span class="p">.</span><span class="n">InstructionAvailable</span><span class="p">)</span> <span class="k">Then</span>
+  <span class="n">Inst</span> <span class="o">=</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">GetInstruction</span><span class="p">(</span><span class="n">instruct</span><span class="p">)</span>
+  <span class="k">If</span> <span class="n">Inst</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">instruct</span> <span class="o">=</span> <span class="s">&quot;Access failed.&quot;</span>
+  <span class="k">end</span> <span class="k">if</span>
+<span class="k">else</span>
+  <span class="n">instruct</span>  <span class="o">=</span> <span class="s">&quot;None available.&quot;</span>
+<span class="k">end</span> <span class="k">if</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">OV_Message</span><span class="p">.</span><span class="n">Severity</span>
+  <span class="k">Case</span> <span class="mi">1</span>  <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Unknown&quot;</span>
+  <span class="k">Case</span> <span class="mi">2</span>  <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Normal&quot;</span>
+  <span class="k">Case</span> <span class="mi">4</span>  <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Warning&quot;</span>
+  <span class="k">Case</span> <span class="mi">8</span>  <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Minor&quot;</span>
+  <span class="k">Case</span> <span class="mi">16</span> <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Major&quot;</span>
+  <span class="k">Case</span> <span class="mi">32</span> <span class="n">Severity</span> <span class="o">=</span> <span class="s">&quot;Critical&quot;</span>
+<span class="k">end</span> <span class="k">select</span>
+
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Get the node type of the originating node. Similarly we try to construct the</span>
+<span class="c">&#39; values comparable to what we have on VPO Unix.</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="k">Const</span> <span class="n">WMINode</span> <span class="o">=</span> <span class="s">&quot;WinMgmts:{impersonationLevel=impersonate}!root/HewlettPackard/OpenView/Data:OV_ManagedNode.Name=&quot;</span>
+<span class="n">NodePath</span> <span class="o">=</span> <span class="n">WMINode</span> <span class="o">&amp;</span> <span class="s">&quot;&quot;&quot;&quot;</span> <span class="o">&amp;</span> <span class="n">NodeId</span> <span class="o">&amp;</span> <span class="s">&quot;&quot;&quot;&quot;</span>
+<span class="k">Set</span> <span class="n">OV_ManagedNode</span> <span class="o">=</span> <span class="n">GetObject</span><span class="p">(</span><span class="n">NodePath</span><span class="p">)</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">OV_ManagedNode</span><span class="p">.</span><span class="n">SystemTypeId</span>
+  <span class="k">case</span> <span class="mi">1</span>   <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;Other&quot;</span>
+  <span class="k">case</span> <span class="mi">11</span>  <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;Pentium&quot;</span>
+  <span class="k">case</span> <span class="mi">80</span>  <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;SPARC&quot;</span>
+  <span class="k">case</span> <span class="mi">144</span> <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;PA-RISC&quot;</span>
+  <span class="k">case</span> <span class="mi">27</span>  <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;Power-PC&quot;</span>
+  <span class="k">case</span> <span class="mi">35</span>  <span class="n">SysType</span> <span class="o">=</span> <span class="s">&quot;Alpha&quot;</span>
+<span class="k">end</span> <span class="k">select</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">OV_ManagedNode</span><span class="p">.</span><span class="n">OSTypeId</span>
+  <span class="k">case</span> <span class="mi">58</span>    <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;Windows 2000&quot;</span>
+  <span class="k">case</span> <span class="mi">18</span>    <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;Windows NT&quot;</span>
+  <span class="k">case</span> <span class="mi">8</span>     <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;HPUX&quot;</span>
+  <span class="k">case</span> <span class="mi">29</span>    <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;Solaris&quot;</span>
+  <span class="k">case</span> <span class="mi">9</span>     <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;AIX&quot;</span>
+  <span class="k">case</span> <span class="mi">36</span>    <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;LINUX&quot;</span>
+  <span class="k">case</span> <span class="mi">6</span>     <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;Tru64&quot;</span>
+  <span class="k">case</span> <span class="mi">65535</span> <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;SNMP&quot;</span>
+  <span class="k">case</span> <span class="mi">0</span>     <span class="n">OSType</span> <span class="o">=</span> <span class="s">&quot;Unknown&quot;</span>
+<span class="k">end</span> <span class="k">select</span>
+<span class="n">OSVers</span>   <span class="o">=</span> <span class="n">OV_ManagedNode</span><span class="p">.</span><span class="n">OSVersionId</span>
+<span class="n">NodeName</span> <span class="o">=</span> <span class="n">OV_ManagedNode</span><span class="p">.</span><span class="n">PrimaryNodeName</span>
+<span class="n">NodeType</span> <span class="o">=</span> <span class="n">SysType</span> <span class="o">&amp;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span> <span class="n">OSType</span> <span class="o">&amp;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span> <span class="n">OSVers</span>
+<span class="c">&#39;Debug &quot;Node type of &quot; &amp; NodeId &amp; &quot; is: &quot; &amp; NodeType</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; Perform the action. In this example we just echo into a file. Instead any</span>
+<span class="c">&#39; other activity could be executed.</span>
+<span class="c">&#39; If the notification service has a Scripting/COM interface, use that directly</span>
+<span class="c">&#39; for increased performance.</span>
+<span class="c">&#39; Quote parameters if necessary.</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39;NotificationText = &quot;MessageId:    &quot; &amp; MsgId &amp;_</span>
+<span class="c">&#39;                   &quot; NodeName:     &quot; &amp; NodeName &amp;_</span>
+<span class="c">&#39;                   &quot; NodeType:     &quot; &amp; NodeType &amp;_</span>
+<span class="c">&#39;                   &quot; DateCreated:  &quot; &amp; DateCreated &amp;_</span>
+<span class="c">&#39;                   &quot; TimeCreated:  &quot; &amp; TimeCreated &amp;_</span>
+<span class="c">&#39;                   &quot; DateReceived: &quot; &amp; DateReceived &amp;_</span>
+<span class="c">&#39;                   &quot; TimeReceived: &quot; &amp; TimeReceived &amp;_</span>
+<span class="c">&#39;                   &quot; Application:  &quot; &amp; Application &amp;_</span>
+<span class="c">&#39;                   &quot; MessageGroup: &quot; &amp; MsgGroup &amp;_</span>
+<span class="c">&#39;                   &quot; Object:       &quot; &amp; Object &amp;_</span>
+<span class="c">&#39;                   &quot; Severity:     &quot; &amp; Severity &amp;_</span>
+<span class="c">&#39;                   &quot; Resp. Users:  &quot; &amp; Users &amp;_</span>
+<span class="c">&#39;                   &quot; Text:         &quot; &amp; Text &amp;_</span>
+<span class="c">&#39;                   &quot; Instructions: &quot; &amp; instruct</span>
+<span class="c">&#39;                   </span>
+<span class="k">Set</span> <span class="n">objXMLDOC</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;MSXML2.ServerXMLHTTP&quot;</span><span class="p">)</span>
+<span class="k">Set</span> <span class="n">objXMLDOM</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;MSXML2.DOMDocument&quot;</span><span class="p">)</span>
+<span class="k">Set</span> <span class="n">oNode</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;Microsoft.XMLDOM&quot;</span><span class="p">)</span>
+
+<span class="c">&#39;MAKE THE CALL&#39;</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">open</span> <span class="s">&quot;POST&quot;</span><span class="p">,</span> <span class="n">serviceNowInstance</span> <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span> <span class="n">tableName</span> <span class="o">&amp;</span> <span class="s">&quot;?SOAP&quot;</span><span class="p">,</span> <span class="k">False</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">setRequestHeader</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s">&quot;text/xml;charset=UTF-8&quot;</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">setRequestHeader</span> <span class="s">&quot;SOAPAction&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;&quot;http://www.service-now.com/#insert&quot;&quot;&quot;</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">setRequestHeader</span> <span class="s">&quot;Host&quot;</span><span class="p">,</span> <span class="n">serviceNowInstance</span> <span class="o">&amp;</span> <span class="s">&quot;/&quot;</span> <span class="o">&amp;</span> <span class="n">tableName</span> <span class="o">&amp;</span> <span class="s">&quot;?SOAP&quot;</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">setRequestHeader</span> <span class="s">&quot;Authorization&quot;</span><span class="p">,</span> <span class="n">Get_basic_auth</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="n">beginXML</span> <span class="o">=</span> <span class="s">&quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&quot;</span> <span class="o">&amp;</span>_
+<span class="s">&quot;&lt;soap:Envelope xmlns:xsi=&#39;http://www.w3.org/2001/XMLSchema-instance&#39; xmlns:soapenc=&#39;http://schemas.xmlsoap.org/soap/encoding/&#39; xmlns:xsd=&#39;http://www.w3.org/2001/XMLSchema&#39; xmlns:imp=&#39;http://www.service-now.com/imp_notification&#39; soap:encodingStyle=&#39;http://schemas.xmlsoap.org/soap/encoding/&#39; xmlns:soap=&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;&gt;&quot;</span> <span class="o">&amp;</span>_
+<span class="s">&quot;&lt;soap:Body&gt;&lt;imp:insert&gt;&quot;</span>
+
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;uuid&quot;</span><span class="p">,</span> <span class="n">MsgID</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;source&quot;</span><span class="p">,</span> <span class="n">NodeName</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">,</span> <span class="s">&quot;HOPV&quot;</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;category&quot;</span><span class="p">,</span> <span class="n">Application</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;assignment_group&quot;</span><span class="p">,</span> <span class="n">MsgGroup</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">,</span> <span class="kt">Object</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;severity&quot;</span><span class="p">,</span> <span class="n">Severity</span><span class="p">)</span>
+<span class="n">midXML</span> <span class="o">=</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">Write_element</span><span class="p">(</span><span class="s">&quot;comments&quot;</span><span class="p">,</span> <span class="n">Text</span><span class="p">)</span>
+
+<span class="n">endXML</span> <span class="o">=</span> <span class="s">&quot;&lt;/imp:insert&gt;&quot;</span> <span class="o">&amp;</span>_
+<span class="s">&quot;&lt;/soap:Body&gt;&quot;</span> <span class="o">&amp;</span>_
+<span class="s">&quot;&lt;/soap:Envelope&gt;&quot;</span>
+ 
+<span class="n">theXML</span> <span class="o">=</span> <span class="n">beginXML</span> <span class="o">&amp;</span> <span class="n">midXML</span> <span class="o">&amp;</span> <span class="n">endXML</span>
+ 
+<span class="c">&#39;Debug theXML</span>
+<span class="n">objXMLDOC</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">theXML</span><span class="p">)</span>
+<span class="n">objXMLDOM</span><span class="p">.</span><span class="n">LoadXML</span> <span class="n">objXMLDOC</span><span class="p">.</span><span class="n">responseText</span>
+<span class="c">&#39;Debug objXMLDOC.responseText         </span>
+          
+<span class="k">If</span> <span class="n">err</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="k">Then</span>
+  <span class="n">WScript</span><span class="p">.</span><span class="n">Echo</span> <span class="s">&quot;Unexpected Error: &quot;</span>  <span class="o">&amp;</span> <span class="n">err</span><span class="p">.</span><span class="n">source</span> <span class="o">&amp;</span> <span class="s">&quot; &quot;</span> <span class="o">&amp;</span> <span class="n">err</span><span class="p">.</span><span class="n">number</span>
+  <span class="n">WScript</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">if</span>
+<span class="c">&#39;Debug &quot;Submission successful&quot;</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+<span class="c">&#39; End of SubmitNS.vbs</span>
+<span class="c">&#39; --------------------------------------------------------------------------</span>
+</pre></div>
+<h4><span class="mw-headline" id="Modify_VB_Script_for_your_ServiceNow_Instance"><span class="mw-headline-number">1.2</span> Modify VB Script for your ServiceNow Instance</span></h4>
+<p><b>note</b> After downloading the script, you <b>must</b> modify the line that specify the proxy URL 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">&#39;</span>
+<span class="c">&#39; Change the following serviceNowInstance URL to match the URL to your ServiceNow instance</span>
+<span class="c">&#39; Also, change the username/password values to match one that exists on your instance</span>
+<span class="c">&#39;</span>
+<span class="n">serviceNowInstance</span> <span class="o">=</span> <span class="s">&quot;https://&lt;instance name&gt;.service-now.com&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s">&quot;itil&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s">&quot;itil&quot;</span>
+</pre></div> 
+<p>To match with your ServiceNow instance's URL for example 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">&#39;</span>
+<span class="c">&#39; Change the following serviceNowInstance URL to match the URL to your ServiceNow instance</span>
+<span class="c">&#39; Also, change the username/password values to match one that exists on your instance</span>
+<span class="c">&#39;</span>
+<span class="n">serviceNowInstance</span> <span class="o">=</span> <span class="s">&quot;https://companya.service-now.com&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s">&quot;ovo&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s">&quot;ovo123&quot;</span>
+</pre></div>
+<p><b>You can refer to <i>Chapter 7 About Notifications Services and Trouble Ticket Systems</i> of the <i>HP Openview Operations Administrators Guide</i> for more information about installing scripts and configuring OVO to invoke them.</b> 
+</p>
+<table class="sortable striped standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Information sent to Service Now via VB Script (via SOAP)
+</th></tr>
+<tr>
+<td> 1
+</td>
+<td> Unique message number.
+<p>Example: c1c79228-ae12-71d6-1a8f-0f887ebe0000 
+</p>
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> Message node name.
+<p>Example: hpbbxyz3.bbn.hp.com 
+</p>
+</td></tr>
+<tr>
+<td> 3
+</td>
+<td> Node type. For a list of supported managed nodes, see the Add Node window in the OVO administrator GUI or the OVO Installation Guide for the Management Server.
+<p>Example: HP 9000 PA-RISC 
+</p>
+</td></tr>
+<tr>
+<td> 4
+</td>
+<td> Date (mm/dd/yyyy) on which the message was received on the managed node in the time zone (system-specific TZ variable) of the management server.
+<p>Example: 08/02/2002 
+</p>
+</td></tr>
+<tr>
+<td> 5
+</td>
+<td> Time (hh:mm:ss) at which the message was received on the managed node. This time uses a 24-hour clock in the time zone (system-specific TZ variable) of the management server.
+<p>Example: 16:22:04 
+</p>
+</td></tr>
+<tr>
+<td> 6
+</td>
+<td> Date (mm/dd/yyyy) on which the message was received on the management server in the time zone (system-specific TZ variable) of the management server.
+<p>Example: 08/02/2002 
+</p>
+</td></tr>
+<tr>
+<td> 7
+</td>
+<td> Time (hh:mm:ss) at which the message was received on the management server. This time uses a 24-hour clock in the time zone (system-specific TZ variable) of the management server.
+<p>Example: 16:22:05 
+</p>
+</td></tr>
+<tr>
+<td> 8
+</td>
+<td> Application name.
+<p>Example: /bin/su(1) Switch User 
+</p>
+</td></tr>
+<tr>
+<td> 9
+</td>
+<td> Message group.
+<p>Example: Security 
+</p>
+</td></tr>
+<tr>
+<td> 10
+</td>
+<td> Object name.
+<p>Example: root 
+</p>
+</td></tr>
+<tr>
+<td> 11
+</td>
+<td> Message severity (unknown, normal, warning, minor, major or critical).
+<p>Example: normal 
+</p>
+</td></tr>
+<tr>
+<td> 12
+</td>
+<td> List of responsible OVO operators. Names are separated with one space.
+<p>Example: opc_op Bill John 
+</p>
+</td></tr>
+<tr>
+<td> 13
+</td>
+<td> Message text. Text is not enclosed in quotation marks ("").
+<p>Example: Succeeded switch user to root by charlie 
+</p>
+</td></tr>
+<tr>
+<td> 14
+</td>
+<td> Instructions (empty string if not available). The instructions are passed without quotation marks (""), backslashes (\), or other characters that might be interpreted by a UNIX shell.
+<p>Example: This is the instruction text for the appropriate message condition. It is available for the operator when a message matching this condition displays in the Message Browser. 
+</p>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202120444
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.185 seconds
+Real time usage: 1.440 seconds
+Preprocessor visited node count: 45/1000000
+Preprocessor generated node count: 262/1000000
+Post‐expand include size: 2069/2097152 bytes
+Template argument size: 977/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   18.974      1 - -total
+ 74.54%   14.143      1 - Template:Event_Integration
+ 44.89%    8.518      1 - Template:Topic
+ 23.35%    4.431      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:4945-0!*!0!1!*!5!* and timestamp 20171202120443 and revision id 246770
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;oldid=246770.html">http://wiki.servicenow.com/index.php?title=Legacy:HP_OpenView_Operations_Integration_Windows&amp;oldid=246770</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Event+Integrations.html" title="Category:Event Integrations">Event Integrations</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Vendor+Specific+Integrations.html" title="Category:Vendor Specific Integrations">Vendor Specific Integrations</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Integrations.html" title="Category:Incident Integrations">Incident Integrations</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_4945"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="4945" data-vote-the-vote="5" data-vote-id="4945" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4945_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="4945" data-vote-the-vote="1" data-vote-id="4945" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_4945_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Legacy%3AHP+OpenView+Operations+Integration+Windows&amp;returntoquery=oldid%3D246770" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Legacy%3AHP+OpenView+Operations+Integration+Windows&amp;returntoquery=oldid%3D246770" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Legacy:HP_OpenView_Operations_Integration_Windows.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Legacy%253AHP+OpenView+Operations+Integration+Windows.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Legacy%253AHP+OpenView+Operations+Integration+Windows&amp;returnto=Legacy%253AHP+OpenView+Operations+Integration+Windows&amp;oldid=246770&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FLegacy:HP_OpenView_Operations_Integration_Windows.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Legacy:HP_OpenView_Operations_Integration_Windows" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;oldid=246770.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Legacy:HP_OpenView_Operations_Integration_Windows&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:58, 4 June 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1022});});</script></body></html>

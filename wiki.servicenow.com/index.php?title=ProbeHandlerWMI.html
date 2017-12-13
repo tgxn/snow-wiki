@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>ProbeHandlerWMI - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ProbeHandlerWMI","wgTitle":"ProbeHandlerWMI","wgCurRevisionId":134663,"wgRevisionId":134663,"wgArticleId":15895,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Discovery Script Includes"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"ProbeHandlerWMI","wgRelevantArticleId":15895,"wgRequestId":"3e4e1608971ed39f1c64e3e0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20121106222846"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=ProbeHandlerWMI"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="ProbeHandlerWMI"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Discovery Script Includes"/>
+<meta name="category" content="Discovery Script Includes"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=ProbeHandlerWMI.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:ProbeHandlerWMI"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20121106222846"/>
+
+	<meta property="article:published_time" content="20121106222846"/>
+
+	<meta property="article:modified_time" content="20121106222846"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Discovery Script Includes"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=ProbeHandlerWMI"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-ProbeHandlerWMI rootpage-ProbeHandlerWMI skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=ProbeHandlerWMI.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=ProbeHandlerWMI&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">ProbeHandlerWMI</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Server_API_Reference.html" title="Server API Reference">Server APIs</a> &gt; ProbeHandlerWMI</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=ProbeHandlerWMI.html#column-one">navigation</a>, <a href="index.php%3Ftitle=ProbeHandlerWMI.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2274fdd41d1t'></div><script type="text/javascript">window.tamOnload_tam5a2274fdd41d1t=[];tree = new dTree('tam5a2274fdd41d1t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2274fdd41d1t = tree;
+                                               tam5a2274fdd41d1t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a2274fdd41d1t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a2274fdd41d1t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a2274fdd41d1t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a2274fdd41d1t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a2274fdd41d1t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a2274fdd41d1t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a2274fdd41d1t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a2274fdd41d1t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a2274fdd41d1t.add(10, 0, 'Jelly');
+tam5a2274fdd41d1t.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extensions_to_Jelly_Syntax\&quot;" title=\"Extensions to Jelly Syntax\">Extensions to Jelly Syntax</a> ');
+tam5a2274fdd41d1t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a2274fdd41d1t.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a2274fdd41d1t.add(14, 0, 'Debugging');
+tam5a2274fdd41d1t.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a2274fdd41d1t.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a2274fdd41d1t.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a2274fdd41d1t.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a2274fdd41d1t.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a2274fdd41d1t.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a2274fdd41d1t.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a2274fdd41d1t.add(22, 0, 'Client-Side Glide Reference');
+tam5a2274fdd41d1t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a2274fdd41d1t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a2274fdd41d1t.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a2274fdd41d1t.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a2274fdd41d1t.add(27, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Side_GlideRecord\&quot;" title=\"Client Side GlideRecord\">Client-side GlideRecord</a>');
+tam5a2274fdd41d1t.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a2274fdd41d1t.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a2274fdd41d1t.add(30, 0, 'Server-Side Glide Reference');
+tam5a2274fdd41d1t.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a2274fdd41d1t.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a2274fdd41d1t.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a2274fdd41d1t.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a2274fdd41d1t.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">Date and Time Functions</a> ');
+tam5a2274fdd41d1t.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a2274fdd41d1t.add(37, 0, 'Script Helpers');
+tam5a2274fdd41d1t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a2274fdd41d1t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a2274fdd41d1t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a2274fdd41d1t.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a2274fdd41d1t.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a2274fdd41d1t.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a2274fdd41d1t.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a2274fdd41d1t.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a2274fdd41d1t.add(46, 0, 'Script Objects');
+tam5a2274fdd41d1t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a2274fdd41d1t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a2274fdd41d1t.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a2274fdd41d1t').innerHTML = tam5a2274fdd41d1t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2274fdd41d1t) { window.tamOnload_tam5a2274fdd41d1t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Discovery probe handler for WMI probes.
+</p>
+<h2><span class="mw-headline" id="Where_To_Use"><span class="mw-headline-number">1.1</span> Where To Use</span></h2>
+<p>Use in any server-side script where you need to configure an WMI probe.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<table cellspacing="1" cellpadding="3" border="1" width="550px" class="sortable">
+
+<tr>
+<td bgcolor="#dfdbdc"> <b>Method Summary</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=ProbeHandlerWMI.html#initialize.28probe.29">initialize(probe)</a>
+</td>
+<td valign="top"> Method called by the Prototype JavaScript Framework during object creation.
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=ProbeHandlerWMI.html#run.28.29">run()</a>
+</td>
+<td valign="top"> Runs the probe.
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=ProbeHandlerWMI.html#getParameters.28.29">getParameters()</a>
+</td>
+<td valign="top"> Gets the parameters added by this probe handler.
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=ProbeHandlerWMI.html#setProbeParameters.28params.29">setProbeParameters(params)</a>
+</td>
+<td valign="top"> Sets the probe parameters.
+</td></tr>
+<tr>
+<td valign="top"> <a href="index.php%3Ftitle=ProbeHandlerWMI.html#getWMIFields.28.29">getWMIFields()</a>
+</td>
+<td valign="top"> Generates a string containing the WMI fields to fetch.
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">3</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="initialize.28probe.29"><span class="mw-headline-number">3.1</span> initialize(probe)</span></h2>
+<p>Called by the Prototype JavaScript Framework during object creation. Do not directly call this method.
+</p>
+<h3><span class="mw-headline" id="Input_Fields"><span class="mw-headline-number">3.1.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>probe</b> - The probe to configure.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields"><span class="mw-headline-number">3.1.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="run.28.29"><span class="mw-headline-number">3.2</span> run()</span></h2>
+<p>Runs the probe.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_2"><span class="mw-headline-number">3.2.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_2"><span class="mw-headline-number">3.2.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getParameters.28.29"><span class="mw-headline-number">3.3</span> getParameters()</span></h2>
+<p>Gets the parameters added by this probe handler.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_3"><span class="mw-headline-number">3.3.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_3"><span class="mw-headline-number">3.3.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> a hash map of the parameters added by this probe handler.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="setProbeParameters.28params.29"><span class="mw-headline-number">3.4</span> setProbeParameters(params)</span></h2>
+<p>Sets the probe parameters.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_4"><span class="mw-headline-number">3.4.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>params</b> - The probe parameters.</li></ul>
+<h3><span class="mw-headline" id="Output_Fields_4"><span class="mw-headline-number">3.4.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> void
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="getWMIFields.28.29"><span class="mw-headline-number">3.5</span> getWMIFields()</span></h2>
+<p>Generates a string containing the WMI fields to fetch.
+</p>
+<h3><span class="mw-headline" id="Input_Fields_5"><span class="mw-headline-number">3.5.1</span> Input Fields</span></h3>
+<p><b>Parameters:</b> 
+</p>
+<ul><li><b>None</b></li></ul>
+<h3><span class="mw-headline" id="Output_Fields_5"><span class="mw-headline-number">3.5.2</span> Output Fields</span></h3>
+<p><b>Returns:</b> a string containing the WMI fields to fetch.
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202094014
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.153 seconds
+Real time usage: 0.220 seconds
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 252/1000000
+Post‐expand include size: 2857/2097152 bytes
+Template argument size: 367/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   82.750      1 - -total
+100.00%   82.750      1 - Template:General_Script
+ 93.74%   77.567      1 - Template:Topic
+ 12.40%   10.263      1 - Embedded:General_Script
+  4.70%    3.891      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:15895-0!*!0!1!*!5!* and timestamp 20171202094013 and revision id 134663
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=ProbeHandlerWMI&amp;oldid=134663.html">http://wiki.servicenow.com/index.php?title=ProbeHandlerWMI&amp;oldid=134663</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Discovery+Script+Includes.html" title="Category:Discovery Script Includes">Discovery Script Includes</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+APIs.html" title="Category:Server APIs">Server APIs</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Discovery+Script+Includes.html" title="Category:Discovery Script Includes">Discovery Script Includes</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_15895"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="15895" data-vote-the-vote="5" data-vote-id="15895" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_15895_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="15895" data-vote-the-vote="1" data-vote-id="15895" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_15895_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=ProbeHandlerWMI.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=ProbeHandlerWMI.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=ProbeHandlerWMI.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=ProbeHandlerWMI.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=ProbeHandlerWMI&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=ProbeHandlerWMI.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=ProbeHandlerWMI&amp;returnto=ProbeHandlerWMI&amp;oldid=134663&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=ProbeHandlerWMI&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FProbeHandlerWMI.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FProbeHandlerWMI.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=ProbeHandlerWMI&amp;oldid=134663.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=ProbeHandlerWMI&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 22:28, 6 November 2012.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1050});});</script></body></html>

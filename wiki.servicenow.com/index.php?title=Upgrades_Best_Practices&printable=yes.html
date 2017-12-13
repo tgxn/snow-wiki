@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Upgrades Best Practices - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Upgrades_Best_Practices","wgTitle":"Upgrades Best Practices","wgCurRevisionId":249828,"wgRevisionId":249828,"wgArticleId":20939,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Maintenance Best Practices"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Upgrades_Best_Practices","wgRelevantArticleId":20939,"wgRequestId":"83a05f6a7ed5c04aed8a8437","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.embedVideo%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=st.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20161216011636"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Upgrades_Best_Practices"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Upgrades Best Practices"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Maintenance Best Practices"/>
+<meta name="category" content="Maintenance Best Practices"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrades+Best+Practices&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Upgrades Best Practices"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20161216011636"/>
+
+	<meta property="article:published_time" content="20161216011636"/>
+
+	<meta property="article:modified_time" content="20161216011636"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Maintenance Best Practices"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Upgrades_Best_Practices"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Upgrades_Best_Practices rootpage-Upgrades_Best_Practices skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Upgrades+Best+Practices.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrades+Best+Practices&amp;oldid=0.html" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (81 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Upgrades Best Practices</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Maintenance Best Practices</a> &gt; Upgrades Best Practices</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a>
+</th></tr>
+<tr>
+<td> <div style="width:260px;">
+<div class='dtree' id='5a221fdd0c63at'></div><script type="text/javascript">window.tamOnload_tam5a221fdd0c63at=[];tree = new dTree('tam5a221fdd0c63at');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a221fdd0c63at = tree;
+                                               tam5a221fdd0c63at.add(1, 0, 'Planning');
+
+tam5a221fdd0c63at.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Planning_for_Development_Best_Practices\&quot;" title=\"Planning for Development Best Practices\">Planning for Development Best Practices</a>');
+tam5a221fdd0c63at.add(3, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Documenting_a_Migration_Procedure\&quot;" title=\"Documenting a Migration Procedure\">Documenting a Migration Procedure</a>');
+tam5a221fdd0c63at.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Application_Design\&quot;" title=\"Modifying the Application Design\">Modifying the Application Design</a>');
+tam5a221fdd0c63at.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understand_the_Requirements\&quot;" title=\"Understand the Requirements\">Requirements Best Practices</a>');
+tam5a221fdd0c63at.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_UI_Appearance\&quot;" title=\"Customizing the UI Appearance\">Customizing the UI Appearance</a>');
+tam5a221fdd0c63at.add(7, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Best_Practices\&quot;" title=\"Security Best Practices\">Security Best Practices</a>');
+tam5a221fdd0c63at.add(8, 0, 'Development');
+tam5a221fdd0c63at.add(9, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Script_Best_Practices\&quot;" title=\"Client Script Best Practices\">Client Script Best Practices</a>');
+tam5a221fdd0c63at.add(10, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Coding_Best_Practices\&quot;" title=\"Coding Best Practices\">Coding Best Practices</a>');
+tam5a221fdd0c63at.add(11, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Commenting_Your_Work\&quot;" title=\"Commenting Your Work\">Commenting Your Work</a>');
+tam5a221fdd0c63at.add(12, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Business_Rules_Best_Practices\&quot;" title=\"Business Rules Best Practices\">Business Rules Best Practices</a>');
+tam5a221fdd0c63at.add(13, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Update_Sets_Best_Practices\&quot;" title=\"Update Sets Best Practices\">Update Sets Best Practices</a>');
+tam5a221fdd0c63at.add(14, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_and_Importing_XML_Files\&quot;" title=\"Exporting and Importing XML Files\">Exporting and Importing XML Files</a>');
+tam5a221fdd0c63at.add(15, 0, 'Maintenance');
+tam5a221fdd0c63at.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Debugging_Tools_Best_Practices\&quot;" title=\"Debugging Tools Best Practices\">Debugging Tools Best Practices</a>');
+tam5a221fdd0c63at.add(17, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Properties_Best_Practices\&quot;" title=\"System Properties Best Practices\">System Properties Best Practices</a>');
+tam5a221fdd0c63at.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Logs_and_Queues_Best_Practices\&quot;" title=\"Logs and Queues Best Practices\">Logs and Queues Best Practices</a>');
+tam5a221fdd0c63at.add(19, 15, ' <strong class=\"selflink\">Upgrades Best Practices</strong>');
+tam5a221fdd0c63at.add(20, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Patches_Best_Practices\&quot;" title=\"Patches Best Practices\">Patches Best Practices</a>');
+tam5a221fdd0c63at.add(21, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Performance_Best_Practices\&quot;" title=\"System Performance Best Practices\">System Performance Best Practices</a>');
+tam5a221fdd0c63at.add(22, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_Performance_Best_Practices\&quot;" title=\"Import Set Performance Best Practices\">Import Set Performance Best Practices</a>');
+
+tam5a221fdd0c63at.add(23, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a></div>');
+                                               document.getElementById('5a221fdd0c63at').innerHTML = tam5a221fdd0c63at.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a221fdd0c63at) { window.tamOnload_tam5a221fdd0c63at[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div> <div class="toclimit-1"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Upgrades_vs_Patches"><span class="tocnumber">1</span> <span class="toctext">Upgrades vs Patches</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Upgrades_Overview"><span class="tocnumber">2</span> <span class="toctext">Upgrades Overview</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Understand_the_ServiceNow_Release_Cycle"><span class="tocnumber">3</span> <span class="toctext">Understand the ServiceNow Release Cycle</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#About_Rollbacks_and_Backups"><span class="tocnumber">4</span> <span class="toctext">About Rollbacks and Backups</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Review_Upgrading_Phases"><span class="tocnumber">5</span> <span class="toctext">Review Upgrading Phases</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Prepare_for_Upgrading"><span class="tocnumber">6</span> <span class="toctext">Prepare for Upgrading</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Determine_Current_Release_Version"><span class="tocnumber">6.1</span> <span class="toctext">Determine Current Release Version</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Review_Release_Notes"><span class="tocnumber">6.2</span> <span class="toctext">Review Release Notes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Create_System_Benchmarks"><span class="tocnumber">6.3</span> <span class="toctext">Create System Benchmarks</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Create_Comprehensive_Test_Plans"><span class="tocnumber">6.4</span> <span class="toctext">Create Comprehensive Test Plans</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Evaluate_Log_Data"><span class="tocnumber">6.5</span> <span class="toctext">Evaluate Log Data</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Review_Prior_Upgrade_History"><span class="tocnumber">6.6</span> <span class="toctext">Review Prior Upgrade History</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Manage_Customizations"><span class="tocnumber">6.7</span> <span class="toctext">Manage Customizations</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Review_Scheduled_Jobs_for_Upgrading"><span class="tocnumber">6.8</span> <span class="toctext">Review Scheduled Jobs for Upgrading</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Other_scheduled_jobs"><span class="tocnumber">6.8.1</span> <span class="toctext">Other scheduled jobs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Create_an_Implementation_Plan"><span class="tocnumber">6.9</span> <span class="toctext">Create an Implementation Plan</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Upgrade_and_Validate_Sub-Production_Instances"><span class="tocnumber">7</span> <span class="toctext">Upgrade and Validate Sub-Production Instances</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Clone_Production_over_Sub-Production"><span class="tocnumber">7.1</span> <span class="toctext">Clone Production over Sub-Production</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Tips_for_Upgrading_Sub-Production_Instances"><span class="tocnumber">7.2</span> <span class="toctext">Tips for Upgrading Sub-Production Instances</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Request_an_Upgrade_for_Sub-Production_Instances"><span class="tocnumber">7.3</span> <span class="toctext">Request an Upgrade for Sub-Production Instances</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Validate_Sub-Production_Instance_Upgrade"><span class="tocnumber">7.4</span> <span class="toctext">Validate Sub-Production Instance Upgrade</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Upgrade_and_Validate_a_Production_Instance"><span class="tocnumber">8</span> <span class="toctext">Upgrade and Validate a Production Instance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Tips_for_Upgrading_a_Production_Instance"><span class="tocnumber">8.1</span> <span class="toctext">Tips for Upgrading a Production Instance</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Request_an_Upgrade_for_Production_Instance"><span class="tocnumber">8.2</span> <span class="toctext">Request an Upgrade for Production Instance</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Configure_a_Completed_Upgrade_Notification"><span class="tocnumber">8.3</span> <span class="toctext">Configure a Completed Upgrade Notification</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Confirm_an_Upgrade"><span class="tocnumber">8.4</span> <span class="toctext">Confirm an Upgrade</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><b>For the latest upgrade documentation, refer to:</b>
+<ul>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/helsinki-release-notes/page/release-notes/upgrades/reference/r-upgrade-to-helsinki.html">Upgrade to Helsinki</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/istanbul-release-notes/page/release-notes/upgrades/reference/r-upgrade-to-istanbul.html">Upgrade to Istanbul</a></li>
+</ul>
+</p>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Upgrades_vs_Patches"><span class="mw-headline-number">1</span> Upgrades vs Patches</span></h1>
+<p>ServiceNow organizes its releases into families. A family is a set of releases that are named after a major city, such as Eureka or Fuji. Within a family, releases are further differentiated by patch and hotfix number. For example, the following releases are both part of the Fuji family:
+</p>
+<ul><li>Fuji Patch 1</li>
+<li>Fuji Patch 2 Hot Fix 1</li></ul>
+<p>Upgrading is the act of moving to a release that is in a different family than your current release. For example, if you move from Eureka Patch 8 to Fuji Patch 2, this is an upgrade because Eureka and Fuji are different families. For details and best practices on upgrading your instances, continue with the following sections in the Upgrades Best Practices. 
+</p><p>Patching is the act of moving to a release that is in the same family as your current release. For example, if you move from Fuji Patch 1 to Fuji Patch 2, this is a patch because both versions are part of the Fuji family. For details and best practices on patching your instances, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Patches+Best+Practices&amp;oldid=0.html" title="Patches Best Practices">Patches Best Practices</a>.
+</p><p>Note that in both cases, the target release is Fuji Patch 2. It is the difference between the old and new releases that determines whether you are upgrading or patching.
+</p>
+<h1><span class="mw-headline" id="Upgrades_Overview"><span class="mw-headline-number">2</span> Upgrades Overview</span></h1>
+<p>System upgrades can be significant projects. Each ServiceNow release includes major additions and you should always consider the impact of new functionality on an instance. Upgrading implements enhancements to all features that are part of the base system or are <a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins">already active</a>, unless the feature is <a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Manage_Customizations">customized</a> on your instance.
+</p><p>Careful preparation and knowledge of the available software, tools, and resources can contribute to a successful upgrade. In addition to the materials provided by ServiceNow, it is important to understand how your ServiceNow instance is currently operating, if any errors are present, and the performance level of key business functionality. Set the expectation with IT and business users that time needs to be dedicated to preparing for, implementing, and testing ServiceNow upgrades.
+</p><p>This page provides an upgrade process with best practices for ensuring a safe and effective upgrade. If you have any issues during the upgrade process, please <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html#Submitting_an_Incident" title="Technical Support" class="mw-redirect">submit an incident</a> to ServiceNow Customer Support.
+</p><p>For additional help with upgrades, ServiceNow offers the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.servicenow.com/services/production-readiness-services.html">Configuration Review</a> service. The service specifically addresses challenges with instance upgradability, manageability, scalability, and performance. Performed by a ServiceNow certified professional consultant, the ServiceNow Configuration Review provides recommendations to align customer configurations with ServiceNow best practices. Contact your ServiceNow sales representative for more details.
+</p>
+<h1><span class="mw-headline" id="Understand_the_ServiceNow_Release_Cycle"><span class="mw-headline-number">3</span> Understand the ServiceNow Release Cycle</span></h1>
+<p>It is important to understand the ServiceNow release cycle and the types of releases available. Knowledge of the release cycle helps ensure that the appropriate upgrades and versions are applied to your instance without compromising system functionality, availability, or performance. For more information, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Upgrades+and+the+Release+Cycle&amp;oldid=0.html" title="Upgrades and the Release Cycle">Upgrades and the Release Cycle</a>.
+</p>
+<h1><span class="mw-headline" id="About_Rollbacks_and_Backups"><span class="mw-headline-number">4</span> About Rollbacks and Backups</span></h1>
+<p>When planning an upgrade, note that ServiceNow does not provide a rollback option or perform on-demand backups. Instances are automatically backed up daily during non-peak business hours on schedules defined by ServiceNow. We do not adjust the timing of existing backup schedules. 
+</p><p>Avoid restoring a production instance from backup, when possible, due to downtime and data loss. Restoring a production instance from backup is a final option when a problem cannot be solved using other methods. We provide customer support 24/7 to provide assistance with critical post-upgrade issues.
+</p><p>The best method for successfully upgrading a production instance is to first test thoroughly on a sub-production instance. The testing process explained on this wiki page helps identify critical problems and related fixes on the sub-production instance. Use the information identified during testing to create a plan for addressing issues after upgrading the production instance.
+</p>
+<h1><span class="mw-headline" id="Review_Upgrading_Phases"><span class="mw-headline-number">5</span> Review Upgrading Phases</span></h1>
+<p>The upgrading process consists of three major phases. Each phase builds on the the previous one to methodically move the new code to the production instance without compromising system stability.
+</p><p><a href="index.php%3Ftitle=File:Upgrade_planning_process.png.html" class="image" title="ServiceNow Upgrade Planning Process"><img alt="ServiceNow Upgrade Planning Process" src="images/thumb/5/53/Upgrade_planning_process.png/550px-Upgrade_planning_process.png" width="550" height="287" srcset="/images/5/53/Upgrade_planning_process.png 1.5x, /images/5/53/Upgrade_planning_process.png 2x" /></a>
+</p>
+<h1><span class="mw-headline" id="Prepare_for_Upgrading"><span class="mw-headline-number">6</span> Prepare for Upgrading</span></h1>
+<p>Download the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="images/0/03/ServiceNow_Upgrade_Planning_Checklist_V11_External.pdf">ServiceNow Upgrade Planning Checklist</a>. 
+</p>
+<h2><span class="mw-headline" id="Determine_Current_Release_Version"><span class="mw-headline-number">6.1</span> <span id="Determine_Current_Release_Version"></span>Determine Current Release Version</span></h2>
+<p>System administrators can check which release is running on an instance at any time.
+</p>
+<ol><li> Navigate to <b>System Diagnostics &gt; Stats &gt; Stats</b>.</li>
+<li> Locate the <b>Build name</b>, <b>Build date</b>, and <b>Build tag</b>. </li>
+<li> Match the build name to the release name in the <a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">release notes</a>. </li>
+<li> Match the build date and tag to the build date and tag in the release notes.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:341px;"><a href="index.php%3Ftitle=File:CheckRelease.png.html" class="image"><img alt="" src="images/3/36/CheckRelease.png" width="339" height="166" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:CheckRelease.png.html" class="internal" title="Enlarge"></a></div><b>View Stats or point to the header logo</b></div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Review_Release_Notes"><span class="mw-headline-number">6.2</span> <span id="Review_Release_Notes"></span>Review Release Notes</span></h2>
+<p>ServiceNow provides <a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">release notes</a> for every release. The release notes offer valuable information about new functionality, notable changes, and fixes available in a particular version. Read the release notes to determine whether an upgrade contains functionality you need and fixes that resolve any issues affecting your instance. The release notes can also help you determine whether items you previously customized are being upgraded
+</p><p>If your instance is more than one release behind, you can still upgrade directly. ServiceNow fully supports the current and two previous family releases, as well as any interim hotfixes and patch releases.
+</p><p>For more information about releases, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Upgrades+and+the+Release+Cycle&amp;oldid=0.html" title="Upgrades and the Release Cycle">Upgrades and the Release Cycle</a>.
+</p>
+<h2><span class="mw-headline" id="Create_System_Benchmarks"><span class="mw-headline-number">6.3</span> <span id="Create_System_Benchmarks"></span>Create System Benchmarks</span></h2>
+<p>After deciding which release you should upgrade to, analyze the current operating environment before performing the upgrade.  Specifically, review the following:
+</p>
+<ul><li>Key functionality</li>
+<li>Integrations</li>
+<li>Instance performance</li></ul>
+<p>Assign a consistent core team of power users and key stakeholders to validate important functionality in the ServiceNow instance before and after upgrades. 
+</p><p>Pre-upgrade instance validation can provide a reliable benchmark of the current operating environment and alert you to any issues that may appear after the upgrade. For example, in some cases, it appears that specific functionality is broken by an upgrade. Analysis sometimes shows that the functionality did not work properly in the production instance, even before the upgrade.
+</p>
+<h2><span class="mw-headline" id="Create_Comprehensive_Test_Plans"><span class="mw-headline-number">6.4</span> <span id="Create_Comprehensive_Test_Plans"></span>Create Comprehensive Test Plans</span></h2>
+<p>Create a comprehensive test plan that includes test cases for all core instance functionality and integrations. Perform the tests before and after upgrading. To test efficiently, create a set of detailed test scripts that your testing team can use consistently and methodically to evaluate system functionality.
+</p><p>After upgrading, track any defects or deviations from the pre-upgrade testing results. Defect tracking can help identify root causes and create fixes. When a fix is identified, capture the fix in a single update set. The resulting update sets hold the cumulative fixes that should be applied to the production instance.
+</p><p>If you have <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.servicenow.com/products/service-automation-platform/createnow-development-suite.html">CreateNow</a>, use ServiceNow to manage ServiceNow. Create an application in your instance for developing test cases, tracking defects, and reporting upgrade compatibility.
+</p>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to see more information about managing test cases</b>
+</th></tr>
+<tr>
+<td>
+<p>To manage an instance upgrade, consider using a spreadsheet with the following columns to track all required test cases.
+</p>
+<table width="750px" cellspacing="1" cellpadding="3" border="1">
+
+<tr>
+<td width="125px" bgcolor="#dfdbdc"> <b>Column</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td>  Test case ID
+</td>
+<td>  A unique identification number for the test case.
+</td></tr>
+<tr>
+<td>  Test object
+</td>
+<td>  The object to test. For example, transaction, field value, or variable value.
+</td></tr>
+<tr>
+<td>  Test case type
+</td>
+<td>  The type of test to run. For example, accuracy test or security test.
+</td></tr>
+<tr>
+<td>  Test role (Actor)
+</td>
+<td>  The role required or, if applicable, individual responsible for running the test. For example, admin or ESS user.
+</td></tr>
+<tr>
+<td>  Precondition
+</td>
+<td>  Any existing precondition. For example, run another test case before running this test case.
+</td></tr>
+<tr>
+<td>  Execute
+</td>
+<td>  The list of steps to perform. The list may contain a single step or several steps for the test role to perform.
+</td></tr>
+<tr>
+<td>  Success criteria
+</td>
+<td>  The expected state after the test case is completed.
+</td></tr>
+<tr>
+<td>  Post condition
+</td>
+<td>  The new condition that is established after running the test case.
+</td></tr>
+<tr>
+<td>  Result set
+</td>
+<td>  The expected result set created when the test case is run, if applicable.
+</td></tr>
+<tr>
+<td>  Misc
+</td>
+<td>  Any additional, relevant information.
+</td></tr></table>
+</td></tr></table>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to see more information about tracking defects</b>
+</th></tr>
+<tr>
+<td>
+<p>Consider using a spreadsheet with the following columns to track all defects. 
+</p>
+<table width="750px" cellspacing="1" cellpadding="3" border="1">
+
+<tr>
+<td width="125px" bgcolor="#dfdbdc"> <b>Column</b>
+</td>
+<td bgcolor="#dfdbdc"> <b>Description</b>
+</td></tr>
+<tr>
+<td>  Test case ID
+</td>
+<td>  A unique identification number for the test case.
+</td></tr>
+<tr>
+<td>  Test name
+</td>
+<td>  A reference name for identifying a specific test case.
+</td></tr>
+<tr>
+<td>  Expected results
+</td>
+<td>  The expected state after the test is completed.
+</td></tr>
+<tr>
+<td>  Defect identified
+</td>
+<td>  Detailed description of the defect as compared to the expected results.
+</td></tr>
+<tr>
+<td>  Owner
+</td>
+<td>  Name of the person or team responsible for validating the defect, researching the root cause, and creating a fix.
+</td></tr>
+<tr>
+<td>  Update set
+</td>
+<td>  Name of the update set containing the fix for the defect.
+</td></tr></table>
+<p>Another option is to use the ServiceNow <a href="index.php%3Ftitle=SDLC_Scrum_Process.html" title="SDLC Scrum Process">SDLC application</a> to manage defects and stories.
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Evaluate_Log_Data"><span class="mw-headline-number">6.5</span> <span id="Evaluate_Log_Data"></span>Evaluate Log Data</span></h2>
+<p>In addition to specific business functionality, general system performance and operating information is also an important benchmark to check before performing an upgrade.  Performance and operating information is available in the system logs, which offer an excellent source of information for evaluating the inner workings of a ServiceNow instance. Use this information to help resolve as many errors as possible before the upgrade.
+</p><p>To access the log data, navigate to <b>System Logs &gt; System Log &gt; Errors</b>.	
+</p><p>Review the <a href="index.php%3Ftitle=Viewing_System_Logs.html" title="Viewing System Logs">system logs</a> to identify errors and their frequency. Track the total volume of errors to spot any sudden increase that could indicate degraded system performance or failing operations. In the following example, the sys_trigger with the associated sys_id can be examined for root cause.	
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:System_log.png.html" class="image" title="Viewing system logs"><img alt="Viewing system logs" src="images/thumb/9/9e/System_log.png/400px-System_log.png" width="400" height="251" srcset="/images/9/9e/System_log.png 1.5x, /images/9/9e/System_log.png 2x" /></a></dd></dl>
+<p>When reviewing log files, look at log file size. Excessively large log files, especially those larger than 1 GB, could be an indicator of issues on the instance. Evaluate large log files for frequent errors or other excessive logging that should be fixed.
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:System_log_large_file.png.html" class="image" title="Identifying large log files"><img alt="Identifying large log files" src="images/thumb/e/ef/System_log_large_file.png/400px-System_log_large_file.png" width="400" height="436" srcset="/images/e/ef/System_log_large_file.png 1.5x, /images/e/ef/System_log_large_file.png 2x" /></a>.</dd></dl>
+<h2><span class="mw-headline" id="Review_Prior_Upgrade_History"><span class="mw-headline-number">6.6</span> <span id="Review_Prior_Upgrade_History"></span>Review Prior Upgrade History</span></h2>
+<p>Each upgrade cycle is an opportunity to evaluate prior upgrade history records. The <b>System Diagnostics &gt; Upgrade History</b> module tracks all upgrades applied to an instance. Every record that is examined during an upgrade is tracked and the action taken is listed as the disposition. Use the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a> module to locate and resolve upgrade conflicts. View the most recent upgrade records to see what was skipped, updated, inserted, or deleted. Note objects that were skipped so you can manage customizations efficiently. 
+</p><p><a href="index.php%3Ftitle=File:Upgrade_details.png.html" class="image" title="Upgrade details"><img alt="Upgrade details" src="images/thumb/3/39/Upgrade_details.png/400px-Upgrade_details.png" width="400" height="156" srcset="/images/3/39/Upgrade_details.png 1.5x, /images/3/39/Upgrade_details.png 2x" /></a>
+</p>
+<h2><span class="mw-headline" id="Manage_Customizations"><span class="mw-headline-number">6.7</span> <span id="Manage_Customizations"></span>Manage Customizations</span></h2>
+<p>If viewing the upgrade history shows that a base system object was skipped during the previous upgrade, determine if you want to revert the object back to base system status so it is upgraded automatically in the future. For more information, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html#Reverting_Customizations" title="Upgrade History">Reverting Customizations</a>. 
+</p><p>When an object is customized, a corresponding record is added in the Customer Update [sys_update_xml] table. The table maintains the current version information for all objects that have been modified.  To prevent customizations from being overwritten by system upgrades, the upgrade process automatically skips changes to objects that have a current version in the Customer Update table. For more information about the Customer Update table and how customizations are tracked, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html#Update_Sets_Tables" title="System Update Sets">Update Sets Tables</a>.
+</p><p>To determine the base system objects that were skipped in a specific upgrade:
+</p>
+<ol><li>Navigate to <b>System Diagnostics &gt; Upgrade History</b>.</li>
+<li>In the <b>From</b> column, select an upgrade. 
+<dl><dd>To make it easier to identify an upgrade, filter <b>n/a</b> out of the <b>From</b> column.</dd></dl></li>
+<li>Under <b>Upgrade Details</b>, click the gear icon (<a href="index.php%3Ftitle=File:Gear.png.html" class="image" title="Gear icon"><img alt="Gear icon" src="images/0/06/Gear.png" width="13" height="17" /></a>).</li>
+<li>Add the <b>Created by</b> column to the <b>Selected</b> list.</li>
+<li>Click <b>OK</b>.</li>
+<li>Filter the <b>Disposition</b> column to show <b>Skipped</b>.</li>
+<li>Filter the <b>Created by</b> column to show <b>system</b>.</li></ol>
+<p><br />
+Consider allowing the upgrade to overwrite a customization if the upgrade contains a desirable enhancement to a feature that you already customized.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>There are two methods of restoring a customization after an upgrade. If you saved the customization in an update set, you can restore it after the upgrade by reapplying the update set. Alternatively, you can recreate the customization manually.</i>
+</td></tr></table>
+<p><br />
+To prevent customizations from being overwritten by system upgrades, the upgrade process automatically skips changes to these objects. You may want to overwrite your customizations with the next software version. For example, you may change a script to implement a temporary workaround for a problem that is fixed in the next version. You would want to overwrite your workaround when upgrading to the next version to ensure that you receive any future enhancements to the script.
+</p><p>To allow an upgrade to overwrite a customization:
+</p>
+<ol><li>Open the customized object (for example, the ArrayUtil script include).</li>
+<li>Right-click the header and select <b>Show Latest Update</b>. 
+<dl><dd>Alternatively, right-click the header and select <b>Show Application File</b>.</dd></dl></li>
+<li> the form to add the <b>Replace on upgrade</b> field, if necessary.</li>
+<li>Select <b>Replace on upgrade</b>.</li>
+<li>Click <b>Update</b>. 
+<dl><dd>The customized object will be replaced on the next upgrade.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Review_Scheduled_Jobs_for_Upgrading"><span class="mw-headline-number">6.8</span> <span id="Review_Scheduled_Jobs_For_Upgrading"></span>Review Scheduled Jobs for Upgrading</span></h2>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<th> How to Schedule an Upgrade
+</th></tr>
+<tr>
+<td> <div class='embedvideo ' style='width: 500px;'><iframe src="http://www.youtube.com/embed/68yGTkETOCU?" width="500" height="281" frameborder="0" allowfullscreen="true"></iframe></div>
+</td></tr></table>
+<p>In the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Scheduler&amp;oldid=0.html" title="System Scheduler">system scheduler</a>, the <b>Upgrade</b> and <b>Check Upgrade Script</b> scheduled jobs execute the upgrade process across all nodes of an instance. It is imperative that you verify that the two scheduled jobs are set properly for upgrading. 
+</p>
+<ul><li><b>Upgrade:</b> runs every 60 minutes to check if there is a new <i>.war</i> file associated with the instance. A new <i>.war</i> file is associated with the instance record after you submit an upgrade request. If the <b>Upgrade</b> scheduled job finds a new <i>.war</i> file associated with an instance, it downloads and unpacks the <i>.war</i> file, and then restarts the active node. </li>
+<li><b>Check Upgrade Script:</b> runs automatically when a node is restarted.  If the <b>Check Upgrade Script</b> job finds a new and unpacked <i>.war</i> file, it processes the file and begins updating the database.</li></ul>
+<p><br />
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:Detailed_instance_upgrade_process.png.html" class="image" title="Detailed Instance Upgrade Process"><img alt="Detailed Instance Upgrade Process" src="images/8/84/Detailed_instance_upgrade_process.png" width="720" height="435" /></a> <br style="clear:both;" /></dd></dl>
+<p><br />
+</p><p>To determine when the <b>Upgrade</b> scheduled job runs:
+</p>
+<ol><li>Navigate to <b>System Scheduler &gt; Scheduled Jobs &gt; Scheduled Jobs</b>.</li>
+<li>In the list, find the <b>Upgrade</b> scheduled job. </li>
+<li>View the <b>Next action</b> column to determine when the job next runs. 
+<dl><dd>For example, if the next action is <b>11:10:00</b>, the scheduled job will run at 11:10:00 and then at 10 minutes past the hour every hour (because the scheduled job is set to run every 60 minutes). </dd></dl></li></ol>
+<p><br />
+To verify that the <b>Upgrade</b> scheduled job is set properly for upgrading:
+</p>
+<ol><li>Navigate to <b>System Scheduler &gt; Scheduled Jobs &gt; Scheduled Jobs</b>. </li>
+<li>Open <b>Upgrade</b>.</li>
+<li>Check that the <b>Trigger type</b> is set to <b>Interval</b>.</li>
+<li>Check that the <b>System ID</b> field is set to <b>None</b>.</li></ol>
+<p><br />
+To verify that the <b>Check Upgrade Script</b> scheduled job is set properly for upgrading:
+ 
+</p>
+<ol><li>Navigate to <b>System Scheduler &gt; Scheduled Jobs &gt; Scheduled Jobs</b>.</li>
+<li>Open <b>Check Upgrade Script</b>.</li>
+<li>Check that the <b>Trigger type</b> is set to <b>Run at System Startup</b>.</li></ol>
+<h3><span class="mw-headline" id="Other_scheduled_jobs"><span class="mw-headline-number">6.8.1</span> Other scheduled jobs</span></h3>
+<p>During the upgrade process, the system only runs scheduled jobs that are set as <b>Upgrade safe</b>. All other scheduled jobs are paused until the upgrade is complete.
+</p>
+<h2><span class="mw-headline" id="Create_an_Implementation_Plan"><span class="mw-headline-number">6.9</span> <span id="Create_An_Implementation_Plan"></span>Create an Implementation Plan</span></h2>
+<p>Create an implementation plan that includes all upgrade steps in the correct sequence for your instances. The high-level steps in your implementation plan could be based on the steps listed in this best practices page. 
+</p><p>Document all unique and individual steps. For each step, include the following information:
+</p>
+<ul><li>Date and time the step should take place.</li>
+<li>Date and time the step actually took place.</li>
+<li>Individual or team responsible for completing the step.</li>
+<li>Current step status.</li>
+<li>Any details about the step that would be helpful in the future. </li></ul>
+<p>Review the implementation plan with all upgrade team members.
+</p>
+<h1><span class="mw-headline" id="Upgrade_and_Validate_Sub-Production_Instances"><span class="mw-headline-number">7</span> Upgrade and Validate Sub-Production Instances</span></h1>
+<p>Proper preparation and testing on sub-production instances can help ensure an accurate and successful upgrade on your production instance. 
+</p>
+<h2><span class="mw-headline" id="Clone_Production_over_Sub-Production"><span class="mw-headline-number">7.1</span> <span id="Clone_Production_Over_Sub_Production"></span>Clone Production over Sub-Production</span></h2>
+<p>To perform accurate tests, clone your production instance over sub-production environments such as development and test. Because the production instance is the final destination for any new ServiceNow release, it is important that testing be done on a system that reflects the production instance as closely as possible.
+</p><p>The <a href="index.php%3Ftitle=System_Clone.html" title="System Clone">System Clone</a> application automates much of the process and enables users with the admin or clone_admin role to clone data from one instance to another.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Users should perform a full clone by clearing the <b>Exclude Audit and Log Data</b> and <b>Exclude Large Attachment data</b> checkboxes when performing a clone from prod to subprod to do upgrade testing.</i>
+</td></tr></table>
+<p><br />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:402px;"><a href="index.php%3Ftitle=File:System_Clone_ClearOptions.png.html" class="image"><img alt="System Clone ClearOptions.png" src="images/thumb/a/aa/System_Clone_ClearOptions.png/400px-System_Clone_ClearOptions.png" width="400" height="159" class="thumbimage" srcset="/images/thumb/a/aa/System_Clone_ClearOptions.png/600px-System_Clone_ClearOptions.png 1.5x, /images/thumb/a/aa/System_Clone_ClearOptions.png/800px-System_Clone_ClearOptions.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:System_Clone_ClearOptions.png.html" class="internal" title="Enlarge"></a></div></div></div></div>
+<p><br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Tips_for_Upgrading_Sub-Production_Instances"><span class="mw-headline-number">7.2</span> <span id="Tips_For_Upgrading_Sub_Production_Instances"></span>Tips for Upgrading Sub-Production Instances</span></h2>
+<p>Information for upgrading a sub-production instance:
+</p>
+<ul><li>When upgrading a sub-production instance, do not modify a base system record to experiment. Once a record is modified, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html#Reverting_Customizations" title="Upgrade History">reverting to base system functionality</a> is a manual process. This activity should only be done on a sandbox instance.</li>
+<li>When upgrading a sub-production instance, avoid modifying records that are global, such as global UI actions, UI pages, UI macros, and script includes.</li>
+<li>If a record is modified during the upgrade of a sub-production instance, comment all changes and clearly state why the record was modified. This information can help determine if the record should be reverted at a later date.</li></ul>
+<h2><span class="mw-headline" id="Request_an_Upgrade_for_Sub-Production_Instances"><span class="mw-headline-number">7.3</span> <span id="Request_An_Upgrade_for_Sub_Production_Instances"></span>Request an Upgrade for Sub-Production Instances</span></h2>
+<p>Request an upgrade using the ServiceNow Customer Support system named HI at <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://hi.service-now.com/">hi.service-now.com</a>. For more information, see <a href="index.php%3Ftitle=Requesting_an_Upgrade.html" title="Requesting an Upgrade">Requesting an Upgrade</a>.
+</p><p>When requesting an upgrade, set the upgrade to start 10-15 minutes before the Upgrade scheduled job runs, which is every 60 minutes. This allows the upgrade request to update HI before the Upgrade scheduled job runs. For information about how to determine when the Upgrade scheduled job runs, see <a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html#Review_Scheduled_Jobs_for_Upgrading">Review Scheduled Jobs for Upgrading</a>.
+</p><p>The size of the company database determines how long the upgrade process takes to complete. The amount of time it takes to upgrade a sub-production instance that is a clone of your production instance is a good indicator for how long it will take to upgrade your production instance.
+</p>
+<h2><span class="mw-headline" id="Validate_Sub-Production_Instance_Upgrade"><span class="mw-headline-number">7.4</span> <span id="Validate_Sub_Production_Instance_Upgrade"></span>Validate Sub-Production Instance Upgrade</span></h2>
+<p>To view the status of the current upgrade, use the <a href="index.php%3Ftitle=Upgrade_Monitor.html" title="Upgrade Monitor">Upgrade Monitor</a> application. The Upgrade Monitor can be used when the upgrade state is <b>Complete</b>, <b>Running</b>, or <b>Failed</b>.
+</p><p>You can also use the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a> module to first confirm that the upgrade is in progress and then confirm that the process completed. Upgrade History shows the <b>Upgrade started</b> and the <b>Upgrade finished</b> times. If the <b>Upgrade started</b> column contains information, but the <b>Upgrade finished</b> column is blank, the upgrade is still in progress.
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:Upgrade_history_record.png.html" class="image" title="Validating upgrade progress and completion"><img alt="Validating upgrade progress and completion" src="images/thumb/7/7a/Upgrade_history_record.png/700px-Upgrade_history_record.png" width="700" height="239" srcset="/images/7/7a/Upgrade_history_record.png 1.5x, /images/7/7a/Upgrade_history_record.png 2x" /></a></dd></dl>
+<p><br />
+After the upgrade process finishes, perform the following steps to validate the sub-production instance:  
+<br />
+</p>
+<ul><li>Immediately after the upgrade is applied, use the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrade+History&amp;oldid=0.html" title="Upgrade History">Upgrade History</a> module to understand the changes made to the instance. View the upgrade record to determine what was modified and where the changes were made. Upgrade History also lists updates that were skipped because of customizations on your instance.</li>
+<li>Work with the testing team to run all test cases against the newly upgraded sub-production instance. Closely compare the test results to the data gathered during the pre-upgrade testing. Any defects or deviations from previous test runs should be confirmed and analyzed.  When a fix is created for any deviations or errors that occurred in the upgrade process, capture each fix in a single update set. The resulting update sets hold the cumulative fixes that should be applied to the production instance.</li></ul>
+<p>Use a simple and descriptive naming convention for all update sets. It can be useful to name update sets based on project tasks or user stories. In the update set naming scheme, consider using some combination of these items: project name, task name, user story name, date, version, revision, and patch number. For example, <i>Upgrade Remediation – 03/15/13 – for Eureka Patch 1</i>. Be sure to add a detailed description of the update set contents to the update set record. 
+</p><p>If you find issues during the testing process, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Technical+Support&amp;oldid=0.html#Submitting_an_Incident" title="Technical Support" class="mw-redirect">submit an incident</a> to ServiceNow Customer Support.
+</p>
+<h1><span class="mw-headline" id="Upgrade_and_Validate_a_Production_Instance"><span class="mw-headline-number">8</span> Upgrade and Validate a Production Instance</span></h1>
+<p>After completing the steps to prepare, test, and resolve issues on sub-production instances, upgrade and validate your production instance. 
+</p>
+<h2><span class="mw-headline" id="Tips_for_Upgrading_a_Production_Instance"><span class="mw-headline-number">8.1</span> <span id="Tips_For_Upgrading_A_Production_Instance"></span>Tips for Upgrading a Production Instance</span></h2>
+<p>Information for upgrading a production instance:
+</p>
+<ul><li>Do not clone a sub-production instance over production instead of upgrading. Apply the upgrade and any required update sets directly to the production instance.</li>
+<li>Obtain confirmation from IT and management that all sub-production instance defects have been fixed, validated, and included in an update set.</li>
+<li>Use the change management process established by your organization to track the upgrade.</li>
+<li>Communicate effectively with your user community regarding changes, new features, and process updates resulting from the upgrade.</li>
+<li>Submit the <a href="index.php%3Ftitle=Requesting_an_Upgrade.html" title="Requesting an Upgrade">Upgrade Request</a> for a negotiated and suitable time for all users of the ServiceNow system. For example, schedule the upgrade after hours, to minimize impact to your users. Remember to schedule the upgrade to occur 15 – 20 minutes before the Upgrade scheduled job interval.</li>
+<li>Company database size determines upgrade process time. If you upgraded a sub-production instance that was a clone of your production instance, you should have a good indicator for how long it will take to upgrade your production instance.</li>
+<li>Allow time in your change window to run all test cases and validate that all integrations, key business functionality, and system performance are acceptable. Add a time buffer for responding to errors without breaching the change window.</li>
+<li>After the upgrade, conduct a lessons learned meeting. Document improvements and ensure that they are incorporated into the next upgrade cycle.</li></ul>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to see a lessons learned document template</b>
+</th></tr>
+<tr>
+<td>
+<p>Following is a sample lessons learned document template:
+</p><p><a href="index.php%3Ftitle=File:Lessons_learned_template.png.html" class="image" title="Sample lessons learned template"><img alt="Sample lessons learned template" src="images/thumb/5/56/Lessons_learned_template.png/650px-Lessons_learned_template.png" width="650" height="528" srcset="/images/5/56/Lessons_learned_template.png 1.5x, /images/5/56/Lessons_learned_template.png 2x" /></a>
+</p>
+</td></tr></table>
+<h2><span class="mw-headline" id="Request_an_Upgrade_for_Production_Instance"><span class="mw-headline-number">8.2</span> <span id="Request_An_Upgrade_For_Production_Instance"></span>Request an Upgrade for Production Instance</span></h2>
+<p>Request an upgrade using the ServiceNow Customer Support system named HI at <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://hi.service-now.com/">hi.service-now.com</a>. For more information, see <a href="index.php%3Ftitle=Requesting_an_Upgrade.html" title="Requesting an Upgrade">Requesting an Upgrade</a>.
+</p>
+<h2><span class="mw-headline" id="Configure_a_Completed_Upgrade_Notification"><span class="mw-headline-number">8.3</span> <span id="Configure_A_Completed_Upgrade_Notification"></span>Configure a Completed Upgrade Notification</span></h2>
+<p>To configure an instance to send an email when an upgrade is successfully completed:
+</p>
+<ol><li> Navigate to <b>System Policy &gt; Email &gt; Notifications</b>.</li>
+<li> Open the <b>System Upgraded</b> notification.</li>
+<li> Select one or more contacts in the <b>Users</b> field.</li>
+<li> Click <b>Update</b>.</li></ol>
+<p>The selected users now receive a notification when an upgrade completes successfully.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:552px;"><a href="index.php%3Ftitle=File:Upgrade_email.png.html" class="image"><img alt="" src="images/thumb/0/00/Upgrade_email.png/550px-Upgrade_email.png" width="550" height="282" class="thumbimage" srcset="/images/thumb/0/00/Upgrade_email.png/825px-Upgrade_email.png 1.5x, /images/0/00/Upgrade_email.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Upgrade_email.png.html" class="internal" title="Enlarge"></a></div><b>System Upgraded</b> notification</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Confirm_an_Upgrade"><span class="mw-headline-number">8.4</span> <span id="Confirm_An_Upgrade"></span>Confirm an Upgrade</span></h2>
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<th> How to Determine Upgrade Status
+</th></tr>
+<tr>
+<td> <div class='embedvideo ' style='width: 500px;'><iframe src="http://www.youtube.com/embed/IEh5ObyqRRk?" width="500" height="281" frameborder="0" allowfullscreen="true"></iframe></div>
+</td></tr></table>
+<p>There are several methods of confirming that an instance has been upgraded to a recent feature release: 
+</p>
+<ul><li>Navigate to <b>System Diagnostics &gt; Upgrade Log</b> and locate the message <b>Notifying HI that upgrade has been completed.</b></li>
+<li>Navigate to <b>System Definition &gt; System Upgrades</b>. Information about all system upgrades is listed. </li>
+<li>Navigate to <b>System Diagnostics &gt; Upgrade History</b> and search for the most recent upgrade.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202033701
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.499 seconds
+Real time usage: 0.660 seconds
+Preprocessor visited node count: 166/1000000
+Preprocessor generated node count: 452/1000000
+Post‐expand include size: 2638/2097152 bytes
+Template argument size: 527/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  129.788      1 - -total
+ 77.89%  101.098      1 - Template:Technical_Best_Practices
+ 70.35%   91.304      1 - Template:Topic
+  8.15%   10.580      2 - Template:Note
+  8.09%   10.506      1 - Embedded:Technical_Best_Practices
+  5.63%    7.311      1 - Template:LimitedTOC
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:20939-0!*!0!1!en!5!* and timestamp 20171202033700 and revision id 249828
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Upgrades_Best_Practices&amp;oldid=249828.html">http://wiki.servicenow.com/index.php?title=Upgrades_Best_Practices&amp;oldid=249828</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Maintenance+Best+Practices.html" title="Category:Maintenance Best Practices">Maintenance Best Practices</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Technical+Best+Practices.html" title="Category:Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Maintenance+Best+Practices.html" title="Category:Maintenance Best Practices">Maintenance Best Practices</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_20939"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="20939" data-vote-the-vote="5" data-vote-id="20939" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20939_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="20939" data-vote-the-vote="1" data-vote-id="20939" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20939_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Upgrades+Best+Practices&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Upgrades+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Upgrades+Best+Practices&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Upgrades_Best_Practices.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Upgrades_Best_Practices&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Upgrades+Best+Practices.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Upgrades+Best+Practices&amp;returnto=Upgrades+Best+Practices&amp;oldid=249828&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUpgrades_Best_Practices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FUpgrades_Best_Practices.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;oldid=249828.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Upgrades_Best_Practices&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 01:16, 16 December 2016.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1257});});</script></body></html>

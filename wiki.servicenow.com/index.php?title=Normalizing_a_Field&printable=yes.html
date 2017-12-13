@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Normalizing a Field - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Normalizing_a_Field","wgTitle":"Normalizing a Field","wgCurRevisionId":247203,"wgRevisionId":247203,"wgArticleId":9861,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Field Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Normalizing_a_Field","wgRelevantArticleId":9861,"wgRequestId":"af8af9709f29325a635d4390","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150625234138"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Normalizing_a_Field"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Normalizing a Field"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Field Administration"/>
+<meta name="category" content="Field Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Normalizing_a_Field.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Normalizing a Field"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150625234138"/>
+
+	<meta property="article:published_time" content="20150625234138"/>
+
+	<meta property="article:modified_time" content="20150625234138"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Field Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Normalizing_a_Field"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Normalizing_a_Field rootpage-Normalizing_a_Field skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Normalizing+a+Field.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Normalizing+a+Field&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Normalizing a Field</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields">Field Administration</a> &gt; Normalizing a Field</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Introduction+to+Fields&amp;oldid=0.html" title="Introduction to Fields"><b>Fields</b></a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a233ff7e3c6at'></div><script type="text/javascript">window.tamOnload_tam5a233ff7e3c6at=[];tree = new dTree('tam5a233ff7e3c6at');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a233ff7e3c6at = tree;
+                                               tam5a233ff7e3c6at.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_New_Fields\&quot;" title=\"Creating New Fields\">Creating New Fields</a> ');
+
+tam5a233ff7e3c6at.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_HTML_Fields\&quot;" title=\"Modifying HTML Fields\">HTML Fields</a>');
+tam5a233ff7e3c6at.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Image_Fields\&quot;" title=\"Using Image Fields\">Image Fields</a>');
+tam5a233ff7e3c6at.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Journal_Fields\&quot;" title=\"Using Journal Fields\">Journal Fields</a> ');
+tam5a233ff7e3c6at.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Percent_Complete_Field\&quot;" title=\"Creating a Percent Complete Field\">Percent Complete</a>');
+tam5a233ff7e3c6at.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Phone_Number_Fields\&quot;" title=\"Using Phone Number Fields\">Phone Number Fields</a> ');
+tam5a233ff7e3c6at.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Wiki_Fields\&quot;" title=\"Wiki Fields\">Wiki Fields</a>');
+tam5a233ff7e3c6at.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Choice_Lists\&quot;" title=\"Customizing Choice Lists\">Choice Lists</a>');
+tam5a233ff7e3c6at.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Label_Help\&quot;" title=\"Field Label Help\">Field Label Help</a>');
+tam5a233ff7e3c6at.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Field_Styles\&quot;" title=\"Defining Field Styles\">Defining Field Styles</a>');
+tam5a233ff7e3c6at.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Record_Numbering\&quot;" title=\"Managing Record Numbering\">Record Numbering</a> ');
+tam5a233ff7e3c6at.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Spell_Check_to_a_Field\&quot;" title=\"Adding Spell Check to a Field\">Field Spell Check</a> ');
+tam5a233ff7e3c6at.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Count_Widget\&quot;" title=\"Condition Count Widget\">Condition Count Widget</a>');
+tam5a233ff7e3c6at.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Fields\&quot;" title=\"Reference Fields\">Reference Fields</a>');
+tam5a233ff7e3c6at.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auto-Complete_for_Reference_Fields\&quot;" title=\"Auto-Complete for Reference Fields\">Auto-Complete</a>');
+tam5a233ff7e3c6at.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_Reference_Icon\&quot;" title=\"Customizing the Reference Icon\">Reference Icon</a>');
+tam5a233ff7e3c6at.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reference_Qualifiers\&quot;" title=\"Reference Qualifiers\">Reference Qualifiers</a> ');
+tam5a233ff7e3c6at.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Document_ID_Field\&quot;" title=\"Creating a Document ID Field\">Document ID Fields</a>');
+tam5a233ff7e3c6at.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Normalization\&quot;" title=\"Field Normalization\">Field Normalization</a>');
+tam5a233ff7e3c6at.add(20, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Normalization_Field_Types\&quot;" title=\"Normalization Field Types\">Normalization Field Types</a>');
+tam5a233ff7e3c6at.add(21, 19, '<strong class=\"selflink\">Normalizing a Field</strong>');
+tam5a233ff7e3c6at.add(22, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Transformations\&quot;" title=\"Field Transformations\">Field Transformations</a>');
+tam5a233ff7e3c6at.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Definitions\&quot;" title=\"Transform Definitions\">Transform Definitions</a>');
+tam5a233ff7e3c6at.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Transform_Categories\&quot;" title=\"Transform Categories\">Transform Categories</a>');
+tam5a233ff7e3c6at.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Regular_Expressions_and_Patterns_in_Field_Normalization_Rules\&quot;" title=\"Regular Expressions and Patterns in Field Normalization Rules\">Regular Expressions and Patterns in Field Normalization Rules</a>');
+tam5a233ff7e3c6at.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Policy\&quot;" title=\"Data Policy\">Data Policy</a>');
+tam5a233ff7e3c6at.add(27, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Lookup_and_Record_Matching_Support\&quot;" title=\"Data Lookup and Record Matching Support\">Data Lookup and Record Matching</a>');
+tam5a233ff7e3c6at.add(28, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Forms\&quot;" title=\"Configuring Forms\">Configuring Forms</a>');
+
+                                               document.getElementById('5a233ff7e3c6at').innerHTML = tam5a233ff7e3c6at.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a233ff7e3c6at) { window.tamOnload_tam5a233ff7e3c6at[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Workflow_Stage_Fields.html" title="Workflow Stage Fields">Workflow Stage Fields</a>
+</td></tr>
+<tr>
+<th>  Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Field_Administration.html" title="Book:Field Administration">Field Administration</a></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Activating_Field_Normalization"><span class="tocnumber">2</span> <span class="toctext">Activating Field Normalization</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#What_Field_Normalization_Does"><span class="tocnumber">3</span> <span class="toctext">What Field Normalization Does</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Scripting_and_Normalization"><span class="tocnumber">3.1</span> <span class="toctext">Scripting and Normalization</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Normalized_Queries"><span class="tocnumber">3.2</span> <span class="toctext">Normalized Queries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Data_Jobs"><span class="tocnumber">4</span> <span class="toctext">Data Jobs</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Normalizing_a_Field"><span class="tocnumber">5</span> <span class="toctext">Normalizing a Field</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Special_Cases"><span class="tocnumber">5.1</span> <span class="toctext">Special Cases</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_the_Normalization_Record"><span class="tocnumber">5.2</span> <span class="toctext">Creating the Normalization Record</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Rolling_Back_Data_Jobs"><span class="tocnumber">5.2.1</span> <span class="toctext">Rolling Back Data Jobs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Normal_Values"><span class="tocnumber">5.3</span> <span class="toctext">Creating Normal Values</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Aliases"><span class="tocnumber">5.4</span> <span class="toctext">Creating Aliases</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Applying_Aliases"><span class="tocnumber">5.4.1</span> <span class="toctext">Applying Aliases</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Rules"><span class="tocnumber">5.5</span> <span class="toctext">Creating Rules</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Testing_Rules"><span class="tocnumber">5.5.1</span> <span class="toctext">Testing Rules</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Coalescing_Normal_Values"><span class="tocnumber">5.6</span> <span class="toctext">Coalescing Normal Values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_a_Raw_Field"><span class="tocnumber">6</span> <span class="toctext">Creating a Raw Field</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Identifying_Normalized_Fields"><span class="tocnumber">7</span> <span class="toctext">Identifying Normalized Fields</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Field normalization converts different varieties of the same field value, to a single, preferred value. When a process or a user enters a value in a normalized field, the platform determines if that value can be replaced with a <i>normal</i> value. By forcing a field to use a simple, recognizable description for multiple variations of the same value, normalization can eliminate duplicate records and make searches easier. Normalization also automatically adjusts queries to return normalized results and normalizes values in scripts.
+</p><p>Field normalization is available for every field in the ServiceNow platform, with the exception of <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Reference+Fields&amp;oldid=0.html" title="Reference Fields">reference fields</a>. However, some fields are more likely to be normalized than others, such as the <b>CPU type</b> field discussed on this page. Another obvious candidate for normalization is the <b>Name</b> field in the <i>Company</i> table. Company names might appear in records in several different forms (for example, Inc., Incorporated, Corporation). Normalized fields can eliminate confusion by providing logical replacements for ambiguous values.
+</p>
+<h1><span class="mw-headline" id="Activating_Field_Normalization"><span class="mw-headline-number">2</span> Activating Field Normalization</span></h1>
+<table cellspacing="0" cellpadding="0" style="" class="table collapsible collapsed">
+
+<tr>
+<th height="26" align="left"> <b>Click the plus to expand instructions for activating a plugin.</b>
+</th></tr>
+<tr>
+<td>
+<p>If you have the admin role, use the following steps to activate the plugin.
+</p>
+<ol><li>Navigate to <b>System Definition &gt; Plugins</b>.</li>
+<li>Right-click the plugin name on the list and select <b>Activate/Upgrade</b>.
+<dl><dd>If the plugin depends on other plugins, these plugins are listed along with their activation status.</dd>
+<dd></dd></dl></li>
+<li>[Optional] If available, select the <b>Load demo data</b> check box.
+<dl><dd> Some plugins include demo data&#8212;sample records that are designed to illustrate plugin features for common use cases. Loading demo data is a good policy when you first activate the plugin on a development or test instance. You can load demo data after the plugin is activated by repeating this process and selecting the check box.</dd></dl></li>
+<li>Click <b>Activate</b>.</li></ol>
+</td></tr></table>
+<h1><span class="mw-headline" id="What_Field_Normalization_Does"><span class="mw-headline-number">3</span> What Field Normalization Does</span></h1>
+<p>Records for things like devices and companies are brought into the ServiceNow platform by manual entry, imports, and Discovery. Depending on how it is introduced into the database, a field value might appear in several different forms. For example, the <b>CPU Type</b> field on a computer CI form might display any of the following names for the same type of CPU, depending on the source of the entry:  
+</p>
+<ul><li><b>Xeon L3350</b> or <b>L3350</b> (manual entry)</li>
+<li><b>Intel Xeon 5.4.554</b> (created by Discovery)</li>
+<li><b>E3350 (Intel) 4.5.2234</b> (imported value)</li></ul>
+<p>The lack of a normalized <b>CPU type</b> field in this example could result in duplicate CMDB records for each variation in the field value. Different CPU types also present a problem for reporting. To report accurately on all computers that use a Xeon processor, an administrator must know all the possible permutations of the name and construct a very complex query. To prevent these issues, an administrator can normalize the original values using one of two methods:
+</p>
+<ul><li><b>Aliases:</b> Aliases map all the variations of the name manually to one <i>normal</i> value. Use aliases for short lists of name variants. During processing, the platform looks here first when determining how to normalize a field. If no aliases are defined, the platform searches for rules that apply.</li>
+<li><b>Rules:</b> Write a rule to associate large numbers of variant names to a normalized value automatically by using standard operators, such as <i>begins with</i>, <i>starts with</i>, or <i>contains</i>. Rules and aliases can be combined to normalize a field. Make sure to test your rules before applying them to all the existing records in the database.</li></ul>
+<p>In our example, aliases are sufficient for converting the possible variations of the Intel Xeon CPU type into one, normalized value, such as <b>Xeon</b>. When a recognized variant is entered in a field, the platform automatically replaces the variant with the normalized value.  If properly configured, field normalization also affects the search results from a filter in a record list. In our example, an entry of <b>L3350</b> in a filter returns a list of <b>Xeon</b> CPUs, if that variation of <b>CPU type</b> was normalized.
+</p>
+<h2><span class="mw-headline" id="Scripting_and_Normalization"><span class="mw-headline-number">3.1</span> Scripting and Normalization</span></h2>
+<p>Scripts that update records or insert records into the database (<a href="index.php%3Ftitle=GlideRecord.html" title="GlideRecord">GlideRecord</a>) are normalized automatically when field normalization is applied. For example, if a script to insert a CI record contains a CPU type of <b>Xeon L3350</b>, the script is normalized to insert the CI with a CPU type of <b>Xeon</b> instead. Scripts that query the database for normalized field values (using the conditions of <i>equals</i> or <i>not  equals</i>) can be configured to return the normal value (such as <b>Xeon</b>) rather than the original (<i>raw</i>) value. 
+</p>
+<h2><span class="mw-headline" id="Normalized_Queries"><span class="mw-headline-number">3.2</span> Normalized Queries</span></h2>
+<p>An administrator can configure normalization to apply to queries issued against normalized fields in lists. Select the <b>Normalize query</b> check box on the Normalization form to enable this functionality. In a list containing normalized values, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Filters+and+Breadcrumbs&amp;oldid=0.html" title="Using Filters and Breadcrumbs">create a filter</a> using the original (raw) value for the normalized field in the query condition. 
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Filter1.png.html" class="image" title="Normalization_Filter1.png"><img alt="Normalization_Filter1.png" src="images/7/74/Normalization_Filter1.png" width="602" height="96" class="thumbborder" /></a>
+</p><p><br />
+</p><p>The filtered list returns records with the normal value substituted for the raw value. However, the breadcrumbs for the filter display the original query conditions.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Filter2.png.html" class="image" title="Normalization_Filter2.png"><img alt="Normalization_Filter2.png" src="images/3/3a/Normalization_Filter2.png" width="836" height="424" class="thumbborder" /></a>
+</p>
+<h1><span class="mw-headline" id="Data_Jobs"><span class="mw-headline-number">4</span> Data Jobs</span></h1>
+<p>Field Normalization creates four <i>data jobs</i> during the normalization process to collect or change data. All jobs except <b>Pending value collection</b> are executed manually. Data jobs have a roll back feature that allows you to undo normalization at different stages before committing changes that affect the entire database.
+</p>
+<ul><li><b>Pending value collection:</b> This data job is created when a <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Task_1:_Create_the_Normalization_Record">field normalization record</a> is submitted. This job runs automatically to <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Task_2:_Generate_Pending_Values">collect</a> all the values from the database for the field to be normalized. This data job does not modify the database. </li>
+<li><b>Normal value change:</b> This data job is created when an existing normal value that is used to normalize a field is changed. When the job is run, the platform updates all the normalized fields in the database that use the new normal value.</li>
+<li><b>Alias application:</b> This data job is created when an <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Aliases">alias</a> is created. When the job is run, all field values in the database containing the alias are normalized.</li>
+<li><b>Rule application:</b> This data job is created when a <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Rules">rule</a> is created. When the job is run, all field values in the database that match this rule are normalized.</li>
+<li><b>Coalesce to normal:</b> This data job <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Coalescing_Normal_Values">coalesces</a> data from existing records containing a normalized field value into a single record that uses a normal value.</li></ul>
+<h1><span class="mw-headline" id="Normalizing_a_Field"><span class="mw-headline-number">5</span> Normalizing a Field</span></h1>
+<p>Normalize a field by selecting <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Aliases">aliases</a> for a <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Normal_Values">normal</a> field value or by creating <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_Rules">rules</a> that use condition statements to match field variants with a normal value. Regardless of the normalization method selected, all field normalization requires a list of existing variants and a normal value that is configured to replace these variants in forms and in queries.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Users must have the normalizer role to create and manage normalization records.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Special_Cases"><span class="mw-headline-number">5.1</span> Special Cases</span></h2>
+<ul><li>Reference fields cannot be normalized. To normalize values appearing in reference fields, normalize the field in the target table. Examples of this would be normalized values for the <b>Name</b> fields in the Company [core_company] and Location [cmn_location] tables, which are referenced by other tables in the platform. The normalized names are available to all fields that reference these tables.</li>
+<li>Fields in a choice list can be normalized if they are of a type <b>string</b>.</li></ul>
+<h2><span class="mw-headline" id="Creating_the_Normalization_Record"><span class="mw-headline-number">5.2</span> Creating the Normalization Record</span></h2>
+<ol><li><a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins">Activate</a> the Field Normalization plugin.</li>
+<li>Navigate to <b>Field Normalization &gt; Configurations &gt; Normalizations</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Create a normalization record using the following fields:</li></ol>
+<p><br />
+</p>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  Unique name for this normalization record. This value is for reference only and is not used in any processing.
+</td></tr>
+<tr>
+<td>  Table
+</td>
+<td>  Select the table for the field being normalized.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the normalization record (starting with the Fuji release).</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>  Field
+</td>
+<td>  Select the field to normalize.
+</td></tr>
+<tr>
+<td>  Mode
+</td>
+<td>  The three available modes are <b>Off</b>, <b>Test</b>, and <b>Active</b>. All normalization records are created in the test mode by default. If you are planning to select aliases for your normal values, change the <b>Mode</b> to <b>Active</b>. If you intend to normalize the field using rules, be sure to leave this record in the <b>Test</b> mode. To disable this normalization, switch the mode to <b>Off</b>.
+</td></tr>
+<tr>
+<td>  Normalize query
+</td>
+<td>  Select this check box to apply the field value normalized by this record to all queries involving this field. Queries formed with the raw (original) field value return records displaying the normal value. Queries issued by a script using the conditions <i>equals</i> or <i>not equals</i> return normalized values. See <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Normalized_Queries"><b>Normalized Queries</b></a> for details.
+</td></tr>
+<tr>
+<td>  Coalesce each normal
+</td>
+<td>  Select this check box to reset all references in the database to records containing an alias field value to a single record using a normal value. See <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Coalescing_Normal_Values"><b>Coalescing Normal Values</b></a> for details.
+</td></tr>
+<tr>
+<td>  Raw field
+</td>
+<td>  Select the field to use to display the original (non-normalized) input values on a form in which a field value has been normalized. For the selection to appear in the drop-down list, add a custom field to the form for the table selected. For instructions on adding a field for raw data, see <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Creating_a_Raw_Field"><b>Creating a Raw Field</b></a>.
+</td></tr></table>
+<p><br />
+</p><p>After the normalization record is submitted, the platform runs the Pending value collection job in the <b>Data Jobs</b> related list automatically to gather all the current values (Pending Values) for the field being normalized. 
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalize_Form1.png.html" class="image" title="Normalize_Form1.png"><img alt="Normalize_Form1.png" src="images/thumb/1/1a/Normalize_Form1.png/900px-Normalize_Form1.png" width="900" height="291" srcset="/images/1/1a/Normalize_Form1.png 1.5x, /images/1/1a/Normalize_Form1.png 2x" /></a>
+</p><p><br />
+</p><p>Click the <b>Pending Values</b> related list to view values for the normalized field that have been entered manually, imported into the platform, or created by Discovery. 
+</p><p><br />
+<br />
+</p><p><a href="index.php%3Ftitle=File:Normalize_Form2.png.html" class="image" title="Normalize_Form2.png"><img alt="Normalize_Form2.png" src="images/thumb/e/e7/Normalize_Form2.png/900px-Normalize_Form2.png" width="900" height="524" srcset="/images/e/e7/Normalize_Form2.png 1.5x, /images/e/e7/Normalize_Form2.png 2x" /></a>
+</p>
+<h3><span class="mw-headline" id="Rolling_Back_Data_Jobs"><span class="mw-headline-number">5.2.1</span> Rolling Back Data Jobs</span></h3>
+<p>To roll back data gathering, select the job in the <b>Data Job</b> related list, and then click the <b>Rollback</b> related link in the Data normalization jobs form.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalize_Extant_Data2.png.html" class="image" title="Normalize_Extant_Data2.png‎"><img alt="Normalize_Extant_Data2.png‎" src="images/thumb/6/6e/Normalize_Extant_Data2.png/900px-Normalize_Extant_Data2.png" width="900" height="460" srcset="/images/6/6e/Normalize_Extant_Data2.png 1.5x, /images/6/6e/Normalize_Extant_Data2.png 2x" /></a>
+</p><p><br />
+</p><p>The values in the <b>Pending Values</b> Related List are removed and the data job <b>State</b> indicates that it was rolled back.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Rollback2.png.html" class="image" title="Normalization_Rollback2.png‎"><img alt="Normalization_Rollback2.png‎" src="images/thumb/2/25/Normalization_Rollback2.png/900px-Normalization_Rollback2.png" width="900" height="111" srcset="/images/2/25/Normalization_Rollback2.png 1.5x, /images/2/25/Normalization_Rollback2.png 2x" /></a>
+</p>
+<h2><span class="mw-headline" id="Creating_Normal_Values"><span class="mw-headline-number">5.3</span> Creating Normal Values</span></h2>
+<p>The <i>normal</i> value is a simplified, generic value for a field that replaces all the possible variants of that value that exist in the database. Normal values should be clear and unambiguous. 
+</p><p>After the platform runs the data job, the <b>Pending Values</b> related list on the Data normalization jobs form is populated with all the unique values for the field in the database. Examine the values in the list and decide which normalizing method is best for the existing data. The best practice is to define an alias for a small pool of values and a rule for a large pool of values. The following screenshot shows the pending values for CPU types in Linux servers in a network. The list contains several choices for Intel Xeon CPUs, which might be normalized as <b>Xeon</b>. 
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Pending_Values2.png.html" class="image" title="Normalization_Pending_Values2.png‎"><img alt="Normalization_Pending_Values2.png‎" src="images/3/3b/Normalization_Pending_Values2.png" width="506" height="315" /></a>
+</p><p><br />
+</p><p>To create a normal value:
+</p>
+<ol><li>Navigate to <b>Field Normalization &gt; Normalizations</b>.</li>
+<li>Open the appropriate normalization record.</li>
+<li>Click the <b>Normal Values</b> related list.</li>
+<li>Click <b>New</b>.</li>
+<li>In the Normal Value form, create normal values for the variants in the <b>Pending Values</b> related list.
+<dl><dd>These are the values the platform uses to replace the variants configured as aliases. </dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Normal_Values1.png.html" class="image" title="Normalization_Normal_Values1.png‎"><img alt="Normalization_Normal_Values1.png‎" src="images/b/b4/Normalization_Normal_Values1.png" width="336" height="160" /></a></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Creating_Aliases"><span class="mw-headline-number">5.4</span> Creating Aliases</span></h2>
+<p>Aliases are the variants of a field value in the instance that will be replaced by the normal value. The list of potential aliases is the contents of the <b>Pending Values</b> related list. After creating a normal value, assign aliases to this value if the pool of pending values is small. A normalized field can have a combination of aliases and rules.
+</p>
+<ol><li>Navigate to <b>Field Normalization &gt; Configurations &gt; Normalizations</b>.</li>
+<li>Open a normalization record.</li>
+<li>Click the <b>Normal Values</b> related list.</li>
+<li>Select one of the values.</li>
+<li>In the normal value record, click the <b>Aliases</b> related link.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Create_Alias1.png.html" class="image" title="Normalization_Create_Alias1.png‎"><img alt="Normalization_Create_Alias1.png‎" src="images/thumb/a/af/Normalization_Create_Alias1.png/550px-Normalization_Create_Alias1.png" width="550" height="262" srcset="/images/a/af/Normalization_Create_Alias1.png 1.5x, /images/a/af/Normalization_Create_Alias1.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Select aliases for this normal value from the available (pending) values that appear in the slushbucket, and then click <b>OK</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Alias_Slush.png.html" class="image" title="Normalization_Alias_Slush.png‎"><img alt="Normalization_Alias_Slush.png‎" src="images/thumb/c/ca/Normalization_Alias_Slush.png/500px-Normalization_Alias_Slush.png" width="500" height="240" srcset="/images/c/ca/Normalization_Alias_Slush.png 1.5x, /images/c/ca/Normalization_Alias_Slush.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>The aliases for this normal value now appear in the <b>Aliases</b> related list.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Create_Alias2.png.html" class="image" title="Normalization_Create_Alias2.png‎"><img alt="Normalization_Create_Alias2.png‎" src="images/thumb/f/f1/Normalization_Create_Alias2.png/500px-Normalization_Create_Alias2.png" width="500" height="358" srcset="/images/f/f1/Normalization_Create_Alias2.png 1.5x, /images/f/f1/Normalization_Create_Alias2.png 2x" /></a></dd></dl></li></ol>
+<h3><span class="mw-headline" id="Applying_Aliases"><span class="mw-headline-number">5.4.1</span> Applying Aliases</span></h3>
+<p>After testing, aliases can be normalized in all new records or in existing records when they are updated. Each time an alias is created for a normal value, a data job is created. The alias is not applied to values in the entire database until its data job is started manually. Run each job separately or run the jobs together to apply all aliases at once. 
+</p>
+<ol><li>In a normalization record, ensure that the Mode is set to <b>Active</b>.
+<dl><dd>Data jobs cannot run in the <b>Test</b> mode.</dd></dl></li>
+<li>Click the <b>Normal value</b> related list.</li>
+<li>Select a value from list.</li>
+<li>In the Normal Value record, select the <b>Data Jobs</b> related list.
+<dl><dd>A data job is listed for each alias configured for this normal value.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalize_Extant_Data3.png.html" class="image" title="Normalize_Extant_Data3.png"><img alt="Normalize_Extant_Data3.png" src="images/thumb/a/ad/Normalize_Extant_Data3.png/900px-Normalize_Extant_Data3.png" width="900" height="343" srcset="/images/a/ad/Normalize_Extant_Data3.png 1.5x, /images/a/ad/Normalize_Extant_Data3.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Run the extant data jobs to replace the aliases with the normal value in all existing records in the database.
+<dl><dd>a. Select the check box next to a job, and then select <b>Start</b> from the Actions menu. </dd>
+<dd>b. To run all data jobs at once, select all the check boxes, and then select the <b>Start</b> action.</dd>
+<dd>c. Refresh the list to check the progress of the data jobs to ensure that they complete normally.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Creating_Rules"><span class="mw-headline-number">5.5</span> Creating Rules</span></h2>
+<p>The use of rules to normalize a field is intended for large lists of variant field values. Always test your rules before applying them to all the existing records in the database.  Prior to creating the rule, make sure to generate the list of <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Task_2:_Generate_the_Pending_Values_List">Pending Values</a> and  create a <a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Task_3:_Create_Normal_Values">normal value</a> for the field. A normalized field can have a combination of aliases and rules.
+</p><p>The rules in this example are based on the following Pending Values:
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Rules3.png.html" class="image" title="Normalization_Rules3.png"><img alt="Normalization_Rules3.png" src="images/thumb/8/8a/Normalization_Rules3.png/600px-Normalization_Rules3.png" width="600" height="533" srcset="/images/8/8a/Normalization_Rules3.png 1.5x, /images/8/8a/Normalization_Rules3.png 2x" /></a>
+</p><p><br />
+</p>
+<ol><li>In a Normalization record, open the <b>Normal Values</b> related list.</li>
+<li>Open a Normal Value record.</li>
+<li>Open the <b>Rules</b> related list in the Normal Value form, and then click <b>New</b>.
+<dl><dd>The Field Normalization Rule form provides the following fields:</dd></dl>
+<ul><li><b>Name</b>: Unique name for this rule. For example, this name might be <b>Xeon CPU Type</b>.</li>
+<li><b>Order</b>: Order in which this rule should be evaluated. The platform parses the rules in the order configured until it finds one that evaluates to <i>true</i>. </li>
+<li><b>Active</b>: Enables or disables this rule. By default, new rules are active (<i>true</i>)</li>
+<li><b>Make alias</b>: If this check box is selected, and the rule evaluates to <i>true</i>, the rule makes an alias automatically from a pending value. If this check box is <i>not</i> selected, and the rule evaluates to <i>true</i>, the platform automatically changes the value for the named field in the record to the normal value, but does not create an alias.</li>
+<li><b>Case sensitive</b>: All pending values for the named field must match the case of the same value in a rule to be normalized. </li>
+<li><b>Rule</b>: Use the ServiceNow rule builder to construct the rules for normalizing fields. Rules automate the transformation of large numbers of pending field values into aliases.</li></ul></li>
+<li>Create a set of rules to incorporate all the possible variants of the pending values.
+<dl><dd>For this example, the rules might be:</dd></dl>
+<ul><li><b>Intel Xeon</b>: <i>CPU type matches pattern *Intel*Xeon*</i>. This rule normalizes all variants in which <b>Intel</b> precedes <b>Xeon</b>, including <b>Intel Xeon</b>, <b>Intel(R) Xeon(TM) CPU 2.80GHz</b>, and <b>Intel(R) Xeon(TM) CPU 3.00GHz</b>.</li>
+<li><b>Xeon</b>: <i>CPU type contains Xeon</i></li>
+<li><b>L3350</b>: <i>CPU type contains L3350</i></li>
+<li><b>E3350</b>: <i>CPU type contains E3350</i></li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Rules4.png.html" class="image" title="Normalization_Rules4.png‎"><img alt="Normalization_Rules4.png‎" src="images/thumb/4/46/Normalization_Rules4.png/900px-Normalization_Rules4.png" width="900" height="336" srcset="/images/4/46/Normalization_Rules4.png 1.5x, /images/4/46/Normalization_Rules4.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>For every rule that is created, the platform generates a <b>Rule applier</b> data job. In the testing mode, the <b>Start</b> controls are not available, and the job cannot be run until the mode is changed to <b>Active</b>.</dd></dl></li>
+<li>Test all the rules before making the normalization record <b>Active</b>.</li></ol>
+<h3><span class="mw-headline" id="Testing_Rules"><span class="mw-headline-number">5.5.1</span> Testing Rules</span></h3>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Users must have the normalization_tester role to create test records.</i>
+</td></tr></table>
+<p><br />
+Field normalization records are created in the <b>Test</b> mode by default, enabling administrators to test normalization rules thoroughly before applying them to the existing records in the database. In the testing mode, the <b>Start</b> controls are not available for the <b>Rule applier</b> data job. The job can be run only when testing is complete and the <b>Mode</b> has been changed to <b>Active</b>. In the testing mode, only records that have been created or updated by a user with the normalization_tester role are normalized. The normalizer and normalization_tester roles can be combined for a single user or granted separately.
+</p>
+<h2><span class="mw-headline" id="Coalescing_Normal_Values"><span class="mw-headline-number">5.6</span> Coalescing Normal Values</span></h2>
+<p>Coalescence enables an administrator to redirect references to multiple records containing variants of the same field value to point to a single record, based on a normal value. An example of this is the Company table that might have multiple variants of a company name, such as <b>Hewlett-Packard</b>, <b>Hewlett-Packard, Inc.</b>, <b>Hewlett-Packard Incorporated</b>, <b>HP</b>, and so on. Potentially, thousands of records might reference each of these duplicate company records. Using the variants of the Hewlett-Packard name as aliases, coalescence unifies all these references into a single record that normalizes the <b>Name</b> field in the Company record to a normal value such as <b>HP</b>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Coalescing normal values changes the record values permanently. If a rollback is performed, records will be returned to the table, but the normalized values will not be rolled back to the original variants.</i>
+</td></tr></table>
+<p><br />
+<br />
+</p><p>To coalesce records on a normal value:
+</p>
+<ol><li>In a normalization record, select the <b>Coalesce each normal</b> check box.
+<dl><dd>This applies coalescence to each normal value in the record.</dd></dl></li>
+<li>Create a normal value for this field, including aliases.
+<dl><dd>An additional field called <b>Coalesce to</b> appears on the Normal Value form.</dd></dl></li>
+<li>Click the magnifier icon in this field and select the specific record from the table (containing this normal value) to which all references should be coalesced.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Coalesce2.png.html" class="image" title="Normalization_Coalesce2.png"><img alt="Normalization_Coalesce2.png" src="images/3/3a/Normalization_Coalesce2.png" width="517" height="105" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Update the record.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Normalization_Coalesce1.png.html" class="image" title="Normalization_Coalesce1.png"><img alt="Normalization_Coalesce1.png" src="images/a/ab/Normalization_Coalesce1.png" width="942" height="368" /></a></dd>
+<dd><br /></dd></dl></li>
+<li><a href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html#Applying_Aliases">Start</a> all the <b>Alias application</b> data jobs to replace the aliases with the normal value in existing records in the database.
+<dl><dd>After these jobs have completed, the <b>Coalesce to normal</b> data jobs start automatically for each alias. These jobs redirect all references to normalized records to the selected coalesce record and remove all duplicate records from the database.</dd></dl></li></ol>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Creating_a_Raw_Field"><span class="mw-headline-number">6</span> Creating a Raw Field</span></h1>
+<p>A <b>Raw field</b> is a custom field created by an administrator to show the original (raw) input in a field on a form after it has been normalized or transformed. 
+</p>
+<ol><li>In the form containing the field that is being normalized or transformed, right-click in the header bar.</li>
+<li>Select the appropriate option for your version:
+<ul><li> <b><a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a> or later:</b> Configure &gt; Form Layout</li>
+<li> <b><a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka</a> or earlier:</b> Personalize &gt; Form Layout</li></ul></li>
+<li>Complete the <b>Create new field</b> form at the bottom of the page, and then click <b>Add</b>:
+<ul><li><b>Name</b>: Type the field label. In this case, use <b>Raw</b> + &lt;<i>field label</i>&gt;. </li>
+<li><b>Type</b>: Select a data type from the list for this field.</li>
+<li><b>Field length</b>: Select the character limit for this field. The default is 40.</li></ul></li>
+<li>Move the new field adjacent to the normalized field using the direction arrows in the slushbucket.</li>
+<li>Click <b>Save</b>.</li></ol>
+<p><br />
+</p>
+<dl><dd><dl><dd><a href="index.php%3Ftitle=File:Normalize_Raw_Field1.png.html" class="image" title="Normalize_Raw_Field1.png"><img alt="Normalize_Raw_Field1.png" src="images/0/00/Normalize_Raw_Field1.png" width="412" height="138" /></a></dd></dl></dd></dl>
+<h1><span class="mw-headline" id="Identifying_Normalized_Fields"><span class="mw-headline-number">7</span> Identifying Normalized Fields</span></h1>
+<p>Normalized fields in ServiceNow records are marked with an icon that links to different targets, depending on the user's role. Users with the normalizer role can click on the icon to access the normalization configuration record for that field directly. When a user without the normalizer role clicks the link, a Wiki page appears that provides help on the form. A <a href="index.php%3Ftitle=Field_Normalization.html#Preferences" title="Field Normalization">preference</a>, called <b>Restrict to roles</b>, enables an administrator to define the roles that are permitted to see the icon. If no roles are specified, then the icon is visible to all roles.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Normalization_Icon.png.html" class="image" title="Normalization_Icon.png"><img alt="Normalization_Icon.png" src="images/2/2b/Normalization_Icon.png" width="442" height="361" /></a>
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171203000616
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.325 seconds
+Real time usage: 0.477 seconds
+Preprocessor visited node count: 148/1000000
+Preprocessor generated node count: 403/1000000
+Post‐expand include size: 6319/2097152 bytes
+Template argument size: 1012/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  115.312      1 - -total
+ 73.21%   84.421      1 - Template:Field_Admin
+ 68.02%   78.435      1 - Template:Topic
+  9.73%   11.217      1 - Embedded:Field_Admin
+  7.85%    9.057      4 - Template:Note
+  5.55%    6.398      1 - Template:TableScopeNote
+  5.33%    6.142      1 - Embedded:Creating_a_Raw_Field
+  4.76%    5.487      1 - Template:Activating_the_Plugin
+  4.30%    4.955      1 - Embedded:Field_Normalization
+  4.14%    4.778      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9861-0!*!0!1!en!5!* and timestamp 20171203000615 and revision id 247203
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Normalizing_a_Field&amp;oldid=247203.html">http://wiki.servicenow.com/index.php?title=Normalizing_a_Field&amp;oldid=247203</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Administration.html" title="Category:Field Administration">Field Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9861"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9861" data-vote-the-vote="5" data-vote-id="9861" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9861_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9861" data-vote-the-vote="1" data-vote-id="9861" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9861_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Normalizing_a_Field.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Normalizing+a+Field&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Normalizing+a+Field&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Normalizing_a_Field.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Normalizing_a_Field&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Normalizing+a+Field.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Normalizing+a+Field&amp;returnto=Normalizing+a+Field&amp;oldid=247203&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FNormalizing_a_Field.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Normalizing_a_Field" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;oldid=247203.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Normalizing_a_Field&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 23:41, 25 June 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":992});});</script></body></html>

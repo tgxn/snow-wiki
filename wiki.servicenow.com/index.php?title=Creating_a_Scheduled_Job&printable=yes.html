@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Scheduled Job - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_Scheduled_Job","wgTitle":"Creating a Scheduled Job","wgCurRevisionId":250261,"wgRevisionId":250261,"wgArticleId":9865,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Time"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_Scheduled_Job","wgRelevantArticleId":9865,"wgRequestId":"adeea956234d787b211b7b7f","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170818183115"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_a_Scheduled_Job"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating a Scheduled Job"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Time"/>
+<meta name="category" content="Time"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_a_Scheduled_Job.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating a Scheduled Job"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170818183115"/>
+
+	<meta property="article:published_time" content="20170818183115"/>
+
+	<meta property="article:modified_time" content="20170818183115"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Time"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_a_Scheduled_Job"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_Scheduled_Job rootpage-Creating_a_Scheduled_Job skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Scheduled+Job.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+a+Scheduled+Job&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Scheduled Job</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Core_Configuration.html" title="Core Configuration">Core Configuration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Introduction+to+Time-Related+Functionality&amp;oldid=0.html" title="Introduction to Time-Related Functionality">Time</a> &gt; Creating a Scheduled Job</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/istanbul-servicenow-platform/page/administer/reference-pages/concept/c_ScheduledJobs.html">Scheduled Jobs</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Introduction+to+Time-Related+Functionality&amp;oldid=0.html" title="Introduction to Time-Related Functionality">Time</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Date+and+Time+Fields&amp;oldid=0.html" title="Using Date and Time Fields">Using Date/Time Fields</a></li>
+<li><a href="index.php%3Ftitle=Using_Time_Zones.html" title="Using Time Zones">Using Time Zones</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Schedules&amp;oldid=0.html" title="Using Schedules">Using Schedules</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Displaying+Time&amp;oldid=0.html" title="Displaying Time">Displaying Time</a>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Schedule+Pages&amp;oldid=0.html" title="Schedule Pages">Schedule Pages</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Calendars+with+Schedule+Pages&amp;oldid=0.html" title="Creating Calendars with Schedule Pages">Creating Calendars with Schedule Pages</a></li>
+<li><a href="index.php%3Ftitle=Timeline_Pages.html" title="Timeline Pages">Timeline Pages</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Range+Calculator+Scripts&amp;oldid=0.html" title="Range Calculator Scripts">Range Calculator Scripts</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Viewing_System_Logs.html" title="Viewing System Logs">Viewing System Logs</a>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Client+Transaction+Timings&amp;oldid=0.html" title="Client Transaction Timings">Client Transactions</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Scheduling+Events&amp;oldid=0.html" title="Scheduling Events">Scheduling</a>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Scheduler&amp;oldid=0.html" title="System Scheduler">System Scheduler</a></li>
+<li><strong class="selflink">Creating a Scheduled Job</strong></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Setting+Inactivity+Monitors&amp;oldid=0.html" title="Setting Inactivity Monitors">Setting Inactivity Monitors</a></li>
+<li><a href="index.php%3Ftitle=Event_Registry.html" title="Event Registry">Event Registry</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Timing+Functionality&amp;oldid=0.html" title="Timing Functionality">Timing</a></li>
+<li>Calculating Time
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Defining+Relative+Durations&amp;oldid=0.html" title="Defining Relative Durations">Relative Durations</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2052ff2e828t'></div><script type="text/javascript">window.tamOnload_tam5a2052ff2e828t=[];tree = new dTree('tam5a2052ff2e828t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2052ff2e828t = tree;
+                                               tam5a2052ff2e828t.add(1, 0, 'Time Fields');
+
+tam5a2052ff2e828t.add(2, 1, 'Time-Related Fields');
+tam5a2052ff2e828t.add(3, 2, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_a_Time_Tracking_Field\&quot;" title=\"Adding a Time Tracking Field\" class=\"mw-redirect\">Time Tracking Fields</a>');
+tam5a2052ff2e828t.add(4, 2, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Glide_durations_Format\&quot;" title=\"Modifying the Glide durations Format\">Modifying the Glide durations Format</a>');
+tam5a2052ff2e828t.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Format_Resolve_Time_as_a_Duration\&quot;" title=\"Format Resolve Time as a Duration\" class=\"mw-redirect\">Resolve Time</a>');
+tam5a2052ff2e828t.add(6, 2, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Specifying_a_Delivery_Date\&quot;" title=\"Specifying a Delivery Date\" class=\"mw-redirect\">Specifying a Delivery Date</a>');
+tam5a2052ff2e828t.add(7, 1, 'Scripting with Date-Time Values');
+tam5a2052ff2e828t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Set_Date_Field_According_To_Current_Date\&quot;" title=\"Set Date Field According To Current Date\">Example: Set Current Date</a>');
+tam5a2052ff2e828t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Set_Current_DateTime_In_Field\&quot;" title=\"Set Current DateTime In Field\">Example: Set Current Date and Time</a>');
+tam5a2052ff2e828t.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">GlideSystem Date and Time API</a>');
+tam5a2052ff2e828t.add(11, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Convert_Time_to_Military_Time\&quot;" title=\"Convert Time to Military Time\">Example: Convert to Military Time</a>');
+tam5a2052ff2e828t.add(12, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modify_a_GlideDateTime_field_value\&quot;" title=\"Modify a GlideDateTime field value\" class=\"mw-redirect\">Example: Modifying a GlideDateTime Field Value</a>');
+tam5a2052ff2e828t.add(13, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Validate_Date_and_Time\&quot;" title=\"Validate Date and Time\">Example: Validating Dates and Time</a>');
+tam5a2052ff2e828t.add(14, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Validate_Change_Windows\&quot;" title=\"Validate Change Windows\">Example: Validating Change Windows</a>');
+tam5a2052ff2e828t.add(15, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Verify_Request_Start_and_End_Dates\&quot;" title=\"Verify Request Start and End Dates\">Example: Verify Request Dates</a>');
+tam5a2052ff2e828t.add(16, 13, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Verify_if_dateTime_is_Within_Calendar_Hours\&quot;" title=\"Verify if dateTime is Within Calendar Hours\" class=\"mw-redirect\">Legacy: Verify if dateTime is Within Calendar Hours</a>');
+tam5a2052ff2e828t.add(17, 0, 'Timing Functionality');
+tam5a2052ff2e828t.add(18, 17, 'Service Levels');
+tam5a2052ff2e828t.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Level_Agreements\&quot;" title=\"Service Level Agreements\">Service Level Agreements</a>');
+tam5a2052ff2e828t.add(20, 19, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_an_SLA\&quot;" title=\"Defining an SLA\">Defining an SLA</a>');
+tam5a2052ff2e828t.add(21, 18, 'ITIL Service Levels');
+tam5a2052ff2e828t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_Service_Levels_for_Catalog_Fulfillment\&quot;" title=\"Defining Service Levels for Catalog Fulfillment\">Defining Service Levels for Catalog Fulfillment</a>');
+tam5a2052ff2e828t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_an_OLA_for_Catalog_Fulfillment\&quot;" title=\"Defining an OLA for Catalog Fulfillment\" class=\"mw-redirect\">Defining an OLA for Catalog Fulfillment</a>');
+tam5a2052ff2e828t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Schedule_for_an_SLA\&quot;" title=\"Defining a Schedule for an SLA\">Defining a Schedule for an SLA</a>');
+tam5a2052ff2e828t.add(25, 17, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_Session_Timeout\&quot;" title=\"Modifying Session Timeout\">Session Timeout</a>');
+tam5a2052ff2e828t.add(26, 17, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Contract_Expirations\&quot;" title=\"Managing Contract Expirations\" class=\"mw-redirect\">Contract Expirations</a>');
+tam5a2052ff2e828t.add(27, 17, 'Scripting Timings');
+tam5a2052ff2e828t.add(28, 27, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auto-Close_Incidents_if_Awaiting_User_Info_for_10_Days\&quot;" title=\"Auto-Close Incidents if Awaiting User Info for 10 Days\">Example: Auto-Close</a>');
+tam5a2052ff2e828t.add(29, 27, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Calculate_Duration_Given_a_Schedule\&quot;" title=\"Calculate Duration Given a Schedule\">Example: Calculate Duration within Schedule</a>');
+tam5a2052ff2e828t.add(30, 27, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Check_Upcoming_Termination_Dates\&quot;" title=\"Check Upcoming Termination Dates\">Example:Check Upcoming Termination Dates</a>');
+tam5a2052ff2e828t.add(31, 0, 'Calculating Time');
+tam5a2052ff2e828t.add(32, 31, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Relative_Duration\&quot;" title=\"Relative Duration\" class=\"mw-redirect\">Relative Duration</a>');
+tam5a2052ff2e828t.add(33, 31, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Set_Request%27s_Associated_Task_Due_Date\&quot;" title=\"Set Request\'s Associated Task Due Date\">Example: Set Request\'s Associated Task Due Date</a>');
+tam5a2052ff2e828t.add(34, 0, 'Viewing Time');
+tam5a2052ff2e828t.add(35, 34, 'Reports');
+tam5a2052ff2e828t.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Calendars\&quot;" title=\"Calendars\" class=\"mw-redirect\">Calendars</a>');
+tam5a2052ff2e828t.add(37, 36, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Calendar_Reports\&quot;" title=\"Customizing Calendar Reports\">Customizing Calendar Reports</a>');
+tam5a2052ff2e828t.add(38, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Gantt_Chart\&quot;" title=\"Gantt Chart\">Gantt Chart</a>');
+tam5a2052ff2e828t.add(39, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_SLAs\&quot;" title=\"Reporting on SLAs\">Reporting on SLAs</a>');
+tam5a2052ff2e828t.add(40, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Schedule_Pages\&quot;" title=\"Schedule Pages\">Schedule Pages</a>');
+tam5a2052ff2e828t.add(41, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Timelines\&quot;" title=\"Using Timelines\">Using Timelines</a>');
+tam5a2052ff2e828t.add(42, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Response_Time_Indicator\&quot;" title=\"Response Time Indicator\">Response Time</a>');
+tam5a2052ff2e828t.add(43, 0, 'Viewing Logs');
+tam5a2052ff2e828t.add(44, 43, 'Audited Tables');
+tam5a2052ff2e828t.add(45, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understanding_the_sys_audit_Table\&quot;" title=\"Understanding the sys audit Table\">Understanding the sys audit Table</a>');
+tam5a2052ff2e828t.add(46, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Turning_on_Auditing_(History)_for_a_Table\&quot;" title=\"Turning on Auditing (History) for a Table\">Turning on Auditing (History) for a Table</a>');
+tam5a2052ff2e828t.add(47, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Journal_Fields\&quot;" title=\"Using Journal Fields\">Using Journal Fields</a>');
+tam5a2052ff2e828t.add(48, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Formatter\&quot;" title=\"Activity Formatter\">Activity Formatter</a>');
+tam5a2052ff2e828t.add(49, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Auditable_Service_Catalog_Variables\&quot;" title=\"Auditable Service Catalog Variables\">Auditable Service Catalog Variables</a>');
+tam5a2052ff2e828t.add(50, 43, 'Import Sets');
+tam5a2052ff2e828t.add(51, 50, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Sets_Import_Run_History\&quot;" title=\"Import Sets Import Run History\" class=\"mw-redirect\">Import Sets Import Run History</a>');
+tam5a2052ff2e828t.add(52, 50, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Sets_Viewing_the_Import_Log\&quot;" title=\"Import Sets Viewing the Import Log\" class=\"mw-redirect\">Import Sets Viewing the Import Log</a>');
+tam5a2052ff2e828t.add(53, 0, 'Scheduling Events');
+tam5a2052ff2e828t.add(54, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Schedules\&quot;" title=\"Discovery Schedules\">Discovery Schedules</a>');
+tam5a2052ff2e828t.add(55, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Event_Registry\&quot;" title=\"Event Registry\">Event Registry</a>');
+tam5a2052ff2e828t.add(56, 53, 'Notifications');
+tam5a2052ff2e828t.add(57, 56, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Events_and_Email_Notification\&quot;" title=\"Events and Email Notification\">Events and Email Notification</a>');
+tam5a2052ff2e828t.add(58, 56, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_Subscription_Based_Notifications\&quot;" title=\"Setting Up Subscription Based Notifications\">Setting Up Subscription Based Notifications</a>');
+tam5a2052ff2e828t.add(59, 56, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subscription_Based_Notifications\&quot;" title=\"Using Subscription Based Notifications\">Using Subscription Based Notifications</a>');
+tam5a2052ff2e828t.add(60, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Execution_Order_of_Scripts_and_Engines\&quot;" title=\"Execution Order of Scripts and Engines\">Execution Order of Scripts and Engines</a>');
+tam5a2052ff2e828t.add(61, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Force_Password_Reset_90_Days_After_Last_Change\&quot;" title=\"Force Password Reset 90 Days After Last Change\">Example: Force Password Reset</a>');
+tam5a2052ff2e828t.add(62, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Schedule_Script_for_Weekdays\&quot;" title=\"Schedule Script for Weekdays\">Example: Schedule Script for Weekdays</a>');
+tam5a2052ff2e828t.add(63, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_a_CMDB_Baseline_Update\&quot;" title=\"Scheduling a CMDB Baseline Update\">Example: Updating the CMDB Baseline</a>');
+tam5a2052ff2e828t.add(64, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Group_On-Call_Rotation\&quot;" title=\"Group On-Call Rotation\" class=\"mw-redirect\">Group On-Call Rotation</a>');
+tam5a2052ff2e828t.add(65, 64, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Editing_an_Existing_Rotation\&quot;" title=\"Editing an Existing Rotation\" class=\"mw-redirect\">Editing an Existing Rotation</a>');
+tam5a2052ff2e828t.add(66, 64, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_of_On-Call_Rotations\&quot;" title=\"Scripting of On-Call Rotations\" class=\"mw-redirect\">Scripting of On-Call Rotations</a>');
+tam5a2052ff2e828t.add(67, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Sets_Scheduled_Imports\&quot;" title=\"Import Sets Scheduled Imports\" class=\"mw-redirect\">Import Sets Scheduled Imports</a>');
+tam5a2052ff2e828t.add(68, 67, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_Data_Imports\&quot;" title=\"Scheduling Data Imports\">Scheduling Data Imports</a>');
+tam5a2052ff2e828t.add(69, 53, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow\&quot;" title=\"Workflow\" class=\"mw-redirect\">Workflow</a>');
+tam5a2052ff2e828t.add(70, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Resources\&quot;" title=\"Workflow Resources\">Workflow Resources</a>');
+tam5a2052ff2e828t.add(71, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Workflow_Activities\&quot;" title=\"Using Workflow Activities\">Using Workflow Activities</a>');
+tam5a2052ff2e828t.add(72, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Editor\&quot;" title=\"Using the Workflow Editor\">Using the Workflow Editor</a>');
+tam5a2052ff2e828t.add(73, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_FAQ\&quot;" title=\"Workflow FAQ\" class=\"mw-redirect\">Workflow FAQ</a>');
+tam5a2052ff2e828t.add(74, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stages\&quot;" title=\"Workflow Stages\">Workflow Stages</a>');
+tam5a2052ff2e828t.add(75, 69, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_API\&quot;" title=\"Workflow API\" class=\"mw-redirect\">Workflow API</a>');
+
+                                               document.getElementById('5a2052ff2e828t').innerHTML = tam5a2052ff2e828t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2052ff2e828t) { window.tamOnload_tam5a2052ff2e828t[i](); }</script>
+
+
+<center><b><a href="index.php%3Ftitle=Book:Time.html" title="Book:Time"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Time.html" title="Book:Time">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Creating_a_Scheduled_Job"><span class="tocnumber">2</span> <span class="toctext">Creating a Scheduled Job</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_a_Report"><span class="tocnumber">2.1</span> <span class="toctext">Scheduling a Report</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_Entity_Generation"><span class="tocnumber">2.2</span> <span class="toctext">Scheduling Entity Generation</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_Script_Execution"><span class="tocnumber">2.3</span> <span class="toctext">Scheduling Script Execution</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Example_Conditional_Script"><span class="tocnumber">2.4</span> <span class="toctext">Example Conditional Script</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_Special_Cases"><span class="tocnumber">3</span> <span class="toctext">Scheduling Special Cases</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_for_the_End_of_the_Month"><span class="tocnumber">3.1</span> <span class="toctext">Scheduling for the End of the Month</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Scheduling_for_Weekdays"><span class="tocnumber">3.2</span> <span class="toctext">Scheduling for Weekdays</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Executing_Scheduled_Jobs_from_Scripts"><span class="tocnumber">3.3</span> <span class="toctext">Executing Scheduled Jobs from Scripts</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Running_Scheduled_Jobs_Imported_from_Another_Instance"><span class="tocnumber">3.4</span> <span class="toctext">Running Scheduled Jobs Imported from Another Instance</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Viewing_Schedule_Items"><span class="tocnumber">4</span> <span class="toctext">Viewing Schedule Items</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><b>Scheduled Jobs</b> are automated pieces of work that can be performed at either a particular time, or on a recurring schedule. These kinds of tasks can be automated: 
+</p>
+<ul><li>Run and distribute a report </li>
+<li>Generate a record (incident, change, configuration item, etc.) from a template </li>
+<li>Run a business rule and do whatever the rule contains</li></ul>
+<p><b>Note:</b> The method described below creates a scheduled job on the Schedule Job [sysauto] table (<b>System Definition &gt; Scheduled Jobs</b>). Create all new scheduled jobs using this method. Some existing scheduled jobs are found on the Schedule Item [sys_trigger] table (<b>System Scheduler &gt; Scheduled Jobs</b>). Do <i>not</i> create new scheduled jobs on the Schedule Item table.
+</p>
+<h1><span class="mw-headline" id="Creating_a_Scheduled_Job"><span class="mw-headline-number">2</span> Creating a Scheduled Job</span></h1>
+<p>To create a scheduled job, navigate to <b>System Definition &gt; Scheduled Jobs</b> and click <b>New</b>. Select the appropriate type of scheduled job.
+</p><p><a href="index.php%3Ftitle=File:New_action.png.html" class="image" title="image:new_action.png"><img alt="image:new_action.png" src="images/2/2d/New_action.png" width="552" height="193" /></a>
+</p><p><br />
+</p><p>The fields presented will depend on the type of scheduled job required.
+</p>
+<h2><span class="mw-headline" id="Scheduling_a_Report"><span class="mw-headline-number">2.1</span> Scheduling a Report</span></h2>
+<p>Scheduled Reports are distributed via email. Scheduled reports created by an individual whose user account is deactivated might not display any data. To ensure that the desired data is displayed, an active user must recreate the scheduled report.
+</p><p>Populate the following fields to schedule a report:
+</p>
+<table cellspacing="1" cellpadding="3" border="1" width="950px">
+
+<tr>
+<th>Field
+</th>
+<th>Input Value
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  A name to identify this scheduled job.
+</td></tr>
+<tr>
+<td>  Report
+</td>
+<td>  A reference to the report to be scheduled. Calendar reports and Pivot Table reports are not currently supported for automatic emailing.
+<p><br />
+For information on creating or modifying reports, see <a href="index.php%3Ftitle=Generating_Reports.html" title="Generating Reports">Generating Reports</a>.
+</p>
+</td></tr>
+<tr>
+<td>  Users
+</td>
+<td>  The users to send the report to at the scheduled date and time. The user must have Notification set to "Email" on their user record to receive reports. To force users to receive emails, use the <b>Email Addresses</b> field.
+</td></tr>
+<tr>
+<td>  Groups
+</td>
+<td>  The groups to send the report to at the scheduled date and time.
+</td></tr>
+<tr>
+<td>  Email addresses
+</td>
+<td>  Any other email addresses to send the report to, separated by commas. These emails will always receive the report, even if there's a matching user record for that address that says "Do not notify".
+</td></tr>
+<tr>
+<td>  Active
+</td>
+<td>  If true, this report will be sent at the scheduled date and time.
+</td></tr>
+<tr>
+<td>  Run
+</td>
+<td>  The type of schedule to send the report on. Choices are:
+<ul><li>Daily</li>
+<li>Weekly</li>
+<li>Monthly</li>
+<li>Periodically</li>
+<li>Once</li></ul>
+</td></tr>
+<tr>
+<td>  Day
+</td>
+<td>
+<ul><li>If <b>Run</b> is <b>Weekly</b>, the day of the week.</li>
+<li>If <b>Run</b> is <b>Monthly</b>, the day of the month.</li></ul>
+</td></tr>
+<tr>
+<td>  Repeat Interval
+</td>
+<td>   If <b>Run</b> is <b>Periodically</b>, the duration between each scheduled report. The duration can be days, hours, or minutes.
+</td></tr>
+<tr>
+<td>  Time
+</td>
+<td>  If <b>Run</b> is <b>Weekly</b> or <b>Monthly</b> the time of day, on a 24 hour clock.
+</td></tr>
+<tr>
+<td>  Starting
+</td>
+<td>  The date and time of the first scheduled report.
+</td></tr>
+<tr>
+<td> Priority
+</td>
+<td> The numerical priority of a scheduled job. Set essential jobs to a priority value below <b>100</b> and nonessential jobs to a priority above <b>100</b>. If 70% or more of all scheduled jobs are <b>Overdue</b>, any jobs marked with a value above 100 do not run.
+</td></tr>
+<tr>
+<td>  Subject
+</td>
+<td>  The subject line for the email.
+</td></tr>
+<tr>
+<td>  Introductory Message
+</td>
+<td>  The body of the email.
+</td></tr>
+<tr>
+<td>  Run as
+</td>
+<td>  The user creating and running the scheduled job. To have the scheduled job assigned to system behavior instead of the person creating the scheduled job, create a system or “dummy” user and add that user to this field.
+</td></tr>
+<tr>
+<td>  Type
+</td>
+<td>  The file-type of the attached report. Choices are:
+<ul><li>PDF-landscape</li>
+<li>PDF</li>
+<li>Excel</li>
+<li>CSV</li>
+<li>PNG</li></ul>
+</td></tr>
+<tr>
+<td>  Include Detail
+</td>
+<td>  If checked, will include details on the records in the report.
+</td></tr>
+<tr>
+<td>  Zip Output
+</td>
+<td>  If checked, the report will be compressed in a .zip file.
+</td></tr></table>
+<p>As a workaround for scheduling calendar and pivot table reports for email distribution, consider using the publish option. Publish creates a URL for the report and displays the address above the report form. You can create an email notification with this URL and send the link to people who need to see the report, or you can send the url for the calendar report to a distribution list.  For details about publishing reports, see <a href="index.php%3Ftitle=Creating_Reports.html#Publishing_Reports" title="Creating Reports" class="mw-redirect">Publishing Reports</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Scheduling_Entity_Generation"><span class="mw-headline-number">2.2</span> Scheduling Entity Generation</span></h2>
+<p>To schedule the generation of an entity, populate the following fields:
+</p>
+<table cellspacing="1" cellpadding="3" border="1" width="950px">
+
+<tr>
+<th>Field
+</th>
+<th>Input Value
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  A name to identify this scheduled entity generation.
+</td></tr>
+<tr>
+<td>  Active
+</td>
+<td>  If true, the entity will be generated at the scheduled date and time.
+</td></tr>
+<tr>
+<td>  Run
+</td>
+<td>  The type of schedule to generate the entity on. Choices are:
+<ul><li>Daily</li>
+<li>Weekly</li>
+<li>Monthly</li>
+<li>Periodically</li>
+<li>Once</li></ul>
+</td></tr>
+<tr>
+<td>  Day
+</td>
+<td>
+<ul><li>If <b>Run</b> is <b>Weekly</b>, the day of the week.</li>
+<li>If <b>Run</b> is <b>Monthly</b>, the day of the month.</li></ul>
+</td></tr>
+<tr>
+<td>  Repeat Interval
+</td>
+<td>   If <b>Run</b> is <b>Periodically</b>, the duration between each scheduled generation.
+</td></tr>
+<tr>
+<td>  Time
+</td>
+<td>  If <b>Run</b> is <b>Weekly</b> or <b>Monthly</b> the time of day, on a 24 hour clock.
+</td></tr>
+<tr>
+<td>  Starting
+</td>
+<td>  The date and time of the first scheduled generation.
+</td></tr>
+<tr>
+<td>  Conditional
+</td>
+<td>  If checked, the entity will only be generated if certain conditions are met.
+</td></tr>
+<tr>
+<td>  Condition
+</td>
+<td>  If <b>Conditional</b> is checked, a script determines under what conditions the scheduled script is executed. The last expression of the script should evaluate to a Boolean (true/false) value. See <a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Example_Conditional_Script">Example Conditional Script</a>.
+</td></tr>
+<tr>
+<td>  Generate this
+</td>
+<td>  A reference to a template for a record.
+</td></tr></table>
+<h2><span class="mw-headline" id="Scheduling_Script_Execution"><span class="mw-headline-number">2.3</span> Scheduling Script Execution</span></h2>
+<table cellspacing="1" cellpadding="3" border="1" width="950px">
+
+<tr>
+<th>Field
+</th>
+<th>Input Value
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  A name to identify this scheduled script execution.
+</td></tr>
+<tr>
+<td>  Active
+</td>
+<td>  If true, the script will be executed at the scheduled date and time.
+</td></tr>
+<tr>
+<td>  Run
+</td>
+<td>  The type of schedule to execute the script on. Choices are:
+<ul><li>Daily</li>
+<li>Weekly</li>
+<li>Monthly</li>
+<li>Periodically</li>
+<li>Once</li></ul>
+</td></tr>
+<tr>
+<td>  Day
+</td>
+<td>
+<ul><li>If <b>Run</b> is <b>Weekly</b>, the day of the week.</li>
+<li>If <b>Run</b> is <b>Monthly</b>, the day of the month.</li></ul>
+</td></tr>
+<tr>
+<td>  Repeat Interval
+</td>
+<td>   If <b>Run</b> is <b>Periodically</b>, the duration between each script execution.
+</td></tr>
+<tr>
+<td>  Time
+</td>
+<td>  If <b>Run</b> is <b>Weekly</b> or <b>Monthly</b> the time of day, on a 24 hour clock.
+</td></tr>
+<tr>
+<td>  Starting
+</td>
+<td>  The date and time of the first scheduled script.
+</td></tr>
+<tr>
+<td> Priority
+</td>
+<td> The numerical priority of a scheduled job. Consider setting async business rules to a priority of <b>100</b> or above to ensure any data import scheduled jobs have time to run first.
+</td></tr>
+<tr>
+<td> Application
+</td>
+<td> The application that contains the script (available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>).
+</td></tr>
+<tr>
+<td>  Conditional
+</td>
+<td>  If checked, the script will only be executed if the <b>Conditions</b> evaluate to true.
+</td></tr>
+<tr>
+<td>  Condition
+</td>
+<td>  If <b>Conditional</b> is checked, a script determines under what conditions the scheduled script is executed. The last expression of the script should evaluate to a Boolean (true/false) value. See <a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html#Example_Conditional_Script">Example Conditional Script</a>.
+</td></tr>
+<tr>
+<td>  Run this script
+</td>
+<td>  The script to run at the scheduled date and time.
+</td></tr></table>
+<h2><span class="mw-headline" id="Example_Conditional_Script"><span class="mw-headline-number">2.4</span> Example Conditional Script</span></h2>
+<p>The following is an example of a conditional script. This example runs the scheduled job only if there are active Incidents older than 30 days.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Only run this Scheduled Job if there are active Incidents over 30 days old</span>
+<span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAggregate</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">addAggregate</span><span class="p">(</span><span class="s1">&#39;COUNT&#39;</span><span class="p">);</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">);</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;sys_created_on&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">daysAgo</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">ga</span><span class="p">.</span><span class="nx">getAggregate</span><span class="p">(</span><span class="s1">&#39;COUNT&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="s1">&#39;0&#39;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Scheduling_Special_Cases"><span class="mw-headline-number">3</span> Scheduling Special Cases</span></h1>
+<h2><span class="mw-headline" id="Scheduling_for_the_End_of_the_Month"><span class="mw-headline-number">3.1</span> Scheduling for the End of the Month</span></h2>
+<p>Because months have different lengths, take care when scheduling jobs for the end of the month.
+</p>
+<ul><li>Scheduling an event for the 29th or 30th is not recommended, because the scheduled job will not be executed in months (like February) which are shorter than those dates.</li>
+<li>If an event is scheduled for the 31st, it will be executed on the last day of the month, even if the month is shorter. For example, something scheduled to run on the 31st of the month will run on February 28th or February 29th in a Leap Year.</li></ul>
+<h2><span class="mw-headline" id="Scheduling_for_Weekdays"><span class="mw-headline-number">3.2</span> Scheduling for Weekdays</span></h2>
+<p>For scheduled scripts, use the following script to run only on weekdays:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">checkWeekdays</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+	<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+	<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">day</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">day</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">result</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">checkWeekdays</span><span class="p">();</span>
+</pre></div>
+<h2><span class="mw-headline" id="Executing_Scheduled_Jobs_from_Scripts"><span class="mw-headline-number">3.3</span> Executing Scheduled Jobs from Scripts</span></h2>
+<p>To execute a scheduled job triggered by an event, use the following script:
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This API call changed in the Calgary release:</i>
+<ul><li><i>SncTriggerSynchronizer</i> replaces <i>Packages.com.snc.automation.TriggerSynchronizer</i> </li></ul>
+<p>The new script object calls apply to the Calgary release and beyond. For releases prior to Calgary, substitute the packages call as described above. Packages calls are not valid beginning with the Calgary release. For more information, see <a href="index.php%3Ftitle=Scripting_API_Changes.html" title="Scripting API Changes">Scripting API Changes</a>.
+</p>
+</td></tr></table>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Execute a scheduled script job</span>
+<span class="kd">var</span> <span class="nx">rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sysauto_script&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;YOUR_JOB_NAME_HERE&#39;</span><span class="p">);</span>
+<span class="nx">SncTriggerSynchronizer</span><span class="p">.</span><span class="nx">executeNow</span><span class="p">(</span><span class="nx">rec</span><span class="p">);</span>
+</pre></div>
+<p>This script can be run using one of several tables:
+</p>
+<ul><li><b>scheduled_import_set</b> (Scheduled Import Sets)</li>
+<li><b>sysauto_script</b> (Scheduled Script Execution)</li>
+<li><b>sysauto_template</b> (Scheduled Template Generation)</li>
+<li><b>sysauto_report</b> (Scheduled Report)</li></ul>
+<p><br />
+Note that <tt>SncTriggerSynchronizer</tt> does not provide methods to execute scheduled jobs in the future.
+</p>
+<h2><span class="mw-headline" id="Running_Scheduled_Jobs_Imported_from_Another_Instance"><span class="mw-headline-number">3.4</span> Running Scheduled Jobs Imported from Another Instance</span></h2>
+<p>To prevent unexpected data changes, the system does not automatically create Schedule Item [sys_trigger] records for Scheduled Jobs [sysauto] imported from an XML file such as an update set. To run a scheduled job imported from another instance, update the scheduled job record.
+</p>
+<h1><span class="mw-headline" id="Viewing_Schedule_Items"><span class="mw-headline-number">4</span> Viewing Schedule Items</span></h1>
+<p>Schedule items are individual instances of a scheduled job. To see which scheduled jobs will run today, navigate to <b>System Scheduler &gt; Today's Scheduled Jobs</b>. The table displays each schedule item that will be run. It is usually inadvisable to modify the schedule items themselves. It is best to modify the scheduled jobs themselves.
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130185040
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.316 seconds
+Real time usage: 1.406 seconds
+Preprocessor visited node count: 122/1000000
+Preprocessor generated node count: 351/1000000
+Post‐expand include size: 7879/2097152 bytes
+Template argument size: 1913/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  740.548      1 - -total
+ 11.82%   87.509      1 - Template:Time
+ 10.86%   80.451      1 - Template:Topic
+  0.96%    7.117      1 - Embedded:Time_Related
+  0.96%    7.081      1 - Template:Calgary_API_single
+  0.82%    6.081      2 - Template:Note
+  0.60%    4.465      1 - Embedded:Time
+  0.50%    3.730      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9865-0!*!0!1!en!5!* and timestamp 20171130185039 and revision id 250261
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;oldid=250261.html">http://wiki.servicenow.com/index.php?title=Creating_a_Scheduled_Job&amp;oldid=250261</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Time.html" title="Category:Time">Time</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Core+Configuration.html" title="Category:Core Configuration">Core Configuration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Time.html" title="Category:Time">Time</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9865"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9865" data-vote-the-vote="5" data-vote-id="9865" data-vote-action="5" data-vote-rating="4.50" data-vote-voted="0" id="rating_9865_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9865" data-vote-the-vote="1" data-vote-id="9865" data-vote-action="5" data-vote-rating="4.50" data-vote-voted="0" id="rating_9865_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+a+Scheduled+Job&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+a+Scheduled+Job&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_a_Scheduled_Job.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+a+Scheduled+Job.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+a+Scheduled+Job&amp;returnto=Creating+a+Scheduled+Job&amp;oldid=250261&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_a_Scheduled_Job.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FCreating_a_Scheduled_Job.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;oldid=250261.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_a_Scheduled_Job&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:31, 18 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":768});});</script></body></html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Displaying a Custom Dialog - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Displaying_a_Custom_Dialog","wgTitle":"Displaying a Custom Dialog","wgCurRevisionId":244900,"wgRevisionId":244900,"wgArticleId":18177,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Client Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Displaying_a_Custom_Dialog","wgRelevantArticleId":18177,"wgRequestId":"ced1eebb623c91ae36210a67","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150303001811"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Displaying_a_Custom_Dialog"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Displaying a Custom Dialog"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Client Scripts"/>
+<meta name="category" content="Client Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Displaying_a_Custom_Dialog.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Displaying a Custom Dialog"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150303001811"/>
+
+	<meta property="article:published_time" content="20150303001811"/>
+
+	<meta property="article:modified_time" content="20150303001811"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Client Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Displaying_a_Custom_Dialog"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Displaying_a_Custom_Dialog rootpage-Displaying_a_Custom_Dialog skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Displaying+a+Custom+Dialog.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Displaying+a+Custom+Dialog&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Displaying a Custom Dialog</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Displaying a Custom Dialog</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a228c063abc4t'></div><script type="text/javascript">window.tamOnload_tam5a228c063abc4t=[];tree = new dTree('tam5a228c063abc4t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a228c063abc4t = tree;
+                                               tam5a228c063abc4t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a228c063abc4t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a228c063abc4t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a228c063abc4t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a228c063abc4t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a228c063abc4t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a228c063abc4t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a228c063abc4t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a228c063abc4t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a228c063abc4t.add(10, 0, 'Jelly');
+tam5a228c063abc4t.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Extensions_to_Jelly_Syntax\&quot;" title=\"Extensions to Jelly Syntax\">Extensions to Jelly Syntax</a> ');
+tam5a228c063abc4t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a228c063abc4t.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a228c063abc4t.add(14, 0, 'Debugging');
+tam5a228c063abc4t.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a228c063abc4t.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a228c063abc4t.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a228c063abc4t.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a228c063abc4t.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a228c063abc4t.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a228c063abc4t.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a228c063abc4t.add(22, 0, 'Client-Side Glide Reference');
+tam5a228c063abc4t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a228c063abc4t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a228c063abc4t.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a228c063abc4t.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a228c063abc4t.add(27, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Side_GlideRecord\&quot;" title=\"Client Side GlideRecord\">Client-side GlideRecord</a>');
+tam5a228c063abc4t.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a228c063abc4t.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a228c063abc4t.add(30, 0, 'Server-Side Glide Reference');
+tam5a228c063abc4t.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a228c063abc4t.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a228c063abc4t.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a228c063abc4t.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a228c063abc4t.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">Date and Time Functions</a> ');
+tam5a228c063abc4t.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a228c063abc4t.add(37, 0, 'Script Helpers');
+tam5a228c063abc4t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a228c063abc4t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a228c063abc4t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a228c063abc4t.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a228c063abc4t.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a228c063abc4t.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a228c063abc4t.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a228c063abc4t.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a228c063abc4t.add(46, 0, 'Script Objects');
+tam5a228c063abc4t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a228c063abc4t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a228c063abc4t.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a228c063abc4t').innerHTML = tam5a228c063abc4t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a228c063abc4t) { window.tamOnload_tam5a228c063abc4t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#GlideDialogWindow_Basics"><span class="tocnumber">2</span> <span class="toctext">GlideDialogWindow Basics</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Displaying_a_List_of_Records"><span class="tocnumber">3</span> <span class="toctext">Displaying a List of Records</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Opening_a_Custom_UI_Page_in_a_Dialog_Window"><span class="tocnumber">4</span> <span class="toctext">Opening a Custom UI Page in a Dialog Window</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Defining_the_Trigger"><span class="tocnumber">4.1</span> <span class="toctext">Defining the Trigger</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Defining_the_UI_Page"><span class="tocnumber">4.2</span> <span class="toctext">Defining the UI Page</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#HTML"><span class="tocnumber">4.2.1</span> <span class="toctext">HTML</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html#Client_Script"><span class="tocnumber">4.2.2</span> <span class="toctext">Client Script</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Using GlideDialogWindow, you can write a script to open a custom dialog. A GlideDialogWindow can be displayed anywhere you use client scripts, UI Macros, or UI Actions. These are most commonly called from a UI Action with the "Client" check box selected. For reference information on the available GlideDialogWindow methods, see <a href="index.php%3Ftitle=GlideDialogWindow_API_Reference.html" title="GlideDialogWindow API Reference">GlideDialogWindow API Reference</a>.
+</p>
+<h1><span class="mw-headline" id="GlideDialogWindow_Basics"><span class="mw-headline-number">2</span> GlideDialogWindow Basics</span></h1>
+<p>Your script should accomplish the following tasks to display a dialog window.
+</p>
+<ul><li> Initialize the window by calling <tt>GlideDialogWindow(id)</tt>.</li>
+<li> Specify the table to display in the dialog with <tt>setPreference(name, value)</tt>.</li>
+<li> Display the dialog using <tt>render()</tt>. </li></ul>
+<p>You can call <tt>setTitle(title)</tt> and <tt>setSize(w,h)</tt> to specify the window title and size. If you do not call <tt>setTitle(title)</tt>, the dialog is created without a title displayed in the title bar. You can also define a UI Page to display in the dialog window and pass the result back to the calling window.
+</p>
+<h1><span class="mw-headline" id="Displaying_a_List_of_Records"><span class="mw-headline-number">3</span> Displaying a List of Records</span></h1>
+<p>This example opens a list of incidents in a dialog window. When the user selects an item in the dialog window, that item is opened in the calling window or, if the user clicks the close box, the window closes.
+</p><p>To trigger the dialog window, define a UI Action or UI Macro with a script that initializes the dialog, references the UI Page, and renders the dialog window. In this example, a UI Action to define and trigger the dialog window was created with the following attributes and script:
+</p><p><b>Name:</b> Popup Display List<br />
+<b>Table:</b> Incident<br />
+<b>Action name:</b> popup_display_list<br />
+<b>Form button:</b> True<br />
+<b>Client:</b> True<br />
+<b>Onclick:</b> popupDispList()<br />
+<b>Script:</b><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">popupDispList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//Initialize the GlideDialogWindow</span>
+    <span class="kd">var</span> <span class="nx">gdw</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDialogWindow</span><span class="p">(</span><span class="s1">&#39;display_incident_list&#39;</span><span class="p">);</span>
+    <span class="nx">gdw</span><span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="s1">&#39;Incidents&#39;</span><span class="p">);</span>
+    <span class="nx">gdw</span><span class="p">.</span><span class="nx">setPreference</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="s1">&#39;incident_list&#39;</span><span class="p">);</span>
+    <span class="nx">gdw</span><span class="p">.</span><span class="nx">setPreference</span><span class="p">(</span><span class="s1">&#39;sysparm_view&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">);</span>
+
+    <span class="c1">//Set the table to display</span>
+    <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">&#39;active=true^priority=1^number!=&#39;</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+    <span class="nx">gdw</span><span class="p">.</span><span class="nx">setPreference</span><span class="p">(</span><span class="s1">&#39;sysparm_query&#39;</span><span class="p">,</span> <span class="nx">query</span><span class="p">);</span>
+
+    <span class="c1">//Open the dialog window</span>
+    <span class="nx">gdw</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Opening_a_Custom_UI_Page_in_a_Dialog_Window"><span class="mw-headline-number">4</span> Opening a Custom UI Page in a Dialog Window</span></h1>
+<p>This is an example of how to use GlideDialogWindow to open a custom UI page in a dialog window and pass the results back to the calling window. To accomplish this, you will need to create the following:
+</p>
+<ul><li>A trigger to open the dialog window and reference the UI page</li>
+<li>A UI Page with HTML and Client Script definitions</li></ul>
+<p>Ensure that the trigger and the UI page do not have similar names.
+</p>
+<h2><span class="mw-headline" id="Defining_the_Trigger"><span class="mw-headline-number">4.1</span> Defining the Trigger</span></h2>
+<p>To trigger the dialog window, define a UI Action or UI Macro with a script that initializes the dialog, references the UI Page, and renders the dialog window. In this example, the following UI Action triggers the dialog window:
+</p><p><b>Name:</b> Comments Dialog<br />
+<b>Table:</b> Incident<br />
+<b>Action name:</b> comments_dialog<br />
+<b>Form button:</b> True<br />
+<b>Client:</b> True<br />
+<b>Onclick:</b> commentsDialog()<br />
+<b>Script:</b><br />
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">commentsDialog</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">//Get the values to pass into the dialog</span>
+   <span class="kd">var</span> <span class="nx">comments_text</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s2">&quot;comments&quot;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">short_text</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s2">&quot;short_description&quot;</span><span class="p">);</span>
+
+   <span class="c1">//Initialize and open the dialog</span>
+   <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDialogWindow</span><span class="p">(</span><span class="s2">&quot;add_comments_dialog&quot;</span><span class="p">);</span> <span class="c1">//Instantiate the dialog containing the UI Page &#39;add_comments_dialog&#39;</span>
+   <span class="nx">dialog</span><span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="s2">&quot;Add Task Comments&quot;</span><span class="p">);</span> <span class="c1">//Set the dialog title</span>
+   <span class="nx">dialog</span><span class="p">.</span><span class="nx">setPreference</span><span class="p">(</span><span class="s2">&quot;comments_text&quot;</span><span class="p">,</span> <span class="nx">comments_text</span><span class="p">);</span> <span class="c1">//Pass the comments into the dialog</span>
+   <span class="nx">dialog</span><span class="p">.</span><span class="nx">setPreference</span><span class="p">(</span><span class="s2">&quot;short_text&quot;</span><span class="p">,</span> <span class="nx">short_text</span><span class="p">);</span> <span class="c1">//Pass in a short description for use in the dialog</span>
+   <span class="nx">dialog</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span> <span class="c1">//Open the dialog</span>
+<span class="p">}</span>
+</pre></div>
+<p>The script gets the values to pass to the dialog, initializes the dialog attributes, and displays the dialog.
+</p>
+<h2><span class="mw-headline" id="Defining_the_UI_Page"><span class="mw-headline-number">4.2</span> Defining the UI Page</span></h2>
+<p>In addition to the trigger that opens the dialog window, you will need to define the UI Page to display in the dialog window. The UI Page name must match the GlideDialogWindow that is instantiated in the trigger script. The example triggering script in the previous section creates a GlideDialogWindow ”add_comments_dialog” so the UI Page is named ”add_comments_dialog”. The following example UI Page is displayed in the dialog window to to add comments to an Incident. See <a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax.html" title="Extensions to Jelly Syntax">Extensions to Jelly Syntax</a> for information on the ServiceNow extensions to Jelly. To get the window properties from the triggering script defined by the setPreference() method into the UI Page, use RP.getWindowProperties() in the HTML script. 
+</p>
+<h3><span class="mw-headline" id="HTML"><span class="mw-headline-number">4.2.1</span> HTML</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:ui_form&gt;</span>
+  <span class="c">&lt;!-- Get the values from dialog preferences --&gt;</span>
+  <span class="nt">&lt;g:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_short_text&quot;</span>
+    <span class="na">expression=</span><span class="s">&quot;RP.getWindowProperties().get(&#39;short_text&#39;)&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;g:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_comments_text&quot;</span>
+    <span class="na">expression=</span><span class="s">&quot;RP.getWindowProperties().get(&#39;comments_text&#39;)&quot;</span> <span class="nt">/&gt;</span>
+   <span class="c">&lt;!-- Set up form fields and labels --&gt;</span>
+   <span class="nt">&lt;table</span> <span class="na">width=</span><span class="s">&quot;100%&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;description_row&quot;</span> <span class="na">valign=</span><span class="s">&quot;top&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+           <span class="c">&lt;!-- Short description value used as a label --&gt;</span>
+           ${jvar_short_text}
+        <span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+     <span class="nt">&lt;tr&gt;</span>
+       <span class="nt">&lt;td&gt;</span>
+         <span class="c">&lt;!-- Comments text field (Contains comments from originating record as a default) --&gt;</span>
+         <span class="nt">&lt;g:ui_multiline_input_field</span> <span class="na">name=</span><span class="s">&quot;dialog_comments&quot;</span> <span class="na">id=</span><span class="s">&quot;dialog_comments&quot;</span> <span class="na">label=</span><span class="s">&quot;Additional comments&quot;</span> 
+            <span class="na">value=</span><span class="s">&quot;${jvar_comments_text}&quot;</span> <span class="na">mandatory=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+     <span class="nt">&lt;tr&gt;</span>
+       <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+     <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;dialog_buttons&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>
+           <span class="c">&lt;!-- Add OK/Cancel buttons. Clicking OK calls the validateComments script --&gt;</span>
+           <span class="nt">&lt;g:dialog_buttons_ok_cancel</span> <span class="na">ok=</span><span class="s">&quot;return validateComments()&quot;</span> <span class="na">ok_type=</span><span class="s">&quot;button&quot;</span> <span class="na">cancel_type=</span><span class="s">&quot;button&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/g:ui_form&gt;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Client_Script"><span class="mw-headline-number">4.2.2</span> Client Script</span></h3>
+<p>The following an example of a client script that is called when the OK button is clicked in the dialog window. The script checks if there is data in the dialog and, if so, closes the dialog window and pass the comments entered in the dialog window into the "Comments" field of the original form.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">validateComments</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">//This script is called when the user clicks &quot;OK&quot; in the dialog window</span>
+
+   <span class="c1">//Make sure there are comments to submit</span>
+   <span class="kd">var</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">gel</span><span class="p">(</span><span class="s2">&quot;dialog_comments&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+   <span class="nx">comments</span> <span class="o">=</span> <span class="nx">trim</span><span class="p">(</span><span class="nx">comments</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">comments</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//If comments are empty, alert the user and stop submission</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Please enter your comments before submitting.&quot;</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="c1">//If there are comments, close the dialog window and submit them</span>
+   <span class="nx">GlideDialogWindow</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">destroy</span><span class="p">();</span> <span class="c1">//Close the dialog window</span>
+   <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s2">&quot;comments&quot;</span><span class="p">,</span> <span class="nx">comments</span><span class="p">);</span> <span class="c1">//Set the &quot;Comments&quot; field with comments in the dialog</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202111831
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.229 seconds
+Real time usage: 1.316 seconds
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 316/1000000
+Post‐expand include size: 2857/2097152 bytes
+Template argument size: 367/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  106.496      1 - -total
+100.00%  106.496      1 - Template:General_Script
+ 91.73%   97.685      1 - Template:Topic
+  7.38%    7.859      1 - Embedded:General_Script
+  4.87%    5.191      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:18177-0!*!0!1!en!5!* and timestamp 20171202111830 and revision id 244900
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html">http://wiki.servicenow.com/index.php?title=Displaying_a_Custom_Dialog&amp;oldid=244900</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_18177"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="18177" data-vote-the-vote="5" data-vote-id="18177" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_18177_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="18177" data-vote-the-vote="1" data-vote-id="18177" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_18177_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Displaying+a+Custom+Dialog&amp;returntoquery=oldid%3D244900" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Displaying+a+Custom+Dialog&amp;returntoquery=oldid%3D244900" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Displaying_a_Custom_Dialog.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Displaying+a+Custom+Dialog.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Displaying+a+Custom+Dialog&amp;returnto=Displaying+a+Custom+Dialog&amp;oldid=244900&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FDisplaying_a_Custom_Dialog.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="index.php%3Ftitle=Special:RecentChangesLinked%252FDisplaying_a_Custom_Dialog.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;oldid=244900.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Displaying_a_Custom_Dialog&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:18, 3 March 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":958});});</script></body></html>

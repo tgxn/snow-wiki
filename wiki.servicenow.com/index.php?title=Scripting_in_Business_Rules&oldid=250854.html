@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Scripting in Business Rules - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scripting_in_Business_Rules","wgTitle":"Scripting in Business Rules","wgCurRevisionId":250854,"wgRevisionId":250854,"wgArticleId":22384,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Business Rules"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scripting_in_Business_Rules","wgRelevantArticleId":22384,"wgRequestId":"ac9431d85883725b9d781bfa","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170908204731"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Scripting_in_Business_Rules"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Scripting in Business Rules"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Business Rules"/>
+<meta name="category" content="Business Rules"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Scripting_in_Business_Rules.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Scripting in Business Rules"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170908204731"/>
+
+	<meta property="article:published_time" content="20170908204731"/>
+
+	<meta property="article:modified_time" content="20170908204731"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Business Rules"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Scripting_in_Business_Rules"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scripting_in_Business_Rules rootpage-Scripting_in_Business_Rules skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+in+Business+Rules.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Scripting+in+Business+Rules&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scripting in Business Rules</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Scripting in Business Rules</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/business-rules/concept/c_BusinessRules.html">Business Rules</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">Business Rules</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><strong class="selflink">Scripting in Business Rules</strong></li>
+<li><a href="index.php%3Ftitle=Debugging_Business_Rules.html" title="Debugging Business Rules">Debugging Business Rules</a></li>
+<li><a href="index.php%3Ftitle=Business_Rules_Best_Practices.html" title="Business Rules Best Practices">Business Rules Best Practices</a></li></ul>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Using_Predefined_Global_Variables"><span class="tocnumber">2</span> <span class="toctext">Using Predefined Global Variables</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Comparing_Two_Date_Fields"><span class="tocnumber">3</span> <span class="toctext">Comparing Two Date Fields</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Parsing_XML_Payloads"><span class="tocnumber">4</span> <span class="toctext">Parsing XML Payloads</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Aborting_a_Database_Action_in_a_Business_Rule"><span class="tocnumber">5</span> <span class="toctext">Aborting a Database Action in a Business Rule</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Determining_the_Operation_that_Triggers_the_Business_Rule"><span class="tocnumber">6</span> <span class="toctext">Determining the Operation that Triggers the Business Rule</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Scripting_with_Display_Business_Rules"><span class="tocnumber">7</span> <span class="toctext">Scripting with Display Business Rules</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Scripting_an_OR_Condition"><span class="tocnumber">8</span> <span class="toctext">Scripting an OR Condition</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#An_Example_Script:_Locking_User_Accounts"><span class="tocnumber">9</span> <span class="toctext">An Example Script: Locking User Accounts</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#An_Example_Script:_A_Default_Before-Query_Business_Rule"><span class="tocnumber">10</span> <span class="toctext">An Example Script: A Default Before-Query Business Rule</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>A business rule script specifies the actions that the business rule takes. Scripts commonly include predefined global variables to reference items in your system, such as the current record. Global variables are available to all business rules.
+</p><p>Use scripts in business rules to accomplish common tasks such as: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Comparing_Two_Date_Fields">Comparing two date fields</a>.</li>
+<li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Parsing_XML_Payloads">Parsing XML payloads</a>.</li>
+<li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Aborting_a_Database_Action_in_a_Business_Rule">Aborting a database action in a business rule</a>.</li></ul>
+<p>With scripts, you can also:
+</p>
+<ul><li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Determining_the_Operation_that_Triggers_the_Business_Rule">Specify the operation</a> that triggers the business rule.</li>
+<li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Scripting_with_Display_Business_Rules">Use the scratchpad with <i>display</i> business rules</a> to change form values just before a user loads the form.</li>
+<li><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html#Scripting_an_OR_Condition">Use the OR condition</a> like you would in a condition builder.</li></ul>
+<p>You can also utilize the system's scripting functionality available for server-side scripts. See <a href="index.php%3Ftitle=Useful_Scripts_portal.html" title="Useful Scripts portal" class="mw-redirect">the useful scripts portal</a> for additional example scripts.
+</p><p>You can use options on the Business Rules form to build conditions, set field values, and display alert messages without needing to write a script starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<h1><span class="mw-headline" id="Using_Predefined_Global_Variables"><span class="mw-headline-number">2</span> Using Predefined Global Variables</span></h1>
+<p>Use the following predefined global variables to reference the system in a business rule script: 
+</p>
+<ul><li><b>current</b>: The current record being referenced. </li>
+<li><b>previous</b>: The record before any changes were made, available on update and delete operations. This is not available on asynch operations.</li>
+<li><b>g_scratchpad</b>: Scratchpad object available on display rules, used to pass information to the client to be accessed from client scripts.</li>
+<li><b>system (or gs)</b>: References to <a href="index.php%3Ftitle=GlideSystem.html" title="GlideSystem">GlideSystem</a> functions.</li></ul>
+<p>Variables, such as <tt>current</tt>, <tt>previous</tt>, and <tt>g_scratchpad</tt> are global across all business rules that run for a transaction. User-created variables are also globally scoped by default. If a new variable is declared in an order 100 business rule, the business rule that runs next at order 200 also has access to the variable. This may introduce unexpected behavior. 
+</p><p>The recommended method for preventing such unexpected behavior is to <i>always wrap your code in a function</i>. This protects your variables from conflicting with system variables or global variables in other business rules that are not wrapped in a function. Additionally, variables such as <tt>current</tt> must be available when a function is invoked in order to be used.
+</p><p>This is an example of a script that is vulnerable to conflicts with other code. If the variable <tt>gr</tt> is used in other rules, the value of the variable may unexpectedly change.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+
+  <span class="c1">//do something</span>
+
+<span class="p">}</span>
+</pre></div> 
+<p>When this script is wrapped in a function, the variable is available only within the function and does not conflict with other functions using a variable named <tt>gr</tt>. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">myFunction</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">//do something</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Comparing_Two_Date_Fields"><span class="mw-headline-number">3</span> Comparing Two Date Fields</span></h1>
+<p>It is possible to compare two date fields or two <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Date+and+Time+Fields&amp;oldid=0.html" title="Using Date and Time Fields">date and time fields</a> in a business rule, and abort a record insert or update if they are not correct. For example, you may want a start date to be before an end date. 
+</p><p>The following is an example script:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="nx">current</span><span class="p">.</span><span class="nx">u_date1</span><span class="p">.</span><span class="nx">nil</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">current</span><span class="p">.</span><span class="nx">u_date2</span><span class="p">.</span><span class="nx">nil</span><span class="p">()))</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">u_date1</span><span class="p">.</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getNumericValue</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">u_date2</span><span class="p">.</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getNumericValue</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&gt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="s1">&#39;start must be before end&#39;</span><span class="p">);</span>
+    <span class="nx">current</span><span class="p">.</span><span class="nx">u_date1</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;start must be before end&#39;</span><span class="p">);</span>
+    <span class="nx">current</span><span class="p">.</span><span class="nx">setAbortAction</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>As a good practice, make the business rule a <i>before</i> rule for <i>insert</i> and <i>update</i> actions.
+In the example above:
+</p>
+<ul><li>u_date1 and u_date2 are the names of the two date fields. Replace these your own field names. </li>
+<li>The first line checks that both fields actually have a value. </li>
+<li>The next two lines create variables that have the dates' numerical values. </li>
+<li>The next two lines create different alert messages for the end user: one at the top of the form and one by the u_date1 field in the form. </li>
+<li>The last line aborts the insert or update if the date fields are not correct.</li></ul>
+<p>Here is a more complex example of the above comparison. If you have more than one pair of start and end dates, you can use arrays as shown. Additionally, this script requires the input dates to be within a certain range, in this case, no fewer than 30 days in the past and no more than 365 days in the future. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Enter all start and end date fields you wish to check, as well as the previous values</span>
+<span class="c1">// Make sure that you keep the placement in the sequence the same for all pairs</span>
+<span class="kd">var</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">start_date</span><span class="p">,</span><span class="nx">current</span><span class="p">.</span><span class="nx">work_start</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">prevStartDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">previous</span><span class="p">.</span><span class="nx">start_date</span><span class="p">,</span><span class="nx">previous</span><span class="p">.</span><span class="nx">work_start</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">endDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">end_date</span><span class="p">,</span><span class="nx">current</span><span class="p">.</span><span class="nx">work_end</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">prevEndDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">previous</span><span class="p">.</span><span class="nx">end_date</span><span class="p">,</span><span class="nx">previous</span><span class="p">.</span><span class="nx">work_end</span><span class="p">);</span>
+<span class="c1">// the text string below is added to the front of &#39; start must be before end&#39;</span>
+<span class="kd">var</span> <span class="nx">userAlert</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;Planned&#39;</span><span class="p">,</span><span class="s1">&#39;Work&#39;</span><span class="p">);</span>
+
+<span class="c1">// Set the number of Previous Days you want to check</span>
+<span class="kd">var</span> <span class="nx">pd</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="c1">// Det the number of Future Days you want to check</span>
+<span class="kd">var</span> <span class="nx">fd</span> <span class="o">=</span> <span class="mi">365</span><span class="p">;</span>
+
+<span class="c1">// You shouldn&#39;t have to modify anything below this line</span>
+
+<span class="kd">var</span> <span class="nx">nowdt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideDateTime</span><span class="p">();</span>
+<span class="nx">nowdt</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="nx">gs</span><span class="p">.</span><span class="nx">nowDateTime</span><span class="p">());</span>
+<span class="kd">var</span> <span class="nx">nowMs</span> <span class="o">=</span> <span class="nx">nowdt</span><span class="p">.</span><span class="nx">getNumericValue</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">pdms</span> <span class="o">=</span> <span class="nx">nowMs</span><span class="p">;</span>
+<span class="c1">//subtract the product of previous days to get value in milliseconds</span>
+<span class="nx">pdms</span> <span class="o">-=</span> <span class="nx">pd</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">fdms</span> <span class="o">=</span> <span class="nx">nowMs</span><span class="p">;</span>
+<span class="c1">//add the product of future days to get value in miliseconds</span>
+<span class="nx">fdms</span> <span class="o">+=</span> <span class="nx">fd</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">badDate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">//Iterate through all start and end date / time fields</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">startDate</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="nx">startDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">nil</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">endDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">nil</span><span class="p">()))</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">startDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getNumericValue</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">endDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">getGlideObject</span><span class="p">().</span><span class="nx">getNumericValue</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&gt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; start must be before end&#39;</span><span class="p">);</span>
+      <span class="nx">startDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">setError</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; start must be before end&#39;</span><span class="p">);</span>
+      <span class="nx">badDate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="nx">prevStartDate</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span> <span class="o">!=</span> <span class="p">(</span><span class="nx">startDate</span><span class="p">[</span><span class="nx">x</span><span class="p">])){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">pdms</span><span class="p">){</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; start must be fewer than &#39;</span> <span class="o">+</span> <span class="nx">pd</span> <span class="o">+</span> <span class="s1">&#39; days ago&#39;</span><span class="p">);</span>
+        <span class="nx">startDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">setError</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; start must be fewer than &#39;</span> <span class="o">+</span> <span class="nx">pd</span> <span class="o">+</span> <span class="s1">&#39; days ago&#39;</span><span class="p">);</span>
+        <span class="nx">badDate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="nx">prevEndDate</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span> <span class="o">!=</span> <span class="p">(</span><span class="nx">endDate</span><span class="p">[</span><span class="nx">x</span><span class="p">])){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">end</span> <span class="o">&gt;</span> <span class="nx">fdms</span><span class="p">){</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; end must be fewer than &#39;</span> <span class="o">+</span> <span class="nx">fd</span> <span class="o">+</span> <span class="s1">&#39; days ahead&#39;</span><span class="p">);</span>
+        <span class="nx">endDate</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">setError</span><span class="p">(</span><span class="nx">userAlert</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; end must be fewer than &#39;</span> <span class="o">+</span> <span class="nx">fd</span> <span class="o">+</span> <span class="s1">&#39; days ahead&#39;</span><span class="p">);</span>
+        <span class="nx">badDate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">badDate</span> <span class="o">==</span> <span class="kc">true</span><span class="p">){</span>
+<span class="nx">current</span><span class="p">.</span><span class="nx">setAbortAction</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Parsing_XML_Payloads"><span class="mw-headline-number">4</span> Parsing XML Payloads</span></h1>
+<p>Fields that get inserted into the database in XML format, such as the payload of an ecc_event row, can be parsed with the system's getXMLText function. The getXMLText function takes a string and an XPATH expression. For example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span>  <span class="nx">gs</span><span class="p">.</span><span class="nx">getXMLText</span><span class="p">(</span><span class="s2">&quot;&lt;name&gt;joe&lt;/name&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;//name&quot;</span><span class="p">);</span>
+</pre></div> 
+<p>returns the string 'joe'.
+</p><p>Assuming that the field "payload" contains XML, the function call might look like: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span>  <span class="nx">gs</span><span class="p">.</span><span class="nx">getXMLText</span><span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span> <span class="s2">&quot;//name&quot;</span><span class="p">);</span>
+</pre></div>
+<p>For information on XPATH, visit <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.w3schools.com/xpath/default.asp%7CW3">schools</a>.
+</p>
+<h1><span class="mw-headline" id="Aborting_a_Database_Action_in_a_Business_Rule"><span class="mw-headline-number">5</span> Aborting a Database Action in a Business Rule</span></h1>
+<p>During a <i>before</i> business rule script, you can cancel or abort the current database action using the <a href="index.php%3Ftitle=GlideRecord.html#setAbortAction" title="GlideRecord"><tt>current.setAbortAction(true)</tt></a> method. For example, if the <i>before</i> business rule is executed during an <i>insert</i> action, and you have a condition in the script that calls <tt>current.setAbortAction(true)</tt>, the new record stored in <tt>current</tt> is not created in the database.
+</p>
+<h1><span class="mw-headline" id="Determining_the_Operation_that_Triggers_the_Business_Rule"><span class="mw-headline-number">6</span> Determining the Operation that Triggers the Business Rule</span></h1>
+<p>You can write a script for a business rule that is triggered on more than one database action. If you want the business rule script to dynamically branch depending on the action that triggered the event, you can use the <tt>operation()</tt> function. For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span><span class="p">(</span> <span class="nx">current</span><span class="p">.</span><span class="nx">operation</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;update&quot;</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nx">current</span><span class="p">.</span><span class="nx">updates</span> <span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span> <span class="nx">current</span><span class="p">.</span><span class="nx">operation</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;insert&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">current</span><span class="p">.</span><span class="nx">updates</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Scripting_with_Display_Business_Rules"><span class="mw-headline-number">7</span> Scripting with Display Business Rules</span></h1>
+<p><i>Display</i> rules are processed when a user requests a record form. The data is read from the database, display rules are executed, and the form is presented to the user. The <tt>current</tt> object is available and represents the record retrieved from the database. Any field changes are temporary since they are not yet submitted to the database. To the client, the form values appear to be the values from the database; there is no indication that the values were modified from a display rule. This is a similar concept to calculated fields.
+</p><p>The primary objective of display rules is to utilize a shared scratchpad object, <tt>g_scratchpad</tt>, which is also sent to the client as part of the form. This can be useful when you need to build client scripts that require server data that is not typically part of the record being displayed. In most cases, this would require a client script making a call back to the server. If the data can be determined prior to the form being displayed, it is more efficient to provide the data to the client on the initial load. The form scratchpad object is an empty object by default, and used only to store name:value pairs of data.
+</p><p>To populate the form scratchpad with data from a display rule:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//from display business rule</span>
+<span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">someName</span> <span class="o">=</span> <span class="s2">&quot;someValue&quot;</span><span class="p">;</span>
+<span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">anotherName</span> <span class="o">=</span> <span class="s2">&quot;anotherValue&quot;</span><span class="p">;</span>
+
+<span class="c1">//if you want the client to have access to record fields not being displayed on the form</span>
+<span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">created_by</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">sys_created_by</span><span class="p">;</span> 
+
+<span class="c1">//these are simple examples, in most cases you&#39;ll probably perform some other queries to test or get data</span>
+</pre></div>
+<p>To access the form scratchpad data from a <a href="index.php%3Ftitle=Client_Script.html" title="Client Script" class="mw-redirect">client script</a>:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//from client script</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">someName</span> <span class="o">==</span> <span class="s2">&quot;someValue&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//do something special</span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="Scripting_an_OR_Condition"><span class="mw-headline-number">8</span> Scripting an OR Condition</span></h1>
+<p>An OR condition can be added to any query part within a business rule with the <tt>addOrCondition()</tt> method. 
+The example below shows a query for finding all the incidents that have either a 1 or a 2 priority. The first <tt>addQuery()</tt> condition is defined as a variable and is used in the OR condition. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">qc</span> <span class="o">=</span> <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span> 
+<span class="nx">qc</span><span class="p">.</span><span class="nx">addOrCondition</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span>
+<span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">inc</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+   <span class="c1">// processing for the incident goes here</span>
+<span class="p">}</span>
+</pre></div> 
+<p>The following script is a more complex example, using two query condition variables doing the equivalent of <tt>(priority = 1 OR priority = 2) AND (impact = 2 OR impact = 3)</tt>. The results of the OR condition are run with two variables, <tt>qc1</tt> and <tt>qc2</tt>. This allows you to manipulate the query condition object later in the script, such as inside an IF condition or WHILE loop.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+<span class="kd">var</span> <span class="nx">inc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">qc1</span> <span class="o">=</span> <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nx">qc1</span><span class="p">.</span><span class="nx">addOrCondition</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">qc2</span> <span class="o">=</span> <span class="nx">inc</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;impact&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> 
+<span class="nx">qc2</span><span class="p">.</span><span class="nx">addOrCondition</span><span class="p">(</span><span class="s1">&#39;impact&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">);</span> 
+<span class="nx">inc</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span> 
+<span class="k">while</span> <span class="p">(</span><span class="nx">inc</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+   <span class="c1">// processing for the incident goes here </span>
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="An_Example_Script:_Locking_User_Accounts"><span class="mw-headline-number">9</span> An Example Script: Locking User Accounts</span></h1>
+<p>The following business rule script locks user accounts if the user is not active in the LDAP directory or the user does not have self-service, itil, or admin access to the ServiceNow instance:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Lock accounts if bcNetIDStatus != active in LDAP and user does not </span>
+<span class="c1">// have self-service, itil or admin role</span>
+<span class="kd">var</span> <span class="nx">rls</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">accumulated_roles</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> 
+<span class="k">if</span> <span class="p">(</span> <span class="nx">current</span><span class="p">.</span><span class="nx">u_bcnetidstatus</span> <span class="o">==</span> <span class="s1">&#39;active&#39;</span> <span class="o">&amp;&amp;</span> 
+   <span class="p">(</span> <span class="nx">rls</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;,itil,&#39;</span><span class="p">)</span>  <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> 
+     <span class="nx">rls</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;,admin,&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> 
+     <span class="nx">rls</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;,ess,&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span> 
+  <span class="nx">current</span><span class="p">.</span><span class="nx">locked_out</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> 
+<span class="p">}</span> 
+<span class="k">else</span> <span class="p">{</span> 
+  <span class="nx">current</span><span class="p">.</span><span class="nx">locked_out</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> 
+<span class="p">}</span> 
+<span class="kd">var</span> <span class="nx">gr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span> <span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span> 
+<span class="nx">gr</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span> 
+<span class="k">while</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span> 
+  <span class="nx">gr</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span> 
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;updating &quot;</span> <span class="o">+</span> <span class="nx">gr</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">());</span> 
+<span class="p">}</span>
+</pre></div>
+<h1><span class="mw-headline" id="An_Example_Script:_A_Default_Before-Query_Business_Rule"><span class="mw-headline-number">10</span> An Example Script: A Default Before-Query Business Rule</span></h1>
+<p>You can use a <i>query</i> business rule that executes before the database query is made to prevent users from accessing certain records. Consider the following example from a default business rule that limits access to incident records.
+</p>
+<ul><li><b>Name:</b> incident query</li>
+<li><b>Table:</b> Incident</li>
+<li><b>When:</b> before, query</li>
+<li><b>Script:</b></li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">gs</span><span class="p">.</span><span class="nx">hasRole</span><span class="p">(</span><span class="s2">&quot;itil&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">isInteractive</span><span class="p">())</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getUserID</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">qc</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;caller_id&quot;</span><span class="p">,</span> <span class="nx">u</span><span class="p">).</span><span class="nx">addOrCondition</span><span class="p">(</span><span class="s2">&quot;opened_by&quot;</span><span class="p">,</span> <span class="nx">u</span><span class="p">).</span><span class="nx">addOrCondition</span><span class="p">(</span><span class="s2">&quot;watch_list&quot;</span><span class="p">,</span> <span class="s2">&quot;CONTAINS&quot;</span><span class="p">,</span> <span class="nx">u</span><span class="p">);</span>
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;query restricted to user: &quot;</span> <span class="o">+</span> <span class="nx">u</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>This example prevents users from accessing incident records unless they have the itil role are listed in the <b>Caller</b> or <b>Opened by</b> field. So, for example, when self-service users open a list of incidents, they can only see the incidents they submitted. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You can also use <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">access controls</a> to restrict the records that users can see.</i>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201123740
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.195 seconds
+Real time usage: 4.423 seconds
+Preprocessor visited node count: 172/1000000
+Preprocessor generated node count: 498/1000000
+Post‐expand include size: 1449/2097152 bytes
+Template argument size: 697/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 4321.243      1 - -total
+  0.49%   21.001      1 - Template:Business_Rules
+  0.29%   12.681      1 - Template:Topic
+  0.15%    6.377      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22384-0!*!0!1!en!5!* and timestamp 20171201123736 and revision id 250854
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html">http://wiki.servicenow.com/index.php?title=Scripting_in_Business_Rules&amp;oldid=250854</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Business+Rules.html" title="Category:Business Rules">Business Rules</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Business+Rules.html" title="Category:Business Rules">Business Rules</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22384"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22384" data-vote-the-vote="5" data-vote-id="22384" data-vote-action="5" data-vote-rating="4.60" data-vote-voted="0" id="rating_22384_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22384" data-vote-the-vote="1" data-vote-id="22384" data-vote-action="5" data-vote-rating="4.60" data-vote-voted="0" id="rating_22384_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Scripting_in_Business_Rules.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Scripting+in+Business+Rules&amp;returntoquery=oldid%3D250854" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Scripting+in+Business+Rules&amp;returntoquery=oldid%3D250854" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Scripting_in_Business_Rules.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scripting+in+Business+Rules.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Scripting+in+Business+Rules&amp;returnto=Scripting+in+Business+Rules&amp;oldid=250854&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FScripting_in_Business_Rules.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Scripting_in_Business_Rules" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;oldid=250854.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Scripting_in_Business_Rules&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:47, 8 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1218});});</script></body></html>

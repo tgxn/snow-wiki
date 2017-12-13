@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Client Script Best Practices - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Client_Script_Best_Practices","wgTitle":"Client Script Best Practices","wgCurRevisionId":251183,"wgRevisionId":251183,"wgArticleId":18294,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Development Best Practices","Client Scripts"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Client_Script_Best_Practices","wgRelevantArticleId":18294,"wgRequestId":"d0682ef5acb3326a44fe0c9d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170928145109"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Client_Script_Best_Practices"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Client Script Best Practices"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Client Scripts"/>
+<meta name="category" content="Client Scripts"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Client_Script_Best_Practices.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Client Script Best Practices"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170928145109"/>
+
+	<meta property="article:published_time" content="20170928145109"/>
+
+	<meta property="article:modified_time" content="20170928145109"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Client Scripts"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Client_Script_Best_Practices"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Client_Script_Best_Practices rootpage-Client_Script_Best_Practices skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Client+Script+Best+Practices.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Client+Script+Best+Practices&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Client Script Best Practices</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Client Script Best Practices</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a>
+</th></tr>
+<tr>
+<td> <div style="width:260px;">
+<div class='dtree' id='5a212b97270c5t'></div><script type="text/javascript">window.tamOnload_tam5a212b97270c5t=[];tree = new dTree('tam5a212b97270c5t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a212b97270c5t = tree;
+                                               tam5a212b97270c5t.add(1, 0, 'Planning');
+
+tam5a212b97270c5t.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Planning_for_Development_Best_Practices\&quot;" title=\"Planning for Development Best Practices\">Planning for Development Best Practices</a>');
+tam5a212b97270c5t.add(3, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Documenting_a_Migration_Procedure\&quot;" title=\"Documenting a Migration Procedure\">Documenting a Migration Procedure</a>');
+tam5a212b97270c5t.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Application_Design\&quot;" title=\"Modifying the Application Design\">Modifying the Application Design</a>');
+tam5a212b97270c5t.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understand_the_Requirements\&quot;" title=\"Understand the Requirements\">Requirements Best Practices</a>');
+tam5a212b97270c5t.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_UI_Appearance\&quot;" title=\"Customizing the UI Appearance\">Customizing the UI Appearance</a>');
+tam5a212b97270c5t.add(7, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Best_Practices\&quot;" title=\"Security Best Practices\">Security Best Practices</a>');
+tam5a212b97270c5t.add(8, 0, 'Development');
+tam5a212b97270c5t.add(9, 8, ' <strong class=\"selflink\">Client Script Best Practices</strong>');
+tam5a212b97270c5t.add(10, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Coding_Best_Practices\&quot;" title=\"Coding Best Practices\">Coding Best Practices</a>');
+tam5a212b97270c5t.add(11, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Commenting_Your_Work\&quot;" title=\"Commenting Your Work\">Commenting Your Work</a>');
+tam5a212b97270c5t.add(12, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Business_Rules_Best_Practices\&quot;" title=\"Business Rules Best Practices\">Business Rules Best Practices</a>');
+tam5a212b97270c5t.add(13, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Update_Sets_Best_Practices\&quot;" title=\"Update Sets Best Practices\">Update Sets Best Practices</a>');
+tam5a212b97270c5t.add(14, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_and_Importing_XML_Files\&quot;" title=\"Exporting and Importing XML Files\">Exporting and Importing XML Files</a>');
+tam5a212b97270c5t.add(15, 0, 'Maintenance');
+tam5a212b97270c5t.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Debugging_Tools_Best_Practices\&quot;" title=\"Debugging Tools Best Practices\">Debugging Tools Best Practices</a>');
+tam5a212b97270c5t.add(17, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Properties_Best_Practices\&quot;" title=\"System Properties Best Practices\">System Properties Best Practices</a>');
+tam5a212b97270c5t.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Logs_and_Queues_Best_Practices\&quot;" title=\"Logs and Queues Best Practices\">Logs and Queues Best Practices</a>');
+tam5a212b97270c5t.add(19, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrades_Best_Practices\&quot;" title=\"Upgrades Best Practices\">Upgrades Best Practices</a>');
+tam5a212b97270c5t.add(20, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Patches_Best_Practices\&quot;" title=\"Patches Best Practices\">Patches Best Practices</a>');
+tam5a212b97270c5t.add(21, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Performance_Best_Practices\&quot;" title=\"System Performance Best Practices\">System Performance Best Practices</a>');
+tam5a212b97270c5t.add(22, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_Performance_Best_Practices\&quot;" title=\"Import Set Performance Best Practices\">Import Set Performance Best Practices</a>');
+
+tam5a212b97270c5t.add(23, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a></div>');
+                                               document.getElementById('5a212b97270c5t').innerHTML = tam5a212b97270c5t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a212b97270c5t) { window.tamOnload_tam5a212b97270c5t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<p><b>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://developer.servicenow.com/app.do#!/document/content/app_store_doc_technical_best_practices_jakarta_client_scripting_technical_best_practices_overview?v=jakarta">Client Scripting Best Practices</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://developer.servicenow.com">https://developer.servicenow.com</a></b>
+</p><p><b>The ServiceNow Wiki is no longer being updated. Please refer to the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://developer.servicenow.com/app.do#!/home">Developer Portal</a> for the latest information.</b>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Restrict_List_Editing"><span class="tocnumber">2</span> <span class="toctext">Restrict List Editing</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Minimize_Server_Lookups"><span class="tocnumber">3</span> <span class="toctext">Minimize Server Lookups</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Example:_g_scratchpad"><span class="tocnumber">3.1</span> <span class="toctext">Example: g_scratchpad</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Example:_Asynchronous_GlideAjax"><span class="tocnumber">3.2</span> <span class="toctext">Example: Asynchronous GlideAjax</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Use_setValue.28.29.27s_displayValue_Parameter_with_Reference_Fields"><span class="tocnumber">3.3</span> <span class="toctext">Use setValue()'s displayValue Parameter with Reference Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Use_UI_Policies_Instead_of_Client_Scripts"><span class="tocnumber">4</span> <span class="toctext">Use UI Policies Instead of Client Scripts</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Use_Client_Scripts_to_Validate_Data"><span class="tocnumber">5</span> <span class="toctext">Use Client Scripts to Validate Data</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Avoid_Global_Client_Scripts"><span class="tocnumber">6</span> <span class="toctext">Avoid Global Client Scripts</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Avoid_DOM_Manipulation"><span class="tocnumber">7</span> <span class="toctext">Avoid DOM Manipulation</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Enclose_Code_in_Functions"><span class="tocnumber">8</span> <span class="toctext">Enclose Code in Functions</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Run_Only_Necessary_Scripts"><span class="tocnumber">9</span> <span class="toctext">Run Only Necessary Scripts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#General_Cleanup"><span class="tocnumber">9.1</span> <span class="toctext">General Cleanup</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Add_the_isLoading_Check_.28onChange_Scripts_Only.29"><span class="tocnumber">9.2</span> <span class="toctext">Add the isLoading Check (onChange Scripts Only)</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Add_the_newValue_Check"><span class="tocnumber">9.3</span> <span class="toctext">Add the newValue Check</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Add_the_newValue_.21.3D_oldValue_check"><span class="tocnumber">9.4</span> <span class="toctext">Add the newValue&#160;!= oldValue check</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#Bury_the_GlideAjax_Call"><span class="tocnumber">9.5</span> <span class="toctext">Bury the GlideAjax Call</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>A client script is a piece of JavaScript code that runs on the client, rather than the server. Well-designed <a href="index.php%3Ftitle=Client_Scripts.html" title="Client Scripts">client scripts</a> can reduce the amount of time it takes to complete a form. However, improperly implemented client scripts can significantly slow down form load times. With the exception of the <a href="index.php%3Ftitle=Client_Scripts.html#Overview" title="Client Scripts">CellEdit client script</a>, client scripts apply to forms only
+</p><p>Follow these best practices to ensure that client scripts work efficiently.
+</p>
+<h1><span class="mw-headline" id="Restrict_List_Editing"><span class="mw-headline-number">2</span> Restrict List Editing</span></h1>
+<p>With the exception of onCellEdit client scripts, UI policies and client scripts apply to forms only. If you create UI policies or client scripts for fields on a form, you must use another method to ensure that data in those fields is similarly controlled in a list. You can:
+</p>
+<ul><li><a href="index.php%3Ftitle=Administering_the_List_Editor.html" title="Administering the List Editor">Disable list editing</a> for the table.</li>
+<li>Create appropriate <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rules</a> or <a href="index.php%3Ftitle=Using_Access_Control_Rules.html" title="Using Access Control Rules">access controls</a> for list editing.</li>
+<li>Create <a href="index.php%3Ftitle=Data_Policy.html" title="Data Policy">data policies</a>.</li>
+<li>Create a separate <a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html#onCellEdit.28.29_Scripts"><i>onCellEdit</i> client script</a>.</li></ul>
+<p>See <a href="index.php%3Ftitle=Setting_Field_Values_in_Forms_and_Lists.html" title="Setting Field Values in Forms and Lists">Setting Field Values in Forms and Lists</a> for a comparison of client scripts and business rules.
+</p>
+<h1><span class="mw-headline" id="Minimize_Server_Lookups"><span class="mw-headline-number">3</span> Minimize Server Lookups</span></h1>
+<p>Client scripting uses either data available on the client or data retrieved from the server. Use client data as much as possible to eliminate the need for time-consuming server lookups. The top ways to get information from the server are <a href="index.php%3Ftitle=Business_Rules.html#Display_Business_Rules" title="Business Rules"><tt>g_scratchpad</tt></a>, and asynchronous <a href="index.php%3Ftitle=GlideAjax.html" title="GlideAjax">GlideAjax</a> lookup.
+</p><p>The primary difference between these methods is that <tt>g_scratchpad</tt> is sent once when a form is loaded (information is pushed from the server to the client), whereas GlideAjax is dynamically triggered when the client requests information from the server.
+</p><p>Other methods, <a href="index.php%3Ftitle=GlideRecord.html" title="GlideRecord">GlideRecord</a> and <a href="index.php%3Ftitle=GlideForm_(g_form).html#getReference" title="GlideForm (g form)"><tt>g_form.getReference()</tt></a> are also available for retrieving server information. However, these methods are no longer recommended due to their performance impact. Both methods retrieve all fields in the requested GlideRecord when most cases only require one field.
+</p>
+<h2><span class="mw-headline" id="Example:_g_scratchpad"><span class="mw-headline-number">3.1</span> Example: g_scratchpad</span></h2>
+<p>The <tt>g_scratchpad</tt> object passes information from the server to the client, such as when the client requires information not available on the form. For example, if you have a client script that needs to access the field u_retrieve, and the field is not on the form, the data is not available to the client script. A typical solution to this situation is to place the field on the form and then always hide it with a client script or UI policy. While this solution may be faster to configure, it is slower to execute.
+</p><p>If you know what information the client needs from the server before the form is loaded, a <a href="index.php%3Ftitle=Business_Rules.html#Display_Business_Rules" title="Business Rules">display business rule</a> can create <tt>g_scratchpad</tt> properties to hold this information. The <tt>g_scratchpad</tt> is sent to the client when the form is requested, making it available to all client-side scripting methods. This is a very efficient means of sending information from the server to the client. However, you can only load data this way when the form is loaded. The business rule cannot be triggered dynamically. In those cases, use an asynchronous GlideAjax call.
+</p><p>For example, assume you open an incident and need to pass this information to the client:
+</p>
+<ul><li> The value of the system property <tt>css.base.color</tt></li>
+<li> Whether or not the current record has attachments</li>
+<li> The name of the caller's manager</li></ul>
+<p>A display business rule sends this information to the client using the following script:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">css</span>            <span class="o">=</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;css.base.color&#39;</span><span class="p">);</span>
+<span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">hasAttachments</span> <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">hasAttachments</span><span class="p">();</span>
+<span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">managerName</span>    <span class="o">=</span> <span class="nx">current</span><span class="p">.</span><span class="nx">caller_id</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">getDisplayValue</span><span class="p">();</span>
+</pre></div>
+<p>To access scratchpad data using a client script:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Check if the form has attachments</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">hasAttachments</span><span class="p">)</span>
+    <span class="c1">// do something interesting here</span>
+<span class="k">else</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;You need to attach a form signed by &#39;</span> <span class="o">+</span> <span class="nx">g_scratchpad</span><span class="p">.</span><span class="nx">managerName</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="Example:_Asynchronous_GlideAjax"><span class="mw-headline-number">3.2</span> Example: Asynchronous GlideAjax</span></h2>
+<p>This script compares the support group of the CI and the assignment group of the incident by name: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Alert if the assignment groups name matches the support group</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getCiSupportGroup&#39;</span><span class="p">);</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ag&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">));</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">doAlert</span><span class="p">);</span> <span class="c1">// Always try to use asynchronous (getXML) calls rather than synchronous (getXMLWait)</span>
+<span class="p">}</span>
+
+<span class="c1">// Callback function to process the response returned from the server</span>
+<span class="kd">function</span> <span class="nx">doAlert</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div> 
+<p>This script relies on an accompanying <a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes">script include</a>, such as:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">ciCheck</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+
+<span class="nx">ciCheck</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extendsObject</span><span class="p">(</span><span class="nx">AbstractAjaxProcessor</span><span class="p">,</span> <span class="p">{</span>
+    
+    <span class="nx">getCiSupportGroup</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        
+        <span class="kd">var</span> <span class="nx">retVal</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="c1">// Return value</span>
+        <span class="kd">var</span> <span class="nx">ciID</span>   <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getParameter</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">agID</span>   <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getParameter</span><span class="p">(</span><span class="s1">&#39;sysparm_ag&#39;</span><span class="p">);</span>		
+        <span class="kd">var</span> <span class="nx">ciRec</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">);</span>
+        
+        <span class="c1">// If we can read the record, check if the sys_ids match</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ciRec</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">ciID</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">ciRec</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;support_group&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nx">agID</span><span class="p">)</span>
+                <span class="nx">retVal</span> <span class="o">=</span> <span class="s1">&#39;CI support group and assignment group match&#39;</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="nx">retVal</span> <span class="o">=</span> <span class="s1">&#39;CI support group and assignment group do not match&#39;</span><span class="p">;</span>
+            
+            <span class="c1">// Can&#39;t read the CI, then they don&#39;t match</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">retVal</span> <span class="o">=</span> <span class="s1">&#39;CI support group and assignment group do not match&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="nx">retVal</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+<span class="p">});</span>
+</pre></div>
+<h2><span class="mw-headline" id="Use_setValue.28.29.27s_displayValue_Parameter_with_Reference_Fields"><span class="mw-headline-number">3.3</span> Use setValue()'s displayValue Parameter with Reference Fields</span></h2>
+<p>When using <a href="index.php%3Ftitle=GlideForm_(g_form).html#setValue" title="GlideForm (g form)">setValue()</a> on a reference field, be sure to include the displayValue with the value (sys_id). If you set the value without the displayValue, the system does a synchronous Ajax call to retrieve the displayValue for the record you specified. This extra round trip to the server can leave you at risk of performance issues.
+</p><p>Example:
+</p><p>Incorrect:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="s1">&#39;5137153cc611227c000bbd1bd8cd2005&#39;</span><span class="p">;</span>
+
+<span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assigned_to&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span> <span class="c1">// Client needs to go back to the server to</span>
+                                    <span class="c1">// fetch the name that goes with this ID</span>
+</pre></div>
+<p>Correct:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="s1">&#39;5137153cc611227c000bbd1bd8cd2005&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Fred Luddy&#39;</span><span class="p">;</span>
+
+<span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assigned_to&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span> <span class="c1">// No server call required</span>
+</pre></div>
+<h1><span class="mw-headline" id="Use_UI_Policies_Instead_of_Client_Scripts"><span class="mw-headline-number">4</span> Use UI Policies Instead of Client Scripts</span></h1>
+<p>When possible, consider using a <a href="index.php%3Ftitle=Creating_a_UI_Policy.html" title="Creating a UI Policy">UI policy</a> instead of a client script for these reasons:
+</p>
+<ul><li> UI policies have an <b>Order</b> field to allow full control over the order in which client-side operations take place.</li>
+<li> UI policies do not require scripting to make a field mandatory, read-only, or visible.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>UI policies execute after client scripts.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Use_Client_Scripts_to_Validate_Data"><span class="mw-headline-number">5</span> Use Client Scripts to Validate Data</span></h1>
+<p>An excellent use for client scripts is validating input from the user. This validation improves the user experience because the user finds out if there are data issues before submitting the information. An example of validation is to verify that the <b>Impact</b> field value is valid with the <b>Priority</b> field value. In this example, <b>Low</b> impact is not allowed with <b>High</b> priority.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;impact&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+   <span class="nx">g_form</span><span class="p">.</span><span class="nx">showFieldMsg</span><span class="p">(</span><span class="s1">&#39;impact&#39;</span><span class="p">,</span> <span class="nx">gs</span><span class="p">.</span><span class="nx">getMessage</span><span class="p">(</span><span class="s1">&#39;Low impact now allowed with High priority&#39;</span><span class="p">),</span> <span class="s1">&#39;error&#39;</span><span class="p">);</span>
+</pre></div>
+<h1><span class="mw-headline" id="Avoid_Global_Client_Scripts"><span class="mw-headline-number">6</span> Avoid Global Client Scripts</span></h1>
+<p>A <a href="index.php%3Ftitle=Client_Scripts.html" title="Client Scripts">global client script</a> is any client script where the selected <b>Table</b> is <b>Global</b>. Global client scripts have no table restrictions, therefore they will load on every page in the system introducing browser load delay in the process. There is no benefit to loading this kind of scripts on every page.
+</p><p>As an alternative, and for a more modular and scalable approach, consider moving client scripts to a base table (such as Task[task] or Configuration Item[cmdb_ci]) that can be inherited for all the child/extending tables. This eliminates the system loading the scripts on every form in the UI - such as home pages or Service Catalog where they are rarely (if ever) needed.
+</p>
+<h1><span class="mw-headline" id="Avoid_DOM_Manipulation"><span class="mw-headline-number">7</span> Avoid DOM Manipulation</span></h1>
+<p>Avoid Document Object Model (DOM) manipulation if possible.  It can cause a maintainability issue when browsers are updated.
+</p><p>Instead, use the <a href="index.php%3Ftitle=GlideForm_(g_form).html" title="GlideForm (g form)">GlideForm</a> API or consider a different approach for the solution.  In general, when using DOM manipulation methods, you have to reference an element in the DOM by id or using a CSS selector.  When referencing out-of-box DOM elements, there is a risk that the element ID or placement within the DOM could change thus causing the code to stop working and/or generate errors.  While we are not saying this should never be done, it needs to be done with forethought, caution, and a full understanding of the risk you are incurring.  It is recommended to review these objects and reduce the use of DOM manipulation methods as much as possible.
+</p>
+<h1><span class="mw-headline" id="Enclose_Code_in_Functions"><span class="mw-headline-number">8</span> Enclose Code in Functions</span></h1>
+<p>Enclose the code in a client script inside a function. Client scripts without a function cause issues with variable scope. When code is not enclosed in a function, variables and other objects are available and shared to all other client-side scripts. So if you're using the same variable names, it's possible that they could collide. This can lead to unexpected consequences that are difficult to troubleshoot. Consider this example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="s2">&quot;6&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
+   
+   <span class="k">if</span><span class="p">(</span><span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;incident_state&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+   		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This incident is Resolved&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Because the <tt>state</tt> variable is not enclosed in a function, all client-side scripts, have access to it. Other scripts may also use the common variable name <tt>state</tt>. The duplicate names can conflict and lead to unexpected results. These issues are very difficult to isolate and resolve. To avoid this issue, ensure all you code is wrapped in a function:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
+
+   <span class="kd">var</span> <span class="nx">state</span> <span class="o">=</span> <span class="s2">&quot;6&quot;</span><span class="p">;</span>
+
+   <span class="k">if</span><span class="p">(</span><span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;incident_state&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+   		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This incident is Resolved&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>This solution is much safer because the scope of the variable <tt>state</tt> is limited to the <tt>onSubmit()</tt> function. Therefore, the <tt>state</tt> variable does not conflict with <tt>state</tt> variables in other client-side scripts.
+</p>
+<h1><span class="mw-headline" id="Run_Only_Necessary_Scripts"><span class="mw-headline-number">9</span> Run Only Necessary Scripts</span></h1>
+<p>Remember that client scripts have no <b>Condition</b> field. This means that <tt>onLoad()</tt> and <tt>onChange()</tt> scripts run in their entirety every time the appropriate form is loaded. To avoid running time-consuming scripts unnecessarily, make sure that  client scripts perform only necessary tasks. 
+</p><p>This example is an inefficient <tt>onChange()</tt> client script set to run when the <b>Configuration item</b> field changes.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to CI&#39;s support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+ 
+    <span class="kd">var</span> <span class="nx">ciSupportGroup</span> <span class="o">=</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getReference</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">).</span><span class="nx">support_group</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">ciSupportGroup</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;assignment_group) != &#39;&#39;)</span>
+<span class="s1">        g_form.setValue(&#39;</span><span class="nx">assignment_group</span><span class="err">&#39;</span><span class="p">,</span> <span class="nx">ciRec</span><span class="p">.</span><span class="nx">support_group</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Ensure the </i>Script<i> field is not empty.  This sends unnecessary code to the browser to process.</i>
+</td></tr></table>
+<p><br />
+The following steps provide examples showing how this example can be improved to prevent the client script from running unnecessary code. 
+</p>
+<h2><span class="mw-headline" id="General_Cleanup"><span class="mw-headline-number">9.1</span> General Cleanup</span></h2>
+<p>Look for performance optimizations. In the previous example, the <tt>getReference()</tt>, or GlideRecord lookup can be replaced with an asynchronous GlideAjax call.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getSupportGroup&#39;</span><span class="p">);</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">setAssignmentGroup</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setAssignmentGroup</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+    <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Add_the_isLoading_Check_.28onChange_Scripts_Only.29"><span class="mw-headline-number">9.2</span> Add the isLoading Check (onChange Scripts Only)</span></h2>
+<p>The <tt>isLoading</tt> flag is the simplest way to prevent unnecessary code from taking up browser time. The <tt>isLoading</tt> flag should be used at the beginning of any script that is not required to run when the form is loading. There is no need to run this script on a form load because the logic would have already run when the field was last changed. Adding the <tt>isLoading</tt> check to the script prevents it from doing a cmdb_ci lookup on every form load.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to CI&#39;s support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">isTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getSupportGroup&#39;</span><span class="p">);</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">setAssignmentGroup</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setAssignmentGroup</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+    <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>If the onChange script should run during loading, use the following convention:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">isTemplate</span><span class="p">)</span> <span class="p">{</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="p">{};</span> <span class="c1">// run during loading</span>
+ 
+    <span class="c1">// rest of script here</span>
+ 
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The <tt>isLoading</tt> condition statement is part of the default template. It is illustrated here for clarity.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Add_the_newValue_Check"><span class="mw-headline-number">9.3</span> Add the newValue Check</span></h2>
+<p>The <tt>newValue</tt> check tells this script to continue only if there is a valid value in the relevant field. This prevents the script from running when the field value is removed or blanked out. This also ensures that there will always be a valid value available when the rest of the script runs. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to CI&#39;s support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">isTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getSupportGroup&#39;</span><span class="p">);</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+        <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">setAssignmentGroup</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setAssignmentGroup</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+   <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The newValue condition statement is part of the default template. It was illustrated here for clarity.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Add_the_newValue_.21.3D_oldValue_check"><span class="mw-headline-number">9.4</span> Add the newValue&#160;!= oldValue check</span></h2>
+<p>To have the script react to a value that changes after the form loads, use the <tt>newValue&#160;!= oldValue</tt> check.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to CI&#39;s support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">isTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">!=</span> <span class="nx">oldValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+            <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getSupportGroup&#39;</span><span class="p">);</span>
+            <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+            <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">setAssignmentGroup</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setAssignmentGroup</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+   <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Bury_the_GlideAjax_Call"><span class="mw-headline-number">9.5</span> Bury the GlideAjax Call</span></h2>
+<p>In this example, the GlideAjax call is buried one level deeper by rearranging the script to check as many things available to the client as possible before running the server calls. The script checks the assignment before executing the GlideAjax call. This prevents the server lookup when the <b>assignment_group</b> field is already set. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Set Assignment Group to CI&#39;s support group if assignment group is empty</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">newValue</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">isTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span>
+       <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">!=</span> <span class="nx">oldValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideAjax</span><span class="p">(</span><span class="s1">&#39;ciCheck&#39;</span><span class="p">);</span>
+
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_name&#39;</span><span class="p">,</span> <span class="s1">&#39;getSupportGroup&#39;</span><span class="p">);</span>
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">addParam</span><span class="p">(</span><span class="s1">&#39;sysparm_ci&#39;</span><span class="p">,</span> <span class="nx">g_form</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;cmdb_ci&#39;</span><span class="p">));</span>
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">getXML</span><span class="p">(</span><span class="nx">setAssignmentGroup</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setAssignmentGroup</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">);</span>
+
+   <span class="nx">g_form</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;assignment_group&#39;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201101453
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.306 seconds
+Real time usage: 6.677 seconds
+Preprocessor visited node count: 244/1000000
+Preprocessor generated node count: 634/1000000
+Post‐expand include size: 2861/2097152 bytes
+Template argument size: 432/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 6131.549      1 - -total
+  0.70%   42.732      1 - Template:Technical_Best_Practices
+  0.63%   38.581      1 - Template:Topic
+  0.17%   10.188      4 - Template:Note
+  0.08%    5.002      1 - Embedded:Technical_Best_Practices
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:18294-0!*!0!1!en!5!* and timestamp 20171201101447 and revision id 251183
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html">http://wiki.servicenow.com/index.php?title=Client_Script_Best_Practices&amp;oldid=251183</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Technical+Best+Practices.html" title="Category:Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Development+Best+Practices.html" title="Category:Development Best Practices">Development Best Practices</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Client+Scripts.html" title="Category:Client Scripts">Client Scripts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_18294"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="18294" data-vote-the-vote="5" data-vote-id="18294" data-vote-action="5" data-vote-rating="4.50" data-vote-voted="0" id="rating_18294_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="18294" data-vote-the-vote="1" data-vote-id="18294" data-vote-action="5" data-vote-rating="4.50" data-vote-voted="0" id="rating_18294_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Client_Script_Best_Practices.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Client+Script+Best+Practices&amp;returntoquery=oldid%3D251183" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Client+Script+Best+Practices&amp;returntoquery=oldid%3D251183" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Client_Script_Best_Practices.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Client_Script_Best_Practices&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Client+Script+Best+Practices.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Client+Script+Best+Practices&amp;returnto=Client+Script+Best+Practices&amp;oldid=251183&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FClient_Script_Best_Practices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Client_Script_Best_Practices" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;oldid=251183.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Client_Script_Best_Practices&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 14:51, 28 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":998});});</script></body></html>

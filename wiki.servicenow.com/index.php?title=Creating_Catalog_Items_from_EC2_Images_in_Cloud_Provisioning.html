@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating Catalog Items from EC2 Images in Cloud Provisioning - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning","wgTitle":"Creating Catalog Items from EC2 Images in Cloud Provisioning","wgCurRevisionId":240216,"wgRevisionId":240216,"wgArticleId":17107,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Amazon EC2 for Cloud Provisioning"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning","wgRelevantArticleId":17107,"wgRequestId":"afd67432964fb43efe34ad4c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150131003029"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating Catalog Items from EC2 Images in Cloud Provisioning"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Amazon EC2 for Cloud Provisioning"/>
+<meta name="category" content="Amazon EC2 for Cloud Provisioning"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating Catalog Items from EC2 Images in Cloud Provisioning"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150131003029"/>
+
+	<meta property="article:published_time" content="20150131003029"/>
+
+	<meta property="article:modified_time" content="20150131003029"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Amazon EC2 for Cloud Provisioning"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning rootpage-Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating Catalog Items from EC2 Images in Cloud Provisioning</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a> &gt; <a href="index.php%3Ftitle=Amazon_EC2_for_Cloud_Provisioning.html" title="Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a> &gt; Creating Catalog Items from EC2 Images in Cloud Provisioning</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a203a4a16bd7t'></div><script type="text/javascript">window.tamOnload_tam5a203a4a16bd7t=[];tree = new dTree('tam5a203a4a16bd7t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a203a4a16bd7t = tree;
+                                               tam5a203a4a16bd7t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Operations\&quot;" title=\"Cloud Operations\">Cloud Operations</a>');
+
+tam5a203a4a16bd7t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Users\&quot;" title=\"Cloud Users\">Cloud Users</a>');
+tam5a203a4a16bd7t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Security\&quot;" title=\"Cloud Provisioning Security\">Security</a>');
+tam5a203a4a16bd7t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=My_Assets_Portal\&quot;" title=\"My Assets Portal\">My Assets Portal</a>');
+tam5a203a4a16bd7t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resources_Portal\&quot;" title=\"Amazon Resources Portal\">Amazon Resources Portal</a>');
+tam5a203a4a16bd7t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Virtual_Assets_Management_Portals\&quot;" title=\"Virtual Assets Management Portals\">Virtual Assets Portals</a>');
+tam5a203a4a16bd7t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Virtual_Assets_in_Cloud_Provisioning\&quot;" title=\"Managing Virtual Assets in Cloud Provisioning\">Managing Virtual Assets</a>');
+tam5a203a4a16bd7t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Control_for_Cloud_Provisioning\&quot;" title=\"Change Control for Cloud Provisioning\">Change Control</a>');
+tam5a203a4a16bd7t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Level_Management_for_Cloud_Provisioning\&quot;" title=\"Service Level Management for Cloud Provisioning\">Service Level Management</a>');
+tam5a203a4a16bd7t.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Extension_Points\&quot;" title=\"Cloud Provisioning Extension Points\">Cloud Provisioning Extension Points</a>');
+tam5a203a4a16bd7t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services\&quot;" title=\"Amazon Web Services\">Amazon Web Services</a>');
+tam5a203a4a16bd7t.add(12, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_Web_Services\&quot;" title=\"Configuring Amazon Web Services\">Configuring an AWS Account</a>');
+tam5a203a4a16bd7t.add(13, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Billing\&quot;" title=\"Amazon Web Services Billing\">AWS Billing</a>');
+tam5a203a4a16bd7t.add(14, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Demo_Data\&quot;" title=\"Amazon Web Services Demo Data\">AWS Demo Data</a>');
+tam5a203a4a16bd7t.add(15, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resource_Optimization\&quot;" title=\"Amazon Resource Optimization\">Resource Optimization</a>');
+tam5a203a4a16bd7t.add(16, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Tagging\&quot;" title=\"AWS Tagging\">AWS Tagging</a>');
+tam5a203a4a16bd7t.add(17, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Elastic_Block_Store\&quot;" title=\"Amazon Elastic Block Store\">Amazon Elastic Block Store</a>');
+tam5a203a4a16bd7t.add(18, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Virtual_Private_Clouds\&quot;" title=\"AWS Virtual Private Clouds\">Virtual Private Clouds</a>');
+tam5a203a4a16bd7t.add(19, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Console\&quot;" title=\"Amazon Web Services Console\">Amazon Web Services Console</a>');
+tam5a203a4a16bd7t.add(20, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_Web_Services\&quot;" title=\"Installed with Amazon Web Services\">Installed with Amazon Web Services</a>');
+tam5a203a4a16bd7t.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_CloudFormation\&quot;" title=\"Amazon CloudFormation\">Amazon CloudFormation</a>');
+tam5a203a4a16bd7t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_an_AWS_CloudFormation_Template\&quot;" title=\"Setting Up an AWS CloudFormation Template\">Setting Up a CloudFormation Template</a>');
+tam5a203a4a16bd7t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_CloudFormation_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from CloudFormation Templates in Cloud Provisioning\">Creating a Catalog Item</a>');
+tam5a203a4a16bd7t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_CloudFormation_Stacks\&quot;" title=\"Managing CloudFormation Stacks\">Managing CloudFormation Stacks</a>');
+tam5a203a4a16bd7t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_AWS_CloudFormation_Stack\&quot;" title=\"Requesting an AWS CloudFormation Stack\">Requesting a CloudFormation Stack</a>');
+tam5a203a4a16bd7t.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 for Cloud Provisioning\">Amazon EC2</a>');
+tam5a203a4a16bd7t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EC2_Provisioning_Quick_Start\&quot;" title=\"EC2 Provisioning Quick Start\">EC2 Provisioning Quick Start</a>');
+tam5a203a4a16bd7t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_Amazon_EC2\&quot;" title=\"Cloud Administration for Amazon EC2\">Cloud Administration</a>');
+tam5a203a4a16bd7t.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Configuring Amazon EC2 for Cloud Provisioning\">Configuration</a>');
+tam5a203a4a16bd7t.add(30, 26, '<strong class=\"selflink\">Creating Catalog Items</strong>');
+tam5a203a4a16bd7t.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Approvals_and_Provisioning_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Approvals and Provisioning for Cloud Provisioning\">Approvals and Provisioning</a>');
+tam5a203a4a16bd7t.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_Amazon_EC2_Instance_for_Cloud_Provisioning\&quot;" title=\"Requesting an Amazon EC2 Instance for Cloud Provisioning\">Service Catalog Request</a>');
+tam5a203a4a16bd7t.add(33, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Integration_for_Training_Partners_in_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Integration for Training Partners in Cloud Provisioning\">Training Partner Integration</a>');
+tam5a203a4a16bd7t.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Installed with Amazon EC2 for Cloud Provisioning\">Installed with EC2 Provisioning</a>');
+tam5a203a4a16bd7t.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_for_Cloud_Provisioning\&quot;" title=\"VMware for Cloud Provisioning\">VMware</a>');
+tam5a203a4a16bd7t.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Provisioning_Quick_Start\&quot;" title=\"VMware Provisioning Quick Start\">VMware Provisioning Quick Start</a>');
+tam5a203a4a16bd7t.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_VMware\&quot;" title=\"Cloud Administration for VMware\">Cloud Administration</a>');
+tam5a203a4a16bd7t.add(38, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=User_Privileges_for_vCenter_API_for_Cloud_Provisioning\&quot;" title=\"User Privileges for vCenter API for Cloud Provisioning\">User Privileges for vCenter API</a>');
+tam5a203a4a16bd7t.add(39, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_VMware_for_Cloud_Provisioning\&quot;" title=\"Configuring VMware for Cloud Provisioning\">Configuration</a>');
+tam5a203a4a16bd7t.add(40, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Networks_for_Cloud_Provisioning\&quot;" title=\"VMware Networks for Cloud Provisioning\">VMware Networks</a>');
+tam5a203a4a16bd7t.add(41, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Templates_and_Offerings_for_Cloud_Provisioning\&quot;" title=\"VMware Templates and Offerings for Cloud Provisioning\">Templates and Offerings</a>');
+tam5a203a4a16bd7t.add(42, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from VMware Templates in Cloud Provisioning\">Creating Catalog Items</a>');
+tam5a203a4a16bd7t.add(43, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_a_VMware_Instance_in_Cloud_Provisioning\&quot;" title=\"Requesting a VMware Instance in Cloud Provisioning\" class=\"mw-redirect\">Service Catalog Requests</a>');
+tam5a203a4a16bd7t.add(44, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approving_and_Provisioning_VMware_Requests_for_Cloud_Provisioning\&quot;" title=\"Approving and Provisioning VMware Requests for Cloud Provisioning\">Approving and Provisioning Requests</a>');
+tam5a203a4a16bd7t.add(45, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Error_Handling\&quot;" title=\"Cloud Provisioning Error Handling\">Error Handling</a>');
+tam5a203a4a16bd7t.add(46, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_VMware_for_Cloud_Provisioning\&quot;" title=\"Installed with VMware for Cloud Provisioning\">Installed with VMware Provisioning</a>');
+
+                                               document.getElementById('5a203a4a16bd7t').innerHTML = tam5a203a4a16bd7t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a203a4a16bd7t) { window.tamOnload_tam5a203a4a16bd7t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow Overview</a></li>
+<li><a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Cloud_Provisioning.html" title="Book:Cloud Provisioning">Cloud Provisioning</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Tables"><span class="tocnumber">2</span> <span class="toctext">Tables</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Configuration"><span class="tocnumber">3</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Categories"><span class="tocnumber">3.1</span> <span class="toctext">Categories</span></a></li>
+<li class="toclevel-2"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Checkout_Redirect_Property"><span class="tocnumber">3.2</span> <span class="toctext">Checkout Redirect Property</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Size_Definitions"><span class="tocnumber">3.3</span> <span class="toctext">Size Definitions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Pricing"><span class="tocnumber">3.4</span> <span class="toctext">Pricing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Creating_a_Catalog_Item"><span class="tocnumber">4</span> <span class="toctext">Creating a Catalog Item</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Field_Dependencies_for_Image_Sizes"><span class="tocnumber">4.1</span> <span class="toctext">Field Dependencies for Image Sizes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Example"><span class="tocnumber">4.1.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Verifying_the_Path_to_the_Catalog_Item"><span class="tocnumber">5</span> <span class="toctext">Verifying the Path to the Catalog Item</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>An administrator can create catalog items for virtual servers from Amazon EC2 images and present the items to users in the <a href="index.php%3Ftitle=Introduction_to_Service_Catalog.html" title="Introduction to Service Catalog">service catalog</a>. These catalog items minimize a requester's involvement by simplifying the process of selecting the appropriate virtual server. An administrator can create virtual machines with different specifications that are built from the same image and presented to users in the service catalog by <i>size</i> (or EC2 <i>type</i>).
+</p>
+<h1><span class="mw-headline" id="Tables"><span class="mw-headline-number">2</span> Tables</span></h1>
+<p>The following tables are used for this feature.
+</p>
+<table class="standard">
+<tr>
+<th> Table
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Virtual Machine Template [cmdb_ci_vm_template]
+</td>
+<td> Contains virtual machine templates from Amazon EC2 and VMware.
+</td></tr>
+<tr>
+<td> EC2 Approved Image [ec2_approved_images]
+</td>
+<td> Contains only the EC2 images approved for provisioning through the service catalog. This table extends the Virtual Machine Template [cmdb_ci_vm_template] table.
+</td></tr>
+<tr>
+<td> EC2 Image [ec2_image]
+</td>
+<td> Contains all the EC2 images in the system, including approved images. This table extends the Virtual Machine Template [cmdb_ci_vm_template] table.
+</td></tr>
+<tr>
+<td> EC2 Size [ec2_size]
+</td>
+<td> Contains all the EC2 size (type) definitions. This table extends VM Size Definition [vm_size] table.
+</td></tr></table>
+<h1><span class="mw-headline" id="Configuration"><span class="mw-headline-number">3</span> Configuration</span></h1>
+<p>Before you create a catalog item from an EC2 image, configure the categories in the service catalog, determine the appropriate setting for the check-out redirect property,  and define the virtual machine sizes.
+</p>
+<h2><span class="mw-headline" id="Categories"><span class="mw-headline-number">3.1</span> Categories</span></h2>
+<p>See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Service+Catalog+Categories&amp;oldid=0.html" title="Service Catalog Categories">Service Catalog Categories</a> for instructions on creating categories and sub-categories for catalog items. The category hierarchy determines the category path for locating EC2 virtual machines in the service catalog.
+</p>
+<h2><span class="mw-headline" id="Checkout_Redirect_Property"><span class="mw-headline-number">3.2</span> Checkout Redirect Property</span></h2>
+<p>A property called <b>One-step checkout redirect</b> (<tt>glide.vm.checkout_redirect</tt>) controls the view presented to virtual machine requesters in the service catalog. By default, this property is set to <b>false</b>, which redirects the view to the Order Status form when the requester clicks <b>Order Now</b>. When this property is set to <b>true</b>, ServiceNow redirects the requester to his or her <a href="index.php%3Ftitle=Virtual_Assets_Management_Portals.html#My_Virtual_Assets" title="Virtual Assets Management Portals">My Virtual Assets</a> portal. This property is located in <b>Cloud Provisioning &gt; Management &gt; Properties</b> and is available starting with the Calgary release.
+</p>
+<h2><span class="mw-headline" id="Size_Definitions"><span class="mw-headline-number">3.3</span> Size Definitions</span></h2>
+<p>ServiceNow includes a full range of current <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 sizes</a>. The prices shown for these sizes are arbitrary and do not reflect any realistic price structure. These prices are calculated from the price per unit defined in the <a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Pricing">EC2 Element Price</a> record. 
+</p><p>Some examples of the EC2 sizes are:
+</p>
+<ul><li>M3 Double Extra Large</li>
+<li>M2 High-Memory Extra Large</li>
+<li>M2 High-Memory Double Extra Large</li>
+<li>M2 High-Memory Quadruple Extra Large</li>
+<li>C1 High-CPU Medium</li>
+<li>C1 High-CPU Extra Large</li></ul>
+<p>New sizes provided by Amazon must be added manually. 
+</p>
+<ol><li>Navigate to <b>Amazon Web Services &gt; Service Catalog &gt; Sizes</b>. </li>
+<li>Click <b>New</b>.</li>
+<li>Provide the required information.
+<ul><li><b>Name:</b> <i>Friendly</i> name that has some indication of the actual size of the virtual machine.</li>
+<li><b>API name:</b> Actual Amazon EC2 name for this size.</li></ul></li>
+<li>Click <b>Submit</b>.</li></ol>
+<p>To change the price of an existing EC2 size:
+</p>
+<ol><li>Navigate to <b>Amazon Web Services &gt; Service Catalog &gt; Sizes</b>. </li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Lists&amp;oldid=0.html#Configuring_Lists" title="Configuring Lists">Configure</a> the list to show the <b>Price factor</b> column.
+<dl><dd>This is an arbitrary value that the system multiplies by the unit price from the <b>Price factor</b> record to determine the price of each image size.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Sizes_Price_Factor.png.html" class="image" title="EC2_Sizes_Price_Factor.png‎"><img alt="EC2_Sizes_Price_Factor.png‎" src="images/thumb/f/f3/EC2_Sizes_Price_Factor.png/900px-EC2_Sizes_Price_Factor.png" width="900" height="557" srcset="/images/f/f3/EC2_Sizes_Price_Factor.png 1.5x, /images/f/f3/EC2_Sizes_Price_Factor.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Edit the <b>Price factor</b> value for the image size.
+<dl><dd>The system calculates the new price immediately in the size record.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Pricing"><span class="mw-headline-number">3.4</span> Pricing</span></h2>
+<p>The base system contains one price record called <b>Price factor</b>. This record defines the unit price that is applied to all EC2 virtual machines provisioned from this instance. The price in this record is an arbitrary value and might not reflect the price structure in your organization. <i>Do not delete</i> the <b>Price factor</b> record, which would set all EC2 image prices to zero. To change the price structure for the service catalog offerings, edit the existing record.
+</p><p>To change the unit price for a virtual machine:
+</p>
+<ol><li>Navigate to <b>Amazon Web Services &gt; Service Catalog &gt; Prices</b></li>
+<li>Open the <b>Price factor</b> record.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Price_Factor.png.html" class="image" title="EC2_Price_Factor.png‎"><img alt="EC2_Price_Factor.png‎" src="images/thumb/2/2d/EC2_Price_Factor.png/900px-EC2_Price_Factor.png" width="900" height="102" srcset="/images/2/2d/EC2_Price_Factor.png 1.5x, /images/2/2d/EC2_Price_Factor.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Change the value in the <b>Service catalog price</b> field.
+<dl><dd>This is the amount charged to the user per unit as defined in the <a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html#Size_Definitions">size</a> record. A good practice is to modify the price per unit rather than changing the value in the <b>Elements per unit price</b> field.</dd></dl></li>
+<li>Click <b>Update</b>.</li></ol>
+<h1><span class="mw-headline" id="Creating_a_Catalog_Item"><span class="mw-headline-number">4</span> Creating a Catalog Item</span></h1>
+<p>EC2 images approved for provisioning from the service catalog are contained in the EC2 Approved Image [ec2_approved_images] table. To view catalog items created from EC2 images, navigate to <b>Amazon Web Services &gt; Maintain Items &gt; EC2 Items</b>. 
+</p><p>To create a service catalog item from an approved image: 
+</p>
+<ol><li>Navigate to <b>Amazon Web Services &gt; Instances &gt; Approved Images</b>. </li>
+<li>Select the image to use as a catalog item. 
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Create_Cat_Item.png.html" class="image" title="EC2_Create_Cat_Item.png"><img alt="EC2_Create_Cat_Item.png" src="images/thumb/4/4e/EC2_Create_Cat_Item.png/900px-EC2_Create_Cat_Item.png" width="900" height="288" srcset="/images/4/4e/EC2_Create_Cat_Item.png 1.5x, /images/4/4e/EC2_Create_Cat_Item.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Under <b>Related Links</b>, click <b>Create Catalog Item</b>. 
+<dl><dd>The VM Catalog Item form opens with the following fields pre-populated. 
+<ul><li><b>Name:</b> EC2 Instance - &lt;<i>size</i>&gt; - approved image name.</li>
+<li><b>Short description:</b> By default, this value is the same as the name.</li>
+<li><b>Description:</b> The description of the size selected.</li>
+<li><b>Price:</b> The price of the size selected. In the base system, this value is calculated from the hourly <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://aws.amazon.com/ec2/pricing/">cost of each size</a> in the most expensive, allowed region, multiplied by a default lease duration of 60 days. If you change the default lease duration time, you must recalculate the price manually. These price estimates might be higher than corresponding prices offered for EC2 virtual machines in your service catalog.</li>
+<li><b>VM template:</b> The approved image from which this catalog item was created.</li>
+<li><b>VM size:</b> The smallest ordered size for the image from which this catalog item was created.  </li></ul></dd></dl></li>
+<li>Complete the form as described in <a href="index.php%3Ftitle=Defining_Catalog_Items.html" title="Defining Catalog Items">Defining Catalog Items</a>. </li>
+<li>Select the virtual machine size in the <b>VM size</b> field. 
+<dl><dd>By default, the price is determined by the selection in the <b>VM size</b> field. If the size changes, or the price of the size changes, the system recalculates the item's price automatically.</dd></dl></li>
+<li>To override the price calculation manually, clear the <b>Calculate</b> check box and enter a new price for this item.</li>
+<li>Clear the <b>Skip approval</b> check box to require an approval for this item from the EC2 Approvers group. 
+<dl><dd>By default the catalog item skips the approval. When you skip approvals, other approvals that apply to requests through the service catalog are still required. </dd></dl></li>
+<li>Select the appropriate <b>Task automation</b> mode: 
+<ul><li><b>Fully automatic:</b> [Default] This selection enables automatic provisioning. No catalog task is assigned to the EC2 Operators group. </li>
+<li><b>Manual:</b> A catalog task for specifying provisioning information is assigned to the EC2 Operators group with no automatic selections. The EC2 operator can review the settings before closing the task. </li></ul>
+<dl><dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Catalog_Item_from_Template.png.html" class="image" title="EC2_Catalog_Item_from_Template.png"><img alt="EC2_Catalog_Item_from_Template.png" src="images/thumb/e/e1/EC2_Catalog_Item_from_Template.png/900px-EC2_Catalog_Item_from_Template.png" width="900" height="721" srcset="/images/e/e1/EC2_Catalog_Item_from_Template.png 1.5x, /images/e/e1/EC2_Catalog_Item_from_Template.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Click <b>Update</b>.</li></ol>
+<h2><span class="mw-headline" id="Field_Dependencies_for_Image_Sizes"><span class="mw-headline-number">4.1</span> Field Dependencies for Image Sizes</span></h2>
+<p>Values in these pre-populated fields are based on the size of the image you select. 
+</p>
+<ul><li><b>Name</b></li>
+<li><b>Short description</b></li>
+<li><b>Price</b></li>
+<li><b>Description</b></li></ul>
+<p>If you change the image size, but no other values, the pre-populated data adjusts according to the parameters of the new size. However, if you change a value in a pre-populated field before changing the size, the field value you changed is <i>not</i> updated when the size changes. This behavior allows you to change the price, name, or description of specific sized images.
+</p>
+<h3><span class="mw-headline" id="Example"><span class="mw-headline-number">4.1.1</span> Example</span></h3>
+<p>The default name of a service catalog item is <b>EC2 Instance - T1 Micro - ami-vpc-nat-1.0.0-beta.i386-ebs</b>. You change the size to <b>M1 Medium</b> without modifying the <b>Name</b> field. The system changes the name to <b>EC2 Instance - M1 Medium - ami-vpc-nat-1.0.0-beta.i386-ebs</b>. If you edit the <b>Name</b> field before changing the size, the item name is not changed.
+</p><p>Each of the four pre-populated fields behaves the same and is independent of the others. For example, if you change the name of the item but not the short description before selecting a new size, the name value is unaffected, but the short description adjusts to match the requirements of the new size.
+</p>
+<h1><span class="mw-headline" id="Verifying_the_Path_to_the_Catalog_Item"><span class="mw-headline-number">5</span> Verifying the Path to the Catalog Item</span></h1>
+<p>After creating the catalog item and the category path, verify your configuration in the Service Catalog.
+</p>
+<ol><li>Open the service catalog and follow the category path you created to this EC2 catalog item. 
+<dl><dd>The top level category may appear similar to the following: </dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:VM_Category1.png.html" class="image" title="VM_Category1.png"><img alt="VM_Category1.png" src="images/thumb/d/dc/VM_Category1.png/450px-VM_Category1.png" width="450" height="205" srcset="/images/d/dc/VM_Category1.png 1.5x, /images/d/dc/VM_Category1.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Click on the virtual machine you want and provide the requested information.
+<dl><dd>See <a href="index.php%3Ftitle=Amazon_EC2_Approvals_and_Provisioning_for_Cloud_Provisioning.html#Task_4:_Configure_the_Lease_Duration" title="Amazon EC2 Approvals and Provisioning for Cloud Provisioning">Configure the Lease Duration</a> for information about how to configure the properties that control the lease start and end date defaults. Enter the name of a business service or application that depends on this virtual machine.</dd>
+<dd><br /> </dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Order_Catalog_Item.png.html" class="image" title="EC2_Order_Catalog_Item.png‎"><img alt="EC2_Order_Catalog_Item.png‎" src="images/thumb/2/2d/EC2_Order_Catalog_Item.png/900px-EC2_Order_Catalog_Item.png" width="900" height="811" srcset="/images/2/2d/EC2_Order_Catalog_Item.png 1.5x, /images/2/2d/EC2_Order_Catalog_Item.png 2x" /></a> </dd>
+<dd><br /> </dd></dl></li>
+<li>Click <b>Order Now</b> to request the virtual machine.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130170514
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.283 seconds
+Real time usage: 0.383 seconds
+Preprocessor visited node count: 86/1000000
+Preprocessor generated node count: 240/1000000
+Post‐expand include size: 1899/2097152 bytes
+Template argument size: 469/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  104.085      1 - -total
+ 91.75%   95.497      1 - Template:Cloud_Provisioning
+ 81.25%   84.564      1 - Template:Topic
+  5.01%    5.214      1 - Embedded:Check-out_Redirect_Property
+  4.95%    5.151      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:17107-0!*!0!1!en!5!* and timestamp 20171130170514 and revision id 240216
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;oldid=240216.html">http://wiki.servicenow.com/index.php?title=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;oldid=240216</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Amazon+EC2+for+Cloud+Provisioning.html" title="Category:Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Cloud+Provisioning.html" title="Category:Cloud Provisioning">Cloud Provisioning</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Amazon+EC2+for+Cloud+Provisioning.html" title="Category:Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_17107"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="17107" data-vote-the-vote="5" data-vote-id="17107" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17107_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="17107" data-vote-the-vote="1" data-vote-id="17107" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17107_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning&amp;returnto=Creating+Catalog+Items+from+EC2+Images+in+Cloud+Provisioning&amp;oldid=240216&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;oldid=240216.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:30, 31 January 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":712});});</script></body></html>

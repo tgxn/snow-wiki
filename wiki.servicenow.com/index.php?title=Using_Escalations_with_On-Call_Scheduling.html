@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Escalations with On-Call Scheduling - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Escalations_with_On-Call_Scheduling","wgTitle":"Using Escalations with On-Call Scheduling","wgCurRevisionId":248888,"wgRevisionId":248888,"wgArticleId":22556,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["On-Call Scheduling"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Escalations_with_On-Call_Scheduling","wgRelevantArticleId":22556,"wgRequestId":"84d578a513f64d70ec952000","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20160203154956"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Escalations_with_On-Call_Scheduling"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Escalations with On-Call Scheduling"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="On-Call Scheduling"/>
+<meta name="category" content="On-Call Scheduling"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Escalations with On-Call Scheduling"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20160203154956"/>
+
+	<meta property="article:published_time" content="20160203154956"/>
+
+	<meta property="article:modified_time" content="20160203154956"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="On-Call Scheduling"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Escalations_with_On-Call_Scheduling"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Escalations_with_On-Call_Scheduling rootpage-Using_Escalations_with_On-Call_Scheduling skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Escalations+with+On-Call+Scheduling.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Escalations+with+On-Call+Scheduling&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Escalations with On-Call Scheduling</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=User_Administration.html" title="User Administration">User Administration</a> &gt; <a href="index.php%3Ftitle=On-Call_Scheduling.html" title="On-Call Scheduling">On-Call Scheduling</a> &gt; Using Escalations with On-Call Scheduling</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=On-Call_Scheduling.html" title="On-Call Scheduling">On-Call Scheduling</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a204eb694e86t'></div><script type="text/javascript">window.tamOnload_tam5a204eb694e86t=[];tree = new dTree('tam5a204eb694e86t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a204eb694e86t = tree;
+                                               tam5a204eb694e86t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrading_to_On-Call_Scheduling\&quot;" title=\"Upgrading to On-Call Scheduling\">Upgrading to On-Call Scheduling</a>');
+
+tam5a204eb694e86t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_On-Call_Schedules\&quot;" title=\"Creating On-Call Schedules\">Creating an On-Call Schedule</a>');
+tam5a204eb694e86t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_On-Call_Schedules\&quot;" title=\"Managing On-Call Schedules\">Managing On-Call Schedules</a>');
+tam5a204eb694e86t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_On-Call_Scheduling\&quot;" title=\"Using On-Call Scheduling\">Using On-Call Scheduling</a>');
+tam5a204eb694e86t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_On-Call_Scheduling\&quot;" title=\"Installed with On-Call Scheduling\">Installed Components</a>');
+tam5a204eb694e86t.add(6, 0, '<strong class=\"selflink\">Using Escalations</strong>');
+tam5a204eb694e86t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Notify_with_On-Call_Scheduling\&quot;" title=\"Using Notify with On-Call Scheduling\">Using Notify</a>');
+tam5a204eb694e86t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=On-Call_Scheduling_API\&quot;" title=\"On-Call Scheduling API\">On-Call Scheduling API</a>');
+
+                                               document.getElementById('5a204eb694e86t').innerHTML = tam5a204eb694e86t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a204eb694e86t) { window.tamOnload_tam5a204eb694e86t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Schedules&amp;oldid=0.html" title="Schedules" class="mw-redirect">Schedules</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:On-Call_Scheduling.html" title="Book:On-Call Scheduling"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:On-Call_Scheduling.html" title="Book:On-Call Scheduling">On-Call Scheduling</a> </center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Escalation_Triggers"><span class="tocnumber">2</span> <span class="toctext">Escalation Triggers</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Trigger_Rules"><span class="tocnumber">3</span> <span class="toctext">Trigger Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Example_Escalation_Scenario"><span class="tocnumber">3.1</span> <span class="toctext">Example Escalation Scenario</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Creating_Trigger_Rules"><span class="tocnumber">4</span> <span class="toctext">Creating Trigger Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#On-Call:_Escalations_by_Email_Workflow"><span class="tocnumber">4.1</span> <span class="toctext">On-Call: Escalations by Email Workflow</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Escalation_Chain"><span class="tocnumber">5</span> <span class="toctext">Escalation Chain</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Example_1:_Rotate_Through_Rosters"><span class="tocnumber">5.1</span> <span class="toctext">Example 1: Rotate Through Rosters</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Example_2:_Rotate_Through_Members"><span class="tocnumber">5.2</span> <span class="toctext">Example 2: Rotate Through Members</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Escalations provide a mechanism to ensure important issues are addressed in a timely manner within on-call scheduling. Escalations use a mechanism similar to SLAs to monitor response time and take time measurements. Take actions if these times are breached. The actions, like sending out an email or an SMS, are fired by trigger rules. Define trigger rules to determine the conditions under which specified actions are taken. 
+</p><p>For example, a critical incident is raised for Acme Pharmaceuticals regarding a problem with their network access. An SMS notification is sent to James Jones, the third-line support engineer who is currently on-call for this type of incident. However, James is unavailable, and does not respond within the defined 30-minute response time. 
+</p><p>Trigger rules defined for Acme Pharmaceuticals' critical incidents initiate an escalation after 30 minutes without a response. The person defined as the next point-of-contact is Ken Kramer, James' line manager, so an SMS notification is sent to Ken.
+</p><p>Escalation features are available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p><p>Users with the rota_admin role can configure escalation settings and define trigger rules.
+</p>
+<h1><span class="mw-headline" id="Escalation_Triggers"><span class="mw-headline-number">2</span> Escalation Triggers</span></h1>
+<p>Escalation triggers define the conditions under which escalation actions occur. These actions can be defined with a workflow or server-side JavaScript.
+</p><p>When a task gets created or updated, the system compares the assignment rules with the trigger conditions, to see if any of the trigger conditions are matched. If a match is found, the system activates the associated workflow or script, which holds the escalation steps and actions.
+</p><p>For example, a new P1 incident is created and assigned to the <b>Software Group</b>. A trigger condition exists to state that if P1 incidents are created and assigned to this group, then an associated script or workflow should run.
+</p>
+<h1><span class="mw-headline" id="Trigger_Rules"><span class="mw-headline-number">3</span> Trigger Rules</span></h1>
+<p>Escalations use <i>trigger rules</i> to define conditions under which a <i>trigger action</i> is to be executed. A trigger action can be either a script or workflow. Trigger rules are an extension of assignment rules and are therefore run by the system. The behavior of <a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Assignment_Rules_Module" title="Defining Assignment Rules">assignment rules</a> is used for trigger rules.
+</p><p>Trigger rules and trigger actions allow users to quickly set up escalation scenarios.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i> Since trigger rules are a variation of assignment rules, they do not execute if the assignment is performed manually.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Example_Escalation_Scenario"><span class="mw-headline-number">3.1</span> Example Escalation Scenario</span></h2>
+<p>Acme Pharmaceuticals needs to support a simple escalation process. When a critical or high incident is raised, a member of the Network group should be assigned to the incident based on the Network group's on-call schedule.
+</p><p>First, the trigger rule is defined with its conditions.
+</p><p><a href="index.php%3Ftitle=File:ExampleTriggerPointsAndActions1.png.html" class="image"><img alt="ExampleTriggerPointsAndActions1.png" src="images/thumb/f/f6/ExampleTriggerPointsAndActions1.png/800px-ExampleTriggerPointsAndActions1.png" width="800" height="293" class="thumbborder" srcset="/images/thumb/f/f6/ExampleTriggerPointsAndActions1.png/1200px-ExampleTriggerPointsAndActions1.png 1.5x, /images/thumb/f/f6/ExampleTriggerPointsAndActions1.png/1600px-ExampleTriggerPointsAndActions1.png 2x" /></a>
+</p><p>Next, the escalation group and trigger action can be defined.
+</p><p><a href="index.php%3Ftitle=File:ExampleTriggerPointsAndActions2.png.html" class="image"><img alt="ExampleTriggerPointsAndActions2.png" src="images/thumb/4/44/ExampleTriggerPointsAndActions2.png/800px-ExampleTriggerPointsAndActions2.png" width="800" height="202" class="thumbborder" srcset="/images/thumb/4/44/ExampleTriggerPointsAndActions2.png/1200px-ExampleTriggerPointsAndActions2.png 1.5x, /images/thumb/4/44/ExampleTriggerPointsAndActions2.png/1600px-ExampleTriggerPointsAndActions2.png 2x" /></a>
+</p><p>The trigger action runs a custom workflow, <a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#On-Call:_Escalations_by_Email_Workflow"> On-Call: Escalations by Email</a>, by which the Network group's current on-call resource automatically receives an email notification.
+</p>
+<h1><span class="mw-headline" id="Creating_Trigger_Rules"><span class="mw-headline-number">4</span> Creating Trigger Rules</span></h1>
+<p>To create a trigger rule&#160;:
+</p>
+<ol><li> Navigate to <b>On-Call Rotations &gt; Escalations &gt; Trigger Rules</b>.</li>
+<li> Click <b>New</b>.</li>
+<li> Fill in the fields, as appropriate (see table).
+<dl><dd> <a href="index.php%3Ftitle=File:TriggerPoint.png.html" class="image"><img alt="TriggerPoint.png" src="images/thumb/a/a4/TriggerPoint.png/800px-TriggerPoint.png" width="800" height="249" class="thumbborder" srcset="/images/thumb/a/a4/TriggerPoint.png/1200px-TriggerPoint.png 1.5x, /images/thumb/a/a4/TriggerPoint.png/1600px-TriggerPoint.png 2x" /></a></dd>
+<dd> <a href="index.php%3Ftitle=File:TriggerPoint1.png.html" class="image"><img alt="TriggerPoint1.png" src="images/thumb/2/21/TriggerPoint1.png/800px-TriggerPoint1.png" width="800" height="205" class="thumbborder" srcset="/images/thumb/2/21/TriggerPoint1.png/1200px-TriggerPoint1.png 1.5x, /images/thumb/2/21/TriggerPoint1.png/1600px-TriggerPoint1.png 2x" /></a></dd></dl></li>
+<li> Click <b>Submit</b>.</li></ol>
+<table class="standard">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> The name of this trigger rule.
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td> The execution order of this trigger rule.
+</td></tr>
+<tr>
+<td> Table
+</td>
+<td> A task table that applies to the trigger rule.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the trigger rule (starting with the Fuji release).</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td> Match conditions
+</td>
+<td> How the conditions should be applied. If you select <b>All</b>, all of the conditions have to be matched. If you select <b>Any</b>, it is sufficient if any one of the conditions is matched.
+</td></tr>
+<tr>
+<td> Conditions
+</td>
+<td> The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Condition+Builder&amp;oldid=0.html" title="Condition Builder">conditions</a> which have to be met before the trigger rule executes.
+</td></tr>
+<tr>
+<td> Group
+</td>
+<td> Select the user group to automatically assign the task to when this escalation occurs.
+</td></tr>
+<tr>
+<td> Trigger action
+</td>
+<td> Select whether to run a <b>Workflow</b> or <b>Script</b> when the trigger conditions are met.
+</td></tr>
+<tr>
+<td> Trigger workflow
+</td>
+<td> Select the workflow to execute. This field is available only if the <b>Trigger action</b> is set to <b>Workflow</b>.
+</td></tr>
+<tr>
+<td> Trigger script
+</td>
+<td> The script to execute. This field is available only if the <b>Trigger action</b> is set to <b>Script</b>.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Trigger rules will only fire if the <tt>assigned_to</tt> and <tt>assignment_group</tt> fields are </i>not<i> populated on a record.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="On-Call:_Escalations_by_Email_Workflow"><span class="mw-headline-number">4.1</span> On-Call: Escalations by Email Workflow</span></h2>
+<p>The workflow enables sending an email notification regarding a newly raised incident to the on-call members of a particular group. The workflow does not expect a response to the email notifications it sent, but instead checks the source incident record for changes in the <b>assigned_to</b> field. Depending on the value of the <b>assigned_to</b> field of the source record, the workflow branches or loops until the escalation chain is exhausted or the <b>assigned_to</b> field of the source incident is populated. If none of the users accepts assignment in time, the catch-all person is notified, if configured.
+</p><p>The workflow respects time-off as specified in the rosters. People who have time-off are not included in the escalation chain and no notifications are sent to them.
+</p><p>The workflow is intended to be used on a trigger rule based on the Incident table but other tables can be used as well. If you want to use a different table for this workflow, select the appropriate table, for example, Problem, in the <b>Trigger Workflow</b> field on the trigger rule form. This workflow is provided with on-call scheduling.
+</p><p><a href="index.php%3Ftitle=File:Workflow_Escalations_by_Email2.png.html" class="image"><img alt="Workflow Escalations by Email2.png" src="images/thumb/5/5b/Workflow_Escalations_by_Email2.png/900px-Workflow_Escalations_by_Email2.png" width="900" height="405" srcset="/images/thumb/5/5b/Workflow_Escalations_by_Email2.png/1350px-Workflow_Escalations_by_Email2.png 1.5x, /images/thumb/5/5b/Workflow_Escalations_by_Email2.png/1800px-Workflow_Escalations_by_Email2.png 2x" /></a>
+</p>
+<h1><span class="mw-headline" id="Escalation_Chain"><span class="mw-headline-number">5</span> Escalation Chain</span></h1>
+<p>An escalation chain describes the order in which rosters and roster members receive escalation notifications. 
+Depending on the number of rosters, the rota escalation type is one of the following:
+</p>
+<ul><li> <b>Rotate through members:</b> the escalation chain goes through the member list of a specific roster (primary, secondary, tertiary) to determine who is to be notified.</li>
+<li> <b>Rotate through rosters:</b> the escalation chain goes through all the rosters to determine who is to be notified.</li></ul>
+<p>Depending on the escalation type you chose, the result can vary greatly. See <a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Example_1:_Rotate_Through_Rosters">Example 1: Rotate Through Rosters</a> and <a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html#Example_2:_Rotate_Through_Members">Example 2: Rotate Through Members</a>.
+</p>
+<h2><span class="mw-headline" id="Example_1:_Rotate_Through_Rosters"><span class="mw-headline-number">5.1</span> Example 1: Rotate Through Rosters</span></h2>
+<p>The escalation type on the rota is set to <b>Rotate through rosters</b>. 
+</p><p>The escalations report shows the escalation chain for this case. 
+To view the escalations report:
+</p>
+<ol><li> Navigate to <b>On-Call Scheduling &gt; Escalations &gt; Escalations Report</b>.</li>
+<li> Select the <b>Date</b> for which you want to view the escalations report.</li>
+<li> Select at least one <b>Group</b> for the report. In this case, Service Desk.</li>
+<li> Select <b>For each group, show:</b> Active roster members.</li>
+<li> Click <b>Run Report</b>.</li></ol>
+<p>The image shows the case in which reminders are defined for the <b>Primary</b>, <b>Secondary</b>, and <b>Tertiary</b> rosters. The members of the primary roster are notified first, then the members of the secondary, and so on for as many rosters as there are.
+</p><p><a href="index.php%3Ftitle=File:NewNotifReportRotateThroughRosters.png.html" class="image"><img alt="NewNotifReportRotateThroughRosters.png" src="images/thumb/d/dc/NewNotifReportRotateThroughRosters.png/1100px-NewNotifReportRotateThroughRosters.png" width="1100" height="314" srcset="/images/d/dc/NewNotifReportRotateThroughRosters.png 1.5x, /images/d/dc/NewNotifReportRotateThroughRosters.png 2x" /></a>
+</p><p>For this example, users can see which rotas they are part of in the <b>My Schedule Report</b> module. Users who are not the first on-call person are displayed as well. This enables the user to view the rota from a personal perspective, which is the preferred method for most users.
+</p>
+<h2><span class="mw-headline" id="Example_2:_Rotate_Through_Members"><span class="mw-headline-number">5.2</span> Example 2: Rotate Through Members</span></h2>
+<p>The escalation type on the rota is set to <b>Rotate through members</b>. 
+</p><p>The escalations report shows the escalation chain for this case. The image shows the case in which there is only a <b>Primary roster</b> with two reminders.
+</p><p><a href="index.php%3Ftitle=File:NewNotifReportRotateThroughMembers.png.html" class="image"><img alt="NewNotifReportRotateThroughMembers.png" src="images/thumb/8/8b/NewNotifReportRotateThroughMembers.png/1000px-NewNotifReportRotateThroughMembers.png" width="1000" height="360" srcset="/images/8/8b/NewNotifReportRotateThroughMembers.png 1.5x, /images/8/8b/NewNotifReportRotateThroughMembers.png 2x" /></a>
+</p><p>For this example, users who are not the first on-call person do <i>not</i> see themselves in the <b>My Schedule Report</b> module. This is caused by the <b>Rotate through members</b> logic: everybody on a rota is <i>always</i> on the escalation chain, which diminishes the value of viewing the rota from a personal perspective.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130183222
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.184 seconds
+Real time usage: 0.246 seconds
+Preprocessor visited node count: 97/1000000
+Preprocessor generated node count: 303/1000000
+Post‐expand include size: 2984/2097152 bytes
+Template argument size: 813/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   58.228      1 - -total
+ 82.75%   48.186      1 - Template:On-Call_Scheduling
+ 75.87%   44.175      1 - Template:Topic
+  8.03%    4.674      3 - Template:Note
+  7.35%    4.279      1 - Template:TableScopeNote
+  7.08%    4.121      4 - Template:T
+  6.23%    3.630      1 - Embedded:On-Call_Scheduling
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22556-0!*!0!1!en!5!* and timestamp 20171130183222 and revision id 248888
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling&amp;oldid=248888.html">http://wiki.servicenow.com/index.php?title=Using_Escalations_with_On-Call_Scheduling&amp;oldid=248888</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=On-Call+Scheduling.html" title="Category:On-Call Scheduling">On-Call Scheduling</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=User+Administration.html" title="Category:User Administration">User Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=On-Call+Scheduling.html" title="Category:On-Call Scheduling">On-Call Scheduling</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22556"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22556" data-vote-the-vote="5" data-vote-id="22556" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22556_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22556" data-vote-the-vote="1" data-vote-id="22556" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22556_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Using+Escalations+with+On-Call+Scheduling.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Using+Escalations+with+On-Call+Scheduling.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Escalations_with_On-Call_Scheduling.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Escalations+with+On-Call+Scheduling.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Escalations+with+On-Call+Scheduling&amp;returnto=Using+Escalations+with+On-Call+Scheduling&amp;oldid=248888&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Escalations_with_On-Call_Scheduling.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Escalations_with_On-Call_Scheduling" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling&amp;oldid=248888.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Escalations_with_On-Call_Scheduling&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:49, 3 February 2016.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":936});});</script></body></html>

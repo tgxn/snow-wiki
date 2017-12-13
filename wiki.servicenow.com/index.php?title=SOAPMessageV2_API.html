@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>SOAPMessageV2 API - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SOAPMessageV2_API","wgTitle":"SOAPMessageV2 API","wgCurRevisionId":251147,"wgRevisionId":251147,"wgArticleId":23990,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Web Services APIs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SOAPMessageV2_API","wgRelevantArticleId":23990,"wgRequestId":"96b93e6830e0b5d221e70ed3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170926161753"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=SOAPMessageV2_API"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="SOAPMessageV2 API"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Web Services APIs"/>
+<meta name="category" content="Web Services APIs"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=SOAPMessageV2_API.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:SOAPMessageV2 API"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170926161753"/>
+
+	<meta property="article:published_time" content="20170926161753"/>
+
+	<meta property="article:modified_time" content="20170926161753"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Web Services APIs"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=SOAPMessageV2_API"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SOAPMessageV2_API rootpage-SOAPMessageV2_API skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SOAPMessageV2+API.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=SOAPMessageV2+API&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">SOAPMessageV2 API</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a> &gt; SOAPMessageV2 API</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=SOAPMessageV2_API.html#column-one">navigation</a>, <a href="index.php%3Ftitle=SOAPMessageV2_API.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://developer.servicenow.com/app.do#!/api_doc?v=jakarta&amp;id=c_SOAPMessageV2API">SOAPMessageV2</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://developer.servicenow.com">https://developer.servicenow.com</a></b>
+</p><p><b>The ServiceNow Wiki is no longer being updated. Please refer to the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://developer.servicenow.com/app.do#!/home">Developer Portal</a> for the latest information.</b>
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a209d49b61eft'></div><script type="text/javascript">window.tamOnload_tam5a209d49b61eft=[];tree = new dTree('tam5a209d49b61eft');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a209d49b61eft = tree;
+                                               tam5a209d49b61eft.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API\&quot;" title=\"REST API\">Inbound REST</a>');
+
+tam5a209d49b61eft.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_REST\&quot;" title=\"Getting Started with REST\">Getting Started with REST</a>');
+tam5a209d49b61eft.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Table_API\&quot;" title=\"Table API\">Table API</a>');
+tam5a209d49b61eft.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_API\&quot;" title=\"Import Set API\">Import Set API</a>');
+tam5a209d49b61eft.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API\&quot;" title=\"Aggregate API\">Aggregate API</a>');
+tam5a209d49b61eft.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API_Examples\&quot;" title=\"Aggregate API Examples\">Aggregate API Examples</a>');
+tam5a209d49b61eft.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API_Explorer\&quot;" title=\"REST API Explorer\">REST API Explorer</a>');
+tam5a209d49b61eft.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Web_Service\&quot;" title=\"SOAP Web Service\">Inbound SOAP</a>');
+tam5a209d49b61eft.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Direct_Web_Service_API\&quot;" title=\"SOAP Direct Web Service API\">Direct SOAP API</a>');
+tam5a209d49b61eft.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_SOAP_Web_Service_Security\&quot;" title=\"Inbound SOAP Web Service Security\">Inbound SOAP Security</a>');
+tam5a209d49b61eft.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting_Related_Records_Using_SOAP\&quot;" title=\"Inserting Related Records Using SOAP\">Inserting Related Records</a>');
+tam5a209d49b61eft.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AttachmentCreator_SOAP_Web_Service\&quot;" title=\"AttachmentCreator SOAP Web Service\">Attachment Creator Web Service</a>');
+tam5a209d49b61eft.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ECC_Queue_Retry_Policy\&quot;" title=\"ECC Queue Retry Policy\">ECC Queue Retry Policy</a>');
+tam5a209d49b61eft.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Session_Management_and_Reporting\&quot;" title=\"SOAP Session Management and Reporting\">SOAP Session Management and Reporting</a>');
+tam5a209d49b61eft.add(15, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Long-Running_SOAP_Request_Support\&quot;" title=\"Long-Running SOAP Request Support\">Long-Running SOAP Request Support</a>');
+tam5a209d49b61eft.add(16, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Static_WSDL\&quot;" title=\"Creating a Static WSDL\">Creating a Static WSDL</a>');
+tam5a209d49b61eft.add(17, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_Integrations_Best_Practices\&quot;" title=\"Web Services Integrations Best Practices\">Web Services Integrations Best Practices</a>');
+tam5a209d49b61eft.add(18, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API\&quot;" title=\"Perl API\">Perl API</a>');
+tam5a209d49b61eft.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_ServiceNow\&quot;" title=\"Perl API ServiceNow\">Perl ServiceNow Module</a>');
+tam5a209d49b61eft.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_GlideRecord\&quot;" title=\"Perl API GlideRecord\">GlideRecord</a>');
+tam5a209d49b61eft.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Task\&quot;" title=\"Perl API Task\">Task</a>');
+tam5a209d49b61eft.add(22, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Incident\&quot;" title=\"Perl API Incident\">Incident</a>');
+tam5a209d49b61eft.add(23, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Problem\&quot;" title=\"Perl API Problem\">Problem</a>');
+tam5a209d49b61eft.add(24, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Change\&quot;" title=\"Perl API Change\">Change</a>');
+tam5a209d49b61eft.add(25, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Request\&quot;" title=\"Perl API Request\">Request</a>');
+tam5a209d49b61eft.add(26, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_RequestedItem\&quot;" title=\"Perl API RequestedItem\">RequestedItem</a>');
+tam5a209d49b61eft.add(27, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_SC_Task\&quot;" title=\"Perl API SC Task\">SC_Task</a>');
+tam5a209d49b61eft.add(28, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Ticket\&quot;" title=\"Perl API Ticket\">Ticket</a>');
+tam5a209d49b61eft.add(29, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Approval\&quot;" title=\"Perl API Approval\">Approval</a>');
+tam5a209d49b61eft.add(30, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Dictionary\&quot;" title=\"Perl API Dictionary\">Dictionary</a>');
+tam5a209d49b61eft.add(31, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Configuration\&quot;" title=\"Perl API Configuration\">Configuration</a>');
+tam5a209d49b61eft.add(32, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Attachment\&quot;" title=\"Perl API Attachment\">Attachment</a>');
+tam5a209d49b61eft.add(33, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Driver\&quot;" title=\"ODBC Driver\">ODBC Driver</a>');
+tam5a209d49b61eft.add(34, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_ODBC\&quot;" title=\"Getting Started with ODBC\">ODBC Quick Start Guide</a>');
+tam5a209d49b61eft.add(35, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installing_the_ODBC_Driver\&quot;" title=\"Installing the ODBC Driver\">Installing the Driver</a>');
+tam5a209d49b61eft.add(36, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_the_ODBC_Driver\&quot;" title=\"Configuring the ODBC Driver\">Configuring the Driver</a>');
+tam5a209d49b61eft.add(37, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Testing_the_ODBC_Driver\&quot;" title=\"Testing the ODBC Driver\">Testing the Driver</a>');
+tam5a209d49b61eft.add(38, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver\&quot;" title=\"Using the ODBC Driver\">Using the Driver</a>');
+tam5a209d49b61eft.add(39, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a>');
+tam5a209d49b61eft.add(40, 33, 'ODBC Client Configuration');
+tam5a209d49b61eft.add(41, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=HTTP_Client_Connection_Management\&quot;" title=\"HTTP Client Connection Management\">HTTP Client Connection Management</a>');
+tam5a209d49b61eft.add(42, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Interactive_SQL_With_ODBC\&quot;" title=\"Using Interactive SQL With ODBC\">Running Interactive SQL (ODBC)</a>');
+tam5a209d49b61eft.add(43, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Excel_2010\&quot;" title=\"Using the ODBC Driver in Excel 2010\" class=\"mw-redirect\">Using the ODBC Driver in Excel 2010</a>');
+tam5a209d49b61eft.add(44, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Crystal_Reports_2008\&quot;" title=\"Using the ODBC Driver in Crystal Reports 2008\" class=\"mw-redirect\">Using the ODBC Driver in Crystal Reports 2008</a>');
+tam5a209d49b61eft.add(45, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ODBC_Driver_in_SQL_Server_2008\&quot;" title=\"Using ODBC Driver in SQL Server 2008\" class=\"mw-redirect\">Using ODBC Driver in SQL Server 2008</a>');
+tam5a209d49b61eft.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Additional Direct Web Services</a>');
+tam5a209d49b61eft.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CSV_Web_Service\&quot;" title=\"CSV Web Service\">CSV</a> ');
+tam5a209d49b61eft.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EXCEL_Web_Service\&quot;" title=\"EXCEL Web Service\">EXCEL</a>');
+tam5a209d49b61eft.add(49, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSONv2_Web_Service\&quot;" title=\"JSONv2 Web Service\">JSONv2</a>');
+tam5a209d49b61eft.add(50, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Web_Service\&quot;" title=\"PDF Web Service\">PDF</a>');
+tam5a209d49b61eft.add(51, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=XML_Web_Service\&quot;" title=\"XML Web Service\">XML</a>');
+tam5a209d49b61eft.add(52, 46, 'RSS ');
+tam5a209d49b61eft.add(53, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Generator\&quot;" title=\"RSS Feed Generator\">RSS Feed Generator</a> ');
+tam5a209d49b61eft.add(54, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Reader\&quot;" title=\"RSS Feed Reader\">RSS Feed Reader</a>');
+tam5a209d49b61eft.add(55, 0, 'Inbound Examples');
+tam5a209d49b61eft.add(56, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Java_Apache_Axis2_Web_Services_Client_Examples\&quot;" title=\"Java Apache Axis2 Web Services Client Examples\">Java Apache Axis2 Client</a>');
+tam5a209d49b61eft.add(57, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_.NET_Web_Services_Client_Examples\&quot;" title=\"Microsoft .NET Web Services Client Examples\">Microsoft .NET Client</a>');
+tam5a209d49b61eft.add(58, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_Web_Services_Client_Examples\&quot;" title=\"Perl Web Services Client Examples\">Perl Client</a>');
+tam5a209d49b61eft.add(59, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Python_Web_Services_Client_Examples\&quot;" title=\"Python Web Services Client Examples\">Python Client</a>');
+tam5a209d49b61eft.add(60, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Retrieving_A_Large_Number_Of_Records_Using_SOAP\&quot;" title=\"Retrieving A Large Number Of Records Using SOAP\">Retrieving A Large Number Of Records</a>');
+tam5a209d49b61eft.add(61, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_C_Sharp_.NET_End_to_End_Tutorial\&quot;" title=\"Web Services C Sharp .NET End to End Tutorial\">C Sharp .NET End to End</a>');
+tam5a209d49b61eft.add(62, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Service_Tutorial\&quot;" title=\"Scripted Web Service Tutorial\">Scripted Web Service</a>');
+tam5a209d49b61eft.add(63, 0, 'Outbound Web Services');
+tam5a209d49b61eft.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service\&quot;" title=\"Outbound REST Web Service\">Outbound REST</a>');
+tam5a209d49b61eft.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_SOAP_Web_Service\&quot;" title=\"Outbound SOAP Web Service\">Outbound SOAP</a>');
+tam5a209d49b61eft.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_Web_Services_Mutual_Authentication\&quot;" title=\"Outbound Web Services Mutual Authentication\">Outbound Mutual Authentication</a>');
+tam5a209d49b61eft.add(67, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_REST\&quot;" title=\"Scripting Outbound REST\">Scripting Outbound REST</a>');
+tam5a209d49b61eft.add(68, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP\&quot;" title=\"Scripting Outbound SOAP\">Scripting Outbound SOAP</a>');
+tam5a209d49b61eft.add(69, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP_-_Versions_Prior_to_Fuji\&quot;" title=\"Scripting Outbound SOAP - Versions Prior to Fuji\">Scripting Outbound SOAP Prior to Fuji</a>');
+tam5a209d49b61eft.add(70, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service_-_Versions_Prior_to_Fuji\&quot;" title=\"Outbound REST Web Service - Versions Prior to Fuji\">Outbound REST Prior to Fuji</a>');
+tam5a209d49b61eft.add(71, 63, 'Outbound APIs');
+tam5a209d49b61eft.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessage</a>');
+tam5a209d49b61eft.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponse</a>');
+tam5a209d49b61eft.add(74, 71, '<strong class=\"selflink\">SOAPMessage</strong>');
+tam5a209d49b61eft.add(75, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponse</a>');
+tam5a209d49b61eft.add(76, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Direct Web Services</a>');
+tam5a209d49b61eft.add(77, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Service_Import_Sets\&quot;" title=\"Web Service Import Sets\">Web Service Import Sets</a>');
+tam5a209d49b61eft.add(78, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Services\&quot;" title=\"Scripted Web Services\">Scripted Web Services</a>');
+
+                                               document.getElementById('5a209d49b61eft').innerHTML = tam5a209d49b61eft.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a209d49b61eft) { window.tamOnload_tam5a209d49b61eft[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div> 
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The SOAPMessageV2 API allows you to send an <a href="index.php%3Ftitle=Outbound_SOAP_Web_Service.html" title="Outbound SOAP Web Service">outbound SOAP message</a> using JavaScript. Use the <a href="index.php%3Ftitle=SOAPResponseV2_API.html" title="SOAPResponseV2 API">SOAPResponseV2 API</a> to manage the response returned by the SOAP provider. For examples demonstrating how to use this API, see <a href="index.php%3Ftitle=Scripting_Outbound_SOAP.html" title="Scripting Outbound SOAP">Scripting Outbound SOAP</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The outbound SOAP web service API is significantly enhanced with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>. This page describes current behavior. For previous version information, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Scripting+Outbound+SOAP+-+Versions+Prior+to+Fuji&amp;oldid=0.html" title="Scripting Outbound SOAP - Versions Prior to Fuji">Scripting Outbound SOAP - Versions Prior to Fuji</a>.</i>
+</td></tr></table>
+<p><b>NEW</b>: You can also find this class documented in the easy-to-read API reference on the Developer Program web site: <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://developer.servicenow.com/app.do#!/api_doc?to=class__soapmessagev2">SOAPMessageV2</a>.
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<table class="standard sortable">
+<tr>
+<th> Return Type
+</th>
+<th> Method
+</th></tr>
+<tr>
+<td> Not Applicable
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#SOAPMessageV2.28.29">SOAPMessageV2()</a>
+<dl><dd>The message constructor.</dd></dl>
+</td></tr>
+<tr>
+<td> Not Applicable
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#SOAPMessageV2.28String_soapMessage.2C_String_soapFunction.29">SOAPMessageV2(String soapMessage, String soapFunction)</a>
+<dl><dd>The message constructor.</dd></dl>
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=SOAPResponseV2_API.html" title="SOAPResponseV2 API">SOAPResponse</a>
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#execute.28.29">execute()</a>
+<dl><dd>Send the SOAP Message to the endpoint.</dd></dl>
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=SOAPResponseV2_API.html" title="SOAPResponseV2 API">SOAPResponse</a>
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#executeAsync.28.29">executeAsync()</a>
+<dl><dd>Send the SOAP Message to the endpoint asynchronously.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setSOAPAction.28String_soapAction.29">setSOAPAction(String soapAction)</a>
+<dl><dd>Define the SOAP action this SOAP message performs.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setHttpTimeout.28Number_timeoutMs.29">setHttpTimeout(Number timeoutMs)</a>
+<dl><dd>Set the amount of time the request waits for a response from the web service provider before the request times out.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setBasicAuth.28String_userName.2C_String_userPass.29">setBasicAuth(String userName, String userPass)</a>
+<dl><dd> Set basic authentication headers for the SOAP message.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setMutualAuth.28String_profileName.29">setMutualAuth(String profileName)</a>
+<dl><dd>Set the mutual authentication protocol profile for the SOAP message.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setWSSecurity.28String_keystoreId.2C_String_keystoreAlias.2C_String_keystorePassword.2C_String_certificateId.29">setWSSecurity(String keystoreId, String keystoreAlias, String keystorePassword, String certificateId)</a>
+<dl><dd>Set web service security values for the SOAP message.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setStringParameter.28String_name.2C_String_value.29">setStringParameter(String name, String value)</a>
+<dl><dd>Set a variable from the SOAP message record to the specified value.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setStringParameterNoEscape.28String_name.2C_String_value.29">setStringParameterNoEscape(String name, String value)</a>
+<dl><dd>Set a variable from the SOAP message record to the specified value without escaping XML reserved characters.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setEccCorrelator.28String_correlator.29">setEccCorrelator(String correlator)</a>
+<dl><dd>Associate outbound requests and the resulting response record in the ECC queue.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setEccParameter.28String_name.2C_String_value.29">setEccParameter(String name, String value)</a>
+<dl><dd>Override a value from the database by writing to the SOAP message payload.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setRequestHeader.28String_headerName.2C_String_headerValue.29">setRequestHeader(String headerName, String headerValue)</a>
+<dl><dd>Set an HTTP header in the SOAP message to the specified value.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setRequestBody.28String_requestBody.29">setRequestBody(String requestBody)</a>
+<dl><dd>Set the body content to send to the web service provider.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setEndpoint.28String_endpoint.29">setEndpoint(String endpoint)</a>
+<dl><dd>Set the endpoint for the SOAP message.</dd></dl>
+</td></tr>
+<tr>
+<td> void
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setMIDServer.28String_midServerName.29">setMIDServer(String midServerName)</a>
+<dl><dd>Configure the SOAP message to be sent through a MID Server.</dd></dl>
+</td></tr>
+<tr>
+<td> String
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#getRequestBody.28.29">getRequestBody()</a>
+<dl><dd>Get the content of the SOAP message body.</dd></dl>
+</td></tr>
+<tr>
+<td> String
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#getEndpoint.28.29">getEndpoint()</a>
+<dl><dd>Get the URL of the endpoint for the SOAP message.</dd></dl>
+</td></tr>
+<tr>
+<td> String
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#getRequestHeader.28String_headerName.29">getRequestHeader(String headerName)</a>
+<dl><dd>Get the value for an HTTP header specified by the SOAP client.</dd></dl>
+</td></tr>
+<tr>
+<td> Object
+</td>
+<td> <a href="index.php%3Ftitle=SOAPMessageV2_API.html#getRequestHeaders.28.29">getRequestHeaders()</a>
+<dl><dd>Get name and value for all HTTP headers specified by the SOAP client.</dd></dl>
+</td></tr>
+</table>
+<h1><span class="mw-headline" id="Constructors"><span class="mw-headline-number">3</span> Constructors</span></h1>
+<h2><span class="mw-headline" id="SOAPMessageV2.28.29"><span class="mw-headline-number">3.1</span> SOAPMessageV2()</span></h2>
+<p>Instantiates an empty SOAPMessageV2 object. When using an object instantiated this way, you must manually specify a <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setSOAPAction.28String_soapAction.29">SOAP action</a> and <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setEndpoint.28String_endpoint.29">endpoint</a>.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<h2><span class="mw-headline" id="SOAPMessageV2.28String_soapMessage.2C_String_soapFunction.29"><span class="mw-headline-number">3.2</span> SOAPMessageV2(String soapMessage, String soapFunction)</span></h2>
+<p>Instantiate a SOAPMessageV2 object from a <a href="index.php%3Ftitle=Outbound_SOAP_Web_Service.html" title="Outbound SOAP Web Service">SOAP message record</a> and a function associated with that record. Values such as the endpoint, authentication, or MID Server settings from the SOAP message record apply to this object.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>soapMessage</tt> - (String) the SOAP message record you want to use as the base for this object.</li>
+<li><tt>soapFunction</tt> - (String) the SOAP function you want to execute. Available SOAP functions depend on the WSDL supplied by the web service provider.</li></ul>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">4</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="execute.28.29"><span class="mw-headline-number">4.1</span> execute()</span></h2>
+<p>Send the SOAP message to the endpoint.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>SOAPResponse</tt> -  the response returned by the SOAP provider. For more information, see <a href="index.php%3Ftitle=SOAPResponseV2_API.html" title="SOAPResponseV2 API">SOAPResponseV2 API</a>.</dd></dl>
+<h2><span class="mw-headline" id="executeAsync.28.29"><span class="mw-headline-number">4.2</span> executeAsync()</span></h2>
+<p>Send the SOAP message to the <a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC queue</a>. SOAP messages in the ECC queue are processed by the <b>SOAPClient</b> business rule. By default, this business rule does not run asynchronously. To configure this business rule to run asynchronously, set the <b>When</b> value to <b>Async</b> and add <tt>current.update()</tt> to the end of the <b>Script</b>. The instance does not wait for a response from the web service provider when sending a message through the ECC queue. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>SOAPResponse</tt> -  the response returned by the SOAP provider. For more information, see <a href="index.php%3Ftitle=SOAPResponseV2_API.html" title="SOAPResponseV2 API">SOAPResponseV2 API</a>. Attempting to use the SOAP response object before the response has been processed may result in a timeout error.</dd></dl>
+<h2><span class="mw-headline" id="setSOAPAction.28String_soapAction.29"><span class="mw-headline-number">4.3</span> setSOAPAction(String soapAction)</span></h2>
+<p>Define the SOAP action this SOAP message to performs. The WSDL for your web service provider lists SOAP actions you can perform. You must call this method when using the <a href="index.php%3Ftitle=SOAPMessageV2_API.html#SOAPMessageV2.28.29">SOAPMessageV2()</a> constructor with no parameters. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>soapAction</tt> - (String) The SOAP action this SOAP message performs.</li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setHttpTimeout.28Number_timeoutMs.29"><span class="mw-headline-number">4.4</span> setHttpTimeout(Number timeoutMs)</span></h2>
+<p>Set the amount of time the SOAP message waits for a response from the web service provider before the request times out.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>timeoutMs</tt> - (Number) the amount of time to wait for a response from the web service provider, in milliseconds.</li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setBasicAuth.28String_userName.2C_String_userPass.29"><span class="mw-headline-number">4.5</span> setBasicAuth(String userName, String userPass)</span></h2>
+<p>Set basic authentication headers for the SOAP message. Setting basic authentication headers using this method overrides <a href="index.php%3Ftitle=Outbound_SOAP_Web_Service.html#Basic_Authentication" title="Outbound SOAP Web Service">basic authentication values defined in the SOAP message record</a>.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>userName</tt> - (String) the username to use when authenticating the SOAP message.</li>
+<li><tt>userPass</tt> - (String) the password for the specified user.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setMutualAuth.28String_profileName.29"><span class="mw-headline-number">4.6</span> setMutualAuth(String profileName)</span></h2>
+<p>Set the mutual authentication <a href="index.php%3Ftitle=Outbound_Web_Services_Mutual_Authentication.html" title="Outbound Web Services Mutual Authentication">protocol profile</a> for the SOAP message. Setting a protocol profile using this method overrides the protocol profile selected for the SOAP message record. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>profileName</tt> - (String) The <b>Name</b> of the <a href="index.php%3Ftitle=Outbound_Web_Services_Mutual_Authentication.html" title="Outbound Web Services Mutual Authentication">protocol profile</a> to use for mutual authentication.</li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setWSSecurity.28String_keystoreId.2C_String_keystoreAlias.2C_String_keystorePassword.2C_String_certificateId.29"><span class="mw-headline-number">4.7</span> setWSSecurity(String keystoreId, String keystoreAlias, String keystorePassword, String certificateId)</span></h2>
+<p>Sets web service security values for the SOAP message. Setting security values using this method overwrites <a href="index.php%3Ftitle=Outbound_SOAP_Web_Service.html#Web_Service_Security" title="Outbound SOAP Web Service">web service security values defined for the SOAP message record</a>.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>keystoreId</tt> - (String) the sys_id of the Java or PKCS12 key store to use.</li>
+<li><tt>keystoreAlias</tt> - (String) the alias that identifies the public and private keys.</li>
+<li><tt>keystorePassword</tt> - (String) the password assigned to the key store record.</li>
+<li><tt>certificateId</tt> - (String) the sys_id of the trusted server certificate.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setStringParameter.28String_name.2C_String_value.29"><span class="mw-headline-number">4.8</span> setStringParameter(String name, String value)</span></h2>
+<p>Set a variable with the specified name from the SOAP message record to the specified value. XML reserved characters in the value are converted to the equivalent escaped characters.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>name</tt> - (String) the name of the SOAP message variable.</li>
+<li><tt>value</tt> - (String) the value to assign to the specified variable.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setStringParameterNoEscape.28String_name.2C_String_value.29"><span class="mw-headline-number">4.9</span> setStringParameterNoEscape(String name, String value)</span></h2>
+<p>Set a variable with the specified name from the SOAP message record to the specified value. This method is equivalent to <a href="index.php%3Ftitle=SOAPMessageV2_API.html#setStringParameter.28String_name.2CString_value.29">setStringParameter</a> but does not escape XML reserved characters.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>name</tt> - (String) the name of the SOAP message variable.</li>
+<li><tt>value</tt> - (String) the value to assign to the specified variable.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setEccCorrelator.28String_correlator.29"><span class="mw-headline-number">4.10</span> setEccCorrelator(String correlator)</span></h2>
+<p>Associate outbound requests and the resulting response record in the ECC queue. This method only applies to SOAP messages sent through a MID Server. The correlator provided populates the <b>Agent correlator</b> field on the ECC queue record for the response. Provide a unique correlator for each outbound request to associate the correct results in the ECC queue with the request when designing asynchronous automation through a MID Server. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>correlator</tt> - (String) a unique identifier.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setEccParameter.28String_name.2C_String_value.29"><span class="mw-headline-number">4.11</span> setEccParameter(String name, String value)</span></h2>
+<p>Override a value from the database by writing to the SOAP message payload. This method only applies to SOAP messages sent through a MID Server. Use this method when a value from the SOAP message in the database is invalid, such as when the endpoint URL is longer than the maximum <b>SOAP endpoint</b> field length.
+</p><p>These are valid values for the <tt>name</tt> parameter.
+</p>
+<ul><li><b>source:</b> the endpoint URL.</li>
+<li><b>name:</b> the SOAP message function to run.</li></ul>
+<p><b>Parameters:</b>
+</p>
+<ul><li><tt>name</tt> - (String) the name of the ECC parameter.</li>
+<li><tt>value</tt> - (String) the value to assign to the specified ECC parameter.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setRequestHeader.28String_headerName.2C_String_headerValue.29"><span class="mw-headline-number">4.12</span> setRequestHeader(String headerName, String headerValue)</span></h2>
+<p>Set an HTTP header in the SOAP message to the specified value. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>headerName</tt> - (String) the name of the header.</li>
+<li><tt>headerValue</tt> - (String) the value to assign to the specified header.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setRequestBody.28String_requestBody.29"><span class="mw-headline-number">4.13</span> setRequestBody(String requestBody)</span></h2>
+<p>Set the body content to send to the web service provider. When you set the body content using this method, variables in the body are not substituted for parameters from the SOAP message function record. You must explicitly define all values within the SOAP message body.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>requestBody</tt> - (String) the body of the SOAP message.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setEndpoint.28String_endpoint.29"><span class="mw-headline-number">4.14</span> setEndpoint(String endpoint)</span></h2>
+<p>Set the endpoint for the SOAP message. By default, the SOAP message uses the endpoint specified in the SOAP message record. Use this method to override the default. You must call this method when using the <a href="index.php%3Ftitle=SOAPMessageV2_API.html#SOAPMessageV2.28.29">SOAPMessageV2()</a> constructor with no parameters. 
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>endpoint</tt> - (String) the URL of the SOAP web service provider you want to interface with.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="setMIDServer.28String_midServerName.29"><span class="mw-headline-number">4.15</span> setMIDServer(String midServerName)</span></h2>
+<p>Configure the SOAP message to be sent through a <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a>. By default, the SOAP message uses the MID Server specified in the SOAP message function record. Use this method to override the default.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>midServerName</tt> - (String) the name of the MID Server you want to send the SOAP message through. Your instance must have an active MID Server with the specified name.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<h2><span class="mw-headline" id="getRequestBody.28.29"><span class="mw-headline-number">4.16</span> getRequestBody()</span></h2>
+<p>Get the content of the SOAP message body.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>String</tt> - the SOAP message body.</dd></dl>
+<h2><span class="mw-headline" id="getEndpoint.28.29"><span class="mw-headline-number">4.17</span> getEndpoint()</span></h2>
+<p>Get the endpoint for the SOAP message.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>String</tt> - the URL of the SOAP web service provider.</dd></dl>
+<h2><span class="mw-headline" id="getRequestHeader.28String_headerName.29"><span class="mw-headline-number">4.18</span> getRequestHeader(String headerName)</span></h2>
+<p>Get the value for an HTTP header specified by the SOAP client. By default, this method cannot return the value for a header set automatically by the system. To grant this method access to all headers, set the property <tt>glide.http.log_debug</tt> to <b>true</b>.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>headerName</tt> - (String) the request header you want to get the value for.</li></ul>
+<p><b>Returns</b>:
+</p>
+<dl><dd><tt>String</tt> - the value of the specified header.</dd></dl>
+<h2><span class="mw-headline" id="getRequestHeaders.28.29"><span class="mw-headline-number">4.19</span> getRequestHeaders()</span></h2>
+<p>Get HTTP headers that were set by the SOAP client and the associated values. This method does not return headers set automatically by the system. To configure this method to return all headers, set the property <tt>glide.http.log_debug</tt> to <b>true</b>.
+</p><p><b>Parameters:</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns:</b>
+</p>
+<dl><dd><tt>Object</tt> - an Object that maps the name of each header to the associated value.</dd></dl>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201000738
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.418 seconds
+Real time usage: 0.493 seconds
+Preprocessor visited node count: 876/1000000
+Preprocessor generated node count: 2600/1000000
+Post‐expand include size: 9071/2097152 bytes
+Template argument size: 6166/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  210.696      1 - -total
+ 48.68%  102.577      1 - Template:Web_Services
+ 43.30%   91.221      1 - Template:Topic
+ 16.29%   34.324     30 - Template:JSParameter
+  9.27%   19.527     21 - Template:JSMethodSummary
+  9.21%   19.397     19 - Template:JSReturns
+  2.86%    6.028      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23990-0!*!0!1!*!5!* and timestamp 20171201000737 and revision id 251147
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=SOAPMessageV2_API&amp;oldid=251147.html">http://wiki.servicenow.com/index.php?title=SOAPMessageV2_API&amp;oldid=251147</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services.html" title="Category:Web Services">Web Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23990"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23990" data-vote-the-vote="5" data-vote-id="23990" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23990_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23990" data-vote-the-vote="1" data-vote-id="23990" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23990_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=SOAPMessageV2_API.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=SOAPMessageV2+API.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=SOAPMessageV2+API.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=SOAPMessageV2_API.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=SOAPMessageV2_API&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SOAPMessageV2+API.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=SOAPMessageV2+API&amp;returnto=SOAPMessageV2+API&amp;oldid=251147&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=SOAPMessageV2_API&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSOAPMessageV2_API.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/SOAPMessageV2_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=SOAPMessageV2_API&amp;oldid=251147.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=SOAPMessageV2_API&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:17, 26 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":711});});</script></body></html>

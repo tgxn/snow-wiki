@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Moving Workflows with Update Sets - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Moving_Workflows_with_Update_Sets","wgTitle":"Moving Workflows with Update Sets","wgCurRevisionId":250332,"wgRevisionId":250332,"wgArticleId":9050,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Workflow Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Moving_Workflows_with_Update_Sets","wgRelevantArticleId":9050,"wgRequestId":"dee64171c74d96dbdb8735d3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170823171622"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Moving_Workflows_with_Update_Sets"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Moving Workflows with Update Sets"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Workflow Administration"/>
+<meta name="category" content="Workflow Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Moving Workflows with Update Sets"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170823171622"/>
+
+	<meta property="article:published_time" content="20170823171622"/>
+
+	<meta property="article:modified_time" content="20170823171622"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Workflow Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Moving_Workflows_with_Update_Sets"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Moving_Workflows_with_Update_Sets rootpage-Moving_Workflows_with_Update_Sets skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Moving+Workflows+with+Update+Sets.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Moving+Workflows+with+Update+Sets&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Moving Workflows with Update Sets</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow</a> &gt; Workflow Administration &gt; Moving Workflows with Update Sets</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/workflow-administration/concept/c_WorkflowMovementWithUpdateSets.html">Workflow Movement with Update Sets</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Workflows.html" title="Workflows">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Workflows&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2040aad854dt'></div><script type="text/javascript">window.tamOnload_tam5a2040aad854dt=[];tree = new dTree('tam5a2040aad854dt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2040aad854dt = tree;
+                                               tam5a2040aad854dt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Resources\&quot;" title=\"Workflow Resources\">Resources</a>');
+
+tam5a2040aad854dt.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Concepts\&quot;" title=\"Workflow Concepts\">Concepts</a>');
+tam5a2040aad854dt.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Operations_Dashboard\&quot;" title=\"Workflow Operations Dashboard\">Operations Dashboard</a>');
+tam5a2040aad854dt.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Editor\&quot;" title=\"Using the Workflow Editor\">Workflow Editor</a>');
+tam5a2040aad854dt.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Graphical_Workflow_Editor_-_Versions_Prior_to_Fuji\&quot;" title=\"Using the Graphical Workflow Editor - Versions Prior to Fuji\">Workflow Editor - Prior to Fuji</a>');
+tam5a2040aad854dt.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Workflow\&quot;" title=\"Creating a Workflow\">Creating a Workflow</a>');
+tam5a2040aad854dt.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Workflow_Activities\&quot;" title=\"Using Workflow Activities\">Using Activities</a>');
+tam5a2040aad854dt.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Activities\&quot;" title=\"Condition Activities\">Condition</a>');
+tam5a2040aad854dt.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Notification_Activities\&quot;" title=\"Notification Activities\">Notification</a>');
+tam5a2040aad854dt.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subflow_Activities\&quot;" title=\"Subflow Activities\">Subflow</a>');
+tam5a2040aad854dt.add(11, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Timer_Activities\&quot;" title=\"Timer Activities\">Timer</a>');
+tam5a2040aad854dt.add(12, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Task_Activities\&quot;" title=\"Task Activities\">Task</a>');
+tam5a2040aad854dt.add(13, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Utility_Activities\&quot;" title=\"Utility Activities\">Utility</a>');
+tam5a2040aad854dt.add(14, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Scratchpad\&quot;" title=\"Using the Workflow Scratchpad\">Scratchpad</a>');
+tam5a2040aad854dt.add(15, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approval_and_Rollback_Activities\&quot;" title=\"Approval and Rollback Activities\">Approvals and Rollbacks</a>');
+tam5a2040aad854dt.add(16, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Transitions_for_the_Approval_-_User_Activity\&quot;" title=\"Custom Transitions for the Approval - User Activity\">Approval - User Activity</a>');
+tam5a2040aad854dt.add(17, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Selecting_a_Rollback_Activity\&quot;" title=\"Selecting a Rollback Activity\">Selecting a Rollback Activity</a>');
+tam5a2040aad854dt.add(18, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Designing_Workflows_with_Rollback_To\&quot;" title=\"Designing Workflows with Rollback To\">Designing Workflows with Rollback To</a>');
+tam5a2040aad854dt.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subflows\&quot;" title=\"Using Subflows\">Using Subflows</a>');
+tam5a2040aad854dt.add(20, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Variables_in_a_Workflow\&quot;" title=\"Using Variables in a Workflow\">Using Variables</a>');
+tam5a2040aad854dt.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Events\&quot;" title=\"Workflow Events\">Events</a>');
+tam5a2040aad854dt.add(22, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stages\&quot;" title=\"Workflow Stages\">Stages</a>');
+tam5a2040aad854dt.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Sets\&quot;" title=\"Workflow Stage Sets\" class=\"mw-redirect\">Stage Sets</a>');
+tam5a2040aad854dt.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Fields\&quot;" title=\"Workflow Stage Fields\">Stage Fields</a>');
+tam5a2040aad854dt.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Displaying_Stage_Icons\&quot;" title=\"Displaying Stage Icons\">Stage Icons</a>');
+tam5a2040aad854dt.add(26, 0, 'Administering Workflows');
+tam5a2040aad854dt.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_Workflow_Contexts\&quot;" title=\"Administering Workflow Contexts\">Workflow Contexts</a>');
+tam5a2040aad854dt.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_a_Workflow\&quot;" title=\"Scheduling a Workflow\">Scheduling</a>');
+tam5a2040aad854dt.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Workflow_Security\&quot;" title=\"Configuring Workflow Security\">Security</a>');
+tam5a2040aad854dt.add(30, 26, '<strong class=\"selflink\">Using Update Sets</strong>');
+tam5a2040aad854dt.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Timelines\&quot;" title=\"Workflow Timelines\">Timelines</a>');
+tam5a2040aad854dt.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Error_Handling\&quot;" title=\"Workflow Error Handling\">Error Handling</a>');
+tam5a2040aad854dt.add(33, 26, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Run_Time_Metrics\&quot;" title=\"Workflow Run Time Metrics\">Run Time Metrics</a>');
+tam5a2040aad854dt.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Troubleshooting_Workflows\&quot;" title=\"Troubleshooting Workflows\">Troubleshooting</a>');
+tam5a2040aad854dt.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation\&quot;" title=\"Workflow Validation\">Workflow Validation</a>');
+tam5a2040aad854dt.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation_Report\&quot;" title=\"Workflow Validation Report\">Reports</a>');
+tam5a2040aad854dt.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validators\&quot;" title=\"Workflow Validators\">Validators</a>');
+tam5a2040aad854dt.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionOut\&quot;" title=\"Workflow Validator - ValidateTransitionOut\">Exit Transition</a>');
+tam5a2040aad854dt.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionIn\&quot;" title=\"Workflow Validator - ValidateTransitionIn\">Inbound Transition</a>');
+tam5a2040aad854dt.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateDanglingTransition\&quot;" title=\"Workflow Validator - ValidateDanglingTransition\">Dangling Transition</a> ');
+tam5a2040aad854dt.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSubflows\&quot;" title=\"Workflow Validator - ValidateSubflows\">Subflows</a> ');
+tam5a2040aad854dt.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateScriptForCurrentDotUpdate\&quot;" title=\"Workflow Validator - ValidateScriptForCurrentDotUpdate\">current.update()</a>');
+tam5a2040aad854dt.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateLowestCommonTable\&quot;" title=\"Workflow Validator - ValidateLowestCommonTable\">Lowest Common Table</a>');
+tam5a2040aad854dt.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTableChange\&quot;" title=\"Workflow Validator - ValidateTableChange\"> Table Change</a>');
+tam5a2040aad854dt.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateParentFlow\&quot;" title=\"Workflow Validator - ValidateParentFlow\">Parent Flow</a>');
+tam5a2040aad854dt.add(46, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSingleEnd\&quot;" title=\"Workflow Validator - ValidateSingleEnd\">Multiple Ends</a>');
+tam5a2040aad854dt.add(47, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetDependencies\">Update Sets - Dependencies</a>');
+tam5a2040aad854dt.add(48, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetParentDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetParentDependencies\">Update Sets - Parent Dependencies</a>');
+tam5a2040aad854dt.add(49, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateInputVarUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateInputVarUpdateSetDependencies\">Update Sets - Variable Dependencies</a>');
+
+                                               document.getElementById('5a2040aad854dt').innerHTML = tam5a2040aad854dt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2040aad854dt) { window.tamOnload_tam5a2040aad854dt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+VMWare+Support+Plugin&amp;oldid=0.html" title="Orchestration VMWare Support Plugin" class="mw-redirect">Orchestration VMWare Support</a></li>
+<li><a href="index.php%3Ftitle=Service_Catalog_Workflows.html" title="Service Catalog Workflows">Service Catalog Workflows</a> <div class='dtree' id='5a2040ab05251t'></div><script type="text/javascript">window.tamOnload_tam5a2040ab05251t=[];tree = new dTree('tam5a2040ab05251t');</li></ul>
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2040ab05251t = tree;
+                                               tam5a2040ab05251t.add(1, 0, 'Workflow Examples');
+
+tam5a2040ab05251t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_an_SLA_Workflow\&quot;" title=\"Creating an SLA Workflow\">SLA</a>');
+tam5a2040ab05251t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Service_Catalog_Workflow\&quot;" title=\"Defining a Service Catalog Workflow\">Service Catalog</a>');
+tam5a2040ab05251t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Problem_Management_Workflow\&quot;" title=\"Defining a Problem Management Workflow\">Problem</a>');
+tam5a2040ab05251t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Change_Management_Workflow\&quot;" title=\"Defining a Change Management Workflow\">Change</a>');
+tam5a2040ab05251t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Management_Workflows_Plugin\&quot;" title=\"Change Management Workflows Plugin\" class=\"mw-redirect\">Change Workflows Plugin</a>');
+tam5a2040ab05251t.add(7, 0, 'Approval Case Study');
+tam5a2040ab05251t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_1)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 1)\">Part One</a>');
+tam5a2040ab05251t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_2)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 2)\">Part Two</a>');
+
+                                               document.getElementById('5a2040ab05251t').innerHTML = tam5a2040ab05251t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2040ab05251t) { window.tamOnload_tam5a2040ab05251t[i](); }</script>
+
+
+<center><a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow">Get the Book</a></center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Tables_and_Versions"><span class="tocnumber">2</span> <span class="toctext">Tables and Versions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Workflow_Update_Set_Migration"><span class="tocnumber">3</span> <span class="toctext">Workflow Update Set Migration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Simple"><span class="tocnumber">3.1</span> <span class="toctext">Use Case - Simple</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Success.29"><span class="tocnumber">3.2</span> <span class="toctext">Use Case - Subflow Dependency (Success)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Failure.29"><span class="tocnumber">3.3</span> <span class="toctext">Use Case - Subflow Dependency (Failure)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Risk.29"><span class="tocnumber">3.4</span> <span class="toctext">Use Case - Subflow Dependency (Risk)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Moving_Input_Variables"><span class="tocnumber">4</span> <span class="toctext">Moving Input Variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case"><span class="tocnumber">4.1</span> <span class="toctext">Use Case</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Adding_Input_Variables_-_Success"><span class="tocnumber">4.1.1</span> <span class="toctext">Adding Input Variables - Success</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Removing_Input_Variables"><span class="tocnumber">4.2</span> <span class="toctext">Removing Input Variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Risk"><span class="tocnumber">4.2.1</span> <span class="toctext">Risk</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Solution"><span class="tocnumber">4.2.2</span> <span class="toctext">Solution</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Prevention"><span class="tocnumber">4.2.3</span> <span class="toctext">Prevention</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Avoiding_Duplicate_Workflows"><span class="tocnumber">4.3</span> <span class="toctext">Avoiding Duplicate Workflows</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Risk_2"><span class="tocnumber">4.3.1</span> <span class="toctext">Risk</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>ServiceNow tracks workflows in update sets differently than other records because workflow information is stored across <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Tables" title="Workflow Concepts">multiple tables</a>. Changes made to a workflow version are not added to the update set until the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+a+Workflow&amp;oldid=0.html#Publishing_a_Workflow" title="Creating a Workflow">workflow is published</a>, at which point the entire workflow is added into the update set. For additional information about update sets, see:
+</p>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Update+Sets&amp;oldid=0.html" title="System Update Sets">System Update Sets</a></li>
+<li><a href="index.php%3Ftitle=Workflow_Validator_-_ValidateUpdateSetDependencies.html" title="Workflow Validator - ValidateUpdateSetDependencies">ValidateUpdateSetDependencies</a></li></ul>
+<h1><span class="mw-headline" id="Tables_and_Versions"><span class="mw-headline-number">2</span> Tables and Versions</span></h1>
+<p>Update sets store workflows as a single Workflow [wf_workflow] record and only retain the latest version with the update type of <b>Workflow</b>, starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h1><span class="mw-headline" id="Workflow_Update_Set_Migration"><span class="mw-headline-number">3</span> Workflow Update Set Migration</span></h1>
+<p>Examine the following use cases to avoid common mistakes when moving a workflow with an update set:
+</p>
+<ul><li><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Simple">Simple</a></li>
+<li><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Success.29">Subflow Dependency (Success)</a></li>
+<li><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Failure.29">Subflow Dependency (Failure)</a></li>
+<li><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html#Use_Case_-_Subflow_Dependency_.28Risk.29">Subflow Dependency (Risk)</a></li></ul>
+<h2><span class="mw-headline" id="Use_Case_-_Simple"><span class="mw-headline-number">3.1</span> Use Case - Simple</span></h2>
+<p>Create a new workflow with no dependencies, and then migrate the workflow in an update set.
+</p>
+<ol><li>User A selects Update Set A.</li>
+<li>User A creates a new workflow called Workflow A.</li>
+<li>User A publishes Workflow A.
+<dl><dd>A customer update set record is added to Update Set A containing an XML payload, including the published Workflow A and all activity dependencies. The XML payload also contains the workflow input variables associated with the workflow.</dd></dl></li>
+<li>User A completes Update Set A and migrates it to the production instance.</li>
+<li>Update Set A commits successfully.</li>
+<li>Workflow A works as expected.</li></ol>
+<h2><span class="mw-headline" id="Use_Case_-_Subflow_Dependency_.28Success.29"><span class="mw-headline-number">3.2</span> Use Case - Subflow Dependency (Success)</span></h2>
+<p>Successfully edit and migrate an existing workflow and its dependent subflow.
+</p>
+<ol><li>User A selects Update Set B.</li>
+<li>User A checks out Workflow A.</li>
+<li>User A adds a subflow called Workflow B to Workflow A.
+<dl><dd>Assume that Workflow B was previously published and migrated to the production instance.</dd></dl></li>
+<li>User A publishes Workflow A.
+<dl><dd>A customer update set record is added to Update Set B containing an XML payload, including the published Workflow A and all activity dependencies. The XML payload also contains the workflow input variables associated with the workflow.</dd></dl></li>
+<li>User A completes Update Set B and migrates it to the production instance.</li>
+<li>Update Set B commits successfully.</li>
+<li>Workflow A works as expected with Workflow B as a subflow.</li></ol>
+<h2><span class="mw-headline" id="Use_Case_-_Subflow_Dependency_.28Failure.29"><span class="mw-headline-number">3.3</span> Use Case - Subflow Dependency (Failure)</span></h2>
+<p>Edit and migrate an existing workflow from a test instance to a production instance that fails to run on the production instance because of a missing dependent subflow.
+</p>
+<ol><li>User A selects Update Set C.</li>
+<li>User A checks out Workflow A.</li>
+<li>User A adds a subflow called Workflow B to Workflow A.
+<dl><dd>Assume that Workflow B was previously published, but has <i>not</i> been migrated to the production instance.</dd></dl></li>
+<li>User A publishes Workflow A.
+<dl><dd>A customer update set record is added to Update Set C containing an XML payload, including the published Workflow A and all activity dependencies. The XML payload also contains the workflow input variables associated with the workflow.</dd>
+<dd>Notably absent from Update Set C, is the subflow called Workflow B. Workflow B was published before User A selected Update Set C.</dd></dl></li>
+<li>User A completes Update Set C and migrates it to the production instance.</li>
+<li>Update Set C commits with warnings.</li>
+<li>Workflow A is invoked on the production instance with the following results:
+<dl><dd>Workflow A fails the runtime validation check and is prevented from running on the production system. The system adds to the workflow context a workflow log entry detailing the cause of the failure, notably the absence of a dependent workflow.</dd>
+<dd>To learn more about the validation checks on workflow dependencies and update sets see <a href="index.php%3Ftitle=Workflow_Validator_-_ValidateUpdateSetDependencies.html" title="Workflow Validator - ValidateUpdateSetDependencies">ValidateUpdateSetDependencies</a>.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Use_Case_-_Subflow_Dependency_.28Risk.29"><span class="mw-headline-number">3.4</span> Use Case - Subflow Dependency (Risk)</span></h2>
+<p>Multiple users migrate a workflow from a test instance to a production instance without proper coordination. This use case can succeed, but only when each user understands the dependencies and properly migrates the dependent parts of the workflow to the new instance.
+</p><p>This example does <i>not</i> represent an update set failure, although update sets are most often blamed in this type of use case. Validation increases the visibility of workflow dependencies across multiple update sets and provides designers with better information. In most cases, the warnings do not prevent an action but only identify risk. The designer is responsible to follow up on the advice given in the validation checks.
+</p>
+<ol><li>User A selects Update Set C.</li>
+<li>User A checks out Workflow A.</li>
+<li>User A adds a subflow called Workflow B that returns a <b>User ID</b>.
+<dl><dd>Assume that Workflow B was previously published and migrated to the production instance.</dd></dl></li>
+<li>User A uses the return value of Workflow B to generate approvals.</li>
+<li>User B selects Update Set D.</li>
+<li>User B checks out Workflow B (the subflow in Workflow A).</li>
+<li>User B modifies the return value of the workflow by changing it from a <b>User ID</b> to a <b>String Message</b>.</li>
+<li>User A publishes Workflow A.
+<dl><dd>A dialog box displays warnings associated with Workflow A and encourages User A to validate the workflow before publishing it.</dd>
+<dd>User A cancels publishing and <a href="index.php%3Ftitle=Workflow_Validation.html" title="Workflow Validation">validates</a> Workflow A.</dd>
+<dd>User A is warned that Workflow B was modified by a user in a different update set.</dd></dl></li>
+<li>User A ignores this warning and publishes Workflow A.
+<dl><dd>A customer update set record is added to Update Set C containing an XML payload, including the published Workflow A and all activity dependencies.The XML payload also contains the workflow input variables associated with the workflow.</dd></dl></li>
+<li>User A completes Update Set C and migrates it to the production instance.</li>
+<li>Workflow A is invoked on the production instance and runs successfully using the older version of Workflow B already on the system.</li>
+<li>User B publishes Workflow B.
+<dl><dd>User B is not warned of the Update Set C dependency, because the update set is no longer <b>In progress</b>. However, User B is informed via a dialog box that there are warnings associated with the workflow version and is instructed to validate Workflow B.</dd>
+<dd>If User B cancels publication and validates the workflow, User B is warned that there are workflows that use Workflow B as a subflow. Knowing the return value was changed, User B should test those workflows as well. See <a href="index.php%3Ftitle=Workflow_Validator_-_ValidateUpdateSetDependencies.html" title="Workflow Validator - ValidateUpdateSetDependencies">ValidateUpdateSetDependencies</a> to understand the parameters of update set warnings.</dd></dl></li>
+<li>User B finally publishes Workflow B. 
+<dl><dd>A customer update set record is added to Update Set D containing an XML payload, including the published Workflow B and all activity dependencies.</dd></dl></li>
+<li>User B completes Update Set D and migrates it to the production instance.</li>
+<li>Update Set D commits without warnings.</li>
+<li>Workflow A is invoked on the production instance and fails to run successfully, because the return value of Workflow B no longer generates a <b>User ID</b>.</li></ol>
+<h1><span class="mw-headline" id="Moving_Input_Variables"><span class="mw-headline-number">4</span> Moving Input Variables</span></h1>
+<p>You can <a href="index.php%3Ftitle=Using_Variables_in_a_Workflow.html#Workflow_Input_Variables" title="Using Variables in a Workflow">add input variables</a> to existing workflows and add them to update sets. 
+</p><p>When you submit the new variables, an entry is made into the current update set that reflects the addition of a variable to the Variables [var_dictionary] table. Unlike the workflow version that only writes to the update set when the workflow is published, the variables write individual update entries into the currently selected update set immediately upon submission. 
+</p>
+<h2><span class="mw-headline" id="Use_Case"><span class="mw-headline-number">4.1</span> Use Case</span></h2>
+<p>An existing workflow already contains two input variables.
+</p>
+<ol><li>User A checks out the workflow.</li>
+<li>User A adds two input variables.
+<dl><dd>ServiceNow adds to the current update set one customer update record for each new variable.</dd>
+<dd>The current workflow now has 4 input variables: the two that were present prior to check out and the two new ones.</dd></dl></li>
+<li>User A publishes the workflow.
+<dl><dd>There are now three related customer update records: two for new variables, and one for the published workflow. The XML payload of the new workflow version now includes all input variable database entries. So while the two original input variables do not have individual customer update records, all four variables are migrated to the local instance with the payload of the newly published workflow version. </dd></dl></li>
+<li>To verify the variables that are included in a specific workflow version:
+<ol><li> Navigate to <b>System Update Sets &gt; Local Update Sets</b>.</li>
+<li> Select the active update set.</li>
+<li> Select the customer update entry for the workflow version.</li>
+<li> View the XML <b>Payload</b>.</li>
+<li> Search for the name of one of the columns or search for <b>var_dictionary</b>.</li></ol>
+<dl><dd><dl><dd>There is one <b>var_dictionary</b> entry for each input variable.</dd></dl></dd></dl></li>
+<li>User A completes the update set.</li></ol>
+<h3><span class="mw-headline" id="Adding_Input_Variables_-_Success"><span class="mw-headline-number">4.1.1</span> Adding Input Variables - Success</span></h3>
+<p>User A migrates and commits the update set to a local instance where the original workflow version had previously been committed.
+</p>
+<ul><li>The two existing input variables are already present because of the earlier version.</li>
+<li>The system adds the two new input variables when the user commits the update set.</li>
+<li>The system preserves the two legacy input variables on the instance receiving the update set. The update set does not overwrite these variables.</li>
+<li>The new published workflow version uses all four variables.</li>
+<li>The user tests the new workflow version and it runs as expected.</li></ul>
+<h2><span class="mw-headline" id="Removing_Input_Variables"><span class="mw-headline-number">4.2</span> Removing Input Variables</span></h2>
+<p>Deleting workflow input variables, like insert and update actions, creates a customer update record in a user's current update set. These deletions migrate to a new instance with the update set, regardless of whether the workflow that owns the input variables is published in the same update set. Plan carefully and use caution when editing a workflow and selecting update sets. 
+</p>
+<h3><span class="mw-headline" id="Risk"><span class="mw-headline-number">4.2.1</span> Risk</span></h3>
+<p>An existing workflow already contains two input variables.
+</p>
+<ol><li>The workflow was migrated to a production instance with the two variables.</li>
+<li>On a development instance, User A selects Update Set A and checks out the workflow.</li>
+<li>User A removes one input variable and all references to it in the workflow.
+<dl><dd>ServiceNow enters into Update Set A one customer update record reflecting the deletion of the input variable. No record is added for the new workflow version which no longer depends on the input. This does not happen until the workflow is published.</dd></dl></li>
+<li>User A continues working on other features in Update Set A that need to be moved to production.</li>
+<li>User A completes Update Set A and migrates it to the production instance without publishing the workflow.
+<dl><dd>The update set entry that deletes the workflow input variable now applies to the production instance. The prior version of the workflow is running on this instance and still references the missing variable.</dd></dl></li></ol>
+<h3><span class="mw-headline" id="Solution"><span class="mw-headline-number">4.2.2</span> Solution</span></h3>
+<p>When editing workflows, particularly when deleting input variables, be sure to use a single update set for all variable editing and workflow publishing. If necessary, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Update+Sets&amp;oldid=0.html#Merging_Update_Sets" title="Using Update Sets">merge the update set</a> into a more general set targeted for deployment after the workflow is published.
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 2px solid #FFCC66; width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top;">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="Warning"><img alt="Warning" src="images/thumb/4/4f/Caution-diamond.png/30px-Caution-diamond.png" width="30" height="30" srcset="/images/thumb/4/4f/Caution-diamond.png/45px-Caution-diamond.png 1.5x, /images/4/4f/Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Warning:</b> If a workflow version is already running on a production system and input variables are deleted from a newer version, those deletions could affect transactions already running against the earlier version. Use extreme caution when deleting workflow input variables and plan the migration carefully.
+</td></tr></table>
+<h3><span class="mw-headline" id="Prevention"><span class="mw-headline-number">4.2.3</span> Prevention</span></h3>
+<p>Prior to publishing a workflow version, ServiceNow validates the workflow model to assist the designer in planning for deployment. This validation warns of critical errors that can prevent a workflow from running successfully, but also warns of dependencies and conflicts in update sets.
+See <a href="index.php%3Ftitle=Workflow_Validator_-_ValidateUpdateSetDependencies.html" title="Workflow Validator - ValidateUpdateSetDependencies">ValidateUpdateSetDependencies</a> for more details.
+</p>
+<h2><span class="mw-headline" id="Avoiding_Duplicate_Workflows"><span class="mw-headline-number">4.3</span> Avoiding Duplicate Workflows</span></h2>
+<p>Update sets manage the published state of all versions of a workflow prior to committing the workflow version on a local instance. The last version of a workflow committed as an Insert or Update via an update set becomes the currently published version, regardless of the publishing sequence for the workflow versions. 
+</p><p>To commit a workflow in an update set:
+</p>
+<ol><li>Workflow A - Version 1 is created and published in Update Set A.</li>
+<li>Update Set A is completed and migrated to a local instance.</li>
+<li>When the update set is committed, the system sets all prior versions of Workflow A to <i>published = false</i>.
+<dl><dd>In the first migration, there are no prior versions.</dd></dl></li>
+<li>Workflow A - Version 1 becomes the only published version of the workflow. </li></ol>
+<p>It is not possible to have multiple published versions as a result of update set commits. However, this does not eliminate risk, and care should be taken when migrating update sets. Consider this example:
+</p>
+<ol><li>Workflow A - Version 1 is migrated and committed to the production instance.</li>
+<li>Update Set B is created.</li>
+<li>Update Set C is created.</li>
+<li>Workflow A - Version 2 is published in Update Set B.
+<dl><dd>A customer update record is added to Update Set B with the Version 2 payload.</dd>
+<dd>A customer update record is added to Update Set B with the Version 1 workflow left unpublished.</dd></dl></li>
+<li>Update Set B is completed.</li>
+<li>Workflow A - Version 3 is published in Update Set C.
+<dl><dd>A customer update record is added to Update Set C with the Version 3 payload.</dd>
+<dd>A customer update record is added to Update Set C with the Version 2 workflow left unpublished.</dd></dl></li>
+<li>Update Set C is completed.</li>
+<li>Update Set C is migrated and committed to the production instance.
+<dl><dd>Workflow A - Version 1 is set to unpublished.</dd>
+<dd>Workflow A - Version 2 update is skipped since Update Set B, which contains Version 2, was never migrated.</dd>
+<dd>Workflow A - Version 3 is committed and becomes the only published version of the workflow. </dd></dl></li></ol>
+<h3><span class="mw-headline" id="Risk_2"><span class="mw-headline-number">4.3.1</span> Risk</span></h3>
+<p>Update Set B is migrated and committed to the production instance.
+</p>
+<ol><li>Workflow A - Version 3 is set to unpublished.</li>
+<li>Workflow A - Version 1 remains unpublished.</li>
+<li>Workflow A - Version 2 is committed and becomes the only published version of the workflow. 
+<dl><dd>The workflow has gone back a version, perhaps unintentionally. The regressed version becomes the currently published version.</dd></dl></li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130173227
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.461 seconds
+Real time usage: 0.616 seconds
+Preprocessor visited node count: 105/1000000
+Preprocessor generated node count: 294/1000000
+Post‐expand include size: 5469/2097152 bytes
+Template argument size: 1523/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  225.934      1 - -total
+ 88.60%  200.179      1 - Template:Workflow
+ 82.76%  186.977      1 - Template:Topic
+  5.43%   12.271      1 - Embedded:Workflow
+  4.91%   11.103      1 - Template:Note
+  4.90%   11.066      1 - Template:Warning
+  4.78%   10.799      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9050-0!*!0!1!en!5!* and timestamp 20171130173226 and revision id 250332
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;oldid=250332.html">http://wiki.servicenow.com/index.php?title=Moving_Workflows_with_Update_Sets&amp;oldid=250332</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Administration.html" title="Category:Workflow Administration">Workflow Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow.html" title="Category:Workflow">Workflow</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow+Administration.html" title="Category:Workflow Administration">Workflow Administration</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9050"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9050" data-vote-the-vote="5" data-vote-id="9050" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9050_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9050" data-vote-the-vote="1" data-vote-id="9050" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9050_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Moving+Workflows+with+Update+Sets&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Moving+Workflows+with+Update+Sets&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Moving_Workflows_with_Update_Sets.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Moving+Workflows+with+Update+Sets.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Moving+Workflows+with+Update+Sets&amp;returnto=Moving+Workflows+with+Update+Sets&amp;oldid=250332&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FMoving_Workflows_with_Update_Sets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Moving_Workflows_with_Update_Sets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;oldid=250332.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Moving_Workflows_with_Update_Sets&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 17:16, 23 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":837});});</script></body></html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Importing from Another ServiceNow Instance - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Importing_from_Another_ServiceNow_Instance","wgTitle":"Importing from Another ServiceNow Instance","wgCurRevisionId":250305,"wgRevisionId":250305,"wgArticleId":4542,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Import Sets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Importing_from_Another_ServiceNow_Instance","wgRelevantArticleId":4542,"wgRequestId":"7c1c6fb7a8edb086c81bbd09","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170821201136"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Importing_from_Another_ServiceNow_Instance"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Importing from Another ServiceNow Instance"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Import Sets"/>
+<meta name="category" content="Import Sets"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Importing from Another ServiceNow Instance"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170821201136"/>
+
+	<meta property="article:published_time" content="20170821201136"/>
+
+	<meta property="article:modified_time" content="20170821201136"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Import Sets"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Importing_from_Another_ServiceNow_Instance"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Importing_from_Another_ServiceNow_Instance rootpage-Importing_from_Another_ServiceNow_Instance skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Importing+from+Another+ServiceNow+Instance.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Importing+from+Another+ServiceNow+Instance&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Importing from Another ServiceNow Instance</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">Import Sets</a> &gt; Importing from Another ServiceNow Instance</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/import-sets/concept/c_ImportingFromAnotherSNInstance.html">Importing from Another ServiceNow Instance</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Import_Sets.html" title="Import Sets">Import Sets</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Importing_Data_Using_Import_Sets.html" title="Importing Data Using Import Sets">Importing Data Using Import Sets</a> </li>
+<li><a href="index.php%3Ftitle=Using_the_Coalesce_Field.html" title="Using the Coalesce Field">Using the Coalesce Field</a> </li>
+<li><strong class="selflink">Importing from Another ServiceNow Instance</strong> </li>
+<li><a href="index.php%3Ftitle=Data_Sources.html" title="Data Sources">Data Sources</a>
+<ul><li><a href="index.php%3Ftitle=Adding_JDBC_Drivers_for_Data_Sources_not_Supported_in_Out-of-Box_Systems.html" title="Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems" class="mw-redirect">Adding JDBC Drivers for Data Sources not Supported in Out-of-Box Systems</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SQL_Server_Integrated_Authentication_for_Windows.html" title="SQL Server Integrated Authentication for Windows">SQL Server Integrated Authentication for Windows</a> </li>
+<li><a href="index.php%3Ftitle=Viewing_the_Import_Log.html" title="Viewing the Import Log">Viewing the Import Log</a></li>
+<li><a href="index.php%3Ftitle=Import_Run_History.html" title="Import Run History">Import Run History</a> </li>
+<li><a href="index.php%3Ftitle=Scheduling_Data_Imports.html" title="Scheduling Data Imports">Scheduling Data Imports</a> </li>
+<li><a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Creating New Transform Maps</a></li>
+<li><a href="index.php%3Ftitle=Transform_Map_Scripts.html" title="Transform Map Scripts">Transform Map Scripts</a></li>
+<li><a href="index.php%3Ftitle=Import_Set_Scheduled_Cleanup.html" title="Import Set Scheduled Cleanup">Import Set Scheduled Cleanup</a></li>
+<li><a href="index.php%3Ftitle=Troubleshooting_Import_Set_Performance.html" title="Troubleshooting Import Set Performance">Troubleshooting Import Set Performance</a></li>
+<li><a href="index.php%3Ftitle=Easy_Import.html" title="Easy Import">Easy Import</a></li></ul>
+<p><br />
+</p>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Identifying_Needed_Related_Records"><span class="tocnumber">2</span> <span class="toctext">Identifying Needed Related Records</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Available_Import_Processes"><span class="tocnumber">3</span> <span class="toctext">Available Import Processes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#XML_Records_from_Lists"><span class="tocnumber">4</span> <span class="toctext">XML Records from Lists</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Automatic_Matching_of_Display_Values"><span class="tocnumber">4.1</span> <span class="toctext">Automatic Matching of Display Values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#XML_Import_Sets"><span class="tocnumber">5</span> <span class="toctext">XML Import Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Create_a_Data_Source"><span class="tocnumber">5.1</span> <span class="toctext">Create a Data Source</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Create_a_Transform_Map"><span class="tocnumber">5.2</span> <span class="toctext">Create a Transform Map</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Add_a_Field_Map_for_sys_id"><span class="tocnumber">5.3</span> <span class="toctext">Add a Field Map for sys_id</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Add_onBefore_Scripts_to_the_Transform_Map"><span class="tocnumber">5.4</span> <span class="toctext">Add onBefore Scripts to the Transform Map</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Create_a_Scheduled_Data_Import"><span class="tocnumber">5.5</span> <span class="toctext">Create a Scheduled Data Import</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Retrieving_Data_from_a_CSV_Formatted_File"><span class="tocnumber">6</span> <span class="toctext">Retrieving Data from a CSV Formatted File</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>There are several methods for moving data from one ServiceNow instance to another. All of these methods assume you need to periodically move a collection of records from a table on one instance to a table on another instance. If you want an action on an individual record to trigger a corresponding action on another instance, consider using a <a href="index.php%3Ftitle=REST_API.html" title="REST API">REST web service</a> instead.
+</p>
+<h1><span class="mw-headline" id="Identifying_Needed_Related_Records"><span class="mw-headline-number">2</span> Identifying Needed Related Records</span></h1>
+<p>All import processes work by fetching data from one table at a time. This process can produce unexpected results if the incoming data references new records in other tables such as users, locations, or companies. To prevent importing broken references to other tables you must identify the connections between your tables and import the common data prior to importing the application data. 
+</p><p>For example, prior to importing incident data, you might want to first import related configuration items, users, and locations. Furthermore you might want to import incidents before importing problems or changes that refer to these incident records.
+</p>
+<h1><span class="mw-headline" id="Available_Import_Processes"><span class="mw-headline-number">3</span> Available Import Processes</span></h1>
+<p>The system offers the following processes to move data from one instance to another.
+</p>
+<ul><li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#XML_Records_from_Lists">Export and import XML records directly from lists</a></li>
+<li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#XML_Import_Sets">Create XML import sets and transform data as needed</a></li>
+<li> <a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html#Retrieving_Data_from_a_CSV_Formatted_File">Export and import CSV files from lists</a></li></ul>
+<h1><span class="mw-headline" id="XML_Records_from_Lists"><span class="mw-headline-number">4</span> XML Records from Lists</span></h1>
+<p>You can directly export records as XML from any list or form.
+</p><p>This export process preserves all record field values including system generated field values such as:
+</p>
+<ul><li> Sys ID</li>
+<li> Creation date</li>
+<li> Update date</li></ul>
+<p>The XML import process directly inserts records into the target table. During the import the system:
+</p>
+<ul><li> Ignores any business rules that normally apply to the table.</li>
+<li> Does not provide any opportunity to transform incoming data.</li>
+<li> Automatically matches a reference field's display value to the local Sys ID for some tables.</li></ul>
+<p>This process is good for directly copying records from one system to another but does not remove the need to know the relationships between tables. If you need validate or transform data or reconcile the sys ID values of reference fields, use an XML import set instead.
+</p><p>To export or import records as XML, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Exporting+and+Importing+XML+Files&amp;oldid=0.html" title="Exporting and Importing XML Files">Exporting and Importing XML Files</a>.
+</p>
+<h2><span class="mw-headline" id="Automatic_Matching_of_Display_Values"><span class="mw-headline-number">4.1</span> Automatic Matching of Display Values</span></h2>
+<p>During the import of XML records, the system attempts to match some reference field display values to a local Sys ID value. If the system finds an existing record with a matching display value on the local instance, the import uses the Sys ID of the existing record rather than the Sys ID of the imported record.
+</p><p>For example, suppose you export an incident record that is assigned to the user George Jetson. In the exported XML file there is an entry such as:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;incident&gt;</span>
+	...
+	<span class="nt">&lt;assigned_to</span> <span class="na">display_value=</span><span class="s">&quot;George Jetson&quot;</span><span class="nt">&gt;</span>7712173d2ba80200c5244f74b4da159a<span class="nt">&lt;/assigned_to&gt;</span>
+	...
+<span class="nt">&lt;/incident&gt;</span>
+</pre></div>
+<p>This user already exists on the target instance but has a different Sys ID value such as:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;sys_user&gt;</span>
+	<span class="nt">&lt;name&gt;</span>George Jetson<span class="nt">&lt;/name&gt;</span>
+	...
+	<span class="nt">&lt;sys_id&gt;</span>18cab8de2be80200c5244f74b4da15f7<span class="nt">&lt;/sys_id&gt;</span>
+	...
+<span class="nt">&lt;/sys_user&gt;</span>
+</pre></div>
+<p>Since the display value matches an existing record, the system uses the local instance's existing Sys ID value for the reference field such as:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;incident&gt;</span>
+	...
+	<span class="nt">&lt;assigned_to</span> <span class="na">display_value=</span><span class="s">&quot;George Jetson&quot;</span><span class="nt">&gt;</span>18cab8de2be80200c5244f74b4da15f7<span class="nt">&lt;/assigned_to&gt;</span>
+	...
+<span class="nt">&lt;/incident&gt;</span>
+</pre></div>
+<p>The system can match display values for the following tables.
+</p>
+<ul><li> User [sys_user]</li>
+<li> Group [sys_user_group]</li>
+<li> Role [sys_user_role]</li>
+<li> Group Roles [sys_group_has_role]</li></ul>
+<h1><span class="mw-headline" id="XML_Import_Sets"><span class="mw-headline-number">5</span> XML Import Sets</span></h1>
+<p>ServiceNow recommends using an XML import set to import data from another ServiceNow instance because this method allows you to:
+</p>
+<ul><li> Apply business rules</li>
+<li> Transform incoming data</li>
+<li> Reconcile Sys ID values if necessary </li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Administrators cannot set the <tt>update_synch</tt> attribute in Dictionary records to move data as part of update sets. This attribute was being used incorrectly to migrate data in large tables and was causing significant performance problems.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Create_a_Data_Source"><span class="mw-headline-number">5.1</span> Create a Data Source</span></h2>
+<p><a href="index.php%3Ftitle=Data_Sources.html" title="Data Sources">Data sources</a> are used to create an import set so that data can be processed, if necessary, prior to being mapped onto a production table.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>To import using XML with  <a href="index.php%3Ftitle=High_Security_Settings.html#Elevated_Privilege" title="High Security Settings">High Security Settings enabled</a>, you must possess elevated privileges.</i>
+</td></tr></table>
+<ol><li>Navigate to <b>System Import Sets &gt; Data Sources</b>. </li>
+<li>Click <b>New</b>. </li>
+<li>Complete the form using the following values: 
+<ul><li><b>Format:</b> <i>XML</i></li>
+<li><b>Import set table label:</b> <i>&lt;import_set_table_label&gt;</i></li>
+<li><b>Xpath root node:</b> <i> //&lt;source_table_name&gt;</i></li>
+<li><b>Expand node children:</b> true.</li>
+<li><b>File retrieval method:</b> <i>HTTPS</i></li>
+<li><b>File path:</b> <i>/&lt;source_table_name&gt;.do?XML</i></li>
+<li><b>Server:</b> <i>&lt;instance name&gt;.service-now.com</i></li>
+<li><b>User name:</b> A user account on the remote instance. The username used cannot be an email address.</li>
+<li><b>Password:</b> The password for the same remote account .</li></ul></li>
+<li>Click <b>Submit</b>. </li>
+<li>Click <b>Test Load 20 Records</b> to create the import set table and to ensure your data source is functional.</li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The 20 loaded records cannot be transformed and are for testing purposes only.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Create_a_Transform_Map"><span class="mw-headline-number">5.2</span> Create a Transform Map</span></h2>
+<p>For more information, see <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Creating New Transform Maps</a> 
+</p>
+<ol><li>Open the data source record that you just created.</li>
+<li>In the <b>Transforms</b> related list, click <b>New</b>. </li>
+<li>Populate all the usual fields and be sure to choose the proper <b>Target table</b>. </li>
+<li>Submit the record. </li>
+<li>Click <b>Auto map matching fields</b>.</li></ol>
+<h2><span class="mw-headline" id="Add_a_Field_Map_for_sys_id"><span class="mw-headline-number">5.3</span> Add a Field Map for sys_id</span></h2>
+<ol><li>Open the table transform map record you just created.</li>
+<li>In the <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html#Creating_a_Field_Map" title="Creating New Transform Maps"><b>Field Map</b></a> related list, click <b>New</b>.</li>
+<li>Complete the form, using the following values 
+<ul><li><b>Source field:</b> <i>sys_id</i></li>
+<li><b>Target field:</b> <i>Sys ID</i> (You must do XML injection to make it work on older releases.) </li>
+<li><b>Coalesce:</b> Select the check box.</li></ul></li>
+<li>Click <b>Submit</b>.</li></ol>
+<h2><span class="mw-headline" id="Add_onBefore_Scripts_to_the_Transform_Map"><span class="mw-headline-number">5.4</span> Add onBefore Scripts to the Transform Map</span></h2>
+<p>Create one onBefore transform map script to copy the sys ID of new records from the source to the target instance.
+</p>
+<ol><li>Open the table transform map record you just created.</li>
+<li>In the <b>Transform Scripts</b> related list, click <b>New</b>.</li>
+<li>In the <b>When</b> field, select <b>onBefore</b>. </li>
+<li>In <b>Script</b>, enter the following: 
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">action</span> <span class="o">==</span> <span class="s2">&quot;insert&quot;</span><span class="p">){</span><span class="nx">target</span><span class="p">.</span><span class="nx">setNewGuidValue</span><span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="nx">u_sys_id</span><span class="p">);}</span>
+</pre></div> </dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<p>Create a second onBefore transform map script to identify records on the target instance that have the same unique values but different sys ID values.
+</p>
+<ol><li>Open the table transform map record you just created.</li>
+<li>In the <b>Transform Scripts</b> related list, click <b>New</b>.</li>
+<li>In the <b>When</b> field, select <b>onBefore</b>. </li>
+<li>In <b>Script</b>, enter the sample script below. </li>
+<li>Click <b>Submit</b>.</li></ol>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cm">/** </span>
+<span class="cm">* This script queries for a uniquely identifying value of the referenced record and then </span>
+<span class="cm">* updates the target reference field with the sys_id of the matching target record.</span>
+<span class="cm">* This sample assumes:</span>
+<span class="cm">* 1) The target table contains an assigned_to field which is a reference field.</span>
+<span class="cm">* 2) The reference field references the User [sys_user] table.</span>
+<span class="cm">* 3) You can use the email field to uniquely identify users. Alternatively you</span>
+<span class="cm">*    could use the user_name field.</span>
+<span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">ref</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span> <span class="c1">//Replace sys_user with any reference table</span>
+<span class="nx">ref</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="nx">source</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span> <span class="c1">//Replace email with any unique field</span>
+<span class="nx">ref</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">ref</span><span class="p">.</span><span class="nx">next</span><span class="p">()){</span>
+   <span class="nx">target</span><span class="p">.</span><span class="nx">assigned_to</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">sys_id</span><span class="p">;</span> <span class="c1">//Replace assigned_to with any reference field</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="Create_a_Scheduled_Data_Import"><span class="mw-headline-number">5.5</span> Create a Scheduled Data Import</span></h2>
+<p>Create a normal scheduled data import. For more information, see <a href="index.php%3Ftitle=Scheduling_Data_Imports.html" title="Scheduling Data Imports">Scheduling Data Imports</a>.
+</p>
+<h1><span class="mw-headline" id="Retrieving_Data_from_a_CSV_Formatted_File"><span class="mw-headline-number">6</span> Retrieving Data from a CSV Formatted File</span></h1>
+<p>In this method, you import data from another ServiceNow instance using an HTTPS data source to return a CSV formatted file containing the rows to be imported. This approach uses the Import Sets application to retrieve the data from the source and import it to the destination.  
+</p><p><a href="index.php%3Ftitle=File:Https_ds.jpg.html" class="image" title="Image:https_ds.jpg"><img alt="Image:https_ds.jpg" src="images/4/45/Https_ds.jpg" width="413" height="466" /></a> <br clear="all" /> 
+</p>
+<ol><li>Create a new data source by navigating to <b>Import Sets &gt; Data Sources</b> on the destination instance.</li>
+<li>Provide the following field values: 
+<ul><li><b>Import set table name:</b> Select a table.</li>
+<li><b>Type:</b> <i>File</i></li>
+<li><b>Format:</b> <i>CSV</i></li>
+<li><b>File retrieval method:</b> <i>HTTPS</i></li></ul>
+<dl><dd><dl><dd><b>Note:</b> If the <b>Server</b>, <b>File path</b>, <b>Username</b>, and <b>Password</b> fields are not visible when you select <b>HTTPS</b>, change the file retrieval method temporarily to <b>SCP</b> and enter this information. Remember to reset the <b>File retrieval method</b> to <b>HTTPS</b> after you enter these fields.</dd></dl></dd></dl>
+<ul><li><b>File path:</b> <i>incident.do?CSV</i></li></ul>
+<dl><dd><dl><dd><b>Note:</b> To import specific change records, you can add qualifiers to the path.  For example, the following path would return all active change records: <tt><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">incident</span><span class="p">.</span><span class="k">do</span><span class="o">?</span><span class="nx">CSV</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">sysparm_query</span><span class="o">=</span><span class="nx">active</span><span class="o">=</span><span class="kc">true</span><span class="err">&quot;</span>
+</pre></div></tt></dd></dl></dd></dl>
+<ul><li><b>User name</b> and <b>Password:</b> Enter the user name and password for a valid user on the destination instance.</li></ul></li>
+<li>Click the <b>Test load 20 records</b> related link to verify that the import is configured correctly.</li>
+<li>After setting up the data source, configure a standard transform map as described in <a href="index.php%3Ftitle=Creating_New_Transform_Maps.html" title="Creating New Transform Maps">Creating New Transform Maps</a>.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201115544
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.227 seconds
+Real time usage: 2.474 seconds
+Preprocessor visited node count: 134/1000000
+Preprocessor generated node count: 410/1000000
+Post‐expand include size: 4431/2097152 bytes
+Template argument size: 1751/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  948.921      1 - -total
+  2.45%   23.229      4 - Template:Note
+  1.62%   15.370      1 - Template:Import_Sets
+  1.25%   11.898      1 - Template:Topic
+  0.36%    3.450      1 - Embedded:Import_Sets
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:4542-0!*!0!1!en!5!* and timestamp 20171201115541 and revision id 250305
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;oldid=250305.html">http://wiki.servicenow.com/index.php?title=Importing_from_Another_ServiceNow_Instance&amp;oldid=250305</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Import+Sets.html" title="Category:Import Sets">Import Sets</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_4542"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="4542" data-vote-the-vote="5" data-vote-id="4542" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_4542_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="4542" data-vote-the-vote="1" data-vote-id="4542" data-vote-action="5" data-vote-rating="4.00" data-vote-voted="0" id="rating_4542_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Importing+from+Another+ServiceNow+Instance&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Importing+from+Another+ServiceNow+Instance&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Importing_from_Another_ServiceNow_Instance.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Importing+from+Another+ServiceNow+Instance.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Importing+from+Another+ServiceNow+Instance&amp;returnto=Importing+from+Another+ServiceNow+Instance&amp;oldid=250305&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FImporting_from_Another_ServiceNow_Instance.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Importing_from_Another_ServiceNow_Instance" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;oldid=250305.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Importing_from_Another_ServiceNow_Instance&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:11, 21 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":920});});</script></body></html>

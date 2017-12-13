@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>SOAP Direct Web Service API - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SOAP_Direct_Web_Service_API","wgTitle":"SOAP Direct Web Service API","wgCurRevisionId":250900,"wgRevisionId":250900,"wgArticleId":23989,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SOAP Web Services","Web Services APIs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SOAP_Direct_Web_Service_API","wgRelevantArticleId":23989,"wgRequestId":"f50594bbbc04291dee038528","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170911190540"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=SOAP_Direct_Web_Service_API"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="SOAP Direct Web Service API"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Web Services APIs"/>
+<meta name="category" content="Web Services APIs"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=SOAP_Direct_Web_Service_API.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:SOAP Direct Web Service API"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170911190540"/>
+
+	<meta property="article:published_time" content="20170911190540"/>
+
+	<meta property="article:modified_time" content="20170911190540"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Web Services APIs"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=SOAP_Direct_Web_Service_API"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SOAP_Direct_Web_Service_API rootpage-SOAP_Direct_Web_Service_API skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SOAP+Direct+Web+Service+API.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=SOAP+Direct+Web+Service+API&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">SOAP Direct Web Service API</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a> &gt; <a href="index.php%3Ftitle=SOAP_Web_Service.html" title="SOAP Web Service">SOAP Web Services</a> &gt; SOAP Direct Web Service API</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html">SOAP Direct Web Service API Functions</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Web_Services.html" title="Web Services">Web Services</a>
+</th></tr>
+<tr>
+<td>  <div class='dtree' id='5a22a0777b160t'></div><script type="text/javascript">window.tamOnload_tam5a22a0777b160t=[];tree = new dTree('tam5a22a0777b160t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22a0777b160t = tree;
+                                               tam5a22a0777b160t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API\&quot;" title=\"REST API\">Inbound REST</a>');
+
+tam5a22a0777b160t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_REST\&quot;" title=\"Getting Started with REST\">Getting Started with REST</a>');
+tam5a22a0777b160t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Table_API\&quot;" title=\"Table API\">Table API</a>');
+tam5a22a0777b160t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_API\&quot;" title=\"Import Set API\">Import Set API</a>');
+tam5a22a0777b160t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API\&quot;" title=\"Aggregate API\">Aggregate API</a>');
+tam5a22a0777b160t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Aggregate_API_Examples\&quot;" title=\"Aggregate API Examples\">Aggregate API Examples</a>');
+tam5a22a0777b160t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=REST_API_Explorer\&quot;" title=\"REST API Explorer\">REST API Explorer</a>');
+tam5a22a0777b160t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Web_Service\&quot;" title=\"SOAP Web Service\">Inbound SOAP</a>');
+tam5a22a0777b160t.add(9, 8, '<strong class=\"selflink\">Direct SOAP API</strong>');
+tam5a22a0777b160t.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inbound_SOAP_Web_Service_Security\&quot;" title=\"Inbound SOAP Web Service Security\">Inbound SOAP Security</a>');
+tam5a22a0777b160t.add(11, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting_Related_Records_Using_SOAP\&quot;" title=\"Inserting Related Records Using SOAP\">Inserting Related Records</a>');
+tam5a22a0777b160t.add(12, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AttachmentCreator_SOAP_Web_Service\&quot;" title=\"AttachmentCreator SOAP Web Service\">Attachment Creator Web Service</a>');
+tam5a22a0777b160t.add(13, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ECC_Queue_Retry_Policy\&quot;" title=\"ECC Queue Retry Policy\">ECC Queue Retry Policy</a>');
+tam5a22a0777b160t.add(14, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAP_Session_Management_and_Reporting\&quot;" title=\"SOAP Session Management and Reporting\">SOAP Session Management and Reporting</a>');
+tam5a22a0777b160t.add(15, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Long-Running_SOAP_Request_Support\&quot;" title=\"Long-Running SOAP Request Support\">Long-Running SOAP Request Support</a>');
+tam5a22a0777b160t.add(16, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Static_WSDL\&quot;" title=\"Creating a Static WSDL\">Creating a Static WSDL</a>');
+tam5a22a0777b160t.add(17, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_Integrations_Best_Practices\&quot;" title=\"Web Services Integrations Best Practices\">Web Services Integrations Best Practices</a>');
+tam5a22a0777b160t.add(18, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API\&quot;" title=\"Perl API\">Perl API</a>');
+tam5a22a0777b160t.add(19, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_ServiceNow\&quot;" title=\"Perl API ServiceNow\">Perl ServiceNow Module</a>');
+tam5a22a0777b160t.add(20, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_GlideRecord\&quot;" title=\"Perl API GlideRecord\">GlideRecord</a>');
+tam5a22a0777b160t.add(21, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Task\&quot;" title=\"Perl API Task\">Task</a>');
+tam5a22a0777b160t.add(22, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Incident\&quot;" title=\"Perl API Incident\">Incident</a>');
+tam5a22a0777b160t.add(23, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Problem\&quot;" title=\"Perl API Problem\">Problem</a>');
+tam5a22a0777b160t.add(24, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Change\&quot;" title=\"Perl API Change\">Change</a>');
+tam5a22a0777b160t.add(25, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Request\&quot;" title=\"Perl API Request\">Request</a>');
+tam5a22a0777b160t.add(26, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_RequestedItem\&quot;" title=\"Perl API RequestedItem\">RequestedItem</a>');
+tam5a22a0777b160t.add(27, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_SC_Task\&quot;" title=\"Perl API SC Task\">SC_Task</a>');
+tam5a22a0777b160t.add(28, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Ticket\&quot;" title=\"Perl API Ticket\">Ticket</a>');
+tam5a22a0777b160t.add(29, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Approval\&quot;" title=\"Perl API Approval\">Approval</a>');
+tam5a22a0777b160t.add(30, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Dictionary\&quot;" title=\"Perl API Dictionary\">Dictionary</a>');
+tam5a22a0777b160t.add(31, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Configuration\&quot;" title=\"Perl API Configuration\">Configuration</a>');
+tam5a22a0777b160t.add(32, 18, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_API_Attachment\&quot;" title=\"Perl API Attachment\">Attachment</a>');
+tam5a22a0777b160t.add(33, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Driver\&quot;" title=\"ODBC Driver\">ODBC Driver</a>');
+tam5a22a0777b160t.add(34, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_ODBC\&quot;" title=\"Getting Started with ODBC\">ODBC Quick Start Guide</a>');
+tam5a22a0777b160t.add(35, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installing_the_ODBC_Driver\&quot;" title=\"Installing the ODBC Driver\">Installing the Driver</a>');
+tam5a22a0777b160t.add(36, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_the_ODBC_Driver\&quot;" title=\"Configuring the ODBC Driver\">Configuring the Driver</a>');
+tam5a22a0777b160t.add(37, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Testing_the_ODBC_Driver\&quot;" title=\"Testing the ODBC Driver\">Testing the Driver</a>');
+tam5a22a0777b160t.add(38, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver\&quot;" title=\"Using the ODBC Driver\">Using the Driver</a>');
+tam5a22a0777b160t.add(39, 33, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a>');
+tam5a22a0777b160t.add(40, 33, 'ODBC Client Configuration');
+tam5a22a0777b160t.add(41, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=HTTP_Client_Connection_Management\&quot;" title=\"HTTP Client Connection Management\">HTTP Client Connection Management</a>');
+tam5a22a0777b160t.add(42, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Interactive_SQL_With_ODBC\&quot;" title=\"Using Interactive SQL With ODBC\">Running Interactive SQL (ODBC)</a>');
+tam5a22a0777b160t.add(43, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Excel_2010\&quot;" title=\"Using the ODBC Driver in Excel 2010\" class=\"mw-redirect\">Using the ODBC Driver in Excel 2010</a>');
+tam5a22a0777b160t.add(44, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_ODBC_Driver_in_Crystal_Reports_2008\&quot;" title=\"Using the ODBC Driver in Crystal Reports 2008\" class=\"mw-redirect\">Using the ODBC Driver in Crystal Reports 2008</a>');
+tam5a22a0777b160t.add(45, 40, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_ODBC_Driver_in_SQL_Server_2008\&quot;" title=\"Using ODBC Driver in SQL Server 2008\" class=\"mw-redirect\">Using ODBC Driver in SQL Server 2008</a>');
+tam5a22a0777b160t.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Additional Direct Web Services</a>');
+tam5a22a0777b160t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CSV_Web_Service\&quot;" title=\"CSV Web Service\">CSV</a> ');
+tam5a22a0777b160t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EXCEL_Web_Service\&quot;" title=\"EXCEL Web Service\">EXCEL</a>');
+tam5a22a0777b160t.add(49, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSONv2_Web_Service\&quot;" title=\"JSONv2 Web Service\">JSONv2</a>');
+tam5a22a0777b160t.add(50, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Web_Service\&quot;" title=\"PDF Web Service\">PDF</a>');
+tam5a22a0777b160t.add(51, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=XML_Web_Service\&quot;" title=\"XML Web Service\">XML</a>');
+tam5a22a0777b160t.add(52, 46, 'RSS ');
+tam5a22a0777b160t.add(53, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Generator\&quot;" title=\"RSS Feed Generator\">RSS Feed Generator</a> ');
+tam5a22a0777b160t.add(54, 52, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RSS_Feed_Reader\&quot;" title=\"RSS Feed Reader\">RSS Feed Reader</a>');
+tam5a22a0777b160t.add(55, 0, 'Inbound Examples');
+tam5a22a0777b160t.add(56, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Java_Apache_Axis2_Web_Services_Client_Examples\&quot;" title=\"Java Apache Axis2 Web Services Client Examples\">Java Apache Axis2 Client</a>');
+tam5a22a0777b160t.add(57, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_.NET_Web_Services_Client_Examples\&quot;" title=\"Microsoft .NET Web Services Client Examples\">Microsoft .NET Client</a>');
+tam5a22a0777b160t.add(58, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Perl_Web_Services_Client_Examples\&quot;" title=\"Perl Web Services Client Examples\">Perl Client</a>');
+tam5a22a0777b160t.add(59, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Python_Web_Services_Client_Examples\&quot;" title=\"Python Web Services Client Examples\">Python Client</a>');
+tam5a22a0777b160t.add(60, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Retrieving_A_Large_Number_Of_Records_Using_SOAP\&quot;" title=\"Retrieving A Large Number Of Records Using SOAP\">Retrieving A Large Number Of Records</a>');
+tam5a22a0777b160t.add(61, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Services_C_Sharp_.NET_End_to_End_Tutorial\&quot;" title=\"Web Services C Sharp .NET End to End Tutorial\">C Sharp .NET End to End</a>');
+tam5a22a0777b160t.add(62, 55, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Service_Tutorial\&quot;" title=\"Scripted Web Service Tutorial\">Scripted Web Service</a>');
+tam5a22a0777b160t.add(63, 0, 'Outbound Web Services');
+tam5a22a0777b160t.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service\&quot;" title=\"Outbound REST Web Service\">Outbound REST</a>');
+tam5a22a0777b160t.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_SOAP_Web_Service\&quot;" title=\"Outbound SOAP Web Service\">Outbound SOAP</a>');
+tam5a22a0777b160t.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_Web_Services_Mutual_Authentication\&quot;" title=\"Outbound Web Services Mutual Authentication\">Outbound Mutual Authentication</a>');
+tam5a22a0777b160t.add(67, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_REST\&quot;" title=\"Scripting Outbound REST\">Scripting Outbound REST</a>');
+tam5a22a0777b160t.add(68, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP\&quot;" title=\"Scripting Outbound SOAP\">Scripting Outbound SOAP</a>');
+tam5a22a0777b160t.add(69, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Outbound_SOAP_-_Versions_Prior_to_Fuji\&quot;" title=\"Scripting Outbound SOAP - Versions Prior to Fuji\">Scripting Outbound SOAP Prior to Fuji</a>');
+tam5a22a0777b160t.add(70, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Outbound_REST_Web_Service_-_Versions_Prior_to_Fuji\&quot;" title=\"Outbound REST Web Service - Versions Prior to Fuji\">Outbound REST Prior to Fuji</a>');
+tam5a22a0777b160t.add(71, 63, 'Outbound APIs');
+tam5a22a0777b160t.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessage</a>');
+tam5a22a0777b160t.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponse</a>');
+tam5a22a0777b160t.add(74, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessage</a>');
+tam5a22a0777b160t.add(75, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponse</a>');
+tam5a22a0777b160t.add(76, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Direct_Web_Services\&quot;" title=\"Direct Web Services\">Direct Web Services</a>');
+tam5a22a0777b160t.add(77, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Web_Service_Import_Sets\&quot;" title=\"Web Service Import Sets\">Web Service Import Sets</a>');
+tam5a22a0777b160t.add(78, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripted_Web_Services\&quot;" title=\"Scripted Web Services\">Scripted Web Services</a>');
+
+                                               document.getElementById('5a22a0777b160t').innerHTML = tam5a22a0777b160t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22a0777b160t) { window.tamOnload_tam5a22a0777b160t[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div> 
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Direct_SOAP_API"><span class="tocnumber">1</span> <span class="toctext">Direct SOAP API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Data_Retrieval_API"><span class="tocnumber">1.1</span> <span class="toctext">Data Retrieval API</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#getKeys"><span class="tocnumber">1.1.1</span> <span class="toctext"><i>getKeys</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-4"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-5"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields"><span class="tocnumber">1.1.1.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-6"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages"><span class="tocnumber">1.1.1.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#getRecords"><span class="tocnumber">1.1.2</span> <span class="toctext"><i>getRecords</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-8"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_2"><span class="tocnumber">1.1.2.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_2"><span class="tocnumber">1.1.2.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_2"><span class="tocnumber">1.1.2.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#get"><span class="tocnumber">1.1.3</span> <span class="toctext"><i>get</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-12"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_3"><span class="tocnumber">1.1.3.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-13"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_3"><span class="tocnumber">1.1.3.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-14"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_3"><span class="tocnumber">1.1.3.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#aggregate"><span class="tocnumber">1.1.4</span> <span class="toctext"><i>aggregate</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_4"><span class="tocnumber">1.1.4.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_4"><span class="tocnumber">1.1.4.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_4"><span class="tocnumber">1.1.4.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Data_Modification_API"><span class="tocnumber">1.2</span> <span class="toctext">Data Modification API</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#insert"><span class="tocnumber">1.2.1</span> <span class="toctext"><i>insert</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-21"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_5"><span class="tocnumber">1.2.1.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-22"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_5"><span class="tocnumber">1.2.1.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_5"><span class="tocnumber">1.2.1.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-24"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#insertMultiple"><span class="tocnumber">1.2.2</span> <span class="toctext"><i>insertMultiple</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-25"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_6"><span class="tocnumber">1.2.2.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-26"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_6"><span class="tocnumber">1.2.2.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-27"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_-_regular_table"><span class="tocnumber">1.2.2.3</span> <span class="toctext">Sample SOAP Messages - regular table</span></a></li>
+<li class="toclevel-4 tocsection-28"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_-_import_set_table"><span class="tocnumber">1.2.2.4</span> <span class="toctext">Sample SOAP Messages - import set table</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-29"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#update"><span class="tocnumber">1.2.3</span> <span class="toctext"><i>update</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-30"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_7"><span class="tocnumber">1.2.3.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-31"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_7"><span class="tocnumber">1.2.3.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-32"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_6"><span class="tocnumber">1.2.3.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-33"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#deleteRecord"><span class="tocnumber">1.2.4</span> <span class="toctext"><i>deleteRecord</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-34"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_8"><span class="tocnumber">1.2.4.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-35"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_8"><span class="tocnumber">1.2.4.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-36"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_7"><span class="tocnumber">1.2.4.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-37"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#deleteMultiple"><span class="tocnumber">1.2.5</span> <span class="toctext"><i>deleteMultiple</i></span></a>
+<ul>
+<li class="toclevel-4 tocsection-38"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Input_Fields_9"><span class="tocnumber">1.2.5.1</span> <span class="toctext">Input Fields</span></a></li>
+<li class="toclevel-4 tocsection-39"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Output_Fields_9"><span class="tocnumber">1.2.5.2</span> <span class="toctext">Output Fields</span></a></li>
+<li class="toclevel-4 tocsection-40"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#Sample_SOAP_Messages_8"><span class="tocnumber">1.2.5.3</span> <span class="toctext">Sample SOAP Messages</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Direct_SOAP_API"><span class="mw-headline-number">1</span> Direct SOAP API</span></h1>
+<p>Please note that the default return for any query is limited to 250 records.<br />
+</p><p><br /> 
+</p><p>The standard SOAP API is a set of small, globally defined functions that can be performed on a targeted resource. The targeted resource (or table) is defined in the URL by the format <b>https://&lt;instance name&gt;.service-now.com/&lt;table name&gt;.do</b>. 
+</p><p><b>Data Retrieval API</b>
+</p>
+<table class="standard" width="50%">
+
+<tr>
+<th width="22%"> Method Summary
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#getKeys">getKeys</a>
+</td>
+<td>  Query the targeted table by example values and return a comma delimited list of <b>sys_id</b>.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#getRecords">getRecords</a>
+</td>
+<td>  Query the targeted table by example values and return all matching records and their fields.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#get">get</a>
+</td>
+<td>  Query a single record from the targeted table by <b>sys_id</b> and return the record and its fields.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#aggregate">aggregate</a>
+</td>
+<td>  Query using and aggregate functions SUM, COUNT MIN, MAX and AVG. To enable the aggregate functions, activate the Aggregate Web Service Plugin.
+</td></tr></table>
+<p><br /> 
+</p><p><b>Data Modification API</b>
+</p>
+<table class="standard" width="50%">
+
+<tr>
+<th width="22%"> Method Summary
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#insert">insert</a>
+</td>
+<td>  Creates a new record for the table targeted in the URL.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#insertMultiple">insertMultiple</a>
+</td>
+<td>  Creates multiple new records for the table targeted in the URL. To enable multiple inserts, activate the <a href="index.php%3Ftitle=Web_Service_Insert_Multiple_Plugin.html" title="Web Service Insert Multiple Plugin" class="mw-redirect"><b>Web Service Insert Multiple Plugin</b></a>.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#update">update</a>
+</td>
+<td>  Updates a existing record in the targeted table in the URL, identified by the mandatory <b>sys_id</b> field.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#deleteRecord">deleteRecord</a>
+</td>
+<td>  Delete a record from the targeted table by supplying its <b>sys_id</b>.
+</td></tr>
+<tr>
+<td>  <a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html#deleteMultiple">deleteMultiple</a>
+</td>
+<td>  Delete multiple records from the targeted table by example values.
+</td></tr></table>
+<h2><span class="mw-headline" id="Data_Retrieval_API"><span class="mw-headline-number">1.1</span> Data Retrieval API</span></h2>
+<h3><span class="mw-headline" id="getKeys"><span class="mw-headline-number">1.1.1</span> <i>getKeys</i></span></h3>
+<p>Query the targeted table by example values and return a comma delimited list of <b>sys_id</b>. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields"><span class="mw-headline-number">1.1.1.1</span> Input Fields</span></h4>
+<p>Any field value in the targeted table. 
+</p>
+<h4><span class="mw-headline" id="Output_Fields"><span class="mw-headline-number">1.1.1.2</span> Output Fields</span></h4>
+<p>A SOAP response element <b>sys_id</b> that contains a comma delimited list of <a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_ids</a>
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages"><span class="mw-headline-number">1.1.1.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:getKeys&gt;</span>
+         <span class="nt">&lt;category&gt;</span>hardware<span class="nt">&lt;/category&gt;</span>
+      <span class="nt">&lt;/inc:getKeys&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP response
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;getKeysResponse&gt;</span>
+         <span class="nt">&lt;sys_id&gt;</span>46e18c0fa9fe19810066a0083f76bd56,46e57642a9fe1981000b96a5dca501ff,46f1784ba9fe19810018aa27fbb23482<span class="nt">&lt;/sys_id&gt;</span>
+         <span class="nt">&lt;count&gt;</span>7<span class="nt">&lt;/count&gt;</span>
+      <span class="nt">&lt;/getKeysResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p><br /> 
+</p><p>For language-specific <b>getKeys</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#getKeys" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#getKeys" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#getKeys" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#getKeys" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="getRecords"><span class="mw-headline-number">1.1.2</span> <i>getRecords</i></span></h3>
+<p>Query the targeted table by example values and return all matching records and their fields. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_2"><span class="mw-headline-number">1.1.2.1</span> Input Fields</span></h4>
+<p>Any field value in the targeted table. 
+</p>
+<h4><span class="mw-headline" id="Output_Fields_2"><span class="mw-headline-number">1.1.2.2</span> Output Fields</span></h4>
+<p>The <b>getRecordResponse</b> element may contain 1 or more <b>getRecordsResult</b> elements that encapsulate elements representing the field values of records matching the query.
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_2"><span class="mw-headline-number">1.1.2.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:getRecords&gt;</span>
+         <span class="nt">&lt;number&gt;</span>INC0000002<span class="nt">&lt;/number&gt;</span>
+      <span class="nt">&lt;/inc:getRecords&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP request using an <a href="index.php%3Ftitle=Encoded_Query_Strings.html" title="Encoded Query Strings">encoded query</a> to filter where incident number is INC0000001 or INC0000002
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:getRecords&gt;</span>
+         <span class="nt">&lt;__encoded_query&gt;</span>number=INC0000001^ORnumber=INC0000002<span class="nt">&lt;/__encoded_query&gt;</span>
+      <span class="nt">&lt;/inc:getRecords&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p>Sample SOAP response containing 1 record
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;getRecordsResponse&gt;</span>
+         <span class="nt">&lt;getRecordsResult&gt;</span>
+            <span class="nt">&lt;caller_id&gt;</span>5137153cc611227c000bbd1bd8cd2007<span class="nt">&lt;/caller_id&gt;</span>
+            <span class="nt">&lt;caller_id.email&gt;</span>david.loo@service-now.com<span class="nt">&lt;/caller_id.email&gt;</span>
+            <span class="nt">&lt;closed_at/&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0000002<span class="nt">&lt;/number&gt;</span>
+            <span class="nt">&lt;opened_at&gt;</span>2009-12-14 23:07:12<span class="nt">&lt;/opened_at&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>Can&#39;t get to network file shares<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/getRecordsResult&gt;</span>
+      <span class="nt">&lt;/getRecordsResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p>Sample SOAP response that contains more than 1 record
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;getRecordsResponse&gt;</span>
+         <span class="nt">&lt;getRecordsResult&gt;</span>
+            <span class="nt">&lt;caller_id&gt;</span>5137153cc611227c000bbd1bd8cd2006<span class="nt">&lt;/caller_id&gt;</span>
+            <span class="nt">&lt;caller_id.email&gt;</span>rick.berzle@yourcompany.com<span class="nt">&lt;/caller_id.email&gt;</span>
+            <span class="nt">&lt;closed_at&gt;</span>2009-12-17 22:55:16<span class="nt">&lt;/closed_at&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0000009<span class="nt">&lt;/number&gt;</span>
+            <span class="nt">&lt;opened_at&gt;</span>2009-12-16 22:50:23<span class="nt">&lt;/opened_at&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>Reset my password<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/getRecordsResult&gt;</span>
+         <span class="nt">&lt;getRecordsResult&gt;</span>
+            <span class="nt">&lt;caller_id&gt;</span>5137153cc611227c000bbd1bd8cd2005<span class="nt">&lt;/caller_id&gt;</span>
+            <span class="nt">&lt;caller_id.email&gt;</span>fred.luddy@yourcompany.com<span class="nt">&lt;/caller_id.email&gt;</span>
+            <span class="nt">&lt;closed_at&gt;</span>2009-12-15 22:54:55<span class="nt">&lt;/closed_at&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0000010<span class="nt">&lt;/number&gt;</span>
+            <span class="nt">&lt;opened_at&gt;</span>2009-12-10 22:53:02<span class="nt">&lt;/opened_at&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>Need Oracle 10GR2 installed<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/getRecordsResult&gt;</span>
+      <span class="nt">&lt;/getRecordsResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p><br /> 
+</p><p>For language-specific <b>getRecords</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#getRecords" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#getRecords" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#getRecords" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#getRecords" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="get"><span class="mw-headline-number">1.1.3</span> <i>get</i></span></h3>
+<p>Query a single record from the targeted table by <b>sys_id</b> and return the record and its fields 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_3"><span class="mw-headline-number">1.1.3.1</span> Input Fields</span></h4>
+<p>An element <b>&lt;sys_id&gt;</b> identifying the <b><a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_id</a></b> of the record to be retrieved.
+</p>
+<h4><span class="mw-headline" id="Output_Fields_3"><span class="mw-headline-number">1.1.3.2</span> Output Fields</span></h4>
+<p>A getResponse element encapsulating all field values for the record retrieved.
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_3"><span class="mw-headline-number">1.1.3.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:get&gt;</span>
+         <span class="nt">&lt;sys_id&gt;</span>46e18c0fa9fe19810066a0083f76bd56<span class="nt">&lt;/sys_id&gt;</span>
+      <span class="nt">&lt;/inc:get&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p>The resulting response of a <b>get</b> function call looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;soap:Envelope</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://schemaap/envelope/&quot;</span> 
+               <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> 
+               <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;soap:Body&gt;</span>
+    <span class="nt">&lt;getResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;active&gt;</span>1<span class="nt">&lt;/active&gt;</span>
+      <span class="nt">&lt;approval&gt;</span>not requested<span class="nt">&lt;/approval&gt;</span>
+      <span class="nt">&lt;assigned_to&gt;</span>46c6f9efa9fe198101ddf5eed9adf6e7<span class="nt">&lt;/assigned_to&gt;</span>
+      <span class="nt">&lt;caller_id&gt;</span>46b673a6a9fe19810007ab03cbd5849d<span class="nt">&lt;/caller_id&gt;</span>
+      <span class="nt">&lt;category&gt;</span>network<span class="nt">&lt;/category&gt;</span>
+      <span class="nt">&lt;cmdb_ci&gt;</span>0c43f35dc61122750182c132a29e3243<span class="nt">&lt;/cmdb_ci&gt;</span>
+      <span class="nt">&lt;comments&gt;</span>Testing<span class="nt">&lt;/comments&gt;</span>
+      <span class="nt">&lt;contact_type&gt;</span>phone<span class="nt">&lt;/contact_type&gt;</span>
+      <span class="nt">&lt;due_date&gt;</span>2007-10-28 13:29:45<span class="nt">&lt;/due_date&gt;</span>
+      <span class="nt">&lt;escalation&gt;</span>0<span class="nt">&lt;/escalation&gt;</span>
+      <span class="nt">&lt;impact&gt;</span>3<span class="nt">&lt;/impact&gt;</span>
+      <span class="nt">&lt;incident_state&gt;</span>1<span class="nt">&lt;/incident_state&gt;</span>
+      <span class="nt">&lt;knowledge&gt;</span>0<span class="nt">&lt;/knowledge&gt;</span>
+      <span class="nt">&lt;location&gt;</span>1081761cc611227501d063fd3475a2de<span class="nt">&lt;/location&gt;</span>
+      <span class="nt">&lt;made_sla&gt;</span>1<span class="nt">&lt;/made_sla&gt;</span>
+      <span class="nt">&lt;notify&gt;</span>1<span class="nt">&lt;/notify&gt;</span>
+      <span class="nt">&lt;number&gt;</span>INC10055<span class="nt">&lt;/number&gt;</span>
+      <span class="nt">&lt;opened_at&gt;</span>2007-09-18 00:32:09<span class="nt">&lt;/opened_at&gt;</span>
+      <span class="nt">&lt;opened_by&gt;</span>46bac3d6a9fe1981005f299d979b8869<span class="nt">&lt;/opened_by&gt;</span>
+      <span class="nt">&lt;priority&gt;</span>0<span class="nt">&lt;/priority&gt;</span>
+      <span class="nt">&lt;reassignment_count&gt;</span>0<span class="nt">&lt;/reassignment_count&gt;</span>
+      <span class="nt">&lt;severity&gt;</span>0<span class="nt">&lt;/severity&gt;</span>
+    <span class="nt">&lt;/getResponse&gt;</span>
+  <span class="nt">&lt;/soap:Body&gt;</span>
+<span class="nt">&lt;/soap:Envelope&gt;</span>
+</pre></div> 
+<p><br /> 
+</p><p>For language-specific <b>get</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#get" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#get" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#get" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#get" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="aggregate"><span class="mw-headline-number">1.1.4</span> <i>aggregate</i></span></h3>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(159, 95, 159); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Plugin.gif.html" class="image" title="Plugin required"><img alt="Plugin required" src="images/e/e0/Plugin.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b>Aggregate Web Service</b> <a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins">plugin</a>.
+</td></tr></table>
+<p>Query a table using an aggregate function like SUM, COUNT, MIN, MAX, AVG. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_4"><span class="mw-headline-number">1.1.4.1</span> Input Fields</span></h4>
+<p>Any element of the target table.  In addition one or more of the <b>aggregate</b> functions (SUM, AVG etc...).  A <b>group by</b> and a <b>having</b> clause may also be added.
+</p>
+<h4><span class="mw-headline" id="Output_Fields_4"><span class="mw-headline-number">1.1.4.2</span> Output Fields</span></h4>
+<p>A <b>aggregateResponse</b> element encapsulating all field values for the record retrieved.
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_4"><span class="mw-headline-number">1.1.4.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request using <b>COUNT</b> aggregate function.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregate&gt;</span>
+      <span class="nt">&lt;COUNT&gt;</span>number<span class="nt">&lt;/COUNT&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+    <span class="nt">&lt;/aggregate&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<p>The resulting response of a <b>COUNT</b> aggregate function call looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span> 
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregateResponse&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>2.7200<span class="nt">&lt;/avg&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+    <span class="nt">&lt;/aggregateResponse&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP request using <b>AVG</b> aggregate function with a <b>GROUP BY</b> clause.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregate</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.service-now.com&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;GROUP_BY&gt;</span>category<span class="nt">&lt;/GROUP_BY&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+      <span class="nt">&lt;AVG&gt;</span>severity<span class="nt">&lt;/AVG&gt;</span>
+    <span class="nt">&lt;/aggregate&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<p>The resulting response of a <b>AVG</b> aggregate function call with a <b>GROUP BY</b> clause looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregateResponse&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>1.0000<span class="nt">&lt;/avg&gt;</span>
+          <span class="nt">&lt;category&gt;</span>database<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>3.0000<span class="nt">&lt;/avg&gt;</span>
+          <span class="nt">&lt;category&gt;</span>hardware<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>3.0000<span class="nt">&lt;/avg&gt;</span>
+          <span class="nt">&lt;category&gt;</span>inquiry<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>2.0000<span class="nt">&lt;/avg&gt;</span>
+          <span class="nt">&lt;category&gt;</span>network<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+        <span class="nt">&lt;aggregateResult&gt;</span>
+          <span class="nt">&lt;avg&gt;</span>2.6923<span class="nt">&lt;/avg&gt;</span>
+          <span class="nt">&lt;category&gt;</span>software<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;/aggregateResult&gt;</span>
+    <span class="nt">&lt;/aggregateResponse&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<p>Sample SOAP request using an encoded query to filter the aggregate:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregate&gt;</span>
+      <span class="nt">&lt;COUNT&gt;</span>number<span class="nt">&lt;/COUNT&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+      <span class="nt">&lt;__encoded_query&gt;</span>number=INC0000001^ORnumber=INC0000002<span class="nt">&lt;/__encoded_query&gt;</span>
+    <span class="nt">&lt;/aggregate&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<p>Sample aggregate request using Having to narrow the results.  Having takes four fields each delimited by "^": 
+the aggregate type, the field of the aggregate, the operation type, and the value to compare . 
+More than one Having can be added to the request so you can and Having expressions, but there is no support for OR. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+                   <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+                   <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+                   <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/map&quot;</span>
+                   <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+                   <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                   <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+    <span class="nt">&lt;aggregate&gt;</span>
+      <span class="nt">&lt;COUNT&gt;</span>sys_id<span class="nt">&lt;/COUNT&gt;</span>
+      <span class="nt">&lt;GROUP_BY&gt;</span>internal_type<span class="nt">&lt;/GROUP_BY&gt;</span> 
+      <span class="nt">&lt;HAVING&gt;</span>COUNT^*^&gt;^10<span class="nt">&lt;/HAVING&gt;</span>
+      <span class="nt">&lt;HAVING&gt;</span>COUNT^*^<span class="err">&lt;</span>^20<span class="nt">&lt;/HAVING&gt;</span>
+      <span class="nt">&lt;COUNT&gt;</span>sys_id<span class="nt">&lt;/COUNT&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+    <span class="nt">&lt;/aggregate&gt;</span>
+  <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="Data_Modification_API"><span class="mw-headline-number">1.2</span> Data Modification API</span></h2>
+<h3><span class="mw-headline" id="insert"><span class="mw-headline-number">1.2.1</span> <i>insert</i></span></h3>
+<p>Creates a new record for the table targeted in the URL<br /> 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_5"><span class="mw-headline-number">1.2.1.1</span> Input Fields</span></h4>
+<p>All fields from the targeted table, excluding system fields. Fields configured as mandatory in the <a href="index.php%3Ftitle=System_Dictionary.html" title="System Dictionary">System Dictionary</a> are reflected in the WSDL with the attribute <tt>minOccurs=1</tt>.<br />
+</p>
+<h4><span class="mw-headline" id="Output_Fields_5"><span class="mw-headline-number">1.2.1.2</span> Output Fields</span></h4>
+<ul><li>Regular tables: The <b>sys_id</b> field and the display value of the target table are returned. </li>
+<li>Import set tables: The <b>sys_id</b> of the import set row, the name of the transformed target table (<b>table</b>), the <b>display_name</b> for the transformed target table, the <b>display_value</b> of the transformed target row, and a <b>status</b> field, which can contain <b>inserted</b>, <b>updated</b>, or <b>error</b>. There can be an optional <b>status_message</b> field or an <b>error_message</b> field value when <i>status=error</i>. When an insert did not cause a target row to be transformed, e.g. skipped because a key value is not specified, the <b>sys_id</b> field will contain the sys_id of the import set row rather than the targeted transform table. </li>
+<li>Import set tables with multiple transforms: The response from this type of insert will contain multiple sets of fields from the regular import set table insert wrapped in a multiInsertResponse parent element. Each set will contain a <b>map</b> field, showing which transform map created the response.</li></ul>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_5"><span class="mw-headline-number">1.2.1.3</span> Sample SOAP Messages</span></h4>
+<p>The following example shows an insert that specifies the short description only: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> 
+  <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+  <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span> 
+  <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span>
+  <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> 
+<span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+        <span class="nt">&lt;insert</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.service-now.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;short_description</span> <span class="na">xsi:type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>This is a test<span class="nt">&lt;/short_description&gt;</span>
+        <span class="nt">&lt;/insert&gt;</span>
+    <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div> 
+<p>The resulting response looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;SOAP-ENV:Envelope</span> <span class="na">SOAP-ENV:encodingStyle=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span> 
+  <span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span> 
+  <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> 
+  <span class="na">xmlns:m=</span><span class="s">&quot;http://www.service-now.com&quot;</span> 
+  <span class="na">xmlns:tns=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> 
+  <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;SOAP-ENV:Body&gt;</span>
+        <span class="nt">&lt;insertResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.service-now.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>6b06494fc611227d00b5f87caf618831<span class="nt">&lt;/sys_id&gt;</span>
+        <span class="nt">&lt;/insertResponse&gt;</span>
+    <span class="nt">&lt;/SOAP-ENV:Body&gt;</span>
+<span class="nt">&lt;/SOAP-ENV:Envelope&gt;</span>
+</pre></div> 
+<p><br /> 
+</p><p>For language-specific <b>insert</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#insert" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#insert" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#insert" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#insert" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="insertMultiple"><span class="mw-headline-number">1.2.2</span> <i>insertMultiple</i></span></h3>
+<p>Creates multiple new records for the table targeted in the URL.
+</p>
+<h4><span class="mw-headline" id="Input_Fields_6"><span class="mw-headline-number">1.2.2.1</span> Input Fields</span></h4>
+<p>The <b>insertMultiple</b>  element may contain 1 or more <b>record</b> tags that contains all fields from the targeted table, excluding system fields. Limit the number of records inserted in a single operation to no more than 200. You can gradually increase this number with subsequent exports if the increase does not negatively impact instance performance.
+</p>
+<h4><span class="mw-headline" id="Output_Fields_6"><span class="mw-headline-number">1.2.2.2</span> Output Fields</span></h4>
+<p>The insertMultipleResponse tag followed by 1 or more record tags that contains: 
+</p>
+<ul><li>Regular tables: The <b>sys_id</b> field and the display value of the target table are returned. </li>
+<li>Import set tables: The <b>sys_id</b> of the import set row, the name of the transformed target table (<b>table</b>), the <b>display_name</b> for the transformed target table, the <b>display_value</b> of the transformed target row, and a <b>status</b> field, which can contain <b>inserted</b>, <b>updated</b>, or <b>error</b>. There can be an optional <b>status_message</b> field or an <b>error_message</b> field value when <i>status=error</i>. When an insert did not cause a target row to be transformed, e.g. skipped because a key value is not specified, the <b>sys_id</b> field will contain the sys_id of the import set row rather than the targeted transform table. </li>
+<li>Import set tables with multiple transforms: The response from this type of insert will contain multiple sets of fields from the regular import set table insert wrapped in a multiInsertResponse parent element. Each set will contain a <b>map</b> field, showing which transform map created the response.</li></ul>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_-_regular_table"><span class="mw-headline-number">1.2.2.3</span> Sample SOAP Messages - regular table</span></h4>
+<p>The following example shows an insert that specifies the short description only: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:insertMultiple&gt;</span>
+         <span class="nt">&lt;record&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>this is test 1<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/record&gt;</span>
+         <span class="nt">&lt;record&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>this is test 2<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/record&gt;</span>
+         <span class="nt">&lt;record&gt;</span>
+            <span class="nt">&lt;short_description&gt;</span>this is test 3<span class="nt">&lt;/short_description&gt;</span>
+         <span class="nt">&lt;/record&gt;</span>
+      <span class="nt">&lt;/inc:insertMultiple&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>The resulting response looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;insertMultipleResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>168160ad4a36231200a89091281dc803<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0055180<span class="nt">&lt;/number&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>1681622e4a36231200a8909115e5c388<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0055181<span class="nt">&lt;/number&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>1681626e4a36231200a89091fa3c0aa8<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;number&gt;</span>INC0055182<span class="nt">&lt;/number&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+      <span class="nt">&lt;/insertMultipleResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_-_import_set_table"><span class="mw-headline-number">1.2.2.4</span> Sample SOAP Messages - import set table</span></h4>
+<p>The following example shows an insert that specifies the short description only: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:imp=</span><span class="s">&quot;http://www.service-now.com/imp_notification&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;imp:insertMultiple&gt;</span>:--&gt;
+         <span class="nt">&lt;imp:record&gt;</span>
+            <span class="nt">&lt;imp:message&gt;</span>one<span class="nt">&lt;/imp:message&gt;</span>
+            <span class="nt">&lt;imp:uuid&gt;</span>a<span class="nt">&lt;/imp:uuid&gt;</span>
+         <span class="nt">&lt;/imp:record&gt;</span>
+         <span class="nt">&lt;imp:record&gt;</span>
+            <span class="nt">&lt;imp:message&gt;</span>two<span class="nt">&lt;/imp:message&gt;</span>
+            <span class="nt">&lt;imp:uuid&gt;</span>b<span class="nt">&lt;/imp:uuid&gt;</span>
+         <span class="nt">&lt;/imp:record&gt;</span>
+         <span class="nt">&lt;imp:record&gt;</span>
+            <span class="nt">&lt;imp:message&gt;</span>three<span class="nt">&lt;/imp:message&gt;</span>
+            <span class="nt">&lt;imp:uuid&gt;</span>c<span class="nt">&lt;/imp:uuid&gt;</span>
+         <span class="nt">&lt;/imp:record&gt;</span>
+      <span class="nt">&lt;/imp:insertMultiple&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>The resulting response looks like this: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:imp=</span><span class="s">&quot;http://www.service-now.com/imp_notification&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;insertMultipleResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>1296b3ab0a0a0b5b73e966fbfab7acde<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;table&gt;</span>incident<span class="nt">&lt;/table&gt;</span>
+            <span class="nt">&lt;display_name&gt;</span>number<span class="nt">&lt;/display_name&gt;</span>
+            <span class="nt">&lt;display_value&gt;</span>INC0010033<span class="nt">&lt;/display_value&gt;</span>
+            <span class="nt">&lt;status&gt;</span>ignored<span class="nt">&lt;/status&gt;</span>
+            <span class="nt">&lt;status_message&gt;</span>No field values changed<span class="nt">&lt;/status_message&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>1296b48e0a0a0b5b62513bb5974a7d96<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;table&gt;</span>incident<span class="nt">&lt;/table&gt;</span>
+            <span class="nt">&lt;display_name&gt;</span>number<span class="nt">&lt;/display_name&gt;</span>
+            <span class="nt">&lt;display_value&gt;</span>INC0010034<span class="nt">&lt;/display_value&gt;</span>
+            <span class="nt">&lt;status&gt;</span>ignored<span class="nt">&lt;/status&gt;</span>
+            <span class="nt">&lt;status_message&gt;</span>No field values changed<span class="nt">&lt;/status_message&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+         <span class="nt">&lt;insertResponse&gt;</span>
+            <span class="nt">&lt;sys_id&gt;</span>1296b58b0a0a0b5b468f534659538b9a<span class="nt">&lt;/sys_id&gt;</span>
+            <span class="nt">&lt;table&gt;</span>incident<span class="nt">&lt;/table&gt;</span>
+            <span class="nt">&lt;display_name&gt;</span>number<span class="nt">&lt;/display_name&gt;</span>
+            <span class="nt">&lt;display_value&gt;</span>INC0010035<span class="nt">&lt;/display_value&gt;</span>
+            <span class="nt">&lt;status&gt;</span>ignored<span class="nt">&lt;/status&gt;</span>
+            <span class="nt">&lt;status_message&gt;</span>No field values changed<span class="nt">&lt;/status_message&gt;</span>
+         <span class="nt">&lt;/insertResponse&gt;</span>
+      <span class="nt">&lt;/insertMultipleResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p><br />
+</p>
+<h3><span class="mw-headline" id="update"><span class="mw-headline-number">1.2.3</span> <i>update</i></span></h3>
+<p>Updates an existing record in the targeted table in the URL, identified by the mandatory <b>sys_id</b> field. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_7"><span class="mw-headline-number">1.2.3.1</span> Input Fields</span></h4>
+<p>All fields from the targeted table, excluding system fields, which will be used for updating the existing record. The <b>sys_id</b> field is used to locate the existing record. 
+</p>
+<h4><span class="mw-headline" id="Output_Fields_7"><span class="mw-headline-number">1.2.3.2</span> Output Fields</span></h4>
+<p>Returns the <b>sys_id</b> of the record that was updated. 
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_6"><span class="mw-headline-number">1.2.3.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:update&gt;</span>
+         <span class="nt">&lt;sys_id&gt;</span>46e18c0fa9fe19810066a0083f76bd56<span class="nt">&lt;/sys_id&gt;</span>
+         <span class="nt">&lt;short_description&gt;</span>this is updated<span class="nt">&lt;/short_description&gt;</span>
+      <span class="nt">&lt;/inc:update&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP response
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;updateResponse&gt;</span>
+         <span class="nt">&lt;sys_id&gt;</span>46e18c0fa9fe19810066a0083f76bd56<span class="nt">&lt;/sys_id&gt;</span>
+      <span class="nt">&lt;/updateResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p><br /> 
+</p><p>For language-specific <b>update</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#update" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#update" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#update" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#update" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="deleteRecord"><span class="mw-headline-number">1.2.4</span> <i>deleteRecord</i></span></h3>
+<p>Delete a record from the targeted table by supplying its <b>sys_id</b>. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_8"><span class="mw-headline-number">1.2.4.1</span> Input Fields</span></h4>
+<p>An element <b>&lt;sys_id&gt;</b> identifying the <b><a href="index.php%3Ftitle=Unique_Record_Identifier.html" title="Unique Record Identifier">sys_id</a></b> of the record to be retrieved.
+</p>
+<h4><span class="mw-headline" id="Output_Fields_8"><span class="mw-headline-number">1.2.4.2</span> Output Fields</span></h4>
+<p>A <b>&lt;count&gt;</b> element within the deleteRecordResponse parent element indicating the number of records deleted, this will always equal to "1" for deleteRecord.
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_7"><span class="mw-headline-number">1.2.4.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:deleteRecord&gt;</span>
+         <span class="nt">&lt;sys_id&gt;</span>46e18c0fa9fe19810066a0083f76bd56<span class="nt">&lt;/sys_id&gt;</span>
+      <span class="nt">&lt;/inc:deleteRecord&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP response
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;deleteRecordResponse&gt;</span>
+         <span class="nt">&lt;count&gt;</span>1<span class="nt">&lt;/count&gt;</span>
+      <span class="nt">&lt;/deleteRecordResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p><br /> 
+</p><p>For language-specific <b>deleteRecord</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#deleteRecord" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#deleteRecord" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#deleteRecord" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#deleteRecord" title="Python Web Services Client Examples">Python</a></li></ul>
+<h3><span class="mw-headline" id="deleteMultiple"><span class="mw-headline-number">1.2.5</span> <i>deleteMultiple</i></span></h3>
+<p>Delete multiple records from the targeted table by example values. 
+</p>
+<h4><span class="mw-headline" id="Input_Fields_9"><span class="mw-headline-number">1.2.5.1</span> Input Fields</span></h4>
+<p>All fields from the targeted table, including system fields, are used in query-by-example (QBE) fashion to locate records to be deleted. Query example fields can have special prefixes to constrain the search function. 
+</p>
+<h4><span class="mw-headline" id="Output_Fields_9"><span class="mw-headline-number">1.2.5.2</span> Output Fields</span></h4>
+<p>A <b>&lt;count&gt;</b> element within the deleteRecordResponse parent element indicating the number of records deleted
+</p>
+<h4><span class="mw-headline" id="Sample_SOAP_Messages_8"><span class="mw-headline-number">1.2.5.3</span> Sample SOAP Messages</span></h4>
+<p>Sample SOAP request
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;inc:deleteMultiple&gt;</span>
+         <span class="nt">&lt;category&gt;</span>hardware<span class="nt">&lt;/category&gt;</span>
+      <span class="nt">&lt;/inc:deleteMultiple&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div> 
+<p>Sample SOAP response
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:inc=</span><span class="s">&quot;http://www.service-now.com/incident&quot;</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;soapenv:Header/&gt;</span>
+   <span class="nt">&lt;soapenv:Body&gt;</span>
+      <span class="nt">&lt;deleteMultipleResponse&gt;</span>
+         <span class="nt">&lt;count&gt;</span>6<span class="nt">&lt;/count&gt;</span>
+      <span class="nt">&lt;/deleteMultipleResponse&gt;</span>
+   <span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<p><br /> 
+</p><p>For language-specific <b>deleteMultiple</b> examples, see: 
+</p>
+<ul><li><a href="index.php%3Ftitle=Perl_Web_Services_Client_Examples.html#deleteMultiple" title="Perl Web Services Client Examples">Perl SOAP::Lite</a> </li>
+<li><a href="index.php%3Ftitle=Java_Apache_Axis2_Web_Services_Client_Examples.html#deleteMultiple" title="Java Apache Axis2 Web Services Client Examples">Java Apache Axis2</a> </li>
+<li><a href="index.php%3Ftitle=Microsoft_.NET_Web_Services_Client_Examples.html#deleteMultiple" title="Microsoft .NET Web Services Client Examples">Microsoft .NET</a> </li>
+<li><a href="index.php%3Ftitle=Python_Web_Services_Client_Examples.html#deleteMultiple" title="Python Web Services Client Examples">Python</a></li></ul>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202124551
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.353 seconds
+Real time usage: 8.132 seconds
+Preprocessor visited node count: 419/1000000
+Preprocessor generated node count: 974/1000000
+Post‐expand include size: 1272/2097152 bytes
+Template argument size: 502/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 2085.583      1 - -total
+  4.36%   90.967      1 - Template:Web_Services
+  3.70%   77.239      1 - Template:Topic
+  0.37%    7.688      1 - Template:Note
+  0.32%    6.586      1 - Template:Plugin
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23989-0!*!0!1!en!5!* and timestamp 20171202124543 and revision id 250900
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;oldid=250900.html">http://wiki.servicenow.com/index.php?title=SOAP_Direct_Web_Service_API&amp;oldid=250900</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=SOAP+Web+Services.html" title="Category:SOAP Web Services">SOAP Web Services</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services.html" title="Category:Web Services">Web Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=SOAP+Web+Services.html" title="Category:SOAP Web Services">SOAP Web Services</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services.html" title="Category:Web Services">Web Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Web+Services+APIs.html" title="Category:Web Services APIs">Web Services APIs</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23989"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23989" data-vote-the-vote="5" data-vote-id="23989" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23989_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23989" data-vote-the-vote="1" data-vote-id="23989" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23989_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=SOAP+Direct+Web+Service+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=SOAP+Direct+Web+Service+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=SOAP_Direct_Web_Service_API.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=SOAP+Direct+Web+Service+API.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=SOAP+Direct+Web+Service+API&amp;returnto=SOAP+Direct+Web+Service+API&amp;oldid=250900&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSOAP_Direct_Web_Service_API.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/SOAP_Direct_Web_Service_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;oldid=250900.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=SOAP_Direct_Web_Service_API&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:05, 11 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":936});});</script></body></html>

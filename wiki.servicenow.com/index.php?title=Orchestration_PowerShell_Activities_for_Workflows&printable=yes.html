@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Orchestration PowerShell Activities - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Orchestration_PowerShell_Activities","wgTitle":"Orchestration PowerShell Activities","wgCurRevisionId":250769,"wgRevisionId":250769,"wgArticleId":9947,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Orchestration Activities"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Orchestration_PowerShell_Activities","wgRelevantArticleId":9947,"wgRequestId":"8c49baba529ad356e53cde1a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Orchestration_PowerShell_Activities_for_Workflows","wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/index.php?title=Orchestration_PowerShell_Activities\u0026printable=yes"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170907141133"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Orchestration_PowerShell_Activities"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Orchestration PowerShell Activities"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Orchestration Activities"/>
+<meta name="category" content="Orchestration Activities"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<link rel="canonical" href="index.php%3Ftitle=Orchestration_PowerShell_Activities.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Orchestration_PowerShell_Activities.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Orchestration PowerShell Activities"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170907141133"/>
+
+	<meta property="article:published_time" content="20170907141133"/>
+
+	<meta property="article:modified_time" content="20170907141133"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Orchestration Activities"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Orchestration_PowerShell_Activities"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Orchestration_PowerShell_Activities rootpage-Orchestration_PowerShell_Activities skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Orchestration+PowerShell+Activities.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+PowerShell+Activities&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Orchestration PowerShell Activities</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a> &gt; <a href="index.php%3Ftitle=Orchestration_Activities.html" title="Orchestration Activities">Orchestration Activities</a> &gt; Orchestration PowerShell Activities (Redirected from <a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;redirect=no.html" title="Orchestration PowerShell Activities for Workflows">Orchestration PowerShell Activities for Workflows</a>)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-operations-management/page/administer/orchestration-activity-designer/concept/c_PowershellActivityDesigner.html">PowerShell Activity Designer</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Discovery.html" title="Discovery">Discovery</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22da5695d53t'></div><script type="text/javascript">window.tamOnload_tam5a22da5695d53t=[];tree = new dTree('tam5a22da5695d53t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22da5695d53t = tree;
+                                               tam5a22da5695d53t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Dashboard\&quot;" title=\"Discovery Dashboard\">Discovery Dashboard</a>');
+
+tam5a22da5695d53t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_Discovery_Dashboard\&quot;" title=\"Customizing the Discovery Dashboard\">Customizing the Discovery Dashboard</a>');
+tam5a22da5695d53t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Adding_Existing_Gauges_to_a_Homepage\&quot;" title=\"Adding Existing Gauges to a Homepage\">Adding Existing Gauges to a Homepage</a>');
+tam5a22da5695d53t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_Started_with_Agentless_Discovery\&quot;" title=\"Getting Started with Agentless Discovery\">Getting Started</a>');
+tam5a22da5695d53t.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Made_Easy\&quot;" title=\"Discovery Made Easy\">Discovery Made Easy</a>');
+tam5a22da5695d53t.add(6, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Agentless_Architecture\&quot;" title=\"Discovery Agentless Architecture\">Discovery Agentless Architecture</a>');
+tam5a22da5695d53t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_up_Discovery\&quot;" title=\"Setting up Discovery\" class=\"mw-redirect\">Setup</a>');
+tam5a22da5695d53t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Credentials\&quot;" title=\"Credentials\">Credentials</a>');
+tam5a22da5695d53t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=External_Credential_Storage\&quot;" title=\"External Credential Storage\">External Credential Storage</a>');
+tam5a22da5695d53t.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Schedules\&quot;" title=\"Discovery Schedules\">Schedules</a>');
+tam5a22da5695d53t.add(11, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Create_a_Discovery_Schedule\&quot;" title=\"Create a Discovery Schedule\">Create a Discovery Schedule</a>');
+tam5a22da5695d53t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configure_a_Discovery_Schedule_for_Amazon_Web_Services\&quot;" title=\"Configure a Discovery Schedule for Amazon Web Services\">Configure a Schedule for AWS</a>');
+tam5a22da5695d53t.add(13, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Network_Discovery\&quot;" title=\"Network Discovery\">Network Discovery</a>');
+tam5a22da5695d53t.add(14, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Importing_IP_Ranges\&quot;" title=\"Importing IP Ranges\">Importing IP Ranges</a>');
+tam5a22da5695d53t.add(15, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Device_Classifications\&quot;" title=\"Device Classifications\">Device Classifications</a>');
+tam5a22da5695d53t.add(16, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Process_Classifications\&quot;" title=\"Process Classifications\">Process Classifications</a>');
+tam5a22da5695d53t.add(17, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Classification_Parameters\&quot;" title=\"Discovery Classification Parameters\">Classification Parameters</a>');
+tam5a22da5695d53t.add(18, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Identifiers\&quot;" title=\"Discovery Identifiers\">Identifiers</a>');
+tam5a22da5695d53t.add(19, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Status\&quot;" title=\"Discovery Status\">Status</a>');
+tam5a22da5695d53t.add(20, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Timelines\&quot;" title=\"Discovery Timelines\">Timelines</a>');
+tam5a22da5695d53t.add(21, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Legacy:Discovery_Resource_Throttling\&quot;" title=\"Legacy:Discovery Resource Throttling\">Legacy:Resource Throttling</a>');
+tam5a22da5695d53t.add(22, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Application_Profile_Discovery\&quot;" title=\"Application Profile Discovery\">Application Profile Discovery</a>');
+tam5a22da5695d53t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Application_Profile_Discovery_Example\&quot;" title=\"Application Profile Discovery Example\">Example</a>');
+tam5a22da5695d53t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Application_Profile_Discovery_Customization\&quot;" title=\"Application Profile Discovery Customization\">Customization</a>');
+tam5a22da5695d53t.add(25, 0, 'Extended Capabilities');
+tam5a22da5695d53t.add(26, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DiscoverNow\&quot;" title=\"DiscoverNow\">DiscoverNow</a>');
+tam5a22da5695d53t.add(27, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PowerShell_for_Discovery\&quot;" title=\"PowerShell for Discovery\">PowerShell</a>');
+tam5a22da5695d53t.add(28, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_for_Hyper-V\&quot;" title=\"Discovery for Hyper-V\">Hyper-V</a>');
+tam5a22da5695d53t.add(29, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Hyper-V_Component_Relationships\&quot;" title=\"Hyper-V Component Relationships\">Component Relationships</a>');
+tam5a22da5695d53t.add(30, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovering_Storage_via_SMI-S_and_CIM\&quot;" title=\"Discovering Storage via SMI-S and CIM\">CIM Discovery</a>');
+tam5a22da5695d53t.add(31, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Application_Dependency_Mapping\&quot;" title=\"Application Dependency Mapping\">Application Dependency Mapping</a>');
+tam5a22da5695d53t.add(32, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Microsoft_SQL_Servers\&quot;" title=\"Microsoft SQL Servers\">Microsoft SQL Servers</a>');
+tam5a22da5695d53t.add(33, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovering_Microsoft_SQL_Server_Clusters\&quot;" title=\"Discovering Microsoft SQL Server Clusters\">SQL Server Clusters</a>');
+tam5a22da5695d53t.add(34, 25, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Detecting_Clustered_Applications_on_Windows_with_Discovery\&quot;" title=\"Detecting Clustered Applications on Windows with Discovery\">Detecting Clustered Applications on Windows</a>');
+tam5a22da5695d53t.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Behaviors\&quot;" title=\"Discovery Behaviors\">Behaviors</a>');
+tam5a22da5695d53t.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Behaviors_-_Load_Balancing\&quot;" title=\"Discovery Behaviors - Load Balancing\">Load Balancing</a>');
+tam5a22da5695d53t.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Behaviors_-_Multiple_Domains\&quot;" title=\"Discovery Behaviors - Multiple Domains\">Multiple Domains</a>');
+tam5a22da5695d53t.add(38, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Behaviors_-_Access_Control_Lists_(ACL)\&quot;" title=\"Discovery Behaviors - Access Control Lists (ACL)\">Access Control Lists (ACL)</a>');
+tam5a22da5695d53t.add(39, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server\&quot;" title=\"MID Server\">MID Server</a>');
+tam5a22da5695d53t.add(40, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Dashboard\&quot;" title=\"MID Server Dashboard\">MID Server Dashboard</a>');
+tam5a22da5695d53t.add(41, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Requirements\&quot;" title=\"MID Server Requirements\">Requirements</a>');
+tam5a22da5695d53t.add(42, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Installation\&quot;" title=\"MID Server Installation\">Installation</a>');
+tam5a22da5695d53t.add(43, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Configuration\&quot;" title=\"MID Server Configuration\">Configuration</a>');
+tam5a22da5695d53t.add(44, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Extensions\&quot;" title=\"MID Server Extensions\">MID Server Extensions</a>');
+tam5a22da5695d53t.add(45, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VCenter_Event_Collector_Extension\&quot;" title=\"VCenter Event Collector Extension\">vCenter Event Collector</a>');
+tam5a22da5695d53t.add(46, 44, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SNMP_Trap_Collector_Extension\&quot;" title=\"SNMP Trap Collector Extension\">SNMP Trap Collector</a>');
+tam5a22da5695d53t.add(47, 39, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Clusters\&quot;" title=\"MID Server Clusters\">MID Server Clusters</a>');
+tam5a22da5695d53t.add(48, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Probes_and_Sensors\&quot;" title=\"Discovery Probes and Sensors\">Probes and Sensors</a>');
+tam5a22da5695d53t.add(49, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=List_of_Discovery_Probes\&quot;" title=\"List of Discovery Probes\">List of Discovery Probes</a>');
+tam5a22da5695d53t.add(50, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Probe_and_Sensor_Versions\&quot;" title=\"Probe and Sensor Versions\">Probe and Sensor Versions</a>');
+tam5a22da5695d53t.add(51, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIM_Probe\&quot;" title=\"CIM Probe\">CIM Probe</a>');
+tam5a22da5695d53t.add(52, 51, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CimIQL\&quot;" title=\"CimIQL\">CimIQL</a>');
+tam5a22da5695d53t.add(53, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Port_Probes\&quot;" title=\"Port Probes\">Port Probes</a>');
+tam5a22da5695d53t.add(54, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Powershell_Probe\&quot;" title=\"Powershell Probe\">Powershell Probe</a>');
+tam5a22da5695d53t.add(55, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SCP_Relay_Probe\&quot;" title=\"SCP Relay Probe\" class=\"mw-redirect\">SCP Relay Probe</a>');
+tam5a22da5695d53t.add(56, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Shazzam_Probe\&quot;" title=\"Shazzam Probe\">Shazzam Probe</a>');
+tam5a22da5695d53t.add(57, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SNMP_Probe\&quot;" title=\"SNMP Probe\">SNMP Probe</a>');
+tam5a22da5695d53t.add(58, 57, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Enable_support_for_SNMPv3_in_Discovery\&quot;" title=\"Enable support for SNMPv3 in Discovery\">Enable SNMPv3</a>');
+tam5a22da5695d53t.add(59, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SSH_Command_Probe\&quot;" title=\"SSH Command Probe\" class=\"mw-redirect\">SSH Command Probe</a>');
+tam5a22da5695d53t.add(60, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=WMIRunner_Probe\&quot;" title=\"WMIRunner Probe\">WMIRunner Probe</a>');
+tam5a22da5695d53t.add(61, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Windows_Probes_and_Permissions\&quot;" title=\"Discovery Windows Probes and Permissions\">Windows Probes and Permissions</a>');
+tam5a22da5695d53t.add(62, 48, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Probe_-_Text_File\&quot;" title=\"Custom Probe - Text File\">Custom Probe - Text File</a>');
+tam5a22da5695d53t.add(63, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Data_Collected_by_Discovery\&quot;" title=\"Data Collected by Discovery\">Discovery Data</a>');
+tam5a22da5695d53t.add(64, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Database_Catalogs\&quot;" title=\"Database Catalogs\">Database Catalogs</a>');
+tam5a22da5695d53t.add(65, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_with_the_Software_Asset_Management_Table_Schema\&quot;" title=\"Discovery with the Software Asset Management Table Schema\">Software Asset Management Table Schema</a>');
+tam5a22da5695d53t.add(66, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Application_Mapping_for_UNIX\&quot;" title=\"Discovery Application Mapping for UNIX\">Application Mapping for UNIX</a>');
+tam5a22da5695d53t.add(67, 63, 'VMware');
+tam5a22da5695d53t.add(68, 67, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_for_VMware_vCenter\&quot;" title=\"Discovery for VMware vCenter\">VMware vCenter</a>');
+tam5a22da5695d53t.add(69, 67, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Component_Relationships\&quot;" title=\"VMware Component Relationships\">VMware Component Relationships</a>');
+tam5a22da5695d53t.add(70, 67, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_of_ESX_Servers\&quot;" title=\"Discovery of ESX Servers\">ESX Servers</a>');
+tam5a22da5695d53t.add(71, 63, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovering_Storage\&quot;" title=\"Discovering Storage\">Storage</a>');
+tam5a22da5695d53t.add(72, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovering_Storage_via_a_Host\&quot;" title=\"Discovering Storage via a Host\">via a Host</a>');
+tam5a22da5695d53t.add(73, 71, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovering_Storage_via_SMI-S_and_CIM\&quot;" title=\"Discovering Storage via SMI-S and CIM\">via SMI-S</a>');
+tam5a22da5695d53t.add(74, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Troubleshooting\&quot;" title=\"Discovery Troubleshooting\">Troubleshooting</a>');
+tam5a22da5695d53t.add(75, 74, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Troubleshooting_-_Port_Scanning\&quot;" title=\"Discovery Troubleshooting - Port Scanning\">Port Scanning</a>');
+tam5a22da5695d53t.add(76, 75, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Ports_and_Protocols\&quot;" title=\"Discovery Ports and Protocols\">Discovery Ports and Protocols</a>');
+tam5a22da5695d53t.add(77, 74, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Troubleshooting_-_Classification\&quot;" title=\"Discovery Troubleshooting - Classification\">Classification</a>');
+tam5a22da5695d53t.add(78, 74, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Troubleshooting_-_Identification\&quot;" title=\"Discovery Troubleshooting - Identification\">Identification</a>');
+tam5a22da5695d53t.add(79, 74, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Troubleshooting_-_Exploration\&quot;" title=\"Discovery Troubleshooting - Exploration\">Exploration</a>');
+tam5a22da5695d53t.add(80, 74, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Error_Messages\&quot;" title=\"Discovery Error Messages\">Error Messages</a>');
+tam5a22da5695d53t.add(81, 80, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Evaluating_the_Sensor_Error_Message\&quot;" title=\"Evaluating the Sensor Error Message\">Evaluating the Sensor Error Message</a>');
+tam5a22da5695d53t.add(82, 80, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Evaluating_the_No_Sensors_Defined_Message\&quot;" title=\"Evaluating the No Sensors Defined Message\">Evaluating the No Sensors Defined Message</a>');
+tam5a22da5695d53t.add(83, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_FAQ\&quot;" title=\"Discovery FAQ\">Discovery FAQ</a>');
+tam5a22da5695d53t.add(84, 0, 'Other');
+tam5a22da5695d53t.add(85, 84, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Bandwidth\&quot;" title=\"Discovery Bandwidth\">Bandwidth</a>');
+tam5a22da5695d53t.add(86, 84, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Resource_Utilization\&quot;" title=\"Discovery Resource Utilization\">Resource Utilization</a>');
+tam5a22da5695d53t.add(87, 84, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Sensor_Transaction_Quota_Rule\&quot;" title=\"Discovery Sensor Transaction Quota Rule\">Discovery Sensor Transaction Quota Rule</a>');
+tam5a22da5695d53t.add(88, 84, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_Windows_Software_Filter\&quot;" title=\"Discovery Windows Software Filter\">Windows Software Filter</a>');
+tam5a22da5695d53t.add(89, 84, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Best_Practices_When_Using_Discovery_and_SCCM_Together\&quot;" title=\"Best Practices When Using Discovery and SCCM Together\">Best Practices When Using Discovery and SCCM Together</a>');
+
+                                               document.getElementById('5a22da5695d53t').innerHTML = tam5a22da5695d53t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22da5695d53t) { window.tamOnload_tam5a22da5695d53t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> <a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a22da56a3b35t'></div><script type="text/javascript">window.tamOnload_tam5a22da56a3b35t=[];tree = new dTree('tam5a22da56a3b35t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a22da56a3b35t = tree;
+                                               tam5a22da56a3b35t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Activities\&quot;" title=\"Orchestration Activities\">Orchestration Activities</a>');
+
+tam5a22da56a3b35t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Basic_Activities\&quot;" title=\"Orchestration Basic Activities\">Basic</a>');
+tam5a22da56a3b35t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_SSH_Activities\&quot;" title=\"Orchestration SSH Activities\">SSH</a>');
+tam5a22da56a3b35t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Active_Directory_Activities\&quot;" title=\"Orchestration Active Directory Activities\">Active Directory</a>');
+tam5a22da56a3b35t.add(5, 1, '<strong class=\"selflink\">PowerShell</strong>');
+tam5a22da56a3b35t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_VMware_Activities\&quot;" title=\"Orchestration VMware Activities\">VMware</a>');
+tam5a22da56a3b35t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Amazon_EC2_Activities\&quot;" title=\"Orchestration Amazon EC2 Activities\">Amazon EC2</a>');
+tam5a22da56a3b35t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Puppet_Activities\&quot;" title=\"Orchestration Puppet Activities\">Puppet</a>');
+tam5a22da56a3b35t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Chef_Activities\&quot;" title=\"Orchestration Chef Activities\">Chef</a>');
+tam5a22da56a3b35t.add(10, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Exchange_Activities\&quot;" title=\"Orchestration Exchange Activities\">Exchange</a>');
+tam5a22da56a3b35t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Activity_Designer\&quot;" title=\"Orchestration Activity Designer\">Activity Designer</a>');
+tam5a22da56a3b35t.add(12, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Activity_Designer_Variables\&quot;" title=\"Managing Activity Designer Variables\">Managing Variables</a>');
+tam5a22da56a3b35t.add(13, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Activity_Parsing_Rules\&quot;" title=\"Orchestration Activity Parsing Rules\">Parsing Rules</a>');
+tam5a22da56a3b35t.add(14, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_SOAP_Web_Service\&quot;" title=\"Activity Designer - SOAP Web Service\">SOAP Web Service</a>');
+tam5a22da56a3b35t.add(15, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_JavaScript_Probe\&quot;" title=\"Activity Designer - JavaScript Probe\">JavaScript Probe</a>');
+tam5a22da56a3b35t.add(16, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_Powershell\&quot;" title=\"Activity Designer - Powershell\">Powershell</a>');
+tam5a22da56a3b35t.add(17, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_REST_Web_Service\&quot;" title=\"Activity Designer - REST Web Service\">REST Web Service</a>');
+tam5a22da56a3b35t.add(18, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_Probe\&quot;" title=\"Activity Designer - Probe\">Probe</a>');
+tam5a22da56a3b35t.add(19, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_Run_Script\&quot;" title=\"Activity Designer - Run Script\">Run Script</a>');
+tam5a22da56a3b35t.add(20, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Activity_Designer_-_SSH\&quot;" title=\"Activity Designer - SSH\">SSH</a>');
+tam5a22da56a3b35t.add(21, 0, 'Sample Orchestration workflows');
+tam5a22da56a3b35t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Example_-_Restart_a_Linux_Server\&quot;" title=\"Orchestration Example - Restart a Linux Server\">Restart a Linux Server</a>');
+tam5a22da56a3b35t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Example_-_Active_Directory_User_Management\&quot;" title=\"Orchestration Example - Active Directory User Management\">Active Directory User Management</a>');
+tam5a22da56a3b35t.add(24, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Credentials\&quot;" title=\"Credentials\">Credentials</a>');
+tam5a22da56a3b35t.add(25, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assigning_Credentials_to_Orchestration_Activities\&quot;" title=\"Assigning Credentials to Orchestration Activities\">Credential Tagging</a>');
+tam5a22da56a3b35t.add(26, 24, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=External_Credential_Storage\&quot;" title=\"External Credential Storage\">External Credential Storage</a>');
+tam5a22da56a3b35t.add(27, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Probes\&quot;" title=\"Orchestration Probes\">Orchestration Probes</a>');
+tam5a22da56a3b35t.add(28, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server\&quot;" title=\"MID Server\">MID Server</a>');
+tam5a22da56a3b35t.add(29, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Requirements\&quot;" title=\"MID Server Requirements\">Requirements</a>');
+tam5a22da56a3b35t.add(30, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Installation\&quot;" title=\"MID Server Installation\">Installation</a>');
+tam5a22da56a3b35t.add(31, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Configuration\&quot;" title=\"MID Server Configuration\">Configuration</a>');
+tam5a22da56a3b35t.add(32, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Clusters\&quot;" title=\"MID Server Clusters\">MID Server Clusters</a>');
+tam5a22da56a3b35t.add(33, 28, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=MID_Server_Autofinder_for_Orchestration\&quot;" title=\"MID Server Autofinder for Orchestration\">Autofinder</a>');
+tam5a22da56a3b35t.add(34, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_for_Cloud_Provisioning\&quot;" title=\"VMware for Cloud Provisioning\">VMware Support</a>');
+tam5a22da56a3b35t.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_VMware_for_Cloud_Provisioning\&quot;" title=\"Configuring VMware for Cloud Provisioning\">Configuration</a>');
+tam5a22da56a3b35t.add(36, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=User_Privileges_for_vCenter_API_for_Cloud_Provisioning\&quot;" title=\"User Privileges for vCenter API for Cloud Provisioning\">vCenter User Privileges</a>');
+tam5a22da56a3b35t.add(37, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Discovery_for_VMware_vCenter\&quot;" title=\"Discovery for VMware vCenter\">Discovering VMware vCenter</a>');
+tam5a22da56a3b35t.add(38, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ESX_Resource_Pools\&quot;" title=\"ESX Resource Pools\">ESX Resource Pools</a>');
+tam5a22da56a3b35t.add(39, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Templates_and_Offerings_for_Cloud_Provisioning\&quot;" title=\"VMware Templates and Offerings for Cloud Provisioning\">VMware Templates</a>');
+tam5a22da56a3b35t.add(40, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_a_VMware_Instance_in_Cloud_Provisioning\&quot;" title=\"Requesting a VMware Instance in Cloud Provisioning\" class=\"mw-redirect\">Requesting a Virtual Server</a>');
+tam5a22da56a3b35t.add(41, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approving_and_Provisioning_VMware_Requests_for_Cloud_Provisioning\&quot;" title=\"Approving and Provisioning VMware Requests for Cloud Provisioning\">Approvals and Provisioning</a>');
+tam5a22da56a3b35t.add(42, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 for Cloud Provisioning\">Amazon EC2 Support</a>');
+tam5a22da56a3b35t.add(43, 42, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Configuring Amazon EC2 for Cloud Provisioning\">Configuration</a>');
+tam5a22da56a3b35t.add(44, 42, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Approvals_and_Provisioning_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Approvals and Provisioning for Cloud Provisioning\">Approvals and Provisioning</a>');
+tam5a22da56a3b35t.add(45, 42, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Integration_for_Training_Partners_in_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Integration for Training Partners in Cloud Provisioning\">Training Partners</a>');
+tam5a22da56a3b35t.add(46, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Orchestration_Concepts\&quot;" title=\"Orchestration Concepts\">Orchestration Concepts</a>');
+
+                                               document.getElementById('5a22da56a3b35t').innerHTML = tam5a22da56a3b35t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a22da56a3b35t) { window.tamOnload_tam5a22da56a3b35t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a></li>
+<li><a href="index.php%3Ftitle=Help_the_Help_Desk.html" title="Help the Help Desk">Help the Help Desk</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Help+the+Help+Desk+Login+Script&amp;oldid=0.html" title="Help the Help Desk Login Script">Help the Help Desk Login Script</a></li>
+<li><a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Useful+Related+Lists+in+CI+Forms&amp;oldid=0.html" title="Useful Related Lists in CI Forms">Useful Related Lists in CI Forms</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+a+Workflow&amp;oldid=0.html" title="Creating a Workflow">Creating a Workflow</a> </li>
+<li><a href="index.php%3Ftitle=Using_Workflow_Activities.html" title="Using Workflow Activities">Using Workflow Activities</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:Discovery.html" title="Book:Discovery"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Discovery.html" title="Book:Discovery">Discovery</a> <br />
+<a href="index.php%3Ftitle=Book:Data_Collected_by_Discovery.html" title="Book:Data Collected by Discovery"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Data_Collected_by_Discovery.html" title="Book:Data Collected by Discovery">Data Collected by Discovery</a> <br />
+<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AOrchestration+for+VMWare&amp;oldid=0.html" title="Book:Orchestration for VMWare"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Book%253AOrchestration+for+VMWare&amp;oldid=0.html" title="Book:Orchestration for VMWare" class="mw-redirect">Orchestration for VMWare</a> <br />
+
+</td></tr></table>
+</div><div class="toclimit-1"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Change_Service_State"><span class="tocnumber">2</span> <span class="toctext">Change Service State</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables"><span class="tocnumber">2.1</span> <span class="toctext">Input Variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Install_Windows_App"><span class="tocnumber">3</span> <span class="toctext">Install Windows App</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Result_Values"><span class="tocnumber">3.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables_2"><span class="tocnumber">3.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#States"><span class="tocnumber">3.3</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Run_PowerShell"><span class="tocnumber">4</span> <span class="toctext">Run PowerShell</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Result_Values_2"><span class="tocnumber">4.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Scratchpad_Entries"><span class="tocnumber">4.2</span> <span class="toctext">Scratchpad Entries</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables_3"><span class="tocnumber">4.3</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#States_2"><span class="tocnumber">4.4</span> <span class="toctext">States</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Example"><span class="tocnumber">4.5</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Join_Domain"><span class="tocnumber">5</span> <span class="toctext">Join Domain</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Result_Values_3"><span class="tocnumber">5.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables_4"><span class="tocnumber">5.2</span> <span class="toctext">Input Variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Restart_Windows_Server"><span class="tocnumber">6</span> <span class="toctext">Restart Windows Server</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Result_Values_4"><span class="tocnumber">6.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables_5"><span class="tocnumber">6.2</span> <span class="toctext">Input Variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Uninstall_Windows_App"><span class="tocnumber">7</span> <span class="toctext">Uninstall Windows App</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Result_Values_5"><span class="tocnumber">7.1</span> <span class="toctext">Result Values</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Input_Variables_6"><span class="tocnumber">7.2</span> <span class="toctext">Input Variables</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#States_3"><span class="tocnumber">7.3</span> <span class="toctext">States</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html#Using_HResult_Codes"><span class="tocnumber">8</span> <span class="toctext">Using HResult Codes</span></a></li>
+</ul>
+</div>
+</div>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://support.microsoft.com/kb/968929"><b>PowerShell</b></a> is built on the Windows .NET Framework and is designed to control and automate the administration of Windows machines and applications. PowerShell must be installed on any MID Server that uses these activities. MID Servers using PowerShell must be installed on a supported Windows operating system. ServiceNow supports PowerShell 2.0 and 3.0.
+</p><p>The ServiceNow <a href="index.php%3Ftitle=Orchestration.html" title="Orchestration"><b>Orchestration plugin</b></a> adds these PowerShell activities to <a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect"><b>Workflows</b></a>.
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Change_Service_State"><span class="mw-headline-number">2</span> Change Service State</span></h1>
+<p>The <b>Change Service State</b> activity starts or stops a Windows service on a remote system. 
+</p>
+<h2><span class="mw-headline" id="Input_Variables"><span class="mw-headline-number">2.1</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  Hostname or IP address of the target Windows machine on which the service is installed. Use the Resolve DNS activity to resolve hostnames into IP addresses.
+</td></tr>
+<tr>
+<td>  Service
+</td>
+<td>  Name of the Windows Service to start or stop. The service parameter is the service name, not the display name of the service affected.
+</td></tr>
+<tr>
+<td>  State
+</td>
+<td>  There are two actions to select for a service state change: <b>Start</b> or <b>Stop</b>.
+</td></tr></table>
+<h1><span class="mw-headline" id="Install_Windows_App"><span class="mw-headline-number">3</span> Install Windows App</span></h1>
+<p>The <b>Install Windows App</b> activity installs an application, from an MSI package, on a Windows target machine. Observe the following setup requirements: 
+</p>
+<ul><li>The WMI Windows Installer Provider must be installed on the target machine. See <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://msdn.microsoft.com/en-us/library/aa394570(v=vs.85).aspx"><b>WMI Providers</b></a> for a list of Windows operating systems that provide this by default.</li>
+<li>The MID Server, the target machine, and the installer source machine must be on the same Active Directory domain or, if these computers are on separate domains, those domains must have a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://technet.microsoft.com/en-us/library/cc961481.aspx"><b>trust relationship</b></a> established between them. </li>
+<li>If the installer path is a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://compnetworking.about.com/od/windowsnetworking/g/unc-name.htm"><b>UNC file sharing</b></a> machine, the Active Directory account of the target computer must be <i>trusted for delegation</i>. For instructions on this configuration, see the posting on the community for <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://community.servicenow.com/people/russ.sarbora/blog/2011/09/30/2540"><b>installing and uninstalling Windows applications</b></a>. </li></ul>
+<p>To enable the WMI Windows Installer Provider:
+</p>
+<ol><li>Open the Control Panel.</li>
+<li>Go to <b>Add or Remove Programs</b>.</li>
+<li>Select <b>Add/Remove Windows Components</b>.</li>
+<li>Double-click <b>Management and Monitoring Tools</b>.
+<dl><dd>This action opens a secondary window displaying additional selections.</dd></dl></li>
+<li>Select <b>WMI Windows Installer Provider</b> check box.</li>
+<li>Click <b>OK</b> to return to the Windows Components Wizard window.</li>
+<li>Click <b>Next</b>.
+<dl><dd>You might be asked for the Windows installation CD to complete this process.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Result_Values"><span class="mw-headline-number">3.1</span> Result Values</span></h2>
+<p>The success or failure of the PowerShell commands used to install the application determines the result value of the Install Windows App activity. Possible result values are: 
+</p>
+<ul><li>Success</li>
+<li>Failure</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_2"><span class="mw-headline-number">3.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  Hostname or IP address of the target Windows machine on which the service is installed. Use the Resolve DNS <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=MID+Server+Autofinder+for+Orchestration&amp;oldid=0.html#MID_Server_Capabilities" title="MID Server Autofinder for Orchestration"><b>MID Server capability</b></a> to resolve hostnames into IP addresses. In versions prior to October 2011 Preview 2, only the IP address is a valid value.
+</td></tr>
+<tr>
+<td>  Installer Path
+</td>
+<td>  Path to the installer. The installer can be on any machine that is visible to both the MID Server and the target machine (local drive, UNC path, mapped drive, etc.).
+</td></tr>
+<tr>
+<td>  Installer
+</td>
+<td>  Name of the installer file, such as <b>winzip150.msi</b>. The installer must be an MSI package.
+</td></tr>
+<tr>
+<td>  Arguments
+</td>
+<td>  The parameter that contains the command line arguments to the MSI package.  These are <i>name=value pairs</i>, separated by a space.  For example, the argument might appear as: <b>INSTALLDIR=c:\myinstallfolder ADDDESKTOPICON=0</b>. These arguments are dependent on the what the actual MSI being installed defines. If there are no arguments, leave the field empty.
+</td></tr></table>
+<h2><span class="mw-headline" id="States"><span class="mw-headline-number">3.3</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine knows to start the <i>onExecute</i> function of the activity.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activty, was cancelled.
+</td></tr></table>
+<h1><span class="mw-headline" id="Run_PowerShell"><span class="mw-headline-number">4</span> Run PowerShell</span></h1>
+<p>The <b>Run PowerShell</b> activity executes Windows PowerShell commands on a MID Server.
+</p>
+<h2><span class="mw-headline" id="Result_Values_2"><span class="mw-headline-number">4.1</span> Result Values</span></h2>
+<p>The workflow designer can assign a result value using activity.result from within a script field of the activity. By default, the success or failure of the PowerShell commands used determines the result value of the Run PowerShell activity. Possible result values are:
+</p>
+<ul><li>Success</li>
+<li>Failure</li></ul>
+<h2><span class="mw-headline" id="Scratchpad_Entries"><span class="mw-headline-number">4.2</span> Scratchpad Entries</span></h2>
+<p>Information written to <b>stdout</b> by the executing script is captured and returned to the activity in the <b>activity.output</b> variable. This information can be parsed, processed, or saved (to a <a href="index.php%3Ftitle=Using_the_Workflow_Scratchpad.html" title="Using the Workflow Scratchpad"><b>scratchpad variable</b></a>, for example) for future processing in the activity’s sensor script.
+</p><p>An example would be to run the <b>get-date</b> command to get the MID Server’s current time. This sensor script saves the full output received, but we can process it to return and save only the time.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:RBA_Powershell_Activity.png.html" class="image" title="RBA_Powershell_Activity.png‎"><img alt="RBA_Powershell_Activity.png‎" src="images/1/1b/RBA_Powershell_Activity.png" width="995" height="265" /></a>
+</p><p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This is an over-simplified example. In most cases, the script operates against some remote Windows computer. However, the principal is the same – whatever is written to <b>stdout</b> is returned in <b>activity.output</b> and available to process.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Input_Variables_3"><span class="mw-headline-number">4.3</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  IP address of the target Windows machine. This value is mapped to the <b>$computer</b> variable for use in commands (see the example in the <b>Command</b> field). A PowerShell credential variable called <b>$cred</b> that is based on information in the ServiceNow Credentials table will authenticate on the computer pointed to by <b>Hostname</b>.
+</td></tr>
+<tr>
+<td>  Command
+</td>
+<td>  Enter the PowerShell command to run. For example, to execute a simple WMI query against a remote machine pointed to by the <b>hostname</b> variable, the command is:
+<pre>get-wmiobject &lt;class&gt; -computer $computer -credential $cred</pre>
+<p>If no credentials authenticate on the computer, the command runs in the context of the MID Server user. 
+</p><p>You cannot run both a command and a script file. Specifying a command hides the <b>Script file</b> variable.
+</p>
+</td></tr>
+<tr>
+<td>  Sensor script
+</td>
+<td>  The script to run using the results of the probe.  The output from the probe is contained in a variable called <b>output</b>.  Any error from the probe is contained in a variable called <b>error</b>.
+</td></tr>
+<tr>
+<td> Script file
+</td>
+<td> The <a href="index.php%3Ftitle=MID_Server_Configuration.html#Enabling_Script_File_Synchronization_for_Windows_Enhanced_Security" title="MID Server Configuration">MID Server script file</a> to run. You cannot run both a script file and a command. Selecting a script file hides the <b>Command</b> variable.
+</td></tr>
+<tr>
+<td> PowerShell script variables
+</td>
+<td> Additional parameters, in JSON format, used by the specified script file.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_2"><span class="mw-headline-number">4.4</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine knows to start the <i>onExecute</i> function of the activity.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activty, was cancelled.
+</td></tr></table>
+<h2><span class="mw-headline" id="Example"><span class="mw-headline-number">4.5</span> Example</span></h2>
+<p>Add workflow variables for the command line using the normal workflow variable syntax. In the example above, if the &lt;<i>class</i>&gt; was in a workflow input variable called <b>myclass</b>, the command would look like:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">get</span><span class="o">-</span><span class="nx">wmiobject</span> <span class="nx">$</span><span class="p">{</span><span class="nx">workflow</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">myclass</span><span class="p">}</span> <span class="o">-</span><span class="nx">computer</span> <span class="nx">$computer</span> <span class="err">–</span><span class="nx">credential</span> <span class="nx">$cred</span>
+<span class="nx">Similarly</span> <span class="k">if</span> <span class="nx">the</span> <span class="nx">variable</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">scratchpad</span> <span class="nx">variable</span> <span class="nx">named</span> <span class="nx">myclass</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">command</span> <span class="nx">would</span> <span class="nx">look</span> <span class="nx">like</span><span class="o">:</span>
+<span class="nx">get</span><span class="o">-</span><span class="nx">wmiobject</span> <span class="nx">$</span><span class="p">{</span><span class="nx">workflow</span><span class="p">.</span><span class="nx">scratchpad</span><span class="p">.</span><span class="nx">myclass</span><span class="p">}</span> <span class="o">-</span><span class="nx">computer</span> <span class="nx">$computer</span> <span class="err">–</span><span class="nx">credential</span> <span class="nx">$cred</span>
+</pre></div>
+<h1><span class="mw-headline" id="Join_Domain"><span class="mw-headline-number">5</span> Join Domain</span></h1>
+<p>The <b>Join Domain</b> activity joins a Windows computer to a domain. If the computer is already a member of a domain, this activity completes without modifying the computer.
+</p><p>Joining a domain requires a username and password. This user must have domain administration privileges or privileges to join a computer to the domain.
+</p>
+<h2><span class="mw-headline" id="Result_Values_3"><span class="mw-headline-number">5.1</span> Result Values</span></h2>
+<ul><li><b>Success:</b> the computer joined the domain successfully.</li>
+<li><b>Failure:</b> the computer failed to join the domain, or the computer is already in a domain.</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_4"><span class="mw-headline-number">5.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  Hostname or IP address of the Windows server that is joining the domain.
+</td></tr>
+<tr>
+<td>  Domain
+</td>
+<td>  Name of the domain to join.
+</td></tr>
+<tr>
+<td>  Domain User
+</td>
+<td>  The name of a user who has domain administration privileges or privileges to join a computer to the domain.
+</td></tr>
+<tr>
+<td>  Domain User Password
+</td>
+<td>  The password for the user who has domain administration privileges or privileges to join a computer to the domain.
+</td></tr></table>
+<h1><span class="mw-headline" id="Restart_Windows_Server"><span class="mw-headline-number">6</span> Restart Windows Server</span></h1>
+<p>The <b>Restart Windows Server</b> activity restarts a Windows server using PowerShell.
+</p>
+<h2><span class="mw-headline" id="Result_Values_4"><span class="mw-headline-number">6.1</span> Result Values</span></h2>
+<ul><li><b>Success:</b> the server restarted successfully.</li>
+<li><b>Failure:</b> the server failed to restart.</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_5"><span class="mw-headline-number">6.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  Hostname or IP address of the Windows server to restart.
+</td></tr></table>
+<h1><span class="mw-headline" id="Uninstall_Windows_App"><span class="mw-headline-number">7</span> Uninstall Windows App</span></h1>
+<p>The <b>Uninstall Windows App</b> activity uninstalls an application from a Windows target machine. The only applications that can be uninstalled using this activity are those that were installed by a Windows Installer. 
+</p>
+<h2><span class="mw-headline" id="Result_Values_5"><span class="mw-headline-number">7.1</span> Result Values</span></h2>
+<p>The workflow designer can assign a result value using <i>activity.result</i> from within a script field of the activity. By default, the success or failure of the PowerShell commands used to uninstall the application determines the result value of this activity. Possible result values are: 
+</p>
+<ul><li>Success</li>
+<li>Failure</li></ul>
+<h2><span class="mw-headline" id="Input_Variables_6"><span class="mw-headline-number">7.2</span> Input Variables</span></h2>
+<table class="standard" width="750px">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Hostname
+</td>
+<td>  Hostname or IP address of the Windows target machine on which to uninstall an application.
+</td></tr>
+<tr>
+<td>  Product
+</td>
+<td>  The name of the application to uninstall exactly as it appears in the Windows Add/Remove Programs list.
+</td></tr></table>
+<h2><span class="mw-headline" id="States_3"><span class="mw-headline-number">7.3</span> States</span></h2>
+<p>The activity state tells the workflow engine what to do with the activity.
+</p>
+<table class="standard">
+<tr>
+<th>State
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Executing
+</td>
+<td>The workflow engine knows to start the <i>onExecute</i> function of the activity.
+</td></tr>
+<tr>
+<td>Finished
+</td>
+<td>The activity finished running. See the result value for the outcome of the activity.
+</td></tr>
+<tr>
+<td>Cancelled
+</td>
+<td>This activity, or the workflow that contains this activty, was cancelled.
+</td></tr></table>
+<h1><span class="mw-headline" id="Using_HResult_Codes"><span class="mw-headline-number">8</span> Using HResult Codes</span></h1>
+<p>When a PowerShell script encounters an error, the Windows machine may return an HResult code as part of the error message. PowerShell activities can read and interpret this code (<a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin</a>). Not all PowerShell errors include an HResult code. In the event of a failed PowerShell script, you can use the HResult code to move the workflow through a specific condition. 
+</p><p>For example, when resetting an Active Directory password to a password that does not meet policy requirements, such as minimum length or complexity, the PowerShell script returns the HResult code <i>-2146022651</i>.  To use this code, create an activity condition with the <b>Condition</b> value of <b>activity.hresult = -2146022651</b>. If the PowerShell script returns this code when the activity runs, the workflow transitions through this new condition.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171202165239
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.341 seconds
+Real time usage: 0.778 seconds
+Preprocessor visited node count: 189/1000000
+Preprocessor generated node count: 478/1000000
+Post‐expand include size: 10789/2097152 bytes
+Template argument size: 1786/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  106.122      1 - -total
+ 91.14%   96.719      1 - Template:Orchestration_and_Discovery
+ 87.33%   92.673      1 - Template:Two_Topics
+  7.81%    8.287      1 - Embedded:Orchestration
+  5.52%    5.854      1 - Embedded:Discovery
+  4.37%    4.642      1 - Template:LimitedTOC
+  3.41%    3.623      6 - Template:T
+  3.31%    3.511      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9947-0!*!0!1!en!5!* and timestamp 20171202165238 and revision id 250769
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Orchestration_PowerShell_Activities&amp;oldid=250769.html">http://wiki.servicenow.com/index.php?title=Orchestration_PowerShell_Activities&amp;oldid=250769</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration+Activities.html" title="Category:Orchestration Activities">Orchestration Activities</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration+Activities.html" title="Category:Orchestration Activities">Orchestration Activities</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration+Activities.html" title="Category:Orchestration Activities">Orchestration Activities</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9947"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9947" data-vote-the-vote="5" data-vote-id="9947" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9947_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9947" data-vote-the-vote="1" data-vote-id="9947" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9947_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Orchestration+PowerShell+Activities&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Orchestration+PowerShell+Activities&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Orchestration_PowerShell_Activities_for_Workflows.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Orchestration_PowerShell_Activities_for_Workflows&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Orchestration+PowerShell+Activities.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Orchestration+PowerShell+Activities&amp;returnto=Orchestration+PowerShell+Activities&amp;oldid=250769&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FOrchestration_PowerShell_Activities.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Orchestration_PowerShell_Activities" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities&amp;oldid=250769.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Orchestration_PowerShell_Activities&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 14:11, 7 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1078});});</script></body></html>

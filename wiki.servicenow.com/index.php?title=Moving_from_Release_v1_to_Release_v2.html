@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Moving from Release v1 to Release v2 - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Moving_from_Release_v1_to_Release_v2","wgTitle":"Moving from Release v1 to Release v2","wgCurRevisionId":130260,"wgRevisionId":130260,"wgArticleId":9410,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Release Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Moving_from_Release_v1_to_Release_v2","wgRelevantArticleId":9410,"wgRequestId":"e9d323f8c8834527c03ccba4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20121004205024"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Moving_from_Release_v1_to_Release_v2"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Moving from Release v1 to Release v2"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Release Management"/>
+<meta name="category" content="Release Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Moving from Release v1 to Release v2"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20121004205024"/>
+
+	<meta property="article:published_time" content="20121004205024"/>
+
+	<meta property="article:modified_time" content="20121004205024"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Release Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Moving_from_Release_v1_to_Release_v2"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Moving_from_Release_v1_to_Release_v2 rootpage-Moving_from_Release_v1_to_Release_v2 skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Moving from Release v1 to Release v2</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Planning_and_Policy_Applications.html" title="Planning and Policy Applications">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=ITIL_Release_Management.html" title="ITIL Release Management">Release Management</a> &gt; Moving from Release v1 to Release v2</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-business-management/page/product/release-management/concept/c_ITILReleaseManagement.html">Release Management</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=ITIL_Release_Management.html" title="ITIL Release Management">ITIL Release Management</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Release_Overview.html" title="Release Overview">Release Overview</a>
+<ul><li><a href="index.php%3Ftitle=Defining_a_Product_with_Release_Management.html" title="Defining a Product with Release Management">Defining a Product with Release Management</a></li>
+<li><a href="index.php%3Ftitle=Managing_a_Release_Process.html" title="Managing a Release Process">Managing a Release Process</a></li>
+<li><a href="index.php%3Ftitle=Customizing_the_Release_Process.html" title="Customizing the Release Process">Customizing the Release Process</a></li>
+<li><strong class="selflink">Moving from Release v1 to Release v2</strong></li></ul></li>
+<li><a href="index.php%3Ftitle=Release_Management_Plugins.html" title="Release Management Plugins" class="mw-redirect">Release Management Plugins</a>
+<ul><li><a href="index.php%3Ftitle=Defining_a_Product_with_Release_v2.html" title="Defining a Product with Release v2">Defining a Product with Release v2</a></li>
+<li><a href="index.php%3Ftitle=Planning_Releases_with_Release_Management.html" title="Planning Releases with Release Management">Planning Releases with Release Management</a></li>
+<li><a href="index.php%3Ftitle=Using_the_Planning_Board.html" title="Using the Planning Board">Using the Planning Board</a></li>
+<li><a href="index.php%3Ftitle=Release_Management_Tools.html" title="Release Management Tools">Release Management Tools</a></li></ul></li></ul>
+<p><br />
+</p>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Process_Flow_Formatter.html" title="Process Flow Formatter">Process Flow Formatter</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Release_Management.html" title="Book:Release Management"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Release_Management.html" title="Book:Release Management">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" style="border: 1px solid rgb(159, 95, 159); width: 70%; margin-bottom: 0.5em; margin-top: 0.5em; vertical-align: top; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Plugin.gif.html" class="image" title="Plugin required"><img alt="Plugin required" src="images/e/e0/Plugin.gif" width="16" height="16" /></a></div>
+</td>
+<td width="100%"> Functionality described here requires the <b><a href="index.php%3Ftitle=Release_Management_Plugins.html" title="Release Management Plugins" class="mw-redirect">Release Management v2</a></b> <a href="index.php%3Ftitle=Activating_ServiceNow_Plugins.html" title="Activating ServiceNow Plugins">plugin</a>.
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Upgrading_from_Release_v1_to_Release_v2"><span class="tocnumber">2</span> <span class="toctext">Upgrading from Release v1 to Release v2</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Comparing_Release_v1_to_Release_v2"><span class="tocnumber">3</span> <span class="toctext">Comparing Release v1 to Release v2</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#New_Data_Structure"><span class="tocnumber">3.1</span> <span class="toctext">New Data Structure</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#New_Tables"><span class="tocnumber">3.1.1</span> <span class="toctext">New Tables</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#New_Table_Relationships"><span class="tocnumber">3.1.2</span> <span class="toctext">New Table Relationships</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#New_User_Interfaces"><span class="tocnumber">3.2</span> <span class="toctext">New User Interfaces</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Release_Management_Hierarchies"><span class="tocnumber">3.2.1</span> <span class="toctext">Release Management Hierarchies</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Release_Management_Process_Flow"><span class="tocnumber">3.2.2</span> <span class="toctext">Release Management Process Flow</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Release_Gantt_Chart"><span class="tocnumber">3.2.3</span> <span class="toctext">Release Gantt Chart</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p><a href="index.php%3Ftitle=Release_Management_Plugins.html" title="Release Management Plugins" class="mw-redirect">Release Management Plugins</a> enhance release functionality by implementing a new data structure and new user interfaces to make managing a release more flexible and more powerful.
+</p>
+<h1><span class="mw-headline" id="Upgrading_from_Release_v1_to_Release_v2"><span class="mw-headline-number">2</span> Upgrading from Release v1 to Release v2</span></h1>
+<p>To upgrade from Release v1 to Release v2, simply <a href="index.php%3Ftitle=Release_Management_Plugins.html#Activating_the_Plugin" title="Release Management Plugins" class="mw-redirect">activate the appropriate plugin</a>.
+</p><p>Activating the plug in will create a new application and new tables. The old applications and tables will not be deleted; the <b>Release</b> application will be deactivated, but is accessible through <b>System Definitions &gt; Applications</b>.
+</p><p>The existing Release data will not be converted into Release v2 data, but will be accessible through the old application for historical purposes.
+</p>
+<h1><span class="mw-headline" id="Comparing_Release_v1_to_Release_v2"><span class="mw-headline-number">3</span> Comparing Release v1 to Release v2</span></h1>
+<p>Once the new plugin is activated, make sure to review the new data structure and user interfaces to understand how Release v2 differs from the original Release Management application.
+</p>
+<h2><span class="mw-headline" id="New_Data_Structure"><span class="mw-headline-number">3.1</span> New Data Structure</span></h2>
+<h3><span class="mw-headline" id="New_Tables"><span class="mw-headline-number">3.1.1</span> New Tables</span></h3>
+<p>Each of the different Release Management Plugins implements a different set of tables (see <a href="index.php%3Ftitle=Release_Management_Plugins.html" title="Release Management Plugins" class="mw-redirect">Release Management Plugins</a> for specifics). These tables differ from the old Release tables because they are now extensions of the <b><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Planned+Task+Plugin&amp;oldid=0.html" title="Planned Task Plugin" class="mw-redirect">Planned Task</a></b> table, meaning they can now use all of the functionality specific to the <b><a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task</a></b> table (such as Approval and Assignment Rules), as well as the standard time-related functionality provided by Planned Task.
+</p>
+<h3><span class="mw-headline" id="New_Table_Relationships"><span class="mw-headline-number">3.1.2</span> New Table Relationships</span></h3>
+<p>The change in the data structure is not simply new tables. The relationships between the tables are implemented differently, to allow more flexibility.
+</p><p>The old tables were separate tables related by a parent-child relationship:
+</p><p>|<a href="index.php%3Ftitle=File:Rm-relationships.png.html" class="image"><img alt="Rm-relationships.png" src="images/f/fb/Rm-relationships.png" width="702" height="545" /></a>
+</p><p>The new tables are now all extensions of the <b>Planned Task</b> table:
+</p><p>|<a href="index.php%3Ftitle=File:Rm2-concepts.png.html" class="image"><img alt="Rm2-concepts.png" src="images/4/47/Rm2-concepts.png" width="710" height="243" /></a>
+</p><p>Individual records can be associated with themselves in parent-child relationships using the <b>Parent</b> reference field available to all of them. However, because the <b>Parent</b> reference field can point to any task, records on the release tables can be associated with any records anywhere on the release table. Therefore, it is possible to have Parent and Child releases and Parent and Child features.
+</p><p>In this example (displayed using the <a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html#Release_Management_Hierarchy">hierarchy view</a>), the Product has Releases is broken up into sub-releases, which have child features defined:
+</p><p><a href="index.php%3Ftitle=File:Rm2-heirarchy.png.html" class="image"><img alt="Rm2-heirarchy.png" src="images/4/4a/Rm2-heirarchy.png" width="911" height="397" /></a>
+</p>
+<h2><span class="mw-headline" id="New_User_Interfaces"><span class="mw-headline-number">3.2</span> New User Interfaces</span></h2>
+<h3><span class="mw-headline" id="Release_Management_Hierarchies"><span class="mw-headline-number">3.2.1</span> Release Management Hierarchies</span></h3>
+<p>The <b>Hierarchy</b> view of Products and Releases can be found from a related list on the form:
+</p><p><a href="index.php%3Ftitle=File:Rm2-heirarchy.png.html" class="image"><img alt="Rm2-heirarchy.png" src="images/4/4a/Rm2-heirarchy.png" width="911" height="397" /></a>
+</p>
+<h3><span class="mw-headline" id="Release_Management_Process_Flow"><span class="mw-headline-number">3.2.2</span> Release Management Process Flow</span></h3>
+<p>The <b>Release</b> and <b>Feature</b> forms include a process flow, which displays the current status of the record based on the <b>State</b> field. These are generated using the <a href="index.php%3Ftitle=Process_Flow_Formatter_Plugin.html" title="Process Flow Formatter Plugin" class="mw-redirect">Process Flow Formatter Plugin</a>:
+</p><p><a href="index.php%3Ftitle=File:Workflow_Display.png.html" class="image"><img alt="Workflow Display.png" src="images/0/0a/Workflow_Display.png" width="1124" height="47" /></a>
+</p>
+<h3><span class="mw-headline" id="Release_Gantt_Chart"><span class="mw-headline-number">3.2.3</span> Release Gantt Chart</span></h3>
+<p>Releases can also be managed using the <a href="index.php%3Ftitle=Gantt_Chart.html" title="Gantt Chart">Gantt Chart</a>:
+</p><p><a href="index.php%3Ftitle=File:Rm2-gantt.png.html" class="image"><img alt="Rm2-gantt.png" src="images/d/de/Rm2-gantt.png" width="998" height="731" /></a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201105913
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.266 seconds
+Real time usage: 0.426 seconds
+Preprocessor visited node count: 92/1000000
+Preprocessor generated node count: 329/1000000
+Post‐expand include size: 3769/2097152 bytes
+Template argument size: 1189/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   64.134      1 - -total
+ 76.03%   48.760      1 - Template:Release_Management
+ 53.33%   34.204      1 - Template:Topic
+ 22.01%   14.117      1 - Template:Plugin
+  8.95%    5.743      1 - Template:Note
+  7.74%    4.963      4 - Template:T
+  7.52%    4.820      1 - Embedded:Release
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9410-0!*!0!1!en!5!* and timestamp 20171201105913 and revision id 130260
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2&amp;oldid=130260.html">http://wiki.servicenow.com/index.php?title=Moving_from_Release_v1_to_Release_v2&amp;oldid=130260</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Release+Management.html" title="Category:Release Management">Release Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Planning+and+Policy.html" title="Category:Planning and Policy">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Release+Management.html" title="Category:Release Management">Release Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9410"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9410" data-vote-the-vote="5" data-vote-id="9410" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9410_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9410" data-vote-the-vote="1" data-vote-id="9410" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9410_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Moving+from+Release+v1+to+Release+v2.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Moving+from+Release+v1+to+Release+v2.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Moving_from_Release_v1_to_Release_v2.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Moving+from+Release+v1+to+Release+v2.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Moving+from+Release+v1+to+Release+v2&amp;returnto=Moving+from+Release+v1+to+Release+v2&amp;oldid=130260&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FMoving_from_Release_v1_to_Release_v2.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Moving_from_Release_v1_to_Release_v2" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2&amp;oldid=130260.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Moving_from_Release_v1_to_Release_v2&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:50, 4 October 2012.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1340});});</script></body></html>

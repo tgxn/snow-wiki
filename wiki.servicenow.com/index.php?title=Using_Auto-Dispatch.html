@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using Auto-Dispatch - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_Auto-Dispatch","wgTitle":"Using Auto-Dispatch","wgCurRevisionId":250982,"wgRevisionId":250982,"wgArticleId":22305,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Work Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_Auto-Dispatch","wgRelevantArticleId":22305,"wgRequestId":"0e3f98a602e9abcd1a0c76fa","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170912192037"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_Auto-Dispatch"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using Auto-Dispatch"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Work Management"/>
+<meta name="category" content="Work Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Using_Auto-Dispatch.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using Auto-Dispatch"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170912192037"/>
+
+	<meta property="article:published_time" content="20170912192037"/>
+
+	<meta property="article:modified_time" content="20170912192037"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Work Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_Auto-Dispatch"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_Auto-Dispatch rootpage-Using_Auto-Dispatch skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Auto-Dispatch.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+Auto-Dispatch&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using Auto-Dispatch</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=IT_Services_Applications.html" title="IT Services Applications">IT Services</a> &gt; <a href="index.php%3Ftitle=Work_Management.html" title="Work Management" class="mw-redirect">Work Management</a> &gt; Using Auto-Dispatch</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-service-management-for-the-enterprise/page/product/work-management/task/t_AutoDispatchATask.html">Auto-Dispatch a Task</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Work+Management+-+Versions+Prior+to+Fuji&amp;oldid=0.html" title="Work Management - Versions Prior to Fuji">Work Management <br />Versions Prior to Fuji</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20b87ab708dt'></div><script type="text/javascript">window.tamOnload_tam5a20b87ab708dt=[];tree = new dTree('tam5a20b87ab708dt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20b87ab708dt = tree;
+                                               tam5a20b87ab708dt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Work_Management\&quot;" title=\"Installed with Work Management\">Installed Components</a>');
+
+tam5a20b87ab708dt.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Management_Overview_Module\&quot;" title=\"Work Management Overview Module\">Overview Module</a>');
+tam5a20b87ab708dt.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Work_Orders_-_Versions_Prior_to_Fuji\&quot;" title=\"Managing Work Orders - Versions Prior to Fuji\">Work Orders</a>');
+tam5a20b87ab708dt.add(4, 3, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Order_Models_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Order Models - Versions Prior to Fuji\">Work Order Models</a>');
+tam5a20b87ab708dt.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Order_Tasks_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Order Tasks - Versions Prior to Fuji\">Work Order Tasks</a>');
+tam5a20b87ab708dt.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Part_Requirements_-_Versions_Prior_to_Fuji\&quot;" title=\"Part Requirements - Versions Prior to Fuji\">Part Requirements</a>');
+tam5a20b87ab708dt.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Dispatching_Work_Order_Tasks_-_Versions_Prior_to_Fuji\&quot;" title=\"Dispatching Work Order Tasks - Versions Prior to Fuji\">Dispatching Tasks</a>');
+tam5a20b87ab708dt.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Auto-Dispatch_-_Versions_Prior_to_Fuji\&quot;" title=\"Using Auto-Dispatch - Versions Prior to Fuji\">Auto-Dispatch</a>');
+tam5a20b87ab708dt.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Dispatch_Map_-_Versions_Prior_to_Fuji\&quot;" title=\"Using the Dispatch Map - Versions Prior to Fuji\">Dispatch Map</a>');
+tam5a20b87ab708dt.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Executing_Work_Order_Tasks_-_Versions_Prior_to_Fuji\&quot;" title=\"Executing Work Order Tasks - Versions Prior to Fuji\">Executing Tasks</a>');
+tam5a20b87ab708dt.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Management_Groups_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Management Groups - Versions Prior to Fuji\">Groups</a>');
+tam5a20b87ab708dt.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Management_SLAs_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Management SLAs - Versions Prior to Fuji\">SLAs</a>');
+tam5a20b87ab708dt.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Management_States_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Management States - Versions Prior to Fuji\">States</a>');
+tam5a20b87ab708dt.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Territory_Management_-_Versions_Prior_to_Fuji\&quot;" title=\"Territory Management - Versions Prior to Fuji\">Territories</a>');
+tam5a20b87ab708dt.add(15, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Management_on_Mobile_Devices_-_Versions_Prior_to_Fuji\&quot;" title=\"Work Management on Mobile Devices - Versions Prior to Fuji\">Mobile Devices</a>');
+
+                                               document.getElementById('5a20b87ab708dt').innerHTML = tam5a20b87ab708dt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20b87ab708dt) { window.tamOnload_tam5a20b87ab708dt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Introduction_to_Assets_and_Configuration.html" title="Introduction to Assets and Configuration">Asset and Configuration</a></li>
+<li><a href="index.php%3Ftitle=Geolocation.html" title="Geolocation">Geolocation</a></li>
+<li><a href="index.php%3Ftitle=State_Flows.html" title="State Flows">State Flows</a></li>
+<li><a href="index.php%3Ftitle=Product_Catalog.html" title="Product Catalog">Product Catalog</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:Work_Management.html" title="Book:Work Management"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Work_Management.html" title="Book:Work Management">Work Management</a>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#System_Properties_Affecting_Auto-Dispatch"><span class="tocnumber">2</span> <span class="toctext">System Properties Affecting Auto-Dispatch</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Rush_Hour_Allowances"><span class="tocnumber">2.1</span> <span class="toctext">Rush Hour Allowances</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Travel_Time_Percentage_Buffer"><span class="tocnumber">2.2</span> <span class="toctext">Travel Time Percentage Buffer</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Work_Spacing"><span class="tocnumber">2.3</span> <span class="toctext">Work Spacing</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Toll_Roads"><span class="tocnumber">2.4</span> <span class="toctext">Toll Roads</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Default_Start_and_End_Times"><span class="tocnumber">2.5</span> <span class="toctext">Default Start and End Times</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Matching_Skills"><span class="tocnumber">2.6</span> <span class="toctext">Matching Skills</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Processing_Count"><span class="tocnumber">2.7</span> <span class="toctext">Processing Count</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Configuring_Groups_for_Auto-Dispatch"><span class="tocnumber">3</span> <span class="toctext">Configuring Groups for Auto-Dispatch</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Auto-Dispatching_at_Qualification"><span class="tocnumber">4</span> <span class="toctext">Auto-Dispatching at Qualification</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Auto-Dispatching_from_Pending_Dispatch"><span class="tocnumber">5</span> <span class="toctext">Auto-Dispatching from Pending Dispatch</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>When the system <i>auto-dispatches</i> a task, it searches for a nearby agent who has the skills and the time available and assigns that agent to perform the task. You can auto-dispatch a task manually, with the click of a button, or configure the system to auto-dispatch a task when the task is qualified. When a user with the wm_qualifier or a combination role qualifies a task for a <a href="index.php%3Ftitle=Work_Management_Groups.html" title="Work Management Groups">dispatch group</a> for which <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Configuring_Groups_for_Auto-Dispatch">auto-dispatch</a> is enabled, the ServiceNow system automatically assigns an appropriate agent to the task and moves it to the <b>Assigned</b> state. If no appropriate agents are available, the system moves the task to the <b>Pending Dispatch</b> state. If tasks cannot be auto-dispatched, the dispatcher must adjust the values in the Work Order Task form and then auto-dispatch the task by clicking the <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Auto-Dispatching_from_Pending_Dispatch">Auto-Dispatch</a> button. The system uses these criteria to dispatch agents automatically:
+</p>
+<ul><li><b>Geolocation:</b> The ServiceNow system uses <a href="index.php%3Ftitle=Using_the_Dispatch_Map.html#Geolocation_Tracking" title="Using the Dispatch Map">geolocation tracking</a> to find available agents when auto-dispatching a task. </li>
+<li><b>Skills:</b> You can configure whether or not an agent's <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Matching_Skills" title="Using Auto-Dispatch">skills</a> should be considered when auto-dispatching a task.</li>
+<li><b>Availability:</b> The ServiceNow system considers an agent's <a href="index.php%3Ftitle=Work_Order_Tasks.html#Creating_Work_Order_Tasks" title="Work Order Tasks">availability</a> when auto-dispatching additional tasks.</li>
+<li><b>Task windows:</b> The ServiceNow system attempts to schedule within any configured <a href="index.php%3Ftitle=Work_Order_Tasks.html#Creating_Work_Order_Tasks" title="Work Order Tasks">task windows</a>. If a window cannot be scheduled for any available agents, auto-dispatch fails.</li>
+<li><b>Task dependencies:</b> The ServiceNow system considers any upstream <a href="index.php%3Ftitle=Work_Order_Tasks.html#Creating_Dependencies_Between_Work_Order_Tasks" title="Work Order Tasks">task dependencies</a> when auto-dispatching a task.</li></ul>
+<p>Auto-dispatch is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<h1><span class="mw-headline" id="System_Properties_Affecting_Auto-Dispatch"><span class="mw-headline-number">2</span> System Properties Affecting Auto-Dispatch</span></h1>
+<p>The ServiceNow system provides a number of properties that affect the way auto-dispatch calculates travel times and availability when attempting to match an agent with a task. These properties are available when you activate <a href="index.php%3Ftitle=Work_Management.html#Activating_Work_Management" title="Work Management" class="mw-redirect">work management geolocation</a> and configure a <a href="index.php%3Ftitle=Geolocation.html#Google_Key" title="Geolocation">private key</a>  for <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.google.com/enterprise/mapsearth/products/mapsapi.html">Google Maps API for Business</a>. This combination provides the greatest level of precision for locating and scheduling agents for automatic dispatch. Work management does not require the use of geolocation for auto-dispatch. However, tasks auto-dispatched without geolocation must use the travel time defined in the <a href="index.php%3Ftitle=Work_Order_Tasks.html#Creating_Work_Order_Tasks" title="Work Order Tasks"><b>Estimated travel duration</b></a> field in the task record and cannot consider other factors that affect travel, such as rush hour delays.
+</p><p>To dispatch agents automatically using geolocation, navigate to <b>Work Management &gt; Administration &gt; Work Management Properties</b> and configure for time-related factors and other dispatching considerations.
+</p>
+<h2><span class="mw-headline" id="Rush_Hour_Allowances"><span class="mw-headline-number">2.1</span> Rush Hour Allowances</span></h2>
+<p>ServiceNow provides the following properties that allow you to define the start and end times of the morning and evening rush hours. By default, no rush hours are defined. 
+</p>
+<ul><li><b>Morning rush hour span, formatted as 06:30-08:00.</b></li>
+<li><b>Evening rush hour span, formatted as 14:30-16:00.</b></li></ul>
+<h2><span class="mw-headline" id="Travel_Time_Percentage_Buffer"><span class="mw-headline-number">2.2</span> Travel Time Percentage Buffer</span></h2>
+<p>Use the <b>Percentage to add to all travel times</b> property to specify a time buffer for travel between tasks, expressed as a percentage of the total travel time. This buffer allows an agent's schedule to accommodate travel delays, such as a fuel stop. The default value for this property is <b>0</b>. A common setting is <b>15</b>.
+</p>
+<h2><span class="mw-headline" id="Work_Spacing"><span class="mw-headline-number">2.3</span> Work Spacing</span></h2>
+<p>Use the <b>Amount of time (in minutes) to add between the end of a task and the travel start of the next</b> property to add additional time between the conclusion of one task and the beginning of travel to the next task. This is to accommodate such things as cleanup and paperwork after the task is finished. The default for this property is <b>0</b>.
+</p>
+<h2><span class="mw-headline" id="Toll_Roads"><span class="mw-headline-number">2.4</span> Toll Roads</span></h2>
+<p>Use the <b>Allow toll roads to be used</b> property to include toll roads when automatically routing or dispatching an agent. The default setting for this property is enabled.
+</p>
+<h2><span class="mw-headline" id="Default_Start_and_End_Times"><span class="mw-headline-number">2.5</span> Default Start and End Times</span></h2>
+<p>Use the following properties to specify start and end times for agents. The system uses these times to auto-dispatch tasks to any agent who does not have a predefined schedule or a continuing task from the previous day.
+</p>
+<ul><li><b>Default start time for all work agents when no schedule is set, formatted as 08:00.</b></li>
+<li><b>Default end time for all work agents when no schedule is set, formatted as 17:00.</b></li></ul>
+<h2><span class="mw-headline" id="Matching_Skills"><span class="mw-headline-number">2.6</span> Matching Skills</span></h2>
+<p>Use the <b>Work management should only allow agents to be selected whose skills match all skills for the work order task</b> property to determine if the system should consider agent skills when auto-dispatching work order tasks. By default, this property is enabled, so that ServiceNow evaluates each agent by skills and location when auto-dispatching a task. When this property is disabled, so the system considers location only.
+</p>
+<h2><span class="mw-headline" id="Processing_Count"><span class="mw-headline-number">2.7</span> Processing Count</span></h2>
+<p>Use the <b>Sets the maximum number of agents that will be processed by auto-dispatch at a time</b> property to specify the maximum number of work agents the system should evaluate when auto-dispatching a task. The system can only process up to 500 agents at a time. Make sure to set this value at or above the number of agents in your largest dispatch group. Otherwise, ServiceNow displays an error message and fails to auto-dispatch the task.
+</p>
+<h1><span class="mw-headline" id="Configuring_Groups_for_Auto-Dispatch"><span class="mw-headline-number">3</span> Configuring Groups for Auto-Dispatch</span></h1>
+<p>Users with the admin or wm_admin role can configure auto-dispatch for dispatch groups.
+</p>
+<ol><li>Navigate to ServiceNow group records using one of these paths.
+<ul><li><b>User Administration &gt; Groups</b></li>
+<li><b>Work Management &gt; Administration &gt; Dispatch Groups</b> </li></ul></li>
+<li>Click <b>New</b> or open an existing group.</li>
+<li>Configure these fields:
+<ul><li><b>Auto-dispatch:</b> Select this check box.</li>
+<li><b>Roles:</b> Select the related list and assign the wm_dispatcher role to this group.</li>
+<li><b>Group Members:</b> Select this related list and assign users to this group.</li></ul>
+<dl><dd>See <a href="index.php%3Ftitle=Creating_Groups.html" title="Creating Groups">Creating Groups</a> for information about the other fields on this form.</dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Autodispatch_Config.png.html" class="image" title="Configuring a dispatch group for auto-dispatch"><img alt="Configuring a dispatch group for auto-dispatch" src="images/thumb/6/6a/WM_Autodispatch_Config.png/750px-WM_Autodispatch_Config.png" width="750" height="190" srcset="/images/6/6a/WM_Autodispatch_Config.png 1.5x, /images/6/6a/WM_Autodispatch_Config.png 2x" /></a></dd></dl></li></ol>
+<h1><span class="mw-headline" id="Auto-Dispatching_at_Qualification"><span class="mw-headline-number">4</span> Auto-Dispatching at Qualification</span></h1>
+<p>Users with the wm_qualifier and wm_initiator_qualifier roles can dispatch a task automatically at qualification by assigning it to a dispatch group when the <b>Requests are dispatched <u>via auto-assignment</u></b> option is set in <a href="http://wiki.servicenow.com/index.php?title=Work_Management_Configuration&amp;action=edit&amp;redlink=1" class="new" title="Work Management Configuration (page does not exist)">Work Management Configuration</a><b> (starting with the [[Fuji_Release_Notes|Fuli release).</b>
+</p>
+<ol><li>Open a work order that is in the <b>Awaiting Qualification</b> state or one that has been qualified automatically.</li>
+<li>Open a task in the <b>Draft</b> state.</li>
+<li>Select a <b>Dispatch group</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Work_order_auto_dispatch.png.html" class="image" title="Auto-dispatch from task qualification"><img alt="Auto-dispatch from task qualification" src="images/thumb/8/8c/Work_order_auto_dispatch.png/750px-Work_order_auto_dispatch.png" width="750" height="287" srcset="/images/thumb/8/8c/Work_order_auto_dispatch.png/1125px-Work_order_auto_dispatch.png 1.5x, /images/thumb/8/8c/Work_order_auto_dispatch.png/1500px-Work_order_auto_dispatch.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Enter a location if the <b>Location should be used</b> property is turned on.
+<dl><dd>When the <b>Location should be used</b> property is turned on, auto-dispatch will fail unless the task contains a valid location. </dd></dl></li>
+<li>In the Planned section, create a schedule for this task or let ServiceNow determine the times. For instructions, see <a href="index.php%3Ftitle=Work_Order_Tasks.html#Creating_Work_Order_Tasks" title="Work Order Tasks">Creating Work Order Tasks</a>. 
+<dl><dd>By default, ServiceNow enters the current date and time in the <b>Window start</b> field. If you do not create a schedule or a fixed window, ServiceNow uses the <b>Window start</b> value to look for an agent who has that time slot open.</dd></dl></li>
+<li>Click <b>Qualified</b>.
+<dl><dd>The view returns to the previous page, and a success message appears. The system assigns an agent to the task, enters the agent's assignment group in the task record, and moves the state to <b>Assigned</b>. </dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Wm_pending_dispatch.png.html" class="image" title="Auto-dispatch from task qualification"><img alt="Auto-dispatch from task qualification" src="images/thumb/b/b6/Wm_pending_dispatch.png/750px-Wm_pending_dispatch.png" width="750" height="256" srcset="/images/thumb/b/b6/Wm_pending_dispatch.png/1125px-Wm_pending_dispatch.png 1.5x, /images/thumb/b/b6/Wm_pending_dispatch.png/1500px-Wm_pending_dispatch.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>If auto-dispatch fails, the message indicates either that no agent was available or that the task did not specify a location. The system moves tasks that fail auto-dispatch to the <b>Remain in the Pending Dispatch</b> state.</dd></dl></li>
+<li>To auto-dispatch a task that failed previously, enter any missing information or change the schedule, and then click <b>Auto-Dispatch</b>.</li></ol>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Auto-Dispatching_from_Pending_Dispatch"><span class="mw-headline-number">5</span> Auto-Dispatching from Pending Dispatch</span></h1>
+<p>Users with the wm_dispatcher or wm_initiator_qualifier_dispatcher role can auto-dispatch any task in the <b>Pending Dispatch</b> state that does not have a value in the <b>Assigned to</b> field.
+</p>
+<ol><li>Navigate to <b>Work Management &gt; Dispatching &gt; My Dispatch Queue</b>.
+<dl><dd>All tasks in the list are filtered to show only tasks in the <b>Pending Dispatch</b> state.</dd></dl></li>
+<li>Auto-dispatch tasks using one of these methods:
+<ul><li>Select one or more tasks in the list, and then select <b>Auto-Dispatch</b> from the <b>Actions</b> choice list. </li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Autodispatch_List.png.html" class="image" title="Auto-dispatching tasks from a list"><img alt="Auto-dispatching tasks from a list" src="images/thumb/7/70/WM_Autodispatch_List.png/550px-WM_Autodispatch_List.png" width="550" height="207" srcset="/images/7/70/WM_Autodispatch_List.png 1.5x, /images/7/70/WM_Autodispatch_List.png 2x" /></a></dd>
+<dd><br /></dd></dl>
+<ul><li>Open a task from the list and click <b>Auto-Dispatch</b> in the task record. </li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Autodispatch.png.html" class="image" title="Auto-dispatching tasks from the task record"><img alt="Auto-dispatching tasks from the task record" src="images/thumb/7/75/WM_Autodispatch.png/750px-WM_Autodispatch.png" width="750" height="275" srcset="/images/7/75/WM_Autodispatch.png 1.5x, /images/7/75/WM_Autodispatch.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>The view returns to the previous page, and a success message appears. The system assigns an agent to the task, enters the agent's assignment group in the task record, and moves the state to <b>Assigned</b>.  The task is now subject to acceptance by the agent.  If the agent rejects the task, the system moves it back to the <b>Pending Dispatch</b> state. </dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Autodispatch2.png.html" class="image" title="Automatically accepted task for the assigned user"><img alt="Automatically accepted task for the assigned user" src="images/thumb/4/4b/WM_Autodispatch2.png/750px-WM_Autodispatch2.png" width="750" height="296" srcset="/images/4/4b/WM_Autodispatch2.png 1.5x, /images/4/4b/WM_Autodispatch2.png 2x" /></a></dd>
+<dd><br /></dd>
+<dd>If auto-dispatch fails, the message indicates either that no agent was available or that the task did not specify a location. The system moves tasks that fail auto-dispatch to the <b>Pending Dispatch</b> state. </dd></dl></li>
+<li>To auto-dispatch a task that failed previously, provide any missing information or change the schedule, and then click <b>Auto-Dispatch</b>.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201020339
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.263 seconds
+Real time usage: 0.357 seconds
+Preprocessor visited node count: 106/1000000
+Preprocessor generated node count: 294/1000000
+Post‐expand include size: 4267/2097152 bytes
+Template argument size: 1086/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  109.725      1 - -total
+ 82.97%   91.037      1 - Template:Work_Management
+ 71.08%   77.988      1 - Template:Topic
+  8.06%    8.841      1 - Template:Note
+  7.02%    7.701      4 - Template:T
+  6.42%    7.046      1 - Template:Auto-Dispatch_at_Qualification
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22305-0!*!0!1!en!5!* and timestamp 20171201020338 and revision id 250982
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_Auto-Dispatch&amp;oldid=250982.html">http://wiki.servicenow.com/index.php?title=Using_Auto-Dispatch&amp;oldid=250982</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Work+Management.html" title="Category:Work Management">Work Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Work+Management.html" title="Category:Work Management">Work Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22305"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22305" data-vote-the-vote="5" data-vote-id="22305" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22305_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22305" data-vote-the-vote="1" data-vote-id="22305" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22305_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Using_Auto-Dispatch.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Using+Auto-Dispatch.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Using+Auto-Dispatch.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_Auto-Dispatch.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_Auto-Dispatch&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+Auto-Dispatch.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+Auto-Dispatch&amp;returnto=Using+Auto-Dispatch&amp;oldid=250982&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_Auto-Dispatch&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_Auto-Dispatch.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_Auto-Dispatch" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_Auto-Dispatch&amp;oldid=250982.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_Auto-Dispatch&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 19:20, 12 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1207});});</script></body></html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Active Directory Application Mode (ADAM) - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Active_Directory_Application_Mode_(ADAM)","wgTitle":"Active Directory Application Mode (ADAM)","wgCurRevisionId":250013,"wgRevisionId":250013,"wgArticleId":2480,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LDAP"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Active_Directory_Application_Mode_(ADAM)","wgRelevantArticleId":2480,"wgRequestId":"a19861a4cdfb1ace15a68aca","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170811155221"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Active_Directory_Application_Mode_(ADAM)"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Active Directory Application Mode (ADAM)"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="LDAP"/>
+<meta name="category" content="LDAP"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Active Directory Application Mode (ADAM)"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170811155221"/>
+
+	<meta property="article:published_time" content="20170811155221"/>
+
+	<meta property="article:modified_time" content="20170811155221"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="LDAP"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Active_Directory_Application_Mode_(ADAM)"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Active_Directory_Application_Mode_ADAM rootpage-Active_Directory_Application_Mode_ADAM skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Active Directory Application Mode (ADAM)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a> &gt; <a href="index.php%3Ftitle=External_Authentication_(Single_Sign-On_-_SSO).html" title="External Authentication (Single Sign-On - SSO)">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html" title="LDAP Integration">LDAP</a> &gt; Active Directory Application Mode (ADAM)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#column-one">navigation</a>, <a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html" title="LDAP Integration">LDAP Integration</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=LDAP_Integration_Setup.html" title="LDAP Integration Setup">LDAP Integration Setup</a> 
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_LDAP_Integration.html" title="Getting Started with LDAP Integration">Getting Started with LDAP Integration</a></li>
+<li><a href="index.php%3Ftitle=Uploading_a_Certificate.html" title="Uploading a Certificate">Uploading a Certificate</a></li>
+<li><a href="index.php%3Ftitle=Setting_up_the_LDAP_Import_Map.html" title="Setting up the LDAP Import Map">Setting Up the LDAP Transform Map</a></li>
+<li><a href="index.php%3Ftitle=Record_Creation_Options_During_an_LDAP_Transform.html" title="Record Creation Options During an LDAP Transform">Record Creation Options During an LDAP Transform</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Integration_via_MID_Server_Setup.html" title="LDAP Integration via MID Server Setup">Setting up LDAP integration via a MID Server</a></li></ul></li>
+<li><a href="index.php%3Ftitle=LDAP_Integration_Troubleshooting.html" title="LDAP Integration Troubleshooting">LDAP Integration Troubleshooting</a>
+<ul><li><a href="index.php%3Ftitle=LDAP_Error_Codes.html" title="LDAP Error Codes">LDAP Error Codes</a></li></ul></li>
+<li><strong class="selflink">Active Directory (AD) Topics</strong>
+<ul><li><a href="index.php%3Ftitle=Configuring_Microsoft_Active_Directory_for_SSL_Access.html" title="Configuring Microsoft Active Directory for SSL Access">Configuring Microsoft Active Directory for SSL Access</a></li>
+<li><a href="index.php%3Ftitle=Using_ADAMSync_To_Populate_ADAM.html" title="Using ADAMSync To Populate ADAM">Using ADAMSync To Populate ADAM</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Using_Global_Catalog.html" title="LDAP Using Global Catalog">LDAP Using Global Catalog</a></li></ul></li>
+<li><a href="index.php%3Ftitle=OpenLDAP_Minor_Schema_Modification.html" title="OpenLDAP Minor Schema Modification">OpenLDAP Minor Schema Modification</a></li>
+<li><a href="index.php%3Ftitle=LDAP_Monitor.html" title="LDAP Monitor">LDAP Monitor</a></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integration Overview</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:LDAP.html" title="Book:LDAP"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:LDAP.html" title="Book:LDAP">Get the Book</a></b></center>
+</td></tr></table>
+</div> 
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/integrate/ldap/concept/c_ActiveDirectoryApplicationMode.html">Active Directory Application Mode (ADAM)</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The Wiki page is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>A basic level of understanding with Microsoft Windows Server and Active Directory is needed for understanding this topic. You must also have administrator permissions on the server you are configuring for ADAM.</i>
+<p>These are sample procedures. Due to installation and environment variations, we cannot offer direct support. We recommend working with a Microsoft consultant.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#What_is_ADAM.3F"><span class="tocnumber">1</span> <span class="toctext">What is ADAM?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#About_Security"><span class="tocnumber">2</span> <span class="toctext">About Security</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Dependencies"><span class="tocnumber">3</span> <span class="toctext">Dependencies</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Recommended_Knowledge"><span class="tocnumber">3.1</span> <span class="toctext">Recommended Knowledge</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Trusts"><span class="tocnumber">3.2</span> <span class="toctext">Trusts</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Internal_Connectivity"><span class="tocnumber">3.3</span> <span class="toctext">Internal Connectivity</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#ADAM_Initial_Installation"><span class="tocnumber">4</span> <span class="toctext">ADAM Initial Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Configuring_an_Instance"><span class="tocnumber">4.1</span> <span class="toctext">Configuring an Instance</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Administration"><span class="tocnumber">4.2</span> <span class="toctext">Administration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Console_Setup"><span class="tocnumber">4.2.1</span> <span class="toctext">Console Setup</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Containers_and_Organizational_Units"><span class="tocnumber">4.2.2</span> <span class="toctext">Containers and Organizational Units</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Delegation"><span class="tocnumber">4.2.3</span> <span class="toctext">Delegation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Populating_ADAM_Objects"><span class="tocnumber">4.3</span> <span class="toctext">Populating ADAM Objects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#User_Objects"><span class="tocnumber">4.3.1</span> <span class="toctext">User Objects</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#UserProxy_Objects"><span class="tocnumber">4.3.2</span> <span class="toctext">UserProxy Objects</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Group_Objects"><span class="tocnumber">4.3.3</span> <span class="toctext">Group Objects</span></a>
+<ul>
+<li class="toclevel-4 tocsection-17"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Automating_ADAM_Object_Creation"><span class="tocnumber">4.3.3.1</span> <span class="toctext">Automating ADAM Object Creation</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#About_Permission_Delegation"><span class="tocnumber">4.3.3.2</span> <span class="toctext">About Permission Delegation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Testing_and_Troubleshooting"><span class="tocnumber">4.4</span> <span class="toctext">Testing and Troubleshooting</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Backup_and_Recovery"><span class="tocnumber">4.5</span> <span class="toctext">Backup and Recovery</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Backup"><span class="tocnumber">4.5.1</span> <span class="toctext">Backup</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Recovery"><span class="tocnumber">4.5.2</span> <span class="toctext">Recovery</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Redundancy"><span class="tocnumber">4.5.3</span> <span class="toctext">Redundancy</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Using_LDAPS_with_ADAM"><span class="tocnumber">4.6</span> <span class="toctext">Using LDAPS with ADAM</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Creating_a_Self-Signed_Certificate"><span class="tocnumber">4.6.1</span> <span class="toctext">Creating a Self-Signed Certificate</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Assigning_the_Certificate_to_ADAM"><span class="tocnumber">4.6.2</span> <span class="toctext">Assigning the Certificate to ADAM</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Exporting_the_Public_Key_Certificate"><span class="tocnumber">4.6.3</span> <span class="toctext">Exporting the Public Key Certificate</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Testing_LDAPS_Connections"><span class="tocnumber">4.6.4</span> <span class="toctext">Testing LDAPS Connections</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#ServiceNow_Access_Account"><span class="tocnumber">4.7</span> <span class="toctext">ServiceNow Access Account</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#Related_Links"><span class="tocnumber">5</span> <span class="toctext">Related Links</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="What_is_ADAM.3F"><span class="mw-headline-number">1</span> What is ADAM?</span></h1>
+<p>A Microsoft product, Active Directory Application Mode (ADAM) is an LDAP-compliant directory service. ADAM has a simple install and runs as a service on Windows operating systems. It can be fully customized and distributed as an application component or used as a stand-alone LDAP directory. ADAM uses the same technologies found on Active Directory Domain Controllers (including replication and delegation features) and has its own administration and customization features. It can be run as a Windows service.
+</p><p>ADAM can be installed on Windows XP, 2000, 2003, and 2008 operating systems. ADAM is included as part of Windows Server 2003 R2 and Windows Server 2008. A download is available at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://www.microsoft.com/downloads">http://www.microsoft.com/downloads</a> for earlier operating systems.
+</p>
+<h1><span class="mw-headline" id="About_Security"><span class="mw-headline-number">2</span> About Security</span></h1>
+<p>Some company security policies prohibit external vendors and partners from connecting directly to an Active Directory (AD) Domain Controller. If exposing certain AD objects or attributes to an external vendor or partner is prohibited, access to objects and attributes can be blocked using AD Security Access Control Entries (ACE or ACL). Depending on security requirements, this method can introduce complexity in the integration.
+</p><p>Consolidating multiple domains and forests is recommended. If all LDAP imports and authentications need to be channeled through a single source,  ADAM can be used as a consolidated source. 
+</p><p>With the release of Windows 2008 this functionality has been renamed to Light-Weight-Directory Service, LDS. Installation and configuration is similar to Windows Server 2003 R2. 
+</p>
+<h1><span class="mw-headline" id="Dependencies"><span class="mw-headline-number">3</span> Dependencies</span></h1>
+<h3><span class="mw-headline" id="Recommended_Knowledge"><span class="mw-headline-number">3.1</span> Recommended Knowledge</span></h3>
+<p>For this task, you must understand AD, object classes and attributes. To have a successful integration, you need to be knowledgeable of the current AD object structure,  familiar with Active Directory delegations, and have a strategy on how to use ADAM and for what purposes. If you are not familiar with AD or ADAM,  work with your AD administrator to configure a new ADAM environment. 
+</p>
+<h3><span class="mw-headline" id="Trusts"><span class="mw-headline-number">3.2</span> Trusts</span></h3>
+<p>If  <a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#UserProxy_Objects">userProxy objects</a> is used, the computer hosting ADAM needs to be a member of the domain that has the AD accounts, or a member of a trusted domain. 
+</p>
+<h3><span class="mw-headline" id="Internal_Connectivity"><span class="mw-headline-number">3.3</span> Internal Connectivity</span></h3>
+<p>If  <a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html#UserProxy_Objects">userProxy objects</a> is used, the ADAM computer must be able to connect to the related Domain Controllers to perform proxy authentication. 
+</p><p><br /> 
+</p>
+<h1><span class="mw-headline" id="ADAM_Initial_Installation"><span class="mw-headline-number">4</span> ADAM Initial Installation</span></h1>
+<p>The first install copies the ADAM files to your computer, registers requires components, and creates the application shortcuts. By default, all of the application files are installed to&#160;%systemroot%\ADAM. 
+</p>
+<ul><li>Windows Server 2003 R2 - ADAM can be installed using the Control Panel, Add and Remove Programs, Optional Component Manager. </li>
+<li>Windows Server 2000 &amp; Windows XP - <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.microsoft.com/downloads/details.aspx?FamilyId=9688F8B9-1034-4EF6-A3E5-2A2A57B5C8E4&amp;displaylang=en">Downloaded</a> from Microsoft.</li></ul>
+<h2><span class="mw-headline" id="Configuring_an_Instance"><span class="mw-headline-number">4.1</span> Configuring an Instance</span></h2>
+<p>Create the first instance service which functions as the first directory service hosted by ADAM. Do one of the following:
+</p>
+<ul><li> Run <i>adaminstall.exe</i> from the ADAM folder.</li>
+<li> Use the ‘Create an ADAM instance’ shortcut from the <b>Start Menu &gt; Programs &gt; ADAM</b> folder. </li></ul>
+<dl><dd><ol><li>Select the <b>A unique instance</b> install option. Note that you can use this option to install an instance replica on a second server to provide a fault tolerant system.</li>
+<li>Enter the following:</li></ol>
+<dl><dd><ul><li><b>Instance Name</b> is used primarily to identify the Windows Service name and display name. </li>
+<li><b>Ports</b> sets the port numbers to be used for LDAP and <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=LDAP+Integration&amp;oldid=0.html#LDAP_Listener" title="LDAP Integration">LDAPS Listeners</a>. The default LDAP port is 389, LDAPS is 636. If these ports are in use on the server, the setup wizard selects new ports. Work with your network administrator to determine the best ports to use. One of these ports needs to be open on the firewall to allow access from your ServiceNow instance. It is good practice to use a non-standard port so the service cannot be easily identified using port scanners. </li>
+<li><b>Application Directory Partition</b>  creates an application directory partition. Not needed at this step, we recommend creating the new partition now. A good practice is to use the same distinguished name as your forest or domain, but replace the highest level domain with <i>adam</i> instead of <i>com</i> or <i>local</i>. For example, if your forest partition is <i>dc=myCompany,dc=com</i>, you could create the ADAM partition as <i>dc=myCompany,dc=adam</i>. </li>
+<li><b>File Locations</b> select location(s) for the ADAM partition data.</li>
+<li><b>Service Account Selection</b>  select a service account that the instance runs as. For stand-alone services, you can use the default network service account. If you plan on using replicas, you need to use an account that has access to all ADAM instances.</li>
+<li><b>ADAM Administrators</b> is the delegation on the ADAM directory that leverages Windows integrated authentication. This is how the initial access is granted for administration. Once the initial account is granted rights, this user or group delegates rights to other Windows users or ADAM users. You can select the default to only grant admin access to the current user, or grant access to a different user or group based on your needs.</li>
+<li><b>Import LDIF Files</b> are the files to import. MS-UserProxy is the most important file to import, but it’s worth adding all available files since there is little overhead to the schema and you won’t have to worry about extending it later if your needs expand. Confirm the details and the wizard complete the configuration.</li></ul></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="Administration"><span class="mw-headline-number">4.2</span> Administration</span></h2>
+<h4><span class="mw-headline" id="Console_Setup"><span class="mw-headline-number">4.2.1</span> Console Setup</span></h4>
+<p>Even though there are many similarities between ADAM and Active Directory, the administration can be very different since there is no <b>Users and Computers</b> management console. Most of the general administration is performed using the ADAM ADSI MMC console available from the ADAM start menu. The first time you run the ADAM ADSI console, you must connect to the partition you created. 
+</p>
+<ol><li>Right-click on the <b>ADAM ADSI</b> Edit item in the left frame. Give the new connection a name and update the server name, port fields with the information used when you created the instance.</li>
+<li>Select <b>distinguished name</b> or <b>naming context</b> and specify the distinguished name of the application partition you created earlier. You can connect to the Configuration and Schema partitions for advanced configuration options. </li></ol>
+<p>You should now be able to see into the partition and the default containers for LostAndFound, NTDS Quotas, and Roles. The Roles container has not been configured yet.
+</p>
+<h4><span class="mw-headline" id="Containers_and_Organizational_Units"><span class="mw-headline-number">4.2.2</span> Containers and Organizational Units</span></h4>
+<p>Objects stored in ADAM can be logically grouped into containers and organizational units (OU) just as they would in Active Directory.
+</p><p>To create a new OU:
+</p>
+<ol><li>Right-click on the root partition and select <b>New &gt; Object &gt; organizationalUnit</b>. You can also view the list of other objects that are available. This list varies based on the schema extensions installed when you imported the LDF files. </li>
+<li>When prompted for a value, enter the name of OU, for example <i>Users</i>.</li>
+<li>The next screen displays a <b>More Attributes</b> button; use this to assign values to additional attributes. For OUs and containers, no additional values are needed.</li></ol>
+<p>After creating OUs, the new OUs are listed as a child of the root object.
+</p>
+<h4><span class="mw-headline" id="Delegation"><span class="mw-headline-number">4.2.3</span> Delegation</span></h4>
+<p>Once the OU structure is created, define the permission delegations to properly secure the objects to limited users. As with Active Directory, there are two general ways to grant permissions: 
+</p>
+<ul><li>Add users to a group that already has the appropriate permissions assigned.</li>
+<li>Define new permissions on the ADAM objects. </li></ul>
+<p>For this task, we discuss object level permissions. Refer to the Group Administration section for information on group memberships. 
+</p><p>Since we don’t have a Users and Computers console for ADAM, all object level permissions are defined using the Active Directory utility <i>DSACLS.exe</i>. This file is found in the ADAM program directory. When running ADAM utilities it is best to launch the ADAM Tools Command Prompt. This ensures the proper versions of the tools. <i>DSALCS</i> is used to view and set object access rights. Example: “dsacls \\localhost:50010\dc=myCompany,dc=adam” displays the permissions assigned to the root of partition dc=myCompany,dc=adam running on the localhost, port 50010. DSACLS is a complex tool used to create complex delegation. Run “DSACLS /?” for usage notes.
+</p>
+<h2><span class="mw-headline" id="Populating_ADAM_Objects"><span class="mw-headline-number">4.3</span> Populating ADAM Objects</span></h2>
+<h4><span class="mw-headline" id="User_Objects"><span class="mw-headline-number">4.3.1</span> User Objects</span></h4>
+<p>Users can be created using the ADAM ADSI Edit console just as we did for OU creation. Users can also be administered using AD command line tools, which is beyond the scope of this document. The only mandatory attribute for new user objects is the <i>cn</i>, which is a short name or the user’s full name. There are also a wide range of optional attributes similar to Active Directory user attributes. You can access the full list of attributes by selecting properties from the user object. 
+</p>
+<h4><span class="mw-headline" id="UserProxy_Objects"><span class="mw-headline-number">4.3.2</span> UserProxy Objects</span></h4>
+<p>For ServiceNow LDAP integration we recommend you use UserProxy objects in ADAM which creates a proxy account that links to the related AD user account. This allows you to have ADAM authenticate logon credentials using AD usernames and passwords from the domain without ServiceNow directly connecting to the Domain Controller. UserProxy objects are very similar to AD and ADAM User objects except that do not store passwords and has an objectSID attribute that contains the SID from the linked AD User object. This is how the proxy works. UserProxy objects are created using the ADSIEdit console or command line tools, but this can be tedious. It is recommended that you use an automated process as defined below. 
+</p>
+<h3><span class="mw-headline" id="Group_Objects"><span class="mw-headline-number">4.3.3</span> Group Objects</span></h3>
+<p>Groups are created using the ADSIEdit console and AD command-line tools. Group concepts are similar to AD and are used to integrate groups and members to ServiceNow. The biggest difference is ADAM groups can contain members from ADAM or from trusted AD Domains. 
+</p>
+<h4><span class="mw-headline" id="Automating_ADAM_Object_Creation"><span class="mw-headline-number">4.3.3.1</span> Automating ADAM Object Creation</span></h4>
+<p>If you are interested in synchronizing Active Directory accounts to ADAM, we recommend you use Microsoft <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://technet.microsoft.com/en-us/library/cc786455(WS.10).aspx">ADAMSync</a> tool. This is the most common use of ADAM for ServiceNow LDAP integration. 
+</p>
+<h4><span class="mw-headline" id="About_Permission_Delegation"><span class="mw-headline-number">4.3.3.2</span> About Permission Delegation</span></h4>
+<p>ADAM contains some built-in groups with default permissions. These groups are found in the container <i>cn=roles,dc=myCompany,dc=adam</i>. These are similar to domain level groups and have rights to objects in the current partition. Similar to AD Forests you can also set a higher level of permissions using the default groups in cn=roles,cn=configuration,dc=myCompany,dc=adam. You must connect to the configuration partition in ADSIEdit. The Administrators group by default includes the account specified during the setup. This member is not always visible since it’s inherited through the configuration groups. Administrators have full control of all partition objects. The Readers group does not contain any members by default and has read access to all objects in the partition. The Users group is a dynamic group just as it is in Active Directory. Transitively it includes all ADAM users created in the partition. 
+</p><p><br /> 
+</p>
+<h2><span class="mw-headline" id="Testing_and_Troubleshooting"><span class="mw-headline-number">4.4</span> Testing and Troubleshooting</span></h2>
+<p>The primary tool used for testing is LDP. This will allow you to fully test user authentication. Most of the object management can be completed using the ADAM ADSI Edit console which will provide access to the entire collection of objects and attributes. The highest level of control and troubleshooting ADAM services is using the Windows service created during the instance setup. The service name will vary and depends on the name of the instance created. This service must be running in order for the ADAM service to run. If you are experiencing connection problems, you should review the network configurations to ensure you have the appropriate network access to connect to the server and ADAM port. For each ADAM instance installed, a Windows Event Log is created. This is also a great tool for troubleshooting ADAM services. 
+</p><p>The Windows Security Event Log is also helpful when troubleshooting userProxy authentications. All userProxy logon attempts are logged in the Security Log and reference the remote client device address, the distinguished name of the user trying to log on, and the result or status code. 
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Backup_and_Recovery"><span class="mw-headline-number">4.5</span> Backup and Recovery</span></h2>
+<h4><span class="mw-headline" id="Backup"><span class="mw-headline-number">4.5.1</span> Backup</span></h4>
+<p>All ADAM data can be backed up using standard file system backup methods. 
+</p>
+<h4><span class="mw-headline" id="Recovery"><span class="mw-headline-number">4.5.2</span> Recovery</span></h4>
+<p>We recommend following <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://technet2.microsoft.com/windowsserver/en/library/86f99639-f9f4-4b51-9175-e94b626285d11033.mspx?mfr=true">Microsoft procedures</a> for restoring an ADAM instance. 
+</p>
+<h4><span class="mw-headline" id="Redundancy"><span class="mw-headline-number">4.5.3</span> Redundancy</span></h4>
+<p>ADAM has built-in replication utilities based on the same technology as AD. A full read and write replica of an ADAM partition can exist on the same or different computer. You can use this replica in a variety of ways to provide a fault-tolerant LDAP integration with ServiceNow. One option is to expose both partitions to ServiceNow through the firewall and define both servers in the <a href="index.php%3Ftitle=LDAP_Integration_Configuration.html#Step_3._Define_the_LDAP_Server" title="LDAP Integration Configuration" class="mw-redirect">LDAP Properties</a> server field. 
+</p><p><br /> 
+</p>
+<h2><span class="mw-headline" id="Using_LDAPS_with_ADAM"><span class="mw-headline-number">4.6</span> Using LDAPS with ADAM</span></h2>
+<p>The default configuration for userProxy object authentication is to enforce LDAPS (secure LDAP) communications. LDAPS requires SSL certificates to secure the network traffic. To remove this requirement make the following change using the ADSIEdit console connected to the configuration partition. 
+</p>
+<pre>Object: CN=Directory Service, CN=Windows NT, CN=Services, CN=Configuration
+Attribute: msDS-Other-Setings
+Value: change RequiresSecureProxyBind from 1 (enforced) to 0 (disabled)
+</pre> 
+<p>Restart the ADAM service to use the new setting. 
+</p><p>To support secure binds and encrypt the user and password information being transmitted, a SSL certifcate must be installed on the server and any LDAP client. Since there is limited and controlled uses to the ADAM service, it is feasible to use a self-signed certificate which would meet the needs without incurring certificate costs or building a Certificate Authority (CA) infrastructure. If you already have a CA, you can issue a certificate. Otherwise the following steps will walk you through creating a self-signed certificate. 
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Creating_a_Self-Signed_Certificate"><span class="mw-headline-number">4.6.1</span> Creating a Self-Signed Certificate</span></h4>
+<p>To use the <i>selfssl</i> utility, Internet Information Services (IIS) must be installed. This service can be removed after you generate the certificate. You can get the <i>selfssl.exe</i> utility from the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://support.microsoft.com/kb/840671">IIS Resource Kit</a>. If IIS is already installed, create a new website so that the current sites will not be impacted during the certificate generation. <i>Selfssl</i> needs to temporarily attach the new self-issued certificate to a valid web site.
+</p><p><i>Selfssl</i> is a command-line tool and has the following common parameters.
+</p>
+<table class="standard">
+
+<tr>
+<th> Parameter
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> /T
+</td>
+<td> Adds the cert to ‘Trusted Certificates’ on the local machine
+</td></tr>
+<tr>
+<td> /N:cn
+</td>
+<td> Set the common name of the certificate. This must match the fully qualified domain name of the server running the web service using the certificate
+</td></tr>
+<tr>
+<td> /K
+</td>
+<td> Sets the strength of the key size in bits
+</td></tr>
+<tr>
+<td> /V
+</td>
+<td> Number of days the cert is valid
+</td></tr>
+<tr>
+<td> /S
+</td>
+<td> Web site ID to attach the certicate to
+</td></tr>
+<tr>
+<td> /P
+</td>
+<td> IP port of the web service
+</td></tr></table>
+<p>The common name attribute should match the external name or address that ServiceNow will use to connect to your ADAM computer. You will need to get the IIS Website site id unless you are using the default website which is 1 and does not need to be defined in the selfssl command. A sample command to generate a certificate for myCompany would be. 
+</p>
+<pre>	selfssl /N:CN=myCompany.externaldomain.com /K:1024 /V:3650 /S:12345 /P:50001 /T
+</pre> 
+<p>This statement creates a certificate that is valid for 10 years. Set the value to any duration, but be aware the new certificate must be generated and submitted to ServiceNow before the old one expires. We recommend making a note of the expiration date on the certificate. 
+</p><p>Once the certificate is generated you can remove it from the website, or delete the entire web site if you created a temporary site.
+</p>
+<h4><span class="mw-headline" id="Assigning_the_Certificate_to_ADAM"><span class="mw-headline-number">4.6.2</span> Assigning the Certificate to ADAM</span></h4>
+<ol><li>Open the Certificates MMC console. Create two console connections, one for Local Computer Certificates, and the other for Local Computer Services Certificates on the new ADAM service. The new certificate can be found under Certificates (Local Computer)\Personal\Certificates.</li>
+<li>Copy the certificate to the container for the ADAM service, Certificates – Service (ADAM Service Name)\ADAM_ADAM Service Name\Trusted Root Certificates\Certificates. Also copy the certificate to Certificates – Service (ADAM Service Name)\ADAM_ADAM Service Name\Personal\Certificates. </li>
+<li>Open the details tab on the certificate you copied. Note the <b>Valid from</b> date stamp. Now assign read access to the certificate key file. Go to C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto\RSA\MachineKeys and identify the certificate with the matching time stamp. Assign Read &amp; Execute rights to the service account running ADAM. By default this is ‘Network Service’. </li>
+<li>Restart the ADAM service to activate the new certificate. </li></ol>
+<h4><span class="mw-headline" id="Exporting_the_Public_Key_Certificate"><span class="mw-headline-number">4.6.3</span> Exporting the Public Key Certificate</span></h4>
+<p>LDAPS clients, including the ServiceNow instance need the public key certificate in order to make a secure connection to ADAM. From the server certificate consoles you used above, export a public key to be used by the clients.
+</p>
+<ol><li>Select the certificate, right-click, select <b>all tasks/export</b>. Do not export the private key. Select the default DER encoded binary X.509 format and specify the export  file name. </li>
+<li>Install the public certificate on the LDAP clients that connect to the server using LDAPS. When prompted, add the certificate to the ‘Trusted Root Certificate Authorities’ store. </li></ol>
+<p><br /> 
+</p>
+<h4><span class="mw-headline" id="Testing_LDAPS_Connections"><span class="mw-headline-number">4.6.4</span> Testing LDAPS Connections</span></h4>
+<ol><li>Run <i>LDP.exe</i> from the ADAM install folder <i>c:\windows\adam</i>. Verify that the ADAM version is selected because this is not the standard Windows LDP client.</li>
+<li>Open a new connection using the Connection/Connect menu. The server name must match the CN assigned to the certificate.</li>
+<li>Enter the LDAPS port and select the <b>SSL checkbox</b>.  The results of a successful connection are some general server information and no errors. </li>
+<li>Bind(login) to the service. To replicate typical LDAP client connections select the <b>Simple bind</b> option. Enter a valid ADAM user or userProxy distinguished name in the user field and the associated password. </li></ol>
+<p>If you see a return message stating ‘Authenticated as:….’ then you have successfully connected using LDAPS. 
+</p><p><br /> 
+</p>
+<h2><span class="mw-headline" id="ServiceNow_Access_Account"><span class="mw-headline-number">4.7</span> ServiceNow Access Account</span></h2>
+<p>ServiceNow requires a user account to read the ADAM object information that is imported into the application instance. Create the account by using one of the following methods: 
+</p>
+<ul><li>Create a local ADAM user account and assign it a password and assign permissions.</li>
+<li>Assign permission to a Windows domain account on the ADAM partition.</li>
+<li>Use a userProxy account.</li></ul>
+<p>When using ADAM as an LDAP source, you must specify the fully qualified distinguished name (FQDN) of the ADAM account in the ServiceNow LDAP server's <b>Login distinguished name</b> field.
+</p>
+<h1><span class="mw-headline" id="Related_Links"><span class="mw-headline-number">5</span> Related Links</span></h1>
+<p>[<a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.microsoft.com/downloads/en/details.aspx?familyid=9688f8b9-1034-4ef6-a3e5-2a2a57b5c8e4&amp;displaylang=en%7C">Microsoft ADAM page</a>]
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201023323
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.226 seconds
+Real time usage: 0.332 seconds
+Preprocessor visited node count: 188/1000000
+Preprocessor generated node count: 386/1000000
+Post‐expand include size: 4829/2097152 bytes
+Template argument size: 1988/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   41.189      1 - -total
+ 84.97%   34.998      1 - Template:LDAP
+ 67.69%   27.881      1 - Template:Topic
+ 12.85%    5.294      2 - Template:Note
+ 12.03%    4.954      1 - Embedded:LDAP
+ 11.30%    4.653      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2480-0!*!0!1!en!5!* and timestamp 20171201023322 and revision id 250013
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM)&amp;oldid=250013.html">http://wiki.servicenow.com/index.php?title=Active_Directory_Application_Mode_(ADAM)&amp;oldid=250013</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=LDAP.html" title="Category:LDAP">LDAP</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Single+Sign-On.html" title="Category:Single Sign-On">Single Sign-On</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=LDAP.html" title="Category:LDAP">LDAP</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2480"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2480" data-vote-the-vote="5" data-vote-id="2480" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2480_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2480" data-vote-the-vote="1" data-vote-id="2480" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_2480_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM).html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Active+Directory+Application+Mode+%2528ADAM%2529.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Active+Directory+Application+Mode+%2528ADAM%2529.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Active_Directory_Application_Mode_(ADAM).html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM)&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Active+Directory+Application+Mode+%2528ADAM%2529.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Active+Directory+Application+Mode+%2528ADAM%2529&amp;returnto=Active+Directory+Application+Mode+%2528ADAM%2529&amp;oldid=250013&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM)&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FActive_Directory_Application_Mode_(ADAM).html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Active_Directory_Application_Mode_(ADAM)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM)&amp;oldid=250013.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Active_Directory_Application_Mode_(ADAM)&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:52, 11 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":785});});</script></body></html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating Incident Alerts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_Incident_Alerts","wgTitle":"Creating Incident Alerts","wgCurRevisionId":190925,"wgRevisionId":190925,"wgArticleId":19955,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Incident Alert Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_Incident_Alerts","wgRelevantArticleId":19955,"wgRequestId":"8fc88c88f0b313e1984fb7b7","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20131018120637"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_Incident_Alerts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating Incident Alerts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Incident Alert Management"/>
+<meta name="category" content="Incident Alert Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_Incident_Alerts.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating Incident Alerts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20131018120637"/>
+
+	<meta property="article:published_time" content="20131018120637"/>
+
+	<meta property="article:modified_time" content="20131018120637"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Incident Alert Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_Incident_Alerts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_Incident_Alerts rootpage-Creating_Incident_Alerts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Incident+Alerts.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+Incident+Alerts&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating Incident Alerts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=IT_Services_Applications.html" title="IT Services Applications">IT Services</a> &gt; <a href="index.php%3Ftitle=Incident_Alert_Management.html" title="Incident Alert Management">Incident Alert Management</a> &gt; Creating Incident Alerts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Incident_Alert_Management.html" title="Incident Alert Management">Incident Alert Management</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a212f35e2cfet'></div><script type="text/javascript">window.tamOnload_tam5a212f35e2cfet=[];tree = new dTree('tam5a212f35e2cfet');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a212f35e2cfet = tree;
+                                               tam5a212f35e2cfet.add(1, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Incident_Alert_Management\&quot;" title=\"Incident Alert Management\">Overview</a>');
+
+tam5a212f35e2cfet.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Incident_Alert_Management\&quot;" title=\"Installed with Incident Alert Management\">Installed Components</a>');
+tam5a212f35e2cfet.add(3, 1, ' <strong class=\"selflink\">Creating Alerts</strong>');
+tam5a212f35e2cfet.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Processing_Incident_Alerts\&quot;" title=\"Processing Incident Alerts\">Processing Alerts</a>');
+tam5a212f35e2cfet.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Notify_with_Incident_Alert_Management\&quot;" title=\"Using Notify with Incident Alert Management\">Notify</a>');
+tam5a212f35e2cfet.add(6, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Contact_Administration\&quot;" title=\"Contact Administration\">Contacts</a>');
+tam5a212f35e2cfet.add(7, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Contacts_with_Incident_Alerts\&quot;" title=\"Using Contacts with Incident Alerts\">Using</a>');
+tam5a212f35e2cfet.add(8, 6, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subscribing_to_Incident_Alerts\&quot;" title=\"Subscribing to Incident Alerts\">Subscriptions</a>');
+
+                                               document.getElementById('5a212f35e2cfet').innerHTML = tam5a212f35e2cfet.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a212f35e2cfet) { window.tamOnload_tam5a212f35e2cfet[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=ITIL_Incident_Management.html" title="ITIL Incident Management" class="mw-redirect">Incident Management</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Incident_Alert_Management.html" title="Book:Incident Alert Management"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Incident_Alert_Management.html" title="Book:Incident Alert Management">Incident Alert Management</a> </center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Creating_Alerts_Directly"><span class="tocnumber">2</span> <span class="toctext">Creating Alerts Directly</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Creating_Alerts_from_an_Incident"><span class="tocnumber">3</span> <span class="toctext">Creating Alerts from an Incident</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Viewing_Related_Lists"><span class="tocnumber">4</span> <span class="toctext">Viewing Related Lists</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Impacted_CIs"><span class="tocnumber">4.1</span> <span class="toctext">Impacted CIs</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#User_Contacts"><span class="tocnumber">4.2</span> <span class="toctext">User Contacts</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Group_Contacts"><span class="tocnumber">4.3</span> <span class="toctext">Group Contacts</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Related_Incidents_and_Related_Problems"><span class="tocnumber">4.4</span> <span class="toctext">Related Incidents and Related Problems</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Notify"><span class="tocnumber">4.5</span> <span class="toctext">Notify</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Incident alerts are typically created to help manage and track communications around a high-priority incident or other issue.
+</p><p>Incident alerts can be created:
+</p>
+<ul><li> <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Creating_Alerts_Directly">Directly as standalone alerts</a>. </li>
+<li> <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Creating_Alerts_from_an_Incident">From an existing active incident</a>. Only one incident alert can be created for each incident.</li></ul>
+<h1><span class="mw-headline" id="Creating_Alerts_Directly"><span class="mw-headline-number">2</span> Creating Alerts Directly</span></h1>
+<p>Create an incident alert directly if the original issue that caused the alert was not logged as an incident. For example, a significant facilities problem may not be logged as an incident in ServiceNow, but may still require an incident alert to be created.
+</p>
+<ol><li> Navigate to <b>Incident Alert Management &gt; Create New</b>.</li>
+<li> Fill in the fields (see table).
+<dl><dd> <a href="index.php%3Ftitle=File:New_Incident_Alert.png.html" class="image"><img alt="New Incident Alert.png" src="images/6/6b/New_Incident_Alert.png" width="581" height="480" /></a></dd></dl></li>
+<li> Click <b>Submit</b>.</li></ol>
+<table class="standard">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Number
+</td>
+<td> Automatically generated incident alert ID, in the format IAxxxxxxxx.
+</td></tr>
+<tr>
+<td> Severity
+</td>
+<td> The severity for the incident alert. Values are <b>Major</b>,  <b>High</b>, <b>Medium</b>, or <b>Low</b>.
+</td></tr>
+<tr>
+<td> Source incident
+</td>
+<td> The source incident for this alert, if any. If you select a source incident, the <b>Source CI</b>, <b>Short description</b>, and <b>Background</b> fields are populated with data from this incident, unless there is existing data in those fields.
+</td></tr>
+<tr>
+<td> State
+</td>
+<td> The state of the alert. Values are <b>New</b>, <b>Work In Progress</b>, <b>Resolved</b>, <b>Cancelled</b>, or <b>Closed</b>.
+</td></tr>
+<tr>
+<td> Source CI
+</td>
+<td> The source CI for this alert, if any. If there is a source incident selected, this field is populated with the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Attaching+Configuration+Items+to+an+Incident&amp;oldid=0.html" title="Attaching Configuration Items to an Incident">source CI</a> attached to that incident. If there is no source incident selected, select the source CI manually, if applicable. If the source CI has related CIs, these are automatically listed in the <b><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Impacted_CIs">Impacted CIs</a></b> related list.
+</td></tr>
+<tr>
+<td> Assignment group
+</td>
+<td> The assignment group, if any, for that incident alert. For example, there might be a group that represents a crisis management team, including a number of Incident Managers, Duty Directors and Duty Managers.
+</td></tr>
+<tr>
+<td> Event type
+</td>
+<td> The type of event. Values are:  <b>Outage</b>, <b>Degradation</b>, <b>Capacity</b>, <b>SLA/Delay</b>, or <b>Fail-Over</b>.
+</td></tr>
+<tr>
+<td> Assigned to
+</td>
+<td> The assigned user for the alert. This can be an ITIL user or an incident alert administrator, and defaults to the user who creates the alert.
+</td></tr>
+<tr>
+<td> Business/Service impact
+</td>
+<td> <b>Yes</b> or <b>No</b> to indicate whether the business or a service is impacted.
+</td></tr>
+<tr>
+<td> Short description
+</td>
+<td> A brief summary of the alert.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" colspan="2"> <i><b>Details</b> section</i>
+</td></tr>
+<tr>
+<td> Opened
+</td>
+<td> When the alert was created.
+</td></tr>
+<tr>
+<td> Opened by
+</td>
+<td> The creator of the alert. This defaults to the user who creates the alert.
+</td></tr>
+<tr>
+<td> Estimated disruption time
+</td>
+<td> The estimated duration of the disruption.
+</td></tr>
+<tr>
+<td> Description
+</td>
+<td> More detailed information for the alert.
+</td></tr>
+<tr>
+<td> Background
+</td>
+<td> Background information about the alert.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" colspan="2"> <i><b>Activity</b> section</i>
+</td></tr>
+<tr>
+<td> Actions taken
+</td>
+<td> The details of all actions taken while working on the alert.
+</td></tr>
+<tr>
+<td> Work notes
+</td>
+<td> Any separate work notes relevant to the alert that might help in communications.
+</td></tr></table>
+<h1><span class="mw-headline" id="Creating_Alerts_from_an_Incident"><span class="mw-headline-number">3</span> Creating Alerts from an Incident</span></h1>
+<p>Creating an incident alert from within an existing incident record populates the alert with information from that incident.
+</p>
+<ol><li> Open an existing incident</li>
+<li> Select the <b>Create new incident alert</b> related link.</li>
+<li> A new incident alert record is created and populated with data from the incident.
+<dl><dd> The original incident becomes the source incident of this alert.</dd>
+<dd> Other fields populated with data from the source incident are: <b>Source CI</b>, <b>Short description</b>, <b>Background</b>.</dd></dl></li>
+<li> Fill in other fields as required, as described for <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Creating_Alerts_Directly">creating alerts directly</a>.</li>
+<li> Click <b>Submit</b>.</li></ol>
+<h1><span class="mw-headline" id="Viewing_Related_Lists"><span class="mw-headline-number">4</span> Viewing Related Lists</span></h1>
+<p>After you create an incident alert, several related lists are added to the form: <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Impacted_CIs">Impacted CIs</a>, <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#User_Contacts">User Contacts</a>, <a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html#Related_Incidents_and_Related_Problems">Related Incidents and Related Problems</a>.
+</p>
+<h2><span class="mw-headline" id="Impacted_CIs"><span class="mw-headline-number">4.1</span> Impacted CIs</span></h2>
+<p>The <b>Impacted CIs</b> related list shows all the CIs that the CMDB shows as related to the source CI for this alert.
+</p><p><a href="index.php%3Ftitle=File:Incident_Alert_Impacted_CIs.png.html" class="image"><img alt="Incident Alert Impacted CIs.png" src="images/thumb/6/69/Incident_Alert_Impacted_CIs.png/600px-Incident_Alert_Impacted_CIs.png" width="600" height="104" srcset="/images/thumb/6/69/Incident_Alert_Impacted_CIs.png/900px-Incident_Alert_Impacted_CIs.png 1.5x, /images/thumb/6/69/Incident_Alert_Impacted_CIs.png/1200px-Incident_Alert_Impacted_CIs.png 2x" /></a>
+</p><p>Administrators and incident alert administrators can modify this list. Click the <b>Edit</b> button, then add and remove CIs, as appropriate.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Administrators can adjust the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Installed+with+Incident+Alert+Management&amp;oldid=0.html#Properties" title="Installed with Incident Alert Management">com.snc.iam.log_level property</a> to view more log information for how this list is determined. By default the value is <b>info</b>. Set this to <b>debug</b> to see more detailed log information.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="User_Contacts"><span class="mw-headline-number">4.2</span> User Contacts</span></h2>
+<p>After an incident alert is created, the following default <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Contact+Administration&amp;oldid=0.html#Default_Responsibilities" title="Contact Administration">user responsibilities</a> are added to the <b>User Contacts</b> related list:
+</p>
+<ul><li> Duty Manager</li>
+<li> Duty Director</li>
+<li> Incident Manager</li></ul>
+<p><a href="index.php%3Ftitle=File:Incident_Alert_Contacts.png.html" class="image"><img alt="Incident Alert Contacts.png" src="images/thumb/b/bb/Incident_Alert_Contacts.png/500px-Incident_Alert_Contacts.png" width="500" height="152" srcset="/images/thumb/b/bb/Incident_Alert_Contacts.png/750px-Incident_Alert_Contacts.png 1.5x, /images/thumb/b/bb/Incident_Alert_Contacts.png/1000px-Incident_Alert_Contacts.png 2x" /></a>
+</p><p>From this list:
+</p>
+<ul><li> Click <b>New</b> to <a href="index.php%3Ftitle=Using_Contacts_with_Incident_Alerts.html#Adding_Contacts_Manually" title="Using Contacts with Incident Alerts">add a new contact</a>.</li>
+<li> Click the lookup icon beside the responsibility entry to <a href="index.php%3Ftitle=Using_Contacts_with_Incident_Alerts.html#Adding_Contacts_Manually" title="Using Contacts with Incident Alerts">edit the details for that responsibility</a>.</li>
+<li> Select the check box for the entry,  then select <b>Actions on selected rows..</b> and click <b>Delete</b>, to delete that entry from the user contacts list.</li></ul>
+<p>For more information, see <a href="index.php%3Ftitle=Using_Contacts_with_Incident_Alerts.html" title="Using Contacts with Incident Alerts">Using Contacts with Incident Alerts</a>.
+</p>
+<h2><span class="mw-headline" id="Group_Contacts"><span class="mw-headline-number">4.3</span> Group Contacts</span></h2>
+<p>There are currently no default group contacts defined for incident alert management. However, you can define group responsibilities for your organization, then <a href="index.php%3Ftitle=Personalizing_Forms.html" title="Personalizing Forms">personalize the form layout</a> to add the <b>Group Contacts</b> related list. 
+</p><p>You can then edit and modify this list, as for the user contacts.
+</p>
+<h2><span class="mw-headline" id="Related_Incidents_and_Related_Problems"><span class="mw-headline-number">4.4</span> Related Incidents and Related Problems</span></h2>
+<p>The <b>Related Incidents</b> and <b>Related Problems</b> related lists show incidents and problems affected, based on the source incident for the alert.
+</p><p><a href="index.php%3Ftitle=File:Incident_Alert_Related_Problems.png.html" class="image"><img alt="Incident Alert Related Problems.png" src="images/thumb/e/e1/Incident_Alert_Related_Problems.png/700px-Incident_Alert_Related_Problems.png" width="700" height="142" srcset="/images/e/e1/Incident_Alert_Related_Problems.png 1.5x, /images/e/e1/Incident_Alert_Related_Problems.png 2x" /></a>
+</p><p>This information is read-only. To make changes to this information, update the source incident.
+</p>
+<h2><span class="mw-headline" id="Notify"><span class="mw-headline-number">4.5</span> Notify</span></h2>
+<p>If <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Notify+with+Incident+Alert+Management&amp;oldid=0.html" title="Using Notify with Incident Alert Management">Notify</a> is active, two additional related lists appear on the Incident Alert form.
+</p><p>The <b>SMS Messages</b> related list gives information about the SMS notifications sent to users identified as contacts on the incident alert. For example, by default, SMS notifications are sent to users who are assigned to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Contact+Administration&amp;oldid=0.html#Responsibilities_for_Incident_Alerts" title="Contact Administration">responsibilities</a> when an incident alert is created. 
+</p><p>The SMS message content depends on the fields that were filled in when the alert is created, but is generally in the following format:
+</p>
+<dl><dd><b>IA0000001: a &lt;<i>severity</i>&gt; severity &lt;<i>event type</i>&gt; incident alert for '&lt;<i>CI name</i>&gt;' has been opened</b></dd></dl>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The CI name may be truncated to keep the content within 160 characters.</i>
+</td></tr></table>
+<p><br />
+The <b>Conference Calls</b> related list shows details of any <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Notify+with+Incident+Alert+Management&amp;oldid=0.html#Launching_a_Conference_Call" title="Using Notify with Incident Alert Management">conference calls</a> that have been launched for the incident alert.
+</p><p>For more information, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Notify+with+Incident+Alert+Management&amp;oldid=0.html" title="Using Notify with Incident Alert Management">Using Notify with Incident Alert Management</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201103014
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.200 seconds
+Real time usage: 0.911 seconds
+Preprocessor visited node count: 86/1000000
+Preprocessor generated node count: 266/1000000
+Post‐expand include size: 2557/2097152 bytes
+Template argument size: 866/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   82.287      1 - -total
+ 91.86%   75.591      1 - Template:Incident_Alert_Management
+ 80.32%   66.093      1 - Template:Topic
+  5.94%    4.891      4 - Template:T
+  5.85%    4.811      2 - Template:Note
+  5.30%    4.359      1 - Embedded:Incident_Alert_Management
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:19955-0!*!0!1!en!5!* and timestamp 20171201103013 and revision id 190925
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_Incident_Alerts&amp;oldid=190925.html">http://wiki.servicenow.com/index.php?title=Creating_Incident_Alerts&amp;oldid=190925</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Alert+Management.html" title="Category:Incident Alert Management">Incident Alert Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Incident+Alert+Management.html" title="Category:Incident Alert Management">Incident Alert Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_19955"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="19955" data-vote-the-vote="5" data-vote-id="19955" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_19955_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="19955" data-vote-the-vote="1" data-vote-id="19955" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_19955_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_Incident_Alerts.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+Incident+Alerts&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+Incident+Alerts&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_Incident_Alerts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_Incident_Alerts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Incident+Alerts.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+Incident+Alerts&amp;returnto=Creating+Incident+Alerts&amp;oldid=190925&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_Incident_Alerts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_Incident_Alerts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;oldid=190925.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_Incident_Alerts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 12:06, 18 October 2013.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1035});});</script></body></html>

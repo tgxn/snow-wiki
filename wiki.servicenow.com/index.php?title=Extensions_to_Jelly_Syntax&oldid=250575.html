@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Extensions to Jelly Syntax - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Extensions_to_Jelly_Syntax","wgTitle":"Extensions to Jelly Syntax","wgCurRevisionId":250575,"wgRevisionId":250575,"wgArticleId":3960,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["General Scripting"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Extensions_to_Jelly_Syntax","wgRelevantArticleId":3960,"wgRequestId":"d2cb59e1782d4d9d4a809e4b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831161529"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Extensions_to_Jelly_Syntax"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Extensions to Jelly Syntax"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="General Scripting"/>
+<meta name="category" content="General Scripting"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Extensions_to_Jelly_Syntax.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Extensions to Jelly Syntax"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831161529"/>
+
+	<meta property="article:published_time" content="20170831161529"/>
+
+	<meta property="article:modified_time" content="20170831161529"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="General Scripting"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Extensions_to_Jelly_Syntax"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Extensions_to_Jelly_Syntax rootpage-Extensions_to_Jelly_Syntax skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Extensions+to+Jelly+Syntax.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Extensions+to+Jelly+Syntax&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Extensions to Jelly Syntax</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Extensions to Jelly Syntax</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/general-scripting/concept/c_ExtensionsToJellySyntax.html">Extensions to Jelly Syntax</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Differences_Among_Scripts.html" title="Differences Among Scripts">Scripting Glide and Jelly</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21358e715b5t'></div><script type="text/javascript">window.tamOnload_tam5a21358e715b5t=[];tree = new dTree('tam5a21358e715b5t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21358e715b5t = tree;
+                                               tam5a21358e715b5t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Stack\&quot;" title=\"Glide Stack\">Glide</a>');
+
+tam5a21358e715b5t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Glide_Script_Objects\&quot;" title=\"Glide Script Objects\">Glide Script Objects</a>');
+tam5a21358e715b5t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_GlideRecord_to_Query_Tables\&quot;" title=\"Using GlideRecord to Query Tables\">Using GlideRecord to Query Tables</a> ');
+tam5a21358e715b5t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Getting_a_User_Object\&quot;" title=\"Getting a User Object\">Getting a User Object</a> ');
+tam5a21358e715b5t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_Alert,_Info,_and_Error_Messages\&quot;" title=\"Scripting Alert, Info, and Error Messages\">Scripting Alert, Info, and Error Messages</a> ');
+tam5a21358e715b5t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Display_Field_Messages\&quot;" title=\"Display Field Messages\">Display Field Messages</a> ');
+tam5a21358e715b5t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_a_GlideRecord_Variable_to_Null\&quot;" title=\"Setting a GlideRecord Variable to Null\">Setting a GlideRecord Variable to Null</a>');
+tam5a21358e715b5t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Inserting/Updating_GlideRecord_with_References\&quot;" title=\"Inserting/Updating GlideRecord with References\">Inserting/Updating GlideRecord with References</a>');
+tam5a21358e715b5t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Referencing_a_Glide_List_from_a_Script\&quot;" title=\"Referencing a Glide List from a Script\">Referencing a Glide List from a Script</a> ');
+tam5a21358e715b5t.add(10, 0, 'Jelly');
+tam5a21358e715b5t.add(11, 10, '<strong class=\"selflink\">Extensions to Jelly Syntax</strong> ');
+tam5a21358e715b5t.add(12, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=How_to_Escape_in_Jelly\&quot;" title=\"How to Escape in Jelly\">How to Escape in Jelly</a> ');
+tam5a21358e715b5t.add(13, 10, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Jelly_Tags\&quot;" title=\"Jelly Tags\">Jelly Tags</a>');
+tam5a21358e715b5t.add(14, 0, 'Debugging');
+tam5a21358e715b5t.add(15, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Syntax_Error_Checking\&quot;" title=\"Script Syntax Error Checking\">Script Syntax Error Checking</a>');
+tam5a21358e715b5t.add(16, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Syntax_Editor\&quot;" title=\"Syntax Editor\">Configuring the Syntax Editor</a>');
+tam5a21358e715b5t.add(17, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Syntax_Editor\&quot;" title=\"Using the Syntax Editor\">Using the Syntax Editor</a>');
+tam5a21358e715b5t.add(18, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debug_Window\&quot;" title=\"JavaScript Debug Window\">JavaScript Debug Window</a> ');
+tam5a21358e715b5t.add(19, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Debugger\&quot;" title=\"JavaScript Debugger\">JavaScript Debugger</a>');
+tam5a21358e715b5t.add(20, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JavaScript_Log\&quot;" title=\"JavaScript Log\">JavaScript Debug Log</a>');
+tam5a21358e715b5t.add(21, 14, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Watcher\&quot;" title=\"Field Watcher\">Field Watcher</a>');
+tam5a21358e715b5t.add(22, 0, 'Client-Side Glide Reference');
+tam5a21358e715b5t.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAjax\&quot;" title=\"GlideAjax\">GlideAjax</a>');
+tam5a21358e715b5t.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideDialogWindow_API_Reference\&quot;" title=\"GlideDialogWindow API Reference\">GlideDialogWindow</a>');
+tam5a21358e715b5t.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideForm_(g_form)\&quot;" title=\"GlideForm (g form)\">GlideForm (g_form)</a>');
+tam5a21358e715b5t.add(26, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideList2_(g_list)\&quot;" title=\"GlideList2 (g list)\">GlideList2</a>');
+tam5a21358e715b5t.add(27, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Side_GlideRecord\&quot;" title=\"Client Side GlideRecord\">Client-side GlideRecord</a>');
+tam5a21358e715b5t.add(28, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideUser_(g_user)\&quot;" title=\"GlideUser (g user)\">GlideUser (g_user)</a>');
+tam5a21358e715b5t.add(29, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Mobile_GlideForm_(g_form)_API_Reference\&quot;" title=\"Mobile GlideForm (g form) API Reference\">Mobile GlideForm</a>');
+tam5a21358e715b5t.add(30, 0, 'Server-Side Glide Reference');
+tam5a21358e715b5t.add(31, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecord\&quot;" title=\"GlideRecord\">GlideRecord</a> ');
+tam5a21358e715b5t.add(32, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a> ');
+tam5a21358e715b5t.add(33, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideElement\&quot;" title=\"GlideElement\">GlideElement</a> ');
+tam5a21358e715b5t.add(34, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem\&quot;" title=\"GlideSystem\">GlideSystem</a> ');
+tam5a21358e715b5t.add(35, 34, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideSystem_Date_and_Time_Functions\&quot;" title=\"GlideSystem Date and Time Functions\">Date and Time Functions</a> ');
+tam5a21358e715b5t.add(36, 30, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideAggregate\&quot;" title=\"GlideAggregate\">GlideAggregate</a> ');
+tam5a21358e715b5t.add(37, 0, 'Script Helpers');
+tam5a21358e715b5t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=CIUtils\&quot;" title=\"CIUtils\">CIUtils</a>');
+tam5a21358e715b5t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=ArrayUtil\&quot;" title=\"ArrayUtil\">ArrayUtil</a>');
+tam5a21358e715b5t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=DateTimeUtils\&quot;" title=\"DateTimeUtils\">DateTimeUtils</a>');
+tam5a21358e715b5t.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=FormInfoHeader\&quot;" title=\"FormInfoHeader\">FormInfoHeader</a>');
+tam5a21358e715b5t.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=J2js\&quot;" title=\"J2js\">J2js</a>');
+tam5a21358e715b5t.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=JSUtil\&quot;" title=\"JSUtil\">JSUtil</a>');
+tam5a21358e715b5t.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RecordToHTML\&quot;" title=\"RecordToHTML\">RecordToHTML</a>');
+tam5a21358e715b5t.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=TableUtils\&quot;" title=\"TableUtils\">TableUtils</a>');
+tam5a21358e715b5t.add(46, 0, 'Script Objects');
+tam5a21358e715b5t.add(47, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Includes\&quot;" title=\"Script Includes\">Script Includes</a> ');
+tam5a21358e715b5t.add(48, 46, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Script_Actions\&quot;" title=\"Script Actions\">Script Actions</a>');
+tam5a21358e715b5t.add(49, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Regular_Expressions_in_Scripts\&quot;" title=\"Using Regular Expressions in Scripts\">Using Regular Expressions in Scripts</a>');
+
+                                               document.getElementById('5a21358e715b5t').innerHTML = tam5a21358e715b5t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21358e715b5t) { window.tamOnload_tam5a21358e715b5t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Glide_Reference.html" title="Book:Glide Reference">Get the Glide Reference Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Namespaces"><span class="tocnumber">2</span> <span class="toctext">Namespaces</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Phases"><span class="tocnumber">3</span> <span class="toctext">Phases</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#If_Tests"><span class="tocnumber">4</span> <span class="toctext">If Tests</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Set_If"><span class="tocnumber">5</span> <span class="toctext">Set_If</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:insert.3E_Versus_.3Cg:inline.3E_Versus_.3Cg:call.3E"><span class="tocnumber">6</span> <span class="toctext">&lt;g:insert&gt; Versus &lt;g:inline&gt; Versus &lt;g:call&gt;</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:call.3E"><span class="tocnumber">6.1</span> <span class="toctext">&lt;g:call&gt;</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:evaluate.3E"><span class="tocnumber">7</span> <span class="toctext">&lt;g:evaluate&gt;</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#object.3D.22true.22"><span class="tocnumber">7.1</span> <span class="toctext">object="true"</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#jelly.3D.22true.22"><span class="tocnumber">7.2</span> <span class="toctext">jelly="true"</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#copyToPhase2.3D.22true.22"><span class="tocnumber">7.3</span> <span class="toctext">copyToPhase2="true"</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:breakpoint.2F.3E"><span class="tocnumber">8</span> <span class="toctext">&lt;g:breakpoint/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:include_script.2F.3E"><span class="tocnumber">9</span> <span class="toctext">&lt;g:include_script/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:ui_form.2F.3E"><span class="tocnumber">10</span> <span class="toctext">&lt;g:ui_form/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:ui_input_field_.2F.3E"><span class="tocnumber">11</span> <span class="toctext">&lt;g:ui_input_field /&gt;</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:ui_checkbox.2F.3E"><span class="tocnumber">12</span> <span class="toctext">&lt;g:ui_checkbox/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:dialog_buttons_ok_cancel.2F.3E"><span class="tocnumber">13</span> <span class="toctext">&lt;g:dialog_buttons_ok_cancel/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#.3Cg:ui_reference.2F.3E"><span class="tocnumber">14</span> <span class="toctext">&lt;g:ui_reference/&gt;</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Ampersand"><span class="tocnumber">15</span> <span class="toctext">Ampersand</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#And"><span class="tocnumber">16</span> <span class="toctext">And</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Less_Than"><span class="tocnumber">17</span> <span class="toctext">Less Than</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Whitespace"><span class="tocnumber">18</span> <span class="toctext">Whitespace</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Spaces"><span class="tocnumber">19</span> <span class="toctext">Spaces</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#RP"><span class="tocnumber">20</span> <span class="toctext">RP</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Tracing_Jelly"><span class="tocnumber">21</span> <span class="toctext">Tracing Jelly</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Standard_Jelly"><span class="tocnumber">22</span> <span class="toctext">Standard Jelly</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html#Escaping_Jelly"><span class="tocnumber">23</span> <span class="toctext">Escaping Jelly</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Apache's Jelly syntax is used to render forms, lists, UI pages, and many other things rendered in ServiceNow. With Jelly, logic can be embedded within static content and computed values may be inserted into the static content.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This functionality requires a knowledge of Apache Jelly (a Java and XML based scripting and processing engine for turning XML into executable code).</i>
+</td></tr></table>
+<h1><span class="mw-headline" id="Namespaces"><span class="mw-headline-number">2</span> Namespaces</span></h1>
+<p>In ServiceNow, Jelly often includes multiple namespaces when invoking tags. The “j” namespaces are standard Jelly whereas the “g” namespaces are unique to ServiceNow. For example, the &lt;g:evaluate&gt; tag is supplied by ServiceNow to allow you to compute a value using JavaScript. The standard Jelly tag &lt;j:test&gt; is used to evaluate a condition. 
+</p>
+<h1><span class="mw-headline" id="Phases"><span class="mw-headline-number">3</span> Phases</span></h1>
+<p>Usually, there are two phases indicated by namespaces &lt;j&gt; versus &lt;j2&gt; and &lt;g&gt; versus &lt;g2&gt;. The namespaces without the “2” happen in the first phase of processing and these are cached except when used in a UI page. Those with the “2” are never cached. Care must be taken when selecting whether to use phase 1 or phase 2 for efficiency and correct results. 
+</p><p>In addition to the namespaces, the syntax used to insert values into static content differs depending on which phase is to supply the value. A dollar with braces surrounding a value inserts the value in phase 1. For example, <tt>${jvar_ref}</tt> inserts the value <b>jvar_ref</b> during phase 1 of the jelly process. A dollar with brackets surrounding a value inserts the value in phase 2. For example, <tt>$[jvar_ref]</tt> inserts the value <b>jvar_ref</b> during phase 2. A value surrounded by quotes is treated as a string. For example, <tt>'[jvar_ref]'</tt> inserts the value <b>jvar_ref</b> as a string during phase 2.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;script&gt;</span>
+if (confirm(&quot;$[gs.getMessage(&#39;home.delete.confirm&#39;) ]&quot;))
+   ...
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+<p><br /> 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">id=</span><span class="s">&quot;${jvar_name}&quot;</span> <span class="na">name=</span><span class="s">&quot;${jvar_name}&quot;</span> <span class="na">value=</span><span class="s">&quot;${jvar_value}&quot;</span> <span class="na">class=</span><span class="s">&quot;${jvar_class}&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="If_Tests"><span class="mw-headline-number">4</span> If Tests</span></h1>
+<p>Testing whether something is true or not can be done as follows:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;j:if</span> <span class="na">test=</span><span class="s">&quot;${jvar_something}&quot;</span><span class="nt">&gt;</span>...do something...<span class="nt">&lt;/j:if&gt;</span>
+<span class="nt">&lt;j:if</span> <span class="na">test=</span><span class="s">&quot;${!jvar_something}&quot;</span><span class="nt">&gt;</span>...do something...<span class="nt">&lt;/j:if&gt;</span>
+</pre></div>
+<p>The reason this works, is that, in Jelly, a term like jvar_something is "truthful" in an if tag if: 
+</p>
+<ol><li>it is Boolean and true </li>
+<li>it is a String and = "true", "yes", "on", or "1"</li></ol>
+<p><br />
+Testing whether something exists can be done as follows:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;j:if</span> <span class="na">test=</span><span class="s">&quot;${empty(jvar_something)}&quot;</span><span class="nt">&gt;</span>...do something...<span class="nt">&lt;/j:if&gt;</span>
+</pre></div>
+<p>The reason this works is that the jexl empty function returns true if its argument is:<br /> 
+</p>
+<ol><li>null </li>
+<li>an emptry string </li>
+<li>a zero length collection </li>
+<li>a map with no keys </li>
+<li>an empty array</li></ol>
+<h1><span class="mw-headline" id="Set_If"><span class="mw-headline-number">5</span> Set_If</span></h1>
+<p>Sets a variable to one of two different values depending on whether a test is true or false. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:set_if</span> <span class="na">var=</span><span class="s">&quot;jvar_style&quot;</span> <span class="na">test=</span><span class="s">&quot;$[gs.getPreference(&#39;table.compact&#39;) != &#39;false&#39;]&quot;</span> 
+   <span class="na">true=</span><span class="s">&quot;margin-top:0px; margin-bottom:0px;&quot;</span> 
+   <span class="na">false=</span><span class="s">&quot;margin-top:2px; margin-bottom:2px;&quot;</span> <span class="nt">/&gt;</span>
+</pre></div> 
+<h1><span class="mw-headline" id=".3Cg:insert.3E_Versus_.3Cg:inline.3E_Versus_.3Cg:call.3E"><span class="mw-headline-number">6</span> &lt;g:insert&gt; Versus &lt;g:inline&gt; Versus &lt;g:call&gt;</span></h1>
+<p>The &lt;g:insert&gt; tag inserts a Jelly file into your Jelly in a new context. This means you cannot access the variables previously established in your Jelly. The &lt;g:inline&gt; tag inserts a Jelly file into your Jelly in the same context. This means that the inserted Jelly can access the variables you previously established and it can change the values of those variables. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:insert</span> <span class="na">template=</span><span class="s">&quot;get_target_form_function.xml&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:inline</span> <span class="na">template=</span><span class="s">&quot;element_default.xml&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id=".3Cg:call.3E"><span class="mw-headline-number">6.1</span> &lt;g:call&gt;</span></h2>
+<p>For better encapsulation, the &lt;g:call&gt; tag may be used.  Your function will only have access to the values passed to it.  The Jelly context will look the same after a call as before the call. This means you cannot set a global variable here and read it later.  This also means you can't mistakenly set a global variable called "jvar_temp" and overwrite a variable that somebody else was relying on.
+</p><p>Passing values, if needed, is done explicitly by including the name of the parameter on the &lt;g:call&gt; line followed by the equal sign followed by the value in quotes:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+<span class="nt">&lt;g:call</span> <span class="na">function=</span><span class="s">&quot;collapsing_image.xml&quot;</span> <span class="na">id=</span><span class="s">&quot;${jvar_section_id}&quot;</span> <span class="na">image=</span><span class="s">&quot;$[jvar_cimg]&quot;</span> 
+   <span class="na">first_section_id=</span><span class="s">&quot;${jvar_first_section_id}&quot;</span> <span class="na">image_alt=</span><span class="s">&quot;${jvar_cimg_alt}&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<p>If values are passed, and you want to have defaults or required parameters, your Jelly referenced in the function must then include a line to declare whether the parameters are required or have a default value:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+<span class="nt">&lt;g:function</span> <span class="na">id=</span><span class="s">&quot;REQUIRED&quot;</span> <span class="na">image=</span><span class="s">&quot;REQUIRED&quot;</span> <span class="na">image_prefix=</span><span class="s">&quot;&quot;</span> <span class="na">image_alt=</span><span class="s">&quot;REQUIRED&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<p>The example above indicates that 3 of the parameter are required and one parameter is option with a blank default value.  Note that if you are not passing values or if you do want to have default or required values, you do not need to include the &lt;g:function&gt; line at all.  In general, however, you will want to include a &lt;g:function&gt; line.
+</p><p>The value can then be referenced in your template by prepending the "jvar_" prefix to the parameter's name:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+<span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;img.${jvar_id}&quot;</span> <span class="na">src=</span><span class="s">&quot;images/${jvar_image}&quot;</span> <span class="na">alt=</span><span class="s">&quot;${jvar_image_alt}&quot;</span> 
+   <span class="na">onclick=</span><span class="s">&quot;toggleSectionDisplay(&#39;${jvar_id}&#39;, &#39;${jvar_image_prefix}&#39;,&#39;${jvar_first_section_id}&#39;);&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<p>For &lt;g:call&gt;, parameters may also be pass implicitly as a list of named variables in an "arguments" parameter:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+  <span class="nt">&lt;g:call</span> <span class="na">function=</span><span class="s">&quot;item_link_default.xml&quot;</span> <span class="na">arguments=</span><span class="s">&quot;sysparm_view,ref_parent,jvar_target_text&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<p>As an alternative to passing variables into the function via separate tag arguments, it is possible to pass a list of variables in a single 'arguments' argument.  
+All variables identified by name (comma separated) in the <i>argument</i> parameter are re-introduced within the function under the exact same name (e.g. inside the function template, we'd have variables sysparm_view, ref_parent, and jvar_target_text available to us).  
+</p><p>The function template may return a value to the calling template using the <b>return=</b> attribute.  Within the function the <b>jvar_answer</b> variable sets the return value.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  <span class="nt">&lt;g:call</span> <span class="na">function=</span><span class="s">&quot;item_body_cell_calc_style.xml&quot;</span> <span class="na">arguments=</span><span class="s">&quot;jvar_type&quot;</span> <span class="na">return=</span><span class="s">&quot;jvar_style&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id=".3Cg:evaluate.3E"><span class="mw-headline-number">7</span> &lt;g:evaluate&gt;</span></h1>
+<p>The &lt;g:evaluate&gt; tag is used to evaluate an expression written in Rhino JavaScript and sometimes to set a variable to the value of the expression. The last statement in the expression is the value the variable will contain. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_page&quot;</span> <span class="na">jelly=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+     var page = &quot;&quot;;
+     var pageTitle = &quot;&quot;;
+     var pageGR = new GlideRecord(&quot;cmn_schedule_page&quot;);
+     pageGR.addQuery(&quot;type&quot;, jelly.jvar_type&quot;);
+     pageGR.query();
+     if (pageGR.next()) {
+        page = pageGR.getValue(&quot;sys_id&quot;);
+        pageTitle = pageGR.getDisplayValue();
+     }
+     page;
+<span class="nt">&lt;/g2:evaluate&gt;</span>
+</pre></div>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:evaluate</span> <span class="na">var=</span><span class="s">&quot;not_important&quot;</span> <span class="na">expression=</span><span class="s">&quot;sc_req_item.popCurrent()&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="object.3D.22true.22"><span class="mw-headline-number">7.1</span> object="true"</span></h2>
+<p>If you would like to have the evaluate return an object (for example an array), use the argument object="true". 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This API call changed in the Calgary release:</i>
+<ul><li><i>SncRelationships</i> replaces <i>Packages.com.glideapp.ecmdb.Relationships</i> </li></ul>
+<p>The new script object calls apply to the Calgary release and beyond. For releases prior to Calgary, substitute the packages call as described above. Packages calls are not valid beginning with the Calgary release. For more information, see <a href="index.php%3Ftitle=Scripting_API_Changes.html" title="Scripting API Changes">Scripting API Changes</a>.
+</p>
+</td></tr></table>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:evaluate</span> <span class="na">object=</span><span class="s">&quot;true&quot;</span> <span class="na">var=</span><span class="s">&quot;jvar_items&quot;</span> <span class="na">expression=</span><span class="s">&quot;SncRelationships.getCMDBViews()&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="jelly.3D.22true.22"><span class="mw-headline-number">7.2</span> jelly="true"</span></h2>
+<p>If you would like to access Jelly variables inside an evaluate, include jelly="true" in the evaulate and add "jelly." before the Jelly variable's name.&#160; For example, to access the GlideJellyContext: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_row_no&quot;</span> <span class="na">jelly=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+   var gf = jelly.context.getGlideForm();
+   var row = gf.getRowNumber();
+   row;
+<span class="nt">&lt;/g2:evaluate&gt;</span>
+</pre></div>
+<p>Another example of accessing a jvar using the jelly="true" parameter.  The value of <b>jvar_h</b> was set previously and we can access it inside the <b>evaluate</b>:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>$[NLBR:jvar_h.getHTMLValue(&#39;newvalue&#39;)]
+<span class="nt">&lt;g2:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_fix_escaping&quot;</span> <span class="na">jelly=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    var auditValue = jelly.jvar_h.getHTMLValue(&#39;newvalue&#39;);
+    gs.log(&quot;************ &quot; + auditValue);
+<span class="nt">&lt;/g2:evaluate&gt;</span>
+</pre></div>
+<h2><span class="mw-headline" id="copyToPhase2.3D.22true.22"><span class="mw-headline-number">7.3</span> copyToPhase2="true"</span></h2>
+<p>If you have a need to take the results of an evaluation that occurs in phase 1 and propagate it to phase 2, use copyToPhase2="true".  There is some protection for escaping in this use.  For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_has_special_inc&quot;</span> <span class="na">copyToPhase2=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+   var specialInc = gs.tableExists(&quot;special_incident&quot;);
+   specialInc;
+<span class="nt">&lt;/g:evaluate&gt;</span>
+$[jvar_has_special_inc]
+</pre></div>
+<p>If you do not need to evaluate something, you can do this more directly.  Beware of escaping issues here (double quotes in jvar_rows would cause a problem in the example):
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;j2:set</span> <span class="na">var=</span><span class="s">&quot;jvar_rows&quot;</span> <span class="na">value=</span><span class="s">&quot;${jvar_rows}&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id=".3Cg:breakpoint.2F.3E"><span class="mw-headline-number">8</span> &lt;g:breakpoint/&gt;</span></h1>
+<p>This tag can be used to display the current Jelly variables and their values in the log. Be sure to remove this tag before going to production. 
+</p>
+<h1><span class="mw-headline" id=".3Cg:include_script.2F.3E"><span class="mw-headline-number">9</span> &lt;g:include_script/&gt;</span></h1>
+<p>In pre-Fuji releases, this tag can be used to include UI scripts for client side access to reusable javascript. For example, the jquery library is included as a UI script. To view this library, navigate to <b>System UI &gt; UI Scripts &gt; jquery.min</b>. To include this library in a UI page or macro, add <b>&lt;g:include_script src="jquery.min.jsdbx"/&gt;</b> to the jelly script. This example uses the name of the UI script with the extension <b>.jsdbx</b> appended.
+</p><p>Starting with the Fuji release, you cannot use this include.
+</p>
+<h1><span class="mw-headline" id=".3Cg:ui_form.2F.3E"><span class="mw-headline-number">10</span> &lt;g:ui_form/&gt;</span></h1>
+<p>This tag defines a form on the UI page. For example, if your form contained the <b>application_sys_id</b> field: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> <span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">ui_form</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">OK</span> <span class="nx">to</span> <span class="nx">run</span> <span class="nx">the</span> <span class="nx">processing</span> <span class="nx">script</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">dialog_buttons_ok_cancel</span> <span class="nx">ok</span><span class="o">=</span><span class="s2">&quot;return true&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;application_sys_id&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;499836460a0a0b1700003e7ad950b5da&quot;</span><span class="o">/&gt;</span>
+ <span class="o">&lt;</span><span class="err">/g:ui_form&gt;</span>
+</pre></div>
+<p>The g:ui_form may benefit greatly from a processing script.
+</p>
+<h1><span class="mw-headline" id=".3Cg:ui_input_field_.2F.3E"><span class="mw-headline-number">11</span> &lt;g:ui_input_field /&gt;</span></h1>
+<p>This tag adds a reference to a UI macro that creates an input field on a page that allows users to input information. The ui_input_field passes a label, name, value, and size into the UI macro. Here is an example from a UI page:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:ui_input_field</span> <span class="na">label=</span><span class="s">&quot;sys_id&quot;</span> <span class="na">name=</span><span class="s">&quot;sysid&quot;</span> <span class="na">value=</span><span class="s">&quot;9d385017c611228701d22104cc95c371&quot;</span> <span class="na">size=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id=".3Cg:ui_checkbox.2F.3E"><span class="mw-headline-number">12</span> &lt;g:ui_checkbox/&gt;</span></h1>
+<p>This tag puts a user-editable check mark on a page. The name and value are passed into the UI macro. Here is an example from a table on a UI page:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">nowrap=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label&gt;</span>Time Card Active:<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+          <span class="nt">&lt;g:ui_checkbox</span> <span class="na">name=</span><span class="s">&quot;timecard_active&quot;</span> <span class="na">value=</span><span class="s">&quot;${sysparm_timecard_active}&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/td&gt;</span>
+   <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id=".3Cg:dialog_buttons_ok_cancel.2F.3E"><span class="mw-headline-number">13</span> &lt;g:dialog_buttons_ok_cancel/&gt;</span></h1>
+<p>This tag puts buttons on the UI page that run a specified processing script if the tag returns true. If your UI page contains a form (uses the &lt;g:form&gt; tag), you can submit the form and have the Processing Script run. The Processing Script can naturally access fields on the form. For example, if your form contained the application_sys_id field:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> <span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">ui_form</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">OK</span> <span class="nx">to</span> <span class="nx">run</span> <span class="nx">the</span> <span class="nx">processing</span> <span class="nx">script</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+    <span class="o">&lt;</span><span class="nx">g</span><span class="o">:</span><span class="nx">dialog_buttons_ok_cancel</span> <span class="nx">ok</span><span class="o">=</span><span class="s2">&quot;return true&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;application_sys_id&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;499836460a0a0b1700003e7ad950b5da&quot;</span><span class="o">/&gt;</span>
+ <span class="o">&lt;</span><span class="err">/g:ui_form&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id=".3Cg:ui_reference.2F.3E"><span class="mw-headline-number">14</span> &lt;g:ui_reference/&gt;</span></h1>
+<p>This tag adds a reference to a page that can be referenced by a Processing Script. The following example creates a reference defined by name, id, and table parameters in the tag:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:ui_reference</span> <span class="na">name=</span><span class="s">&quot;QUERY:active=true^roles=itil&quot;</span> <span class="na">id=</span><span class="s">&quot;assigned_to&quot;</span> <span class="na">table=</span><span class="s">&quot;sys_user&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+<p>Then in the Processing Script, reference the name field like this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>newTask.assigned_to = request.getParameter(&quot;QUERY:active=true^roles=itil&quot;);
+</pre></div>
+<p>Beginning with the Calgary release, this tag has been enhanced to allow you to specify a reference qualifier, so that the "name" attribute can be unique. The following example creates a reference defined by name, id, and table parameters in the tag. Note: the "columns" attribute only applies to the auto-completer.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g:ui_reference</span> <span class="na">name=</span><span class="s">&quot;parent_id&quot;</span> <span class="na">id=</span><span class="s">&quot;parent_id&quot;</span> <span class="na">table=</span><span class="s">&quot;pm_project&quot;</span> <span class="na">query=</span><span class="s">&quot;active=true&quot;</span> <span class="na">completer=</span><span class="s">&quot;AJAXTableCompleter&quot;</span> 
+<span class="na">columns=</span><span class="s">&quot;project_manager;short_description&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Ampersand"><span class="mw-headline-number">15</span> Ampersand</span></h1>
+<p>Ampersands in Jelly can cause you grief because Jelly is XML. Use <b>${AMP}</b> to insert an ampersand in Jelly. If you are writing JavaScript that appears in the HTML part of say a UI page or UI macro that is actually going to run on the browser you are better off putting this code in the "client script" field and that way you can avoid escaping issues.  However, if you really must put it in the "HTML" field, you will need to do something like this:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>ta = ta[1].split(&#39;$[AMP]&#39;);
+</pre></div>
+<h1><span class="mw-headline" id="And"><span class="mw-headline-number">16</span> And</span></h1>
+<p>For the same reasons given for the ampersand, use <b>${AND}</b> to insert a JavaScript <tt>and</tt> in Jelly. For example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>if (d ${AND} e)
+   var color = d.value;
+</pre></div>
+<p><br />
+Alternately, in a Jelly <b>test</b> you would use &amp;amp&amp;amp.  For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;j:if</span> <span class="na">test=</span><span class="s">&quot;${jvar_form_name == &#39;sys_form_template&#39; &amp;amp;&amp;amp; !RP.isDialog()}&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Less_Than"><span class="mw-headline-number">17</span> Less Than</span></h1>
+<p>Similar to ampersands, less than ("&lt;") signs can also cause problems due to Jelly being XML. This can be resolved by reversing your test such that it is not necessary or by using <b>${AMP}lt;</b> in place of the less than sign. For example in an evaluate you could do: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;g2:evaluate</span> <span class="na">var=</span><span class="s">&quot;jvar_text&quot;</span><span class="nt">&gt;</span>
+     var days = &quot;&quot;;
+     var selectedDays = &#39;$[${ref}]&#39;;
+     for (var i = 1; i ${AMP}lt;= 7; i++) {
+        if (selectedDays.indexOf(i.toString()) &gt;= 0) {
+           days += gs.getMessage(&quot;dow&quot; + i);
+           days += &quot; &quot;;
+        }
+     }
+     days;
+ <span class="nt">&lt;/g2:evaluate&gt;</span>
+</pre></div>
+<p>Many times you can avoid the "less than" operator all together by just using "not equals" which doesn't have escaping issues.  For example:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>for (var i=0; i != ta.length; i++) {
+}
+</pre></div>
+<h1><span class="mw-headline" id="Whitespace"><span class="mw-headline-number">18</span> Whitespace</span></h1>
+<p>Normally, white space is removed by Jelly.  To keep it, you must specify that it not be trimmed.  For example, the following keeps the space after the colon.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;j2:whitespace</span> <span class="na">trim=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>${gs.getMessage(&#39;Did you mean&#39;)}: <span class="nt">&lt;/j2:whitespace&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="Spaces"><span class="mw-headline-number">19</span> Spaces</span></h1>
+<p>To encode a non-breaking space (&amp;nbsp;), you can use <b>$[SP]</b>. For example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;gsft_domain&quot;</span> <span class="na">style=</span><span class="s">&quot;display: inline&quot;</span><span class="nt">&gt;</span>
+    ${gs.getMessage(&#39;Domain&#39;)}:$[SP]
+    <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;domainDD&quot;</span> <span class="na">class=</span><span class="s">&quot;drop_down_element&quot;</span> <span class="na">style=</span><span class="s">&quot;text-decoration: none; color: white&quot;</span><span class="nt">&gt;</span>
+        ${gs.getMessage(&quot;Loading...&quot;)}
+   <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+</pre></div>
+<h1><span class="mw-headline" id="RP"><span class="mw-headline-number">20</span> RP</span></h1>
+<p>An object, RP, has various methods available to you.&#160; Here are a few of its methods:<br /> 
+</p>
+<ul><li>RP.getReferringURL() - returns to URL that got you to this page. </li>
+<li>RP.isDialog() - returns true if the page is in dialog mode </li>
+<li>RP.isHomePage - returns true if the page is in home page mode </li>
+<li>RP.isPrint() - returns true if the page is in print mode (user clicked the print button on the top banner) </li>
+<li>RP.isMobile() - returns true if the page is in mobile mode (browsing using a Blackberry, etc.) </li>
+<li>RP.getParameterValue(parameterName) - returns the value of the specified parameter passed on the URL </li>
+<li>RP.getParameters() - returns the parameters passed on the URL </li>
+<li>RP.getViewID() - returns the view in use</li></ul>
+<p>An example of using RP.isPrint():
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+<span class="nt">&lt;j:if</span> <span class="na">test=</span><span class="s">&quot;${!RP.isPrint()}&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;a</span> <span class="na">onclick=</span><span class="s">&quot;mailTo(&#39;${ref}&#39;);&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/email.gifx&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-left: 2px;&quot;</span> <span class="na">width=</span><span class="s">&quot;16&quot;</span> <span class="na">height=</span><span class="s">&quot;16&quot;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/j:if&gt;</span>
+</pre></div> 
+<p>An example of using RP.getParameterValue(x) assuming a parameter was passed for "roles": 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>roles = &quot;${RP.getParameterValue(&#39;roles&#39;)}&quot;;
+</pre></div> 
+<h1><span class="mw-headline" id="Tracing_Jelly"><span class="mw-headline-number">21</span> Tracing Jelly</span></h1>
+<p>ServiceNow has a feature which allows the evaluation of Jelly to be traced. The trace is sent to the log. This should only be turned on during debugging as this produces a lot of logging.&#160; To turn on the trace, set the property glide.ui.template.trace to true. For example, the following script can be executed to do this:
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This API call changed in the Calgary release:</i>
+<ul><li><i>GlideProperties</i> replaces <i>Packages.com.glide.util.GlideProperties</i> </li></ul>
+<p>The new script object calls apply to the Calgary release and beyond. For releases prior to Calgary, substitute the packages call as described above. Packages calls are not valid beginning with the Calgary release. For more information, see <a href="index.php%3Ftitle=Scripting_API_Changes.html" title="Scripting API Changes">Scripting API Changes</a>.
+</p>
+</td></tr></table>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">GlideProperties</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;glide.ui.template.trace&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+<p>If you want to see your log entries on your web browser at the bottom of each page, navigate to <i>System Diagnostics &gt; Debug Log</i>.
+<br /><br />
+</p>
+<h1><span class="mw-headline" id="Standard_Jelly"><span class="mw-headline-number">22</span> Standard Jelly</span></h1>
+<p>This page from Apache has a summary of the standard Jelly tags: <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://commons.apache.org/jelly/tags.html">http://commons.apache.org/jelly/tags.html</a> 
+</p><p>This PDF includes a nice summary of standard Jelly tags: <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://www.softwaresummit.com/2003/speakers/GillardJelly.pdf">http://www.softwaresummit.com/2003/speakers/GillardJelly.pdf</a> 
+</p>
+<h1><span class="mw-headline" id="Escaping_Jelly"><span class="mw-headline-number">23</span> Escaping Jelly</span></h1>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This is an advanced procedure.</i>
+</td></tr></table>
+<p><br />
+For information about how to handle character escaping in Jelly files, see <a href="index.php%3Ftitle=How_to_Escape_in_Jelly.html" title="How to Escape in Jelly"><b>How to Escape in Jelly</b></a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201105730
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.447 seconds
+Real time usage: 11.925 seconds
+Preprocessor visited node count: 496/1000000
+Preprocessor generated node count: 1117/1000000
+Post‐expand include size: 6424/2097152 bytes
+Template argument size: 1880/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 11751.657      1 - -total
+  0.60%   70.214      1 - Template:General_Script
+  0.55%   65.019      1 - Template:Topic
+  0.08%    9.243      2 - Template:Calgary_API_single
+  0.07%    8.208      5 - Template:Note
+  0.06%    6.808      2 - Template:T
+  0.04%    5.141      1 - Embedded:General_Script
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:3960-0!*!0!1!en!5!* and timestamp 20171201105718 and revision id 250575
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html">http://wiki.servicenow.com/index.php?title=Extensions_to_Jelly_Syntax&amp;oldid=250575</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=General+Scripting.html" title="Category:General Scripting">General Scripting</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=General+Scripting.html" title="Category:General Scripting">General Scripting</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_3960"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="3960" data-vote-the-vote="5" data-vote-id="3960" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3960_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="3960" data-vote-the-vote="1" data-vote-id="3960" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_3960_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Extensions+to+Jelly+Syntax&amp;returntoquery=oldid%3D250575" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Extensions+to+Jelly+Syntax&amp;returntoquery=oldid%3D250575" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Extensions_to_Jelly_Syntax.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Extensions+to+Jelly+Syntax.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Extensions+to+Jelly+Syntax&amp;returnto=Extensions+to+Jelly+Syntax&amp;oldid=250575&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FExtensions_to_Jelly_Syntax.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Extensions_to_Jelly_Syntax" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;oldid=250575.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Extensions_to_Jelly_Syntax&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:15, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1830});});</script></body></html>

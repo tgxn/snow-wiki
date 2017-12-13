@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating an Advanced Wizard (Demo) - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_an_Advanced_Wizard_(Demo)","wgTitle":"Creating an Advanced Wizard (Demo)","wgCurRevisionId":248971,"wgRevisionId":248971,"wgArticleId":9935,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Wizards"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_an_Advanced_Wizard_(Demo)","wgRelevantArticleId":9935,"wgRequestId":"a1615e9887c6a472fedf9074","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20160223205356"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_an_Advanced_Wizard_(Demo)"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating an Advanced Wizard (Demo)"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Wizards"/>
+<meta name="category" content="Wizards"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo).html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating an Advanced Wizard (Demo)"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20160223205356"/>
+
+	<meta property="article:published_time" content="20160223205356"/>
+
+	<meta property="article:modified_time" content="20160223205356"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Wizards"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_an_Advanced_Wizard_(Demo)"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_an_Advanced_Wizard_Demo rootpage-Creating_an_Advanced_Wizard_Demo skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+an+Advanced+Wizard+%2528Demo%2529.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+an+Advanced+Wizard+%2528Demo%2529&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating an Advanced Wizard (Demo)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Creating an Advanced Wizard (Demo)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Wizards.html" title="Wizards">Wizards</a>
+</th></tr>
+<tr>
+<td>
+<p>
+</p>
+<ul><li><a href="index.php%3Ftitle=Wizard_Variables.html" title="Wizard Variables">Variables</a></li>
+<li><a href="index.php%3Ftitle=Wizard_Panels.html" title="Wizard Panels">Panels</a></li>
+<li><a href="index.php%3Ftitle=Wizard_Transitions.html" title="Wizard Transitions">Transitions</a></li>
+<li><a href="index.php%3Ftitle=Publishing_Wizards.html" title="Publishing Wizards">Publishing Wizards</a></li>
+<li>Advanced Customization
+<ul><li><a href="index.php%3Ftitle=Wizard_UI_Policy_and_Client_Scripts.html" title="Wizard UI Policy and Client Scripts">UI Policy, Client Scripts</a></li>
+<li><a href="index.php%3Ftitle=Wizard_Scripts.html" title="Wizard Scripts">Scripts</a></li></ul></li>
+<li><strong class="selflink">Advanced Example</strong></li>
+<li><a href="index.php%3Ftitle=Survey_Wizards.html" title="Survey Wizards">Survey Wizards</a>
+<ul><li><a href="index.php%3Ftitle=Creating_a_Survey_Wizard_(Demo).html" title="Creating a Survey Wizard (Demo)">Example</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Wizards.html" title="Book:Wizards">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_1._Create_the_Wizard"><span class="tocnumber">2</span> <span class="toctext">Step 1. Create the Wizard</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_2._Define_Variables"><span class="tocnumber">3</span> <span class="toctext">Step 2. Define Variables</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_3._Create_Panels"><span class="tocnumber">4</span> <span class="toctext">Step 3. Create Panels</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_4._Define_Transitions"><span class="tocnumber">5</span> <span class="toctext">Step 4. Define Transitions</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_5._Test_the_Wizard"><span class="tocnumber">6</span> <span class="toctext">Step 5. Test the Wizard</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html#Step_6._Publish_the_Wizard"><span class="tocnumber">7</span> <span class="toctext">Step 6. Publish the Wizard</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>This example creates a wizard that associates assets and details and then creates a contract with this information. The wizard uses a script to create a new record.
+</p>
+<h1><span class="mw-headline" id="Step_1._Create_the_Wizard"><span class="mw-headline-number">2</span> Step 1. Create the Wizard</span></h1>
+<p>Create the wizard:
+</p>
+<ol><li><a href="index.php%3Ftitle=Wizards.html#Activating_System_Wizards" title="Wizards">Activate the system wizards application</a>, if necessary.</li>
+<li>Navigate to <b>System Wizards</b> &gt; <b>Wizards</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>In the <b>Name</b> field, enter <i>Contract Creation</i>.</li>
+<li>Right-click the header and select <b>Save</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:502px;"><a href="index.php%3Ftitle=File:ContractCreation.png.html" class="image"><img alt="" src="images/thumb/0/02/ContractCreation.png/500px-ContractCreation.png" width="500" height="156" class="thumbimage" srcset="/images/0/02/ContractCreation.png 1.5x, /images/0/02/ContractCreation.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:ContractCreation.png.html" class="internal" title="Enlarge"></a></div><b>Contract Creation wizard</b></div></div></div>
+<p><br clear="all" />
+</p>
+<h1><span class="mw-headline" id="Step_2._Define_Variables"><span class="mw-headline-number">3</span> Step 2. Define Variables</span></h1>
+<p>Define wizard variables:
+</p>
+<ol><li>In the <b>Wizard Variable</b> related list, click <b>New</b>.</li>
+<li>Enter the variable details and save the record.</li>
+<li>Repeat steps 1 &#8211; 2 for all variables in the table.</li></ol>
+<table cellspacing="1" cellpadding="3" border="1">
+<caption> <b>-- Wizard Variables Details Table --</b>
+</caption>
+<tr>
+<th>Type
+</th>
+<th>Name
+</th>
+<th>Question
+</th>
+<th>Additional configuration
+</th></tr>
+<tr style="vertical-align:top">
+<td>Yes/No
+</td>
+<td>assets
+</td>
+<td>Associate assets?
+</td>
+<td><br />
+</td></tr>
+<tr style="vertical-align:top">
+<td>Select Box
+</td>
+<td>contract_type
+</td>
+<td>Which type of contract?
+</td>
+<td><b>Mandatory</b>: true <br /><b>Choice table</b>: Contract [ast_contract]<br /><b>Choice field</b>: Contract type
+</td></tr>
+<tr style="vertical-align:top">
+<td>Date
+</td>
+<td>starts
+</td>
+<td>Start Date
+</td>
+<td><br />
+</td></tr>
+<tr style="vertical-align:top">
+<td>Date
+</td>
+<td>ends
+</td>
+<td>End Date
+</td>
+<td><br />
+</td></tr>
+<tr style="vertical-align:top">
+<td>Single Line Text
+</td>
+<td>short_description
+</td>
+<td>Enter short description for contract
+</td>
+<td><br />
+</td></tr>
+<tr style="vertical-align:top">
+<td>List Collector
+</td>
+<td>asset_select
+</td>
+<td>Asset Listing
+</td>
+<td><b>List Table</b>: Configuration Item[cmdb_ci]
+</td></tr></table>
+<h1><span class="mw-headline" id="Step_3._Create_Panels"><span class="mw-headline-number">4</span> Step 3. Create Panels</span></h1>
+<p>Create the first two panels and add variables:
+</p>
+<ol><li>In the <b>Wizard Panels</b> related list, click <b>New</b>.</li>
+<li>Select the panel <b>Type</b> of <i>Prompts user to answer questions</i>.</li>
+<li>Enter the <b>Name</b>, then right-click the header and select <b>Save</b>.</li>
+<li>In the <b>Variables</b> related list, click <b>Edit...</b>.</li>
+<li>Using the <a href="index.php%3Ftitle=Slushbucket.html" title="Slushbucket">slushbucket</a>, select and arrange the variables as listed in the table.</li></ol>
+<dl><dd><table cellspacing="1" cellpadding="3" border="1">
+<caption> <b>-- Panel Variables Table --</b>
+</caption>
+<tr>
+<th>Name
+</th>
+<th>Add variables
+</th></tr>
+<tr style="vertical-align:top">
+<td>1 Contract Screen
+</td>
+<td>Associate assets?<br />Which type of contract?<br />Start Date<br />End Date<br />Enter short description for contract
+</td></tr>
+<tr style="vertical-align:top">
+<td>2 Asset Screen
+</td>
+<td>Asset Listing
+</td></tr></table></dd></dl>
+<p><br />
+Create the third panel and add field setters:
+</p>
+<ol><li>In the <b>Wizard Panels</b> related list, click <b>New</b>.</li>
+<li>Select the panel <b>Type</b> of <i>Creates something (record generator)</i>.</li>
+<li>Enter the following information, then right-click the header and select <b>Save</b>.
+<ul><li><b>Name</b>: <i>3 Contract No Assets</i></li>
+<li><b>Table</b>: <i>Contract [ast_contract]</i></li></ul></li>
+<li>In the <b>Field Setters</b> related list, click <b>New</b>.</li>
+<li>Enter the field setter details and save the record.</li>
+<li>Repeat steps 4 &#8211; 5 for all field setters in the table.</li></ol>
+<dl><dd><table cellspacing="1" cellpadding="3" border="1">
+<caption> <b>-- Field Setter Details Table --</b>
+</caption>
+<tr>
+<th>Type
+</th>
+<th>Field
+</th>
+<th>Variable
+</th></tr>
+<tr style="vertical-align:top">
+<td>Set field to a variable
+</td>
+<td>Contract type
+</td>
+<td>contract_type
+</td></tr>
+<tr style="vertical-align:top">
+<td>Set field to a variable
+</td>
+<td>Short description
+</td>
+<td>short_description
+</td></tr>
+<tr style="vertical-align:top">
+<td>Set field to a variable
+</td>
+<td>Ends
+</td>
+<td>ends
+</td></tr>
+<tr style="vertical-align:top">
+<td>Set field to a variable
+</td>
+<td>Starts
+</td>
+<td>starts
+</td></tr></table></dd></dl>
+<p><br />
+Create the fourth panel and add a script:
+</p>
+<ol><li>In the <b>Wizard Panels</b> related list, click <b>New</b>.</li>
+<li>Select the panel <b>Type</b> of <i>Creates something (record generator)</i>.</li>
+<li>Enter the following information, then right-click the header and select <b>Save</b>.
+<ul><li><b>Name</b>: <i>4 Create Contract and Assets</i></li>
+<li><b>Table</b>: <i>Global</i></li></ul></li>
+<li>Paste the example script into the <b>Script</b> field. <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">Configure the form</a> to add the field, if necessary.</li></ol>
+<p><b>Example script:</b>
+</p>
+<dl><dd><table>
+<tr>
+<td><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Call the createContract function and get back the id of the contract that was created</span>
+<span class="kd">var</span> <span class="nx">contract_id</span> <span class="o">=</span> <span class="nx">createContract</span><span class="p">();</span>
+<span class="c1">//Construct a url that will be used to redirect the user after submission </span>
+<span class="kd">var</span> <span class="nx">uri</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ast_contract.do?sysparm_query=sys_id=&#39;</span> <span class="o">+</span> <span class="nx">contract_id</span><span class="p">);</span>
+<span class="c1">//Redirect the user to the url</span>
+<span class="nx">wizard</span><span class="p">.</span><span class="nx">redirect</span> <span class="o">=</span> <span class="nx">uri</span><span class="p">;</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">addInfoMessage</span><span class="p">(</span><span class="s1">&#39;Contract created&#39;</span><span class="p">);</span>
+
+<span class="c1">//Create a new contract</span>
+<span class="kd">function</span> <span class="nx">createContract</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">cc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;ast_contract&#39;</span><span class="p">);</span>
+  <span class="c1">//set values from wizard variables - note the format wizard.variable</span>
+  <span class="nx">cc</span><span class="p">.</span><span class="nx">sys_class_name</span> <span class="o">=</span> <span class="nx">wizard</span><span class="p">.</span><span class="nx">contract_type</span><span class="p">;</span>
+  <span class="nx">cc</span><span class="p">.</span><span class="nx">starts</span> <span class="o">=</span> <span class="nx">wizard</span><span class="p">.</span><span class="nx">starts</span><span class="p">;</span>
+  <span class="nx">cc</span><span class="p">.</span><span class="nx">ends</span> <span class="o">=</span> <span class="nx">wizard</span><span class="p">.</span><span class="nx">ends</span><span class="p">;</span>
+  <span class="nx">cc</span><span class="p">.</span><span class="nx">short_description</span> <span class="o">=</span> <span class="nx">wizard</span><span class="p">.</span><span class="nx">short_description</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">cntr</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span> 
+  <span class="c1">//We created a new contract and have the id so now we need the assets to associate</span>
+  <span class="nx">associateAssets</span><span class="p">(</span><span class="nx">cntr</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">cntr</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">//This is the way we loop through the elements in a list collector - assets in this case</span>
+<span class="kd">function</span> <span class="nx">associateAssets</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">wizard</span><span class="p">.</span><span class="nx">asset_select</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="nx">items</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">sys_id</span> <span class="o">=</span> <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">sys_id</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">){</span>
+       <span class="kd">var</span> <span class="nx">rl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;ast_contract_instance&#39;</span><span class="p">);</span>
+       <span class="nx">rl</span><span class="p">.</span><span class="nx">ast_contract</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+       <span class="nx">rl</span><span class="p">.</span><span class="nx">ci_item</span> <span class="o">=</span> <span class="nx">sys_id</span><span class="p">;</span>
+       <span class="nx">rl</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span>
+     <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></dd></dl>
+<h1><span class="mw-headline" id="Step_4._Define_Transitions"><span class="mw-headline-number">5</span> Step 4. Define Transitions</span></h1>
+<p>Define transitions:
+</p>
+<ol><li>Open a panel.</li>
+<li>In the <b>Wizard Panel Transitions</b> related list, click <b>New</b>.</li>
+<li>Enter the transition details and save the record.</li>
+<li>Repeat steps 1 &#8211; 3 for all panel transitions in the table.</li></ol>
+<table cellspacing="1" cellpadding="3" border="1">
+<caption> <b>-- Panel Transition Details Table --</b>
+</caption>
+<tr>
+<th>Panel
+</th>
+<th>Condition
+</th>
+<th>From
+</th>
+<th>To
+</th></tr>
+<tr style="vertical-align:top">
+<td>1 Contract Screen
+</td>
+<td>assets is Yes
+</td>
+<td>1 Contract Screen
+</td>
+<td>2 Asset Screen
+</td></tr>
+<tr style="vertical-align:top">
+<td>1 Contract Screen
+</td>
+<td>assets is No
+</td>
+<td>1 Contract Screen
+</td>
+<td>3 Contract No Assets
+</td></tr>
+<tr style="vertical-align:top">
+<td>2 Asset Screen
+</td>
+<td><br />
+</td>
+<td>2 Asset Screen
+</td>
+<td>4 Create Contract and Assets
+</td></tr></table>
+<h1><span class="mw-headline" id="Step_5._Test_the_Wizard"><span class="mw-headline-number">6</span> Step 5. Test the Wizard</span></h1>
+<p>Run through several scenarios to test transition logic and record generation.
+</p><p>Test the wizard for a record with no assets:
+</p>
+<ol><li>Open the wizard record and click <b>Test</b>.</li>
+<li>Enter the following information and click <b>Next</b>.
+<ul><li><b>Associate assets?</b>: <i>No</i></li>
+<li><b>Which type of contract?</b>: select a value other than the default</li>
+<li><b>Start Date</b>: enter a date</li>
+<li><b>End Date</b>: enter a date</li>
+<li><b>Enter short description for contract</b>: enter a description</li></ul></li>
+<li>Verify that a new record is created and the values match step 2.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:TestNoAssets.png.html" class="image"><img alt="" src="images/thumb/9/98/TestNoAssets.png/600px-TestNoAssets.png" width="600" height="276" class="thumbimage" srcset="/images/9/98/TestNoAssets.png 1.5x, /images/9/98/TestNoAssets.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:TestNoAssets.png.html" class="internal" title="Enlarge"></a></div><b>Test without assets.</b> Verify record information.</div></div></div>
+<p><br clear="all" />
+</p><p><br />
+Test the wizard for a record with assets:
+</p>
+<ol><li>Open the wizard record and click <b>Test</b>.</li>
+<li>Enter the following information and click <b>Next</b>.
+<ul><li><b>Associate assets?</b>: <i>Yes</i></li>
+<li><b>Which type of contract?</b>: select a value other than the default</li>
+<li><b>Start Date</b>: enter a date</li>
+<li><b>End Date</b>: enter a date</li>
+<li><b>Enter short description for contract</b>: enter a description</li></ul></li>
+<li>Verify that the asset screen opens.</li>
+<li>Select  assets to add to the list and click <b>Next</b>.</li>
+<li>Verify that a new record is created and the values match steps 2 and 4.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:TestWithAssets.png.html" class="image"><img alt="" src="images/thumb/a/a0/TestWithAssets.png/600px-TestWithAssets.png" width="600" height="325" class="thumbimage" srcset="/images/a/a0/TestWithAssets.png 1.5x, /images/a/a0/TestWithAssets.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:TestWithAssets.png.html" class="internal" title="Enlarge"></a></div><b>Test with assets.</b> Verify record information.</div></div></div>
+<p><br clear="all" />
+</p>
+<h1><span class="mw-headline" id="Step_6._Publish_the_Wizard"><span class="mw-headline-number">7</span> Step 6. Publish the Wizard</span></h1>
+<p>Restrict access to users with asset role:
+</p>
+<ol><li>Open the wizard.</li>
+<li>In the <b>Roles</b> field, select <i>asset</i> and save the record. </li></ol>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="index.php%3Ftitle=File:AddWizardModule.png.html" class="image"><img alt="" src="images/thumb/0/09/AddWizardModule.png/250px-AddWizardModule.png" width="250" height="159" class="thumbimage" srcset="/images/0/09/AddWizardModule.png 1.5x, /images/0/09/AddWizardModule.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:AddWizardModule.png.html" class="internal" title="Enlarge"></a></div><b>Create Contract module</b></div></div></div>
+<p>Add the wizard as a module in the <b>Asset Contracts</b> application:
+</p>
+<ol><li>Open the wizard.</li>
+<li>Copy the sys_id.</li>
+<li>In the navigation pane, right-click <b>Asset Contracts</b> and select <b>Edit Application</b>.</li>
+<li>In the <b>Modules</b> related list, click <b>New</b>.</li>
+<li>Enter the following information and save the record.
+<ul><li><b>Title</b>: <i>Create Contract</i></li>
+<li><b>Order</b>: <i>10</i></li>
+<li><b>Link type</b>: <i>URL (from arguments)</i></li>
+<li><b>Arguments</b>: <i>/expert_shell.do?sysparm_sys_id=</i>&lt;wizard sys_id from step 2&gt;</li></ul></li></ol>
+<p>The wizard panel link does not return to the beginning by default. To return the wizard panel link to the beginning, add <i>&amp;sysparm_initial=true</i> to the URL Arguments. For example, <i>/nav_to.do?uri=expert_shell.do?sysparm_sys_id=&lt;wizard sys_id&gt;&amp;sysparm_initial=true</i>.
+<br clear="all" />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201232023
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.273 seconds
+Real time usage: 0.630 seconds
+Preprocessor visited node count: 74/1000000
+Preprocessor generated node count: 270/1000000
+Post‐expand include size: 1597/2097152 bytes
+Template argument size: 535/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   52.934      1 - -total
+100.00%   52.934      1 - Template:Wizards
+ 83.77%   44.342      1 - Template:Topic
+ 23.21%   12.284      1 - Embedded:Wizards
+ 11.06%    5.854      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9935-0!*!0!1!en!5!* and timestamp 20171201232022 and revision id 248971
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html">http://wiki.servicenow.com/index.php?title=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Wizards.html" title="Category:Wizards">Wizards</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Wizards.html" title="Category:Wizards">Wizards</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9935"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9935" data-vote-the-vote="5" data-vote-id="9935" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9935_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9935" data-vote-the-vote="1" data-vote-id="9935" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9935_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo).html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Creating+an+Advanced+Wizard+%28Demo%29&amp;returntoquery=oldid%3D248971" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Creating+an+Advanced+Wizard+%28Demo%29&amp;returntoquery=oldid%3D248971" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_an_Advanced_Wizard_(Demo).html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+an+Advanced+Wizard+%2528Demo%2529.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+an+Advanced+Wizard+%2528Demo%2529&amp;returnto=Creating+an+Advanced+Wizard+%2528Demo%2529&amp;oldid=248971&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_an_Advanced_Wizard_(Demo).html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_an_Advanced_Wizard_(Demo)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;oldid=248971.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_an_Advanced_Wizard_(Demo)&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 20:53, 23 February 2016.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1481});});</script></body></html>

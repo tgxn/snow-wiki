@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating Availability Charts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_Availability_Charts","wgTitle":"Creating Availability Charts","wgCurRevisionId":250430,"wgRevisionId":250430,"wgArticleId":20135,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Basic Reporting"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_Availability_Charts","wgRelevantArticleId":20135,"wgRequestId":"6218cca28841ef5866f80903","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170828154630"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_Availability_Charts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating Availability Charts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Basic Reporting"/>
+<meta name="category" content="Basic Reporting"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating Availability Charts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170828154630"/>
+
+	<meta property="article:published_time" content="20170828154630"/>
+
+	<meta property="article:modified_time" content="20170828154630"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Basic Reporting"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_Availability_Charts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_Availability_Charts rootpage-Creating_Availability_Charts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Availability+Charts.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (484 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating Availability Charts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a> &gt; <a href="index.php%3Ftitle=Generating_Reports.html" title="Generating Reports">Creating Reports</a> &gt; <a href="index.php%3Ftitle=Generating_Reports.html" title="Generating Reports">Basic Reporting</a> &gt; Creating Availability Charts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-portfolio-management/concept/c_AvailabilityReport.html">Availability Report</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Reporting.html" title="Reporting">Reports</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a24127b14775t'></div><script type="text/javascript">window.tamOnload_tam5a24127b14775t=[];tree = new dTree('tam5a24127b14775t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a24127b14775t = tree;
+                                               tam5a24127b14775t.add(1, 0, 'Basic Reporting');
+
+tam5a24127b14775t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting\&quot;" title=\"Reporting\">Introduction</a>');
+tam5a24127b14775t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_Reports\&quot;" title=\"Generating Reports\">Generating Reports</a>');
+tam5a24127b14775t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_List_Reports\&quot;" title=\"Creating List Reports\">Lists</a>');
+tam5a24127b14775t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Line_Charts\&quot;" title=\"Creating Line Charts\">Line Charts</a>');
+tam5a24127b14775t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Column_Charts\&quot;" title=\"Creating Column Charts\">Column Charts</a>');
+tam5a24127b14775t.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Area_and_Spline_Charts\&quot;" title=\"Creating Area and Spline Charts\">Area and Spline Charts</a>');
+tam5a24127b14775t.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Bar_Charts\&quot;" title=\"Creating Bar Charts\">Bar Charts</a>');
+tam5a24127b14775t.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pareto_Charts\&quot;" title=\"Creating Pareto Charts\">Pareto Charts</a> ');
+tam5a24127b14775t.add(10, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Histograms\&quot;" title=\"Creating Histograms\">Histograms</a>');
+tam5a24127b14775t.add(11, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pie_Charts\&quot;" title=\"Creating Pie Charts\">Pie Charts</a>');
+tam5a24127b14775t.add(12, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Donut_Charts\&quot;" title=\"Creating Donut Charts\">Donut and Semi-donut Charts</a>');
+tam5a24127b14775t.add(13, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Dials_and_Speedometers\&quot;" title=\"Creating Dials and Speedometers\">Dials and Speedometers</a>');
+tam5a24127b14775t.add(14, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pivot_Tables\&quot;" title=\"Creating Pivot Tables\">Pivot Tables</a>');
+tam5a24127b14775t.add(15, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Funnel_and_Pyramid_Charts\&quot;" title=\"Creating Funnel and Pyramid Charts\">Funnel and Pyramid Charts</a>');
+tam5a24127b14775t.add(16, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Calendars\&quot;" title=\"Creating Calendars\">Calendars</a>');
+tam5a24127b14775t.add(17, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Box_Charts\&quot;" title=\"Creating Box Charts\">Box Charts</a>');
+tam5a24127b14775t.add(18, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trend_Charts\&quot;" title=\"Creating Trend Charts\">Trend Charts</a>');
+tam5a24127b14775t.add(19, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Control_Charts\&quot;" title=\"Creating Control Charts\">Control Charts</a>');
+tam5a24127b14775t.add(20, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trendbox_Charts\&quot;" title=\"Creating Trendbox Charts\">Trendbox Charts</a>');
+tam5a24127b14775t.add(21, 0, 'Advanced Reporting');
+tam5a24127b14775t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_and_Publishing_Reports\&quot;" title=\"Scheduling and Publishing Reports\">Schedule and Publish</a>');
+tam5a24127b14775t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Chart_Colors\&quot;" title=\"Configuring Chart Colors\">Set Colors</a>');
+tam5a24127b14775t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Page_Header_Footer_Templates\&quot;" title=\"PDF Page Header Footer Templates\">PDF Header Footer Templates</a>');
+tam5a24127b14775t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Use_Service_Catalog_Variables_in_Reports\&quot;" title=\"Use Service Catalog Variables in Reports\" class=\"mw-redirect\">Use Service Catalog Variables in Reports</a>');
+tam5a24127b14775t.add(26, 0, 'Administration');
+tam5a24127b14775t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Engine_Overview\&quot;" title=\"Report Engine Overview\" class=\"mw-redirect\">Report Engine Overview</a>');
+tam5a24127b14775t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_System_Tables\&quot;" title=\"Reporting on System Tables\">Reporting on System Tables</a> ');
+tam5a24127b14775t.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Public_Report\&quot;" title=\"Creating a Public Report\">Creating a Public Report</a> ');
+tam5a24127b14775t.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Excel_Export_Threshold\&quot;" title=\"Excel Export Threshold\" class=\"mw-redirect\">Excel Export Threshold</a> ');
+tam5a24127b14775t.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_Properties\&quot;" title=\"Reporting Properties\">Reporting Properties</a> ');
+tam5a24127b14775t.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Saving_Group-Level_Filters_and_Reports\&quot;" title=\"Saving Group-Level Filters and Reports\">Saving Group-Level Reports</a> ');
+tam5a24127b14775t.add(33, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Calendar_Reports\&quot;" title=\"Customizing Calendar Reports\">Customizing Calendar Reports</a>');
+tam5a24127b14775t.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Ensuring_Domain_Separation_on_Reports_and_Gauges\&quot;" title=\"Ensuring Domain Separation on Reports and Gauges\">Ensuring Domain Separation on Reports and Gauges</a>');
+tam5a24127b14775t.add(35, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Sources\&quot;" title=\"Report Sources\">Report Sources</a>');
+tam5a24127b14775t.add(36, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Ranges\&quot;" title=\"Report Ranges\">Report Ranges</a>');
+tam5a24127b14775t.add(37, 26, 'Creating Custom Charts');
+tam5a24127b14775t.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Definitions\&quot;" title=\"Custom Chart Definitions\">Custom Chart Definitions</a>');
+tam5a24127b14775t.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Data_Generation\&quot;" title=\"Custom Chart Data Generation\">Custom Chart Data Generation</a>');
+tam5a24127b14775t.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Rendering\&quot;" title=\"Custom Chart Rendering\">Custom Chart Rendering</a>');
+tam5a24127b14775t.add(41, 0, 'Application Reports');
+tam5a24127b14775t.add(42, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Incidents\&quot;" title=\"Reporting on Incidents\">Incident Management</a>');
+tam5a24127b14775t.add(43, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Problems\&quot;" title=\"Reporting on Problems\">Problem Management</a>');
+tam5a24127b14775t.add(44, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Changes\&quot;" title=\"Reporting on Changes\">Change Management</a>');
+tam5a24127b14775t.add(45, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Knowledge_Management_Reporting\&quot;" title=\"Knowledge Management Reporting\" class=\"mw-redirect\">Knowledge Management</a>');
+tam5a24127b14775t.add(46, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Service_Catalog_Variables\&quot;" title=\"Reporting on Service Catalog Variables\">Service Catalog</a>');
+tam5a24127b14775t.add(47, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sales_Reports\&quot;" title=\"Sales Reports\" class=\"mw-redirect\">Sales Force Automation</a>');
+tam5a24127b14775t.add(48, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_SLAs\&quot;" title=\"Reporting on SLAs\">Reporting on SLAs</a>');
+tam5a24127b14775t.add(49, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Vendor_Reporting\&quot;" title=\"Vendor Reporting\">Vendor Performance</a>');
+tam5a24127b14775t.add(50, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assessment_Reporting\&quot;" title=\"Assessment Reporting\">Assessments</a>');
+tam5a24127b14775t.add(51, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=KPI_Reports\&quot;" title=\"KPI Reports\">KPI Reports</a>');
+tam5a24127b14775t.add(52, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Base_System_Reports\&quot;" title=\"Base System Reports\">Base System Reports</a>');
+
+                                               document.getElementById('5a24127b14775t').innerHTML = tam5a24127b14775t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a24127b14775t) { window.tamOnload_tam5a24127b14775t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Metric_Definition_Support.html" title="Metric Definition Support">Metric Definition Support</a></li>
+<li><a href="index.php%3Ftitle=Database_Views.html" title="Database Views">Database Views</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Creating_Reports"><span class="tocnumber">2</span> <span class="toctext">Creating Reports</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Report_Options"><span class="tocnumber">2.1</span> <span class="toctext">Report Options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Availability_Chart_Example_Usage"><span class="tocnumber">3</span> <span class="toctext">Availability Chart Example Usage</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Availability chart is useful for plotting average percentage values that are taken over time.
+</p><p>Availability charts are no longer available by default, starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>. However, Availability charts created with Calgary and earlier versions of the product can still be viewed in Dublin. 
+</p><p>Administrators can enable Availability charts by <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Adding+a+Property&amp;oldid=0.html" title="Adding a Property">adding</a> <tt>glide.report.create_avail_chart</tt> to the <a href="index.php%3Ftitle=Available_System_Properties.html" title="Available System Properties">system properties</a> and setting the value to <b>true</b>.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:AvailabilityChart.png.html" class="image"><img alt="" src="images/thumb/3/3c/AvailabilityChart.png/600px-AvailabilityChart.png" width="600" height="430" class="thumbimage" srcset="/images/3/3c/AvailabilityChart.png 1.5x, /images/3/3c/AvailabilityChart.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:AvailabilityChart.png.html" class="internal" title="Enlarge"></a></div><b>Availability Chart</b></div></div></div><br style="clear:both;" />
+<h1><span class="mw-headline" id="Creating_Reports"><span class="mw-headline-number">2</span> Creating Reports</span></h1>
+<ol><li>Navigate to <b>Reports</b> &gt; <b>Create New</b>. </li>
+<li>Fill in the fields, as appropriate (see tables).</li>
+<li>Click <b>Save</b>. The report is generated.
+<dl><dd>Additional <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Report_Options">report options</a> are available.</dd></dl></li></ol>
+<p>The report record for an Availability chart looks like this: 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:802px;"><a href="index.php%3Ftitle=File:AvailabilityChartRecord.png.html" class="image"><img alt="" src="images/thumb/4/43/AvailabilityChartRecord.png/800px-AvailabilityChartRecord.png" width="800" height="222" class="thumbimage" srcset="/images/4/43/AvailabilityChartRecord.png 1.5x, /images/4/43/AvailabilityChartRecord.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:AvailabilityChartRecord.png.html" class="internal" title="Enlarge"></a></div><b>Availability chart form</b></div></div></div><br style="clear:both;" />
+<p>Use the following fields to refine the data displayed in the report and to design the appearance of your availability chart: 
+</p>
+<table class="standard">
+
+<tr>
+<th> Name
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Name
+</td>
+<td>  Select a unique and descriptive name for your report.
+</td></tr>
+<tr>
+<td>  Type
+</td>
+<td>  Select <b>Availability chart</b> from the list.
+</td></tr>
+<tr>
+<td>  Table
+</td>
+<td>  Select the ServiceNow table against which this report will be run.
+</td></tr>
+<tr>
+<td>  Export details
+</td>
+<td>  Select whether to display predefined report attributes at the top of the page when exporting to PDF.
+</td></tr>
+<tr>
+<td> Header Footer Template
+</td>
+<td> Select the page header and footer template to use when exporting the report to PDF.
+</td></tr>
+<tr>
+<td> Visible to
+</td>
+<td> Users to whom the report is available:
+<dl><dd><ul><li><b>Me</b> allows only the report creator to view the report.</li>
+<li><b>Everyone</b> allows all users to view the report.</li>
+<li><b>Groups and Users</b> allows the report creator to specify groups and users who are authorized to see the report.</li></ul></dd></dl>
+<p><b>Groups and Users</b> is visible to users with the report_group role.
+</p>
+</td></tr>
+<tr>
+<td> Groups
+</td>
+<td> Groups whose members are authorized to see the report.
+<p>This field is visible only when <b>Groups and Users</b> is selected.
+</p>
+</td></tr>
+<tr>
+<td> Users
+</td>
+<td> Users who are authorized to see the report.
+<p>This field is visible only when <b>Groups and Users</b> is selected.
+</p>
+</td></tr>
+<tr>
+<td>  Filter and Order
+</td>
+<td>  Create conditions to filter your data. For example, you might create a condition that states <i>Priority &gt; greater than &gt; 3 - Moderate</i> that restricts all data to records with priorities of <i>2- High</i> and <i>1 - Critical</i>.
+</td></tr>
+<tr>
+<td>  Trend Field
+</td>
+<td>  Use this two part field to define the action and the time over which to trend that action. The available fields have time-related values such as when a record was created, updated, or closed. Time periods range from a year down to an hour. You can also select a specific date.
+</td></tr>
+<tr>
+<td>  Aggregation
+</td>
+<td>  Determine how you want the data in the report aggregated. The default is <b>Count</b>, which displays the number of records selected. When you select <b>Average</b> or <b>Sum</b> you can select from a list of additional fields whose values you want to use to aggregate your data. Typical values to use as an average or a sum are the time measurements, such as <b>Business duration</b> (expressed in days, hours, and minutes) and <b>Resolve time</b> (expressed in seconds). Other fields, such as <b>Priority</b>, may have numerical values associated with their levels and can be used as aggregators.
+</td></tr></table>
+<h2><span class="mw-headline" id="Report_Options"><span class="mw-headline-number">2.1</span> Report Options</span></h2>
+<p>You can select the following report options from the upper right of the report form (starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>). These options are in the <b>Save</b> choice list, except for <b>Run</b>, which is a separate button. Available report options vary depending on the role of the user working with the report.
+</p><p>In releases prior to Fuji, all report options are in the button bar above the form.
+</p>
+<table class="standard">
+<tr>
+<th>Name
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Run
+</td>
+<td>Creates the report according to the information in the form.<br />
+<p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p>
+</td></tr>
+<tr>
+<td>Save
+</td>
+<td>Saves any changes to the form and leaves the form open.<br />
+<p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p>
+</td></tr>
+<tr>
+<td>Update
+</td>
+<td>Saves any changes to the form and returns to the Reports list.<br />
+<p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p>
+</td></tr>
+<tr>
+<td>Insert
+</td>
+<td>Duplicates the report record, inserts it into the Reports list, and opens the Reports list. Use this option to create a new report quickly by changing a few values in an existing report. Be sure to give the new report a unique name.<br />
+<p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p>
+</td></tr>
+<tr>
+<td>Insert and Stay
+</td>
+<td>Duplicates the report record, inserts it into the Reports list, and opens the new record. Use this option to create a new report quickly by changing a few values in an existing report. Be sure to give the new report a unique name. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+<p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p>
+</td></tr>
+<tr>
+<td>Publish
+</td>
+<td>Creates a URL for the report and displays the address above the report form. You can email this URL to people who must view the report. For more information, see <a href="index.php%3Ftitle=Scheduling_and_Publishing_Reports.html#Publishing_Reports" title="Scheduling and Publishing Reports">Publishing Reports</a>.<br />
+<p><b>Roles:</b> itil, report_admin, report_publisher
+</p>
+</td></tr>
+<tr>
+<td>Delete
+</td>
+<td>Deletes the report.<br />
+<p><b>Roles:</b> itil, report_admin
+</p>
+</td></tr>
+<tr>
+<td>Schedule
+</td>
+<td>Creates a schedule for running the report. You cannot schedule calendar reports. For more information, see <a href="index.php%3Ftitle=Scheduling_and_Publishing_Reports.html#Scheduling_Reports" title="Scheduling and Publishing Reports">Scheduling Reports</a>.<br />
+<p><b>Roles:</b> itil, report_admin, report_scheduler
+</p>
+</td></tr>
+<tr>
+<td>Make Gauge
+</td>
+<td>Creates a gauge for the report, which can be added to homepages. This option is not available if a gauge has already been created for the report.<br />
+<p><b>Roles:</b> itil, report_admin, gauge_maker
+</p>
+</td></tr>
+<tr>
+<td>Add to Homepage
+</td>
+<td>Adds the current report to a selected homepage as a gauge. For more information, see <a href="index.php%3Ftitle=Adding_Existing_Gauges_to_a_Homepage.html" title="Adding Existing Gauges to a Homepage">Adding Existing Gauges to a Homepage</a>.<br />
+<p><b>Roles:</b> itil, report_admin
+</p>
+</td></tr>
+<tr>
+<td>Sharing
+</td>
+<td>Opens a dialog box in which you can change the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Sharing_Settings">sharing settings</a>. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.<br />
+<p><b>Roles:</b> report_admin
+</p>
+</td></tr>
+<tr>
+<td>Export settings
+</td>
+<td>Opens a dialog box in which you can change the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html#Export_Settings">export settings</a>. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.<br />
+<p><b>Roles:</b> report_admin
+</p>
+</td></tr>
+<tr>
+<td>Export to PDF
+</td>
+<td>Opens a dialog box in which you can select the <b>Portrait</b> or <b>Landscape</b> orientation and the <b>Generate now</b> or <b>Send as an email</b> (<b>Email PDF</b> in versions prior to Fuji) delivery option for exporting the report to PDF. In versions prior to Fuji, <b>Export to PDF</b> is a button next to <b>Run Report</b>.<br />
+<p>The email address field that appears after you select <b>Send as an email</b> is automatically populated with your email address. You can enter a new email address in this field.<br /> 
+</p><p><b>Roles:</b> itil, report_admin, report_publisher, report_scheduler, report_group
+</p><p><b>Note:</b> The <b>Export to PDF</b> option is not available for calendar reports. 
+</p>
+</td></tr>
+<tr>
+<td>Save as report source
+</td>
+<td>Opens the <b>Create new <a href="index.php%3Ftitle=Report_Sources.html" title="Report Sources">Report Source</a></b> window in which you can save the report conditions as a report source that can be reused for other reports. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.<br />
+<p><b>Roles:</b> report_admin
+</p>
+</td></tr>
+<tr>
+<td>Report history
+</td>
+<td>Shows general information for the report, such as the table the report is based on, the report type, who created the report, when the report was last modified, and whether the report is scheduled or published. Other statistical information for the report is also shown, such as when it was last run, the number of runs, runs on home page, recent run time, and overall run time. Starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.<br />
+<p><b>Roles:</b> report_admin
+</p>
+</td></tr></table>
+<h1><span class="mw-headline" id="Availability_Chart_Example_Usage"><span class="mw-headline-number">3</span> Availability Chart Example Usage</span></h1>
+<p>Use an availability chart when you want to show that you are in compliance with a service level agreement (SLA). Many service providers state in their SLA that they have a 99% uptime rate. The uptime rate is usually over a specific period of time, for example, a day, week, month, quarter, or year. During the specified period, a variety of issues may cause a stoppage in service, which is recorded and calculated to get the uptime rate. The availability chart plots the uptime rate so users can see quickly the availability numbers for the period measured.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171203150427
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.232 seconds
+Real time usage: 0.322 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 270/1000000
+Post‐expand include size: 9052/2097152 bytes
+Template argument size: 869/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  121.399      1 - -total
+ 82.63%  100.313      1 - Template:Reports_v2
+ 76.26%   92.579      1 - Template:Topic
+  7.24%    8.794      1 - Template:Note
+  5.67%    6.887      1 - Embedded:Reports_v2
+  5.59%    6.784      4 - Template:T
+  4.48%    5.440      1 - Embedded:Report_Options_v2
+  3.73%    4.534      1 - Template:Generating_Reports
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:20135-0!*!0!1!en!5!* and timestamp 20171203150427 and revision id 250430
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_Availability_Charts&amp;oldid=250430.html">http://wiki.servicenow.com/index.php?title=Creating_Availability_Charts&amp;oldid=250430</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Basic+Reporting.html" title="Category:Basic Reporting">Basic Reporting</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Use.html" title="Category:Use">Use</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Reporting.html" title="Category:Reporting">Reporting</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Basic+Reporting.html" title="Category:Basic Reporting">Basic Reporting</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_20135"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="20135" data-vote-the-vote="5" data-vote-id="20135" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20135_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="20135" data-vote-the-vote="1" data-vote-id="20135" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_20135_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Availability+Charts&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+Availability+Charts.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+Availability+Charts.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_Availability_Charts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_Availability_Charts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+Availability+Charts.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+Availability+Charts&amp;returnto=Creating+Availability+Charts&amp;oldid=250430&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Creating_Availability_Charts&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_Availability_Charts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_Availability_Charts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_Availability_Charts&amp;oldid=250430.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_Availability_Charts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:46, 28 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1015});});</script></body></html>

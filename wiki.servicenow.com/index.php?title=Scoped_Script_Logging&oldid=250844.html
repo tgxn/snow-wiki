@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Scoped Script Logging - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Scoped_Script_Logging","wgTitle":"Scoped Script Logging","wgCurRevisionId":250844,"wgRevisionId":250844,"wgArticleId":23971,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Scoped System API"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Scoped_Script_Logging","wgRelevantArticleId":23971,"wgRequestId":"ab6fee4caba8548b160efd84","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.embedVideo%2Cpygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170908183333"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Scoped_Script_Logging"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Scoped Script Logging"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Scoped System API"/>
+<meta name="category" content="Scoped System API"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Scoped_Script_Logging.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Scoped Script Logging"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170908183333"/>
+
+	<meta property="article:published_time" content="20170908183333"/>
+
+	<meta property="article:modified_time" content="20170908183333"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Scoped System API"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Scoped_Script_Logging"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Scoped_Script_Logging rootpage-Scoped_Script_Logging skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scoped+Script+Logging.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Scoped+Script+Logging&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scoped Script Logging</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Scoped Script Logging</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/script/server-api/topic/p_ServerAPIReference.html">Server API Reference</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Scripting_in_Scoped_Applications.html" title="Scripting in Scoped Applications">Scoped Application Scripting</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a20b3112db5ct'></div><script type="text/javascript">window.tamOnload_tam5a20b3112db5ct=[];tree = new dTree('tam5a20b3112db5ct');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20b3112db5ct = tree;
+                                               tam5a20b3112db5ct.add(1, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scripting_in_Scoped_Applications\&quot;" title=\"Scripting in Scoped Applications\">Scoped Scripting</a>');
+
+tam5a20b3112db5ct.add(2, 0, ' <strong class=\"selflink\">Scoped Logging</strong>');
+tam5a20b3112db5ct.add(3, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=List_of_Scoped_Scriptable_Objects\&quot;" title=\"List of Scoped Scriptable Objects\">Scoped Objects</a>');
+tam5a20b3112db5ct.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_System_API\&quot;" title=\"Scoped System API\">Scoped System API</a>');
+tam5a20b3112db5ct.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideAggregate_API_Reference\&quot;" title=\"Scoped GlideAggregate API Reference\">GlideAggregate</a>');
+tam5a20b3112db5ct.add(6, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDate_API_Reference\&quot;" title=\"Scoped GlideDate API Reference\">GlideDate</a>');
+tam5a20b3112db5ct.add(7, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDateTime_API_Reference\&quot;" title=\"Scoped GlideDateTime API Reference\">GlideDateTime</a>');
+tam5a20b3112db5ct.add(8, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideDuration_API_Reference\&quot;" title=\"Scoped GlideDuration API Reference\">GlideDuration</a>');
+tam5a20b3112db5ct.add(9, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideElement_API_Reference\&quot;" title=\"Scoped GlideElement API Reference\">GlideElement</a>');
+tam5a20b3112db5ct.add(10, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideElementDescriptor_API_Reference\&quot;" title=\"Scoped GlideElementDescriptor API Reference\">GlideElementDescriptor</a>');
+tam5a20b3112db5ct.add(11, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideEmailOutbound_API_Reference\&quot;" title=\"Scoped GlideEmailOutbound API Reference\">GlideEmailOutbound</a>');
+tam5a20b3112db5ct.add(12, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideScopedEvaluator_API_Reference\&quot;" title=\"Scoped GlideScopedEvaluator API Reference\">GlideEvaluator</a>');
+tam5a20b3112db5ct.add(13, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideFilter_API_Reference\&quot;" title=\"Scoped GlideFilter API Reference\">GlideFilter</a>');
+tam5a20b3112db5ct.add(14, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideFormScratchpad_API_Reference\&quot;" title=\"Scoped GlideFormScratchpad API Reference\">GlideFormScratchpad</a>');
+tam5a20b3112db5ct.add(15, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideLocale_API_Reference\&quot;" title=\"Scoped GlideLocale API Reference\">GlideLocale</a>');
+tam5a20b3112db5ct.add(16, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlidePluginManager_API_Reference\&quot;" title=\"Scoped GlidePluginManager API Reference\">GlidePluginManager</a>');
+tam5a20b3112db5ct.add(17, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideQueryCondition_API_Reference\&quot;" title=\"Scoped GlideQueryCondition API Reference\">GlideQueryCondition</a>');
+tam5a20b3112db5ct.add(18, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideRecord_API_Reference\&quot;" title=\"Scoped GlideRecord API Reference\">GlideRecord</a>');
+tam5a20b3112db5ct.add(19, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=GlideRecordSecure\&quot;" title=\"GlideRecordSecure\">GlideRecordSecure</a>');
+tam5a20b3112db5ct.add(20, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSchedule_API_Reference\&quot;" title=\"Scoped GlideSchedule API Reference\">GlideSchedule</a>');
+tam5a20b3112db5ct.add(21, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideScriptedProcessor_API_Reference\&quot;" title=\"Scoped GlideScriptedProcessor API Reference\">GlideScriptedProcessor</a>');
+tam5a20b3112db5ct.add(22, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideServletResponse_API_Reference\&quot;" title=\"Scoped GlideServletResponse API Reference\">GlideServletResponse</a>');
+tam5a20b3112db5ct.add(23, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideServletRequest_API_Reference\&quot;" title=\"Scoped GlideServletRequest API Reference\">GlideServletRequest</a>');
+tam5a20b3112db5ct.add(24, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSession_API_Reference\&quot;" title=\"Scoped GlideSession API Reference\">GlideSession</a>');
+tam5a20b3112db5ct.add(25, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSysListControl_API_Reference\&quot;" title=\"Scoped GlideSysListControl API Reference\">GlideSysListControl</a>');
+tam5a20b3112db5ct.add(26, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideSystem_API_Reference\&quot;" title=\"Scoped GlideSystem API Reference\">GlideSystem</a>');
+tam5a20b3112db5ct.add(27, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideTableHierarchy_API_Reference\&quot;" title=\"Scoped GlideTableHierarchy API Reference\">GlideTableHierarchy</a>');
+tam5a20b3112db5ct.add(28, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideTime_API_Reference\&quot;" title=\"Scoped GlideTime API Reference\">GlideTime</a>');
+tam5a20b3112db5ct.add(29, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideUICompatibility_API_Reference\&quot;" title=\"Scoped GlideUICompatibility API Reference\">GlideUICompatibility</a>');
+tam5a20b3112db5ct.add(30, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideURI_API_Reference\&quot;" title=\"Scoped GlideURI API Reference\">GlideURI</a>');
+tam5a20b3112db5ct.add(31, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_GlideUser_API_Reference\&quot;" title=\"Scoped GlideUser API Reference\">GlideUser</a>');
+tam5a20b3112db5ct.add(32, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTMessageV2_API\&quot;" title=\"RESTMessageV2 API\">RESTMessageV2</a>');
+tam5a20b3112db5ct.add(33, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=RESTResponseV2_API\&quot;" title=\"RESTResponseV2 API\">RESTResponseV2</a>');
+tam5a20b3112db5ct.add(34, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPMessageV2_API\&quot;" title=\"SOAPMessageV2 API\">SOAPMessageV2</a>');
+tam5a20b3112db5ct.add(35, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SOAPResponseV2_API\&quot;" title=\"SOAPResponseV2 API\">SOAPResponseV2</a>');
+tam5a20b3112db5ct.add(36, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_TemplatePrinter_API_Reference\&quot;" title=\"Scoped TemplatePrinter API Reference\">TemplatePrinter</a>');
+tam5a20b3112db5ct.add(37, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_Workflow_API_Reference\&quot;" title=\"Scoped Workflow API Reference\">Workflow</a>');
+tam5a20b3112db5ct.add(38, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLDocument2_API_Reference\&quot;" title=\"Scoped XMLDocument2 API Reference\">XMLDocument2</a>');
+tam5a20b3112db5ct.add(39, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLNode_API_Reference\&quot;" title=\"Scoped XMLNode API Reference\">XMLNode</a>');
+tam5a20b3112db5ct.add(40, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scoped_XMLNodeIterator_API_Reference\&quot;" title=\"Scoped XMLNodeIterator API Reference\">XMLNodeIterator</a>');
+
+                                               document.getElementById('5a20b3112db5ct').innerHTML = tam5a20b3112db5ct.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20b3112db5ct) { window.tamOnload_tam5a20b3112db5ct[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html" title="Applications">Applications</a></li>
+<li><a href="index.php%3Ftitle=Creating_Custom_Applications.html" title="Creating Custom Applications">Creating Custom Applications</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Scripting_in_Scoped_Applications.html" title="Book:Scripting in Scoped Applications"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Scripting_in_Scoped_Applications.html" title="Book:Scripting in Scoped Applications">Scripting in Scoped Applications</a></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Video_Tutorials"><span class="tocnumber">2</span> <span class="toctext">Video Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Using_the_Scoped_Logging_Methods"><span class="tocnumber">3</span> <span class="toctext">Using the Scoped Logging Methods</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Verbosity"><span class="tocnumber">4</span> <span class="toctext">Verbosity</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#MessageFormat_Placeholders"><span class="tocnumber">5</span> <span class="toctext">MessageFormat Placeholders</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Logging_Destination"><span class="tocnumber">6</span> <span class="toctext">Logging Destination</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Handling_Exceptions"><span class="tocnumber">7</span> <span class="toctext">Handling Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Session_Debug_Logging"><span class="tocnumber">8</span> <span class="toctext">Session Debug Logging</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Scripts_-_Background_Special_Treatment"><span class="tocnumber">9</span> <span class="toctext">Scripts - Background Special Treatment</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Viewing_Application_Logs"><span class="tocnumber">10</span> <span class="toctext">Viewing Application Logs</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Properties"><span class="tocnumber">11</span> <span class="toctext">Properties</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Scoped Logging API provides logging functions for scoped applications. The Scoped logging functions are available using the "gs" system prefix. For detailed reference information on the available scoped logging methods, see <a href="index.php%3Ftitle=Scoped_GlideSystem_API_Reference.html#Logging" title="Scoped GlideSystem API Reference">Scoped Logging API Reference</a>.
+</p><p>The Scoped Logging API is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h1><span class="mw-headline" id="Video_Tutorials"><span class="mw-headline-number">2</span> Video Tutorials</span></h1>
+<p>The following video tutorials describes best practices for debugging issues in ServiceNow instances on the Fuji release. 
+</p>
+<table border="1" cellspacing="5" cellpadding="5" align="center">
+<tr>
+<th> Best Practices: Debugging in Fuji, pt 1 of 2
+</th>
+<th> Best Practices: Debugging in Fuji, pt 2 of 2
+</th></tr>
+<tr>
+<td><div class='embedvideo ' style='width: 500px;'><iframe src="http://www.youtube.com/embed/GhQF5Rphz0E?" width="500" height="281" frameborder="0" allowfullscreen="true"></iframe></div>
+</td>
+<td><div class='embedvideo ' style='width: 500px;'><iframe src="http://www.youtube.com/embed/do7aDaEDLVw?" width="500" height="281" frameborder="0" allowfullscreen="true"></iframe></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="Using_the_Scoped_Logging_Methods"><span class="mw-headline-number">3</span> Using the Scoped Logging Methods</span></h1>
+<p>The following examples show the format for generating log messages for each <a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#Verbosity">verbosity level</a>. Optional parameters can be passed into the message using <a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html#MessageFormat_Placeholders">placeholders</a>, and can be comma-delimited or a single JavaScript array:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">verbosity_level</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">message</span> <span class="p">[,</span> <span class="nx">parameters</span><span class="p">])</span>
+</pre></div>
+<p>The following example script generates a warning log message using two parameters:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">myFirstName</span> <span class="o">=</span> <span class="s2">&quot;Abel&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myLastName</span> <span class="o">=</span> <span class="s2">&quot;Tuter&quot;</span><span class="p">;</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;This is a warning from {0}.{1}&quot;</span><span class="p">,</span> <span class="nx">myFirstName</span><span class="p">,</span> <span class="nx">myLastName</span><span class="p">);</span>
+</pre></div>
+<p><i>Output:</i> 
+</p>
+<pre>
+This is a warning from Abel.Tuter
+</pre>
+<p>The following method is available for determining if debug is active, returning true when either session debugging is active or log verbosity is set to debug for the current application:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">isDebugging</span><span class="p">()</span>
+</pre></div>
+<p>For detailed information on the scoped logging methods, see <a href="index.php%3Ftitle=Scoped_GlideSystem_API_Reference.html#Logging" title="Scoped GlideSystem API Reference">Scoped Logging API Reference</a>.
+</p>
+<h1><span class="mw-headline" id="Verbosity"><span class="mw-headline-number">4</span> Verbosity</span></h1>
+<p>The Scoped Logging API provides four levels of verbosity. In order from least verbose to most, they are: 
+</p>
+<table class="standard">
+
+<tr>
+<th>Log Level
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> error (gs.error)
+</td>
+<td> Logs events that might still allow the application to continue running. Setting the log level for an application to error generates error messages only, but does not generate warn, info, or debug messages.
+</td></tr>
+<tr>
+<td> warn (gs.warn)
+</td>
+<td> Logs potentially harmful events. Setting the log level for an application to warn generates error and warn messages, but does not generate error or debug messages.
+</td></tr>
+<tr>
+<td> info (gs.info)
+</td>
+<td> Logs informational messages that describe the progress of the application. Setting the log level for an application to info generates info, warn, and error messages, but does not generate debug messages.
+</td></tr>
+<tr>
+<td> debug (gs.debug)
+</td>
+<td> Logs informational events that are useful for debugging an application. Setting the log level for an application to debug generates info, warn, error, and debug messages.
+</td></tr></table>
+<h1><span class="mw-headline" id="MessageFormat_Placeholders"><span class="mw-headline-number">5</span> MessageFormat Placeholders</span></h1>
+<p>The scoped Logging API supports the Java MessageFormat placeholder replacement pattern. Currently there is support for up to 5 "varargs" placeholder arguments. Any more than five must be specified as a single JavaScript array argument. All of these are legal calls:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Here&#39;s a log message from me&quot;</span><span class="p">);</span> <span class="c1">// No parameters</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Here&#39;s a log message from {0}&quot;</span><span class="p">,</span> <span class="nx">myName</span><span class="p">);</span> <span class="c1">// A single non-array parameter</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Here&#39;s a log message from {0}.{1}&quot;</span><span class="p">,</span> <span class="nx">myFirstName</span><span class="p">,</span> <span class="nx">myLastName</span><span class="p">);</span> <span class="c1">// Multiple &quot;varargs&quot; parameters (up to 5)</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Here&#39;s a log message from {0}.{1}&quot;</span><span class="p">,</span> <span class="p">[</span><span class="nx">myFirstName</span><span class="p">,</span> <span class="nx">myLastName</span><span class="p">]);</span> <span class="c1">// An array of n-number of parameters (no upper bounds)</span>
+</pre></div>
+<h1><span class="mw-headline" id="Logging_Destination"><span class="mw-headline-number">6</span> Logging Destination</span></h1>
+<p>Logging information can be routed to either a db or file destination. The destination is a <a href="index.php%3Ftitle=Scoped_Script_Logging.html#Properties" title="Scoped Script Logging">system property</a>.
+</p>
+<table class="standard">
+
+<tr>
+<th> Destination
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> db
+</td>
+<td> A log destination of <tt>db</tt> routes log messages within the specified logging verbosity to the <tt>syslog_app_scope</tt> table, which extends the <tt>syslog</tt> table. This table includes fields for the application that is issuing the log, as well as a <b>Source Script</b> field that links to the script that called into the Logging API. When destination is set to "db", logs also go to file system.
+</td></tr>
+<tr>
+<td> file
+</td>
+<td> A log destination of <tt>file</tt> logs to the node's file system log without broadcasting to log listeners, except in the case of Scripts - Background.
+</td></tr></table>
+<h1><span class="mw-headline" id="Handling_Exceptions"><span class="mw-headline-number">7</span> Handling Exceptions</span></h1>
+<p>An throwable exception can be passed as the first parameter after the string message. In this case, any other parameters that follow are ignored.
+This automatically appends the exception and stack trace to the specified message. For example: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">try</span> <span class="p">{</span>
+    <span class="nx">foo</span><span class="p">.</span><span class="nx">somethingThatThrows</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;There was an error doing something&quot;</span><span class="p">,</span> <span class="nx">ex</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>You can safely use <tt>gs.debug()</tt> in your applications. The debug messages are printed only when in debug mode or when session debug for that application is enabled. You should try out the scoped Logging API by printing with <tt>gs.debug()</tt> in your business rules and script includes, and enabling session debug in the UI.
+</p>
+<h1><span class="mw-headline" id="Session_Debug_Logging"><span class="mw-headline-number">8</span> Session Debug Logging</span></h1>
+<p>Session debug logging provides debug output in the UI, similar to what is available for business rules and SQL debugging. Session debug logging generates output at the debug verbosity level for the current application during the current session. To enable session debug logging, click <b>Enable Session Debug</b> under <b>UI Actions</b>; or click <b>Disable Session Debug</b> to turn it off.
+</p>
+<h1><span class="mw-headline" id="Scripts_-_Background_Special_Treatment"><span class="mw-headline-number">9</span> Scripts - Background Special Treatment</span></h1>
+<p>Scripts executed in the Scripts - Background form (<b>System Definition &gt; Scripts - Background</b>) always log at the debug level. This means that a call to <tt>gs.debug()</tt> in an application scope with property configured to log at the info level are logged as though verbosity were temporarily elevated to debug for the duration of the sys.scripts transaction. To indicate that a log line is emitted because of the special treatment of Scripts - Background, the log message includes a "(sys.scripts extended logging)" suffix.
+</p><p>For example, this script executed in the context of an application named <tt>x_my_app</tt> in Scripts - Background:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;This is an info log&quot;</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug log&quot;</span><span class="p">);</span>
+</pre></div>
+<p>generates the following  result:
+</p>
+<pre>
+x_my_app: This is an info log
+x_my_app: This is a debug log (sys.scripts extended logging)
+</pre>
+<p>Logging that occurs within a sys.scripts transaction broadcasts to log listeners, unlike all other log entries created by the scoped Logging API. This is to accommodate the capture log output in the Scripts - Background result.
+</p>
+<h1><span class="mw-headline" id="Viewing_Application_Logs"><span class="mw-headline-number">10</span> Viewing Application Logs</span></h1>
+<p>All logs from scoped applications are recorded in the App Log [syslog_app_scope] table, which tracks the source of the message, such as a business rule or script include.  
+A history of all log messages generated by sopped applications are recorded and can be viewed in the Application Log form. To view current application logs, go to <b>System Logs &gt; System Log &gt; Application Logs.</b>
+</p>
+<table class="standard">
+
+<tr>
+<th>Field
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Created
+</td>
+<td> The datetime when the log message was generated.
+</td></tr>
+<tr>
+<td> Level
+</td>
+<td> The verbosity level.
+</td></tr>
+<tr>
+<td> Message
+</td>
+<td> The log message.
+</td></tr>
+<tr>
+<td> App Scope
+</td>
+<td> The application scope associated with the log message.
+</td></tr>
+<tr>
+<td> Source Script
+</td>
+<td> The source script, if any, that generated the log message.
+</td></tr></table>
+<h1><span class="mw-headline" id="Properties"><span class="mw-headline-number">11</span> Properties</span></h1>
+<p>All scoped applications have two properties for control logging verbosity and destination. System properties are available by application for configuring log verbosity and destination, and for turning session debugging on or off:
+</p>
+<table class="standard">
+
+<tr>
+<th>Property
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> <i>scope_name</i>.logging.destination
+</td>
+<td>
+<p>Configuring the log destination: file system or db.
+</p>
+<ul><li> <b>Type:</b> String</li>
+<li> <b>Default value:</b> db</li>
+<li> <b>Location:</b> System Property [sys_properties] table</li></ul>
+</td></tr>
+<tr>
+<td> <i>scope_name</i>.logging.verbosity
+</td>
+<td> Configures log verbosity: error, warn, info, or debug.
+<ul><li> <b>Type:</b> String</li>
+<li> <b>Default value:</b> info</li>
+<li> <b>Location:</b> System Property [sys_properties] table</li></ul>
+</td></tr></table>
+<p>From the global scope, the scoped Logging API routes to <tt>gs.logError</tt>, <tt>gs.logWarn</tt>, or <tt>gs.log</tt>, and applies MessageFormat parameter formatting.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201014034
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.167 seconds
+Real time usage: 1.613 seconds
+Preprocessor visited node count: 169/1000000
+Preprocessor generated node count: 466/1000000
+Post‐expand include size: 2160/2097152 bytes
+Template argument size: 954/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.673      1 - -total
+ 91.24%   56.271      1 - Template:Scoped_Applications_and_Scripting
+ 81.85%   50.481      1 - Template:Topic
+  7.89%    4.866      1 - Template:Note
+  7.04%    4.340      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:23971-0!*!0!1!en!5!* and timestamp 20171201014033 and revision id 250844
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html">http://wiki.servicenow.com/index.php?title=Scoped_Script_Logging&amp;oldid=250844</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Scoped+System+API.html" title="Category:Scoped System API">Scoped System API</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Build.html" title="Category:Build">Build</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Applications.html" title="Category:Applications">Applications</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Scoped+System+API.html" title="Category:Scoped System API">Scoped System API</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_23971"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="23971" data-vote-the-vote="5" data-vote-id="23971" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23971_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="23971" data-vote-the-vote="1" data-vote-id="23971" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_23971_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Scoped_Script_Logging.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Scoped+Script+Logging&amp;returntoquery=oldid%3D250844" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Scoped+Script+Logging&amp;returntoquery=oldid%3D250844" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Scoped_Script_Logging.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Scoped_Script_Logging&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Scoped+Script+Logging.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Scoped+Script+Logging&amp;returnto=Scoped+Script+Logging&amp;oldid=250844&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FScoped_Script_Logging.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Scoped_Script_Logging" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;oldid=250844.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Scoped_Script_Logging&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:33, 8 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1142});});</script></body></html>

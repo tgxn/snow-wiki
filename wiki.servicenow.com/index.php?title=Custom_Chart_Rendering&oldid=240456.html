@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Custom Chart Rendering - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Custom_Chart_Rendering","wgTitle":"Custom Chart Rendering","wgCurRevisionId":240456,"wgRevisionId":240456,"wgArticleId":6112,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Custom Charts","Advanced Reporting","Report Administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Custom_Chart_Rendering","wgRelevantArticleId":6112,"wgRequestId":"2e0bd0bc8e5ac1ed3a329c0a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150131003046"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Custom_Chart_Rendering"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Custom Chart Rendering"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Report Administration"/>
+<meta name="category" content="Report Administration"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Custom+Chart+Rendering&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Custom Chart Rendering"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150131003046"/>
+
+	<meta property="article:published_time" content="20150131003046"/>
+
+	<meta property="article:modified_time" content="20150131003046"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Report Administration"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Custom_Chart_Rendering"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Custom_Chart_Rendering rootpage-Custom_Chart_Rendering skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Custom+Chart+Rendering.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Custom+Chart+Rendering&amp;oldid=0.html" title="Remove the current wiki page from your book" id="coll-remove_article" rel="nofollow" onclick="collectionCall('RemoveArticle', ['addarticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-remove.png" alt="" width="16" height="16" />&#160;Remove this page from your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (54 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Custom Chart Rendering</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Custom Chart Rendering</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Reporting.html" title="Reporting">Reports</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21ba3f1516ct'></div><script type="text/javascript">window.tamOnload_tam5a21ba3f1516ct=[];tree = new dTree('tam5a21ba3f1516ct');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21ba3f1516ct = tree;
+                                               tam5a21ba3f1516ct.add(1, 0, 'Basic Reporting');
+
+tam5a21ba3f1516ct.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting\&quot;" title=\"Reporting\">Introduction</a>');
+tam5a21ba3f1516ct.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Generating_Reports\&quot;" title=\"Generating Reports\">Generating Reports</a>');
+tam5a21ba3f1516ct.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_List_Reports\&quot;" title=\"Creating List Reports\">Lists</a>');
+tam5a21ba3f1516ct.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Line_Charts\&quot;" title=\"Creating Line Charts\">Line Charts</a>');
+tam5a21ba3f1516ct.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Column_Charts\&quot;" title=\"Creating Column Charts\">Column Charts</a>');
+tam5a21ba3f1516ct.add(7, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Area_and_Spline_Charts\&quot;" title=\"Creating Area and Spline Charts\">Area and Spline Charts</a>');
+tam5a21ba3f1516ct.add(8, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Bar_Charts\&quot;" title=\"Creating Bar Charts\">Bar Charts</a>');
+tam5a21ba3f1516ct.add(9, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pareto_Charts\&quot;" title=\"Creating Pareto Charts\">Pareto Charts</a> ');
+tam5a21ba3f1516ct.add(10, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Histograms\&quot;" title=\"Creating Histograms\">Histograms</a>');
+tam5a21ba3f1516ct.add(11, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pie_Charts\&quot;" title=\"Creating Pie Charts\">Pie Charts</a>');
+tam5a21ba3f1516ct.add(12, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Donut_Charts\&quot;" title=\"Creating Donut Charts\">Donut and Semi-donut Charts</a>');
+tam5a21ba3f1516ct.add(13, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Dials_and_Speedometers\&quot;" title=\"Creating Dials and Speedometers\">Dials and Speedometers</a>');
+tam5a21ba3f1516ct.add(14, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Pivot_Tables\&quot;" title=\"Creating Pivot Tables\">Pivot Tables</a>');
+tam5a21ba3f1516ct.add(15, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Funnel_and_Pyramid_Charts\&quot;" title=\"Creating Funnel and Pyramid Charts\">Funnel and Pyramid Charts</a>');
+tam5a21ba3f1516ct.add(16, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Calendars\&quot;" title=\"Creating Calendars\">Calendars</a>');
+tam5a21ba3f1516ct.add(17, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Box_Charts\&quot;" title=\"Creating Box Charts\">Box Charts</a>');
+tam5a21ba3f1516ct.add(18, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trend_Charts\&quot;" title=\"Creating Trend Charts\">Trend Charts</a>');
+tam5a21ba3f1516ct.add(19, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Control_Charts\&quot;" title=\"Creating Control Charts\">Control Charts</a>');
+tam5a21ba3f1516ct.add(20, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Trendbox_Charts\&quot;" title=\"Creating Trendbox Charts\">Trendbox Charts</a>');
+tam5a21ba3f1516ct.add(21, 0, 'Advanced Reporting');
+tam5a21ba3f1516ct.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_and_Publishing_Reports\&quot;" title=\"Scheduling and Publishing Reports\">Schedule and Publish</a>');
+tam5a21ba3f1516ct.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Chart_Colors\&quot;" title=\"Configuring Chart Colors\">Set Colors</a>');
+tam5a21ba3f1516ct.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=PDF_Page_Header_Footer_Templates\&quot;" title=\"PDF Page Header Footer Templates\">PDF Header Footer Templates</a>');
+tam5a21ba3f1516ct.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Use_Service_Catalog_Variables_in_Reports\&quot;" title=\"Use Service Catalog Variables in Reports\" class=\"mw-redirect\">Use Service Catalog Variables in Reports</a>');
+tam5a21ba3f1516ct.add(26, 0, 'Administration');
+tam5a21ba3f1516ct.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Engine_Overview\&quot;" title=\"Report Engine Overview\" class=\"mw-redirect\">Report Engine Overview</a>');
+tam5a21ba3f1516ct.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_System_Tables\&quot;" title=\"Reporting on System Tables\">Reporting on System Tables</a> ');
+tam5a21ba3f1516ct.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Public_Report\&quot;" title=\"Creating a Public Report\">Creating a Public Report</a> ');
+tam5a21ba3f1516ct.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Excel_Export_Threshold\&quot;" title=\"Excel Export Threshold\" class=\"mw-redirect\">Excel Export Threshold</a> ');
+tam5a21ba3f1516ct.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_Properties\&quot;" title=\"Reporting Properties\">Reporting Properties</a> ');
+tam5a21ba3f1516ct.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Saving_Group-Level_Filters_and_Reports\&quot;" title=\"Saving Group-Level Filters and Reports\">Saving Group-Level Reports</a> ');
+tam5a21ba3f1516ct.add(33, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_Calendar_Reports\&quot;" title=\"Customizing Calendar Reports\">Customizing Calendar Reports</a>');
+tam5a21ba3f1516ct.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Ensuring_Domain_Separation_on_Reports_and_Gauges\&quot;" title=\"Ensuring Domain Separation on Reports and Gauges\">Ensuring Domain Separation on Reports and Gauges</a>');
+tam5a21ba3f1516ct.add(35, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Sources\&quot;" title=\"Report Sources\">Report Sources</a>');
+tam5a21ba3f1516ct.add(36, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Report_Ranges\&quot;" title=\"Report Ranges\">Report Ranges</a>');
+tam5a21ba3f1516ct.add(37, 26, 'Creating Custom Charts');
+tam5a21ba3f1516ct.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Definitions\&quot;" title=\"Custom Chart Definitions\">Custom Chart Definitions</a>');
+tam5a21ba3f1516ct.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Chart_Data_Generation\&quot;" title=\"Custom Chart Data Generation\">Custom Chart Data Generation</a>');
+tam5a21ba3f1516ct.add(40, 37, '<strong class=\"selflink\">Custom Chart Rendering</strong>');
+tam5a21ba3f1516ct.add(41, 0, 'Application Reports');
+tam5a21ba3f1516ct.add(42, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Incidents\&quot;" title=\"Reporting on Incidents\">Incident Management</a>');
+tam5a21ba3f1516ct.add(43, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Problems\&quot;" title=\"Reporting on Problems\">Problem Management</a>');
+tam5a21ba3f1516ct.add(44, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Changes\&quot;" title=\"Reporting on Changes\">Change Management</a>');
+tam5a21ba3f1516ct.add(45, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Knowledge_Management_Reporting\&quot;" title=\"Knowledge Management Reporting\" class=\"mw-redirect\">Knowledge Management</a>');
+tam5a21ba3f1516ct.add(46, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_Service_Catalog_Variables\&quot;" title=\"Reporting on Service Catalog Variables\">Service Catalog</a>');
+tam5a21ba3f1516ct.add(47, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Sales_Reports\&quot;" title=\"Sales Reports\" class=\"mw-redirect\">Sales Force Automation</a>');
+tam5a21ba3f1516ct.add(48, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Reporting_on_SLAs\&quot;" title=\"Reporting on SLAs\">Reporting on SLAs</a>');
+tam5a21ba3f1516ct.add(49, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Vendor_Reporting\&quot;" title=\"Vendor Reporting\">Vendor Performance</a>');
+tam5a21ba3f1516ct.add(50, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Assessment_Reporting\&quot;" title=\"Assessment Reporting\">Assessments</a>');
+tam5a21ba3f1516ct.add(51, 41, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=KPI_Reports\&quot;" title=\"KPI Reports\">KPI Reports</a>');
+tam5a21ba3f1516ct.add(52, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Base_System_Reports\&quot;" title=\"Base System Reports\">Base System Reports</a>');
+
+                                               document.getElementById('5a21ba3f1516ct').innerHTML = tam5a21ba3f1516ct.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21ba3f1516ct) { window.tamOnload_tam5a21ba3f1516ct[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Metric_Definition_Support.html" title="Metric Definition Support">Metric Definition Support</a></li>
+<li><a href="index.php%3Ftitle=Database_Views.html" title="Database Views">Database Views</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Reports.html" title="Book:Reports">Get the Book</a></b></center>
+</td></tr></table>
+</div> 
+<table cellspacing="5" cellpadding="5" class="FCK&#95;_ShowTableBorders" style="border: 1px solid rgb(153, 153, 5); margin-top: 0.5em; margin-bottom: 0.5em; vertical-align: top; width: 70%; background-color: rgb(245, 245, 245);">
+
+<tr>
+<td> <div class="floatleft"><a href="index.php%3Ftitle=File:Caution-diamond.png.html" class="image" title="As-is functionality"><img alt="As-is functionality" src="images/thumb/4/4f/Caution-diamond.png/25px-Caution-diamond.png" width="25" height="25" srcset="/images/thumb/4/4f/Caution-diamond.png/38px-Caution-diamond.png 1.5x, /images/thumb/4/4f/Caution-diamond.png/50px-Caution-diamond.png 2x" /></a></div>
+</td>
+<td width="100%"> <b>Caution: </b>The customization described here was developed for use in specific ServiceNow instances, and is not supported by ServiceNow Customer Support. This method is provided as-is and should be tested thoroughly before implementation. Post all questions and comments regarding this customization to our community <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://community.service-now.com">forum</a>.
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#Incident_Backlog_Rendering_Script"><span class="tocnumber">2</span> <span class="toctext">Incident Backlog Rendering Script</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#Explanation"><span class="tocnumber">2.1</span> <span class="toctext">Explanation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#ChartUtil_Server_Script_Include"><span class="tocnumber">3</span> <span class="toctext">ChartUtil Server Script Include</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html#ChartGenerator_Server_Script_Include"><span class="tocnumber">4</span> <span class="toctext">ChartGenerator Server Script Include</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>To generate a more complex chart than the system is naturally capable of creating, write a rendering script. This rendering script must return a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.jfree.org/jfreechart/"><b>JFreeChart</b></a> chart object and can do whatever needs to be done as long as the end result is a chart object. ServiceNow provides some helper <a href="index.php%3Ftitle=Script_Includes.html" title="Script Includes"><i>script includes</i></a> which should reduce the reliance on the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.jfree.org/jfreechart/api/javadoc/index.html"><b>JFreeChart API</b></a>. 
+</p><p>Included here is an example of a script used to generate a combination chart that displays the number of open incidents per month, the number of closed incidents per month, and the backlog of incidents in the same time frame. The custom chart shown here has <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Custom+Chart+Data+Generation&amp;oldid=0.html" title="Custom Chart Data Generation">generators</a> that produce the sets of data necessary to produce the chart. The rendering script is used to build a chart that combines this data. 
+</p><p>To access the Custom Chart form, navigate to <b>Reports &gt; Custom Charts</b> and select a custom chart from the list.
+</p><p><a href="index.php%3Ftitle=File:Custom_chart_render1.png.html" class="image" title="Image:Custom_chart_render1.png"><img alt="Image:Custom_chart_render1.png" src="images/thumb/f/f6/Custom_chart_render1.png/900px-Custom_chart_render1.png" width="900" height="700" class="thumbborder" srcset="/images/f/f6/Custom_chart_render1.png 1.5x, /images/f/f6/Custom_chart_render1.png 2x" /></a>
+</p>
+<h1><span class="mw-headline" id="Incident_Backlog_Rendering_Script"><span class="mw-headline-number">2</span> Incident Backlog Rendering Script</span></h1>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//</span>
+<span class="c1">// Script generates a trending chart of open incidents and combines that with a </span>
+<span class="c1">// trending chart of the closed incidents and then above that</span>
+<span class="c1">// places a line that shows the backlog of incidents in the same time period.</span>
+<span class="c1">//</span>
+  <span class="c1">// Gets the sys_id values for the sys_report_summary table entries built by our generators</span>
+  <span class="kd">var</span> <span class="nx">openID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Trend of Open Incidents&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">closedID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Trend of Closed Incidents&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Gets a utility class for dataset manipulation</span>
+  <span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+  <span class="nx">cu</span><span class="p">.</span><span class="nx">setTable</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+  <span class="nx">cu</span><span class="p">.</span><span class="nx">setColors</span><span class="p">(</span><span class="s2">&quot;#FFDEAD,#7FFF00&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Gets the dataset for the Open incidents</span>
+  <span class="kd">var</span> <span class="nx">open</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+  <span class="nx">open</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">openID</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">open</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+
+  <span class="c1">// Gets the dataset for the Closed incidents and combines this with the open incidents into</span>
+  <span class="c1">// a multi series dataset</span>
+  <span class="kd">var</span> <span class="nx">closed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+  <span class="nx">closed</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">closedID</span><span class="p">);</span>
+  <span class="nx">ds</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">mergeDatasets</span><span class="p">(</span><span class="nx">ds</span><span class="p">,</span> <span class="s2">&quot;Open&quot;</span><span class="p">,</span> <span class="nx">closed</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="s2">&quot;Closed&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Gets the chart for the multi series bar chart of open and closed incidents</span>
+  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">closed</span><span class="p">.</span><span class="nx">getChart</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>
+
+  <span class="c1">// Changes the spacing </span>
+  <span class="nx">closed</span><span class="p">.</span><span class="nx">setNoMargins</span><span class="p">();</span>
+
+  <span class="c1">// Adds a line renderer to the chart to show the backlog of incidents</span>
+  <span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+  <span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">addEmptyValues</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="nx">ds</span><span class="p">);</span>
+  <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">changeDatasetLabel</span><span class="p">(</span><span class="nx">lineDS</span><span class="p">,</span> <span class="s2">&quot;BackLog&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getChartGenerator</span><span class="p">().</span><span class="nx">getLineRenderer</span><span class="p">(</span><span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">awt</span><span class="p">.</span><span class="nx">Color</span><span class="p">.</span><span class="nx">RED</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">closed</span><span class="p">.</span><span class="nx">addRenderer</span><span class="p">(</span><span class="nx">renderer</span><span class="p">,</span> <span class="nx">lineDS</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Back log&quot;</span><span class="p">);</span>
+  
+  <span class="c1">// returns our chart</span>
+  <span class="nx">answer</span> <span class="o">=</span> <span class="nx">chart</span><span class="p">;</span>
+</pre></div> 
+<h2><span class="mw-headline" id="Explanation"><span class="mw-headline-number">2.1</span> Explanation</span></h2>
+<ul><li>The first part of the code returns the summary set ID values for the data that was created by the generators. These are available via the global variable called <tt>summary_sets</tt>, which has a <tt>get</tt> method that takes the name of the generator and returns the ID of the summary set produced by that generator.  </li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Gets the sys_id values for the sys_report_summary table entries built by our generators</span>
+  <span class="kd">var</span> <span class="nx">openID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Trend of Open Incidents&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">closedID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Trend of Closed Incidents&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+</pre></div> <br /> 
+<ul><li>The next code fragment obtains a new <i>ChartUtil</i> object, initializes the table that it will be going against, and sets up the colors for the two series of data that are produced. Because there is an Open series of data and a Closed series of data, the colors must be established for each series. The methods available in <i>ChartUtil</i> are described later in this page.</li></ul>
+ <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Gets a utility class for dataset manipulation</span>
+  <span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+  <span class="nx">cu</span><span class="p">.</span><span class="nx">setTable</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+  <span class="nx">cu</span><span class="p">.</span><span class="nx">setColors</span><span class="p">(</span><span class="s2">&quot;#FFDEAD,#7FFF00&quot;</span><span class="p">);</span>
+</pre></div> <br /> 
+<ul><li>The next code fragment gets the dataset (JFreeChart object) that represents the trend of open incidents. This uses the <i>ChartGenerator</i> script include, which reads the summary set data produced by the generator and returns the JFreeChart dataset. The methods available in <tt>ChartGenerator</tt> are described later in this page.</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Gets the dataset for the Open incidents</span>
+  <span class="kd">var</span> <span class="nx">open</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+  <span class="nx">open</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">openID</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">open</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+</pre></div> <br /> 
+<ul><li>The next code fragment is similar to the previous sample, but also uses a utility routine to merge the two datasets so that the database contains both the open and the closed data. This condition creates a multi-series dataset that is used to create stacked bar charts via the reporting system. This example, however, combines two totally separate datasets obtained by different generators. This is where you use the colors that were set in the first bit of code. The first color is used for the open items and the second color indicates the closed items.</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Gets the dataset for the Closed incidents and combines this with the open incidents into</span>
+  <span class="c1">// a multi series dataset</span>
+  <span class="kd">var</span> <span class="nx">closed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+  <span class="nx">closed</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">closedID</span><span class="p">);</span>
+  <span class="nx">ds</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">mergeDatasets</span><span class="p">(</span><span class="nx">ds</span><span class="p">,</span> <span class="s2">&quot;Open&quot;</span><span class="p">,</span> <span class="nx">closed</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="s2">&quot;Closed&quot;</span><span class="p">);</span>
+</pre></div> <br />
+<ul><li>The next code fragment gets the bar chart that contains the multi-series dataset. This is the JFreeChart chart object that is returned to be displayed.</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Gets the chart for the multi-series bar chart of open and closed incidents</span>
+  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">closed</span><span class="p">.</span><span class="nx">getChart</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>
+</pre></div> <br /> 
+<ul><li>Normally, there is some spacing between the bars in the multi-series bar chart. There is a helper function in the JFreeChart API to remove this spacing.</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Changes the spacing </span>
+  <span class="nx">closed</span><span class="p">.</span><span class="nx">setNoMargins</span><span class="p">();</span>
+</pre></div> <br /> 
+<ul><li>Next, the line is added to the chart that represents the backlog of incidents over the same time frame. This is very similar to the code used to get the other datasets. You need to get the dataset from the summary set data that was created by the generator. For the line to cover the same time span as the open and closed datasets, use the <tt>addEmptyValues</tt> method of the <i>ChartUtility</i>. This compares the dataset for the line with the dataset for the open or closed data, and then adds empty values where necessary to make the time spans identical. Then, get a JFreeChart line renderer to display the line above the bars. The last item adds the new renderer to the chart.</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Adds a line renderer to the chart to show the backlog of incidents</span>
+<span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">addEmptyValues</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="nx">ds</span><span class="p">);</span>
+<span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">changeDatasetLabel</span><span class="p">(</span><span class="nx">lineDS</span><span class="p">,</span> <span class="s2">&quot;BackLog&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getChartGenerator</span><span class="p">().</span><span class="nx">getLineRenderer</span><span class="p">(</span><span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">awt</span><span class="p">.</span><span class="nx">Color</span><span class="p">.</span><span class="nx">RED</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">closed</span><span class="p">.</span><span class="nx">addRenderer</span><span class="p">(</span><span class="nx">renderer</span><span class="p">,</span> <span class="nx">lineDS</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Back log&quot;</span><span class="p">);</span>
+</pre></div> <br /> 
+<ul><li>Finally, the answer is set to return the chart to the system for display. </li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>  <span class="c1">// return our chart</span>
+  <span class="nx">answer</span> <span class="o">=</span> <span class="nx">chart</span><span class="p">;</span>
+</pre></div>
+<h1><span class="mw-headline" id="ChartUtil_Server_Script_Include"><span class="mw-headline-number">3</span> ChartUtil Server Script Include</span></h1>
+<p>The <i>ChartUtil</i> script include mainly provides some helpers for combining datasets or obtaining JFreeChart constants. The methods are: 
+</p>
+<table class="standard">
+
+<tr>
+<td>  Instantiation
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>  <span class="c1">// Get a chart utility object</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  setTable(table)
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// set the table value.  Useful when getting default colors</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setTable</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  setColumn(column)<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// set the table value.  Useful when getting default colors</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setTable</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setColumn</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  setDS(ds)<br />
+</td>
+<td>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// set the table value.  Useful when getting default colors</span>
+<span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">call_something_to_generate_a_dataset</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setDS</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td>  setColors(colors)<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// set the color pallete to be used when datasets are merged</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setColors</span><span class="p">(</span><span class="s2">&quot;#FFDEAD,#7FFF00&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  mergeDatasets(ds1, label1, ds2, label2)<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// example code below taken from the Incident Backlog custom script</span>
+   
+  <span class="c1">// Get the dataset for the Open incidents</span>
+  <span class="kd">var</span> <span class="nx">open</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+  <span class="nx">open</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">openID</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">open</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+ <span class="c1">// Get the dataset for the Closed incidents and combine with the open incidents into</span>
+ <span class="c1">// a multi series dataset</span>
+ <span class="kd">var</span> <span class="nx">closed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+ <span class="nx">closed</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">closedID</span><span class="p">);</span>
+ <span class="nx">ds</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">mergeDatasets</span><span class="p">(</span><span class="nx">ds</span><span class="p">,</span> <span class="s2">&quot;Open&quot;</span><span class="p">,</span> <span class="nx">closed</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="s2">&quot;Closed&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  changeDatasetLabel(ds, label)<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Change the label that is associated with a dataset.  The label will appear in the chart legend</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+
+<span class="c1">// Add a line renderer to the chart to show the backlog of incidents</span>
+<span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">addEmptyValues</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="nx">ds</span><span class="p">);</span>
+<span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">changeDatasetLabel</span><span class="p">(</span><span class="nx">lineDS</span><span class="p">,</span> <span class="s2">&quot;BackLog&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  setToolTipGenerator(renderer, tipText)&#160;<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">//Define a tool tip generator for a renderer to create the tool tip when the user hovers over the chart area</span>
+<span class="c1">//JFreeChart ToolTipGenerator for the meanings of the tipText</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="nx">cu</span><span class="p">.</span><span class="nx">setToolTipGenerator</span><span class="p">(</span><span class="nx">rendere</span><span class="p">,</span> <span class="s2">&quot;{1} - {2}&quot;</span><span class="p">);</span>
+</pre></div>
+<p><br /> 
+</p>
+</td></tr>
+<tr>
+<td>  addEmptyValues(ds, protoType)
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Add the necessary empty values to a dataset so that the datapoints in both datasets are the same</span>
+<span class="c1">// When adding multiple renderers to a chart the datapoints in each must match</span>
+<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartUtil</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">addEmptyValues</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="nx">ds</span><span class="p">);</span>
+<span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">changeDatasetLabel</span><span class="p">(</span><span class="nx">lineDS</span><span class="p">,</span> <span class="s2">&quot;BackLog&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+<h1><span class="mw-headline" id="ChartGenerator_Server_Script_Include"><span class="mw-headline-number">4</span> ChartGenerator Server Script Include</span></h1>
+<p><br /> 
+</p>
+<table class="standard">
+
+<tr>
+<td>  Instantiation
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// New a new line chart generator</span>
+<span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  setSummaryID(id)
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// Establish the summary data that will be used to generate the chart</span>
+<span class="c1">// For custom charts that have a generator, the summary ID generated by that generator is available via the summary_sets global variable</span>
+<span class="c1">// However, this code could just as well generate the summary set data every time by including that code in the renderer</span>
+<span class="c1">// rather than a custom generator</span>
+<span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  getDataset()
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="c1">// Once the summary set has been established the JFreeChart dataset that represents that</span>
+<span class="c1">// data can be obtained using getDataset().  This dataset can then be massaged/changed in</span>
+<span class="c1">// some way before it is used to generate a chart</span>
+<span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  getChart()<br />
+</td>
+<td> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+<span class="c1">// Once the dataset has been created then the dataset can be provided and a JFreeChart chart built</span>
+<span class="c1">// the chart is the answer that should be returned but before returning the JFreeChart API can be used</span>
+<span class="c1">// to refine the chart as you see fit</span>
+<span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getChart</span><span class="p">();</span>
+</pre></div>
+</td></tr>
+<tr>
+<td>  addRenderer(renderer, ds, tips, axis)
+</td>
+<td> This adds another renderer to the chart. Can be used as in the Backlog examples to add a line to a bar chart.<br />
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">addEmptyValues</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">(),</span> <span class="nx">ds</span><span class="p">);</span>
+<span class="nx">lineDS</span> <span class="o">=</span> <span class="nx">cu</span><span class="p">.</span><span class="nx">changeDatasetLabel</span><span class="p">(</span><span class="nx">lineDS</span><span class="p">,</span> <span class="s2">&quot;BackLog&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getChartGenerator</span><span class="p">().</span><span class="nx">getLineRenderer</span><span class="p">(</span><span class="nb">Packages</span><span class="p">.</span><span class="nx">java</span><span class="p">.</span><span class="nx">awt</span><span class="p">.</span><span class="nx">Color</span><span class="p">.</span><span class="nx">RED</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">closed</span><span class="p">.</span><span class="nx">addRenderer</span><span class="p">(</span><span class="nx">renderer</span><span class="p">,</span> <span class="nx">lineDS</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Back log&quot;</span><span class="p">);</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td>  setNoMargins()
+</td>
+<td> This issues the JFreeChart API calls necessary to remove padding between bars on a bar chart.
+</td></tr>
+<tr>
+<td>  getPlot()
+</td>
+<td>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChartGenerator</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">backLogID</span> <span class="o">=</span> <span class="nx">summary_sets</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Incident Backlog&quot;</span><span class="p">);</span>
+<span class="nx">line</span><span class="p">.</span><span class="nx">setSummaryID</span><span class="p">(</span><span class="nx">backLogID</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getDataset</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getChart</span><span class="p">();</span>
+
+<span class="c1">// getPlot is a helper function to get the plot from the chart object.</span>
+<span class="kd">var</span> <span class="nx">plot</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">getPlot</span><span class="p">()</span>
+</pre></div> 
+</td></tr>
+<tr>
+<td>  setTable(table)
+</td>
+<td> The setTable method can be used to set the table name that is used to generate URLs when users click a bar within the chart.
+</td></tr>
+<tr>
+<td>  setStacked()
+</td>
+<td> The setStacked method can be used to indicate that the bar chart entries for a multi-series chart must be stacked on each rather than rendered side by side.
+</td></tr>
+<tr>
+<td>  getChartGenerator()
+</td>
+<td> The call gets the internal ServiceNow JAVA object that is used to create the chart indicated (bar, line, pie, and so on).<br />Documentation for these objects is not yet available.
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201202337
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.484 seconds
+Real time usage: 10.755 seconds
+Preprocessor visited node count: 243/1000000
+Preprocessor generated node count: 696/1000000
+Post‐expand include size: 4344/2097152 bytes
+Template argument size: 483/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  116.542      1 - -total
+ 93.85%  109.370      1 - Template:Reports_v2
+ 85.93%  100.149      1 - Template:Topic
+  7.28%    8.483      1 - Embedded:Reports_v2
+  5.73%    6.682      1 - Template:Unsupported
+  4.44%    5.175      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6112-0!*!0!1!en!5!* and timestamp 20171201202327 and revision id 240456
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html">http://wiki.servicenow.com/index.php?title=Custom_Chart_Rendering&amp;oldid=240456</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Custom+Charts.html" title="Category:Custom Charts">Custom Charts</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Advanced+Reporting.html" title="Category:Advanced Reporting">Advanced Reporting</a></li><li><a href="index.php%3Ftitle=Category:Report_Administration.html" title="Category:Report Administration">Report Administration</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Category:Report_Administration.html" title="Category:Report Administration">Report Administration</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Use.html" title="Category:Use">Use</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Reporting.html" title="Category:Reporting">Reporting</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Advanced+Reporting.html" title="Category:Advanced Reporting">Advanced Reporting</a><br />
+<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Reports.html" title="Category:Reports">Reports</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Custom+Charts.html" title="Category:Custom Charts">Custom Charts</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6112"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6112" data-vote-the-vote="5" data-vote-id="6112" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6112_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6112" data-vote-the-vote="1" data-vote-id="6112" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6112_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Custom+Chart+Rendering&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Custom+Chart+Rendering&amp;returntoquery=oldid%3D240456" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Custom+Chart+Rendering&amp;returntoquery=oldid%3D240456" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Custom_Chart_Rendering.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Custom_Chart_Rendering&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Custom+Chart+Rendering.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Custom+Chart+Rendering&amp;returnto=Custom+Chart+Rendering&amp;oldid=240456&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCustom_Chart_Rendering.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Custom_Chart_Rendering" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;oldid=240456.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Custom_Chart_Rendering&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:30, 31 January 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1056});});</script></body></html>

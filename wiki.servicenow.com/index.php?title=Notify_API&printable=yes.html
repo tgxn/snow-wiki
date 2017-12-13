@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Notify API - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Notify_API","wgTitle":"Notify API","wgCurRevisionId":250754,"wgRevisionId":250754,"wgArticleId":19971,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Server Scripting","Notify"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Notify_API","wgRelevantArticleId":19971,"wgRequestId":"03c1cdcf68214ce3e5e4f5c1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170905183812"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Notify_API"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Notify API"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Notify"/>
+<meta name="category" content="Notify"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Notify_API.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Notify API"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170905183812"/>
+
+	<meta property="article:published_time" content="20170905183812"/>
+
+	<meta property="article:modified_time" content="20170905183812"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Notify"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Notify_API"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Notify_API rootpage-Notify_API skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Notify+API.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Notify+API&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Notify API</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a> &gt; <a href="index.php%3Ftitle=Notify.html" title="Notify">Notify</a> &gt; Notify API</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/product/notify2/concept/c_ScriptingNotify.html">Scripting Notify</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Notify.html" title="Notify">Notify</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21a2e7aa2e2t'></div><script type="text/javascript">window.tamOnload_tam5a21a2e7aa2e2t=[];tree = new dTree('tam5a21a2e7aa2e2t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21a2e7aa2e2t = tree;
+                                               tam5a21a2e7aa2e2t.add(1, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Working_with_Notify\&quot;" title=\"Working with Notify\">Working with Notify</a>');
+
+tam5a21a2e7aa2e2t.add(2, 0, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Notify\&quot;" title=\"Installed with Notify\">Installed Components</a>');
+tam5a21a2e7aa2e2t.add(3, 0, ' <strong class=\"selflink\">API</strong>');
+
+                                               document.getElementById('5a21a2e7aa2e2t').innerHTML = tam5a21a2e7aa2e2t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21a2e7aa2e2t) { window.tamOnload_tam5a21a2e7aa2e2t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li> <a href="index.php%3Ftitle=Incident_Alert_Management.html" title="Incident Alert Management">Incident Alert Management</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><a href="index.php%3Ftitle=Book:Notify.html" title="Book:Notify"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Notify.html" title="Book:Notify">Notify</a> </center>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>The Notify API provides functionality for sending emails, sending SMS messages, and setting up conference calls.
+</p>
+<h2><span class="mw-headline" id="Where_to_Use"><span class="mw-headline-number">1.1</span> Where to Use</span></h2>
+<p>Use this when you want to use Notify functionality with applications on your system. See <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Notify+with+Incident+Alert+Management&amp;oldid=0.html" title="Using Notify with Incident Alert Management">Using Notify with Incident Alert Management</a> for details on how this is implemented for incident alert management.
+</p>
+<h1><span class="mw-headline" id="Method_Summary"><span class="mw-headline-number">2</span> Method Summary</span></h1>
+<h2><span class="mw-headline" id="Fuji_Release"><span class="mw-headline-number">2.1</span> Fuji Release</span></h2>
+<p>The following methods are available starting  with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<table class="standard sortable">
+
+<tr>
+<th> Method
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#mute">mute</a>
+</td>
+<td> Mutes a participant on a conference call.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#unmute">unmute</a>
+</td>
+<td> Unmutes a participant on a conference call.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#kick">kick</a>
+</td>
+<td> Removes a participant from a conference call.
+</td></tr></table>
+<h2><span class="mw-headline" id="Eureka_Release"><span class="mw-headline-number">2.2</span> Eureka Release</span></h2>
+<p>The following methods are available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<table class="standard sortable">
+
+<tr>
+<th> Method
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isSMSCapable">isSMSCapable</a>
+</td>
+<td> Checks if the telephone number associated with the Twilio account is capable of sending SMS messages.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isVoiceCapable">isVoiceCapable</a>
+</td>
+<td> Checks if the telephone number associated with the Twilio account is capable of setting up phone calls.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#sendSMSQuestion">sendSMSQuestion</a>
+</td>
+<td> Sends an SMS question.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#sendEmailQuestion">sendEmailQuestion</a>
+</td>
+<td> Sends an email question.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getPreferredE164VoiceNumber">getPreferredE164VoiceNumber</a>
+</td>
+<td> Gets the preferred E.164 phone number of the user for sending a voice message.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getPreferredE164SMSNumber">getPreferredE164SMSNumber</a>
+</td>
+<td> Gets the preferred E.164 phone number of the user for sending an SMS message.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getPreferredEmailAddress">getPreferredEmailAddress</a>
+</td>
+<td> Gets the preferred email address of the user for sending an email.
+</td></tr></table>
+<h2><span class="mw-headline" id="Dublin_Release"><span class="mw-headline-number">2.3</span> Dublin Release</span></h2>
+<p>The following methods are available starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>.
+</p>
+<table class="standard sortable">
+
+<tr>
+<th> Method
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#sendSMS">sendSMS</a>
+</td>
+<td> Sends an SMS message to a mobile phone number.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#initiateConferenceCall">initiateConferenceCall</a>
+</td>
+<td> Initiates a new conference call with a number of participants.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#addConferenceCallParticipant">addConferenceCallParticipant</a>
+</td>
+<td> Adds ad-hoc users to an existing conference call.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getConferenceCallParticipants">getConferenceCallParticipants</a>
+</td>
+<td> Returns all participants for a conference call.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isCallable">isCallable</a>
+</td>
+<td> Determines whether a user is callable or not.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getFrequentlyCalledUsers">getFrequentlyCalledUsers</a>
+</td>
+<td> Returns frequently called users in alphabetical order.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getStatus">getStatus</a>
+</td>
+<td> Returns the current status of the NotfyNow plugin.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getReadyState">getReadyState</a>
+</td>
+<td> Returns a boolean indicating whether Notify is correctly set up to use the Twilio account.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#getPhoneNumber">getPhoneNumber</a>
+</td>
+<td> Returns the phone number used for calls and SMS messages.
+</td></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#convertLocalPhoneNumberToE164">convertLocalPhoneNumberToE164</a>
+</td>
+<td> Converts a local phone number into an <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/E.164">E.164</a>-compliant number.
+</td></tr></table>
+<h1><span class="mw-headline" id="Method_Detail"><span class="mw-headline-number">3</span> Method Detail</span></h1>
+<h2><span class="mw-headline" id="sendSMS"><span class="mw-headline-number">3.1</span> sendSMS</span></h2>
+<p>Sends an SMS message to an <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/E.164">E.164</a>-compliant mobile phone number (maximum 1600 characters).
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Notify supports international numbers starting with the Eureka release. Using this method with a number that does not support sending SMS messages results in an error being logged. Also see the  <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isSMSCapable">isSMSCapable</a> API call.</i>
+</td></tr></table>
+<p><br />
+<b>Parameters</b>
+</p>
+<ul><li><tt>phoneNumber</tt> - (String) An E.164-compliant phone number.</li>
+<li><tt>smsBody</tt> - (String) The body of the SMS message. The SMS body is truncated if the maximum length (1600) is exceeded.  The maximum number of characters is determined by Twilio starting with the Eureka release.</li>
+<li><tt>sourceRecord</tt> - (GlideRecord) [Optional]The source record to associate to the SMS message.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>void</tt> </dd></dl>
+<p><b> Example 1 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;my_table&quot;</span><span class="p">);</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;my_field&quot;</span><span class="p">,</span> <span class="s2">&quot;my_value&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">source</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// send a text message</span>
+    <span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;this is just a test&quot;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="s2">&quot;+31612345678&quot;</span><span class="p">;</span>
+    <span class="nx">nn</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(</span><span class="nx">number</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">source</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+<b> Example 2 (by dotwalking) </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendSMS</span><span class="p">(</span><span class="s2">&quot;+31612345678&quot;</span><span class="p">,</span> <span class="s2">&quot;this is a test&quot;</span><span class="p">,</span> <span class="nx">current</span><span class="p">);</span>
+</pre></div>
+<p><br /> 
+<b> Example 3 (by dotwalking) </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendSMS</span><span class="p">(</span><span class="s2">&quot;+31612345678&quot;</span><span class="p">,</span> <span class="s2">&quot;this is a test without source record&quot;</span><span class="p">);</span>
+</pre></div>
+<p><b>Example 4 (testing too large message body)</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendSMS</span><span class="p">(</span><span class="s2">&quot;+31612345678&quot;</span><span class="p">,</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1601</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span>
+</pre></div>
+<h2><span class="mw-headline" id="initiateConferenceCall"><span class="mw-headline-number">3.2</span> initiateConferenceCall</span></h2>
+<p>Initiates a new conference call for an (optional) source record with a number of participants by passing a JavaScript array containing sys_ids from the sys_user table and/or E.164-compliant phone numbers.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Notify supports international numbers starting with the Eureka release. Using this method with a number that does not support making outgoing phone calls results in an error being logged. Also see the  <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isVoiceCapable">isVoiceCapable</a> API call.</i>
+</td></tr></table>
+<p><br /> 
+<b>Parameters</b>
+</p>
+<ul><li><tt>conferenceCallParticipants</tt> - (String[]) One or more users, conference call participants, identified by the sys_ids from the sys_user table or E.164-compliant phone numbers.</li>
+<li><tt>conferenceCallTitle</tt> - (String) Title of the conference call. This parameter has a maximum length of 40 characters.</li>
+<li><tt>sourceRecord</tt> - (GlideRecord) [Optional]Source record to associate to the conference call. For example, an incident or problem number.</li>
+<li><tt>private</tt> - (boolean) [Optional] Value to control if a conference call is private. This value defaults to false. This parameter is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>GlideRecord</tt> - the record of the created conference call, or null if something went wrong.</dd></dl>
+<p><b> Example 1 </b>
+</p><p>This initiates a conference call with participants that have a E.164-compliant phone number and participants from the sys_user table and sends conference call details via SMS and email to all participants.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// define phone number participants</span>
+<span class="kd">var</span> <span class="nx">participants</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;+31205655548&#39;</span><span class="p">,</span> <span class="s1">&#39;+31205655552&#39;</span><span class="p">,</span> <span class="s1">&#39;+31652825393&#39;</span><span class="p">];</span>
+
+<span class="c1">// we also want to add two Dutch sys_user participants</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">addNotNullQuery</span><span class="p">(</span><span class="s1">&#39;mobile_phone&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;mobile_phone&#39;</span><span class="p">,</span> <span class="s1">&#39;STARTSWITH&#39;</span><span class="p">,</span> <span class="s1">&#39;+316&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">setLimit</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="c1">// add users to the participant array</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+	<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;adding user &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; with phone number &#39;</span> <span class="o">+</span> 
+             <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;mobile_phone&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; to the participant array&#39;</span><span class="p">);</span>
+	<span class="nx">participants</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">getUniqueValue</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="c1">// define a source record to associate with the conference call</span>
+<span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;cmdb_ci&quot;</span><span class="p">);</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;asset_tag&quot;</span><span class="p">,</span> <span class="s2">&quot;P1000167&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">source</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">source</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+	<span class="c1">// set up conference call</span>
+	<span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+	<span class="kd">var</span> <span class="nx">conferenceCall</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">initiateConferenceCall</span><span class="p">(</span><span class="nx">participants</span><span class="p">,</span> <span class="s2">&quot;testing 1 2&quot;</span><span class="p">,</span> <span class="nx">source</span><span class="p">);</span>
+
+	<span class="c1">// check if the conference call was successfully created</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">conferenceCall</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;started conference call: &#39;</span> <span class="o">+</span> <span class="nx">conferenceCall</span><span class="p">.</span><span class="nx">getUniqueValue</span><span class="p">());</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;could not start the conference call :(&#39;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><b> Example 2 (no source record) </b>
+</p><p>This initiates a conference call with E.164-compliant phone numbers for participants, without the optional <tt>source record</tt> parameter and and does not send any conference call details via SMS or email.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">participants</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;+31205655548&#39;</span><span class="p">,</span> <span class="s1">&#39;+31205655552&#39;</span><span class="p">,</span> <span class="s1">&#39;+31652825393&#39;</span><span class="p">];</span>
+
+<span class="c1">// set up conference call</span>
+<span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">conferenceCall</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">initiateConferenceCall</span><span class="p">(</span><span class="nx">participants</span><span class="p">,</span> <span class="s2">&quot;testing12&quot;</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;started conference call: &#39;</span> <span class="o">+</span> <span class="nx">conferenceCall</span><span class="p">.</span><span class="nx">getUniqueValue</span><span class="p">());</span>
+</pre></div>
+<h2><span class="mw-headline" id="addConferenceCallParticipant"><span class="mw-headline-number">3.3</span> addConferenceCallParticipant</span></h2>
+<p>Adds ad-hoc users to an ongoing conference call. 
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>conferenceCall</tt> - (GlideRecord or String) Conference call record or the sys_id of an active conference call.</li>
+<li><tt>participant</tt> - (GlideRecord or String) User record or sys_id for a user with an E.164-compliant phone number, or an E.164-compliant phone number to call.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>When the method is called with a phone number for the <b>participant</b> parameter and there is exactly one sys_user record that matches the phone number, that sys_user record will be related to the participant. The participant's phone number field will be left blank because the phone number is in the sys_user record. If there are several sys_user records that match the phone number, or if there are no results, the participant's phone number field will be filled in, and there will be no stored reference to sys_user because the user is not known.</i>
+</td></tr></table>
+<p><br />
+<b>Returns</b>
+</p>
+<dl><dd><tt>GlideRecord</tt> - the participant record of the new participant that was added to the conference call.</dd></dl>
+<p><b>Example 1</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// add a new participant by conference call sys_id (string) and phone number (string) </span>
+<span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">addConferenceCallParticipant</span><span class="p">(</span><span class="s1">&#39;d193b242eb020100a04d4910f206fe39&#39;</span><span class="p">,</span> <span class="s1">&#39;+31612345678&#39;</span><span class="p">));</span>
+</pre></div>
+<p><br />
+<b>Example 2</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// add a new participant by conference call sys_id (string) and user record (GlideRecord)</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;user_name&#39;</span><span class="p">,</span> <span class="s1">&#39;myUserName&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">addConferenceCallParticipant</span><span class="p">(</span><span class="s1">&#39;d193b242eb020100a04d4910f206fe39&#39;</span><span class="p">,</span> <span class="nx">user</span><span class="p">));</span>
+
+    <span class="c1">// you could have added the user by sys_id as well:</span>
+    <span class="c1">// nn.addConferenceCallParticipant(&#39;d193b242eb020100a04d4910f206fe39&#39;, user.getValue(&#39;sys_id&#39;));</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;no such user&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><br /> 
+<b>Example 3</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c1">// add a new participant by conference call record (GlideRecord) and phone number (string)</span>
+<span class="kd">var</span> <span class="nx">conferenceCall</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;notifynow_conference_call&#39;</span><span class="p">);</span>
+<span class="nx">conferenceCall</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;IA0001001&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">conferenceCall</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">conferenceCall</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">addConferenceCallParticipant</span><span class="p">(</span><span class="nx">conferenceCall</span><span class="p">,</span> <span class="s1">&#39;+31612345678&#39;</span><span class="p">));</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;no such conference call&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getConferenceCallParticipants"><span class="mw-headline-number">3.4</span> getConferenceCallParticipants</span></h2>
+<p>Returns all participants for a conference call. By passing the <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#isCallable.28participant.29">isCallable(participant)</a> parameter, you can limit the results to return only the participants you can call or only the participants you cannot call.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>conferenceCallId</tt> - (String) The ID of the conference call.</li>
+<li><tt>isCallable</tt> - (boolean) [Optional] A flag to either return only the users you can call (if true) or those you cannot call (if false).</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>GlideRecord</tt> - the participants.</dd></dl>
+<p><b> Example 1 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getConferenceCallParticipants</span><span class="p">(</span><span class="s1">&#39;c2e91710eb120100f34087b9d106fe37&#39;</span><span class="p">);</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;participant&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;user: &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;phone number: &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;phone_number&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><br />
+<b>Example 2 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getConferenceCallParticipants</span><span class="p">(</span><span class="s1">&#39;c2e91710eb120100f34087b9d106fe37&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;participant&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;user: &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;phone number: &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;phone_number&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><br /> 
+<b>Example 3 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">conferenceCallId</span> <span class="o">=</span> <span class="s1">&#39;32b11430eb1201003cf587b9d106feb8&#39;</span><span class="p">;</span>
+
+<span class="c1">// get all participants</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;all conference call participants:&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getConferenceCallParticipants</span><span class="p">(</span><span class="nx">conferenceCallId</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// get all callable participants</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;all conference call participants we can call:&#39;</span><span class="p">);</span>
+<span class="nx">user</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getConferenceCallParticipants</span><span class="p">(</span><span class="nx">conferenceCallId</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// get all un callable participants</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;all conference call participants that are already in an active session and whom we cannot call:&#39;</span><span class="p">);</span>
+<span class="nx">user</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getConferenceCallParticipants</span><span class="p">(</span><span class="nx">conferenceCallId</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="isCallable"><span class="mw-headline-number">3.5</span> isCallable</span></h2>
+<p>Determines whether a user is callable or not. A user must have a valid phone number to be callable. A user who is already in an active session is not callable.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>participant</tt> - (GlideRecord or String) A sys_user or notifynow_participant record, or an E.164-compliant phone number.</li></ul>
+<p><br />
+<b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - whether this participant can be called or not.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;by number: &#39;</span> <span class="o">+</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">isCallable</span><span class="p">(</span><span class="s1">&#39;+31612345678&#39;</span><span class="p">));</span>
+
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">,</span> <span class="s1">&#39;13d39544eb5201003cf587b9d106fea9&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span>
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;by user: &#39;</span> <span class="o">+</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">isCallable</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
+
+<span class="kd">var</span> <span class="nx">participant</span> <span class="o">=</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;notifynow_participant&#39;</span><span class="p">);</span>
+<span class="nx">participant</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">,</span> <span class="s1">&#39;33b11430eb1201003cf587b9d106feb9&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">participant</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">participant</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span>
+  <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;by participant: &#39;</span> <span class="o">+</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">isCallable</span><span class="p">(</span><span class="nx">participant</span><span class="p">));</span>
+</pre></div>
+<h2><span class="mw-headline" id="getFrequentlyCalledUsers"><span class="mw-headline-number">3.6</span> getFrequentlyCalledUsers</span></h2>
+<p>Returns a number of users, up to the <tt>limit</tt> parameter, in alphabetical order. 
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>limit</tt> - (int) The maximum number of results.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>GlideRecord</tt> - the frequently called users in alphabetical order.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">fc</span> <span class="o">=</span> <span class="nx">nn</span><span class="p">.</span><span class="nx">getFrequentlyCalledUsers</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">fc</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">fc</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;got user &quot;</span> <span class="o">+</span> <span class="nx">fc</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="nx">fc</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;sys_id&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="getStatus"><span class="mw-headline-number">3.7</span> getStatus</span></h2>
+<p>Gets the current status of Notify configuration.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This method can only be accessed by administrators or users with the notifynow_admin role. Users with all other roles get the message </i>Unauthorized<i> when trying to run the function in a script.</i>
+</td></tr></table>
+<p><br />
+<b>Parameters</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - one of the possible status messages shown in the table.</dd></dl>
+<p>Possible responses include:
+</p>
+<table class="standard">
+
+<tr>
+<th> Status
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> NO_NUMBER_MESSAGE
+</td>
+<td> The account does not have a telephone number set up. Ensure that you <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Administering+Notify&amp;oldid=0.html#Associating_a_Twilio_Account" title="Administering Notify" class="mw-redirect">set up the telephone number for the account</a>.
+<p>The status NO_NUMBER is used in versions prior to Eureka.
+</p>
+</td></tr>
+<tr>
+<td> NO_ENDPOINTS_MESSAGE
+</td>
+<td> The account does not have its endpoints set up correctly. Ensure that you <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Administering+Notify&amp;oldid=0.html#Configuring_Twilio_with_ServiceNow_Endpoints" title="Administering Notify" class="mw-redirect">set up the endpoints for the account</a>.
+<p>The status NO_ENDPOINT is used in versions prior to Eureka.
+</p>
+</td></tr>
+<tr>
+<td> ACCOUNT_OK_MESSAGE
+</td>
+<td> The account is active and ready for use.
+<p>The status ACCOUNT_OK is used in versions prior to Eureka.
+</p>
+</td></tr>
+<tr>
+<td> ACCOUNT_NO_AUTH
+</td>
+<td> The Twilio AuthToken is not valid.
+</td></tr>
+<tr>
+<td> ACCOUNT_NOT_CONFIGURED
+</td>
+<td> The Twilio AccountSID or AuthToken is not valid.
+</td></tr></table>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">());</span>
+</pre></div>
+<h2><span class="mw-headline" id="getReadyState"><span class="mw-headline-number">3.8</span> getReadyState</span></h2>
+<p>Indicates whether Notify is set up correctly or not.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This method can only be accessed by administrators or users with the notifynow_admin role. Users with all other roles get the message </i>False<i> when trying to run the function in a script.</i>
+</td></tr></table>
+<p><br />
+<b>Parameters</b>
+</p>
+<ul><li><tt>None</tt> </li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - true if Notify is set up correctly, otherwise false.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(((</span><span class="nx">nn</span><span class="p">.</span><span class="nx">getReadyState</span><span class="p">())</span> <span class="o">?</span> <span class="s2">&quot;OK&quot;</span> <span class="o">:</span>  <span class="s2">&quot;NOT OK&quot;</span><span class="p">));</span>
+</pre></div>
+<h2><span class="mw-headline" id="getPhoneNumber"><span class="mw-headline-number">3.9</span> getPhoneNumber</span></h2>
+<p>Gets the phone number used to make and receive calls, and to send and receive SMS messages.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This method can only be accessed by administrators or users with the notifynow_admin role.</i>
+</td></tr></table>
+<p><br /> 
+<b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - E.164-compliant phone number. For example, +1123456789.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nn</span><span class="p">.</span><span class="nx">getPhoneNumber</span><span class="p">());</span>
+</pre></div>
+<h2><span class="mw-headline" id="convertLocalPhoneNumberToE164"><span class="mw-headline-number">3.10</span> convertLocalPhoneNumberToE164</span></h2>
+<p>Converts a local phone number to an E.164-compliant phone number based on the user's location.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>userID</tt> - (String) The sys_id of a user to get location information from.</li>
+<li><tt>phoneNumber</tt> - (String) The user's phone number.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - the E.164-compliant phone number.</dd></dl>
+<p><b> Example 1</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">E164Number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">convertLocalPhoneNumberToE164</span><span class="p">(</span><span class="s1">&#39;…&#39;</span><span class="p">,</span> <span class="s1">&#39;02012345678&#39;</span><span class="p">);</span>
+</pre></div>
+<p><b>Example 2 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">localPhoneNumber</span> <span class="o">=</span> <span class="s1">&#39;01784 221600&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">userName</span> <span class="o">=</span> <span class="s1">&#39;Heath Vanalphen&#39;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;sys_user&#39;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="nx">userName</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">E164Number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">convertLocalPhoneNumberToE164</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">getUniqueValue</span><span class="p">(),</span> <span class="nx">localPhoneNumber</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;converted: &#39;</span> <span class="o">+</span> <span class="nx">localPhoneNumber</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="nx">E164Number</span> <span class="o">+</span> <span class="s1">&#39; based on &#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> 
+     <span class="s1">&#39;\&#39;s location (&#39;</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="isSMSCapable"><span class="mw-headline-number">3.11</span> isSMSCapable</span></h2>
+<ul><li> When no argument is given: check if the telephone number associated with the Twilio account is capable of sending SMS messages.</li>
+<li> When a user sys_id is passed as an argument: check if the user is able to send SMS messages.</li></ul>
+<p><b>Parameters</b>
+</p>
+<ul><li><tt>userID</tt> - (String) [Optional]The sys_id of the user you want to check for an SMS-capable phone number.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> -  whether the telephone number associated with the Twilio account is capable of sending SMS messages.</dd></dl>
+<p><b> Example 1 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the twilio number is SMS capable: &#39;</span> <span class="o">+</span> <span class="p">((</span><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">isSMSCapable</span><span class="p">())</span> <span class="o">?</span> <span class="s1">&#39;yes&#39;</span> <span class="o">:</span> <span class="s1">&#39;no&#39;</span><span class="p">));</span>
+</pre></div>
+<p><b> Example 2 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the user is able to send SMS messages (e.g. has a SMS device): &#39;</span> <span class="o">+</span> <span class="p">((</span><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">isSMSCapable</span><span class="p">(</span><span class="s1">&#39;someuserid&#39;</span><span class="p">))</span> <span class="o">?</span> 
+     <span class="s1">&#39;yes&#39;</span> <span class="o">:</span> <span class="s1">&#39;no&#39;</span><span class="p">));</span>
+</pre></div>
+<h2><span class="mw-headline" id="isVoiceCapable"><span class="mw-headline-number">3.12</span> isVoiceCapable</span></h2>
+<ul><li> When no argument is given: check if the telephone number associated with the Twilio account is capable of setting up phone calls.</li>
+<li> When a user sys_id is passed as an argument: check if the user is able to set up voice calls.</li></ul>
+<p><b>Parameters</b>
+</p>
+<ul><li><tt>userID</tt> - (String) [Optional]The sys_id of the user you want to check for a voice-call capable phone number.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - whether the telephone number associated with the Twilio account is capable of setting up phone calls.</dd></dl>
+<p><b> Example 1 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the Twilio number is Voice capable: &#39;</span> <span class="o">+</span> <span class="p">((</span><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">isVoiceCapable</span><span class="p">())</span> <span class="o">?</span> <span class="s1">&#39;yes&#39;</span> <span class="o">:</span> <span class="s1">&#39;no&#39;</span><span class="p">));</span>
+</pre></div>
+<p><b> Example 2 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the user is able to send SMS messages (e.g. has a SMS device): &#39;</span> <span class="o">+</span> 
+     <span class="p">((</span><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">isVoiceCapable</span><span class="p">(</span><span class="s1">&#39;someuserid&#39;</span><span class="p">))</span> <span class="o">?</span> <span class="s1">&#39;yes&#39;</span> <span class="o">:</span> <span class="s1">&#39;no&#39;</span><span class="p">));</span>
+</pre></div>
+<h2><span class="mw-headline" id="sendSMSQuestion"><span class="mw-headline-number">3.13</span> sendSMSQuestion</span></h2>
+<p>Sends an SMS question.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>phoneNumber</tt> - (String) An E.164-compliant phone number to send the message to.</li>
+<li><tt>question</tt> - (GlideRecord or String) The question record to send or the sys_id of a question record.</li>
+<li><tt>sourceRecord</tt> - (GlideRecord) [Optional] The source record to associate to the SMS question, such as an incident.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - conversation sys_id or null if the SMS was not successful.</dd></dl>
+<p><b> Example 1 </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">question</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;notifynow_question&quot;</span><span class="p">);</span>
+<span class="nx">question</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+
+<span class="c1">// get the first question</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">question</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">question</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="p">{</span>
+	<span class="c1">// send the sms question</span>
+        <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="s2">&quot;+31612345678&quot;</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">();</span>
+	<span class="nx">nn</span><span class="p">.</span><span class="nx">sendSMSQuestion</span><span class="p">(</span><span class="nx">number</span><span class="p">,</span> <span class="nx">question</span><span class="p">.</span><span class="nx">getUniqueValue</span><span class="p">(),</span> <span class="nx">current</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><b> Example 2 (by dotwalking) </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendSMSQuestion</span><span class="p">(</span><span class="s2">&quot;+31612345678&quot;</span><span class="p">,</span> <span class="s2">&quot;b6071733bf1111003cf585ce2c07390f&quot;</span><span class="p">,</span> <span class="nx">current</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="sendEmailQuestion"><span class="mw-headline-number">3.14</span> sendEmailQuestion</span></h2>
+<p>Sends an email question to an email address, and is similar to <a href="index.php%3Ftitle=Notify_API&amp;printable=yes.html#sendSMSQuestion"> sendSMSQuestion</a>. The sendEmailQuestion method produces a question body and requires users to click a link to indicate their choice.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>emailAddress</tt> - (String) Email address to send the question to.</li>
+<li><tt>question</tt> - (GlideRecord or String) The question record to send or the sys_id of a question record.</li>
+<li><tt>sourceRecord</tt> - (GlideRecord) [Optional] The source record to associate to the SMS question, such as an incident.</li>
+<li><tt>emailSubject</tt> - (String) [Optional] Text to override the default email subject.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - the sys_id of the conversation that contains the generated question.</dd></dl>
+<p><b> Example 1 (no email subject argument so use default) </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s2">&quot;sys_user&quot;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;someone@somedomain.com&quot;</span><span class="p">);</span>
+
+<span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendEmailQuestion</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">),</span> <span class="s2">&quot;b6b34500bf3111003cf585ce2c0739ce&quot;</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
+</pre></div>
+<p><b>Example 2 (by dotwalking)</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendEmailQuestion</span><span class="p">(</span><span class="s2">&quot;someone@somedomain.com&quot;</span><span class="p">,</span> <span class="s2">&quot;b6071733bf1111003cf585ce2c07390f&quot;</span><span class="p">,</span> <span class="nx">current</span><span class="p">,</span> 
+        <span class="s2">&quot;Please answer this question&quot;</span><span class="p">);</span>
+</pre></div>
+<p><b>Example 3 (by dotwalking)</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">sendEmailQuestion</span><span class="p">(</span><span class="s2">&quot;someone@somedomain.com&quot;</span><span class="p">,</span> <span class="s2">&quot;b6071733bf1111003cf585ce2c07390f&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Please answer this question&quot;</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="getPreferredE164VoiceNumber"><span class="mw-headline-number">3.15</span> getPreferredE164VoiceNumber</span></h2>
+<p>Get the preferred <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/E.164">E.164</a>-compliant phone number for setting up a voice call at this moment in time.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>User</tt> - (GlideRecord or String) The user record or the sys_id of a user to get the E.164-compliant phone number from.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - the E.164-compliant phone number or null.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">userID</span> <span class="o">=</span> <span class="s2">&quot;some user sys id&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">E164Number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">getPreferredE164VoiceNumber</span><span class="p">(</span><span class="nx">userID</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the preferred phone number for setting up voice calls is &#39;</span> <span class="o">+</span> <span class="nx">E164Number</span> <span class="o">+</span> <span class="s1">&#39; for user with id: &#39;</span> <span class="o">+</span> <span class="nx">userID</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="getPreferredE164SMSNumber"><span class="mw-headline-number">3.16</span> getPreferredE164SMSNumber</span></h2>
+<p>Get the preferred <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/E.164">E.164</a>-compliant phone number for sending SMS notifications at this moment in time.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>User</tt> - (GlideRecord or String) The user record or the sys_id of a user to get the E.164-compliant SMS number from.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> - the E.164-compliant phone number or null.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">userID</span> <span class="o">=</span> <span class="s2">&quot;some user sys id&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">E164Number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">getPreferredE164SMSNumber</span><span class="p">(</span><span class="nx">userID</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the preferred phone number for sending SMS notifications is &#39;</span> <span class="o">+</span> <span class="nx">E164Number</span> <span class="o">+</span> <span class="s1">&#39; for user with id: &#39;</span> <span class="o">+</span> <span class="nx">userID</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="getPreferredEmailAddress"><span class="mw-headline-number">3.17</span> getPreferredEmailAddress</span></h2>
+<p>Get the preferred email address for sending emails at this moment in time.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>User</tt> - (GlideRecord or String) The user record or the sys_id of a user to get the email address from.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>String</tt> -  the email address or null.</dd></dl>
+<p><b> Example </b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">userID</span> <span class="o">=</span> <span class="s2">&quot;some user sys id&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">email</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">getPreferredEmailAddress</span><span class="p">(</span><span class="nx">userID</span><span class="p">);</span>
+<span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;the preferred email address for sending email notifications is &#39;</span> <span class="o">+</span> <span class="nx">email</span> <span class="o">+</span> <span class="s1">&#39; for user with id: &#39;</span> <span class="o">+</span> <span class="nx">userID</span><span class="p">);</span>
+</pre></div>
+<h2><span class="mw-headline" id="mute"><span class="mw-headline-number">3.18</span> mute</span></h2>
+<p>Mutes a participant on a conference call. This method is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>participant</tt> - (GlideRecord) the conference call participant to mute.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - true if the participant was muted, otherwise false.</dd></dl>
+<p><b>Example</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">participantId</span> <span class="o">=</span> <span class="s2">&quot;&lt;participant sys_id&gt;&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">participant</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;notifynow_participant&#39;</span><span class="p">);</span>
+<span class="nx">participant</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">participantId</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">participant</span><span class="p">.</span><span class="nx">isValid</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// mute participant</span>
+     <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">mute</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span>
+     <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;participant muted: &#39;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="unmute"><span class="mw-headline-number">3.19</span> unmute</span></h2>
+<p>Unmutes a participant on a conference call. This method is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>participant</tt> - (GlideRecord) the muted conference call participant to unmute.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - true if the participant was unmuted, otherwise false.</dd></dl>
+<p><b>Example</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">participantId</span> <span class="o">=</span> <span class="s2">&quot;&lt;participant sys_id&gt;&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">participant</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;notifynow_participant&#39;</span><span class="p">);</span>
+<span class="nx">participant</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">participantId</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">participant</span><span class="p">.</span><span class="nx">isValid</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// unmute participant</span>
+     <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">unmute</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span>
+     <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;participant unmuted: &#39;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="kick"><span class="mw-headline-number">3.20</span> kick</span></h2>
+<p>Removes a participant from a conference call. This method is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p><p><b>Parameters</b>
+</p>
+<ul><li><tt>participant</tt> - (GlideRecord) the conference call participant to remove from the call.</li></ul>
+<p><b>Returns</b>
+</p>
+<dl><dd><tt>boolean</tt> - true if the participant was removed, otherwise false.</dd></dl>
+<p><b>Example</b>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kd">var</span> <span class="nx">participantId</span> <span class="o">=</span> <span class="s2">&quot;&lt;participant sys_id&gt;&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">participant</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;notifynow_participant&#39;</span><span class="p">);</span>
+<span class="nx">participant</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">participantId</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">participant</span><span class="p">.</span><span class="nx">isValid</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// kick participant</span>
+     <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SNC</span><span class="p">.</span><span class="nx">NotifyNow</span><span class="p">().</span><span class="nx">kick</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span>
+     <span class="nx">gs</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;participant kicked: &#39;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201184409
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.580 seconds
+Real time usage: 18.123 seconds
+Preprocessor visited node count: 1106/1000000
+Preprocessor generated node count: 2900/1000000
+Post‐expand include size: 13108/2097152 bytes
+Template argument size: 7785/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 16866.916      1 - -total
+  0.36%   60.827     32 - Template:JSParameter
+  0.24%   40.517      1 - Template:Notify
+  0.20%   33.693      1 - Template:Topic
+  0.16%   26.783     20 - Template:JSReturns
+  0.06%   10.338      7 - Template:Note
+  0.03%    5.540      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:19971-0!*!0!1!*!5!* and timestamp 20171201184351 and revision id 250754
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Notify_API&amp;oldid=250754.html">http://wiki.servicenow.com/index.php?title=Notify_API&amp;oldid=250754</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></li><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notify.html" title="Category:Notify">Notify</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Notify.html" title="Category:Notify">Notify</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Script.html" title="Category:Script">Script</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Server+Scripting.html" title="Category:Server Scripting">Server Scripting</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_19971"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="19971" data-vote-the-vote="5" data-vote-id="19971" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_19971_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="19971" data-vote-the-vote="1" data-vote-id="19971" data-vote-action="5" data-vote-rating="3.67" data-vote-voted="0" id="rating_19971_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Notify_API.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Notify+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Notify+API&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Notify_API.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Notify_API&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Notify+API.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Notify+API&amp;returnto=Notify+API&amp;oldid=250754&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FNotify_API.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Notify_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Notify_API&amp;oldid=250754.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Notify_API&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:38, 5 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1166});});</script></body></html>

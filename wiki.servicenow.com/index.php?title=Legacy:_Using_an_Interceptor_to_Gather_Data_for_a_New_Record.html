@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Legacy: Using an Interceptor to Gather Data for a New Record - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record","wgTitle":"Legacy: Using an Interceptor to Gather Data for a New Record","wgCurRevisionId":250417,"wgRevisionId":250417,"wgArticleId":2237,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record","wgRelevantArticleId":2237,"wgRequestId":"82cf60761cb99b46151c0bee","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170825182423"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Legacy: Using an Interceptor to Gather Data for a New Record"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Legacy: Using an Interceptor to Gather Data for a New Record"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170825182423"/>
+
+	<meta property="article:published_time" content="20170825182423"/>
+
+	<meta property="article:modified_time" content="20170825182423"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Legacy_Using_an_Interceptor_to_Gather_Data_for_a_New_Record rootpage-Legacy_Using_an_Interceptor_to_Gather_Data_for_a_New_Record skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy: Using an Interceptor to Gather Data for a New Record</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Legacy: Using an Interceptor to Gather Data for a New Record</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-catalog-management/concept/c_RecordProducer.html">Record Producer</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<table style="color:blue; float:right; width:200px; border:black 1px solid; margin-left:10px">
+<tr>
+<th style="color:white;background-color:gray"> See Also
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Incident_Management_portal.html" title="Incident Management portal" class="mw-redirect">Incident Management portal</a></li>
+<li><a href="index.php%3Ftitle=Record_Producer.html" title="Record Producer">Record Producer</a></li></ul>
+</td></tr>
+</table> <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html#Create_the_Interceptor"><span class="tocnumber">2</span> <span class="toctext">Create the Interceptor</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html#Create_a_module_that_uses_an_Interceptor"><span class="tocnumber">3</span> <span class="toctext">Create a module that uses an Interceptor</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction"><span class="mw-headline-number">1</span> Introduction</span></h2>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This functionality is replaced by Service Catalog <a href="index.php%3Ftitle=Record_Producer.html" title="Record Producer">record producers</a>.</i>
+</td></tr></table>
+<p><br />
+An Interceptor can be used to gather upfront information from the user which can then be used to place data into a record that is being created. For example, ask the user a few questions to see what the category and subcategory should be for an incident the user is having. 
+</p><p>There are two ways that data can be placed into an initial record (other than default values). 
+</p>
+<ul><li>A query can be populated that contains the values. When a record is created, the system will look for a sysparm_query parameter on the URL. If one is found then the fields mentioned in the query will be used to initialize the record. In this case you would probably ask your users to provide some very specific data that you would use to construct the sysparm_query. </li>
+<li>A template can be specified. In this case you would probably ask the user some general questions and then react to those answers to pick the template that you have already created. The template contains all the values you want the record to be initialized with. This is a preferred method since the Interceptor code you write does not have to know the format for a sysparm_query.</li></ul>
+<p>In either case you would construct your Interceptor to gather the answers from the user. At the end of the Interceptor you would have an Execute entry. The script in the Execute entry would look at the data provided by the user and build a URL which would initialize a record and present it to your user. 
+</p>
+<h2><span class="mw-headline" id="Create_the_Interceptor"><span class="mw-headline-number">2</span> Create the Interceptor</span></h2>
+<p>Here is a very simple example that shows asking the user if the problem is an emergency. The answer given by the user is used to pick a template for initialization of an incident. 
+</p><p>Using System Definition --&gt; Interceptors you would create a new Interceptor. 
+</p><p><a href="index.php%3Ftitle=File:Wizard3.png.html" class="image" title="Image:wizard3.png"><img alt="Image:wizard3.png" src="images/9/94/Wizard3.png" width="796" height="157" /></a> 
+</p><p><br />You would then start adding items to get user responses. Shown below is a simple question asking the user if this is an emergency situation. The response of the user will be placed in the variable 'emergency' (Payload name field) which we use later. 
+</p><p><a href="index.php%3Ftitle=File:Wizard4.png.html" class="image" title="Image:wizard4.png"><img alt="Image:wizard4.png" src="images/3/35/Wizard4.png" width="793" height="488" /></a> 
+</p><p><br />The last thing you need is an execute action which will react to the users responses as shown below. Notice that the users responses are referenced via interceptor.name where the name is the value specified for the Payload name for the user answer. 
+</p><p><a href="index.php%3Ftitle=File:Wizard5.png.html" class="image" title="Image:wizard5.png"><img alt="Image:wizard5.png" src="images/c/c8/Wizard5.png" width="797" height="409" /></a> 
+</p><p><br />Notice that this example uses sysparm_query to set the urgency field based on the response. If you wanted to initialize more than 1 value then it would be best to use create a template where you can specify all the initial values you would like for an emergency. The script code would be changed as shown below to use templates. 
+</p><p><a href="index.php%3Ftitle=File:Wizard6.png.html" class="image" title="Image:wizard6.png"><img alt="Image:wizard6.png" src="images/8/8d/Wizard6.png" width="779" height="385" /></a> 
+</p>
+<h2><span class="mw-headline" id="Create_a_module_that_uses_an_Interceptor"><span class="mw-headline-number">3</span> Create a module that uses an Interceptor</span></h2>
+<p>If you would like a module that uses an Interceptor that you have created, then you do so by creating a URL type module as shown below. 
+</p><p><a href="index.php%3Ftitle=File:Wizard1.png.html" class="image" title="Image:wizard1.png"><img alt="Image:wizard1.png" src="images/e/e4/Wizard1.png" width="792" height="430" /></a> 
+</p><p><br />The above will appear in the ITIL - Change application with a module name of Create Change. It references the Interceptor that has a name of "Change Request Models". When the module is clicked, the user would see the following (as defined by the Interceptor entry). 
+</p><p><a href="index.php%3Ftitle=File:Wizard2.png.html" class="image" title="Image:wizard2.png"><img alt="Image:wizard2.png" src="images/d/dc/Wizard2.png" width="422" height="195" /></a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171130124838
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.095 seconds
+Real time usage: 0.131 seconds
+Preprocessor visited node count: 35/1000000
+Preprocessor generated node count: 118/1000000
+Post‐expand include size: 1148/2097152 bytes
+Template argument size: 571/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.169      1 - -total
+ 53.05%    6.456      1 - Template:See_Also
+ 38.93%    4.737      2 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:2237-0!*!0!1!en!5!* and timestamp 20171130124838 and revision id 250417
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;oldid=250417.html">http://wiki.servicenow.com/index.php?title=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;oldid=250417</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_2237"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="2237" data-vote-the-vote="5" data-vote-id="2237" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_2237_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="2237" data-vote-the-vote="1" data-vote-id="2237" data-vote-action="5" data-vote-rating="0.00" data-vote-voted="0" id="rating_2237_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Legacy%253A+Using+an+Interceptor+to+Gather+Data+for+a+New+Record.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Legacy%253A+Using+an+Interceptor+to+Gather+Data+for+a+New+Record.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Legacy%253A+Using+an+Interceptor+to+Gather+Data+for+a+New+Record.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Legacy%253A+Using+an+Interceptor+to+Gather+Data+for+a+New+Record&amp;returnto=Legacy%253A+Using+an+Interceptor+to+Gather+Data+for+a+New+Record&amp;oldid=250417&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FLegacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;oldid=250417.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Legacy:_Using_an_Interceptor_to_Gather_Data_for_a_New_Record&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:24, 25 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":898});});</script></body></html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Using State Flows - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using_State_Flows","wgTitle":"Using State Flows","wgCurRevisionId":234377,"wgRevisionId":234377,"wgArticleId":22385,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["State Flows"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using_State_Flows","wgRelevantArticleId":22385,"wgRequestId":"81882d3ead58380638c753c5","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20140714043618"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Using_State_Flows"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Using State Flows"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="State Flows"/>
+<meta name="category" content="State Flows"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Using_State_Flows.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Using State Flows"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20140714043618"/>
+
+	<meta property="article:published_time" content="20140714043618"/>
+
+	<meta property="article:modified_time" content="20140714043618"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="State Flows"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Using_State_Flows"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using_State_Flows rootpage-Using_State_Flows skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+State+Flows.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Using+State+Flows&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Using State Flows</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Using State Flows</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=State_Flows.html" title="State Flows">State Flows</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Installed_with_State_Flows.html" title="Installed with State Flows">Installed Components</a></li>
+<li><strong class="selflink">Using State Flows</strong></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Work_Management_States.html#State_Flow_Customization" title="Work Management States">Work Management State Flows</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=Book:State_Flows.html" title="Book:State Flows"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:State_Flows.html" title="Book:State Flows">State Flows</a>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Creating_State_Flows"><span class="tocnumber">2</span> <span class="toctext">Creating State Flows</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Dictionary_Overrides"><span class="tocnumber">2.1</span> <span class="toctext">Dictionary Overrides</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Work_Notes"><span class="tocnumber">2.2</span> <span class="toctext">Work Notes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Field_Controls"><span class="tocnumber">2.3</span> <span class="toctext">Field Controls</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Events_Triggered_on_State_Changes"><span class="tocnumber">2.4</span> <span class="toctext">Events Triggered on State Changes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Rebuild_State_Flows"><span class="tocnumber">2.5</span> <span class="toctext">Rebuild State Flows</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#State_Flow_Cleanup"><span class="tocnumber">2.6</span> <span class="toctext">State Flow Cleanup</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>You can create custom <a href="index.php%3Ftitle=State_Flows.html" title="State Flows">state flows</a> for any <a href="index.php%3Ftitle=Table_Administration.html" title="Table Administration">table</a> in ServiceNow that uses states. Make state transitions occur in any order or skip specific states according to your business practices. State flows can manage the behavior of fields and field visibility on a task form. State flows can also trigger system events that perform work such as sending <a href="index.php%3Ftitle=Email_Notifications.html" title="Email Notifications">email notifications</a>. 
+</p><p>Administrators can configure state flows to:
+</p>
+<ul><li>Limit the <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Creating_State_Flows">choice list</a> for the <b>State</b> field to contain only those states that are valid for the flow. </li>
+<li>Define the <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Field_Controls">behavior and visibility</a> of specific fields on a task form when state transitions occur and for certain end states.</li>
+<li>Configure <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Events_Triggered_on_State_Changes">events that are triggered</a> when a task changes states. </li>
+<li>Set up <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Creating_State_Flows">UI actions and business rules</a> to implement certain state transitions, or while the task is in certain states.</li></ul>
+<p>The State Flow plugin installs records used by work management to control state transitions for work orders and work order tasks. For detailed information about using work management state flows, see <a href="index.php%3Ftitle=Work_Management_States.html#State_Flow_Customization" title="Work Management States">State Flow Customization</a>.
+</p><p>Creating and customizing state flows requires <a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">scripting</a> knowledge. Users with the admin role can create state flow records.
+</p>
+<h1><span class="mw-headline" id="Creating_State_Flows"><span class="mw-headline-number">2</span> Creating State Flows</span></h1>
+<ol><li>Navigate to <b>State Flows &gt; State Flows</b> and click <b>New</b>. </li>
+<li>Fill in the fields, as appropriate (see table). </li>
+<li>Determine if you want the state transition method to be manual or automatic and open the appropriate section on the form.
+<ul><li><b>Manual:</b> Click <b>Create UI Action</b> to create a button on the task form that enables users to execute the transition manually. The system uses the value in the <b>Name</b> field as the label for the UI action. The UI action executes the script in the <b>Manual Script</b> field when the conditions are true. For example, a manual transition can create an <b>Activate</b> button when an incident is in the <b>New</b> state that enables a user to mark the incident as <i>active</i>.</li>
+<li><b>Automatic:</b> Click <b>Create Business Rule</b> to create the business rule. The business rule executes the script in the <b>Automatic Script</b> field when the conditions are true. For example, a business rule created by the system can set an incident state to <b>Assigned</b> when the <b>Assigned to</b> field is populated. Business rules are automatically deleted when the state flow record is deleted. For more information, see <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">Business Rules</a>.</li></ul></li>
+<li>[Optional] Click <b>Create Client Script</b> to create the script that limits the values offered in a task record's <b>State</b> field to valid states for that transition.</li>
+<li>Configure the fields in the <b>Field Controls</b> section to control how specific fields display when a task record changes states.
+<dl><dd>The system enforces the field controls with the same client script that filters the choice list for the <b>State</b> field.</dd></dl></li></ol>
+<table class="standard">
+<tr>
+<th width="16%"> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Number
+</td>
+<td> Record number automatically generated by ServiceNow.
+</td></tr>
+<tr>
+<td> Table
+</td>
+<td> [Required] Table on which the state flow record runs. Only tables that extend the Task [task] table are available in the list.
+</td></tr>
+<tr>
+<td> Starting state
+</td>
+<td> Name of the state at the beginning of the transition. The selections in this field are filtered by the possible states for the table selected. For more information, see <a href="index.php%3Ftitle=State_Flows.html#Start_and_End_States" title="State Flows">Start and End States</a>.
+</td></tr>
+<tr>
+<td> Ending state
+</td>
+<td> Name of the state at the end of the transition. The selections in this field are filtered by the possible states for the table selected.
+</td></tr>
+<tr>
+<td> Client script
+</td>
+<td> Client script to run for this transition. The client script controls the available states you can select by limiting the contents of the <b>State</b> choice list to valid states. This client script also controls specific field behavior configured for state changes in the <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Setting_Field_Controls">Field Controls</a> section of the form.
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> Name of an existing event to trigger when this transition occurs. See <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Events_Triggered_on_State_Changes">Triggering Events on State Changes</a> for more information.
+</td></tr>
+<tr>
+<td> Name
+</td>
+<td> [Required] Name of this record. Make sure the name is descriptive of the state transition or the processing that the record is performing. This name does not have to be unique.
+</td></tr>
+<tr>
+<td> Roles
+</td>
+<td> Not used for any processing.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Enables or disables this state flow record.
+</td></tr>
+<tr>
+<td> Class
+</td>
+<td> [Required] Defines the state flow class for this record. The system selects the appropriate class from these options:
+<ul><li><b>State Flow:</b> Records created for state flows in all task-based tables except those in work management.</li>
+<li><b>Work Order Flow:</b> Records created for state flows in the Work Order [wm_order] table. This class is available when work management is activated.</li>
+<li><b>Work Task Flow:</b> Records created for state flows in the Work Order Task [wm_task] table. This class is available when work management is activated.</li></ul>
+</td></tr>
+<tr>
+<td> Dictionary override
+</td>
+<td> Sets the starting value for the <b>State</b> field on all new records for the table named in the state flow record. See <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Dictionary_Overrides">Dictionary Overrides</a> for configuration procedures.
+</td></tr>
+<tr>
+<td> Work notes
+</td>
+<td> Noteworthy comments about this state flow transition. For details about how these notes are used, see <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Work_Notes">Work Notes</a>.
+</td></tr>
+<tr>
+<td> Comment
+</td>
+<td> Details about the customized record.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="3"> <b>Manual</b> (<i>Runs scripts from a UI action that require the user to click a button or related link</i>.)
+</td></tr>
+<tr>
+<td> Manual condition string
+</td>
+<td> Conditions for enabling a UI action that cannot be defined with the condition builder. For example, you can use this string to define UI actions for mobile devices. This condition has an <b>[and]</b> relationship with the condition in the <b>Manual condition</b> field.
+</td></tr>
+<tr>
+<td> Manual condition
+</td>
+<td> Conditions for enabling a UI action that can be defined for fields in the target table. This condition has an <b>[and]</b> relationship with the condition in the <b>Manual condition string</b> field.
+</td></tr>
+<tr>
+<td> Manual script
+</td>
+<td> Script that defines what the UI action does when the conditions are true. This script runs when the user clicks a button or a related link.
+</td></tr>
+<tr>
+<td> UI action
+</td>
+<td> [Read Only] Name of the button that the system creates to enable this transition. The system creates the label using the same name as the state flow record that created it.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="3"> <b>Automatic</b> (<i>Runs a business rule automatically when a task record is changed and updated</i>.)
+</td></tr>
+<tr>
+<td> Automatic condition string
+</td>
+<td> Conditions for running the business rule that cannot be defined with the condition builder, such as evaluating if the proposed transition is a valid flow. This condition has an <b>[and]</b> relationship with the condition in the <b>Automatic condition</b> field.
+</td></tr>
+<tr>
+<td> Automatic condition
+</td>
+<td> Conditions for running the business rule that can be defined for fields in the target table. This condition has an <b>[and]</b> relationship with the condition in the <b>Automatic condition string</b> field.
+</td></tr>
+<tr>
+<td> Automatic script
+</td>
+<td> Script that performs additional work when the condition is true. This script can do tasks such as update the date and time the transition occurred or notify someone using email when a specific state change occurs. Automatic state transitions occur when changes are made to the task record.
+</td></tr>
+<tr>
+<td> Business rule
+</td>
+<td> Name of the business rule created for this transition. Two conditions must be satisfied before this business rule can run. The task must be on a specific starting state, and the <b>Automatic condition</b> must be true. If both of these conditions are satisfied, the business rule performs the transition requested, using the starting and ending states from the State Flow form.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="3"> <b>Field Controls</b> (<i>Determines <a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html#Field_Controls">field properties</a> when a record transitions between states or reaches a specific end state.</i>)
+</td></tr>
+<tr>
+<td> Mandatory fields
+</td>
+<td> Makes the selected fields required when this transition occurs, or when the end state is the current state.
+</td></tr>
+<tr>
+<td> Read only fields
+</td>
+<td> Prevents the selected fields from being edited when this transition occurs, or when the end state is the current state.
+</td></tr>
+<tr>
+<td> Visible fields
+</td>
+<td> Displays the selected fields when this transition occurs, or when the end state is the current state.
+</td></tr>
+<tr>
+<td> Not mandatory
+</td>
+<td> Makes the selected fields optional when this transition occurs, or when the end state is the current state.
+</td></tr>
+<tr>
+<td> Not read only
+</td>
+<td> Makes the selected fields editable when this transition occurs, or when the end state is the current state.
+</td></tr>
+<tr>
+<td> Not visible
+</td>
+<td> Hides the selected fields when this transition occurs, or when the end state is the current state.
+</td></tr></table>
+<h2><span class="mw-headline" id="Dictionary_Overrides"><span class="mw-headline-number">2.1</span> Dictionary Overrides</span></h2>
+<p>A dictionary override in a state flow defines the starting state for all new records in a specific table. You set an override in tables that extend a base table only, so that your customizations are applied only to the extended table. 
+</p>
+<ol><li>In a state flow record, select an <b>Ending state</b>.
+<dl><dd>This is the override value which becomes the starting state for all new records in the table named.</dd></dl></li>
+<li>Click <b>Create Default Value</b>.
+<dl><dd>The system populates the <b>Dictionary override</b> field with a value of <b>state</b>, which is the field in the task table affected by the override. The <b>Dictionary override</b> field is read-only. After the override is created, the system hides the <b>Create Default Value</b> button on all subsequent state flow forms for that table.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Work_Notes"><span class="mw-headline-number">2.2</span> Work Notes</span></h2>
+<p>Work notes are an important part of the state flow process and are used to communicate information about state transitions. The state flow adds these work notes to the <b>Work notes</b> field of any task making this transition. 
+</p><p>These rules apply to state flow work notes:
+</p>
+<ul><li>For a state flow with no <b>Starting state</b>, the work note is added every time the task transitions to the <b>Ending state</b>. </li>
+<li>For a state flow with a <b>Starting state</b> and an <b>Ending state</b>, the work note is added only when the task transitions from that starting state to that ending state. </li>
+<li>If two state flows with work notes have the same <b>Ending state</b>, but only one has a <b>Starting state</b>, the system adds the work notes from the state flow with the starting state. This better matches the state flow work note to the more important transition between specific starting and ending states.</li></ul>
+<h2><span class="mw-headline" id="Field_Controls"><span class="mw-headline-number">2.3</span> Field Controls</span></h2>
+<p>You can define controls for individual fields that are enforced when a record transitions between states. Settings in the Field Controls section of the State Flow form enable you to apply field controls when the system detects a specified state transition or when the end state is the current state when the form is opened. The control is applied only to <i>existing</i> fields on the form. State flows cannot add fields to the form. 
+</p><p>For example, you might want the <b>Problem</b> field to be visible when an incident moves to the <b>Awaiting Problem</b> state. If the incident state changes to <b>Awaiting User Info</b>, you hide the <b>Problem</b> field and make the <b>Caller</b> field mandatory. 
+</p><p>The best practice when creating field controls is to configure state flow records with an ending state only and to create the correct behavior for every ending state you want to control. This ensures that the field controls are set properly when the user selects a new state, and also when the user returns a record's <b>State</b> field to the original state. Only specify a full state transition, with both a starting and ending state, when you want a particular behavior for that precise state transition. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>State flows use client scripts to enforce field controls. It is possible that your settings can be changed by existing <a href="index.php%3Ftitle=Creating_a_UI_Policy.html" title="Creating a UI Policy">UI policies</a>, which execute after client scripts.</i>
+</td></tr></table>
+<p><br />
+ServiceNow creates the following objects as needed to enforce field properties in state flows:
+</p>
+<table class="standard">
+<tr>
+<th> Type
+</th>
+<th> Name
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Business rule
+</td>
+<td> State Flow Notes for &lt;<i>table name</i>&gt;
+</td>
+<td> Enforces mandatory fields for the table on which that field behavior is defined.
+</td></tr>
+<tr>
+<td> Client script (onLoad)
+</td>
+<td> &lt;<i>table name</i>&gt; state flow
+</td>
+<td> Sets possible states and initial mandatory, read-only, and visible properties when a record is loaded.
+</td></tr>
+<tr>
+<td> Client script (onChange)
+</td>
+<td> &lt;<i>table name</i>&gt; change state flow
+</td>
+<td> Sets updated mandatory, read-only, and visible properties when a record is changed.
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Events_Triggered_on_State_Changes"><span class="mw-headline-number">2.4</span> Events Triggered on State Changes</span></h2>
+<p>You can configure a state flow to trigger a <a href="index.php%3Ftitle=Event_Registry.html" title="Event Registry">registered system event</a> when a task transitions from a starting state to a specified end state. For example, you can use events to trigger <a href="index.php%3Ftitle=Events_and_Email_Notification.html" title="Events and Email Notification">email notifications</a> and create <a href="index.php%3Ftitle=Script_Actions.html" title="Script Actions">script actions</a>. When you attach an event to a state flow, ServiceNow creates a <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rule</a> called <b>State Flow Events for &lt;<i>table name</i>&gt;</b> for the table specified in the state flow. If you specify a start and end state, the business rule executes when the record transitions from the start state to the end state. If the state flow only specifies an end state, the business rule executes whenever that end state is reached. The system creates one business rule for all state flows containing events on a single table. When all events or all state flows on a table are deleted, the system deletes the business rule.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Rebuild_State_Flows"><span class="mw-headline-number">2.5</span> Rebuild State Flows</span></h2>
+<p>When you use an XML file to import a state flow record into an instance, the system attempts to match the incoming states with existing states by comparing sys_ids. Because the sys_ids of items in a choice list can vary between instances, the system can fail to match the states, even though they are otherwise identical. When matching fails, the start and end states of affected records are left blank or contain numeric values. To repair these records navigate to <b>State Flows &gt; Admin &gt; Rebuild State Flows</b>. This module runs a script that compares the numerical value of each item in the  <b>State</b> field choice list until it finds a match in the imported state flow record.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="State_Flow_Cleanup"><span class="mw-headline-number">2.6</span> State Flow Cleanup</span></h2>
+<p>The business rules, client scripts, and UI actions that the system creates automatically to perform custom transitions exist only while the state flow records that use them are present. When all the state flows on a table are deleted, the system attempts to delete any unnecessary programming elements that were created on that table, using these criteria:
+</p>
+<table class="standard">
+<tr>
+<th> Element
+</th>
+<th> Deleted When
+</th></tr>
+<tr>
+<td>
+<p>UI action <br />
+Business rule <br />
+Dictionary override <br />
+</p>
+</td>
+<td> The state flow that created it is deleted.
+</td></tr>
+<tr>
+<td> Business rule that processes events triggered by a state flow
+</td>
+<td> All state flows for the table specified that have events configured are deleted.
+</td></tr>
+<tr>
+<td> Client script (onLoad)
+</td>
+<td> All state flows for the table are deleted.
+</td></tr>
+<tr>
+<td> Client script (onChange)
+</td>
+<td> All state flows with field controls are deleted.
+</td></tr>
+<tr>
+<td> Work notes business rule
+</td>
+<td> All state flows with field controls or work notes are deleted
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171202123909
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.270 seconds
+Real time usage: 0.344 seconds
+Preprocessor visited node count: 93/1000000
+Preprocessor generated node count: 301/1000000
+Post‐expand include size: 7179/2097152 bytes
+Template argument size: 691/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  110.094      1 - -total
+ 44.43%   48.910      1 - Template:State_Flows
+ 23.33%   25.689      1 - Template:Topic
+ 17.16%   18.894      1 - Template:Setting_Field_Controls
+ 12.05%   13.266      1 - Template:State_Flow_Events
+  7.66%    8.436      1 - Template:Rebuilding_State_Flows
+  7.27%    8.006      1 - Template:Dictionary_Override
+  6.32%    6.962      1 - Template:State_Flow_Cleanup
+  6.30%    6.939      1 - Template:Note
+  4.83%    5.319      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22385-0!*!0!1!en!5!* and timestamp 20171202123909 and revision id 234377
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html">http://wiki.servicenow.com/index.php?title=Using_State_Flows&amp;oldid=234377</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=State+Flows.html" title="Category:State Flows">State Flows</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Administration.html" title="Category:Service Administration">Service Administration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=State+Flows.html" title="Category:State Flows">State Flows</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22385"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22385" data-vote-the-vote="5" data-vote-id="22385" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22385_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22385" data-vote-the-vote="1" data-vote-id="22385" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22385_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Using_State_Flows.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Using+State+Flows&amp;returntoquery=oldid%3D234377" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Using+State+Flows&amp;returntoquery=oldid%3D234377" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Using_State_Flows.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Using_State_Flows&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Using+State+Flows.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Using+State+Flows&amp;returnto=Using+State+Flows&amp;oldid=234377&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Using_State_Flows&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FUsing_State_Flows.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Using_State_Flows" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Using_State_Flows&amp;oldid=234377.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Using_State_Flows&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 04:36, 14 July 2014.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":620});});</script></body></html>

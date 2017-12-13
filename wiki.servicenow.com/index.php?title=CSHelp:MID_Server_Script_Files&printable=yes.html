@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>MID Server Configuration - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MID_Server_Configuration","wgTitle":"MID Server Configuration","wgCurRevisionId":250729,"wgRevisionId":250729,"wgArticleId":5103,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["MID Server"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"MID_Server_Configuration","wgRelevantArticleId":5103,"wgRequestId":"816d6341732756d173ffa0cb","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"CSHelp:MID_Server_Script_Files","wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/index.php?title=MID_Server_Configuration\u0026printable=yes#How_File_Synchronization_Works"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments%257Cmediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styl.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170905163150"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=MID_Server_Configuration#How_File_Synchronization_Works"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="MID Server Configuration"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="MID Server"/>
+<meta name="category" content="MID Server"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<link rel="canonical" href="index.php%3Ftitle=MID_Server_Configuration.html#How_File_Synchronization_Works"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=MID_Server_Configuration.html#How_File_Synchronization_Works" />
+
+	<meta property="og:title" content="ServiceNow Wiki:MID Server Configuration"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170905163150"/>
+
+	<meta property="article:published_time" content="20170905163150"/>
+
+	<meta property="article:modified_time" content="20170905163150"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="MID Server"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=MID_Server_Configuration#How_File_Synchronization_Works"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-MID_Server_Configuration rootpage-MID_Server_Configuration skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=MID+Server+Configuration.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=MID+Server+Configuration&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (397 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">MID Server Configuration</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Discovery.html" title="Discovery">Discovery</a> &gt; <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a> &gt; MID Server Configuration (Redirected from <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;redirect=no.html" title="CSHelp:MID Server Script Files">CSHelp:MID Server Script Files</a>)</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=MID_Server_Dashboard.html" title="MID Server Dashboard">MID Server Dashboard</a></li>
+<li><a href="index.php%3Ftitle=MID_Server_Requirements.html" title="MID Server Requirements">Requirements</a></li>
+<li><a href="index.php%3Ftitle=MID_Server_Installation.html" title="MID Server Installation">Installation</a></li>
+<li><strong class="selflink">Configuration</strong>
+<ul><li><a href="index.php%3Ftitle=Configure_MID_Server_for_SNMP.html" title="Configure MID Server for SNMP">Configure MID Server for SNMP</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Starting_and_Stopping_the_MID_Server.html" title="Starting and Stopping the MID Server"> Start and Stop the MID Server</a></li>
+<li><a href="index.php%3Ftitle=MID_Server_Clusters.html" title="MID Server Clusters">MID Server Clusters</a></li>
+<li><a href="index.php%3Ftitle=Controlling_the_MID_Server_Version.html" title="Controlling the MID Server Version">Version Control</a></li>
+<li><a href="index.php%3Ftitle=MID_Server_Heartbeat.html" title="MID Server Heartbeat">MID Server Heartbeat</a></li>
+<li><a href="index.php%3Ftitle=Deploying_Multiple_MID_Servers.html" title="Deploying Multiple MID Servers">Multiple Deployments</a></li>
+<li><a href="index.php%3Ftitle=MID_Server_User_Security.html" title="MID Server User Security">User Security</a></li>
+<li><a href="index.php%3Ftitle=Encrypting_MID_Server_Login_Credentials.html" title="Encrypting MID Server Login Credentials">Encrypting Login Credentials</a></li>
+<li>Reference
+<ul><li><a href="index.php%3Ftitle=MID_Server_Web_Services_Calls.html" title="MID Server Web Services Calls">MID Server Web Services Calls</a></li>
+<li><a href="index.php%3Ftitle=MIDSystem_Methods.html" title="MIDSystem Methods">MIDSystem Methods</a></li>
+<li><a href="index.php%3Ftitle=ECC_Queue_Command_Line_Worker.html" title="ECC Queue Command Line Worker">ECC Queue Command Line Worker</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_Agentless_Discovery.html" title="Getting Started with Agentless Discovery">Discovery</a></li>
+<li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=ECC_Queue.html" title="ECC Queue">ECC Queue</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=MID+Server+Autofinder+for+Orchestration&amp;oldid=0.html" title="MID Server Autofinder for Orchestration">MID Server Autofinder for Orchestration</a></li></ul>
+</td></tr></table>
+</div>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-operations-management/page/product/mid-server/concept/c_MIDServerConfiguration.html">MID Server Configuration</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Available_MID_Server_Setting_Types"><span class="tocnumber">2</span> <span class="toctext">Available MID Server Setting Types</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Properties"><span class="tocnumber">2.1</span> <span class="toctext">Setting MID Server Properties</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Parameters"><span class="tocnumber">2.2</span> <span class="toctext">Setting MID Server Parameters</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_Parameters_from_the_ServiceNow_Instance"><span class="tocnumber">2.2.1</span> <span class="toctext">Setting Parameters from the ServiceNow Instance</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_Parameters_from_the_config.xml_File"><span class="tocnumber">2.2.2</span> <span class="toctext">Setting Parameters from the config.xml File</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Required_Configuration"><span class="tocnumber">3</span> <span class="toctext">Required Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_up_MID_Server_User_Credentials"><span class="tocnumber">3.1</span> <span class="toctext">Setting up MID Server User Credentials</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Required_Parameters"><span class="tocnumber">3.2</span> <span class="toctext">Required Parameters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Optional_Configuration"><span class="tocnumber">4</span> <span class="toctext">Optional Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Memory_Size"><span class="tocnumber">4.1</span> <span class="toctext">Setting MID Server Memory Size</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Thread_Use"><span class="tocnumber">4.2</span> <span class="toctext">Setting MID Server Thread Use</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Enabling_Script_File_Synchronization_for_Windows_Enhanced_Security"><span class="tocnumber">4.3</span> <span class="toctext">Enabling Script File Synchronization for Windows Enhanced Security</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#How_File_Synchronization_Works"><span class="tocnumber">4.3.1</span> <span class="toctext">How File Synchronization Works</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Unblocking_PowerShell_Scripts_Prior_to_the_Dublin_Release"><span class="tocnumber">4.3.2</span> <span class="toctext">Unblocking PowerShell Scripts Prior to the Dublin Release</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Adding_SSL_Certificates"><span class="tocnumber">4.4</span> <span class="toctext">Adding SSL Certificates</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#MID_Server_Properties"><span class="tocnumber">4.5</span> <span class="toctext">MID Server Properties</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#CIM_Parameters"><span class="tocnumber">4.6</span> <span class="toctext">CIM Parameters</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Connection_Parameters"><span class="tocnumber">4.7</span> <span class="toctext">Connection Parameters</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Credentials_Parameters"><span class="tocnumber">4.8</span> <span class="toctext">Credentials Parameters</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Debug_Parameters"><span class="tocnumber">4.9</span> <span class="toctext">Debug Parameters</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#DNS_Parameters"><span class="tocnumber">4.10</span> <span class="toctext">DNS Parameters</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#ECC_Queue_Parameters"><span class="tocnumber">4.11</span> <span class="toctext">ECC Queue Parameters</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Logging_Parameters"><span class="tocnumber">4.12</span> <span class="toctext">Logging Parameters</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Proxy_Server_Parameters"><span class="tocnumber">4.13</span> <span class="toctext">Proxy Server Parameters</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Shazzam_Parameters"><span class="tocnumber">4.14</span> <span class="toctext">Shazzam Parameters</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#SNMP_Discovery_Parameters"><span class="tocnumber">4.15</span> <span class="toctext">SNMP Discovery Parameters</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#SSH_Discovery_Parameters"><span class="tocnumber">4.16</span> <span class="toctext">SSH Discovery Parameters</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Default_Paths_for_SSH_Commands"><span class="tocnumber">4.16.1</span> <span class="toctext">Default Paths for SSH Commands</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Upgrade_Parameters"><span class="tocnumber">4.17</span> <span class="toctext">Upgrade Parameters</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Windows_Discovery_Parameters"><span class="tocnumber">4.18</span> <span class="toctext">Windows Discovery Parameters</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Administrators must configure a MID Server to ensure that it has access to sufficient system resources, probes the proper data sources, and communicates with the instance as expected. You must complete all the steps in <a href="index.php%3Ftitle=MID_Server_Installation.html" title="MID Server Installation">MID Server Installation</a> before attempting any of the configuration steps explained here.
+</p><p>You must restart a MID Server after any configuration change for the changes to take effect.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Using special characters in an XML configuration file requires you to <a href="index.php%3Ftitle=Using_Special_Characters_in_an_XML_file.html" title="Using Special Characters in an XML file">encode them</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Available_MID_Server_Setting_Types"><span class="mw-headline-number">2</span> Available MID Server Setting Types</span></h1>
+<p>You can configure the following setting types on a MID Server. The setting type determines what components are affected by the MID Server setting. Choose a MID Server setting type that matches the scope you want the setting to affect.
+</p>
+<table class="standard">
+
+<tr>
+<th> Type of setting
+</th>
+<th> Components affected
+</th>
+<th> Overrides
+</th></tr>
+<tr>
+<td> <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Properties">MID Server Property</a>
+</td>
+<td> Either:
+<ul><li> The behavior of all MID Servers</li>
+<li> The behavior of a particular MID Server </li></ul>
+</td>
+<td> MID Server properties override MID Server parameters
+</td></tr>
+<tr>
+<td><a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Parameters"> MID Server parameter</a>
+</td>
+<td> The behavior of a particular MID Server
+</td>
+<td> None
+</td></tr></table>
+<h2><span class="mw-headline" id="Setting_MID_Server_Properties"><span class="mw-headline-number">2.1</span> Setting MID Server Properties</span></h2>
+<p>Use a MID Server property to control either the behavior of all MID Servers or a particular MID Server. 
+Configure MID Server properties in the MID Server plugin. Do not configure MID Server properties in the <b>glide.properties</b> file that is located in the <i>properties</i> folder of the agent. The <b>glide.properties</b> file gets overwritten during the upgrade process.
+</p>
+<ol><li>Navigate to <b>MID Server &gt; Properties</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Fill in the fields, as appropriate (see table).</li></ol>
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> Enter the property name. See the <b>Name(s)</b> column in <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Required_Parameters">Required Parameters</a> or <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Optional_Configuration">Optional Configuration</a> parameters for a list of parameter and property names.
+</td></tr>
+<tr>
+<td> Value
+</td>
+<td> Enter the value you want the property to have.
+</td></tr>
+<tr>
+<td> MID Server
+</td>
+<td> Leave this field blank to set a MID Server property that affects all MID Servers. To set a MID Server property for a particular MID Server, select the MID Server.
+</td></tr></table>
+<h2><span class="mw-headline" id="Setting_MID_Server_Parameters"><span class="mw-headline-number">2.2</span> Setting MID Server Parameters</span></h2>
+<p>Use a MID Server parameter to control the behavior of a particular MID Server. Set MID Server configuration parameters in either of the following places:
+</p>
+<ul><li> From the <b>Configuration Parameters</b> related list in the MID Server record.</li>
+<li> From the <i>config.xml</i> file in the <i>\agent</i> directory of your MID Server installation.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Changes to parameters only take effect when the MID Server is started (or restarted).</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Setting_Parameters_from_the_ServiceNow_Instance"><span class="mw-headline-number">2.2.1</span> Setting Parameters from the ServiceNow Instance</span></h3>
+<p>You can view and manage MID Server configuration from the ServiceNow instance. 
+</p>
+<ol><li>Navigate to the list of MID Servers using one of the following paths:
+<ul><li><b>MID Server &gt; Servers</b></li>
+<li><b>Discovery &gt; MID Servers</b></li>
+<li><b>Orchestration &gt; MID Servers</b> (starting with Dublin)</li>
+<li><b>Runbook Automation &gt; MID Servers</b> (versions prior to Dublin)</li></ul></li>
+<li>From the list of MID Servers, select a MID Server to configure. 
+<dl><dd>The <b>Configuration Parameters</b> related list shows all the parameters currently in the MID Server's configuration file. If there are any passwords, they are displayed in asterisks for security reasons. </dd>
+<dd><a href="index.php%3Ftitle=File:MID_config.png.html" class="image" title="MID_config.png"><img alt="MID_config.png" src="images/thumb/c/c7/MID_config.png/900px-MID_config.png" width="900" height="314" srcset="/images/c/c7/MID_config.png 1.5x, /images/c/c7/MID_config.png 2x" /></a> <br style="clear:both;" /></dd></dl></li>
+<li>To add parameters, click <b>New</b>, and then complete the form. 
+<dl><dd>After the form is submitted, the configuration file for that MID Server is modified to include the new parameter. Changes to existing parameters are reflected in the MID Server configuration file as well. Changes made to the MID Server configuration file do not take place immediately, but rather the next time the MID Server is restarted. The MID Server form has a related link for restarting the MID Server.</dd></dl></li></ol>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>ServiceNow prevents you from saving changes, such as modifying or deleting parameters, that would cause the MID Server to lose communications with the instance. For example, you cannot change the </i>url<i> parameter. Any changes to these protected properties </i>must<i> be made directly in the </i>config.xml<i> file for that MID Server.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Setting_Parameters_from_the_config.xml_File"><span class="mw-headline-number">2.2.2</span> Setting Parameters from the config.xml File</span></h3>
+<p>MID Server configuration is controlled by an XML file called <i>config.xml</i>. This file is located in the <i>\agent</i> directory, immediately under the directory where the MID Server is installed. Edit this file directly to make any configuration changes to protected parameters. Many configuration changes, such as those that do not disrupt communication between the MID Server and the ServiceNow instance, may also be made from the instance.
+</p><p>The structure of the <i>config.xml</i> file is simply an outer parameters tag and a series of inner parameter tags. Each parameter tag has <tt>name</tt> and <tt>value</tt> attributes. 
+</p>
+<ul><li>To change the value of a parameter, edit the value attribute. </li>
+<li>To add a parameter, add another parameter tag with its name and value. </li>
+<li>To delete a parameter, delete the entire parameter tag.</li></ul>
+<p>The order of the parameters within the file is not important. Notice the green comment sections in the sample. Use these elements to add useful comments to the configuration file.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>When configuring the MID Server for use with a proxy server, be sure to remove the comment tags around the proxy sections that you configure.</i>
+</td></tr></table>
+<p><br />
+<a href="index.php%3Ftitle=File:MID_config_xml.png.html" class="image" title="Sample MID Server configuration file"><img alt="Sample MID Server configuration file" src="images/6/66/MID_config_xml.png" width="600" height="577" /></a> <br style="clear:both;" />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The sample file here is from FireFox. Conventional text editors, such as Notepad, Wordpad, or TextEdit, do not display colors and variable fonts.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Required_Configuration"><span class="mw-headline-number">3</span> Required Configuration</span></h1>
+<p>All MID Servers require the following configuration settings.
+</p>
+<h2><span class="mw-headline" id="Setting_up_MID_Server_User_Credentials"><span class="mw-headline-number">3.1</span> Setting up MID Server User Credentials</span></h2>
+<p>Each MID Server must have a set of ServiceNow user credentials with the  <a href="index.php%3Ftitle=MID_Server_User_Security.html" title="MID Server User Security">mid_server role</a>. Any change to user credentials or roles used by the MID Server user requires a restart of the MID Server service.
+</p>
+<h2><span class="mw-headline" id="Required_Parameters"><span class="mw-headline-number">3.2</span> Required Parameters</span></h2>
+<p>The following parameters are required for all MID Servers.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Using special characters in an XML configuration file requires you to <a href="index.php%3Ftitle=Using_Special_Characters_in_an_XML_file.html" title="Using Special Characters in an XML file">encode them</a>.</i>
+</td></tr></table>
+<p><br />
+</p>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>  Instance URL
+</td>
+<td>  url
+</td>
+<td>  Specifies the URL to the associated ServiceNow instance. Normally the URL is similar to <b>https://instance.service-now.com</b>, where you replace <i>instance</i> with the instance name. If you host your own ServiceNow instance, use the URL set by your organization.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td>  MID Server ID
+</td>
+<td>  mid_sys_id
+</td>
+<td>  Records the MID Server record's unique identifier. This parameter should be empty when you initially configure a MID Server. Do not change the value.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> automatically set (GUID)</li></ul>
+</td></tr>
+<tr>
+<td>  MID Server name
+</td>
+<td>  name
+</td>
+<td>  Use this parameter to supply a name that is meaningful for you. If you do not supply this parameter, the MID Server uses the default value.  A set of business rules synchronizes the name in the configuration file with the name in the MID Server record (starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>). The business rules ensure that changing the name in one location also changes the name in the other location.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> YOUR_MIDSERVER_NAME_GOES_HERE</li></ul>
+</td></tr>
+<tr>
+<td> Instance user name
+</td>
+<td> mid.instance.username or glide.glidesoap.username
+</td>
+<td> If the ServiceNow instance has authentication enabled, as it is by default, set this parameter to define the user name the MID Server should use to log in to the instance. This user should have the mid_server role on the ServiceNow instance in order to access necessary tables and fields.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Instance password
+</td>
+<td> mid.instance.password or glide.glidesoap.password
+</td>
+<td> If your ServiceNow instance has authentication enabled, as it is by default, set this parameter to define the password the MID Server should use to log in to the instance.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr></table>
+<h1><span class="mw-headline" id="Optional_Configuration"><span class="mw-headline-number">4</span> Optional Configuration</span></h1>
+<p>The following configuration settings are optional. While a MID Server should start with the default settings, you may want to change the default values to improve performance or follow your organization's business practices.
+</p>
+<h2><span class="mw-headline" id="Setting_MID_Server_Memory_Size"><span class="mw-headline-number">4.1</span> Setting MID Server Memory Size</span></h2>
+<p>In the base ServiceNow system, the MID Server memory is set to 512MB, which can be configured in the <i>\agent\conf\wrapper.conf</i> file in the MID Server installation directory. This setting might not be appropriate for the way your organization uses the MID Server. If you want the MID Server to work harder, allocate more resources to it. Or perhaps the MID Server is located in a small branch office with very few devices, and runs in an environment where memory allocation is shared between a print server, mail server, or web proxy server. In this situation, the MID Server memory allocation might have to be reduced. 
+</p><p>To edit the memory allocation:
+</p>
+<ol>
+<li>Navigate to <i>\ServiceNow\&lt;MID Server name&gt;\agent\conf</i> and open the <i>wrapper-override.conf</i> file in a text editor.<br />
+For more information about this file, see <a href="index.php%3Ftitle=MID_Server_Installation.html#Installing_Multiple_MID_Servers_on_a_Single_System" title="MID Server Installation">Installing Multiple MID Servers on a Single System</a>.
+</li>
+<li>Locate the following lines in the file:
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># OPTIONAL: Maximum Java Heap Size (in MB)</span>
+<span class="c"># wrapper.java.maxmemory=512</span>
+</pre></div>
+</li>
+<li>Edit the memory allocation.</li>
+<li>Remove the comment tag (<tt>#</tt>) from the memory allocation parameter.</li>
+<li>Save the file.</li>
+<li>Restart the MID Server service.</li>
+</ol>
+<h2><span class="mw-headline" id="Setting_MID_Server_Thread_Use"><span class="mw-headline-number">4.2</span> Setting MID Server Thread Use</span></h2>
+<p>By default, the MID Server uses a maximum of 25 threads. If the MID Server is running on a host containing many other programs that must compete for CPU time, fewer threads than the default of 25 might be necessary. You can set the MID Server to use as few as 5 threads without issues. If the MID Server needs more speed, and the host is powerful enough or lightly loaded with other programs, raise the thread setting. The thread limit depends on the hardware and the operating system of the host. You might have to experiment to find the optimal value for your situation. The following general observations may be useful:
+</p>
+<ul><li> Most MID Server tasks require <i>file handles</i> to do their job.
+<ul><li> <b>Windows:</b> On the Windows operating system, file handles are available in a fixed quantity. If you configure too many MID Server threads on a Windows host, the MID Server can consume all the file handles before approaching maximum CPU usage. This situation appears as an <b>Out of file handles</b> error in the MID Server log and indicates that the MID Server is trying to use too many threads.</li>
+<li> <b>Unix and Linux:</b> UNIX and Linux hosts have a much different scheme for allocating file handles. Generally, you can increase MID Server thread use on these operating systems until the CPU of the host is overloaded. See your OS documentation for monitoring CPU usage.</li></ul></li>
+<li> Each thread on the MID Server requires some memory. Exactly how much memory varies considerably from task to task and depends on the equipment being discovered. To increase the number of threads, you might have to <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Memory_Size">increase the amount of memory</a> that Java uses. If you configure insufficient memory, an <b>Out of memory</b> error appears in the MID Server log.</li></ul>
+<p>To edit the maximum number of threads allowed for the MID Server:
+</p>
+<ol>
+<li>Open the <i>\agent\config.xml</i> file using any text editor.</li>
+<li>Locate the following lines:
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">&lt;!-- MID Server Threads --&gt;</span>
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;threads.max&quot;</span> <span class="na">value=</span><span class="s">&quot;25&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</li>
+<li>Edit the value. Keep in mind the cautions described above.</li>
+<li>Save the record.</li>
+<li>Restart the MID Server service.</li>
+</ol>
+<h2><span class="mw-headline" id="Enabling_Script_File_Synchronization_for_Windows_Enhanced_Security"><span class="mw-headline-number">4.3</span> Enabling Script File Synchronization for Windows Enhanced Security</span></h2>
+<p>Windows Internet Explorer enhanced security blocks downloaded files that it determines are potentially dangerous. Without script file synchronization, Internet Explorer blocks files downloaded for use by the MID Server, forcing ServiceNow administrators to unblock each file manually. File synchronization creates the files on the MID Server rather than downloading them, which does not trigger security blocking. Also, file synchronization between script records on the instance and the MID Server protects any customer updates in those records from being overwritten during a ServiceNow upgrade.
+</p><p>Script file synchronization is available starting with the <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a>. If you are using an older version, see <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Unblocking_PowerShell_Scripts_Prior_to_the_Dublin_Release">the previous version information</a>.
+</p>
+<h3><span class="mw-headline" id="How_File_Synchronization_Works"><span class="mw-headline-number">4.3.1</span> How File Synchronization Works</span></h3>
+<p>Script files synchronized with the MID Server are stored on the ServiceNow instance in the MID Server Script File [ecc_agent_script_file] table (<b>MID Server &gt; Script Files</b>). When the MID Server first connects to the instance, ServiceNow creates a directory called <i>\scripts</i> in the MID Server root. The instance then creates a parent directory in the path <i>\scripts\&lt;parent name&gt;</i> using definitions from the ecc_agent_script_file table. Finally, the instance creates the script files themselves inside the parent directory using the records from the ecc_agent_script_file table.
+</p><p>The record for the parent directory looks like this:
+</p><p><a href="index.php%3Ftitle=File:MID_Server_Script_File_Sync.png.html" class="image" title="MID_Server_Script_File_Sync.png"><img alt="MID_Server_Script_File_Sync.png" src="images/thumb/b/b9/MID_Server_Script_File_Sync.png/900px-MID_Server_Script_File_Sync.png" width="900" height="358" srcset="/images/b/b9/MID_Server_Script_File_Sync.png 1.5x, /images/b/b9/MID_Server_Script_File_Sync.png 2x" /></a> <br clear="all" />
+</p><p>The instance creates each script file in the parent directory on the MID Server using the record <b>Name</b> from the ecc_agent_script_file table as the file name and the <b>Script</b> field payload as the file contents. A script file record looks like this:
+</p><p><a href="index.php%3Ftitle=File:MID_Server_Script_File_Sync2.png.html" class="image" title="MID_Server_Script_File_Sync2.png‎"><img alt="MID_Server_Script_File_Sync2.png‎" src="images/thumb/3/3a/MID_Server_Script_File_Sync2.png/900px-MID_Server_Script_File_Sync2.png" width="900" height="401" srcset="/images/3/3a/MID_Server_Script_File_Sync2.png 1.5x, /images/3/3a/MID_Server_Script_File_Sync2.png 2x" /></a> <br clear="all" />
+</p>
+<h3><span class="mw-headline" id="Unblocking_PowerShell_Scripts_Prior_to_the_Dublin_Release"><span class="mw-headline-number">4.3.2</span> Unblocking PowerShell Scripts Prior to the Dublin Release</span></h3>
+<table class="collapsible collapsed">
+
+<tr>
+<th> Click the plus for previous version information
+</th></tr>
+<tr>
+<td>
+<p>Enhanced security on the Windows operating systems can block PowerShell from working with <a href="index.php%3Ftitle=PowerShell_for_Discovery.html" title="PowerShell for Discovery">Discovery</a> and <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+PowerShell+Activities+for+Workflows&amp;oldid=0.html" title="Orchestration PowerShell Activities for Workflows" class="mw-redirect">Orchestration</a>. If PowerShell does not run with Discovery or Orchestration, <i>unblock</i> the MID Server archive:
+</p>
+<ul><li><b>MID Server archive:</b> mid.&lt;build date&gt;.&lt;operating system&gt;.&lt;system bit&gt;.zip</li></ul>
+<p>If you do not unblock the archive, unblock each individual file:
+</p>
+<ul><li>Credentials.psm1</li>
+<li>LaunchProc.psm1</li>
+<li>MSSqlAuth.ps1 (Removed in the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>)</li>
+<li>MSSqlWinAuth.ps1 (Removed in the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>)</li>
+<li>PSScript.ps1</li>
+<li>WMIFetch.psm1</li>
+<li>XmlUtil.psm1</li></ul>
+<p>Perform this procedure on <i>each</i> MID Server machine:
+</p>
+<ol><li>Navigate to the MID Server archive file.</li>
+<li>Right-click the first file in the list and select <b>Properties</b> from the menu.</li>
+<li>In the Properties dialog box, click <b>Unblock</b>.</li>
+<li>Repeat the procedure for each of the remaining files, if necessary.
+<dl><dd><a href="index.php%3Ftitle=File:MID_Server_Unblock_Config.png.html" class="image" title="MID_Server_Unblock_Config.png‎"><img alt="MID_Server_Unblock_Config.png‎" src="images/e/e5/MID_Server_Unblock_Config.png" width="366" height="500" /></a> <br style="clear:both;" /></dd></dl></li></ol>
+</td></tr></table>
+<h2><span class="mw-headline" id="Adding_SSL_Certificates"><span class="mw-headline-number">4.4</span> Adding SSL Certificates</span></h2>
+<p>You can configure the MID Server to connect over SSL by adding the following certificates to the cacerts keystore file:
+</p>
+<ul><li> Signing Certificate Authority (CA) certificate</li>
+<li> MID Server certificate</li></ul>
+<p>To add a certificate to a MID Server:
+</p>
+<ol>
+<li>Open a command prompt and navigate to the folder containing the JRE <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://docs.oracle.com/javase/1.3/docs/tooldocs/win32/keytool.html">keytool</a>. For example:<br />
+<tt>cd C:\Program Files (x86)­\Service­Now\­&lt;MidServer(­s)­&gt;\agent\­jre\­bin</tt></li>
+<li>Enter the following keytool command to import a certificate into the MID Server's cacerts keystore:<br />
+<tt>keytool -import -alias &lt;certificate alias&gt; -file "&lt;path to certificate&gt;" -keystore "&lt;path to MID Server(­s)­&gt;\agent\­jre\­lib\­security\­cacerts"</tt><br />
+For example:<br />
+<tt>keytool -import -alias MyCA -file "C:\myca.cer" -keystore "C:\Program Files (x86)­\Service­Now\­MIDserver\agent\­jre\­lib\­security\­cacerts"</tt>
+</li>
+</ol>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Keytool prompts for a certificate password. If the certificate is for a CA, keytool also asks whether to trust the certificate authority.</i>
+</td></tr></table>
+<p><br />
+To add a certificate to an instance, see <a href="index.php%3Ftitle=Uploading_a_Certificate.html" title="Uploading a Certificate">Uploading a Certificate</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="MID_Server_Properties"><span class="mw-headline-number">4.5</span> MID Server Properties</span></h2>
+<p>Use the following properties to control the behavior of all probes on a MID Server or all probes on all MID Servers. See <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Properties">Setting MID Server Properties</a>.
+</p>
+<table class="standard">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Max length of a payload that a MID Server will return
+</td>
+<td> mid.discovery.max_payload_size
+</td>
+<td> Specifies the maximum string length of Discovery probe results that the MID Server will send to the instance. The MID Server verifies the size of the Discovery probe results before sending them to the instance. If the Discovery probe results exceed the limit, the MID Server discards them and returns a warning message. This applies only to probes where the <b>Used by Discovery</b> field is <b>true</b>. Set the value to any negative number to disable the payload limit and allow Discovery payloads of any size to be sent to the instance. For example, -1. This parameter is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+<ul><li> <b>Type:</b> integer (bytes)</li>
+<li> <b>Default value:</b> 5000000</li></ul>
+</td></tr>
+<tr>
+<td> Max length of an ECCQ payload XML that a MID Server will send to the instance
+</td>
+<td> mid.eccq.max_payload_size
+</td>
+<td> Specifies the maximum string length of a payload that the MID Server will send to the instance. The MID Server verifies the size of the payload before sending it to the instance. If the payload size exceeds the limit, the MID Server saves a copy of the payload to the filesystem on the MID Server host, and returns an error message that contains the location of the file.
+<ul><li> <b>Type:</b> integer (bytes)</li>
+<li> <b>Default value:</b> 20000000</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="CIM_Parameters"><span class="mw-headline-number">4.6</span> CIM Parameters</span></h2>
+<p>This parameters determine how a MID Server conducts <a href="index.php%3Ftitle=CIM_Discovery.html" title="CIM Discovery">CIM Discovery</a>.
+</p>
+<table class="standard sortable striped">
+
+<tr>
+<th width="10%"> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Interval to wait between requests to the same CIMOM (ms)
+</td>
+<td> mid.cim.request.interval
+</td>
+<td> Specifies the number of milliseconds to wait between requests to the same Common Information Model Object Manager (CIMOM).  This parameter is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 0</li></ul>
+</td></tr>
+<tr>
+<td> The maximum amount of simultaneous connections allowed per CIMOM
+</td>
+<td> mid.cim.host.connection.limit
+</td>
+<td> Specifies the maximum number of simultaneous connections to each Common Information Model Object Manager (CIMOM). A value of zero disables simultaneous connections.  This parameter is available starting with the Eureka release.
+<ul><li> <b>Type:</b> integer (number of connections)</li>
+<li> <b>Default value:</b> 0</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Connection_Parameters"><span class="mw-headline-number">4.7</span> Connection Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> The maximum amount of standard messages to queue in memory for processing
+</td>
+<td> mid.max.messages
+</td>
+<td> Specifies the maximum number of messages to hold in memory for processing. The default value is computed from the <tt>threads.max</tt> parameter.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> [10 * threads.max]</li></ul>
+</td></tr>
+<tr>
+<td> Instance date format
+</td>
+<td> instance.date.format
+</td>
+<td> Specifies the format the instance uses for dates and times. The primary impact of setting this parameter is to allow the MID Server to correctly refresh its start and stop times on the MID Server record in ServiceNow. The format of this date/time string is identical to that used by the Java SimpleDateFormat class, <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html">documented here</a> in the section titled <i>Date and Time Patterns</i>.
+<ul><li> <b>Type:</b> string (Date format)</li>
+<li> <b>Default value:</b> yyyy-MM-dd HH:mm:ss</li></ul>
+</td></tr>
+<tr>
+<td> MID Server immediate response enable
+</td>
+<td> glide.mid.fast.responses
+</td>
+<td> Instructs the MID Server to try sending messages to the instance as soon as they are ready. Normally the MID Server sends message to the ServiceNow instance <i>serially</i> (that is, one message at a time). Since many probes can be run in parallel, there can be multiple messages simultaneously transmitted to the instance. Setting this parameter to <b>true</b> may decrease the time between a probe's completion and its response arriving at the instance. However, the multiple simultaneous messages consume resources, decreasing the overall instance responsiveness. If there are communications problems, this parameter's value can also cause a <i>logjam</i> on the MID Server, as threads normally used for running probes may become consumed for sending messages. Generally, leave this parameter out of your configuration. Setting it to <b>true</b> is meaningful only under very special circumstances.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> MID Server JMX enable
+</td>
+<td> mid.jmx.enabled
+</td>
+<td> Enables a JMX server on the MID Server, which exposes some management information to JMX consoles. Implementing JMX requires additional configuration of the Java runtime environment. Setting this parameter to <b>true</b> is only recommended for those with detailed knowledge of the Java security architecture and a specific need for JMX.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> MID Server max transmission queue size
+</td>
+<td> glide.mid.max.sender.queue.size
+</td>
+<td> Places an upper limit on how large the queue is allowed to get. The MID Server starts deleting queued messages if this limit is exceeded. When the MID Server generates messages to the ServiceNow instance faster than it can send them, it queues them temporarily on the file system of the MID Server's host. This queue is normally quite small, and is completely emptied as soon as the MID Server processing slows for a short period. However, this queue can grow in size when there are communication problems between the MID Server and the instance, and especially if there is an integration running on the MID Server, .
+<p>The parameter is of the form {number}{multiplier}, where {number} is any positive decimal number including non-integers, and the optional multiplier is any spelling of <i>bytes</i>, <i>kilobytes</i>, <i>megabytes</i>, <i>gigabytes</i>, or <i>terabytes</i> (only the first character is tested, and the test is case-insensitive). The default multiplier is bytes. White space is liberally tolerated. The following strings all represent valid parameters: "1000000000", "0.5m", "5 GB", "7.67gigas", "145.69392 meg", and "1.1 terra".
+</p>
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> 0.5g</li></ul>
+</td></tr>
+<tr>
+<td> MID Server maximum number of probe threads
+</td>
+<td> threads.max
+</td>
+<td> Controls the number of execution threads (simultaneous work) that probes may use. This parameter provides direct control over what CPU resources the MID Server consumes on the computer that hosts it. To decrease the MID Server's CPU consumption, lower the number of threads. To make the MID Server work faster, increase the number of threads. See <a href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html#Setting_MID_Server_Thread_Use">Setting MID Server Thread Use</a>.
+<ul><li> <b>Type:</b> integer (threads)</li>
+<li> <b>Default value:</b> 25</li></ul>
+</td></tr>
+<tr>
+<td> MID Server poll time
+</td>
+<td> mid.poll.time
+</td>
+<td> Sets the MID Server polling interval (in seconds).
+<ul><li> <b>Type:</b> integer (seconds)</li>
+<li> <b>Default value:</b> 15</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Credentials_Parameters"><span class="mw-headline-number">4.8</span> Credentials Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Credentials provider
+</td>
+<td> mid.credentials.provider
+</td>
+<td> Specifies the Java class name of the credentials provider.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> com.service_now.mid.creds.standard.StandardCredentialsProvider</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Debug_Parameters"><span class="mw-headline-number">4.9</span> Debug Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Debug logging enable
+</td>
+<td> debug.logging
+</td>
+<td> Specifies whether to enable logging of MID Server events and messages (both sent and received). Normally this parameter is only used by developers, but it is occasionally useful when troubleshooting a problem. Be aware that setting this parameter to true causes intensive logging on the MID Server, potentially using considerable disk space.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Debug mode enable
+</td>
+<td> debug
+</td>
+<td> Specifies whether to enable debug logging on the MID Server. Normally this parameter is only used by developers, but it is occasionally useful when troubleshooting a problem. Be aware that setting this parameter to true causes intensive logging on the MID Server, potentially using considerable disk space.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Enables debug logging for CIM / WBEM / SLP / SMI-S
+</td>
+<td> mid.cim.debug
+</td>
+<td> Specifies whether to enable debug logging for CIM, WBEM, SLP, or SMI-S.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Enable debug logging for ServiceNow SSH Client
+</td>
+<td> mid.ssh.debug
+</td>
+<td> Enables SSH debug information in the log file. The parameter usage depends on whether the ServiceNow SSH client is enabled (starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>).
+<p>When the ServiceNow SSH client is enabled, the parameter functions as follows:
+</p>
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> false</li></ul>
+<dl><dd>The following string values are valid for the ServiceNow SSH client:
+<ul><li> <b>true</b>: Enables SSH debug information in the log file.</li>
+<li> <b>false</b>: Disables SSH debug information in the log file.</li>
+<li> <b>&lt;IP Addresses&gt;</b>: Specify which IP ranges to enable SSH debug information in the log file.  You can enter IP addresses in the following formats:
+<ul><li>An IP range defined by a slash and the number of bits in the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Subnetwork">subnetwork</a>. For example, the string <tt>10.10.10.0/24</tt> scans 24 bits of IP addresses from spe10.10.10.0 to 10.10.10.254.</li>
+<li>An IP range defined by a dash. For example, the string <tt>10.10.11.0-10.10.11.165</tt> scans the IP addresses from 10.10.11.0 to 10.10.11.165.</li>
+<li>A comma-separated list of specific IP addresses. For example the string <tt>10.10.11.200,10.10.11.235</tt> scans the IP addresses 10.10.11.200 and 10.10.11.235.</li></ul></li>
+<li> <b>deferred</b>: Logs SSH debug information in memory unless an error or warning occurs. If an error or warning occurs, the platform publishes the debug information to the log file. This ensures that only the part of the log file pertaining to the error or warning is recorded. If no error or warning is detected, the platform deletes the unused log data from memory when the session closes. Each session stores up to 1000 log messages. If the session exceeds 1000 log messages, the deferred log discards the oldest log message to make room for the newest log message.</li></ul></dd></dl>
+<p>When the ServiceNow SSH client is disabled, the parameter enables or disables SSH debug information in the log file:
+</p>
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="DNS_Parameters"><span class="mw-headline-number">4.10</span> DNS Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> DNS scanning regulator interval (ms)
+</td>
+<td> mid.dns_scan.regulator.internval_ms
+</td>
+<td> Specifies the interval between DNS scans in milliseconds.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 10</li></ul>
+</td></tr>
+<tr>
+<td> DNS scanning regulator packets per interval
+</td>
+<td> mid.dns_scan.regulator.packets_per_internval
+</td>
+<td> Specifies the number of regulator packets per DNS scan.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1</li></ul>
+</td></tr>
+<tr>
+<td> DNS scanning default name servers
+</td>
+<td> mid.dns_scan.default_name_servers
+</td>
+<td> Specifies the host names or IP addresses of the default name servers.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> DNS scanning additional name servers
+</td>
+<td> mid.dns_scan.additional_name_servers
+</td>
+<td> Specifies the host names or IP addresses of any additional name servers.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> DNS scanning load balancing enable
+</td>
+<td> mid.dns_scan.load_balancing_enable
+</td>
+<td> Specifies whether to enable load balancing of name servers.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="ECC_Queue_Parameters"><span class="mw-headline-number">4.11</span> ECC Queue Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> The amount of time to look-behind on the ECCQ when querying for more work (s)
+</td>
+<td> mid.eccq.monitor.window
+</td>
+<td> Specifies the time period to look behind on the ECC Queue in seconds. The default value is 30 minutes.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1800 seconds</li></ul>
+</td></tr>
+<tr>
+<td> MID Server ECC query interval
+</td>
+<td> query_backoff
+</td>
+<td> Allows the interval at which the MID Server queries the ECC Queue to lengthen if the MID Server is idle. By default, the MID Server queries the ECC Queue for work every 15 seconds. In a system that employs a large number of MID Servers, these queries can produce unnecessary traffic during periods of light MID Server activity. When the <tt>query_backoff</tt> parameter is set to <b>true</b>, the query interval slowly lengthens for an idle MID Server. Eventually, the interval slows to one query every four minutes and holds at that rate until the MID Server has a job to do. When the MID Server starts work again, the query interval for that MID Server immediately increases to once every 15 seconds and continues at that rate until the demand on the MID Server backs off again.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Logging_Parameters"><span class="mw-headline-number">4.12</span> Logging Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Disable monitor checking
+</td>
+<td> disable_monitors
+</td>
+<td> Specifies whether to disable the MID Server from actively checking for monitors on the instance.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Query logging enable
+</td>
+<td> mid.show.queries
+</td>
+<td> Instructs the MID Server whether to log details about every query it makes to the ServiceNow instance. Typically this parameter is only used by developers, but it is occasionally useful when troubleshooting a problem. Be aware that setting this parameter to <b>true</b> causes intensive logging on the MID Server, potentially using considerable disk space.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Remote logging disable
+</td>
+<td> disable.remote.logging
+</td>
+<td> Prevents the MID Server from logging any information to the MID Server log on the ServiceNow instance. Relatively little information is logged on the instance in any case, but setting this parameter to <b>true</b> eliminates all logging to the instance.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Status sending disable
+</td>
+<td> disable.status
+</td>
+<td> Prevents the MID Server from sending a status report to the ServiceNow instance every 10 minutes.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Proxy_Server_Parameters"><span class="mw-headline-number">4.13</span> Proxy Server Parameters</span></h2>
+<p>Use these parameters to configure how your MID Server communicates through a proxy server to access the ServiceNow instance.
+</p>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Instance proxy enable
+</td>
+<td> mid.instance.use_proxy or mid.proxy.use_proxy
+</td>
+<td> If your MID Server must go through a web proxy to access the ServiceNow instance, set this parameter to true to instruct the MID Server to use the proxy. You must also set the proxy server's host and port, and perhaps the user name and password as well.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Instance proxy host
+</td>
+<td> mid.proxy.host
+</td>
+<td> If your MID Server must go through a web proxy to access the ServiceNow instance, set this parameter to define the proxy's host.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Instance proxy password
+</td>
+<td> mid.proxy.password
+</td>
+<td> If your MID Server must go through a web proxy to access the ServiceNow instance, and your proxy requires a password, set this parameter to define that password.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Instance proxy port
+</td>
+<td> mid.proxy.port
+</td>
+<td> If your MID Server must go through a web proxy to access the ServiceNow instance, set this parameter to define the proxy's port.
+<ul><li> <b>Type:</b> integer (0-65535)</li>
+<li> <b>Default value:</b> 80</li></ul>
+</td></tr>
+<tr>
+<td> Instance proxy user name
+</td>
+<td> mid.proxy.username
+</td>
+<td> If the MID Server must go through a web proxy to access the ServiceNow instance, and the proxy requires a user name, set this parameter to define that user name.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Shazzam_Parameters"><span class="mw-headline-number">4.14</span> Shazzam Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Port probe packet interval
+</td>
+<td> mid.shazzam.regulator.interval_ms
+</td>
+<td> Sets the interval, in milliseconds, in which Shazzam can launch packets. This parameter works with the <tt>mid.shazzam.regulator.packets_per_interval</tt> parameter to set the number of packets allowed in this interval. By default, Shazzam launches one packet each millisecond.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1</li></ul>
+</td></tr>
+<tr>
+<td> Port probe packets launched per regulator interval
+</td>
+<td> mid.shazzam.regulator.packets_per_interval
+</td>
+<td> Sets the number of packets that Shazzam can launch in the configured time interval. This parameter works with the <tt>mid.shazzam.regulator.interval_ms</tt> parameter, which sets that interval. By default, Shazzam launches one packet each millisecond.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1</li></ul>
+</td></tr>
+<tr>
+<td> Shazzam chunk size
+</td>
+<td> mid.shazzam.chunk_size
+</td>
+<td> Specifies the maximum number of IP addresses that Shazzam scans in parallel. This parameter primarily controls outbound port consumption.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 100</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="SNMP_Discovery_Parameters"><span class="mw-headline-number">4.15</span> SNMP Discovery Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Enable automatic inclusion of SNMP public community string
+</td>
+<td> mid.snmp.enable_auto_public
+</td>
+<td> Specifies whether to enable the  <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol#Security_implications">SNMP public community string</a>.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Timeout to wait for a response for each OID request (ms)
+</td>
+<td> mid.snmp.request.timeout
+</td>
+<td> Specifies the timeout value for each <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Object_identifier">SNMP OID</a> request. The default is 1.5 seconds.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1500 milliseconds</li></ul>
+</td></tr>
+<tr>
+<td> Inactivity timeout for an established session - after the first response is received (ms)
+</td>
+<td> mid.snmp.session.timeout
+</td>
+<td> Specifies the timeout value for existing SNMP connections. The default is 0.5 seconds.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 500 milliseconds</li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="SSH_Discovery_Parameters"><span class="mw-headline-number">4.16</span> SSH Discovery Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> MID Server connection cache
+</td>
+<td> mid.connection_cache
+</td>
+<td> Specifies whether to cache connections. Set to <b>false'</b> to disable connection caching. This parameter applies to SSH connections only.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Decide if the PATH environment variable should be set for SSH commands
+</td>
+<td> mid.ssh.set_path
+</td>
+<td> Specifies whether to set the PATH environment variable for SSH commands.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Process commands against localhost via SSH rather than console
+</td>
+<td> mid.ssh.local
+</td>
+<td> Specifies whether to execute commands for the MID Server host machine (<b>localhost</b>) via SSH rather than from a console. This allows long-running commands to execute properly. This parameter applies to the legacy SSH client only.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> MID Server SSH connection per host
+</td>
+<td> mid.ssh_connections_per_host
+</td>
+<td> Controls the number of concurrent probes the MID Server can run against a given host. Lowering the number of concurrent connections can slow Discovery.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 
+<ul><li> 7 for the ServiceNow client</li>
+<li> 3 for the legacy SSH client</li></ul></li></ul>
+</td></tr>
+<tr>
+<td> Enable (or disable) sudo to preserve environment (-E) for SSH
+</td>
+<td> mid.ssh.sudo_preserve_environment
+</td>
+<td> Specifies whether to use <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Sudo">sudo</a> to preserve the environment for SSH.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Set the PATH environment paths for SSH commands
+</td>
+<td> mid.ssh.path_override
+</td>
+<td> Overrides the default paths set before executing a command. Enter one or more override paths delimited by a colon (:).  The default path is <i>/usr/sbin: /usr/bin: /bin: /sbin</i>.
+<p>The ServiceNow SSH client accepts the following prefixes in front of the path_overide value.
+</p>
+<dl><dd><ul><li> <b>append:</b> Appends the override path to the end of the host’s path. This is the default behavior.</li>
+<li> <b>replace:</b> Replaces the host path with the path_overide value.</li>
+<li> <b>prepend:</b> Appends the override path to the front of the host path.</li></ul></dd></dl>
+<ul><li> <b>Type:</b> string (a colon-separated list of directories)</li>
+<li> <b>Default value:</b> None</li></ul>
+</td></tr>
+<tr>
+<td> Enable ServiceNow SSH Client
+</td>
+<td> mid.ssh.use_snc
+</td>
+<td> Enables the ServiceNow SSH client (SNCSSH), which is a ServiceNow implementation of an SSH client. SNCSSH is active by default on new instances starting with the Eureka release. Customers upgrading to Eureka or a later release can manually switch to the ServiceNow SSH client with this parameter. Enabling the ServiceNow SSH client disables the legacy SSH client. This parameter is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> The maximum number of times to retry an SSH operation after a timeout
+</td>
+<td> mid.ssh.max_retries
+</td>
+<td> Specifies the maximum amount of times to retry an SSH operation after a time-out. The system sleeps two seconds between each connection attempt. By default, the MID Server retries once only. Set the parameter to <b>0</b> to disable retries.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 1</li></ul>
+</td></tr>
+<tr>
+<td> Sets a different remove file command to replace the default '/bin/rm -f'
+</td>
+<td> mid.ssh.alt_rm
+</td>
+<td> Sets a different SSH remove file command.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Delay sending any SSH commands to a server after connecting
+</td>
+<td> mid.ssh.initial_delay_ms
+</td>
+<td> Delays sending any SSH probe commands to a server after connecting to the target for the time specified, in milliseconds. This parameter is available starting with the Calgary release. This parameter applies to the legacy SSH client only.
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 0</li></ul>
+</td></tr>
+<tr>
+<td> Suppress history file generation for SSH
+</td>
+<td> mid.ssh.suppress_history
+</td>
+<td> Suppresses the generation of the SSH history file. This parameter applies to the legacy SSH client only.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Timeout in ms for SSH socket read
+</td>
+<td> mid.ssh.socket_timeout
+</td>
+<td> Specifies the timeout value for the SSH socket to prevent issues created by a socket timeout. Some devices, such as systems with embedded controllers like UPSs and PDUs, that have SSH enabled require more time to respond to an authentication request. The default value of 2 minutes ensures such requests do not timeout prematurely.
+<p>In versions prior to Fuji, the default value is 60000 (1 minute).
+</p>
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 120000 (2 minutes)</li></ul>
+</td></tr>
+<tr>
+<td> Timeout in ms for SSH channel activity
+</td>
+<td> mid.ssh.channel_timeout
+</td>
+<td> Specifies the amount of time that the MID Server waits for activity on the SSH socket before closing the connection. If there has been no activity on the SSH socket for the specified timeout value, the MID Server closes the connection. Some devices, such as systems with embedded controllers like UPSs and PDUs, that have SSH enabled may require more time to respond to an authentication request. This parameter is available starting with the Eureka release.
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 120000 (2 minutes)</li></ul>
+</td></tr>
+<tr>
+<td> Timeout in ms for SSH socket read
+</td>
+<td> mid.ssh.session_timeout
+</td>
+<td> Specifies the amount of time that a cached session remains in memory after last use. Excessively small values tend to decrease performance. This parameter applies to the ServiceNow SSH client only.
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 300000 (5 minutes)</li></ul>
+</td></tr>
+<tr>
+<td> Timeout for SSH command execution (ms)
+</td>
+<td> mid.ssh.command_timeout_ms
+</td>
+<td> The timeout duration, in milliseconds, for the execution of an SSH command.
+<ul><li> <b>Type:</b> integer (milliseconds)</li>
+<li> <b>Default value:</b> 300000 (5 minutes)</li></ul>
+</td></tr>
+<tr>
+<td> Use keyboard interactive authentication for SSH
+</td>
+<td> mid.ssh.use_keyboard_interactive
+</td>
+<td> Uses the <i>keyboard interactive</i> <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Secure_Shell#Architecture">authentication mode</a> in SSH daemons on which it is activated.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Min size of DH group in bits
+</td>
+<td> mid.ssh.dh_group_length_min
+</td>
+<td> Specifies the minimum group length in bits used for generating a "shared secret" key in <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie-Hillman key exchange</a>. The larger the key the more secure the SSH connection is but at the cost of performance. This parameter is available starting with the Eureka release.
+<ul><li> <b>Type:</b> integer (bits)</li>
+<li> <b>Default value:</b> 1024</li></ul>
+</td></tr>
+<tr>
+<td> Max size of DH group in bits
+</td>
+<td> mid.ssh.dh_group_length_max
+</td>
+<td> Specifies the maximum group length in bits used for generating a "shared secret" key in <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie-Hillman key exchange</a>. The larger the key the more secure the SSH connection is but at the cost of performance. This parameter is available starting with the Eureka release.
+<ul><li> <b>Type:</b> integer (bits)</li>
+<li> <b>Default value:</b> 2048</li></ul>
+</td></tr></table>
+<h3><span class="mw-headline" id="Default_Paths_for_SSH_Commands"><span class="mw-headline-number">4.16.1</span> Default Paths for SSH Commands</span></h3>
+<p>By default, the MID Server is configured to search for SSH commands in the following paths and the logged-on user's default paths:
+</p>
+<ul><li> /usr/sbin</li>
+<li> /usr/bin</li>
+<li> /bin</li>
+<li> /sbin</li></ul>
+<h2><span class="mw-headline" id="Upgrade_Parameters"><span class="mw-headline-number">4.17</span> Upgrade Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Fixed MID Server version
+</td>
+<td> mid.pinned.version
+</td>
+<td> Name of the version to which this MID Server is pinned.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> build timestamp</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade branch
+</td>
+<td> glide.mid.autoupgrade.branch <i>or</i> mid.upgrade.branch
+</td>
+<td> Defines a <i>branch</i> (a directory on the distribution server) the MID Server should download its upgrades from. This might be set if you had a special MID Server version for some reason. Consult with ServiceNow <i>before</i> adding this parameter to your configuration.
+<ul><li> <b>Type:</b> string (path)</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade proxy enable
+</td>
+<td> mid.upgrade.use_proxy
+</td>
+<td> If your MID Server must go through a web proxy to access the upgrade URL, set this parameter to <b>true</b> to instruct the MID Server to use the proxy. You must also set the proxy server's host and port. If the instance proxy user name and password are set, they are used for the upgrade proxy as well.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade proxy host
+</td>
+<td> glide.mid.autoupgrade.proxy_host <i>or</i> glide.glidesoap.proxy_host
+</td>
+<td> If your MID Server must go through a web proxy to access the upgrade URL, define the proxy's host here. You must restart the instance after changing this property to apply the change in versions prior to <a href="index.php%3Ftitle=Release:Calgary_Patch_6.html" title="Release:Calgary Patch 6">Calgary Patch 6</a>.
+<ul><li> <b>Type:</b> string (URL)</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade proxy port
+</td>
+<td> glide.mid.autoupgrade.proxy_port <i>or</i> glide.glidesoap.proxy_port
+</td>
+<td> If your MID Server must go through a web proxy to access the upgrade URL, define the proxy's port here. You must restart the instance after changing this property to apply the change in versions prior to <a href="index.php%3Ftitle=Release:Calgary_Patch_6.html" title="Release:Calgary Patch 6">Calgary Patch 6</a>.
+<ul><li> <b>Type:</b> integer (0-65535)</li>
+<li> <b>Default value:</b> 80</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade proxy user
+</td>
+<td> glide.mid.autoupgrade.proxy_user
+</td>
+<td> If your MID Server must go through a web proxy to access the upgrade URL, define the proxy's user name here.
+<ul><li> <b>Type:</b> string (URL)</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade proxy password
+</td>
+<td> glide.mid.autoupgrade.proxy_password
+</td>
+<td> If your MID Server must go through a web proxy to access the upgrade URL, define the proxy's password here.
+<ul><li> <b>Type:</b> string</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Upgrade URL
+</td>
+<td> glide.mid.autoupgrade.host
+</td>
+<td> Controls where the MID Server downloads its upgrades from. Normally, you should not set this parameter.
+<ul><li> <b>Type:</b> string (URL)</li>
+<li> <b>Default value:</b> <tt><a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://install.service-now.com/glide/distribution/builds/mid/">http://install.service-now.com/glide/distribution/builds/mid/</a></tt></li></ul>
+</td></tr></table>
+<h2><span class="mw-headline" id="Windows_Discovery_Parameters"><span class="mw-headline-number">4.18</span> Windows Discovery Parameters</span></h2>
+<table class="standard sortable striped">
+
+<tr>
+<th> Label
+</th>
+<th> Names
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>Enable or Disable the enforcement of UTF-8 for command output
+</td>
+<td>mid.powershell.enforce_utf8
+</td>
+<td>Enable this parameter to force commands on a target Windows system to return UTF-8 encoded output.  Disabling it allows the target system to use its default encoding.  This parameter is only valid when PowerShell is enabled.
+<p>Setting this value to false may result in incorrect values  in the CMDB when non-ASCII characters are returned by a probe.
+</p>
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Enable PowerShell for Discovery
+</td>
+<td> mid.use_powershell
+</td>
+<td> Specifies whether to enable PowerShell for Discovery. The MID Server requires PowerShell version 2 to operate. If the MID Server cannot find the correct version of PowerShell, it uses WMIRunner instead.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Enable/Disable automatically falling back to the MID Server service user credential if all other credentials fail
+</td>
+<td> mid.powershell.local_mid_service_credential_fallback
+</td>
+<td> Specifies the login credentials the MID Server uses if all other credentials fail. This parameter is available starting with the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Timeout for Windows probes
+</td>
+<td> mid.windows.probe_timeout
+</td>
+<td> Specifies the timeout value for the Windows probe, in seconds. The default value is 5 minutes.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> 300 seconds</li></ul>
+</td></tr>
+<tr>
+<td> MSSQL credentials for PowerShell
+</td>
+<td> mid.powershell.use_mssqlauth
+</td>
+<td> Determines whether PowerShell should use <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx">Integrated Windows Authentication</a>, also known as Windows Integrated Security, or SQL authentication when attempting to log into the MSSQL instance. PowerShell uses Windows Integrated Security by default.
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This parameter is obsolete starting with the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a> and has been removed from the platform. Microsoft SQL Server discoveries use the PowerShell probe, which uses the MID Server's credentials. The Calgary upgrade removes any MSSQL credentials from the Credentials [discovery_credentials] table.</i>
+</td></tr></table>
+<p><br />
+</p>
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> false</li></ul>
+</td></tr>
+<tr>
+<td> Powershell use credentials table
+</td>
+<td> mid.powershell.use_credentials
+</td>
+<td> Specifies whether PowerShell Discovery should use the Windows credentials from the credentials table. To use PowerShell Discovery on a single domain, set this parameter to <b>false</b>, and then restart the MID Server. In this case, the MID Server runs the probes with the credentials of the user for the MID Server process.
+<ul><li> <b>Type:</b> true | false</li>
+<li> <b>Default value:</b> true</li></ul>
+</td></tr>
+<tr>
+<td> Path to Powershell executable
+</td>
+<td> mid.powershell.path
+</td>
+<td> Enables an administrator to point to a specific PowerShell on a MID Server in cases where more than one PowerShell is installed. Supply the path to the directory containing the PowerShell executable, for example, <i>C:\mypowershell</i> or <i>C:\mypowershell\</i>. ServiceNow automatically appends the string <i>powershell.exe</i> to the path.
+<p>This parameter might be necessary when both 32-bit and 64-bit PowerShells are active on the same MID Server, and it becomes necessary to launch the correct PowerShell for the context. Note that 64-bit Windows employs file system redirection and the MID Server runs as a 32-bit application. If the path is in <i>%WinDir%\System32,</i> Windows automatically redirects to <i>%WinDir%\SysWOW64</i>. To avoid redirection, specify the path as <i>%WinDir%\Sysnative</i>. An example would be to specify <i>C:\WINDOWS\sysnative\WindowsPowerShell\v1.0\</i> instead of <i>C:\WINDOWS\system32\WindowsPowerShell\v1.0\</i>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>On a 64-bit version of Windows Server 2003 or Windows XP, a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://support.microsoft.com/kb/942589">Microsoft hotfix</a> may be required to enable this capability.</i>
+</td></tr></table>
+<p><br />
+To discover applications running on a 64-bit Windows machine in the <a href="index.php%3Ftitle=Calgary_Release_Notes.html" title="Calgary Release Notes">Calgary release</a>, the MID Server must be running on a 64-bit Windows host machine. For MID Servers installed on 32-bit hosts to discover 64-bit Windows applications, you must add the <tt>mid.powershell.path</tt> parameter to the MID Server and define the <i>C:\WINDOWS\sysnative\WindowsPowerShell\v1.0\</i> path. 
+</p>
+<ul><li> <b>Type:</b> string (path)</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr>
+<tr>
+<td> Timeout for all Windows probes on a MID Server
+</td>
+<td> windows_probe_timeout
+</td>
+<td> Sets the timeout interval for all Windows probes on a specific MID Server. This value is overridden by the values configured for individual probes with the <a href="index.php%3Ftitle=WMIRunner_Probe.html#Parameters" title="WMIRunner Probe">wmi_timeout</a> probe parameter.
+<ul><li> <b>Type:</b> integer</li>
+<li> <b>Default value:</b> none</li></ul>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203095155
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.600 seconds
+Real time usage: 1.452 seconds
+Preprocessor visited node count: 452/1000000
+Preprocessor generated node count: 1094/1000000
+Post‐expand include size: 7375/2097152 bytes
+Template argument size: 3200/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  815.255      1 - -total
+  5.03%   41.022      1 - Template:MID_Server
+  3.87%   31.528      1 - Template:Topic
+  1.31%   10.646     10 - Template:Note
+  0.72%    5.881      1 - Embedded:MID_Server
+  0.63%    5.131      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:5103-0!*!0!1!en!5!* and timestamp 20171203095153 and revision id 250729
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=MID_Server_Configuration&amp;oldid=250729.html#How_File_Synchronization_Works">http://wiki.servicenow.com/index.php?title=MID_Server_Configuration&amp;oldid=250729#How_File_Synchronization_Works</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=MID+Server.html" title="Category:MID Server">MID Server</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Discovery.html" title="Category:Discovery">Discovery</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Orchestration.html" title="Category:Orchestration">Orchestration</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=MID+Server.html" title="Category:MID Server">MID Server</a><br />
+<a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Integrate.html" title="Category:Integrate">Integrate</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_5103"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="5103" data-vote-the-vote="5" data-vote-id="5103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_5103_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="5103" data-vote-the-vote="1" data-vote-id="5103" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_5103_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=MID_Server_Configuration.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=MID+Server+Configuration&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=MID+Server+Configuration&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=CSHelp:MID_Server_Script_Files.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=CSHelp:MID_Server_Script_Files&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=MID+Server+Configuration.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=MID+Server+Configuration&amp;returnto=MID+Server+Configuration&amp;oldid=250729&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FMID_Server_Configuration.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/MID_Server_Configuration" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=MID_Server_Configuration&amp;oldid=250729.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=MID_Server_Configuration&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 16:31, 5 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":833});});</script></body></html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Defining Assignment Rules - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Defining_Assignment_Rules","wgTitle":"Defining Assignment Rules","wgCurRevisionId":250266,"wgRevisionId":250266,"wgArticleId":9733,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Task Table"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Defining_Assignment_Rules","wgRelevantArticleId":9733,"wgRequestId":"29de009e98389f85382db5df","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="http://wiki.servicenow.com/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170818184801"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Defining_Assignment_Rules"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Defining Assignment Rules"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Task Table"/>
+<meta name="category" content="Task Table"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Defining_Assignment_Rules.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Defining Assignment Rules"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170818184801"/>
+
+	<meta property="article:published_time" content="20170818184801"/>
+
+	<meta property="article:modified_time" content="20170818184801"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Task Table"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Defining_Assignment_Rules"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Defining_Assignment_Rules rootpage-Defining_Assignment_Rules skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Defining Assignment Rules</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Introduction_to_Managing_Data.html" title="Introduction to Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task Table</a> &gt; Defining Assignment Rules</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Defining_Assignment_Rules.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Defining_Assignment_Rules.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/task-table/concept/c_DefineAssignmentRules.html">Define Assignment Rules</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Task_Table.html" title="Task Table">Task Table</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Planned_Task.html" title="Planned Task">Planned Task</a>
+<ul><li><a href="index.php%3Ftitle=Planned_Task_Hierarchy.html" title="Planned Task Hierarchy">Planned Task Hierarchy</a></li></ul></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Many+to+Many+Task+Relations&amp;oldid=0.html" title="Many to Many Task Relations">Many to Many Relations</a></li>
+<li><a href="index.php%3Ftitle=Using_Task_Outage.html" title="Using Task Outage">Using Task Outage</a></li>
+<li><a href="index.php%3Ftitle=Time_Cards.html" title="Time Cards">Time Cards</a></li>
+<li><strong class="selflink">Assignments</strong></li>
+<li><a href="index.php%3Ftitle=New_Ticket_Module.html" title="New Ticket Module">New Ticket Module</a></li>
+<li><a href="index.php%3Ftitle=Approvals.html" title="Approvals">Approvals</a>
+<ul><li><a href="index.php%3Ftitle=Execution_Order_of_Scripts_and_Engines.html" title="Execution Order of Scripts and Engines">Execution Order of Scripts and Engines</a></li>
+<li><a href="index.php%3Ftitle=Approval_Engines.html" title="Approval Engines">Approval Engines</a></li>
+<li><a href="index.php%3Ftitle=Approval_Rules.html" title="Approval Rules">Approval Rules</a> </li>
+<li><a href="index.php%3Ftitle=Approval_with_E-Signature.html" title="Approval with E-Signature">Approval with E-Signature</a></li></ul></li>
+<li>Approvals with Workflows
+<ul><li><a href="index.php%3Ftitle=Case_Study_-_Advanced_Approval_Workflow_(Part_1).html" title="Case Study - Advanced Approval Workflow (Part 1)">Case Study 1</a></li>
+<li><a href="index.php%3Ftitle=Case_Study_-_Advanced_Approval_Workflow_(Part_2).html" title="Case Study - Advanced Approval Workflow (Part 2)">Case Study 2</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Approval_Summarizer_Formatter.html" title="Approval Summarizer Formatter">Approval Summarizer Formatter</a></li>
+<li><a href="index.php%3Ftitle=Process_Flow_Formatter.html" title="Process Flow Formatter">Process Flow Formatter</a></li>
+<li><a href="index.php%3Ftitle=Task_Parent_Breadcrumbs_Formatter.html" title="Task Parent Breadcrumbs Formatter">Task Parent Breadcrumbs Formatter</a></li>
+<li><a href="index.php%3Ftitle=Managing_Planned_Tasks_in_Project.html" title="Managing Planned Tasks in Project" class="mw-redirect">Managing Planned Tasks in Project</a></li>
+<li><a href="index.php%3Ftitle=Task_Resources.html#Using_Task_Resources_with_Other_Planned_Tasks" title="Task Resources">Managing Task Resource</a></li>
+<li><a href="index.php%3Ftitle=TaskStateUtil.html" title="TaskStateUtil">TaskStateUtil API</a></li>
+<li><a href="index.php%3Ftitle=Workflows.html" title="Workflows">Workflows</a></li></ul>
+</td></tr>
+<tr>
+<th>
+<p>Get the Book
+</p>
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Task.html" title="Book:Task"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Task.html" title="Book:Task">Get the Book</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Data_Lookup_Rules"><span class="tocnumber">1.1</span> <span class="toctext">Data Lookup Rules</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Assignment_Rules_Module"><span class="tocnumber">1.2</span> <span class="toctext">Assignment Rules Module</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Precedence_between_Assignment_Rules_and_Business_Rules"><span class="tocnumber">1.2.1</span> <span class="toctext">Precedence between Assignment Rules and Business Rules</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Defining_Assignment_Rules"><span class="tocnumber">2</span> <span class="toctext">Defining Assignment Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Data_Lookup_Rules_2"><span class="tocnumber">2.1</span> <span class="toctext">Data Lookup Rules</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Assignment_Module_Rules"><span class="tocnumber">2.2</span> <span class="toctext">Assignment Module Rules</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Workflow_Assignments"><span class="tocnumber">2.3</span> <span class="toctext">Workflow Assignments</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Assignment_Lookup_Rules"><span class="tocnumber">3.1</span> <span class="toctext">Assignment Lookup Rules</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Baseline_Assignment_Rules"><span class="tocnumber">3.2</span> <span class="toctext">Baseline Assignment Rules</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Condition_Editor"><span class="tocnumber">3.3</span> <span class="toctext">Condition Editor</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html#Script"><span class="tocnumber">3.4</span> <span class="toctext">Script</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>ServiceNow can automatically assign a task to a user or group based on pre-defined conditions by using:
+</p>
+<ul><li> Data lookup rules</li>
+<li> Assignment rules</li></ul>
+<h2><span class="mw-headline" id="Data_Lookup_Rules"><span class="mw-headline-number">1.1</span> Data Lookup Rules</span></h2>
+<p><a href="index.php%3Ftitle=Data_Lookup_and_Record_Matching_Support.html" title="Data Lookup and Record Matching Support">Data lookup rules</a> offer a generic way to change any field value, not just assignment fields. Data lookup rules offer the following improvements over the <b>Assignment</b> module:
+</p>
+<ul><li> Ability to change any field value not just an assignment field</li>
+<li> More options to define when a rule runs:
+<ul><li> On form change (Allows assignment rules to apply to unsaved changes on a form)</li>
+<li> On record insert</li>
+<li> On record update </li></ul></li>
+<li> Option to replace existing values (including default values)</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You can define data lookup and <b>Assignment</b> rules at the same time. The system ignores any duplicate rules after an incident has been assigned unless you are using a data lookup definition option to replace existing values.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Assignment_Rules_Module"><span class="mw-headline-number">1.2</span> Assignment Rules Module</span></h2>
+<p>The <b>Assignment</b> rules module allows you to automatically set a value in the <b>assigned_to</b> and <b>assignment_group</b> fields when a set of conditions occurs. An assignment rule must also meet these additional criteria to run:
+</p>
+<ul><li> The task record has been created or updated. Assignment rules do not apply to unsaved changes on a form.</li>
+<li> The task record must be unassigned. The record cannot have an existing value for either the  <b>assigned_to</b> or <b>assignment_group</b> fields. Assignment rules cannot overwrite existing assignments (including assignments set by a default value or a previously run assignment rule).</li>
+<li> The assignment rule is the first rule that matches the table and conditions. If more than one assignment rule matches the conditions, only the rule with the lowest order value runs.</li></ul>
+<h3><span class="mw-headline" id="Precedence_between_Assignment_Rules_and_Business_Rules"><span class="mw-headline-number">1.2.1</span> Precedence between Assignment Rules and Business Rules</span></h3>
+<p>When creating new assignment rules, keep in mind that <a href="index.php%3Ftitle=Business_Rules.html" title="Business Rules">business rules</a> can take precedence over assignment rules in certain circumstances. Assignment rules and business rules run in the following order:
+</p>
+<ol><li>All before business rules that run on a record insert with an order value less than 1000.</li>
+<li>The first assignment rule with the lowest execution order and matching condition.</li>
+<li>All before business rules that run on a record insert with an order value greater than or equal to 1000.</li>
+<li>All after business rules that run on record insert.</li></ol>
+<h1><span class="mw-headline" id="Defining_Assignment_Rules"><span class="mw-headline-number">2</span> Defining Assignment Rules</span></h1>
+<p>You can define assignment rules either from Data Lookup and Record Matching Support, from the <b>Assignment</b> module, or from workflow <a href="index.php%3Ftitle=Task_Activities.html" title="Task Activities">Task Activities</a>.
+</p>
+<h2><span class="mw-headline" id="Data_Lookup_Rules_2"><span class="mw-headline-number">2.1</span> Data Lookup Rules</span></h2>
+<p>To define an assignment rule with Data Lookup and Record Matching Support:
+</p>
+<ol><li>Navigate to <b>System Policy &gt; Rules &gt; Assignment Lookup Rules</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Populate the assignment data lookup fields (see table).</li>
+<li>Click <b>Submit</b>.</li></ol>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Assignment_lookup_rule.png.html" class="image"><img alt="" src="images/thumb/6/6a/Assignment_lookup_rule.png/600px-Assignment_lookup_rule.png" width="600" height="189" class="thumbimage" srcset="/images/6/6a/Assignment_lookup_rule.png 1.5x, /images/6/6a/Assignment_lookup_rule.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Assignment_lookup_rule.png.html" class="internal" title="Enlarge"></a></div>The Assignment Data Lookup form</div></div></div> <br style="clear:both;" />
+<table class="standard">
+
+<tr>
+<th> Field
+</th>
+<th> Input Value
+</th></tr>
+<tr>
+<td> Category
+</td>
+<td> Select the category the data lookup matches against.
+</td></tr>
+<tr>
+<td> Subcategory
+</td>
+<td> Select the subcategory the data lookup matches against.
+</td></tr>
+<tr>
+<td> Configuration Item
+</td>
+<td> Select the configuration item the data lookup matches against.
+</td></tr>
+<tr>
+<td> Location
+</td>
+<td> Select the location the data lookup matches against.
+</td></tr>
+<tr>
+<td> Assignment Group
+</td>
+<td> Select the assignment group to assign the incident to.
+</td></tr>
+<tr>
+<td> Assigned To
+</td>
+<td> Select the user  to assign the incident to.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> Set to Yes to run the rule or No to deactivate the rule.
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td> Enter the order in which the rule runs compared to other rules on the same table. The Data Lookup Plugin runs the rule with the lowest order and matching values.
+</td></tr></table>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The assignment lookup rule assigns incidents matching the values in the matcher fields (<b>Category</b>, <b>Subcategory</b>, <b>Configuration Item</b>, and <b>Location</b>) to the values in the setter fields (<b>Assignment Group</b> and <b>Assigned To</b>). A valid assignment lookup rule requires at least one matcher field and one setter field.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Assignment_Module_Rules"><span class="mw-headline-number">2.2</span> Assignment Module Rules</span></h2>
+<p>To define an assignment rule:
+</p>
+<ol><li>Navigate to <b>System Policy &gt; Rules &gt; Assignment</b> and click <b>New</b>. </li>
+<li>Complete the fields on the form (see table).</li></ol>
+<dl><dd><div class="thumb tleft"><div class="thumbinner" style="width:752px;"><a href="index.php%3Ftitle=File:Assignment_Rule_Eureka.png.html" class="image"><img alt="" src="images/thumb/2/25/Assignment_Rule_Eureka.png/750px-Assignment_Rule_Eureka.png" width="750" height="502" class="thumbimage" srcset="/images/2/25/Assignment_Rule_Eureka.png 1.5x, /images/2/25/Assignment_Rule_Eureka.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Assignment_Rule_Eureka.png.html" class="internal" title="Enlarge"></a></div>The Assignment Rule form for software requests</div></div></div><br style="clear:both;" /></dd></dl>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>You might need to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Configuring+Forms&amp;oldid=0.html#Configuring_Forms" title="Configuring Forms">configure the form</a> to see all the fields below.</i>
+</td></tr></table>
+<table class="standard">
+<tr>
+<th> Field
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> Name
+</td>
+<td> The descriptive name for the assignment rule.
+</td></tr>
+<tr>
+<td> Active
+</td>
+<td> An indicator of whether the assignment rule is active. Only active assignment rules take effect.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Applies to</b>
+</td></tr>
+<tr>
+<td> Table
+</td>
+<td>The table with the records that the assignment rule applies to.
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The list shows only tables and database views that are <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Applications&amp;oldid=0.html#Application_Scope" title="Applications">in the same scope</a> as the assignment rule (starting with the Fuji release).</i>
+</td></tr></table>
+<dl><dd>If you select a custom table that <a href="index.php%3Ftitle=Creating_a_Custom_Table.html#Extending_a_Table" title="Creating a Custom Table">extends</a> the task table, you must clear the instance cache by navigating to <b>https://&lt;instance_name&gt;.service-now.com/cache.do</b> in order for the assignment rule to work.</dd></dl>
+</td></tr>
+<tr>
+<td>Conditions
+</td>
+<td>The conditions in which the assignment rule will apply.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"><b>Assign to</b>
+</td></tr>
+<tr>
+<td>User
+</td>
+<td>The user which will be assigned the event.
+</td></tr>
+<tr>
+<td>Group
+</td>
+<td>The group which will be assigned the event.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" class="left" colspan="2"> <b>Script</b>
+</td></tr>
+<tr>
+<td>Script
+</td>
+<td>A script to determine advanced assignment rule functionality. The current.variable_pool set of variables is available.
+</td></tr>
+<tr>
+<td bgcolor="#f4f4f9" align="left" colspan="2"><b>Other fields</b>
+</td></tr>
+<tr>
+<td>  Match Conditions
+</td>
+<td>  Choices are:
+<ul><li><b>Any</b> - Assignment Rule will apply if any of the conditions are met.</li>
+<li><b>All</b> - Assignment rule will apply if all of the conditions are met.</li></ul>
+</td></tr>
+<tr>
+<td> Order
+</td>
+<td>  A number to determine priority over conflicting assignment rules. If there are conflicting assignment rules, rules with lower <b>Order</b> values will take precedence over rules with higher <b>Order</b> values. If the <b>Order</b> values are all set to the same number the assignment rule with the first matching condition is run with precedence over the others. Only one assignment rule will run against a record, the first with a matching condition.
+</td></tr></table>
+<h2><span class="mw-headline" id="Workflow_Assignments"><span class="mw-headline-number">2.3</span> Workflow Assignments</span></h2>
+<p>An alternative to creating data lookup or assignment rules is to create one or more <a href="index.php%3Ftitle=Task_Activities.html" title="Task Activities">workflow tasks</a> that assign a task record as part of a workflow. Consider using a workflow for assignment if your process includes multiple steps or conditions such as requiring a particular group approve a request.
+</p><p>When using a workflow to manage task assignments, add a brief <a href="index.php%3Ftitle=Timer_Activities.html#Timer" title="Timer Activities">timer activity</a> to the start of the workflow. Without this timer activity, the workflow runs before the parent record, the <tt>current</tt> record, is inserted into the database. After the timer activity completes, the workflow resumes using the parent record information from the database instead of the original <tt>current</tt>. Note that pausing a workflow in this way does not change a default workflow to a deferred workflow. For more information on how the workflow engine interacts with the database, see <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Engine_Operation_Order" title="Workflow Concepts">workflow engine operation order</a>.
+</p>
+<h1><span class="mw-headline" id="Examples"><span class="mw-headline-number">3</span> Examples</span></h1>
+<p>These examples illustrate creating assignment rules using the Data Lookup Plugin, the Condition Editor, and with a script.
+</p>
+<h2><span class="mw-headline" id="Assignment_Lookup_Rules"><span class="mw-headline-number">3.1</span> Assignment Lookup Rules</span></h2>
+<p>In the following example, the Data Lookup Plugin assignment lookup rule automatically assigns any incident with the <b>Category</b> of Request and <b>Subcategory</b> of Password Reset to Fred Luddy.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Assignment_data_lookup.png.html" class="image"><img alt="" src="images/thumb/a/aa/Assignment_data_lookup.png/600px-Assignment_data_lookup.png" width="600" height="180" class="thumbimage" srcset="/images/a/aa/Assignment_data_lookup.png 1.5x, /images/a/aa/Assignment_data_lookup.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Assignment_data_lookup.png.html" class="internal" title="Enlarge"></a></div>Assignment data lookup example</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Baseline_Assignment_Rules"><span class="mw-headline-number">3.2</span> Baseline Assignment Rules</span></h2>
+<p>A baseline instance contains the following assignment rules.
+</p>
+<table class="standard">
+
+<tr>
+<th> Name
+</th>
+<th> Table
+</th>
+<th> Conditions
+</th>
+<th> Assigned to User, Assigned to Group, or Script
+</th></tr>
+<tr>
+<td> Networking
+</td>
+<td> incident
+</td>
+<td> Category is Network
+</td>
+<td> <b>User:</b> System Administrator <br />
+<p><b>Group:</b> Network
+</p>
+</td></tr>
+<tr>
+<td> Database or Software
+</td>
+<td> incident
+</td>
+<td> Category is one of Request, Inquiry / Help, Software, Hardware
+</td>
+<td> <b>User:</b> System Administrator <br />
+<p><b>Group:</b> Software
+</p>
+</td></tr>
+<tr>
+<td> SC Item fulfillment - Field Services
+</td>
+<td> Ticket
+</td>
+<td> Parent.Task type is Request item
+</td>
+<td> <b>Group:</b> Field Services
+</td></tr>
+<tr>
+<td> Release Planning
+</td>
+<td> release_phase
+</td>
+<td> Name is Plan
+</td>
+<td> <b>Script:</b> <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nx">current</span><span class="p">.</span><span class="nx">release</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">assigned_to</span><span class="p">;</span>
+</pre></div>
+</td></tr>
+<tr>
+<td> IT Hardware
+</td>
+<td> sc_req_item
+</td>
+<td> Approval is Approved and <br />
+<p>Item.Category is Request Computers and Hardware
+</p>
+</td>
+<td> <b>User:</b> System Administrator
+<p><b> Group:</b> Hardware
+</p>
+</td></tr>
+<tr>
+<td> Service Desk
+</td>
+<td> incident
+</td>
+<td> Active is true
+</td>
+<td> <b>Group:</b> Service Desk
+</td></tr></table>
+<h2><span class="mw-headline" id="Condition_Editor"><span class="mw-headline-number">3.3</span> Condition Editor</span></h2>
+<p>In the following example, the assignment rule uses a condition statement to automatically assign any incident opened in the <b>Network</b> category to the System Administrator in the <b>Network</b> assignment group. 
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Assignment.png.html" class="image"><img alt="" src="images/thumb/f/fe/Assignment.png/600px-Assignment.png" width="600" height="134" class="thumbimage" srcset="/images/f/fe/Assignment.png 1.5x, /images/f/fe/Assignment.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Assignment.png.html" class="internal" title="Enlarge"></a></div>Assignment lookup rule with condition</div></div></div> <br style="clear:both;" />
+<h2><span class="mw-headline" id="Script"><span class="mw-headline-number">3.4</span> Script</span></h2>
+<p>In the following example, the assignment rules use JavaScript code to assign incidents to a particular assignment group based on the incident category:
+</p>
+<table class="standard">
+
+<tr>
+<th> This Incident Category
+</th>
+<th> Is Assigned to this Assignment Group
+</th></tr>
+<tr>
+<td> Hardware
+</td>
+<td> Hardware
+</td></tr>
+<tr>
+<td> Software
+</td>
+<td> Software
+</td></tr>
+<tr>
+<td> Malware
+</td>
+<td> Security
+</td></tr></table>
+<div class="thumb tleft"><div class="thumbinner" style="width:602px;"><a href="index.php%3Ftitle=File:Assignment_by_script.png.html" class="image"><img alt="" src="images/thumb/5/5d/Assignment_by_script.png/600px-Assignment_by_script.png" width="600" height="290" class="thumbimage" srcset="/images/5/5d/Assignment_by_script.png 1.5x, /images/5/5d/Assignment_by_script.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index.php%3Ftitle=File:Assignment_by_script.png.html" class="internal" title="Enlarge"></a></div>Assignment rule with script</div></div></div> <br style="clear:both;" />
+<p>The following script requires personalizing the instance to add the <b>Malware</b> category and the <b>Security</b> assignment group.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">category</span> <span class="o">==</span> <span class="s2">&quot;Hardware&quot;</span><span class="p">){</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">assignment_group</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Hardware&quot;</span><span class="p">);</span> 
+<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">category</span> <span class="o">==</span> <span class="s2">&quot;Software&quot;</span><span class="p">){</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">assignment_group</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Software&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">category</span> <span class="o">==</span> <span class="s2">&quot;Malware&quot;</span><span class="p">){</span>
+   <span class="nx">current</span><span class="p">.</span><span class="nx">assignment_group</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s2">&quot;Security&quot;</span><span class="p">);</span>	
+<span class="p">}</span>
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20171130215818
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.347 seconds
+Real time usage: 1.379 seconds
+Preprocessor visited node count: 148/1000000
+Preprocessor generated node count: 415/1000000
+Post‐expand include size: 6061/2097152 bytes
+Template argument size: 2818/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   44.238      1 - -total
+ 64.81%   28.672      1 - Template:Task
+ 48.30%   21.369      1 - Template:Topic
+ 16.10%    7.121      5 - Template:Note
+ 14.78%    6.538      1 - Template:TableScopeNote
+ 11.28%    4.989      4 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9733-0!*!0!1!en!5!* and timestamp 20171130215817 and revision id 250266
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Defining_Assignment_Rules&amp;oldid=250266.html">http://wiki.servicenow.com/index.php?title=Defining_Assignment_Rules&amp;oldid=250266</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Task+Table.html" title="Category:Task Table">Task Table</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Managing+Data.html" title="Category:Managing Data">Managing Data</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Task+Table.html" title="Category:Task Table">Task Table</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_9733"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="9733" data-vote-the-vote="5" data-vote-id="9733" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9733_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="9733" data-vote-the-vote="1" data-vote-id="9733" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_9733_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Defining_Assignment_Rules.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Defining+Assignment+Rules.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Defining+Assignment+Rules.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Defining_Assignment_Rules.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Defining_Assignment_Rules&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=Defining+Assignment+Rules.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Defining+Assignment+Rules&amp;returnto=Defining+Assignment+Rules&amp;oldid=250266&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Defining_Assignment_Rules&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FDefining_Assignment_Rules.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Defining_Assignment_Rules" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Defining_Assignment_Rules&amp;oldid=250266.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Defining_Assignment_Rules&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 18:48, 18 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1150});});</script></body></html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Configuring Amazon EC2 for Cloud Provisioning - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Configuring_Amazon_EC2_for_Cloud_Provisioning","wgTitle":"Configuring Amazon EC2 for Cloud Provisioning","wgCurRevisionId":240052,"wgRevisionId":240052,"wgArticleId":17106,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Amazon EC2 for Cloud Provisioning"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Configuring_Amazon_EC2_for_Cloud_Provisioning","wgRelevantArticleId":17106,"wgRequestId":"e0f41add9463998417f133e5","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150131002654"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Configuring Amazon EC2 for Cloud Provisioning"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Amazon EC2 for Cloud Provisioning"/>
+<meta name="category" content="Amazon EC2 for Cloud Provisioning"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Configuring Amazon EC2 for Cloud Provisioning"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150131002654"/>
+
+	<meta property="article:published_time" content="20150131002654"/>
+
+	<meta property="article:modified_time" content="20150131002654"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Amazon EC2 for Cloud Provisioning"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Configuring_Amazon_EC2_for_Cloud_Provisioning rootpage-Configuring_Amazon_EC2_for_Cloud_Provisioning skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+Amazon+EC2+for+Cloud+Provisioning.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Configuring+Amazon+EC2+for+Cloud+Provisioning&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Configuring Amazon EC2 for Cloud Provisioning</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a> &gt; <a href="index.php%3Ftitle=Amazon_EC2_for_Cloud_Provisioning.html" title="Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a> &gt; Configuring Amazon EC2 for Cloud Provisioning</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Cloud_Provisioning.html" title="Cloud Provisioning">Cloud Provisioning</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2134a4227e5t'></div><script type="text/javascript">window.tamOnload_tam5a2134a4227e5t=[];tree = new dTree('tam5a2134a4227e5t');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2134a4227e5t = tree;
+                                               tam5a2134a4227e5t.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Operations\&quot;" title=\"Cloud Operations\">Cloud Operations</a>');
+
+tam5a2134a4227e5t.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Users\&quot;" title=\"Cloud Users\">Cloud Users</a>');
+tam5a2134a4227e5t.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Security\&quot;" title=\"Cloud Provisioning Security\">Security</a>');
+tam5a2134a4227e5t.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=My_Assets_Portal\&quot;" title=\"My Assets Portal\">My Assets Portal</a>');
+tam5a2134a4227e5t.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resources_Portal\&quot;" title=\"Amazon Resources Portal\">Amazon Resources Portal</a>');
+tam5a2134a4227e5t.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Virtual_Assets_Management_Portals\&quot;" title=\"Virtual Assets Management Portals\">Virtual Assets Portals</a>');
+tam5a2134a4227e5t.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Virtual_Assets_in_Cloud_Provisioning\&quot;" title=\"Managing Virtual Assets in Cloud Provisioning\">Managing Virtual Assets</a>');
+tam5a2134a4227e5t.add(8, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Control_for_Cloud_Provisioning\&quot;" title=\"Change Control for Cloud Provisioning\">Change Control</a>');
+tam5a2134a4227e5t.add(9, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Service_Level_Management_for_Cloud_Provisioning\&quot;" title=\"Service Level Management for Cloud Provisioning\">Service Level Management</a>');
+tam5a2134a4227e5t.add(10, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Extension_Points\&quot;" title=\"Cloud Provisioning Extension Points\">Cloud Provisioning Extension Points</a>');
+tam5a2134a4227e5t.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services\&quot;" title=\"Amazon Web Services\">Amazon Web Services</a>');
+tam5a2134a4227e5t.add(12, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Amazon_Web_Services\&quot;" title=\"Configuring Amazon Web Services\">Configuring an AWS Account</a>');
+tam5a2134a4227e5t.add(13, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Billing\&quot;" title=\"Amazon Web Services Billing\">AWS Billing</a>');
+tam5a2134a4227e5t.add(14, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Demo_Data\&quot;" title=\"Amazon Web Services Demo Data\">AWS Demo Data</a>');
+tam5a2134a4227e5t.add(15, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Resource_Optimization\&quot;" title=\"Amazon Resource Optimization\">Resource Optimization</a>');
+tam5a2134a4227e5t.add(16, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Tagging\&quot;" title=\"AWS Tagging\">AWS Tagging</a>');
+tam5a2134a4227e5t.add(17, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Elastic_Block_Store\&quot;" title=\"Amazon Elastic Block Store\">Amazon Elastic Block Store</a>');
+tam5a2134a4227e5t.add(18, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=AWS_Virtual_Private_Clouds\&quot;" title=\"AWS Virtual Private Clouds\">Virtual Private Clouds</a>');
+tam5a2134a4227e5t.add(19, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_Web_Services_Console\&quot;" title=\"Amazon Web Services Console\">Amazon Web Services Console</a>');
+tam5a2134a4227e5t.add(20, 11, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_Web_Services\&quot;" title=\"Installed with Amazon Web Services\">Installed with Amazon Web Services</a>');
+tam5a2134a4227e5t.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_CloudFormation\&quot;" title=\"Amazon CloudFormation\">Amazon CloudFormation</a>');
+tam5a2134a4227e5t.add(22, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Setting_Up_an_AWS_CloudFormation_Template\&quot;" title=\"Setting Up an AWS CloudFormation Template\">Setting Up a CloudFormation Template</a>');
+tam5a2134a4227e5t.add(23, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_CloudFormation_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from CloudFormation Templates in Cloud Provisioning\">Creating a Catalog Item</a>');
+tam5a2134a4227e5t.add(24, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_CloudFormation_Stacks\&quot;" title=\"Managing CloudFormation Stacks\">Managing CloudFormation Stacks</a>');
+tam5a2134a4227e5t.add(25, 21, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_AWS_CloudFormation_Stack\&quot;" title=\"Requesting an AWS CloudFormation Stack\">Requesting a CloudFormation Stack</a>');
+tam5a2134a4227e5t.add(26, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 for Cloud Provisioning\">Amazon EC2</a>');
+tam5a2134a4227e5t.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=EC2_Provisioning_Quick_Start\&quot;" title=\"EC2 Provisioning Quick Start\">EC2 Provisioning Quick Start</a>');
+tam5a2134a4227e5t.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_Amazon_EC2\&quot;" title=\"Cloud Administration for Amazon EC2\">Cloud Administration</a>');
+tam5a2134a4227e5t.add(29, 26, '<strong class=\"selflink\">Configuration</strong>');
+tam5a2134a4227e5t.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_EC2_Images_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from EC2 Images in Cloud Provisioning\">Creating Catalog Items</a>');
+tam5a2134a4227e5t.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Approvals_and_Provisioning_for_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Approvals and Provisioning for Cloud Provisioning\">Approvals and Provisioning</a>');
+tam5a2134a4227e5t.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_an_Amazon_EC2_Instance_for_Cloud_Provisioning\&quot;" title=\"Requesting an Amazon EC2 Instance for Cloud Provisioning\">Service Catalog Request</a>');
+tam5a2134a4227e5t.add(33, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Amazon_EC2_Integration_for_Training_Partners_in_Cloud_Provisioning\&quot;" title=\"Amazon EC2 Integration for Training Partners in Cloud Provisioning\">Training Partner Integration</a>');
+tam5a2134a4227e5t.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Amazon_EC2_for_Cloud_Provisioning\&quot;" title=\"Installed with Amazon EC2 for Cloud Provisioning\">Installed with EC2 Provisioning</a>');
+tam5a2134a4227e5t.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_for_Cloud_Provisioning\&quot;" title=\"VMware for Cloud Provisioning\">VMware</a>');
+tam5a2134a4227e5t.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Provisioning_Quick_Start\&quot;" title=\"VMware Provisioning Quick Start\">VMware Provisioning Quick Start</a>');
+tam5a2134a4227e5t.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Administration_for_VMware\&quot;" title=\"Cloud Administration for VMware\">Cloud Administration</a>');
+tam5a2134a4227e5t.add(38, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=User_Privileges_for_vCenter_API_for_Cloud_Provisioning\&quot;" title=\"User Privileges for vCenter API for Cloud Provisioning\">User Privileges for vCenter API</a>');
+tam5a2134a4227e5t.add(39, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_VMware_for_Cloud_Provisioning\&quot;" title=\"Configuring VMware for Cloud Provisioning\">Configuration</a>');
+tam5a2134a4227e5t.add(40, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Networks_for_Cloud_Provisioning\&quot;" title=\"VMware Networks for Cloud Provisioning\">VMware Networks</a>');
+tam5a2134a4227e5t.add(41, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=VMware_Templates_and_Offerings_for_Cloud_Provisioning\&quot;" title=\"VMware Templates and Offerings for Cloud Provisioning\">Templates and Offerings</a>');
+tam5a2134a4227e5t.add(42, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_Catalog_Items_from_VMware_Templates_in_Cloud_Provisioning\&quot;" title=\"Creating Catalog Items from VMware Templates in Cloud Provisioning\">Creating Catalog Items</a>');
+tam5a2134a4227e5t.add(43, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Requesting_a_VMware_Instance_in_Cloud_Provisioning\&quot;" title=\"Requesting a VMware Instance in Cloud Provisioning\" class=\"mw-redirect\">Service Catalog Requests</a>');
+tam5a2134a4227e5t.add(44, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approving_and_Provisioning_VMware_Requests_for_Cloud_Provisioning\&quot;" title=\"Approving and Provisioning VMware Requests for Cloud Provisioning\">Approving and Provisioning Requests</a>');
+tam5a2134a4227e5t.add(45, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Cloud_Provisioning_Error_Handling\&quot;" title=\"Cloud Provisioning Error Handling\">Error Handling</a>');
+tam5a2134a4227e5t.add(46, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_VMware_for_Cloud_Provisioning\&quot;" title=\"Installed with VMware for Cloud Provisioning\">Installed with VMware Provisioning</a>');
+
+                                               document.getElementById('5a2134a4227e5t').innerHTML = tam5a2134a4227e5t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2134a4227e5t) { window.tamOnload_tam5a2134a4227e5t[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow Overview</a></li>
+<li><a href="index.php%3Ftitle=MID_Server.html" title="MID Server">MID Server</a></li></ul>
+</td></tr>
+<tr>
+<th> Get the Book
+</th></tr>
+<tr>
+<td> <center><b><a href="index.php%3Ftitle=Book:Cloud_Provisioning.html" title="Book:Cloud Provisioning">Cloud Provisioning</a></b></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Required_Roles"><span class="tocnumber">2</span> <span class="toctext">Required Roles</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Configuration_Tasks"><span class="tocnumber">3</span> <span class="toctext">Configuration Tasks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Configure_the_ServiceNow_Amazon_Web_Services_Account"><span class="tocnumber">3.1</span> <span class="toctext">Configure the ServiceNow Amazon Web Services Account</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Create_Region_Settings_for_the_Account"><span class="tocnumber">3.2</span> <span class="toctext">Create Region Settings for the Account</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Customize_Image_Permissions"><span class="tocnumber">3.3</span> <span class="toctext">Customize Image Permissions</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Versions_Prior_to_the_Eureka_Release"><span class="tocnumber">3.4</span> <span class="toctext">Versions Prior to the Eureka Release</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Regions"><span class="tocnumber">4</span> <span class="toctext">Regions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Managing_Regions"><span class="tocnumber">4.1</span> <span class="toctext">Managing Regions</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Create one or more Amazon EC2 accounts (<a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://aws.amazon.com/ec2/">http://aws.amazon.com/ec2/</a> ), and then configure ServiceNow to communicate with those accounts. Make sure you copy the following information about your Amazon EC2 accounts for use in the ServiceNow configuration procedures.
+</p>
+<ul><li>Certificate (download and store in a safe location)</li>
+<li>Private key (download and store in a safe location)</li>
+<li>Account number</li>
+<li>Key pairs</li></ul>
+<h1><span class="mw-headline" id="Required_Roles"><span class="mw-headline-number">2</span> Required Roles</span></h1>
+<p>Users who are members of the Virtual Provisioning Cloud Administrators group (cloud_admin role) can configure Amazon EC2 accounts in ServiceNow.
+</p>
+<h1><span class="mw-headline" id="Configuration_Tasks"><span class="mw-headline-number">3</span> Configuration Tasks</span></h1>
+<p>Perform these tasks in order to configure Amazon EC2 provisioning in ServiceNow, starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>. If you are using an earlier release, see <a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html#Versions_Prior_to_the_Eureka_Release">previous version information</a>.
+</p>
+<h2><span class="mw-headline" id="Configure_the_ServiceNow_Amazon_Web_Services_Account"><span class="mw-headline-number">3.1</span> Configure the ServiceNow Amazon Web Services Account</span></h2>
+<p>To configure an AWS account, see <a href="index.php%3Ftitle=Configuring_Amazon_Web_Services.html" title="Configuring Amazon Web Services">Configuring Amazon Web Services</a>.
+</p>
+<h2><span class="mw-headline" id="Create_Region_Settings_for_the_Account"><span class="mw-headline-number">3.2</span> Create Region Settings for the Account</span></h2>
+<ol><li>In the <b>EC2 Region Settings</b> related list, click <b>New</b>.</li>
+<li>In the Region Settings form, create a <b>Name</b> for the region, assign that region a <b>Key pair</b>, and select the Amazon <b>Region</b> associated with the key pair.
+<dl><dd>Use the private key portion of this key pair along with user credentials to log in to any virtual machine created with this key pair.</dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Region_Settings_E.png.html" class="image" title="EC2_Region_Settings_E.png‎"><img alt="EC2_Region_Settings_E.png‎" src="images/1/10/EC2_Region_Settings_E.png" width="734" height="132" /></a></dd>
+<dd><br /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Customize_Image_Permissions"><span class="mw-headline-number">3.3</span> Customize Image Permissions</span></h2>
+<ol><li>If the owner of a different AWS account has granted you permission to access images (AMIs) in their account, configure your account to receive these images. Make sure you have the AWS account number that has the shared images.
+<dl><dd>a. In the <b>Shared Image Accounts</b> related list, click <b>New</b>.</dd>
+<dd><br />
+<dl><dd><a href="index.php%3Ftitle=File:Shared_image.png.html" class="image" title="Shared Image Accounts"><img alt="Shared Image Accounts" src="images/thumb/0/07/Shared_image.png/750px-Shared_image.png" width="750" height="389" srcset="/images/0/07/Shared_image.png 1.5x, /images/0/07/Shared_image.png 2x" /></a></dd></dl></dd>
+<dd><br /></dd>
+<dd>b. Enter a unique and descriptive name for the new shared account and provide Amazon EC2 account number of the shared account.</dd>
+<dd>c. Click <b>Submit</b>.</dd>
+<dd>d. Repeat this procedure for additional shared accounts.</dd></dl></li>
+<li>Click the <b>Update Images</b> related link to populate the <b>EC2 Images</b> related list with images provided by Amazon.</li></ol>
+<h2><span class="mw-headline" id="Versions_Prior_to_the_Eureka_Release"><span class="mw-headline-number">3.4</span> Versions Prior to the Eureka Release</span></h2>
+<p>For instances using the Dublin or Calgary release, use this procedure to configure an Amazon EC2 account in ServiceNow.
+</p>
+<table class="collapsible collapsed">
+
+<tr>
+<th> Click the plus to expand previous version information
+</th></tr>
+<tr>
+<td>
+<p><b>Enter the Amazon Certificate</b>
+</p><p>Copy the certificate for your Amazon EC2 account into ServiceNow.
+</p>
+<ol><li>Navigate to <b>Amazon EC2 &gt; Configuration &gt; Certificates</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Create a new record with the following values: 
+<ul><li><b>Name</b>: Enter a unique name</li>
+<li><b>Format</b>: <i>PEM</i> </li>
+<li><b>Type</b>: <i>Trust Store Cert.</i></li></ul></li>
+<li>Copy your Amazon EC2 certificate and paste it into the <b>PEM Certificate</b> field.</li>
+<li>Make sure the certificate begins and ends with
+<dl><dd><tt>-----BEGIN CERTIFICATE-----</tt></dd>
+<dd><tt>-----END CERTIFICATE-----</tt></dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Certificate_Calgary.png.html" class="image" title="EC2_Certificate_Calgary.png‎"><img alt="EC2_Certificate_Calgary.png‎" src="images/thumb/9/9f/EC2_Certificate_Calgary.png/900px-EC2_Certificate_Calgary.png" width="900" height="435" srcset="/images/9/9f/EC2_Certificate_Calgary.png 1.5x, /images/9/9f/EC2_Certificate_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<p><b>Generate the PKCS12 Key Store File</b>
+</p><p>Generate a <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://www.flatmtn.com/article/creating-pkcs12-certificates">PKCS12</a> key store file using the certificate and the <i>private key</i> downloaded when you created the Amazon EC2 account.  Record the key store <i>alias</i> and the password you create in this procedure for use in the next task.
+</p><p><b>Generate the PKCS12 File</b>
+</p><p>Generate the PKCS12 key store file using a tool such as OpenSSL. The following command creates the PKCS12 key store file using OpenSSL on Linux. The key store alias can be any string. Enter this command on one line.
+</p>
+<pre>openssl pkcs12 -export -name &lt;KEY STORE ALIAS&gt; -out &lt;KEY STORE FILE NAME&gt; -in &lt;AMAZON CERTIFICATE NAME&gt; -inkey &lt;AMAZON PRIVATE KEY&gt;</pre>
+<p>An example of a command line might be:
+</p>
+<pre>openssl pkcs12 -export -name snc_aws -out snc_aws.pkcs12 -in aws_auto_x509_cert.pem -inkey aws_auto_private_key_.pem</pre>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The PKCS12 key store file format is binary and the </i>pem<i> files are text files. Also remember that the private key should be protected. The certificate is encrypted with the password in ServiceNow but does contain the private key.</i>
+</td></tr></table>
+<p><br />
+<b>Attach the Key Store File</b>
+</p><p>Attach the key store file created in the previous procedure to the ServiceNow key store record and provide the key store password.
+</p>
+<ol><li>Navigate to <b>Amazon EC2 &gt; Configuration &gt; Certificates</b>.</li>
+<li>Click <b>New</b>.</li>
+<li>Enter a unique <b>Name</b> and set the  <b>Type</b> to <b>PKCS12 Key Store</b>.</li>
+<li>Enter the <b>Key store password</b>.</li>
+<li>Click the attachment icon (<a href="index.php%3Ftitle=File:Attachments.png.html" class="image"><img alt="Attachments.png" src="images/1/15/Attachments.png" width="13" height="16" /></a>) and attach the PKCS12 file generated in the previous procedure.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Keystore_Calgary.png.html" class="image" title="EC2_Keystore_Calgary.png‎"><img alt="EC2_Keystore_Calgary.png‎" src="images/thumb/1/13/EC2_Keystore_Calgary.png/800px-EC2_Keystore_Calgary.png" width="800" height="147" srcset="/images/1/13/EC2_Keystore_Calgary.png 1.5x, /images/1/13/EC2_Keystore_Calgary.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li></ol>
+<p><b> Configure the ServiceNow Amazon EC2 Account </b>
+</p>
+<ol><li>Navigate to <b>Amazon EC2 &gt; Configuration &gt; Account</b>. </li>
+<li>Click <b>New</b>.</li>
+<li>In the EC2 Account form:
+<ul><li>Enter a unique <b>Name</b> for the account.</li>
+<li>Enter the <b>Account number</b>.</li>
+<li>Select the Amazon EC2 <b>Certificate</b> and <b>Key store</b> created in Tasks 1 and 2.</li>
+<li>Enter the <b>Key store alias</b> used to generate the PKCS12 key store file.</li></ul>
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Account_Calgary.png.html" class="image" title="EC2_Account_Calgary.png‎"><img alt="EC2_Account_Calgary.png‎" src="images/8/8b/EC2_Account_Calgary.png" width="387" height="223" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Submit</b>.</li>
+<li>Open the account you just created. </li>
+<li>Under <b>Related Links</b>, click <b>Update Key Pairs</b>. 
+<dl><dd>After a brief pause, ServiceNow populates the <b>EC2 Key Pairs</b> related list. Key pairs consist of a private key and a <i>fingerprint</i>. To launch an EC2 instance in a region and access it via SSH, you use the private key from the key pair for that region.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Keypairs.png.html" class="image" title="EC2_Keypairs.png‎"><img alt="EC2_Keypairs.png‎" src="images/thumb/0/02/EC2_Keypairs.png/900px-EC2_Keypairs.png" width="900" height="441" srcset="/images/0/02/EC2_Keypairs.png 1.5x, /images/0/02/EC2_Keypairs.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>In the <b>EC2 Region Settings</b> related list, click <b>New</b>.</li>
+<li>In the Region Settings form, create a <b>Name</b> for the region, assign that region a <b>Key pair</b>, and select the Amazon <b>Region</b> associated with the key pair.
+<dl><dd>Use the private key portion of this key pair to log into any virtual machine created with this key pair.</dd></dl></li>
+<li>Click <b>Submit</b>.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:EC2_Region_Settings_Calgary.png.html" class="image" title="EC2_Region_Settings_Calgary.png‎"><img alt="EC2_Region_Settings_Calgary.png‎" src="images/8/8c/EC2_Region_Settings_Calgary.png" width="434" height="187" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>If the owner of a different EC2 account has granted you permission to access images (AMIs) in their account, configure your account to receive these images. Make sure you have the Amazon EC2 account number that has the shared images.
+<dl><dd>a. In the <b>Shared Image Accounts</b> related list, click <b>New</b>.</dd>
+<dd><br />
+<dl><dd><a href="index.php%3Ftitle=File:EC2_Account2_Calgary.png.html" class="image" title="EC2_Account2_Calgary.png"><img alt="EC2_Account2_Calgary.png" src="images/thumb/2/24/EC2_Account2_Calgary.png/900px-EC2_Account2_Calgary.png" width="900" height="407" srcset="/images/2/24/EC2_Account2_Calgary.png 1.5x, /images/2/24/EC2_Account2_Calgary.png 2x" /></a></dd></dl></dd>
+<dd><br /></dd>
+<dd>b. Enter a unique and descriptive name for the new shared account and provide Amazon EC2 account number of the shared account.</dd>
+<dd>c. Click <b>Submit</b>.</dd>
+<dd>d. Repeat this procedure for additional shared accounts.</dd></dl></li>
+<li>Click the <b>Update Images</b> related link to populate the <b>EC2 Images</b> related list with images provided by Amazon.</li></ol>
+<p><b>Protecting the Private Key</b>
+</p><p>To avoid distributing your private key to users who request an instance:
+</p>
+<ol><li>Create an EC2 instance using the private key.</li>
+<li>Configure this instance with a different user name and password.</li>
+<li>Create an image from this instance.
+<dl><dd>Amazon provides tools for doing this.</dd></dl></li>
+<li>Provision requests for instances from this image and distribute the user name and password to the users.</li></ol>
+</td></tr></table>
+<h1><span class="mw-headline" id="Regions"><span class="mw-headline-number">4</span> Regions</span></h1>
+<p>AWS <i>regions</i> are the geographic locations of AWS datacenters, accessed though SOAP endpoints. After you configure an AWS account in ServiceNow, you can create EC2 instances in any of these regions.  The AWS regions are:
+</p>
+<ul><li>Asia Pacific (Singapore) Region</li>
+<li>Asia Pacific (Sydney) Region</li>
+<li>Asia Pacific (Tokyo) Region</li>
+<li>EU (Ireland) Region</li>
+<li>South America (Sao Paulo) Region </li>
+<li>US-East (Northern Virginia) Region</li>
+<li>US-West (Northern California) Region</li>
+<li>US-West (Oregon) Region </li></ul>
+<h2><span class="mw-headline" id="Managing_Regions"><span class="mw-headline-number">4.1</span> Managing Regions</span></h2>
+<p>The list of AWS regions is populated by default when you activate <a href="index.php%3Ftitle=Configuring_Amazon_Web_Services.html" title="Configuring Amazon Web Services">Amazon Web Services</a>. To see the list of available regions, navigate to <b>Amazon Web Services &gt; Configuration &gt; Regions</b>.
+</p><p><br />
+<a href="index.php%3Ftitle=File:Aws_regions.png.html" class="image" title="AWS Regions‎"><img alt="AWS Regions‎" src="images/1/19/Aws_regions.png" width="750" height="398" /></a>
+</p><p><br style="clear:both" />
+</p><p>You can update the list with any new regions that Amazon might add or restore the list, as needed. You do not need to update regions if the region in which you want to create EC2 instances already appears in the EC2 Regions list. 
+</p><p>To update the AWS Regions list, run Discovery for the AWS account. For more information on running Discovery for AWS accounts, see <a href="index.php%3Ftitle=Discovering_an_Amazon_Web_Services_(AWS)_Cloud.html" title="Discovering an Amazon Web Services (AWS) Cloud">Discovering an AWS Cloud</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201105324
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.217 seconds
+Real time usage: 0.449 seconds
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 296/1000000
+Post‐expand include size: 1661/2097152 bytes
+Template argument size: 700/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   95.740      1 - -total
+ 93.89%   89.889      1 - Template:Cloud_Provisioning
+ 83.47%   79.910      1 - Template:Topic
+  6.16%    5.901      4 - Template:T
+  4.46%    4.271      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:17106-0!*!0!1!en!5!* and timestamp 20171201105324 and revision id 240052
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;oldid=240052.html">http://wiki.servicenow.com/index.php?title=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;oldid=240052</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Amazon+EC2+for+Cloud+Provisioning.html" title="Category:Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Operations+Management.html" title="Category:IT Operations Management">IT Operations Management</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Cloud+Provisioning.html" title="Category:Cloud Provisioning">Cloud Provisioning</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Amazon+EC2+for+Cloud+Provisioning.html" title="Category:Amazon EC2 for Cloud Provisioning">Amazon EC2 for Cloud Provisioning</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_17106"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="17106" data-vote-the-vote="5" data-vote-id="17106" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17106_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="17106" data-vote-the-vote="1" data-vote-id="17106" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17106_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Configuring+Amazon+EC2+for+Cloud+Provisioning.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Configuring+Amazon+EC2+for+Cloud+Provisioning.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Configuring_Amazon_EC2_for_Cloud_Provisioning.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Configuring+Amazon+EC2+for+Cloud+Provisioning.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Configuring+Amazon+EC2+for+Cloud+Provisioning&amp;returnto=Configuring+Amazon+EC2+for+Cloud+Provisioning&amp;oldid=240052&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FConfiguring_Amazon_EC2_for_Cloud_Provisioning.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Configuring_Amazon_EC2_for_Cloud_Provisioning" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;oldid=240052.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Configuring_Amazon_EC2_for_Cloud_Provisioning&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:26, 31 January 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":881});});</script></body></html>

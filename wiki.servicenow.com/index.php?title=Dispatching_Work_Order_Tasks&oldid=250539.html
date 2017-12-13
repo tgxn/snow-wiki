@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Dispatching Work Order Tasks - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Dispatching_Work_Order_Tasks","wgTitle":"Dispatching Work Order Tasks","wgCurRevisionId":250539,"wgRevisionId":250539,"wgArticleId":22300,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Field Service Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Dispatching_Work_Order_Tasks","wgRelevantArticleId":22300,"wgRequestId":"05b3d71577abded6d0a280f2","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170831143212"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Dispatching_Work_Order_Tasks"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Dispatching Work Order Tasks"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Field Service Management"/>
+<meta name="category" content="Field Service Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Dispatching_Work_Order_Tasks.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Dispatching Work Order Tasks"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170831143212"/>
+
+	<meta property="article:published_time" content="20170831143212"/>
+
+	<meta property="article:modified_time" content="20170831143212"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Field Service Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Dispatching_Work_Order_Tasks"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Dispatching_Work_Order_Tasks rootpage-Dispatching_Work_Order_Tasks skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Dispatching+Work+Order+Tasks.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Dispatching+Work+Order+Tasks&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, 0]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (500 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Dispatching Work Order Tasks</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+Dispatching Work Order Tasks</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Field_Service_Management.html" title="Field Service Management">Field Service</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a21e400b77bbt'></div><script type="text/javascript">window.tamOnload_tam5a21e400b77bbt=[];tree = new dTree('tam5a21e400b77bbt');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a21e400b77bbt = tree;
+                                               tam5a21e400b77bbt.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Installed_with_Field_Service_Management\&quot;" title=\"Installed with Field Service Management\">Installed Components</a>');
+
+tam5a21e400b77bbt.add(2, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Service_Overview_Module\&quot;" title=\"Field Service Overview Module\">Field Service Overview Module</a>');
+tam5a21e400b77bbt.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Service_Configuration\&quot;" title=\"Field Service Configuration\">Field Service Configuration</a>');
+tam5a21e400b77bbt.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Managing_Work_Orders\&quot;" title=\"Managing Work Orders\">Work Orders</a>');
+tam5a21e400b77bbt.add(5, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Order_Tasks\&quot;" title=\"Work Order Tasks\">Work Order Tasks</a>');
+tam5a21e400b77bbt.add(6, 4, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Work_Order_Templates\&quot;" title=\"Work Order Templates\">Work Order Templates</a>');
+tam5a21e400b77bbt.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Part_Requirements\&quot;" title=\"Part Requirements\">Part Requirements</a>');
+tam5a21e400b77bbt.add(8, 0, '<strong class=\"selflink\">Assigning Tasks</strong>');
+tam5a21e400b77bbt.add(9, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Auto-Assignment\&quot;" title=\"Using Auto-Assignment\">Auto-Assignment</a>');
+tam5a21e400b77bbt.add(10, 8, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Dispatch_Map\&quot;" title=\"Using the Dispatch Map\">Dispatch Map</a>');
+tam5a21e400b77bbt.add(11, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Executing_Work_Order_Tasks\&quot;" title=\"Executing Work Order Tasks\">Executing Tasks</a>');
+tam5a21e400b77bbt.add(12, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Service_Groups\&quot;" title=\"Field Service Groups\">Field Service Groups</a>');
+tam5a21e400b77bbt.add(13, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Field_Service_Management_SLAs\&quot;" title=\"Field Service Management SLAs\">SLAs</a>');
+tam5a21e400b77bbt.add(14, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=SM_States\&quot;" title=\"SM States\">States</a>');
+tam5a21e400b77bbt.add(15, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Territory_Management\&quot;" title=\"Territory Management\">Territories</a>');
+
+                                               document.getElementById('5a21e400b77bbt').innerHTML = tam5a21e400b77bbt.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a21e400b77bbt) { window.tamOnload_tam5a21e400b77bbt[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Introduction_to_Assets_and_Configuration.html" title="Introduction to Assets and Configuration">Asset and Configuration</a></li>
+<li><a href="index.php%3Ftitle=Geolocation.html" title="Geolocation">Geolocation</a></li>
+<li><a href="index.php%3Ftitle=State_Flows.html" title="State Flows">State Flows</a></li>
+<li><a href="index.php%3Ftitle=Product_Catalog.html" title="Product Catalog">Product Catalog</a></li></ul>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-service-management-for-the-enterprise/page/product/planning-and-policy/concept/c_DispatchWorkOrderTasks.html">Dispatch Work Order Tasks</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Requesting_Additional_Task_Information"><span class="tocnumber">2</span> <span class="toctext">Requesting Additional Task Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Dispatching_Tasks_from_the_Queue"><span class="tocnumber">3</span> <span class="toctext">Dispatching Tasks from the Queue</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Auto-Dispatching_Tasks"><span class="tocnumber">3.1</span> <span class="toctext">Auto-Dispatching Tasks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Dispatching_Single_Tasks_from_the_Task_Map"><span class="tocnumber">4</span> <span class="toctext">Dispatching Single Tasks from the Task Map</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Visual_Dispatch"><span class="tocnumber">5</span> <span class="toctext">Visual Dispatch</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>After all work order tasks are qualified, the parent work order state automatically changes to <b>Qualified</b>. If you have already <a href="index.php%3Ftitle=Part_Requirements.html#Sourcing_Parts" title="Part Requirements">sourced parts</a> and created <a href="index.php%3Ftitle=Part_Requirements.html#Creating_Transfer_Orders" title="Part Requirements">transfer order lines</a>, you are ready to begin dispatching work order tasks to agents, either from the dispatch queue or from the task map. Users with the wm_dispatcher, wm_initiator_qualifier_dispatcher, or wm_admin role can use these procedures
+</p><p>The examples in this page illustrate the use of part requirements with work orders; however, part requirements can be used with any <a href="index.php%3Ftitle=Service_Management.html" title="Service Management">Service Management application</a>.
+You can dispatch work order tasks to qualified work agents from these locations:
+</p>
+<ul><li><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Dispatching_Tasks_from_the_Queue">Dispatch queue</a>: Dispatch tasks to agents manually from task records.</li>
+<li><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Dispatching_Single_Tasks_from_the_Task_Map">Task map</a>: Dispatch individual tasks using a Google map with geolocation.</li>
+<li><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html#Visual_Dispatch">Visual Dispatch</a>: Dispatch tasks using a graphical timeline.</li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>In the Fuji release, Work Management was renamed Field Service Management.  If you are using a version prior to Fuji, refer to the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Work+Management+-+Versions+Prior+to+Fuji&amp;oldid=0.html" title="Work Management - Versions Prior to Fuji">Work Management - Versions Prior to Fuji</a> pages.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Requesting_Additional_Task_Information"><span class="mw-headline-number">2</span> Requesting Additional Task Information</span></h1>
+<p>If there is not enough information to dispatch a task, the dispatcher can request more details from the qualifier. 
+This action returns a work order to the <b>Awaiting Qualification</b> state.
+</p>
+<ol><li>Navigate to the appropriate location for your version:
+<ul><li> <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a> or later: <b>Work Management &gt; Dispatching &gt; Dispatch Queue</b></li>
+<li> <a href="index.php%3Ftitle=Dublin_Release_Notes.html" title="Dublin Release Notes">Dublin release</a> or earlier: <b>Work Management &gt; Work Order &gt; Dispatch Queue</b></li></ul></li>
+<li>Open a work order task in <b>Pending Dispatch</b> state.</li>
+<li>In the <b>Work Notes</b> field, enter a reason for returning the work order.</li>
+<li>Click <b>Request more information</b>. 
+<dl><dd>The task state changes to <b>Draft</b> and the work order state changes to <b>Awaiting Qualification</b>. If work management is configured for <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Managing+Work+Orders&amp;oldid=0.html#Automatic_Qualification" title="Managing Work Orders">automatic qualification</a>, the work order state remains at <b>Qualified</b>.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Dispatching_Tasks_from_the_Queue"><span class="mw-headline-number">3</span> Dispatching Tasks from the Queue</span></h1>
+<ol><li>Navigate to the appropriate location for your version:
+<ul><li> Eureka release or later: <b>Work Management &gt; Dispatching &gt; My Dispatch Queue</b></li>
+<li> Dublin release or earlier: <b>Work Management &gt; Work Order &gt; My Dispatch Queue</b></li></ul></li>
+<li>Open a work order task.</li>
+<li>Select an <a href="index.php%3Ftitle=Work_Management_Groups.html#Assignment_Groups" title="Work Management Groups"><b>Assignment group</b></a>.</li>
+<li>Select  an individual agent in the <b>Assigned to</b> field. 
+<dl><dd>The lookup list displays all of the agents in the assignment group.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Dispatch_Manual.png.html" class="image" title="WM_Dispatch_Manual.png"><img alt="WM_Dispatch_Manual.png" src="images/thumb/c/c2/WM_Dispatch_Manual.png/750px-WM_Dispatch_Manual.png" width="750" height="636" srcset="/images/c/c2/WM_Dispatch_Manual.png 1.5x, /images/c/c2/WM_Dispatch_Manual.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Update</b>.
+<dl><dd>The work order task is now dispatched in the <b>Assigned</b> state.</dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Dispatch_Manual2.png.html" class="image" title="WM_Dispatch_Manual2.png"><img alt="WM_Dispatch_Manual2.png" src="images/thumb/b/b9/WM_Dispatch_Manual2.png/750px-WM_Dispatch_Manual2.png" width="750" height="165" srcset="/images/b/b9/WM_Dispatch_Manual2.png 1.5x, /images/b/b9/WM_Dispatch_Manual2.png 2x" /></a></dd>
+<dd><br /></dd></dl></li></ol>
+<h2><span class="mw-headline" id="Auto-Dispatching_Tasks"><span class="mw-headline-number">3.1</span> Auto-Dispatching Tasks</span></h2>
+<p>To automatically dispatch a task from a task record, click <b>Auto-Dispatch</b>. The system attempts to match the task with a nearby agent who has the necessary skills and a schedule that can accommodate the task. If the system cannot find an appropriate agent, it displays a failure message and leaves the task in the <b>Pending Dispatch</b> state. For more information, see <a href="index.php%3Ftitle=Using_Auto-Dispatch.html#Auto-Dispatching_from_Pending_Dispatch" title="Using Auto-Dispatch">Auto-Dispatching from Pending Dispatch</a>.
+</p>
+<h1><span class="mw-headline" id="Dispatching_Single_Tasks_from_the_Task_Map"><span class="mw-headline-number">4</span> Dispatching Single Tasks from the Task Map</span></h1>
+<p>In some cases, you might need to dispatch an urgent task or reassign one to an alternate agent if the assigned agent is delayed or otherwise unable to perform the task. Only users with the wm_dispatcher or wm_initiator_qualifier_dispatcher role can display their tasks on the dispatch map directly from a task record and see the available agents nearby who have the skills to perform the task. A task cannot be displayed on the dispatch map without a location that has latitude and longitude defined. 
+</p>
+<ol><li>Navigate to <b>Work Management &gt; Dispatching &gt; My Dispatch Queue</b>.</li>
+<li>Open the task you want to dispatch or reassign.</li>
+<li>Click the <b>View Task on Map</b>.
+<dl><dd>This button is only visible if the task contains a location with a defined latitude and longitude. The map that appears displays a red task icon with a black spot for the task, and shows icons for all nearby agents.</dd></dl></li>
+<li>Click <b>View Filter</b>.</li>
+<li>Select a skill level for the agents to display in the map. 
+<dl><dd><ul><li><b>Match all needed skills</b></li>
+<li><b>Match some needed skills</b></li>
+<li><b>Match none of skills</b></li></ul></dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Single_Task_Filter.png.html" class="image" title="WM_Single_Task_Filter.png"><img alt="WM_Single_Task_Filter.png" src="images/3/3d/WM_Single_Task_Filter.png" width="215" height="108" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Click <b>Apply Filter</b>.
+<dl><dd>ServiceNow displays the agents on the map who match the skills selection.</dd></dl></li>
+<li>Click an agent icon to show the agent's name, skills, and schedule.</li>
+<li>Click the icon beside the agent's name to assign the task to that agent.
+<dl><dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:WM_Assign_Single_Task.png.html" class="image" title="WM_Assign_Single_Task.png"><img alt="WM_Assign_Single_Task.png" src="images/9/9b/WM_Assign_Single_Task.png" width="275" height="90" /></a></dd>
+<dd><br /></dd>
+<dd>If the task can fit within the agent's schedule, ServiceNow assigns the task and displays a confirmation message. If the agent's schedule cannot accommodate the task, the system displays a failure message and allows you to select a different agent.</dd></dl></li></ol>
+<h1><span class="mw-headline" id="Visual_Dispatch"><span class="mw-headline-number">5</span> Visual Dispatch</span></h1>
+<p>The Visual Dispatch screen is similar to the ServiceNow <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Timelines&amp;oldid=0.html" title="Using Timelines">timeline</a> screen. The visual dispatch option is available on work order tasks in <b>Pending Dispatch</b> state with a <b>Dispatch group</b> assigned. 
+</p><p>Keep the following in mind when using visual dispatch:
+</p>
+<ul><li>Visual dispatch can only be reached through work order tasks, not work orders.</li>
+<li>Users with the wm_dispatcher or wm_initiator_qualifier_dispatcher role can access visual dispatch, but only if they belong to the assigned <a href="index.php%3Ftitle=Work_Management_Groups.html#Dispatch_Groups" title="Work Management Groups">dispatch group</a>. </li>
+<li>Users with the wm_admin or admin role do not belong to any dispatch groups and cannot access visual dispatch.</li>
+<li>A single dispatch group may cover several <a href="index.php%3Ftitle=Work_Management_Groups.html#Assignment_Groups" title="Work Management Groups">assignment groups</a>.</li>
+<li>An agent can belong to multiple assignment groups.</li></ul>
+<p>To dispatch tasks using Visual Dispatch:
+</p>
+<ol><li>Navigate to the appropriate location for your version:
+<ul><li> Eureka release or later: <b>Work Management &gt; Dispatching &gt; Dispatch Queue</b></li>
+<li> Dublin release or earlier: <b>Work Management &gt; Work Order &gt; Dispatch Queue</b></li></ul></li>
+<li>Open a work order task.</li>
+<li>Click <b>Visual Dispatch</b> in the header or under <b>Related Links</b>.
+<dl><dd>The Visual Dispatch form has these characteristics:
+<ul><li>The agent list on the left is organized by assignment group.</li>
+<li>Tasks appear as horizontal bars in the schedule pane with travel times in blue and scheduled work times in purple.</li>
+<li>Unassigned tasks appear in the lower part of the screen.</li>
+<li>Assigned tasks appear in the upper part of the screen on the same row as their assigned agent.</li>
+<li>Gray bars indicate tasks that are in <b>Work in Progress</b> or <b>Accepted</b> state.</li></ul></dd>
+<dd><br /></dd>
+<dd><a href="index.php%3Ftitle=File:Wm_visual_dispatch2.png.html" class="image" title="Work Management Visual Dispatch Screen"><img alt="Work Management Visual Dispatch Screen" src="images/thumb/7/7c/Wm_visual_dispatch2.png/800px-Wm_visual_dispatch2.png" width="800" height="439" srcset="/images/thumb/7/7c/Wm_visual_dispatch2.png/1200px-Wm_visual_dispatch2.png 1.5x, /images/thumb/7/7c/Wm_visual_dispatch2.png/1600px-Wm_visual_dispatch2.png 2x" /></a></dd>
+<dd><br /></dd></dl></li>
+<li>Change the perspective: 
+<ul><li>Move the slider at the bottom of the chart right or left to scroll across the chart, or adjust the end points of the slider to change the magnification. A narrow slider zooms in on the tasks and provides a more detailed view of travel time and work time. A wide slider pulls the view out and makes more of the chart visible on the screen. </li>
+<li>Click a time interval, such as <b>1M</b> for one month, from the options above the chart. The time interval zooms the chart in or out starting with the current time and date, which is signified by a vertical green line. Note that this does not hold true, however, if the slider is adjusted so that no tasks are visible.</li>
+<li>Specify a time interval by selecting <b>From</b> and <b>To</b> dates above the chart.</li></ul></li>
+<li>Point to a task to obtain more information about it.</li>
+<li>Change the duration of a task by clicking and dragging the left or right edge of the task bar.
+<dl><dd>The system prompts you to confirm any changes you make to tasks in the timeline.</dd></dl></li>
+<li>Move work and travel time simultaneously on the X (horizontal) axis by clicking and dragging the work or travel time for a task to a new location.</li>
+<li>Assign a work order task by dragging the task from the lower section of the screen to an empty slot in the timeline corresponding to an agent in the upper section of the screen. 
+<dl><dd>A single agent cannot have multiple work order tasks scheduled to take place at the same time. A message appears if the selected agent does not have the skills specified for the task.</dd></dl></li>
+<li>Reassign a work order task by dragging the task from one agent to the timeline of a different agent in the upper part of the screen. 
+<dl><dd>If a task has transfer orders that have shipped (in transit), ServiceNow displays a warning and blocks any attempt to reassign the task. If the transfer orders have been received or delivered, reassignment is permitted, and the assets are moved to a state of <b>In Stock / Available</b>.</dd></dl></li>
+<li>Unassign a work order task by dragging the task from the upper section of the screen to the lower section where unassigned tasks are listed.</li></ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20171201232137
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.265 seconds
+Real time usage: 0.375 seconds
+Preprocessor visited node count: 75/1000000
+Preprocessor generated node count: 272/1000000
+Post‐expand include size: 4616/2097152 bytes
+Template argument size: 1032/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   88.402      1 - -total
+ 74.64%   65.979      1 - Template:Field_Service
+ 64.48%   57.004      1 - Template:Topic
+  7.34%    6.486      2 - Template:T
+  7.30%    6.453      2 - Template:Note
+  6.36%    5.618      1 - Template:Using_the_Task_Map
+  5.14%    4.542      1 - Embedded:WM_Request_Information
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:22300-0!*!0!1!en!5!* and timestamp 20171201232136 and revision id 250539
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html">http://wiki.servicenow.com/index.php?title=Dispatching_Work_Order_Tasks&amp;oldid=250539</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Service+Management.html" title="Category:Field Service Management">Field Service Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=IT+Services.html" title="Category:IT Services">IT Services</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Field+Service+Management.html" title="Category:Field Service Management">Field Service Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_22300"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="22300" data-vote-the-vote="5" data-vote-id="22300" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22300_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="22300" data-vote-the-vote="1" data-vote-id="22300" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_22300_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="http://wiki.servicenow.com/index.php?title=Special:CreateAccount&amp;returnto=Dispatching+Work+Order+Tasks&amp;returntoquery=oldid%3D250539" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="http://wiki.servicenow.com/index.php?title=Special:UserLogin&amp;returnto=Dispatching+Work+Order+Tasks&amp;returntoquery=oldid%3D250539" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Dispatching_Work_Order_Tasks.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Dispatching+Work+Order+Tasks.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Dispatching+Work+Order+Tasks&amp;returnto=Dispatching+Work+Order+Tasks&amp;oldid=250539&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FDispatching_Work_Order_Tasks.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Dispatching_Work_Order_Tasks" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;oldid=250539.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Dispatching_Work_Order_Tasks&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 14:32, 31 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":549});});</script></body></html>

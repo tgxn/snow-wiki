@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Workflow Concepts - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Workflow_Concepts","wgTitle":"Workflow Concepts","wgCurRevisionId":251060,"wgRevisionId":251060,"wgArticleId":11875,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Using Workflows"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Workflow_Concepts","wgRelevantArticleId":11875,"wgRequestId":"1dd1c4dc0e781b4052695f84","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170914151236"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Workflow_Concepts"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Workflow Concepts"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Using Workflows"/>
+<meta name="category" content="Using Workflows"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Workflow Concepts"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170914151236"/>
+
+	<meta property="article:published_time" content="20170914151236"/>
+
+	<meta property="article:modified_time" content="20170914151236"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Using Workflows"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Workflow_Concepts"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Workflow_Concepts rootpage-Workflow_Concepts skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Workflow+Concepts.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (453 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Workflow Concepts</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Workflow_Overview.html" title="Workflow Overview" class="mw-redirect">Workflow</a> &gt; <a href="index.php%3Ftitle=Using_the_Graphical_Workflow_Editor.html" title="Using the Graphical Workflow Editor" class="mw-redirect">Using Workflows</a> &gt; Workflow Concepts</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji and earlier releases. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/using-workflows/concept/c_WorkflowConcepts.html">Workflow Concepts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p><b>The ServiceNow Wiki is no longer being updated. Visit <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.</b>
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Workflows.html" title="Workflows">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Workflows&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</a>
+</th></tr>
+<tr>
+<td> <div class='dtree' id='5a2376cd2c0ect'></div><script type="text/javascript">window.tamOnload_tam5a2376cd2c0ect=[];tree = new dTree('tam5a2376cd2c0ect');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2376cd2c0ect = tree;
+                                               tam5a2376cd2c0ect.add(1, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Resources\&quot;" title=\"Workflow Resources\">Resources</a>');
+
+tam5a2376cd2c0ect.add(2, 0, '<strong class=\"selflink\">Concepts</strong>');
+tam5a2376cd2c0ect.add(3, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Operations_Dashboard\&quot;" title=\"Workflow Operations Dashboard\">Operations Dashboard</a>');
+tam5a2376cd2c0ect.add(4, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Editor\&quot;" title=\"Using the Workflow Editor\">Workflow Editor</a>');
+tam5a2376cd2c0ect.add(5, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Graphical_Workflow_Editor_-_Versions_Prior_to_Fuji\&quot;" title=\"Using the Graphical Workflow Editor - Versions Prior to Fuji\">Workflow Editor - Prior to Fuji</a>');
+tam5a2376cd2c0ect.add(6, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_a_Workflow\&quot;" title=\"Creating a Workflow\">Creating a Workflow</a>');
+tam5a2376cd2c0ect.add(7, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Workflow_Activities\&quot;" title=\"Using Workflow Activities\">Using Activities</a>');
+tam5a2376cd2c0ect.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Condition_Activities\&quot;" title=\"Condition Activities\">Condition</a>');
+tam5a2376cd2c0ect.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Notification_Activities\&quot;" title=\"Notification Activities\">Notification</a>');
+tam5a2376cd2c0ect.add(10, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Subflow_Activities\&quot;" title=\"Subflow Activities\">Subflow</a>');
+tam5a2376cd2c0ect.add(11, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Timer_Activities\&quot;" title=\"Timer Activities\">Timer</a>');
+tam5a2376cd2c0ect.add(12, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Task_Activities\&quot;" title=\"Task Activities\">Task</a>');
+tam5a2376cd2c0ect.add(13, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Utility_Activities\&quot;" title=\"Utility Activities\">Utility</a>');
+tam5a2376cd2c0ect.add(14, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_the_Workflow_Scratchpad\&quot;" title=\"Using the Workflow Scratchpad\">Scratchpad</a>');
+tam5a2376cd2c0ect.add(15, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Approval_and_Rollback_Activities\&quot;" title=\"Approval and Rollback Activities\">Approvals and Rollbacks</a>');
+tam5a2376cd2c0ect.add(16, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Custom_Transitions_for_the_Approval_-_User_Activity\&quot;" title=\"Custom Transitions for the Approval - User Activity\">Approval - User Activity</a>');
+tam5a2376cd2c0ect.add(17, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Selecting_a_Rollback_Activity\&quot;" title=\"Selecting a Rollback Activity\">Selecting a Rollback Activity</a>');
+tam5a2376cd2c0ect.add(18, 15, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Designing_Workflows_with_Rollback_To\&quot;" title=\"Designing Workflows with Rollback To\">Designing Workflows with Rollback To</a>');
+tam5a2376cd2c0ect.add(19, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Subflows\&quot;" title=\"Using Subflows\">Using Subflows</a>');
+tam5a2376cd2c0ect.add(20, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Using_Variables_in_a_Workflow\&quot;" title=\"Using Variables in a Workflow\">Using Variables</a>');
+tam5a2376cd2c0ect.add(21, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Events\&quot;" title=\"Workflow Events\">Events</a>');
+tam5a2376cd2c0ect.add(22, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stages\&quot;" title=\"Workflow Stages\">Stages</a>');
+tam5a2376cd2c0ect.add(23, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Sets\&quot;" title=\"Workflow Stage Sets\" class=\"mw-redirect\">Stage Sets</a>');
+tam5a2376cd2c0ect.add(24, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Stage_Fields\&quot;" title=\"Workflow Stage Fields\">Stage Fields</a>');
+tam5a2376cd2c0ect.add(25, 22, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Displaying_Stage_Icons\&quot;" title=\"Displaying Stage Icons\">Stage Icons</a>');
+tam5a2376cd2c0ect.add(26, 0, 'Administering Workflows');
+tam5a2376cd2c0ect.add(27, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Administering_Workflow_Contexts\&quot;" title=\"Administering Workflow Contexts\">Workflow Contexts</a>');
+tam5a2376cd2c0ect.add(28, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Scheduling_a_Workflow\&quot;" title=\"Scheduling a Workflow\">Scheduling</a>');
+tam5a2376cd2c0ect.add(29, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Configuring_Workflow_Security\&quot;" title=\"Configuring Workflow Security\">Security</a>');
+tam5a2376cd2c0ect.add(30, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Moving_Workflows_with_Update_Sets\&quot;" title=\"Moving Workflows with Update Sets\">Using Update Sets</a>');
+tam5a2376cd2c0ect.add(31, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Timelines\&quot;" title=\"Workflow Timelines\">Timelines</a>');
+tam5a2376cd2c0ect.add(32, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Error_Handling\&quot;" title=\"Workflow Error Handling\">Error Handling</a>');
+tam5a2376cd2c0ect.add(33, 26, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Run_Time_Metrics\&quot;" title=\"Workflow Run Time Metrics\">Run Time Metrics</a>');
+tam5a2376cd2c0ect.add(34, 26, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Troubleshooting_Workflows\&quot;" title=\"Troubleshooting Workflows\">Troubleshooting</a>');
+tam5a2376cd2c0ect.add(35, 0, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation\&quot;" title=\"Workflow Validation\">Workflow Validation</a>');
+tam5a2376cd2c0ect.add(36, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validation_Report\&quot;" title=\"Workflow Validation Report\">Reports</a>');
+tam5a2376cd2c0ect.add(37, 35, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validators\&quot;" title=\"Workflow Validators\">Validators</a>');
+tam5a2376cd2c0ect.add(38, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionOut\&quot;" title=\"Workflow Validator - ValidateTransitionOut\">Exit Transition</a>');
+tam5a2376cd2c0ect.add(39, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTransitionIn\&quot;" title=\"Workflow Validator - ValidateTransitionIn\">Inbound Transition</a>');
+tam5a2376cd2c0ect.add(40, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateDanglingTransition\&quot;" title=\"Workflow Validator - ValidateDanglingTransition\">Dangling Transition</a> ');
+tam5a2376cd2c0ect.add(41, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSubflows\&quot;" title=\"Workflow Validator - ValidateSubflows\">Subflows</a> ');
+tam5a2376cd2c0ect.add(42, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateScriptForCurrentDotUpdate\&quot;" title=\"Workflow Validator - ValidateScriptForCurrentDotUpdate\">current.update()</a>');
+tam5a2376cd2c0ect.add(43, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateLowestCommonTable\&quot;" title=\"Workflow Validator - ValidateLowestCommonTable\">Lowest Common Table</a>');
+tam5a2376cd2c0ect.add(44, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateTableChange\&quot;" title=\"Workflow Validator - ValidateTableChange\"> Table Change</a>');
+tam5a2376cd2c0ect.add(45, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateParentFlow\&quot;" title=\"Workflow Validator - ValidateParentFlow\">Parent Flow</a>');
+tam5a2376cd2c0ect.add(46, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateSingleEnd\&quot;" title=\"Workflow Validator - ValidateSingleEnd\">Multiple Ends</a>');
+tam5a2376cd2c0ect.add(47, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetDependencies\">Update Sets - Dependencies</a>');
+tam5a2376cd2c0ect.add(48, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateUpdateSetParentDependencies\&quot;" title=\"Workflow Validator - ValidateUpdateSetParentDependencies\">Update Sets - Parent Dependencies</a>');
+tam5a2376cd2c0ect.add(49, 37, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Workflow_Validator_-_ValidateInputVarUpdateSetDependencies\&quot;" title=\"Workflow Validator - ValidateInputVarUpdateSetDependencies\">Update Sets - Variable Dependencies</a>');
+
+                                               document.getElementById('5a2376cd2c0ect').innerHTML = tam5a2376cd2c0ect.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2376cd2c0ect) { window.tamOnload_tam5a2376cd2c0ect[i](); }</script>
+
+
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Orchestration.html" title="Orchestration">Orchestration</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Orchestration+VMWare+Support+Plugin&amp;oldid=0.html" title="Orchestration VMWare Support Plugin" class="mw-redirect">Orchestration VMWare Support</a></li>
+<li><a href="index.php%3Ftitle=Service_Catalog_Workflows.html" title="Service Catalog Workflows">Service Catalog Workflows</a> <div class='dtree' id='5a2376cd3aa70t'></div><script type="text/javascript">window.tamOnload_tam5a2376cd3aa70t=[];tree = new dTree('tam5a2376cd3aa70t');</li></ul>
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a2376cd3aa70t = tree;
+                                               tam5a2376cd3aa70t.add(1, 0, 'Workflow Examples');
+
+tam5a2376cd3aa70t.add(2, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Creating_an_SLA_Workflow\&quot;" title=\"Creating an SLA Workflow\">SLA</a>');
+tam5a2376cd3aa70t.add(3, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Service_Catalog_Workflow\&quot;" title=\"Defining a Service Catalog Workflow\">Service Catalog</a>');
+tam5a2376cd3aa70t.add(4, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Problem_Management_Workflow\&quot;" title=\"Defining a Problem Management Workflow\">Problem</a>');
+tam5a2376cd3aa70t.add(5, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Defining_a_Change_Management_Workflow\&quot;" title=\"Defining a Change Management Workflow\">Change</a>');
+tam5a2376cd3aa70t.add(6, 1, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Change_Management_Workflows_Plugin\&quot;" title=\"Change Management Workflows Plugin\" class=\"mw-redirect\">Change Workflows Plugin</a>');
+tam5a2376cd3aa70t.add(7, 0, 'Approval Case Study');
+tam5a2376cd3aa70t.add(8, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_1)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 1)\">Part One</a>');
+tam5a2376cd3aa70t.add(9, 7, '<a href="http://wiki.servicenow.com/\&quot;/index.php?title=Case_Study_-_Advanced_Approval_Workflow_(Part_2)\&quot;" title=\"Case Study - Advanced Approval Workflow (Part 2)\">Part Two</a>');
+
+                                               document.getElementById('5a2376cd3aa70t').innerHTML = tam5a2376cd3aa70t.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a2376cd3aa70t) { window.tamOnload_tam5a2376cd3aa70t[i](); }</script>
+
+
+<center><a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow"><img alt="Knowledge.gif" src="images/d/dd/Knowledge.gif" width="16" height="16" /></a> <a href="index.php%3Ftitle=Book:Workflow.html" title="Book:Workflow">Get the Book</a></center>
+</td></tr></table>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Editing"><span class="tocnumber">2</span> <span class="toctext">Workflow Editing</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Activities"><span class="tocnumber">3</span> <span class="toctext">Workflow Activities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Exit_Conditions"><span class="tocnumber">3.1</span> <span class="toctext">Exit Conditions</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Transitions"><span class="tocnumber">3.2</span> <span class="toctext">Transitions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Stages"><span class="tocnumber">4</span> <span class="toctext">Workflow Stages</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Stage_Sets"><span class="tocnumber">4.1</span> <span class="toctext">Stage Sets</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Updates_to_Workflow_Stage_Values"><span class="tocnumber">4.2</span> <span class="toctext">Updates to Workflow Stage Values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Versions"><span class="tocnumber">5</span> <span class="toctext">Workflow Versions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Modifying_Workflows"><span class="tocnumber">5.1</span> <span class="toctext">Modifying Workflows</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Validation"><span class="tocnumber">6</span> <span class="toctext">Workflow Validation</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Scope"><span class="tocnumber">7</span> <span class="toctext">Workflow Scope</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Restrictions"><span class="tocnumber">7.1</span> <span class="toctext">Restrictions</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Custom_Activities"><span class="tocnumber">7.2</span> <span class="toctext">Custom Activities</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflows_and_Domain_Separation"><span class="tocnumber">8</span> <span class="toctext">Workflows and Domain Separation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflows_and_Delegated_Administration"><span class="tocnumber">8.1</span> <span class="toctext">Workflows and Delegated Administration</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflows_and_Data_Separation"><span class="tocnumber">8.2</span> <span class="toctext">Workflows and Data Separation</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Permissions"><span class="tocnumber">8.3</span> <span class="toctext">Workflow Permissions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Engine_Operation_Order"><span class="tocnumber">9</span> <span class="toctext">Workflow Engine Operation Order</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Caching"><span class="tocnumber">10</span> <span class="toctext">Workflow Caching</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Operations_Dashboard"><span class="tocnumber">11</span> <span class="toctext">Workflow Operations Dashboard</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Run_Time_Metrics"><span class="tocnumber">12</span> <span class="toctext">Workflow Run Time Metrics</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Tables"><span class="tocnumber">13</span> <span class="toctext">Workflow Tables</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Using the ServiceNow Workflow Editor, you can:
+</p>
+<ul><li>Modify core <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Activities">activities</a> and <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Exit_Conditions">conditions</a>.</li>
+<li><a href="index.php%3Ftitle=Orchestration_Activity_Designer.html" title="Orchestration Activity Designer">Create custom activities</a> and reuse the data for other workflows.</li>
+<li>Download <a href="index.php%3Ftitle=Workflow_Activity_Designer.html#Packs_Tab" title="Workflow Activity Designer" class="mw-redirect">activity packs</a> from the ServiceNow Store and create packs for upload.</li>
+<li><a href="index.php%3Ftitle=Using_the_Workflow_Editor.html" title="Using the Workflow Editor">Edit workflows</a> graphically.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Transitions">Define transitions</a> between workflow activities.</li>
+<li>For the table that corresponds to the workflow, customize business rules.  </li>
+<li>Summarize workflow progress through <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Stages">stages</a>.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Validation">Validate workflows</a> to identify potential problems.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Versions"> Publish workflows</a> for other users.</li>
+<li>Access various <a href="index.php%3Ftitle=Workflows.html#Menus_and_Modules" title="Workflows">workflow modules</a>.</li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html#Workflow_Tables">Edit multiple tables</a> without needing to directly modify them.</li></ul>
+<p>You must be an administrator or a user with a <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Base+System+Roles&amp;oldid=0.html" title="Base System Roles">workflow role</a> to use the Workflow Editor.
+</p>
+<h1><span class="mw-headline" id="Workflow_Editing"><span class="mw-headline-number">2</span> Workflow Editing</span></h1>
+<p>The <a href="index.php%3Ftitle=Using_the_Workflow_Editor.html" title="Using the Workflow Editor">Workflow Editor</a> is a user interface for defining workflows. During workflow editing or while an unpublished workflow is running, only the person who checked out the workflow can view the changes.
+</p><p>After a workflow is published, it is available to other users. The workflow moves through the process as defined in the Workflow Editor. The entire workflow is represented in one screen. For example, this is the <b>Routine Change</b> workflow included with <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Change+Management+Workflows&amp;oldid=0.html" title="Change Management Workflows">Change Management Workflows</a>:
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Routine_Change.png.html" class="image"><img alt="Routine Change.png" src="images/b/bc/Routine_Change.png" width="963" height="412" /></a>
+</p>
+<h1><span class="mw-headline" id="Workflow_Activities"><span class="mw-headline-number">3</span> Workflow Activities</span></h1>
+<p>The workflow activity contains instructions that are processed by the workflow. This can include performing scripts, manipulating records, waiting for a set period of time, or logging an event. Workflow conditions determine whether or not the activity is performed. Activities can be added, removed, or rearranged. Transitions can be drawn between activities.
+</p><p>This is an activity that triggers a notification:
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Wf-activity.png.html" class="image"><img alt="Wf-activity.png" src="images/e/e9/Wf-activity.png" width="174" height="87" /></a>
+</p><p><br />
+</p><p>For more information on available activities and their behaviors, see <a href="index.php%3Ftitle=Using_Workflow_Activities.html" title="Using Workflow Activities">Using Workflow Activities</a>.
+</p>
+<h2><span class="mw-headline" id="Exit_Conditions"><span class="mw-headline-number">3.1</span> Exit Conditions</span></h2>
+<p>After a workflow activity is performed, the workflow condition is evaluated to determine which transition is activated.
+</p><p>This condition determines behavior based on a change being approved or rejected:
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Wf-condition.png.html" class="image"><img alt="Wf-condition.png" src="images/b/b6/Wf-condition.png" width="405" height="182" /></a>
+</p>
+<h2><span class="mw-headline" id="Transitions"><span class="mw-headline-number">3.2</span> Transitions</span></h2>
+<p>After the workflow condition is evaluated, the workflow transition determines which activity is performed when the workflow condition is met.
+</p><p>This is a transition that always leads from the <i>Change Approved</i> script to the <b>Change Task</b> activity:
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Wf-transition.png.html" class="image"><img alt="Wf-transition.png" src="images/6/6b/Wf-transition.png" width="405" height="95" /></a>
+</p>
+<h1><span class="mw-headline" id="Workflow_Stages"><span class="mw-headline-number">4</span> Workflow Stages</span></h1>
+<p>Workflows can provide a summary of workflow progress by updating any field designated as a <b>Stage</b> field. For example, the <b>Incident [incident]</b> table has an <b>Incident state</b> field that indicates progress, whereas the Service Catalog uses the <b>Stage</b> field.
+</p><p>If the field is a workflow field, it displays an icon to indicate the workflow's progress, as with the Service Catalog's <b>Stage</b> field. For more information, see <a href="index.php%3Ftitle=Using_Workflow_Stages.html" title="Using Workflow Stages" class="mw-redirect">Using Workflow Stages</a>.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Workflow_field.png.html" class="image" title="Sample stage field"><img alt="Sample stage field" src="images/c/ca/Workflow_field.png" width="355" height="247" /></a> 
+</p>
+<h2><span class="mw-headline" id="Stage_Sets"><span class="mw-headline-number">4.1</span> Stage Sets</span></h2>
+<p>You can create stage sets, which are named groups of stages that are commonly used together. These stage sets can be used in any number of workflows on different tables. A single stage set usually represents a process, such as the stages required to display the progress of a service catalog request. See <a href="index.php%3Ftitle=Using_Workflow_Stage_Sets.html" title="Using Workflow Stage Sets">Using Workflow Stage Sets</a>.
+</p>
+<h2><span class="mw-headline" id="Updates_to_Workflow_Stage_Values"><span class="mw-headline-number">4.2</span> Updates to Workflow Stage Values</span></h2>
+<p>During an upgrade to the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>, the system makes these changes to the <b>Value</b> field of records in the Workflow Stage [wf_stage] table:
+</p>
+<ul><li> All entries are made lowercase.</li>
+<li> All spaces and special characters are replaced with underscores.</li></ul>
+<p>These changes support <a href="index.php%3Ftitle=Language_Internationalization.html#Choices" title="Language Internationalization">internationalization of choice lists</a> and enable workflows to display translated text in the <b>Stage</b> field.
+</p>
+<h1><span class="mw-headline" id="Workflow_Versions"><span class="mw-headline-number">5</span> Workflow Versions</span></h1>
+<p>To prevent users from making changes to a workflow which impact other users of the system, workflows must be checked out before they can be edited. Only one user can check out a workflow at a time. When a workflow is checked out, changes only apply to the user who has the workflow checked out. Other users can continue to use the published workflow. After the changes are complete, the workflow can be published so that it is available to all users.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Because each workflow has a unique sys_id, different workflows can have the same name. This is typically expected in a <a href="index.php%3Ftitle=Domain_Separation.html" title="Domain Separation">domain-separated environment</a> where users in different companies cannot see each other's workflows because they are in different domains. However, this can lead to confusion in other environments. In general, give a unique name to each workflow to prevent workflow designers making changes to the wrong workflow.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Modifying_Workflows"><span class="mw-headline-number">5.1</span> Modifying Workflows</span></h2>
+<p>When a new version of an existing workflow is published, the changes are not applied to running workflow contexts. Any currently running workflow context continues using the workflow version that was available when the workflow started. The next time the workflow runs, it uses the updated, published version.
+</p>
+<h1><span class="mw-headline" id="Workflow_Validation"><span class="mw-headline-number">6</span> Workflow Validation</span></h1>
+<p><a href="index.php%3Ftitle=Workflow_Validation.html" title="Workflow Validation">Validate a workflow</a> before you publish it to identify potential problems that can cause the workflow to fail. <a href="index.php%3Ftitle=Workflow_Validators.html" title="Workflow Validators">Validators</a> look for issues such as multiple <b>End</b> activities, broken transitions, incorrect table references, and missing subflows. A <a href="index.php%3Ftitle=Workflow_Validation_Report.html" title="Workflow Validation Report">workflow validation report</a> indicates the severity of each finding in its results and provides a useful description of the issue. You can run validation on a workflow directly from controls in the <a href="index.php%3Ftitle=Using_the_Workflow_Editor.html" title="Using the Workflow Editor">Workflow Editor</a>.
+</p>
+<h1><span class="mw-headline" id="Workflow_Scope"><span class="mw-headline-number">7</span> Workflow Scope</span></h1>
+<p>Workflow <i>application scope</i> determines the access that an application has to the information in a workflow, specifically to the data contained in the activities in that workflow. When a workflow is created, it inherits the application scope from the gear menu for the logged in user. This scope cannot be changed in the Workflow Editor. When the workflow executes, it runs in this scope and can only be called from a different application if the workflow’s accessibility setting permits access to all scopes (public). Otherwise, the workflow’s application scope is private to the application.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Any script that is created in the workflow canvas, such as an advanced script in an <b>If</b> activity, runs in the scope of the workflow. All core activities provided in the base system or for Orchestration run in the scope of the workflow.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Restrictions"><span class="mw-headline-number">7.1</span> Restrictions</span></h2>
+<p>During runtime, publicly scoped workflows can access other application resources, as long as these resources are set to be accessible to <i>all application scopes</i>. Privately scoped workflows in a private application scope can only access resources private to its scope. Due to scope access boundaries, any privately scoped workflows that make calls out to other scoped resources fail with either an exception or a hung activity while waiting for returned results. This occurs when making calls to these common global resources:
+</p>
+<ul><li>ECC queues</li>
+<li>Tasks </li>
+<li>Approvals</li>
+<li>Events</li>
+<li>SLA timers</li>
+<li>Timers</li>
+<li>Script includes</li>
+<li>Business rules</li>
+<li>Workflow APIs. </li></ul>
+<p>As you design your workflows, validate the visibility and accessibility of all resources prior to deployment.
+</p><p>For general information on how application scoping is used in the ServiceNow system, see <a href="index.php%3Ftitle=Application_Scope.html" title="Application Scope">Application Scope</a>. For information on how to configure the scope for a workflow, see the field description table for <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+a+Workflow&amp;oldid=0.html#General" title="Creating a Workflow">workflow property fields</a>.
+</p>
+<h2><span class="mw-headline" id="Custom_Activities"><span class="mw-headline-number">7.2</span> Custom Activities</span></h2>
+<p>Custom activities run in their own scope, even if it is different from that of the workflow. The scope of a custom activity can be private or public. Any script that runs inside a custom activity with a scope can only access outside artifacts that are within the scope of that activity or artifacts that are configured to run in any scope. Conversely, an outside artifact can only access the script inside that private activity if the outside artifact is running in the same scope. Activities with public scopes can interact with outside artifacts in any application scope.
+</p><p>You can use private activities as part of a workflow that has a public application scope. These activities are protected from reaching outside of the workflow or from being reached from outside the workflow. For details about setting application scoping for custom activities, see the field description table for the appropriate <a href="index.php%3Ftitle=Workflow_Activity_Designer.html#Activity_Templates" title="Workflow Activity Designer" class="mw-redirect">activity template</a>.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Custom activities uploaded to the ServiceNow Store must be configured as accessible to all application scopes.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Workflows_and_Domain_Separation"><span class="mw-headline-number">8</span> Workflows and Domain Separation</span></h1>
+<p>When <a href="index.php%3Ftitle=Domain_Separation.html" title="Domain Separation"> domain separation</a> is enabled, workflows and workflow activities inherit the domain of the user who publishes or creates them. While workflows are managed by multiple tables, only the following tables are used for domain separation features.
+</p>
+<ul><li> <b>Workflow [wf_workflow]:</b> used for <a href="index.php%3Ftitle=Domain_Separation.html#Delegated_Administration" title="Domain Separation">delegated administration</a> or process separation</li>
+<li> <b>Workflow Version [wf_workflow_version]:</b> used for <a href="index.php%3Ftitle=Domain_Separation.html#Delegated_Administration" title="Domain Separation">delegated administration</a> or process separation</li>
+<li> <b>Workflow Context [wf_context]:</b> used for <a href="index.php%3Ftitle=Domain_Separation.html#Data_Separation" title="Domain Separation">data separation</a></li></ul>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>The Workflow Version table [wf_workflow_version] table does not contain a domain field; Workflow Version records inherit their domain from the parent Workflow record.</i>
+</td></tr></table>
+<p><br />
+The Workflow Editor displays a workflow's domain in the <a href="index.php%3Ftitle=Using_the_Workflow_Editor.html#Title_Bar" title="Using the Workflow Editor">title bar</a> after the workflow name.
+</p><p><br />
+</p><p><a href="index.php%3Ftitle=File:Workflow_editor_domain.png.html" class="image" title="Domain displayed in workflow editor title bar"><img alt="Domain displayed in workflow editor title bar" src="images/d/de/Workflow_editor_domain.png" width="750" height="208" /></a> 
+</p><p><br />
+</p><p>Workflow domain support is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p>
+<h2><span class="mw-headline" id="Workflows_and_Delegated_Administration"><span class="mw-headline-number">8.1</span> Workflows and Delegated Administration</span></h2>
+<div class="thumb tleft"><div class="thumbinner" style="width:780px;"><a href="index.php%3Ftitle=File:Workflow_and_delegated_administration.png.html" class="image"><img alt="" src="images/0/00/Workflow_and_delegated_administration.png" width="778" height="567" class="thumbimage" /></a>  <div class="thumbcaption">Workflow delegated administration in a sample domain hierarchy</div></div></div> <br clear="all" />
+<p>Workflow records in the Workflow [wf_workflow] and Workflow Version [wf_workflow_version] tables are considered processes. Delegated administration allows child domains to inherit workflows from higher up the domain hierarchy and to override them with domain-specific versions if necessary. A user in a child domain may check out but not copy a workflow from a parent domain. When a user in a child domain checks out a workflow from a parent domain, the system creates a version of the workflow in that user's domain. This new version is a unique record in the Workflow [wf_workflow] table. After the user publishes this new workflow, other users in the child domain use the new workflow, which overrides the workflow from the parent domain. The original workflow in the parent domain is no longer visible to users in the child domain.  
+</p><p>For example, suppose a managed service provider (MSP) hosts ITSM services for several companies including ACME and Initech on a single instance. As administrators, the MSP creates a Service Catalog Request workflow that applies to all domains because it was created in the TOP domain, which is the highest domain in the domain hierarchy. This workflow overrides the global Service Catalog Request workflow and specifies that all Service Catalog requests over $750 require approval. Because of delegated administration, every domain in the hierarchy sees and uses this workflow. Now suppose the ACME domain requires a different approval policy where requests over $500 require approval. The MSP creates another version of the Service Catalog Request workflow in the ACME domain. This workflow overrides the version in the TOP domain and only applies to users in the ACME domain.
+</p>
+<h2><span class="mw-headline" id="Workflows_and_Data_Separation"><span class="mw-headline-number">8.2</span> Workflows and Data Separation</span></h2>
+<div class="thumb tleft"><div class="thumbinner" style="width:782px;"><a href="index.php%3Ftitle=File:Workflow_and_data_separation.png.html" class="image"><img alt="" src="images/2/21/Workflow_and_data_separation.png" width="780" height="586" class="thumbimage" /></a>  <div class="thumbcaption">Workflow data separation in a sample domain hierarchy</div></div></div> <br clear="all" />
+<p>Workflow records in the Workflow Contexts [wf_contexts] table are considered data. Data separation restricts workflow contexts to users who are either in the same domain of the workflow or are members of a parent domain. While a user in a parent domain can see running workflows in a child domain, a user in a child domain cannot see running workflows in a parent domain. If necessary, administrators can use visibility or <a href="index.php%3Ftitle=Domain_Separation.html#Contains_Domains" title="Domain Separation">contains domains</a> to expand who can see domain-specific data.
+</p><p>For example, when an ACME user requests something from the service catalog, a Service Catalog Request <a href="index.php%3Ftitle=Administering_Workflow_Contexts.html" title="Administering Workflow Contexts">workflow context</a> is created in the ACME domain. Similarly, a service catalog request from an Initech user creates a workflow context in the Initech domain. An MSP user in the TOP domain can see both workflow contexts because it is the parent domain for both the ACME and Initech domains. However when an ACME or Initech user logs in, data separation prevents them from seeing each other's service catalog requests. This is expected behavior because each workflow context contains data specific to that domain, such as the item requested and the request's approval history.
+</p>
+<h2><span class="mw-headline" id="Workflow_Permissions"><span class="mw-headline-number">8.3</span> Workflow Permissions</span></h2>
+<p>When a user starts a new workflow, the workflow runs with that user's domain and credentials. The workflow preserves these values until an activity causes the workflow to wait, such as an approval activity waiting for approval or rejection. When the stopped workflow resumes, such as when a user approves a request, the workflow uses the credentials of the approving user but continues to run within the domain of the original user.
+</p>
+<h1><span class="mw-headline" id="Workflow_Engine_Operation_Order"><span class="mw-headline-number">9</span> Workflow Engine Operation Order</span></h1>
+<p>The workflow engine runs in a predefined order relative to business rules and database operations. The <b>Run after bus. rules run</b> workflow property defines if a workflow is <i>Default</i> or <i>Deferred</i>. Depending on the operations performed, you may need to explicitly update the <i>current</i> record using the <tt>current.update()</tt> method. 
+</p><p>This diagram shows the workflow engine order of operations and provides guidelines on when to use <tt>current.update()</tt>. For a more general overview of engine operation order, see <a href="index.php%3Ftitle=Execution_Order_of_Scripts_and_Engines.html" title="Execution Order of Scripts and Engines">Execution Order of Scripts and Engines</a>.
+</p><p><br />
+</p>
+<div class="center"><div class="floatnone"><a href="index.php%3Ftitle=File:WF_Engine_Order_Diagram.png.html" class="image"><img alt="WF Engine Order Diagram.png" src="images/6/66/WF_Engine_Order_Diagram.png" width="514" height="814" /></a></div></div>
+<h1><span class="mw-headline" id="Workflow_Caching"><span class="mw-headline-number">10</span> Workflow Caching</span></h1>
+<p>The workflow engine caches commonly-used published workflows to improve performance. Caching significantly reduces the number of database queries per workflow. By default, the engine caches up to 300 unique workflow versions. Caching very large workflows may reduce this number as the cache size cannot exceed the Java Virtual Machine heap size. Workflow caching is available starting with the <a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka release</a>.
+</p><p>To change the maximum number of cached workflow versions, navigate to <b>Workflow &gt; Administration &gt; Properties</b> and modify the value of the <b>The max number of models that will be concurrently held in the LRU cache</b> (<tt>glide.workflow.model.cache.max</tt>) property. You must restart the instance to apply this change.
+</p>
+<h1><span class="mw-headline" id="Workflow_Operations_Dashboard"><span class="mw-headline-number">11</span> Workflow Operations Dashboard</span></h1>
+<p>The <a href="index.php%3Ftitle=Workflow_Operations_Dashboard.html" title="Workflow Operations Dashboard">Workflow Operations Dashboard</a> displays information to help workflow administrators review and improve workflow performance. This dashboard is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h1><span class="mw-headline" id="Workflow_Run_Time_Metrics"><span class="mw-headline-number">12</span> Workflow Run Time Metrics</span></h1>
+<p>Administrators can enable the collection of workflow run time metrics by setting Estimated Run Time (ERT) properties. Administrators can use these metrics to determine if workflows are running longer or shorter than expected and to identify errors in workflow processing. The system displays run time metrics on the Workflow Operations Dashboard. See <a href="index.php%3Ftitle=Workflow_Run_Time_Metrics.html" title="Workflow Run Time Metrics">Workflow Run Time Metrics</a>.
+</p><p>Administrators can collect workflow run time metrics starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</p>
+<h1><span class="mw-headline" id="Workflow_Tables"><span class="mw-headline-number">13</span> Workflow Tables</span></h1>
+<p>For full flexibility, workflows store information over a number of different tables. Usually these tables are not interacted with one-by-one; rather, use the <a href="index.php%3Ftitle=Using_the_Workflow_Editor.html" title="Using the Workflow Editor">Workflow Editor</a> to edit workflows. The following lists are provided for reference purposes.
+</p>
+<table class="standard">
+<tr>
+<th> Table
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Workflows</b>
+</td></tr>
+<tr>
+<td> Column Renderer [column_renderer]
+</td>
+<td> A renderer widget for a stage column.  Stage renderers are written in Jelly as a UI Macro.  The default is Workflow-Driven which will cover most workflow related stage scenarios.
+</td></tr>
+<tr>
+<td> Workflow [wf_workflow]
+</td>
+<td> The master records of workflows.
+</td></tr>
+<tr>
+<td> Workflow Context [wf_context]
+</td>
+<td> Individual instances of a workflow being used.
+</td></tr>
+<tr>
+<td> Workflow Execution [wf_workflow_execution]
+</td>
+<td> Synthetic “current” records for workflows that run on “Global".
+</td></tr>
+<tr>
+<td> Workflow Instance [wf_workflow_instance]
+</td>
+<td> Connections of workflows to subflows.
+</td></tr>
+<tr>
+<td> Workflow Version [wf_workflow_version]
+</td>
+<td> Particular versions of a workflow, either published versions or versions that have been checked out.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Activities</b>
+</td></tr>
+<tr>
+<td> Activity Designer [wf_element_activity]
+</td>
+<td> Custom activity definitions.
+</td></tr>
+<tr>
+<td> Activity Variables [wf_activity_variable]
+</td>
+<td> Variables for activities.
+</td></tr>
+<tr>
+<td> Workflow Activity [wf_activity]
+</td>
+<td> Activities as they are being used in workflows.
+</td></tr>
+<tr>
+<td> Workflow Activity Definition [wf_activity_definition]
+</td>
+<td> Definitions of activities that can be used in a workflow.
+</td></tr>
+<tr>
+<td> Workflow Executing Activity [wf_executing]
+</td>
+<td> Individual instances of activities being performed in active contexts.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Workflow components</b>
+</td></tr>
+<tr>
+<td> Element Provider [wf_element_provider]
+</td>
+<td> Template definitions for custom activities.
+</td></tr>
+<tr>
+<td> Group approval [sysapproval_group]
+</td>
+<td> Group-level approvals.
+</td></tr>
+<tr>
+<td> Workflow Condition [wf_condition]
+</td>
+<td> All of the defined conditions in workflows.
+</td></tr>
+<tr>
+<td> Workflow Element Definition [wf_element_definition]
+</td>
+<td> Parent table for activity definitions.
+</td></tr>
+<tr>
+<td> Workflow Estimated Runtime Configuration [wf_estimated_runtime_config]
+</td>
+<td> Performance data of completed workflows. This table is available starting with the <a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji release</a>.
+</td></tr>
+<tr>
+<td> Workflow Queued Command [wf_command]
+</td>
+<td> Temporary internal storage for workflows that are currently executing.
+</td></tr>
+<tr>
+<td> Workflow SC Variable [wf_variable]
+</td>
+<td> The Service Catalog variables for a workflow.
+</td></tr>
+<tr>
+<td> Workflow Schedule [wf_workflow_schedule]
+</td>
+<td> Definitions of the times to run specific workflows.
+</td></tr>
+<tr>
+<td> Workflow Transition [wf_transition]
+</td>
+<td> All of the defined transitions in workflows.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>History</b>
+</td></tr>
+<tr>
+<td> Workflow Activity History [wf_history]
+</td>
+<td> The history of executed activities.
+</td></tr>
+<tr>
+<td> Workflow Log Entry [wf_log]
+</td>
+<td> All of the events and history of the workflow.
+</td></tr>
+<tr>
+<td> Workflow Transition History [wf_transition_history]
+</td>
+<td> The history of executed transitions.
+</td></tr>
+<tr>
+<td bgcolor="#dfdbdc" class="left" colspan="3"> <b>Stages</b>
+</td></tr>
+<tr>
+<td> Stage Default [wf_stage_default]
+</td>
+<td> Definitions of default stage fields for tables to use.
+</td></tr>
+<tr>
+<td> Stage Set [stage_set]
+</td>
+<td> A named set of stages that can be used to populate workflow stages for multiple workflows.
+</td></tr>
+<tr>
+<td> Stage Set Entry [stage_set_entry
+</td>
+<td> The stages that belong to a named stage set.
+</td></tr>
+<tr>
+<td> Stage Set for Table [stage_set_table]
+</td>
+<td> Defines a relation ship of a Stage Set to a table so that that stage set can be used as the default stages when a new workflow is created for the table. This replaces the wf_default_stage table and is now the view that shows when you click <b>Default Stages (by table)</b> in the menu.
+</td></tr>
+<tr>
+<td> Workflow Stage [wf_stage]
+</td>
+<td> Definitions of stages used by workflows.
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20171203040013
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.319 seconds
+Real time usage: 0.412 seconds
+Preprocessor visited node count: 164/1000000
+Preprocessor generated node count: 393/1000000
+Post‐expand include size: 7984/2097152 bytes
+Template argument size: 2172/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  100.841      1 - -total
+ 87.19%   87.924      1 - Template:Workflow
+ 82.32%   83.017      1 - Template:Topic
+  5.74%    5.789      1 - Embedded:Workflow
+  5.73%    5.774      5 - Template:Note
+  4.94%    4.979      2 - Template:T
+  4.47%    4.504      1 - Template:Activity_Scoping
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:11875-0!*!0!1!en!5!* and timestamp 20171203040013 and revision id 251060
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Workflow_Concepts&amp;oldid=251060.html">http://wiki.servicenow.com/index.php?title=Workflow_Concepts&amp;oldid=251060</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Using+Workflows.html" title="Category:Using Workflows">Using Workflows</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Workflow.html" title="Category:Workflow">Workflow</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Using+Workflows.html" title="Category:Using Workflows">Using Workflows</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_11875"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="11875" data-vote-the-vote="5" data-vote-id="11875" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11875_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="11875" data-vote-the-vote="1" data-vote-id="11875" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_11875_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Workflow+Concepts&amp;oldid=0.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Workflow+Concepts.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Workflow+Concepts.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Workflow_Concepts.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Workflow_Concepts&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Workflow+Concepts.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Workflow+Concepts&amp;returnto=Workflow+Concepts&amp;oldid=251060&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=Workflow_Concepts&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FWorkflow_Concepts.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Workflow_Concepts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Workflow_Concepts&amp;oldid=251060.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Workflow_Concepts&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:12, 14 September 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1285});});</script></body></html>

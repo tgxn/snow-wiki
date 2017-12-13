@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating an SLA Workflow - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_an_SLA_Workflow","wgTitle":"Creating an SLA Workflow","wgCurRevisionId":250428,"wgRevisionId":250428,"wgArticleId":6432,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Service Level Management"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_an_SLA_Workflow","wgRelevantArticleId":6432,"wgRequestId":"6c669a157855bf24afc38a63","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;printable=1&amp;.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20170828153908"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=Creating_an_SLA_Workflow"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="Creating an SLA Workflow"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Service Level Management"/>
+<meta name="category" content="Service Level Management"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:Creating an SLA Workflow"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20170828153908"/>
+
+	<meta property="article:published_time" content="20170828153908"/>
+
+	<meta property="article:modified_time" content="20170828153908"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Service Level Management"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=Creating_an_SLA_Workflow"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_an_SLA_Workflow rootpage-Creating_an_SLA_Workflow skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div class="collection-creatorbox"><img src="extensions/Collection/images/Open_book.png%3F9" alt="" width="80" height="45" class="collection-creatorbox-book" /><div class="collection-creatorbox-row"><div><a href="index.php%3Ftitle=Help:Books.html" title="Show help about creating books" rel="nofollow"><img src="extensions/Collection/images/silk-help.png" alt="" width="16" height="16" />&#160;Help</a></div><span class="collection-creatorbox-title">Book creator</span> (<a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+an+SLA+Workflow.html" title="Stop using the book creator" rel="nofollow">disable</a>)</div><div id="coll-book_creator_box" class="collection-creatorbox-row"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Creating+an+SLA+Workflow&amp;oldid=0.html" title="Add the current wiki page to your book" id="coll-add_article" rel="nofollow" onclick="collectionCall('AddArticle', ['removearticle', wgNamespaceNumber, wgTitle, &quot;0&quot;]); return false;"><img src="extensions/Collection/images/silk-add.png" alt="" width="16" height="16" />&#160;Add this page to your book</a><a href="index.php%3Ftitle=Special:Book%252Fload_collection%252F&amp;colltitle=Book:Introduction_to_ServiceNow_Part_1.html" title="Click to edit/download/order your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-book_open.png" alt="" width="16" height="16" />&#160;Show book (31 pages)</a><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=suggest.html" title="Show suggestions based on the pages in your book" rel="nofollow" class="collection-creatorbox-iconlink"><img src="extensions/Collection/images/silk-wand.png" alt="" width="16" height="16" style="vertical-align: text-bottom" />&#160;Suggest pages</a></div></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating an SLA Workflow</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a> &gt; <a href="index.php%3Ftitle=Planning_and_Policy_Applications.html" title="Planning and Policy Applications">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=ITIL_Service_Level_Management.html" title="ITIL Service Level Management">Service Level Management</a> &gt; Creating an SLA Workflow</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html#column-one">navigation</a>, <a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>This article applies to Fuji. For more current information, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://docs.servicenow.com/bundle/jakarta-it-service-management/page/product/service-level-management/concept/c_ServiceLevelAgreements.html">Service Level Management Concepts</a> at <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a></i>
+<p>The ServiceNow Wiki is no longer being updated. Please refer to <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://docs.servicenow.com">http://docs.servicenow.com</a> for the latest product documentation.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=ITIL_Service_Level_Management.html" title="ITIL Service Level Management">ITIL Service Level Management</a>
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Service_Level_Agreements.html" title="Service Level Agreements">Service Level Agreements</a>
+<ul><li><a href="index.php%3Ftitle=Getting_Started_with_SLAs.html" title="Getting Started with SLAs">Getting Started with SLAs</a> </li>
+<li><a href="index.php%3Ftitle=Defining_an_SLA.html" title="Defining an SLA">Defining an SLA</a> </li>
+<li><strong class="selflink">Creating an SLA Workflow</strong> </li>
+<li><a href="index.php%3Ftitle=Defining_a_Schedule_for_an_SLA.html" title="Defining a Schedule for an SLA">Defining a Schedule for an SLA</a> </li>
+<li><a href="index.php%3Ftitle=Defining_Service_Levels_for_Catalog_Fulfillment.html" title="Defining Service Levels for Catalog Fulfillment">Defining Service Levels for Catalog Fulfillment</a> </li>
+<li><a href="index.php%3Ftitle=Reporting_on_SLAs.html" title="Reporting on SLAs">Reporting on SLAs</a></li>
+<li><a href="index.php%3Ftitle=Modifying_SLA_Condition_Rules.html" title="Modifying SLA Condition Rules">Modifying SLA Condition Rules</a></li></ul></li>
+<li><a href="index.php%3Ftitle=SLA_Contract_Add-on.html" title="SLA Contract Add-on">SLA Contract Add-on</a> 
+<ul><li><a href="index.php%3Ftitle=Defining_a_Service_Contract.html" title="Defining a Service Contract">Defining a Service Contract</a></li></ul></li></ul>
+</td></tr>
+<tr>
+<th> Related Topics
+</th></tr>
+<tr>
+<td>
+<ul><li><a href="index.php%3Ftitle=Introduction_to_Tasks.html" title="Introduction to Tasks">Introduction to Tasks</a></li>
+<li><a href="index.php%3Ftitle=Activating_Most_Active_and_Most_Recent_Labels.html" title="Activating Most Active and Most Recent Labels" class="mw-redirect">Task Administration</a></li>
+<li><a href="index.php%3Ftitle=Workflows.html" title="Workflows">Workflows</a></li>
+<li><a href="index.php%3Ftitle=Approval_Engines.html" title="Approval Engines">Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Scriptable_Execution_Plan_Approvals.html" title="Scriptable Execution Plan Approvals">Scripting Approvals and Assignments</a></li>
+<li><a href="index.php%3Ftitle=Service_Portfolio_Management_-_SLA_Commitments.html" title="Service Portfolio Management - SLA Commitments">Service Portfolio Management - SLA Commitments</a></li></ul>
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html#Creating_an_SLA_Workflow"><span class="tocnumber">2</span> <span class="toctext">Creating an SLA Workflow</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html#Special_Considerations_for_Workflow_Stages"><span class="tocnumber">3</span> <span class="toctext">Special Considerations for Workflow Stages</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Functionality described here requires the Service level management plugin.
+</p><p>The base system workflow that comes with the plugin is Default SLA Workflow: 
+</p><p><a href="index.php%3Ftitle=File:SLA_Workflow.png.html" class="image" title="SLA workflow"><img alt="SLA workflow" src="images/thumb/f/f0/SLA_Workflow.png/750px-SLA_Workflow.png" width="750" height="348" srcset="/images/thumb/f/f0/SLA_Workflow.png/1125px-SLA_Workflow.png 1.5x, /images/f/f0/SLA_Workflow.png 2x" /></a>
+</p><p>This example creates a new <b>Urgent SLA workflow</b> to be used for a priority one ticket.
+</p>
+<h1><span class="mw-headline" id="Creating_an_SLA_Workflow"><span class="mw-headline-number">2</span> Creating an SLA Workflow</span></h1>
+<p>To create an SLA workflow, navigate to <b>Service Level Management &gt; Workflow Editor</b>. This launches the Graphical Workflow Editor. Select <b>New</b> in the top left, and populate the first form with the following information: 
+</p>
+<ul><li><b>Name:</b> <i>Urgent SLA Workflow</i>. </li>
+<li><b>Table:</b> <i>Task SLA [task_sla]</i>. All SLA workflows must be on the Task SLA table regardless of what table the SLA will be running against. </li>
+<li><b>If Condition Matches:</b> <i>None</i>. Because no conditions will be specified since it is set to none, the SLA will not run unless specified by a particular SLA. Note that if this option is not set to <b>None</b>, the workflow runs on any task_sla record that meets these conditions. If no conditions are specified, the workflow attaches to all new task_sla records.</li></ul>
+<p>The form should now look like this: 
+</p><p><a href="index.php%3Ftitle=File:Workflow_Properties.png.html" class="image" title="Workflow Properties.png"><img alt="Workflow Properties.png" src="images/thumb/4/47/Workflow_Properties.png/900px-Workflow_Properties.png" width="900" height="281" srcset="/images/thumb/4/47/Workflow_Properties.png/1350px-Workflow_Properties.png 1.5x, /images/4/47/Workflow_Properties.png 2x" /></a> <br clear="all" />
+</p><p>Click <b>Submit</b>. There is now a workflow with a beginning and end. Next, add activities for the events that you want to be triggered with the Urgent SLA workflow. 
+</p><p>Suppose the desired process is: 
+</p>
+<ul><li>After 33% of the SLA's duration, alert the user assigned to responding to the task. </li>
+<li>After 66% of the SLA's duration, notify the assignee's manager. </li>
+<li>After 100% of the SLA's duration, notify the Customer Care representative that the SLA has been breached.</li></ul>
+<p>To define that process as a workflow: 
+</p>
+<ol><li>Drag the <b>SLA Percentage Timer</b> activity onto the arrow between <b>Begin</b> and <b>End</b>. </li>
+<li>Name the activity <b>33% Timer</b>, and enter <b>33</b> in the <b>Percentage</b> field.</li>
+<li>Click <b>Submit</b>.</li>
+<li>Drag the <b>Notification</b> activity into the empty space below the <b>33% Timer</b> activity. </li>
+<li>Name the activity <b>Notify Assignee</b>. </li>
+<li>Next to the <b>To</b> field, click the lock icon. Then click the variable picker icon (<a href="index.php%3Ftitle=File:VariablePicker.png.html" class="image"><img alt="VariablePicker.png" src="images/c/ca/VariablePicker.png" width="16" height="16" /></a>) and select <b>Task SLA &gt; Task &gt; Assigned To.</b> 
+<dl><dd><a href="index.php%3Ftitle=File:Variablepicker2.png.html" class="image"><img alt="Variablepicker2.png" src="images/2/21/Variablepicker2.png" width="281" height="153" /></a> <br clear="all" /></dd>
+<dd>Enter a subject and email body as necessary. </dd>
+<dd><a href="index.php%3Ftitle=File:Notification.png.html" class="image" title="Notification.png"><img alt="Notification.png" src="images/thumb/f/f1/Notification.png/900px-Notification.png" width="900" height="485" srcset="/images/f/f1/Notification.png 1.5x, /images/f/f1/Notification.png 2x" /></a> <br clear="all" /></dd></dl></li>
+<li>Click <b>Submit</b>.</li>
+<li>Click the yellow box on the side of the <b>33% Timer</b> activity and drag to the <b>Notify Assignee</b> activity. This creates an arrow between both activities. 
+<dl><dd><a href="index.php%3Ftitle=File:SLA_Workflow2.png.html" class="image" title="Image:SLA_Workflow2.png"><img alt="Image:SLA_Workflow2.png" src="images/d/d9/SLA_Workflow2.png" width="780" height="278" /></a> <br clear="all" /></dd></dl></li>
+<li>Drag a new <b>SLA Percentage Timer</b> activity onto the arrow between the <b>33% Timer</b> and <b>End</b> activities. </li>
+<li>Name the activity <b>33% Timer 2</b>, and enter <b>33</b> in the <b>Percentage</b> field. </li>
+<li>Click <b>Submit</b>.</li>
+<li>Drag a new <b>Notification</b> activity into the empty space below the <b>33% Timer 2</b> activity. </li>
+<li>Name the activity <b>Notify Assignee's Manager</b>.</li>
+<li>Next to the <b>To</b> field, click the lock icon. Then click the variable picker icon (<a href="index.php%3Ftitle=File:VariablePicker.png.html" class="image"><img alt="VariablePicker.png" src="images/c/ca/VariablePicker.png" width="16" height="16" /></a>) and select <b>Task SLA &gt; Task &gt; Assigned To &gt; Manager.</b> </li>
+<li>Click <b>Submit</b>.</li>
+<li>Drag an arrow from the <b>33% Timer 2</b> activity to the <b>Notify Assignee's Manager</b> activity. </li>
+<li>Drag a new <b>SLA Percentage Timer</b> activity onto the arrow between the <b>33% Timer 2</b> and <b>End</b> activities. </li>
+<li>Name the activity <b>33% Timer 3</b>, and enter <b>33</b> in the <b>Percentage</b> field. </li>
+<li>Click <b>Submit</b>.</li>
+<li>Drag a new <b>Notification</b> activity into the empty space below the <b>33% Timer 3</b> activity. </li>
+<li>Name the activity <b>Notify Customer Care</b>. </li>
+<li>Next to the <b>To</b> field, click the lock icon. Then in the <b>Enter email address</b> field, enter <b>customercare@yourcompany.com</b>. </li>
+<li>Click <b>Submit</b>. </li>
+<li>Drag an arrow from the <b>33% Timer 3</b> activity to the <b>Notify Customer Care</b> activity. 
+<dl><dd>The workflow appears like this: </dd>
+<dd><a href="index.php%3Ftitle=File:SLA_workflow3.png.html" class="image" title="Image:SLA_workflow3.png"><img alt="Image:SLA_workflow3.png" src="images/6/68/SLA_workflow3.png" width="968" height="291" /></a> <br clear="all" /></dd></dl></li>
+<li>In the title bar of the editor, click the menu icon and select <b>Publish</b>. 
+<dl><dd>In releases prior to Fuji, click the gear icon (<a href="index.php%3Ftitle=File:Workflow_Actions.png.html" class="image"><img alt="Workflow Actions.png" src="images/9/99/Workflow_Actions.png" width="37" height="26" /></a>) and select <b>Publish</b>. </dd></dl></li></ol>
+<p>The published workflow is now available to any SLA. It can be edited at any time after it is checked out from the workflow editor.
+</p>
+<h1><span class="mw-headline" id="Special_Considerations_for_Workflow_Stages"><span class="mw-headline-number">3</span> Special Considerations for Workflow Stages</span></h1>
+<p>If you want to add <a href="index.php%3Ftitle=Workflow_Stages.html" title="Workflow Stages">workflow stages</a> to an SLA workflow, you cannot use the existing task_sla.stage column as the <b>Stage</b> field because this column was not designed for workflow stages, and changing values in this field prevents the system from accurately determining the SLA state. Instead, <a href="index.php%3Ftitle=Workflow_Stage_Fields.html" title="Workflow Stage Fields">create a suitable workflow field</a> to contain the workflow stages.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201203156
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.239 seconds
+Real time usage: 0.317 seconds
+Preprocessor visited node count: 50/1000000
+Preprocessor generated node count: 220/1000000
+Post‐expand include size: 3707/2097152 bytes
+Template argument size: 1606/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   42.795      1 - -total
+ 83.74%   35.835      1 - Template:Service_Levels
+ 68.15%   29.164      1 - Template:Topic
+ 14.73%    6.304      1 - Template:Note
+ 11.99%    5.133      1 - Embedded:Service_Levels
+ 10.87%    4.651      2 - Template:T
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:6432-0!*!0!1!en!5!* and timestamp 20171201203156 and revision id 250428
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;oldid=250428.html">http://wiki.servicenow.com/index.php?title=Creating_an_SLA_Workflow&amp;oldid=250428</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Level+Management.html" title="Category:Service Level Management">Service Level Management</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Deliver.html" title="Category:Deliver">Deliver</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Planning+and+Policy.html" title="Category:Planning and Policy">Planning and Policy</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Service+Level+Management.html" title="Category:Service Level Management">Service Level Management</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_6432"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="6432" data-vote-the-vote="5" data-vote-id="6432" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6432_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="6432" data-vote-the-vote="1" data-vote-id="6432" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_6432_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=Creating+an+SLA+Workflow&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=Creating+an+SLA+Workflow&amp;returntoquery=printable%253Dyes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=Creating_an_SLA_Workflow.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-book_creator_disable"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=stop_book_creator&amp;referer=Creating+an+SLA+Workflow.html">Disable book creator</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=Creating+an+SLA+Workflow&amp;returnto=Creating+an+SLA+Workflow&amp;oldid=250428&amp;writer=rl.html">Download as PDF</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FCreating_an_SLA_Workflow.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/Creating_an_SLA_Workflow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;oldid=250428.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=Creating_an_SLA_Workflow&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 15:39, 28 August 2017.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collection.bookcreator"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":759});});</script></body></html>

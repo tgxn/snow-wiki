@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>System Performance Best Practices - ServiceNow Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"System_Performance_Best_Practices","wgTitle":"System Performance Best Practices","wgCurRevisionId":241696,"wgRevisionId":241696,"wgArticleId":17921,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Maintenance Best Practices"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"System_Performance_Best_Practices","wgRelevantArticleId":17921,"wgRequestId":"efdf90d0a034db4c13fb8be8","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":20,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","ext.voteNY"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.content.externallinks%257Cmediawiki.skinning.interface%257Cskins.monobook.styles&amp;only=styles&amp;skin=monoboo.css"/>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook"></script>
+<meta name="generator" content="MediaWiki 1.27.3"/>
+<meta name="robots" content="index,follow,noarchive"/>
+<meta name="copyright" content="ServiceNow"/>
+<meta http-equiv="content-language" content="en"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta name="modified" content="20150131003701"/>
+<meta name="canonical" content="//wiki.servicenow.com/index.php?title=System_Performance_Best_Practices"/>
+<meta name="author" content="ServiceNow"/>
+<meta name="twitter:card" content="@NOWsupport"/>
+<meta name="twitter:title" content="System Performance Best Practices"/>
+<meta name="twitter:creator" content="@NOWsupport"/>
+<meta name="twitter:domain" content="servicenow.com"/>
+<meta name="keywords" content="Maintenance Best Practices"/>
+<meta name="category" content="Maintenance Best Practices"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="ServiceNow Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="ServiceNow Wiki Atom feed" href="index.php%3Ftitle=Special:RecentChanges&amp;feed=atom.html"/>
+<script type="text/javascript">window.tamBaseUrl='/extensions/TreeAndMenu'</script>
+
+<script type="text/javascript" src="extensions/TreeAndMenu/dtree.js"></script>
+
+<link rel="canonical" href="index.php%3Ftitle=System_Performance_Best_Practices.html" />
+
+	<meta property="og:title" content="ServiceNow Wiki:System Performance Best Practices"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:site_name" content="ServiceNow Wiki"/>
+
+	<meta property="modified" content="20150131003701"/>
+
+	<meta property="article:published_time" content="20150131003701"/>
+
+	<meta property="article:modified_time" content="20150131003701"/>
+
+	<meta property="article:author" content="ServiceNow"/>
+
+	<meta property="article:tag" content="Maintenance Best Practices"/>
+
+	<meta property="og:url" content="//wiki.servicenow.com/index.php?title=System_Performance_Best_Practices"/>
+
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-System_Performance_Best_Practices rootpage-System_Performance_Best_Practices skin-monobook action-view">
+<div id="header">
+	<div id="snc_top_toolbar" >
+	<ul class="inline" id="sites">
+		<li><a href="index.html">Wiki home</a></li>
+		<li><a href="http://community.servicenow.com">Community</a></li>
+		<li><a href="http://www.servicenow.com/services/training-and-certification.html">Training</a></li>
+		<li><a href="https://www.servicenow.com/support.html">Support home</a></li>
+		<li><a href="http://www.servicenow.com">Company home</a></li>
+		<li><a href="http://info.servicenow.com/demonow/">Demo</a></li>
+	</ul>
+
+<!-- Start Adobe analytics staging -->
+<script src="http://assets.adobedtm.com/43c21e31f00ba1c49c16c9c6a5acf67ef1e8dfa8/satelliteLib-c41330e93f48feef745e6ecb4b425db9d5da2dea.js"></script>
+
+<!--Begin Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29210697-1']);
+  _gaq.push(['_setDomainName', 'servicenow.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google analytics, begin other analytics -->
+
+<!--<script type="text/javascript" language="javascript">llactid=11051</script>
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
+-->
+<!--End analytics-->
+
+	</div>
+</div>
+<div id="snc_toolbar" >
+	<a href="index.html">
+	<img src="https://wiki.service-now.com/images/CustomWikiLogoFixed.png" height="64px">
+	</a>
+<div id="googleSearchBox"> <!--Google Search box -->
+<div id='cse-search-form' style='width: 100%;'>Loading</div>
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+
+google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT, callback:loadCSE});
+
+window.onhashchange = function() {
+	var url = window.location.href;
+	if(url.indexOf("gsc.q") == -1) //call only when not browsing search results.
+	{
+		resetUI();
+	}
+}
+
+function resetUI() {
+	//reset UI to standard layout. Hide search, restore page content/controls.
+	var cactions = document.getElementById('p-cactions');
+	var cont = document.getElementById('content');
+	var sr = document.getElementById('cse');
+
+	cactions.style.display = 'block';
+	sr.style.display = 'none';
+	cont.style.display = 'block';
+};
+
+function onSubmit() {
+	//hide page elements when searching.
+	var cactions = document.getElementById('p-cactions');
+	cactions.style.display = 'none';
+	var sr = document.getElementById('cse');
+	sr.style.display = 'block';
+	var cont = document.getElementById('content');
+	cont.style.display = 'none';
+};
+
+function loadCSE() {
+	var customSearchOptions = {};
+	var orderByOptions = {};
+	orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+	customSearchOptions['enableOrderBy'] = true;
+	customSearchOptions['orderByOptions'] = orderByOptions;
+
+	var customSearchControl = new google.search.CustomSearchControl('005409823165138974380:bltnnmgfoek', customSearchOptions);
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.setSearchCompleteCallback(this,onSubmit);//set onSubmit script to run when searching
+
+	var options = new google.search.DrawOptions();
+	options.setSearchFormRoot('cse-search-form');
+	options.setAutoComplete(true);
+	customSearchControl.draw('cse', options);
+	var historyStarted = customSearchControl.startHistoryManagement();
+	if(historyStarted) customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+};
+
+</script>
+
+</div> <!--end Google search box-->
+</div>
+
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="cse"></div>
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">System Performance Best Practices</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ServiceNow Wiki</div>
+					<div id="contentSub"><!-- Text for discussion pages-->
+<a href="index.html" title="Main Page">Home</a> &gt; <a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Maintenance Best Practices</a> &gt; System Performance Best Practices</div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="index.php%3Ftitle=System_Performance_Best_Practices.html#column-one">navigation</a>, <a href="index.php%3Ftitle=System_Performance_Best_Practices.html#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="noprint">
+<table class="topicbox">
+
+<tr>
+<th> <a href="index.php%3Ftitle=Technical_Best_Practices.html" title="Technical Best Practices">Technical Best Practices</a>
+</th></tr>
+<tr>
+<td> <div style="width:260px;">
+<div class='dtree' id='5a20c2b082ecet'></div><script type="text/javascript">window.tamOnload_tam5a20c2b082ecet=[];tree = new dTree('tam5a20c2b082ecet');
+                                               for (i in tree.icon) tree.icon[i] = '/extensions/TreeAndMenu/'+tree.icon[i];
+                                               tree.config.useLines = false;
+                                               tree.add(0,-1,'');
+                                               tam5a20c2b082ecet = tree;
+                                               tam5a20c2b082ecet.add(1, 0, 'Planning');
+
+tam5a20c2b082ecet.add(2, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Planning_for_Development_Best_Practices\&quot;" title=\"Planning for Development Best Practices\">Planning for Development Best Practices</a>');
+tam5a20c2b082ecet.add(3, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Documenting_a_Migration_Procedure\&quot;" title=\"Documenting a Migration Procedure\">Documenting a Migration Procedure</a>');
+tam5a20c2b082ecet.add(4, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Modifying_the_Application_Design\&quot;" title=\"Modifying the Application Design\">Modifying the Application Design</a>');
+tam5a20c2b082ecet.add(5, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Understand_the_Requirements\&quot;" title=\"Understand the Requirements\">Requirements Best Practices</a>');
+tam5a20c2b082ecet.add(6, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Customizing_the_UI_Appearance\&quot;" title=\"Customizing the UI Appearance\">Customizing the UI Appearance</a>');
+tam5a20c2b082ecet.add(7, 1, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Security_Best_Practices\&quot;" title=\"Security Best Practices\">Security Best Practices</a>');
+tam5a20c2b082ecet.add(8, 0, 'Development');
+tam5a20c2b082ecet.add(9, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Client_Script_Best_Practices\&quot;" title=\"Client Script Best Practices\">Client Script Best Practices</a>');
+tam5a20c2b082ecet.add(10, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Coding_Best_Practices\&quot;" title=\"Coding Best Practices\">Coding Best Practices</a>');
+tam5a20c2b082ecet.add(11, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Commenting_Your_Work\&quot;" title=\"Commenting Your Work\">Commenting Your Work</a>');
+tam5a20c2b082ecet.add(12, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Business_Rules_Best_Practices\&quot;" title=\"Business Rules Best Practices\">Business Rules Best Practices</a>');
+tam5a20c2b082ecet.add(13, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Update_Sets_Best_Practices\&quot;" title=\"Update Sets Best Practices\">Update Sets Best Practices</a>');
+tam5a20c2b082ecet.add(14, 8, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Exporting_and_Importing_XML_Files\&quot;" title=\"Exporting and Importing XML Files\">Exporting and Importing XML Files</a>');
+tam5a20c2b082ecet.add(15, 0, 'Maintenance');
+tam5a20c2b082ecet.add(16, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Debugging_Tools_Best_Practices\&quot;" title=\"Debugging Tools Best Practices\">Debugging Tools Best Practices</a>');
+tam5a20c2b082ecet.add(17, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=System_Properties_Best_Practices\&quot;" title=\"System Properties Best Practices\">System Properties Best Practices</a>');
+tam5a20c2b082ecet.add(18, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Logs_and_Queues_Best_Practices\&quot;" title=\"Logs and Queues Best Practices\">Logs and Queues Best Practices</a>');
+tam5a20c2b082ecet.add(19, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Upgrades_Best_Practices\&quot;" title=\"Upgrades Best Practices\">Upgrades Best Practices</a>');
+tam5a20c2b082ecet.add(20, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Patches_Best_Practices\&quot;" title=\"Patches Best Practices\">Patches Best Practices</a>');
+tam5a20c2b082ecet.add(21, 15, ' <strong class=\"selflink\">System Performance Best Practices</strong>');
+tam5a20c2b082ecet.add(22, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=Import_Set_Performance_Best_Practices\&quot;" title=\"Import Set Performance Best Practices\">Import Set Performance Best Practices</a>');
+
+tam5a20c2b082ecet.add(23, 15, ' <a href="http://wiki.servicenow.com/\&quot;/index.php?title=ODBC_Best_Practices\&quot;" title=\"ODBC Best Practices\">ODBC Best Practices</a></div>');
+                                               document.getElementById('5a20c2b082ecet').innerHTML = tam5a20c2b082ecet.toString();
+                                               
+                                               for(i in window.tamOnload_tam5a20c2b082ecet) { window.tamOnload_tam5a20c2b082ecet[i](); }</script>
+
+
+<br />
+
+</td></tr></table>
+</div>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Network_Performance"><span class="tocnumber">2</span> <span class="toctext">Network Performance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Monitoring_Ping_Times"><span class="tocnumber">2.1</span> <span class="toctext">Monitoring Ping Times</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Windows"><span class="tocnumber">2.1.1</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Macintosh"><span class="tocnumber">2.1.2</span> <span class="toctext">Macintosh</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Running_a_Traceroute"><span class="tocnumber">2.2</span> <span class="toctext">Running a Traceroute</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Windows_2"><span class="tocnumber">2.2.1</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Macintosh_2"><span class="tocnumber">2.2.2</span> <span class="toctext">Macintosh</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Reading_a_Traceroute"><span class="tocnumber">2.2.3</span> <span class="toctext">Reading a Traceroute</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Application_Server_Performance"><span class="tocnumber">3</span> <span class="toctext">Application Server Performance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Monitoring_Response_Times"><span class="tocnumber">3.1</span> <span class="toctext">Monitoring Response Times</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Tracking_Transaction_Log_Response_Times"><span class="tocnumber">3.1.1</span> <span class="toctext">Tracking Transaction Log Response Times</span></a>
+<ul>
+<li class="toclevel-4 tocsection-13"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Fixing_the_Issues"><span class="tocnumber">3.1.1.1</span> <span class="toctext">Fixing the Issues</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Removing_Unused_Inactivity_Monitors"><span class="tocnumber">3.2</span> <span class="toctext">Removing Unused Inactivity Monitors</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Optimize_Your_Queries"><span class="tocnumber">3.3</span> <span class="toctext">Optimize Your Queries</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Adjusting_the_Auto-Complete_Wait_Time"><span class="tocnumber">3.4</span> <span class="toctext">Adjusting the Auto-Complete Wait Time</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Checking_the_SLA_Trace_Level"><span class="tocnumber">3.5</span> <span class="toctext">Checking the SLA Trace Level</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Monitoring_the_Processing_Duration_of_Scheduled_Jobs"><span class="tocnumber">3.6</span> <span class="toctext">Monitoring the Processing Duration of Scheduled Jobs</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Default_Row_Count"><span class="tocnumber">3.7</span> <span class="toctext">Default Row Count</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Go_To_Search_Option"><span class="tocnumber">3.8</span> <span class="toctext">Go To Search Option</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Auto-complete_Search_Option"><span class="tocnumber">3.9</span> <span class="toctext">Auto-complete Search Option</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Table_Rotation"><span class="tocnumber">3.10</span> <span class="toctext">Table Rotation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Browser_Performance"><span class="tocnumber">4</span> <span class="toctext">Browser Performance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Configuring_the_Browser_to_Accept_Compression"><span class="tocnumber">4.1</span> <span class="toctext">Configuring the Browser to Accept Compression</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Compressing_Data_in_IE_6_and_7"><span class="tocnumber">4.1.1</span> <span class="toctext">Compressing Data in IE 6 and 7</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html#Caching_Items_from_Secure_Websites"><span class="tocnumber">4.2</span> <span class="toctext">Caching Items from Secure Websites</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Overview"><span class="mw-headline-number">1</span> Overview</span></h1>
+<p>Performance issues can arise with your ServiceNow instance in the network, application server, and browser.  This article provides performance-related troubleshooting tips for all three areas.
+</p><p>One of the first things to consider when troubleshooting performance issues is to determine where the issues originated.  This can be accomplished by performing basic troubleshooting steps, such as testing the issues on different computers or using different browsers.
+</p><p>In addition to following the recommendations in this article, consider activating the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Client+Transaction+Timings&amp;oldid=0.html" title="Client Transaction Timings">client transaction timings feature</a>, which provides extra information on the amount of time spent by the client, server, browser, and network. This feature helps find long-running processes and provides information on where in the process the performance issue occurs.
+</p>
+<h1><span class="mw-headline" id="Network_Performance"><span class="mw-headline-number">2</span> Network Performance</span></h1>
+<p>One clear indicator of a network issue is if users in one location have very good performance while users in another location have very poor performance. This indicates that the application server is fine. If the browser settings are identical for these users, the only meaningful difference is the network. 
+</p>
+<h2><span class="mw-headline" id="Monitoring_Ping_Times"><span class="mw-headline-number">2.1</span> Monitoring Ping Times</span></h2>
+<p>The coarsest measure of network response time is a <b>ping</b>, which measures the total time for a packet to travel from the source machine to the target and back again. Ideally, the response time should be under 100ms in the United States or under 150 ms in Europe or Asia. In practice, though, anything under 250 ms is not a major component in perceived response time.
+</p>
+<h3><span class="mw-headline" id="Windows"><span class="mw-headline-number">2.1.1</span> Windows</span></h3>
+<p>To do a ping in Windows, open a command prompt window, and enter: 
+</p>
+<pre>ping -t &lt;yourinstancename&gt;.service-now.com
+</pre>
+<p>Sample output: 
+</p><p><a href="index.php%3Ftitle=File:PingResponse1.png.html" class="image"><img alt="PingResponse1.png" src="images/5/51/PingResponse1.png" width="534" height="371" /></a> <br style="clear:both;" />
+</p>
+<h3><span class="mw-headline" id="Macintosh"><span class="mw-headline-number">2.1.2</span> Macintosh</span></h3>
+<p>To do a ping from Mac OS X, open a terminal window and enter:
+</p>
+<pre>ping &lt;yourinstancename&gt;.service-now.com
+</pre>
+<p>Sample output:
+</p><p><a href="index.php%3Ftitle=File:PingResponse-Mac.png.html" class="image"><img alt="PingResponse-Mac.png" src="images/7/79/PingResponse-Mac.png" width="458" height="270" /></a> <br style="clear:both;" />
+</p>
+<h2><span class="mw-headline" id="Running_a_Traceroute"><span class="mw-headline-number">2.2</span> Running a Traceroute</span></h2>
+<p>If you are observing slow ping times, and your network accepts the forward Internet Control Prototcol (ICMP), you can run a traceroute. Traceroutes are great tools for identifying network bottlenecks. 
+</p>
+<h3><span class="mw-headline" id="Windows_2"><span class="mw-headline-number">2.2.1</span> Windows</span></h3>
+<p>To run a traceroute in Windows, open a command prompt window and enter: 
+</p>
+<pre><tt>tracert &lt;yourinstancename&gt;.service-now.com</tt>
+</pre>
+<p>Sample output: 
+</p>
+  <pre>
+  C:\dev\mysql5\bin&gt;tracert mycompany.service-now.com
+  Tracing route to mycompany.service-now.com [70.87.98.130]
+  over a maximum of 30 hops:
+  1     1 ms     1 ms     1 ms  12.192.116.193
+  2     4 ms     4 ms     4 ms  12.116.227.37
+  3    32 ms    32 ms    32 ms  gbr1-p90.sd2ca.ip.att.net [12.123.145.178]
+  4    33 ms    33 ms    33 ms  tbr1-p013503.phmaz.ip.att.net [12.122.2.142]
+  5    34 ms    33 ms    33 ms  tbr2-cl1521.phmaz.ip.att.net [12.122.10.194]
+  6    32 ms    33 ms    33 ms  tbr2-cl1592.dlstx.ip.att.net [12.122.10.81]
+  7    31 ms    50 ms    31 ms  gar1-p370.dlrtx.ip.att.net [12.123.16.173]
+  8    31 ms    31 ms    31 ms  12.119.136.14
+  9    31 ms    31 ms    31 ms  te9-1.dsr02.dllstx3.theplanet.com [70.87.253.22]
+ 10    37 ms    37 ms    37 ms  vl41.dsr01.dllstx4.theplanet.com [70.85.127.83]
+ 11    31 ms    37 ms    31 ms  gi1-0-1.car16.dllstx4.theplanet.com [67.18.116.67]
+ 12    32 ms    32 ms    32 ms  70.87.98.130
+ Trace complete.</pre>
+<h3><span class="mw-headline" id="Macintosh_2"><span class="mw-headline-number">2.2.2</span> Macintosh</span></h3>
+<p>To run a traceroute from Mac OS X, open a terminal window and enter:
+</p>
+<pre>traceroute &lt;yourinstancename&gt;.service-now.com
+</pre>
+<p>Sample output:
+</p>
+<pre> $ traceroute mycompany.service-now.com
+ traceroute to mycompany.service-now.com (70.87.98.130), 64 hops max, 52 byte packets
+ 1     1 ms     1 ms     1 ms  12.192.116.193 
+ 2     4 ms     4 ms     4 ms  12.116.227.37
+ 3    32 ms    32 ms    32 ms  gbr1-p90.sd2ca.ip.att.net [12.123.145.178]
+ 4    33 ms    33 ms    33 ms  tbr1-p013503.phmaz.ip.att.net [12.122.2.142]
+ 5    34 ms    33 ms    33 ms  tbr2-cl1521.phmaz.ip.att.net [12.122.10.194]
+ 6    32 ms    33 ms    33 ms  tbr2-cl1592.dlstx.ip.att.net [12.122.10.81]
+ 7    31 ms    50 ms    31 ms  gar1-p370.dlrtx.ip.att.net [12.123.16.173]
+ 8    31 ms    31 ms    31 ms  12.119.136.14
+ 9    31 ms    31 ms    31 ms  te9-1.dsr02.dllstx3.theplanet.com [70.87.253.22]
+10    37 ms    37 ms    37 ms  vl41.dsr01.dllstx4.theplanet.com [70.85.127.83]
+11    31 ms    37 ms    31 ms  gi1-0-1.car16.dllstx4.theplanet.com [67.18.116.67]
+12    32 ms    32 ms    32 ms  70.87.98.130
+Trace complete.</pre>
+<h3><span class="mw-headline" id="Reading_a_Traceroute"><span class="mw-headline-number">2.2.3</span> Reading a Traceroute</span></h3>
+<p>Each line in the traceroute represents a network step between the source machine and the destination machine. In the traceroute above, a total of 12 steps were required to get network traffic from the source computer to &lt;yourinstancename&gt;.service-now.com. 
+</p>
+<ul><li>The left column is the step number.</li>
+<li>The next three columns represent latency estimates (performed three times to give an average).</li>
+<li>The fifth column is the IP address of the destination machine.</li></ul>
+<p>In the sample output, network traffic was identified in row 1 at 12.192.116.193. It then took an average of 4ms to get to 12.116.227.37 in row 2.
+</p><p>There may be a performance issue if one or more steps in a traceroute show unusually long time periods, for example, 500 ms from one step to the next.  Another indication of a performance issue is an asterisk (*) instead of a time.  For example: 
+</p>
+<pre> <tt>1     100 ms   *        500ms  12.192.116.193</tt>
+</pre>
+<p>The asterisk indicates that a particular packet failed to move between the two computers in the network.  This can indicate network problems. 
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>If all three latency times for a particular step display asterisks, it can indicate that a particular router is set to not forward ICMP.  So three asterisks can potentially be a false alarm.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Application_Server_Performance"><span class="mw-headline-number">3</span> Application Server Performance</span></h1>
+<p>Application server performance issues generally manifest themselves in slow response times.  Monitoring response times and checking logs can help when identifying performance problems.
+</p>
+<h2><span class="mw-headline" id="Monitoring_Response_Times"><span class="mw-headline-number">3.1</span> Monitoring Response Times</span></h2>
+<p>To maintain good performance levels on the application server, regularly monitor response times throughout your instance, including at the transaction level and on forms.
+</p><p>While tracking response times on the application server, you may observe the following performance-related issues: 
+</p>
+<ul><li>A period when all transactions are taking an unusually long processing time (for example, processing for all transactions generally takes 3 to 4 minutes to complete, but now it is taking 20 minutes). That usually indicates that the application server was running some sort of unusual load, such as a large report, a backup, or an LDAP refresh.</li>
+<li>A specific transaction that repeatedly took an unusually long time. For example, a list of all closed incidents, sorted by short description, took a long time. That usually indicates a particular transaction that put an unusual database load on the system, such as causing it to sort 500,000 records on an unindexed field.</li></ul>
+<h3><span class="mw-headline" id="Tracking_Transaction_Log_Response_Times"><span class="mw-headline-number">3.1.1</span> Tracking Transaction Log Response Times</span></h3>
+<p>As you operate ServiceNow, the instance automatically logs the vital statistics of every transaction it processes. That information is available to users with the admin role.  
+</p><p>To view the average response time of all transactions for the current day:
+</p>
+<ol><li>Navigate to <b>System Logs &gt; Transactions</b>. 
+<dl><dd>This displays a list of transactions. </dd></dl></li>
+<li>Scroll to the bottom of the list to see the <b>Avg</b> value.  
+<dl><dd>If the Average value does not appear at the bottom of the list, perform the following steps.</dd></dl></li>
+<li>Right-click the <b>Response time</b> column heading and select the appropriate option for your version:
+<ul><li> <b><a href="index.php%3Ftitle=Fuji_Release_Notes.html" title="Fuji Release Notes">Fuji</a> or later:</b> Configure &gt; List Calculations</li>
+<li> <b><a href="index.php%3Ftitle=Eureka_Release_Notes.html" title="Eureka Release Notes">Eureka</a> or earlier:</b> Personalize &gt; List Calculations</li></ul></li>
+<li>In the Response time (calculations) dialog box, select <b>Average value</b> and click <b>OK</b>.</li></ol>
+<p><br />
+</p>
+<dl><dd><a href="index.php%3Ftitle=File:Transaction_Log_Avg.png.html" class="image"><img alt="Transaction Log Avg.png" src="images/thumb/e/e5/Transaction_Log_Avg.png/700px-Transaction_Log_Avg.png" width="700" height="265" srcset="/images/thumb/e/e5/Transaction_Log_Avg.png/1050px-Transaction_Log_Avg.png 1.5x, /images/thumb/e/e5/Transaction_Log_Avg.png/1400px-Transaction_Log_Avg.png 2x" /></a> </dd></dl>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>To limit the list of transactions to those processed during a specific time period, <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Using+Filters+and+Breadcrumbs&amp;oldid=0.html" title="Using Filters and Breadcrumbs">change the default filter</a>.</i>
+</td></tr></table>
+<p><br />
+For each completed transaction, the following information is available: 
+</p>
+<ul><li>Date and time, user ID, IP address, and URL of the transaction </li>
+<li>Total response time, in milliseconds (browser time is not included) </li>
+<li>Network time, in milliseconds (network transmission time, both from and to the user) </li>
+<li>SQL time, in milliseconds (time spent executing SQL commands) </li>
+<li>SQL count (number of SQL commands executed) </li>
+<li>Business rule time, in milliseconds (time spent processing business rules) </li>
+<li>Business rule count (number of business rules executed) </li>
+<li>Output length (number of bytes the transaction returned, after any compression)</li></ul>
+<h4><span class="mw-headline" id="Fixing_the_Issues"><span class="mw-headline-number">3.1.1.1</span> Fixing the Issues</span></h4>
+<p>If you observed any of the issues above, try the following fixes to improve performance:
+</p>
+<ul><li>If there is a period of slow response time, look for one or more transactions that span the entire period. For example, it was slow for six minutes, and there was one six-minute-long transaction that ran the whole time". Typically, that long transaction is loading down the system. Often, these issues can be resolved with additional database indexing to make the transaction faster. However, certain types of queries are always slower than others, regardless of indexing.</li>
+<li>Ensure that a cache flush is not being run during business hours. Be aware, however, that when update sets are committed, they automatically trigger cache flushes, which prevent older data from interfering with changes and updates.  So do not schedule update sets to be committed during business hours.</li>
+<li>If there is no identifiable cause, but overall response time is still slow, contact ServiceNow Technical Support to find out if anything is affecting the application server hardware.</li></ul>
+<h2><span class="mw-headline" id="Removing_Unused_Inactivity_Monitors"><span class="mw-headline-number">3.2</span> Removing Unused Inactivity Monitors</span></h2>
+<p><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_article&amp;arttitle=Setting+Inactivity+Monitors&amp;oldid=0.html" title="Setting Inactivity Monitors">Inactivity monitors</a> run in the background at all times and trigger events, such as <tt>incident.inactivity</tt>, when specified tasks are inactive for a user-configurable period. The event processing engine checks through the notifications and script actions to see if there is anything configured to respond to a specific event. If not, it goes <i>unanswered</i>.
+</p><p>Inactivity monitors that produce large numbers of unanswered events can adversely impact the performance of the event processing engine. They can also delay notifications from being sent, records from being updated, or other actions from occurring normally.  Removing unnecessary inactivity monitors can improve performance. 
+</p><p>To identify inactivity monitors that are not being used:
+</p>
+<ol><li>Navigate to <b>System Policy &gt; SLA &gt; Inactivity Monitors</b>.</li>
+<li>Open each inactivity monitor record and note the table name.</li>
+<li>Navigate to <b>System Policy &gt; Events &gt; Script Actions</b></li>
+<li>Create a filter <b>Event name is  &lt;TableName&gt;.inactivity</b>. For example, <tt>incident.inactivity</tt> is the inactivity monitor for the Incident table.</li>
+<li>Navigate to <b>System Policy &gt; Email &gt; Notifications</b> and create a similar filter.
+<dl><dd>If no records are found in either Script Actions or Notifications, you can safely delete the corresponding inactivity monitor.</dd></dl></li></ol>
+<h2><span class="mw-headline" id="Optimize_Your_Queries"><span class="mw-headline-number">3.3</span> Optimize Your Queries</span></h2>
+<p>Consider the impact your filters and queries have on the system and try to optimize them where possible. For example, you have a choice list with four options and an option <i>-- None --</i>. Your requirement asks to <i>List all records where any value is chosen.</i>. At first you may choose a filter: <b>Shark</b> | <b>is one of</b> | <b>Mako</b>, <b>Great White</b>, <b>Nurse</b>, <b>White Tip</b>, <b>Black Tip</b>.
+</p><p>The problem with this is that the database has to look for all of those options when it queries. It also means that if an additional option is added, your query needs to be updated.
+</p><p>To improve performance and reduce maintenance, change the query to <b>Shark | is not | -- None --</b>, or <b>Shark | is | anything</b>. Now the database is looking for a specific value rather than a range and as options are added to the choice list, your condition/filter does not need to be revisited.
+</p>
+<h2><span class="mw-headline" id="Adjusting_the_Auto-Complete_Wait_Time"><span class="mw-headline-number">3.4</span> Adjusting the Auto-Complete Wait Time</span></h2>
+<p>The <a href="index.php%3Ftitle=Auto-Complete_for_Reference_Fields.html" title="Auto-Complete for Reference Fields">auto-complete</a> feature for reference fields uses Ajax to allow the client browser to send a request to the server for any records that match a user's entry. For example, if the user enters <i>inc'</i> in a reference field, the system has a user-defined number of milliseconds before it makes a request to the server for all entries that begin with <b>inc</b>.  The <tt>glide.xmlhttp.ac_wait_time</tt> property defines this time period with a default of 250 milliseconds. 
+</p><p>Some of the tables being queried can contain large amounts of data, sometimes more than 500,000 records. You may notice performance issues if the user has only enough time to enter a very few characters. The fewer characters entered, the more the server must work to respond to the request. Entering more characters returns fewer results. So, try increasing the <tt>glide.xmlhttp.ac_wait_time</tt> property setting in 50 milliseconds increments until acceptable performance is achieved.
+</p><p>It is recommended that the value not exceed 750, as users may complain of latency from the time they stop typing to the time the system responds with auto-complete entries.
+</p>
+<h2><span class="mw-headline" id="Checking_the_SLA_Trace_Level"><span class="mw-headline-number">3.5</span> Checking the SLA Trace Level</span></h2>
+<p>The SLA trace level controls the number of messages sent to the system log.  
+</p><p>To set the SLA trace level:
+</p>
+<ol><li>Navigate to <b>System Properties &gt; SLA</b>.</li>
+<li>In the <b>Log/trace level of TaskSLAController (Default:notice)</b> property, select <b>notice</b>. </li></ol>
+<dl><dd><a href="index.php%3Ftitle=File:SLA.png.html" class="image"><img alt="SLA.png" src="images/3/39/SLA.png" width="328" height="161" /></a></dd></dl>
+<p>The lower the selection on this list, the more messages are sent to the system log. Logging a large number of messages can increase log size and adversely impact backup and restore time. The <b>info</b> setting is typically used only when performing detailed SLA debugging.
+</p>
+<h2><span class="mw-headline" id="Monitoring_the_Processing_Duration_of_Scheduled_Jobs"><span class="mw-headline-number">3.6</span> Monitoring the Processing Duration of Scheduled Jobs</span></h2>
+<p>The <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=System+Scheduler&amp;oldid=0.html" title="System Scheduler">system scheduler</a> maintains a record of all scheduled jobs run on an instance. Check the scheduled jobs list periodically to keep track of system performance and to screen for issues.
+</p>
+<ol><li>Navigate to <b>System Scheduler &gt; Scheduled Jobs &gt; Scheduled Jobs</b>. </li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Creating+Personal+Lists&amp;oldid=0.html" title="Creating Personal Lists">Personalize the list</a> and add the <b>Processing duration</b> column to display the time taken to process each job.</li>
+<li>Sort the list by descending duration to see the longest running jobs first.
+<dl><dd>Processing duration times are in milliseconds. A value of 1,086 is 1.086 seconds.</dd>
+<dd><a href="index.php%3Ftitle=File:Scheduled-Jobs.png.html" class="image" title="Scheduled-Jobs.png"><img alt="Scheduled-Jobs.png" src="images/thumb/7/7f/Scheduled-Jobs.png/750px-Scheduled-Jobs.png" width="750" height="216" class="thumbborder" srcset="/images/7/7f/Scheduled-Jobs.png 1.5x, /images/7/7f/Scheduled-Jobs.png 2x" /></a></dd></dl></li>
+<li>Check to see if the jobs complete unusually quickly or slowly. 
+<dl><dd>For example, a job that imports 50,000 records and runs several business rules should take longer than 300 milliseconds to complete. Such a short duration may indicate an error. On the other hand, if the job takes six hours to complete, there may be a need for performance optimization such as <a href="index.php%3Ftitle=Troubleshooting_Import_Set_Performance.html#Running_Business_Rules_During_a_Transform" title="Troubleshooting Import Set Performance">disabling business rules</a> to speed things up.</dd></dl></li></ol>
+<p>There are no established standards for what period of time is too long or too short for a job to execute. Experience and periodic inspection of the scheduled jobs will help you understand system functionality and areas where performance may be an issue. For example, a daily scheduled job shows a processing duration between 1,000 and 1,500 for six consecutive days. If it jumps to 38,515 the next day, consider investigating other system settings that may be impacting the daily scheduled job, such as plugins that have been enabled or concurrently running scheduled jobs.
+</p>
+<table cellspacing="5" cellpadding="5" class="reproduce">
+
+<tr>
+<td scope="row" style="vertical-align:middle;"> <div class="floatleft"><a href="index.php%3Ftitle=File:Warning.gif.html" class="image" title="Note"><img alt="Note" src="images/thumb/c/c2/Warning.gif/16px-Warning.gif.png" width="16" height="16" srcset="/images/thumb/c/c2/Warning.gif/24px-Warning.gif.png 1.5x, /images/thumb/c/c2/Warning.gif/32px-Warning.gif.png 2x" /></a></div>
+</td>
+<td scope="row" style="vertical-align:top"> <b>Note:</b> <i>Create intelligent scripted scheduled jobs to <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Post-Cloning+Checklist&amp;oldid=0.html#Scheduled_Jobs" title="Post-Cloning Checklist">run only on a specific instance</a> and reduce the system load on those that do not need it. Some scripted scheduled jobs are required on production instances, while there is no need to run them in development or test environments.</i>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Default_Row_Count"><span class="mw-headline-number">3.7</span> Default Row Count</span></h2>
+<p>Avoid modifying the default system <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=User+Preferences&amp;oldid=0.html" title="User Preferences">User Preference</a> named <b>rowcount</b> which controls the display of items per page (default is 20). This is not recommended as it will slow down list viewing and has the potential to become a scalability and performance issue. You can proactively prevent users from selecting a large row count by reducing the available options (anything above 100 is not recommended). To do this, you will need to modify the UI <a href="index.php%3Ftitle=Available_System_Properties.html" title="Available System Properties">System Property</a> named <b>glide.ui.per_page controls</b>.
+</p><p>For more information about performance and data display, see <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://community.servicenow.com/community/blogs/blog/2014/12/03/displaying-just-enough-data-helps-performance">Improve performance by displaying "just enough" data</a> on the ServiceNow Community.
+</p>
+<h2><span class="mw-headline" id="Go_To_Search_Option"><span class="mw-headline-number">3.8</span> Go To Search Option</span></h2>
+<p>If you're familiar with the <a href="index.php%3Ftitle=Introduction_to_Searching.html#Searching_Lists" title="Introduction to Searching">Go To search</a> option, you may know that there's a special <a href="index.php%3Ftitle=Available_System_Properties.html" title="Available System Properties">System Property</a> named <b>glide.ui.goto_use_contains</b> which controls whether the search performs a <i>contains</i> query (if set to <i>true</i>) or a <i>greater than</i> query (if set to the default value <i>false</i>). It is recommended you leave this system property set to <i>false</i>,  <i>contains</i> searches are less efficient than <i>greater than</i> or other query operators.
+</p>
+<h2><span class="mw-headline" id="Auto-complete_Search_Option"><span class="mw-headline-number">3.9</span> Auto-complete Search Option</span></h2>
+<p>The <a href="index.php%3Ftitle=Available_System_Properties.html" title="Available System Properties">system property</a> named <b>glide.ui.ref_ac.startswith</b> controls whether auto-complete searches use a <i>starts with</i> or <i>contains</i> search. A <i>start with</i> query is more efficient as it returns less records. See <a href="index.php%3Ftitle=Auto-Complete_for_Reference_Fields.html#Improving_Auto-Complete_Queries" title="Auto-Complete for Reference Fields">Improving Auto-Complete Queries</a>.
+</p>
+<h2><span class="mw-headline" id="Table_Rotation"><span class="mw-headline-number">3.10</span> Table Rotation</span></h2>
+<p>As data sets in tables grow, large queries in the application server can impact performance.  
+There are two plugins you can use to help manage large quantities of data.  They work by separating data sets into individual tables based on user-specified time parameters. Each technique handles data in a different manner:
+</p>
+<ul><li>Table Rotation works by rotating among a small set of tables, and deleting and reusing the old tables for new data. Example: <i>syslog</i> and <i>ecc_queue</i></li>
+<li>Table Extension works by periodically starting a new table and allowing old tables to be easily archived and removed from the system. Example: <i>sys_audit</i> and <i>sys_email</i></li></ul>
+<p>Ensure the <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Database+Rotation&amp;oldid=0.html" title="Database Rotation">Database Rotation</a> plugin is enabled and that you have configured common large tables to be rotated. This preserves instance performance and averts risk associated with querying growing data sets. 
+</p><p>Additionally, the Database Rotations Default Tables plugin (automatically enabled for new instances since June11 Release)  is used to apply Table Rotation and Extension to specific tables.
+</p><p><b>Important:</b> If the <i>Database Rotation</i> plugin is not enabled in your instance or you don't have any <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Database+Rotation&amp;oldid=0.html#Features" title="Database Rotation">table rotation groups</a> specified, then it's highly recommended you make plans to make these changes. Do not activate the <i>Database Rotations Default Tables</i> plugin. Instead, specify the tables manually, after consulting with a ServiceNow Support representative.
+</p>
+<h1><span class="mw-headline" id="Browser_Performance"><span class="mw-headline-number">4</span> Browser Performance</span></h1>
+<p>Browser performance issues are often related to how the browser handles and renders compressed data.  Monitoring how the browser handles caching of data from secured sites can also affect performance.  
+</p>
+<h2><span class="mw-headline" id="Configuring_the_Browser_to_Accept_Compression"><span class="mw-headline-number">4.1</span> Configuring the Browser to Accept Compression</span></h2>
+<p>To speed performance, most browsers have the ability to accept <b>compressed</b> data from an application server. This configuration avoids the need to send large data packets. Instead, the browser indicates "I can accept compressed data if you can send it." The application server then compresses the data before sending it. 
+</p><p>Compression is enabled by default on all ServiceNow application servers, which means that the server <i>always</i> sends compressed data if the browser accepts it. There are browser settings that dictate whether a browser can inform the server properly that it is willing to accept compressed responses. Refer to your browser documentation for details.
+</p>
+<h3><span class="mw-headline" id="Compressing_Data_in_IE_6_and_7"><span class="mw-headline-number">4.1.1</span> Compressing Data in IE 6 and 7</span></h3>
+<p>To make sure a browser running Internet Explorer 6 or 7 requests compressed data:
+</p>
+<ol><li>Navigate to <b>Tools &gt; Internet Options</b>.</li>
+<li>Verify that the following check boxes are selected in the Advanced tab (HTTP1 1.1 settings subsection): 
+<ul><li>Use HTTP 1.1 </li>
+<li>Use HTTP 1.1 through a proxy server</li></ul></li></ol>
+<dl><dd><a href="index.php%3Ftitle=File:InternetOptions1.png.html" class="image" title="image:InternetOptions1.png"><img alt="image:InternetOptions1.png" src="images/0/0d/InternetOptions1.png" width="423" height="149" /></a> </dd></dl>
+<p>Frequently, a proxy or edge device disables gzip compression. Enabling gzip compression would speed up the interactions.  For more information, consult your proxy or edge device documentation.
+</p>
+<h2><span class="mw-headline" id="Caching_Items_from_Secure_Websites"><span class="mw-headline-number">4.2</span> Caching Items from Secure Websites</span></h2>
+<p>If your organization has a policy to never cache items from an https location, every interaction with the ServiceNow server will fetch a large amount of JavaScript and images.
+</p><p>To prevent this performance impact, make sure the Internet Explorer <b>Do not save encrypted pages to disk</b> option is <i>off</i> (the Microsoft default). For more information, see this Microsoft article: <a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="http://support.microsoft.com/kb/260650">http://support.microsoft.com/kb/260650</a>. For other browsers, consult the manufacturer's documentation.
+</p><p><a href="index.php%3Ftitle=File:InternetOptions2.png.html" class="image" title="image:InternetOptions2.png"><img alt="image:InternetOptions2.png" src="images/c/cd/InternetOptions2.png" width="423" height="228" /></a> 
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171201024712
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.268 seconds
+Real time usage: 0.394 seconds
+Preprocessor visited node count: 163/1000000
+Preprocessor generated node count: 420/1000000
+Post‐expand include size: 2994/2097152 bytes
+Template argument size: 732/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   99.169      1 - -total
+ 78.79%   78.138      1 - Template:Technical_Best_Practices
+ 68.72%   68.146      1 - Template:Topic
+  8.20%    8.131      3 - Template:Note
+  8.20%    8.129      1 - Template:LimitedTOC
+  7.31%    7.250      1 - Embedded:Technical_Best_Practices
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:17921-0!*!0!1!en!5!* and timestamp 20171201024712 and revision id 241696
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="index.php%3Ftitle=System_Performance_Best_Practices&amp;oldid=241696.html">http://wiki.servicenow.com/index.php?title=System_Performance_Best_Practices&amp;oldid=241696</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="index.php%3Ftitle=Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Maintenance+Best+Practices.html" title="Category:Maintenance Best Practices">Maintenance Best Practices</a></li></ul></div><br /><hr /><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Contents</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Administer.html" title="Category:Administer">Administer</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Technical+Best+Practices.html" title="Category:Technical Best Practices">Technical Best Practices</a> &gt; <a href="index.php%3Ftitle=Special:Book&amp;bookcmd=add_category&amp;cattitle=Maintenance+Best+Practices.html" title="Category:Maintenance Best Practices">Maintenance Best Practices</a></div>					<!-- end content -->
+					<div id='mw-data-after-content'>
+	<div id="rating_17921"><div class="voting-title">Was this article helpful?</div><div class="voting-box"><div class="vote-up " data-vote-id="17921" data-vote-the-vote="5" data-vote-id="17921" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17921_5"><span>Yes, I found what I needed</span></div><div class="vote-down " data-vote-id="17921" data-vote-the-vote="1" data-vote-id="17921" data-vote-action="5" data-vote-rating="5.00" data-vote-voted="0" id="rating_17921_1"><span>No, I need more assistance</span></div></div></div>
+</div>
+					<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h5>Views</h5>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="index.php%3Ftitle=System_Performance_Best_Practices.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h5>Personal tools</h5>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="index.php%3Ftitle=Special:CreateAccount&amp;returnto=System+Performance+Best+Practices.html" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="index.php%3Ftitle=Special:UserLogin&amp;returnto=System+Performance+Best+Practices.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-" role="navigation">
+		<h3></h3>
+		<div class='pBody'>
+			<div class="portlet">
+<h5><span class="mw-headline" id="Categories">Categories</span></h5>
+<div class="pBody">
+<div class="sidebarcat">
+<ul><li><a href="index.php%3Ftitle=Get_Started.html" title="Get Started">Get Started</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Use+ServiceNow&amp;oldid=0.html" title="Use ServiceNow">Use</a></li>
+<li><a href="index.php%3Ftitle=Administer_ServiceNow.html" title="Administer ServiceNow">Administer</a></li>
+<li><a href="index.php%3Ftitle=Script_in_ServiceNow.html" title="Script in ServiceNow">Script</a></li>
+<li><a href="index.php%3Ftitle=Build.html" title="Build">Build</a></li>
+<li><a href="index.php%3Ftitle=Deliver_ServiceNow.html" title="Deliver ServiceNow">Deliver</a></li>
+<li><a href="index.php%3Ftitle=Integration_Overview.html" title="Integration Overview">Integrate</a></li>
+<li><a href="index.php%3Ftitle=Release_Notes.html" title="Release Notes">Release Notes</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Customer+Support&amp;oldid=0.html" title="Customer Support">Customer Support</a></li>
+<li><a href="index.php%3Ftitle=Books.html" title="Books">Books</a></li>
+<li><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=remove_article&amp;arttitle=Video+Tutorials&amp;oldid=0.html" title="Video Tutorials">Video Tutorials</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="http://express.servicenow.com/support/">ServiceNow Express</a></li></ul>
+</div>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Resources">Resources</span></h5>
+<div class="pBody">
+<ul><li><a href="index.php%3Ftitle=Category:Contents.html" title="Category:Contents">Site Map &#8211; Tree View</a><br /></li>
+<li><a href="index.php%3Ftitle=Special:RecentChanges.html" title="Special:RecentChanges">Recent Changes</a><br /></li>
+<li><a href="index.php%3Ftitle=Glossary_of_Terms.html" title="Glossary of Terms">Glossary</a><br /></li>
+<li><a href="index.php%3Ftitle=Help:Getting_Started_on_the_ServiceNow_Wiki.html" title="Help:Getting Started on the ServiceNow Wiki">Wiki Help</a></li></ul>
+</div>
+</div>
+<div class="portlet">
+<h5><span class="mw-headline" id="Print">Print</span></h5>
+<div class="pBody">
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator.html">Create a Book</a></li>
+<li><a href="index.php%3Ftitle=Help:Books.html" title="Help:Books">Book Help</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=Special:Book%252Frender_article%252F&amp;arttitle=System_Performance_Best_Practices.html">Download Page as PDF</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="index.php%3Ftitle=System_Performance_Best_Practices&amp;printable=yes.html">Printable Version</a></li></ul>
+</div>
+</div>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-coll-print_export" role="navigation">
+		<h3>Print/export</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="coll-create_a_book"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=book_creator&amp;referer=System+Performance+Best+Practices.html">Create a book</a></li>
+											<li id="coll-download-as-rl"><a href="index.php%3Ftitle=Special:Book&amp;bookcmd=render_article&amp;arttitle=System+Performance+Best+Practices&amp;returnto=System+Performance+Best+Practices&amp;oldid=241696&amp;writer=rl.html">Download as PDF</a></li>
+											<li id="t-print"><a href="index.php%3Ftitle=System_Performance_Best_Practices&amp;printable=yes.html" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="http://wiki.servicenow.com/index.php" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search ServiceNow Wiki [f]" accesskey="f" id="searchInput"/>
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton"/>&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/>
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Toolbox</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="index.php%3Ftitle=Special:WhatLinksHere%252FSystem_Performance_Best_Practices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here?</a></li>
+											<li id="t-recentchangeslinked"><a href="http://wiki.servicenow.com/index.php?title=Special:RecentChangesLinked/System_Performance_Best_Practices" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="index.php%3Ftitle=Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="index.php%3Ftitle=System_Performance_Best_Practices&amp;oldid=241696.html" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="index.php%3Ftitle=System_Performance_Best_Practices&amp;action=info.html" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> This page was last modified 00:37, 31 January 2015.</li>
+									<li id="privacy"><a href="index.php%3Ftitle=ServiceNow_Wiki:Privacy_policy.html" title="ServiceNow Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="index.php%3Ftitle=ServiceNow_Wiki:About.html" title="ServiceNow Wiki:About">About ServiceNow Wiki</a></li>
+									<li id="disclaimer"><a href="index.php%3Ftitle=ServiceNow_Wiki:General_disclaimer.html" title="ServiceNow Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.treeandmenu","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":776});});</script></body></html>
